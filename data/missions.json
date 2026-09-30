@@ -1,0 +1,1011 @@
+[
+ {
+  "id": "years",
+  "text": "Live {n} years across any lives",
+  "key": "years",
+  "target": {
+   "daily": 25,
+   "weekly": 150,
+   "monthly": 600
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "lives",
+  "text": "Start {n} new lives",
+  "key": "lives",
+  "target": {
+   "daily": 2,
+   "weekly": 6,
+   "monthly": 20
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "mg",
+  "text": "Play {n} minigames yourself",
+  "key": "minigames",
+  "target": {
+   "daily": 2,
+   "weekly": 10,
+   "monthly": 35
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "mg_great",
+  "text": "Score Great or better {n} times",
+  "key": "mg_great",
+  "target": {
+   "daily": 1,
+   "weekly": 6,
+   "monthly": 20
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "mg_perfect",
+  "text": "Score Perfect in {n} minigames",
+  "key": "mg_perfect",
+  "target": {
+   "weekly": 2,
+   "monthly": 8
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "twists",
+  "text": "Live through {n} Turning Points",
+  "key": "twists",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "marry",
+  "text": "Get married {n} times",
+  "key": "marriages",
+  "target": {
+   "daily": 1,
+   "weekly": 3,
+   "monthly": 8
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "babies",
+  "text": "Have {n} children",
+  "key": "babies",
+  "target": {
+   "daily": 2,
+   "weekly": 8,
+   "monthly": 25
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "degrees",
+  "text": "Earn {n} degrees",
+  "key": "degrees",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "promo",
+  "text": "Get promoted {n} times",
+  "key": "promotions",
+  "target": {
+   "daily": 2,
+   "weekly": 8,
+   "monthly": 25
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "hired",
+  "text": "Get hired {n} times",
+  "key": "hired",
+  "target": {
+   "daily": 2,
+   "weekly": 6
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "crimes",
+  "text": "Commit {n} crimes",
+  "key": "crimes",
+  "target": {
+   "daily": 3,
+   "weekly": 15,
+   "monthly": 50
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "fish",
+  "text": "Catch {n} fish",
+  "key": "fish",
+  "target": {
+   "daily": 2,
+   "weekly": 8,
+   "monthly": 25
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "hikes",
+  "text": "Go hiking {n} times",
+  "key": "hikes",
+  "target": {
+   "daily": 3,
+   "weekly": 10
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "camps",
+  "text": "Go camping {n} times",
+  "key": "camps",
+  "target": {
+   "daily": 2,
+   "weekly": 6
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "vac",
+  "text": "Take {n} vacations",
+  "key": "vacations",
+  "target": {
+   "daily": 2,
+   "weekly": 6
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "gamble",
+  "text": "Gamble {n} times",
+  "key": "gambles",
+  "target": {
+   "daily": 5,
+   "weekly": 20
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "partners",
+  "text": "Date {n} people",
+  "key": "partners",
+  "target": {
+   "daily": 2,
+   "weekly": 8
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "viral",
+  "text": "Go viral {n} times",
+  "key": "viral",
+  "target": {
+   "daily": 1,
+   "weekly": 3
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "fence",
+  "text": "Fence {n} stolen items",
+  "key": "fenced",
+  "target": {
+   "daily": 1,
+   "weekly": 4
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "emig",
+  "text": "Emigrate {n} times",
+  "key": "emigrated",
+  "target": {
+   "daily": 1,
+   "weekly": 3
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "props",
+  "text": "Buy {n} properties",
+  "key": "properties_bought",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "amends",
+  "text": "Make amends {n} times",
+  "key": "amends",
+  "target": {
+   "weekly": 2,
+   "monthly": 5
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "biz",
+  "text": "Start {n} businesses",
+  "key": "businesses",
+  "target": {
+   "daily": 1,
+   "weekly": 3
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "titles",
+  "text": "Win {n} championships or belts",
+  "key": "titles",
+  "target": {
+   "weekly": 1,
+   "monthly": 4
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "awards",
+  "text": "Win {n} acting awards",
+  "key": "awards",
+  "target": {
+   "monthly": 2
+  },
+  "periods": [
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "habits_beaten",
+  "text": "Beat {n} habits",
+  "key": "habits_beaten",
+  "target": {
+   "weekly": 1,
+   "monthly": 3
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "scars_healed",
+  "text": "Heal {n} scars",
+  "key": "scars_healed",
+  "target": {
+   "weekly": 1,
+   "monthly": 3
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count"
+ },
+ {
+  "id": "r_age",
+  "text": "Reach age {n} in one life",
+  "key": "age",
+  "target": {
+   "daily": 70,
+   "weekly": 90,
+   "monthly": 100
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_money",
+  "text": "Reach a net worth of {n} in one life",
+  "key": "net_worth",
+  "target": {
+   "daily": 250000,
+   "weekly": 2000000,
+   "monthly": 25000000
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach",
+  "money": true
+ },
+ {
+  "id": "r_fame",
+  "text": "Reach {n} fame in one life",
+  "key": "fame",
+  "target": {
+   "daily": 30,
+   "weekly": 70,
+   "monthly": 95
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_kids",
+  "text": "Have {n} children in one life",
+  "key": "children",
+  "target": {
+   "daily": 2,
+   "weekly": 5
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_rank",
+  "text": "Reach rank {n} in any special career",
+  "key": "best_rank",
+  "target": {
+   "daily": 1,
+   "weekly": 3,
+   "monthly": 5
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_props",
+  "text": "Own {n} properties at once",
+  "key": "properties",
+  "target": {
+   "weekly": 3,
+   "monthly": 8
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_cult",
+  "text": "Lead a cult of {n} members",
+  "key": "cult_members",
+  "target": {
+   "weekly": 100,
+   "monthly": 1000
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_zoo",
+  "text": "Keep {n} kinds of animals in a zoo",
+  "key": "zoo_species",
+  "target": {
+   "weekly": 5,
+   "monthly": 10
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_biz",
+  "text": "Build a company worth {n}",
+  "key": "business_value",
+  "target": {
+   "weekly": 1000000,
+   "monthly": 20000000
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach",
+  "money": true
+ },
+ {
+  "id": "r_journal",
+  "text": "Spot {n} kinds of wildlife in one life",
+  "key": "journal_species",
+  "target": {
+   "daily": 4,
+   "weekly": 10,
+   "monthly": 20
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_prison",
+  "text": "Survive {n} years in prison in one life",
+  "key": "prison_total",
+  "target": {
+   "daily": 2,
+   "weekly": 8
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_gritty",
+  "text": "Reach age {n} on Gritty",
+  "key": "gritty_age",
+  "target": {
+   "daily": 40,
+   "weekly": 70,
+   "monthly": 90
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_karma",
+  "text": "Reach {n} karma in one life",
+  "key": "karma",
+  "target": {
+   "daily": 40,
+   "weekly": 70,
+   "monthly": 90
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_smarts",
+  "text": "Reach {n}% smarts",
+  "key": "smarts",
+  "target": {
+   "daily": 90,
+   "weekly": 100
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_gen",
+  "text": "Reach generation {n}",
+  "key": "generation",
+  "target": {
+   "weekly": 2,
+   "monthly": 4
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_heat",
+  "text": "Reach {n} heat",
+  "key": "heat",
+  "target": {
+   "daily": 50,
+   "weekly": 90
+  },
+  "periods": [
+   "daily",
+   "weekly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "r_careers",
+  "text": "Try {n} special careers in one life",
+  "key": "careers_tried",
+  "target": {
+   "weekly": 2,
+   "monthly": 4
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "reach"
+ },
+ {
+  "id": "paths",
+  "text": "Start {n} lives on a Life Path",
+  "key": "life_paths",
+  "target": {
+   "weekly": 2,
+   "monthly": 6
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "path_years",
+  "text": "Live {n} years as something other than human",
+  "key": "path_years",
+  "target": {
+   "weekly": 40,
+   "monthly": 150
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "potions",
+  "text": "Brew {n} potions",
+  "key": "potions_brewed",
+  "target": {
+   "weekly": 6,
+   "monthly": 20
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "feeds",
+  "text": "Feed {n} times as a vampire",
+  "key": "feeds",
+  "target": {
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "saves",
+  "text": "Save people {n} times as a hero",
+  "key": "saves",
+  "target": {
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "spells",
+  "text": "Cast {n} spells",
+  "key": "spells",
+  "target": {
+   "weekly": 6,
+   "monthly": 20
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "world",
+  "text": "Live through {n} world events",
+  "key": "world_events",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "heir",
+  "text": "Open {n} daily heirlooms",
+  "key": "heirlooms",
+  "target": {
+   "weekly": 4,
+   "monthly": 14
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "move",
+  "text": "Move to a new city {n} times",
+  "key": "relocations",
+  "target": {
+   "weekly": 1,
+   "monthly": 3
+  },
+  "periods": [
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "licenses",
+  "text": "Earn {n} licenses",
+  "key": "licenses_earned",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 10
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 5
+ },
+ {
+  "id": "v6_gifts",
+  "text": "Give {n} gifts or loans to loved ones",
+  "key": "generous",
+  "target": {
+   "daily": 3,
+   "weekly": 10,
+   "monthly": 30
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_buy",
+  "text": "Buy {n} items in the shops",
+  "key": "purchases",
+  "target": {
+   "daily": 2,
+   "weekly": 8,
+   "monthly": 25
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_posts",
+  "text": "Post {n} times on social media",
+  "key": "posts",
+  "target": {
+   "daily": 5,
+   "weekly": 25,
+   "monthly": 80
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_tickets",
+  "text": "Buy {n} lottery tickets",
+  "key": "lottery_tickets",
+  "target": {
+   "daily": 3,
+   "weekly": 15,
+   "monthly": 50
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_wins",
+  "text": "Win {n} casino bets",
+  "key": "gamble_wins",
+  "target": {
+   "daily": 2,
+   "weekly": 8,
+   "monthly": 25
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_deals",
+  "text": "Make {n} deals as a dealer",
+  "key": "deals",
+  "target": {
+   "daily": 5,
+   "weekly": 20,
+   "monthly": 60
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_babies",
+  "text": "Have or adopt {n} children",
+  "key": "babies",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_vacations",
+  "text": "Take {n} vacations",
+  "key": "vacations",
+  "target": {
+   "daily": 1,
+   "weekly": 5,
+   "monthly": 15
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_belts",
+  "text": "Earn {n} martial arts belts",
+  "key": "belts_earned",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_fights",
+  "text": "Win {n} fights",
+  "key": "fights_won",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 12
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ },
+ {
+  "id": "v6_burgle",
+  "text": "Pull off {n} burglaries",
+  "key": "burglaries",
+  "target": {
+   "daily": 1,
+   "weekly": 4,
+   "monthly": 10
+  },
+  "periods": [
+   "daily",
+   "weekly",
+   "monthly"
+  ],
+  "kind": "count",
+  "v": 6
+ }
+]

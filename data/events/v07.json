@@ -1,0 +1,5853 @@
+[
+ {
+  "id": "v07.health.symptoms",
+  "icon": "🩺",
+  "title": "Something is off",
+  "text": "For several days, ordinary tasks have felt harder than they should. It could be nothing, or it could be the first clue that your body needs attention.",
+  "conditions": {
+   "age": [
+    12,
+    90
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Book a medical checkup",
+    "outcomes": [
+     {
+      "text": "The appointment catches a problem early enough to make a plan.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "stress": -5,
+       "money": -180
+      },
+      "thread": {
+       "kind": "illness",
+       "title": "The checkup I did not postpone",
+       "memory": "I listened when my body stopped feeling ordinary.",
+       "strength": 48,
+       "tags": [
+        "health",
+        "early-care"
+       ]
+      }
+     },
+     {
+      "text": "The tests are reassuring. The relief is almost physical.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -6,
+       "money": -180
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rest and watch it for a week",
+    "outcomes": [
+     {
+      "text": "Sleep, water and a slower schedule are enough. The strange fatigue lifts.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "stress": -3
+      }
+     },
+     {
+      "text": "The feeling lingers. Waiting did not answer the question.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 4
+      },
+      "flags": [
+       "health_followup_needed"
+      ],
+      "schedule": {
+       "event": "v07.health.symptoms_return",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push through it",
+    "outcomes": [
+     {
+      "text": "Adrenaline carries the week, but the crash arrives on the weekend.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 5
+      }
+     },
+     {
+      "text": "For once, stubbornness gets lucky and the feeling passes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.health.symptoms_return",
+  "icon": "📋",
+  "title": "The symptom returns",
+  "text": "The problem you hoped would disappear has returned clearly enough that ignoring it now feels like a choice.",
+  "conditions": {
+   "age": [
+    13,
+    92
+   ],
+   "flags": [
+    "health_followup_needed"
+   ]
+  },
+  "weight": 0.01,
+  "choices": [
+   {
+    "label": "Get properly evaluated",
+    "outcomes": [
+     {
+      "text": "A clinician takes the history seriously and gives you a treatment plan.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "stress": -5,
+       "money": -260
+      },
+      "unflags": [
+       "health_followup_needed"
+      ],
+      "thread": {
+       "kind": "illness",
+       "title": "The symptom that came back",
+       "memory": "A problem returned until I finally gave it proper attention.",
+       "strength": 58,
+       "tags": [
+        "health",
+        "followup"
+       ]
+      }
+     },
+     {
+      "text": "The answer is not immediate, but the next test is finally the right one.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "money": -260
+      },
+      "unflags": [
+       "health_followup_needed"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Ask for a second opinion",
+    "outcomes": [
+     {
+      "text": "A second set of eyes spots something the first visit missed.",
+      "weight": 1,
+      "effects": {
+       "health": 4,
+       "smarts": 1,
+       "money": -420
+      },
+      "unflags": [
+       "health_followup_needed"
+      ]
+     },
+     {
+      "text": "The second opinion agrees with the first: monitor it, but do not panic.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "money": -420
+      },
+      "unflags": [
+       "health_followup_needed"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Keep delaying",
+    "outcomes": [
+     {
+      "text": "The uncertainty becomes its own source of stress.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 8
+      }
+     },
+     {
+      "text": "It settles again, but you know the question is still waiting.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.health.second_opinion",
+  "icon": "🧑‍⚕️",
+  "title": "Two doctors, two answers",
+  "text": "A treatment plan does not sit right with you. Another clinic is willing to review the case, but it means another bill and another round of waiting.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "min_money": 500
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Get the second opinion",
+    "outcomes": [
+     {
+      "text": "The second doctor changes the plan and explains why. You leave with more confidence than certainty.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "stress": -5,
+       "money": -450
+      }
+     },
+     {
+      "text": "They reach the same conclusion independently. That agreement is calming.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "money": -450
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask your current doctor more questions",
+    "outcomes": [
+     {
+      "text": "The extra conversation clears up what the rushed appointment did not.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": -4
+      }
+     },
+     {
+      "text": "The explanation still feels thin. You leave frustrated.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay with the original plan",
+    "outcomes": [
+     {
+      "text": "The treatment begins to help exactly as expected.",
+      "weight": 1,
+      "effects": {
+       "health": 4,
+       "stress": -2
+      }
+     },
+     {
+      "text": "Side effects make the plan harder than the diagnosis did.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 5
+      },
+      "flags": [
+       "med_side_effect"
+      ]
+     }
+    ]
+   }
+  ],
+  "cooldown": 9
+ },
+ {
+  "id": "v07.health.side_effect",
+  "icon": "💊",
+  "title": "The cure has a cost",
+  "text": "A new medication is helping one problem while creating another: dizziness, stomach trouble and a foggy afternoon.",
+  "conditions": {
+   "age": [
+    15,
+    90
+   ],
+   "flags": [
+    "med_side_effect"
+   ]
+  },
+  "weight": 4,
+  "choices": [
+   {
+    "label": "Call the prescriber",
+    "outcomes": [
+     {
+      "text": "The dose is adjusted and the side effects ease within days.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "stress": -4
+      },
+      "unflags": [
+       "med_side_effect"
+      ]
+     },
+     {
+      "text": "You switch medications. The transition is annoying, but manageable.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": -2,
+       "money": -90
+      },
+      "unflags": [
+       "med_side_effect"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Tough it out for now",
+    "outcomes": [
+     {
+      "text": "Your body adapts after an unpleasant week.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": 2
+      },
+      "unflags": [
+       "med_side_effect"
+      ]
+     },
+     {
+      "text": "The side effects get worse and start interfering with work and sleep.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stop taking it without asking",
+    "outcomes": [
+     {
+      "text": "The original symptoms return quickly.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "stress": 5
+      },
+      "unflags": [
+       "med_side_effect"
+      ]
+     },
+     {
+      "text": "You feel better at first, then worry about whether stopping suddenly was smart.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "unflags": [
+       "med_side_effect"
+      ]
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.health.injury_old",
+  "icon": "🩹",
+  "title": "An old injury speaks up",
+  "text": "A familiar ache returns after a long day. It is not dramatic, but your body remembers exactly where you were hurt.",
+  "conditions": {
+   "age": [
+    18,
+    92
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Take recovery seriously",
+    "outcomes": [
+     {
+      "text": "You scale back, do the exercises and wake up moving better.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "stress": -3
+      },
+      "thread": {
+       "kind": "injury",
+       "title": "What my body remembers",
+       "memory": "An old ache taught me that recovery is maintenance, not a finish line.",
+       "strength": 44,
+       "tags": [
+        "injury",
+        "recovery"
+       ]
+      }
+     },
+     {
+      "text": "Rest helps, but the stiffness is stubborn enough to schedule a follow-up.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the day unchanged",
+    "outcomes": [
+     {
+      "text": "The ache fades once you warm up. You got away with it.",
+      "weight": 1,
+      "effects": {
+       "health": 1
+      }
+     },
+     {
+      "text": "By evening, compensation has turned one sore spot into three.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it as an excuse for a quiet day",
+    "outcomes": [
+     {
+      "text": "A quiet day becomes exactly what you needed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -5
+      }
+     },
+     {
+      "text": "You rest physically and spiral mentally about getting older.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.mental.panic",
+  "icon": "💓",
+  "title": "A wave with no warning",
+  "text": "Your heart races, your breathing goes shallow and the room suddenly feels too small. Nothing obvious is happening around you, but your body has sounded an alarm.",
+  "conditions": {
+   "age": [
+    13,
+    85
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Ground yourself and breathe slowly",
+    "outcomes": [
+     {
+      "text": "The wave peaks and passes. You stay where you are and let your nervous system catch up.",
+      "weight": 1,
+      "effects": {
+       "stress": -7,
+       "happiness": 1
+      },
+      "thread": {
+       "kind": "recovery",
+       "title": "The first time I rode out the wave",
+       "memory": "I learned that a frightening body alarm could pass without controlling the whole day.",
+       "strength": 50,
+       "tags": [
+        "mental-health",
+        "panic"
+       ]
+      }
+     },
+     {
+      "text": "It takes longer than you hoped, but you get through it without running.",
+      "weight": 1,
+      "effects": {
+       "stress": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call someone you trust",
+    "outcomes": [
+     {
+      "text": "A familiar voice helps the room become ordinary again.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "They mean well but do not understand. You still feel less alone afterward.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend nothing happened",
+    "outcomes": [
+     {
+      "text": "You finish what you were doing, then feel wrung out for the rest of the day.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The fear of another episode becomes louder than the episode itself.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 7
+      },
+      "flags": [
+       "mental_followup"
+      ],
+      "schedule": {
+       "event": "v07.mental.followup",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 10
+ },
+ {
+  "id": "v07.mental.followup",
+  "icon": "🫂",
+  "title": "The hard conversation",
+  "text": "After another difficult spell, someone close to you gently asks whether you have considered getting support instead of carrying it alone.",
+  "conditions": {
+   "age": [
+    14,
+    88
+   ],
+   "flags": [
+    "mental_followup"
+   ]
+  },
+  "weight": 0.01,
+  "choices": [
+   {
+    "label": "Try therapy",
+    "outcomes": [
+     {
+      "text": "The first session is mostly history and awkward honesty, but it feels like a beginning.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "happiness": 3,
+       "money": -140
+      },
+      "unflags": [
+       "mental_followup"
+      ],
+      "thread": {
+       "kind": "recovery",
+       "title": "I asked for support",
+       "memory": "I stopped treating support as something I had to earn by getting worse first.",
+       "strength": 62,
+       "tags": [
+        "therapy",
+        "recovery"
+       ]
+      }
+     },
+     {
+      "text": "The first therapist is not a good fit. You decide that one mismatch is not the same as treatment failing.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "money": -140
+      },
+      "unflags": [
+       "mental_followup"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Talk to your regular doctor first",
+    "outcomes": [
+     {
+      "text": "The doctor screens carefully and helps you understand the options.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": -4,
+       "money": -90
+      },
+      "unflags": [
+       "mental_followup"
+      ]
+     },
+     {
+      "text": "You leave with a referral and a shorter list of unknowns.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "money": -90
+      },
+      "unflags": [
+       "mental_followup"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Say you are not ready",
+    "outcomes": [
+     {
+      "text": "They accept the answer and remind you the offer stands.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
+      },
+      "unflags": [
+       "mental_followup"
+      ]
+     },
+     {
+      "text": "You get defensive, then regret the argument later.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 5
+      },
+      "unflags": [
+       "mental_followup"
+      ]
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.mental.burnout",
+  "icon": "🪫",
+  "title": "Everything feels urgent",
+  "text": "Emails, errands and obligations have blurred together. You are still functioning, but every small request now feels like someone adding a brick to your backpack.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "employed": true,
+   "min_stat": {
+    "stress": 60
+   }
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Take a real day off",
+    "outcomes": [
+     {
+      "text": "One unscheduled day does not solve your life, but your shoulders finally drop.",
+      "weight": 1,
+      "effects": {
+       "stress": -10,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "You spend half the day feeling guilty, then realize the world kept turning.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for workload changes",
+    "outcomes": [
+     {
+      "text": "Your boss redistributes a project before it becomes a crisis.",
+      "weight": 1,
+      "effects": {
+       "stress": -8,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The answer is polite and useless. At least you now know where you stand.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Work even harder to get ahead",
+    "outcomes": [
+     {
+      "text": "You clear the backlog and feel unstoppable for approximately six hours.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "You make an exhausted mistake that creates even more work.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.mental.grief_day",
+  "icon": "🕯️",
+  "title": "A date on the calendar",
+  "text": "You realize why today felt strange before breakfast: it is an anniversary connected to someone you lost.",
+  "conditions": {
+   "age": [
+    12,
+    100
+   ],
+   "flags": [
+    "lost_close_person"
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Mark the day quietly",
+    "outcomes": [
+     {
+      "text": "You make space for the memory without demanding a particular emotion from yourself.",
+      "weight": 1,
+      "effects": {
+       "stress": -5,
+       "happiness": 1
+      },
+      "thread": {
+       "kind": "grief",
+       "title": "The date I still notice",
+       "memory": "Some anniversaries remained in my body even when I was not counting the years.",
+       "strength": 60,
+       "tags": [
+        "grief",
+        "anniversary"
+       ]
+      }
+     },
+     {
+      "text": "The ritual is heavier than expected, but still worth doing.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spend time with family or friends",
+    "outcomes": [
+     {
+      "text": "Someone tells a story you had never heard. For a moment, the person feels present in the room.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -4
+      }
+     },
+     {
+      "text": "The gathering is messy and emotional, which turns out to be honest rather than bad.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Treat it like any other day",
+    "outcomes": [
+     {
+      "text": "Routine carries you through. The memory waits quietly in the background.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "You snap at someone over something tiny and only later understand why.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 12
+ },
+ {
+  "id": "v07.health.insurance",
+  "icon": "📄",
+  "title": "Not medically necessary",
+  "text": "A letter says the treatment your doctor recommended is not covered as submitted. The phrase “not medically necessary” appears three times.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Appeal the decision",
+    "outcomes": [
+     {
+      "text": "A corrected code and a stubborn phone call get the claim approved.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The appeal drags on, but you reduce the bill enough to matter.",
+      "weight": 1,
+      "effects": {
+       "money": -280,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay out of pocket",
+    "outcomes": [
+     {
+      "text": "It hurts the bank account, but treatment starts on time.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "health": 3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The bill is larger than expected and follows you for months.",
+      "weight": 1,
+      "effects": {
+       "money": -1500,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Delay treatment",
+    "outcomes": [
+     {
+      "text": "The delay does not change the outcome, but the waiting is miserable.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     },
+     {
+      "text": "The condition worsens enough that the later care is harder.",
+      "weight": 1,
+      "effects": {
+       "health": -6,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.recovery.anniversary",
+  "icon": "🌱",
+  "title": "A quieter anniversary",
+  "text": "You notice that a difficult chapter—an addiction, illness, injury or mental-health crisis—is no longer the first thing you think about every morning.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Acknowledge the work it took",
+    "outcomes": [
+     {
+      "text": "You let yourself be proud without pretending recovery was linear.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": -5
+      },
+      "thread": {
+       "kind": "recovery",
+       "title": "The year life became larger again",
+       "memory": "Recovery stopped being the whole story and became one chapter of it.",
+       "strength": 55,
+       "tags": [
+        "recovery",
+        "milestone"
+       ]
+      }
+     },
+     {
+      "text": "Pride brings unexpected grief for the time the struggle took from you.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help someone earlier in the process",
+    "outcomes": [
+     {
+      "text": "Listening without lecturing helps both of you.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "You realize their story is not yours and step back before becoming overinvolved.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do nothing special",
+    "outcomes": [
+     {
+      "text": "Ordinary life is the celebration. You enjoy that thought.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "You barely notice the date until bedtime, which might be its own kind of progress.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 11
+ },
+ {
+  "id": "v07.health.family_worry",
+  "icon": "❤️‍🩹",
+  "title": "They noticed too",
+  "text": "A relative tells you, carefully, that you have seemed exhausted and unlike yourself lately. Their concern lands somewhere between comforting and irritating.",
+  "conditions": {
+   "age": [
+    16,
+    88
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Tell them what has been going on",
+    "outcomes": [
+     {
+      "text": "Saying it plainly turns vague worry into something the two of you can actually discuss.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -4
+      }
+     },
+     {
+      "text": "You get emotional halfway through the explanation. They stay anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Thank them, but keep details private",
+    "outcomes": [
+     {
+      "text": "They respect the boundary and still offer practical help.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "They back off, though the concern does not quite leave their face.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Insist you are completely fine",
+    "outcomes": [
+     {
+      "text": "They drop the subject. You immediately feel guilty for biting their head off.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The denial almost convinces you too, at least until the next bad day.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.home.pipe",
+  "icon": "🚰",
+  "title": "Water where water should not be",
+  "text": "You step into the hallway and your sock finds a cold puddle. A pipe inside the wall has chosen today to become a fountain.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Call an emergency plumber",
+    "outcomes": [
+     {
+      "text": "The leak is stopped before it reaches the electrical work.",
+      "weight": 1,
+      "effects": {
+       "money": -850,
+       "stress": -4
+      },
+      "flags": [
+       "home_pipe_repaired"
+      ],
+      "schedule": {
+       "event": "v07.home.wall_open",
+       "years": [
+        1,
+        2
+       ]
+      },
+      "thread": {
+       "kind": "home",
+       "title": "The night the wall started leaking",
+       "memory": "Homeownership once meant standing in a hallway at midnight listening for water.",
+       "strength": 48,
+       "tags": [
+        "home",
+        "repair"
+       ]
+      }
+     },
+     {
+      "text": "The plumber fixes the pipe but finds older corrosion nearby.",
+      "weight": 1,
+      "effects": {
+       "money": -1250,
+       "stress": 3
+      },
+      "flags": [
+       "home_pipe_repaired"
+      ],
+      "schedule": {
+       "event": "v07.home.wall_open",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try to patch it yourself",
+    "outcomes": [
+     {
+      "text": "You shut off the water and make a surprisingly competent temporary repair.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "money": -120,
+       "stress": 1
+      }
+     },
+     {
+      "text": "Your patch redirects the leak into a worse place. Professional help now costs more.",
+      "weight": 1,
+      "effects": {
+       "money": -1650,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put a bucket under it for now",
+    "outcomes": [
+     {
+      "text": "The bucket works until morning. Sleep does not.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     },
+     {
+      "text": "The ceiling below stains before you admit the bucket was not a plan.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.home.wall_open",
+  "icon": "🧱",
+  "title": "What was behind the wall",
+  "text": "The repaired section is opened again for finishing work, and the contractor finds something nobody expected.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true,
+   "flags": [
+    "home_pipe_repaired"
+   ]
+  },
+  "weight": 0.01,
+  "choices": [
+   {
+    "label": "Fix everything while the wall is open",
+    "outcomes": [
+     {
+      "text": "It is expensive, but the hidden problem is gone instead of waiting for another year.",
+      "weight": 1,
+      "effects": {
+       "money": -1100,
+       "happiness": 2,
+       "stress": -3
+      },
+      "unflags": [
+       "home_pipe_repaired"
+      ]
+     },
+     {
+      "text": "The contractor finds less damage than feared and the final bill is merciful.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "happiness": 3
+      },
+      "unflags": [
+       "home_pipe_repaired"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Only repair what failed",
+    "outcomes": [
+     {
+      "text": "The minimum repair holds. You make a note to budget for the rest.",
+      "weight": 1,
+      "effects": {
+       "money": -350,
+       "stress": 1
+      },
+      "unflags": [
+       "home_pipe_repaired"
+      ]
+     },
+     {
+      "text": "The untouched section immediately becomes a new source of worry.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 4
+      },
+      "unflags": [
+       "home_pipe_repaired"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Get another contractor to look",
+    "outcomes": [
+     {
+      "text": "The second estimate is lower and better explained.",
+      "weight": 1,
+      "effects": {
+       "money": -450,
+       "smarts": 1,
+       "stress": -2
+      },
+      "unflags": [
+       "home_pipe_repaired"
+      ]
+     },
+     {
+      "text": "The second contractor agrees with the first. At least the bad news is consistent.",
+      "weight": 1,
+      "effects": {
+       "money": -550,
+       "stress": 2
+      },
+      "unflags": [
+       "home_pipe_repaired"
+      ]
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.home.neighbor_noise",
+  "icon": "🏘️",
+  "title": "Bass through the wall",
+  "text": "Your neighbor has discovered a speaker capable of shaking framed photographs. It is 1:14 in the morning.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Knock and ask politely",
+    "outcomes": [
+     {
+      "text": "They look embarrassed, turn it down and later bring over an apology snack.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -5
+      },
+      "thread": {
+       "kind": "neighbor",
+       "title": "The neighbor with the enormous speaker",
+       "memory": "One awkward midnight conversation became the beginning of knowing the people next door.",
+       "strength": 42,
+       "tags": [
+        "neighbor",
+        "home"
+       ]
+      }
+     },
+     {
+      "text": "They turn it down for exactly twenty minutes, then forget the conversation happened.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "File a noise complaint",
+    "outcomes": [
+     {
+      "text": "The music stops quickly. Eye contact on the driveway becomes complicated.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "karma": -1
+      }
+     },
+     {
+      "text": "The complaint starts a petty little cold war over bins, parking and hedges.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "flags": [
+       "neighbor_feud"
+      ],
+      "schedule": {
+       "event": "v07.home.neighbor_truce",
+       "years": [
+        1,
+        3
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy earplugs and ignore it",
+    "outcomes": [
+     {
+      "text": "Cheap foam saves the night and maybe the relationship.",
+      "weight": 1,
+      "effects": {
+       "money": -15,
+       "stress": -3
+      }
+     },
+     {
+      "text": "You sleep badly and spend breakfast composing arguments you never deliver.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.home.neighbor_truce",
+  "icon": "☕",
+  "title": "A peace offering",
+  "text": "After months of ridiculous tension, the neighbor appears with coffee and an awkward apology about how far the feud went.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true,
+   "flags": [
+    "neighbor_feud"
+   ]
+  },
+  "weight": 0.01,
+  "choices": [
+   {
+    "label": "Accept the reset",
+    "outcomes": [
+     {
+      "text": "You both laugh at the pettiness. The street feels lighter afterward.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -6
+      },
+      "unflags": [
+       "neighbor_feud"
+      ],
+      "thread": {
+       "kind": "neighbor",
+       "title": "The feud that became a joke",
+       "memory": "A petty neighborhood war ended because someone finally knocked on a door with coffee.",
+       "strength": 45,
+       "tags": [
+        "neighbor",
+        "reconciliation"
+       ]
+      }
+     },
+     {
+      "text": "The truce is cautious, but genuine enough to stop the nonsense.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -4
+      },
+      "unflags": [
+       "neighbor_feud"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Accept, but keep your distance",
+    "outcomes": [
+     {
+      "text": "Civility returns without pretending you are suddenly friends.",
+      "weight": 1,
+      "effects": {
+       "stress": -4
+      },
+      "unflags": [
+       "neighbor_feud"
+      ]
+     },
+     {
+      "text": "They seem disappointed, but respect the boundary.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "unflags": [
+       "neighbor_feud"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Refuse to let it go",
+    "outcomes": [
+     {
+      "text": "The coffee leaves with them. So does the easiest chance to end the feud.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 5
+      }
+     },
+     {
+      "text": "You make your point and immediately wonder why winning feels this tiring.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.home.hoa",
+  "icon": "📬",
+  "title": "The envelope with the tiny font",
+  "text": "The neighborhood association has opinions about your front yard, mailbox and apparently the exact emotional tone of your fence.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Fix the cited issue",
+    "outcomes": [
+     {
+      "text": "A small weekend project makes the letter disappear.",
+      "weight": 1,
+      "effects": {
+       "money": -240,
+       "stress": -3
+      }
+     },
+     {
+      "text": "The repair costs more than it should, but the inspection passes.",
+      "weight": 1,
+      "effects": {
+       "money": -620,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Challenge the citation",
+    "outcomes": [
+     {
+      "text": "You find the bylaw they misread and the notice is withdrawn.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The board has the rule on its side. You lose an evening and still have to fix it.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "Nothing happens for months. You start to think the threat was mostly stationery.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "A fine arrives with a second fine attached to it.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "stress": 7
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 5
+ },
+ {
+  "id": "v07.home.mold",
+  "icon": "🦠",
+  "title": "A smell after rain",
+  "text": "One room develops a damp, earthy smell whenever it rains. Moving the furniture reveals a dark patch near the baseboard.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Hire an inspector",
+    "outcomes": [
+     {
+      "text": "The source is a small leak and the remediation is contained.",
+      "weight": 1,
+      "effects": {
+       "money": -780,
+       "health": 2,
+       "stress": -4
+      }
+     },
+     {
+      "text": "The inspector finds a larger moisture problem behind the wall.",
+      "weight": 1,
+      "effects": {
+       "money": -1400,
+       "stress": 5
+      },
+      "flags": [
+       "home_mold_follow"
+      ],
+      "schedule": {
+       "event": "v07.home.mold_follow",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Clean it yourself",
+    "outcomes": [
+     {
+      "text": "You remove the visible patch and fix the loose seal causing it.",
+      "weight": 1,
+      "effects": {
+       "money": -90,
+       "smarts": 1,
+       "health": 1
+      }
+     },
+     {
+      "text": "The spot returns twice as large after the next storm.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 5
+      },
+      "flags": [
+       "home_mold_follow"
+      ],
+      "schedule": {
+       "event": "v07.home.mold_follow",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Close the door and deal with it later",
+    "outcomes": [
+     {
+      "text": "The smell stays contained long enough to become easy to rationalize.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "The dampness spreads and someone in the house develops a cough.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 9
+ },
+ {
+  "id": "v07.home.mold_follow",
+  "icon": "🛠️",
+  "title": "The damp came back",
+  "text": "The moisture problem returns after another season. This time there is no pretending it was only a stain.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true,
+   "flags": [
+    "home_mold_follow"
+   ]
+  },
+  "weight": 0.01,
+  "choices": [
+   {
+    "label": "Do the full remediation",
+    "outcomes": [
+     {
+      "text": "Walls come down, fans run for days and the house finally smells normal again.",
+      "weight": 1,
+      "effects": {
+       "money": -2400,
+       "health": 4,
+       "stress": -5
+      },
+      "unflags": [
+       "home_mold_follow"
+      ]
+     },
+     {
+      "text": "The work reveals one more repair, but solving it now prevents a much bigger bill.",
+      "weight": 1,
+      "effects": {
+       "money": -3200,
+       "health": 3,
+       "stress": -2
+      },
+      "unflags": [
+       "home_mold_follow"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Get multiple bids",
+    "outcomes": [
+     {
+      "text": "Competition knocks hundreds off the price without cutting corners.",
+      "weight": 1,
+      "effects": {
+       "money": -1750,
+       "smarts": 2,
+       "stress": -3
+      },
+      "unflags": [
+       "home_mold_follow"
+      ]
+     },
+     {
+      "text": "All three bids are awful in roughly the same way.",
+      "weight": 1,
+      "effects": {
+       "money": -2100,
+       "stress": 3
+      },
+      "unflags": [
+       "home_mold_follow"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Sell before it gets worse",
+    "outcomes": [
+     {
+      "text": "The buyer catches it during inspection and renegotiates hard.",
+      "weight": 1,
+      "effects": {
+       "money": -3500,
+       "stress": 5
+      },
+      "unflags": [
+       "home_mold_follow"
+      ]
+     },
+     {
+      "text": "You disclose the issue, price accordingly and walk away relieved.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "happiness": 3,
+       "stress": -4
+      },
+      "unflags": [
+       "home_mold_follow"
+      ]
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.home.housewarming",
+  "icon": "🪴",
+  "title": "The house finally feels inhabited",
+  "text": "The boxes are mostly gone and the rooms are beginning to look like decisions instead of temporary storage.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Throw a housewarming party",
+    "outcomes": [
+     {
+      "text": "People spill into the kitchen, someone starts music and the place finally sounds lived in.",
+      "weight": 1,
+      "effects": {
+       "money": -350,
+       "happiness": 8,
+       "stress": -2
+      },
+      "thread": {
+       "kind": "home",
+       "title": "The first crowded night here",
+       "memory": "The house became a home when people I cared about filled it with noise.",
+       "strength": 50,
+       "tags": [
+        "home",
+        "family"
+       ]
+      }
+     },
+     {
+      "text": "The party is chaotic, one glass breaks and everyone stays later than planned.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "happiness": 7,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make one room exactly yours",
+    "outcomes": [
+     {
+      "text": "A reading chair, a lamp and a few deliberate choices change the whole mood.",
+      "weight": 1,
+      "effects": {
+       "money": -450,
+       "happiness": 6,
+       "stress": -3
+      }
+     },
+     {
+      "text": "You overspend a little, but the room makes you smile every time you pass it.",
+      "weight": 1,
+      "effects": {
+       "money": -950,
+       "happiness": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Save the money for repairs",
+    "outcomes": [
+     {
+      "text": "The responsible choice is not glamorous, but the emergency fund feels good.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "You save the cash and immediately get annoyed by the blank walls.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.home.storm",
+  "icon": "🌧️",
+  "title": "The storm tests the house",
+  "text": "Wind drives rain sideways and the lights flicker hard enough to make everyone stop talking.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Check the roof and windows safely",
+    "outcomes": [
+     {
+      "text": "A loose shutter and one small leak are the worst of it.",
+      "weight": 1,
+      "effects": {
+       "money": -260,
+       "stress": -3
+      }
+     },
+     {
+      "text": "You catch a window seal failing before it floods the room.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay inside and wait it out",
+    "outcomes": [
+     {
+      "text": "The house groans all night and holds.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "A branch lands on the fence before dawn.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invite the neighbors over if their power is out",
+    "outcomes": [
+     {
+      "text": "Extension cords, candles and shared food turn a miserable night into a neighborhood story.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 6,
+       "money": -120
+      },
+      "thread": {
+       "kind": "neighbor",
+       "title": "The blackout night",
+       "memory": "A storm turned neighboring houses into one temporary household.",
+       "strength": 50,
+       "tags": [
+        "neighbor",
+        "storm"
+       ]
+      }
+     },
+     {
+      "text": "More people show up than expected. It is crowded, loud and strangely comforting.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 1,
+       "money": -220
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.home.offer",
+  "icon": "🏷️",
+  "title": "An unsolicited offer",
+  "text": "A buyer sends a surprisingly serious offer for your house even though it is not listed.",
+  "conditions": {
+   "age": [
+    21,
+    100
+   ],
+   "home_owned": true
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Decline without thinking twice",
+    "outcomes": [
+     {
+      "text": "You realize the house means more to you than the number on the page.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "thread": {
+       "kind": "home",
+       "title": "The offer I turned down",
+       "memory": "Someone tried to put a number on the house, and I learned what the place meant to me.",
+       "strength": 46,
+       "tags": [
+        "home",
+        "money"
+       ]
+      }
+     },
+     {
+      "text": "You decline, then spend a week wondering whether you just walked away from perfect timing.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "The buyer raises the offer enough to make the decision genuinely difficult.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 1
+      },
+      "flags": [
+       "home_buyer_return"
+      ],
+      "schedule": {
+       "event": "v07.home.offer_return",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "They disappear the moment you counter. Apparently the “serious” offer had limits.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it as a reason to evaluate the house",
+    "outcomes": [
+     {
+      "text": "An appraisal shows you have built more equity than you realized.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1,
+       "money": -250
+      }
+     },
+     {
+      "text": "The appraisal is lower than the offer, which makes the mystery even stranger.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "money": -250
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 10
+ },
+ {
+  "id": "v07.casino.comp",
+  "icon": "🎟️",
+  "title": "The casino knows your name",
+  "text": "A glossy envelope offers a free suite, dinner and a private table if you return this weekend.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "min_casino_won": 5000
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Take the comp and set a hard budget",
+    "outcomes": [
+     {
+      "text": "You enjoy the room, eat the expensive dinner and leave the table before the night changes shape.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": 350
+      },
+      "thread": {
+       "kind": "gambling",
+       "title": "The invitation with my name on it",
+       "memory": "Winning enough made the casino start treating me like a customer worth remembering.",
+       "strength": 52,
+       "tags": [
+        "gambling",
+        "casino"
+       ]
+      }
+     },
+     {
+      "text": "The budget survives, but only because you walk away during a hot streak.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2,
+       "money": 600
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take the comp and play like a VIP",
+    "outcomes": [
+     {
+      "text": "The table loves you tonight. The free room suddenly looks very cheap to the casino.",
+      "weight": 1,
+      "effects": {
+       "money": 4500,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "The hospitality was free because your losing streak was not.",
+      "weight": 1,
+      "effects": {
+       "money": -6000,
+       "happiness": -6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw the invitation away",
+    "outcomes": [
+     {
+      "text": "The envelope hits the trash unopened. Your evening stays yours.",
+      "weight": 1,
+      "effects": {
+       "stress": -3
+      }
+     },
+     {
+      "text": "You keep thinking about the offer, but not going still saves money.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.casino.shopping",
+  "icon": "🛍️",
+  "title": "House money",
+  "text": "After a strong run at the tables, your shopping list suddenly looks much less responsible and much more interesting.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "min_casino_won": 10000
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Buy something useful",
+    "outcomes": [
+     {
+      "text": "You spend part of the win on something you were going to buy anyway. Future you approves.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The “useful” purchase somehow comes with three accessories.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go on a ridiculous shopping spree",
+    "outcomes": [
+     {
+      "text": "For one afternoon, every price tag feels fictional.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "happiness": 10,
+       "stress": -2
+      },
+      "thread": {
+       "kind": "gambling",
+       "title": "The win I turned into bags",
+       "memory": "Casino money became real the moment I carried it out of a shop.",
+       "strength": 44,
+       "tags": [
+        "gambling",
+        "shopping"
+       ]
+      }
+     },
+     {
+      "text": "The bags are impressive. The bank balance the next morning is less so.",
+      "weight": 1,
+      "effects": {
+       "money": -8500,
+       "happiness": 5,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bank every cent",
+    "outcomes": [
+     {
+      "text": "The win sits untouched long enough to feel like savings instead of luck.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "You save it all and still spend the night mentally replaying the table.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.casino.chase",
+  "icon": "🎰",
+  "title": "Just get back to even",
+  "text": "A bad session leaves you staring at the balance and doing the dangerous math: one more bet could erase the whole loss.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Leave immediately",
+    "outcomes": [
+     {
+      "text": "You walk outside while still angry. Ten minutes later, leaving feels like the only win that mattered.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "happiness": 1
+      },
+      "thread": {
+       "kind": "recovery",
+       "title": "The night I stopped chasing",
+       "memory": "I learned that a loss did not become a debt I owed the casino.",
+       "strength": 55,
+       "tags": [
+        "gambling",
+        "boundary"
+       ]
+      }
+     },
+     {
+      "text": "You leave, but the unfinished feeling follows you home.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make one final small bet",
+    "outcomes": [
+     {
+      "text": "It wins, but not enough to make the night whole. You leave anyway.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "stress": 1
+      }
+     },
+     {
+      "text": "It loses too. At least the phrase “one final bet” finally sounds ridiculous.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Double down until you are even",
+    "outcomes": [
+     {
+      "text": "A lucky swing gets you back near even. Relief feels almost identical to panic.",
+      "weight": 1,
+      "effects": {
+       "money": 2200,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The hole gets much deeper before you finally stop.",
+      "weight": 1,
+      "effects": {
+       "money": -6500,
+       "happiness": -8,
+       "stress": 10
+      },
+      "thread": {
+       "kind": "gambling",
+       "title": "The night I chased the loss",
+       "memory": "Trying to force the night back to even made chance feel personal.",
+       "strength": 72,
+       "tags": [
+        "gambling",
+        "loss"
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 5
+ },
+ {
+  "id": "v07.casino.dealer",
+  "icon": "🃏",
+  "title": "A familiar dealer",
+  "text": "The dealer recognizes you before you sit down and remembers a joke you made months ago.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "min_casino_won": 2000
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Chat, but keep the game casual",
+    "outcomes": [
+     {
+      "text": "The conversation makes the table feel human instead of hypnotic.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "You talk more than you bet and leave almost exactly even.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask whether luck has been good lately",
+    "outcomes": [
+     {
+      "text": "They laugh and remind you that the building did not get this big by losing.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -1
+      }
+     },
+     {
+      "text": "They point at the ceiling cameras and say, “Luck has excellent management.”",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take recognition as a sign to bet bigger",
+    "outcomes": [
+     {
+      "text": "The bigger bet lands. For one hand, confidence looks like prophecy.",
+      "weight": 1,
+      "effects": {
+       "money": 2800,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "Recognition was not the universe sending a signal. The larger bet disappears.",
+      "weight": 1,
+      "effects": {
+       "money": -3200,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.casino.friend",
+  "icon": "🎲",
+  "title": "A friend wants a casino night",
+  "text": "Someone close to you proposes a night at the casino and promises it is “just for fun.”",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Go with a spending limit",
+    "outcomes": [
+     {
+      "text": "You laugh more than you gamble and leave with the limit mostly intact.",
+      "weight": 1,
+      "effects": {
+       "money": -180,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "The limit gets tested, but saying it out loud beforehand helps you stop.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "happiness": 4,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Suggest something else",
+    "outcomes": [
+     {
+      "text": "You end up at dinner instead and nobody has to pretend a slot machine is conversation.",
+      "weight": 1,
+      "effects": {
+       "money": -90,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "They tease you about being boring, then admit the food was better.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make it competitive",
+    "outcomes": [
+     {
+      "text": "A silly scorecard turns tiny bets into a surprisingly fun rivalry.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "happiness": 7
+      }
+     },
+     {
+      "text": "Competition pushes both of you past the amount you meant to spend.",
+      "weight": 1,
+      "effects": {
+       "money": -1200,
+       "happiness": 2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.casino.bigwin",
+  "icon": "💸",
+  "title": "The number feels unreal",
+  "text": "A large casino win hits your balance at once. For a few seconds, it looks more like a typo than money.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "min_casino_won": 50000
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Move most of it into real life",
+    "outcomes": [
+     {
+      "text": "Bills disappear, savings grow and the win becomes less exciting in exactly the right way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": -8,
+       "smarts": 2
+      },
+      "thread": {
+       "kind": "gambling",
+       "title": "The win that changed the balance",
+       "memory": "A huge gambling win became real only after I decided what it was for.",
+       "strength": 62,
+       "tags": [
+        "gambling",
+        "money"
+       ]
+      },
+      "flags": [
+       "bigwin_settled"
+      ],
+      "schedule": {
+       "event": "v07.casino.bigwin_echo",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "You save most of it and keep a small amount for fun. The split feels sane.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Celebrate hard",
+    "outcomes": [
+     {
+      "text": "Dinner, shopping and a suite make one spectacular night.",
+      "weight": 1,
+      "effects": {
+       "money": -6000,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "The celebration expands to fit the win and then keeps expanding.",
+      "weight": 1,
+      "effects": {
+       "money": -14000,
+       "happiness": 7,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put it all back into action",
+    "outcomes": [
+     {
+      "text": "The next run is somehow even better. You leave before asking for a third miracle.",
+      "weight": 1,
+      "effects": {
+       "money": 18000,
+       "happiness": 10,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The casino gets a breathtaking amount of its money back.",
+      "weight": 1,
+      "effects": {
+       "money": -30000,
+       "happiness": -10,
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.pirate.fog",
+  "icon": "🌫️",
+  "title": "Sails in the fog",
+  "text": "A lookout spots another ship as a pale shadow through thick fog. Nobody can tell whether it is merchant, navy or another crew hunting the same water.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Close the distance quietly",
+    "outcomes": [
+     {
+      "text": "It is a fat merchantman with sleepy watchmen. You take cargo before the fog lifts.",
+      "weight": 1,
+      "effects": {
+       "money": 4200,
+       "happiness": 5,
+       "stress": 2
+      },
+      "thread": {
+       "kind": "pirate",
+       "title": "The ship in the fog",
+       "memory": "We trusted a pale shape in bad visibility and found a prize instead of a patrol.",
+       "strength": 55,
+       "tags": [
+        "pirate",
+        "raid"
+       ]
+      }
+     },
+     {
+      "text": "The shadow resolves into navy colors much too late. You escape after a brutal chase.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold position and listen",
+    "outcomes": [
+     {
+      "text": "Cannon reports in the distance tell you everything you needed to know. You let someone else have that trouble.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The fog clears on an empty horizon. Whatever it was is gone.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fire a warning shot",
+    "outcomes": [
+     {
+      "text": "The other ship flees. Your crew cheers like that was the plan.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A cannon answers immediately. The fog becomes very exciting.",
+      "weight": 1,
+      "effects": {
+       "health": -6,
+       "stress": 7
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.pirate.map",
+  "icon": "🗺️",
+  "title": "Three maps, one island",
+  "text": "A fence in port lays out three treasure maps. All claim to show the same island. None agree on where the freshwater spring is.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Buy the oldest map",
+    "outcomes": [
+     {
+      "text": "The parchment is ugly but accurate. A buried chest repays the gamble many times over.",
+      "weight": 1,
+      "effects": {
+       "money": 8500,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "The island is real; the treasure was found decades ago. You keep the map as a warning.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy the newest map",
+    "outcomes": [
+     {
+      "text": "Fresh annotations lead you to a cave nobody else checked.",
+      "weight": 1,
+      "effects": {
+       "money": 5200,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "The “new” ink washes off in the rain. The seller is already gone.",
+      "weight": 1,
+      "effects": {
+       "money": -650,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Compare all three and copy the overlaps",
+    "outcomes": [
+     {
+      "text": "The shared landmarks reveal a route none of the sellers understood.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "money": 3100,
+       "happiness": 4
+      },
+      "thread": {
+       "kind": "pirate",
+       "title": "The three-map island",
+       "memory": "Three unreliable maps became useful only when I stopped trusting any single one.",
+       "strength": 48,
+       "tags": [
+        "pirate",
+        "treasure"
+       ]
+      }
+     },
+     {
+      "text": "The overlaps lead to a swamp and several hours of inventive swearing.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.pirate.sickbay",
+  "icon": "🩺",
+  "title": "Blood on the deck",
+  "text": "A crew member takes a bad fall during rough weather. They are conscious, furious and clearly hurt.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Put the ship into port for treatment",
+    "outcomes": [
+     {
+      "text": "The delay costs money, but the sailor returns to the ship on their own feet.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "karma": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The port surgeon charges like royalty and does excellent work.",
+      "weight": 1,
+      "effects": {
+       "money": -1500,
+       "karma": 4,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Treat the injury aboard ship",
+    "outcomes": [
+     {
+      "text": "Careful splinting and a week off duty work better than anyone expected.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "The sea is a poor hospital. Recovery is slow and morale dips.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them to shake it off",
+    "outcomes": [
+     {
+      "text": "They do, mostly out of spite, and never forget the order.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": -4
+      }
+     },
+     {
+      "text": "The injury worsens until you have no choice but to divert anyway.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "happiness": -5,
+       "karma": -5
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.pirate.rival_port",
+  "icon": "⚔️",
+  "title": "The rival at the next table",
+  "text": "Your rival captain is drinking in the same tavern, surrounded by enough crew to make violence a terrible idea and insults an irresistible one.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Buy the rival a drink",
+    "outcomes": [
+     {
+      "text": "The conversation is poisonous but useful. You learn where the patrols have been thickest.",
+      "weight": 1,
+      "effects": {
+       "money": -80,
+       "smarts": 2,
+       "stress": -1
+      },
+      "thread": {
+       "kind": "pirate",
+       "title": "A drink with my rival",
+       "memory": "For one night, rivalry became intelligence gathering over a dirty table.",
+       "strength": 60,
+       "tags": [
+        "pirate",
+        "rival"
+       ]
+      },
+      "flags": [
+       "pirate_rival_memory"
+      ],
+      "schedule": {
+       "event": "v07.pirate.rival_again",
+       "years": [
+        2,
+        5
+       ]
+      }
+     },
+     {
+      "text": "They accept the drink and spend ten minutes explaining why your ship is ugly.",
+      "weight": 1,
+      "effects": {
+       "money": -80,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Challenge them publicly",
+    "outcomes": [
+     {
+      "text": "The tavern turns the insult into legend before either crew can draw steel.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 3
+      }
+     },
+     {
+      "text": "A chair breaks, then another. You leave with a split lip and no clear winner.",
+      "weight": 1,
+      "effects": {
+       "health": -7,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore them completely",
+    "outcomes": [
+     {
+      "text": "Nothing annoys a rival like being denied the scene they rehearsed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "They loudly invent a story about why you are afraid. Half the tavern believes it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.pirate.stowaway",
+  "icon": "🧳",
+  "title": "Someone is in the hold",
+  "text": "A barrel moves. Then it sneezes. A young stowaway crawls out from behind the cargo and says going back is not an option.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Put them ashore somewhere safe",
+    "outcomes": [
+     {
+      "text": "You find a port where they have a cousin and enough coin for a new start.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "karma": 5,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "They leave reluctantly, then wave from the dock until the ship is a dot.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer honest work aboard",
+    "outcomes": [
+     {
+      "text": "They work hard, learn quickly and become part of the ship’s rhythm.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 5
+      },
+      "thread": {
+       "kind": "pirate",
+       "title": "The stowaway we kept",
+       "memory": "Someone entered the ship as hidden cargo and left the voyage as part of the crew.",
+       "strength": 55,
+       "tags": [
+        "pirate",
+        "crew"
+       ]
+      },
+      "flags": [
+       "pirate_stowaway_kept"
+      ],
+      "schedule": {
+       "event": "v07.pirate.stowaway_later",
+       "years": [
+        3,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They are enthusiastic and catastrophically seasick, but the crew takes to them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make them pay for passage",
+    "outcomes": [
+     {
+      "text": "They hand over a hidden pouch of coins without complaint.",
+      "weight": 1,
+      "effects": {
+       "money": 450,
+       "karma": -1
+      }
+     },
+     {
+      "text": "They have nothing. The demand turns the whole deck quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "karma": -4
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.pirate.storm",
+  "icon": "🌊",
+  "title": "The sea goes black",
+  "text": "The pressure drops, birds disappear and the horizon takes on the color every sailor learns to respect.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Reef sail early and ride it out",
+    "outcomes": [
+     {
+      "text": "The crew grumbles until the storm arrives. Then nobody questions the order.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "Preparation saves the mast, but everyone works through a miserable night.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Race for the nearest harbor",
+    "outcomes": [
+     {
+      "text": "You beat the worst of the weather into shelter with minutes to spare.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The entrance is too dangerous and you are forced back into open water.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep full sail and trust the ship",
+    "outcomes": [
+     {
+      "text": "For several terrifying hours, the ship flies faster than fear.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": 7
+      }
+     },
+     {
+      "text": "A line snaps and the deck becomes a battlefield of canvas and rope.",
+      "weight": 1,
+      "effects": {
+       "health": -10,
+       "stress": 10
+      },
+      "thread": {
+       "kind": "pirate",
+       "title": "The storm we challenged",
+       "memory": "We treated a black horizon like a dare and paid for the arrogance.",
+       "strength": 68,
+       "tags": [
+        "pirate",
+        "storm"
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.pirate.navy",
+  "icon": "⚓",
+  "title": "A navy cutter signals you to stop",
+  "text": "A fast patrol vessel closes from windward and fires a shot across your bow.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Run for shallow water",
+    "outcomes": [
+     {
+      "text": "Your lighter draft wins. The cutter gives up before finding the reef the hard way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 5
+      }
+     },
+     {
+      "text": "You scrape the bottom escaping and spend the night listening to the hull creak.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hoist false colors and bluff",
+    "outcomes": [
+     {
+      "text": "For one miraculous minute, paperwork is stronger than cannon.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "The patrol captain knows the flag code better than you hoped.",
+      "weight": 1,
+      "effects": {
+       "stress": 9
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bribe the boarding officer",
+    "outcomes": [
+     {
+      "text": "The officer discovers a sudden appreciation for administrative discretion.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "karma": -3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "They pocket the first payment and ask whether you would prefer jail or a second payment.",
+      "weight": 1,
+      "effects": {
+       "money": -3600,
+       "karma": -4,
+       "stress": 7
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.pirate.share",
+  "icon": "🪙",
+  "title": "The crew counts the prize",
+  "text": "A profitable voyage ends with everyone watching the quartermaster divide the take. The room is cheerful enough to become dangerous if the numbers feel wrong.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "pirate"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Give the crew an extra share",
+    "outcomes": [
+     {
+      "text": "The cheer can be heard from the dock. Loyalty has a price and tonight you paid it willingly.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "happiness": 7,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The extra share hurts your purse and buys a month without mutiny jokes.",
+      "weight": 1,
+      "effects": {
+       "money": -1400,
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Follow the agreed split exactly",
+    "outcomes": [
+     {
+      "text": "Nobody can call it unfair. Nobody can call it generous either.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "A few sailors mutter, but the rules were clear before the raid.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skim a little before counting",
+    "outcomes": [
+     {
+      "text": "Nobody notices this time.",
+      "weight": 1,
+      "effects": {
+       "money": 900,
+       "karma": -5,
+       "stress": 2
+      }
+     },
+     {
+      "text": "Someone notices the numbers do not add up. The joke about mutiny stops sounding like a joke.",
+      "weight": 1,
+      "effects": {
+       "money": 700,
+       "karma": -7,
+       "stress": 8
+      },
+      "thread": {
+       "kind": "pirate",
+       "title": "The share that did not add up",
+       "memory": "I learned how quickly a crew can smell dishonesty when money is on the table.",
+       "strength": 70,
+       "tags": [
+        "pirate",
+        "mutiny"
+       ]
+      },
+      "flags": [
+       "pirate_bad_share"
+      ],
+      "schedule": {
+       "event": "v07.pirate.share_audit",
+       "years": [
+        1,
+        3
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.colony.air",
+  "icon": "🫁",
+  "title": "The air tastes metallic",
+  "text": "A faint metallic taste spreads through the habitat. The oxygen numbers are technically normal, which somehow makes everyone more nervous.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Seal sections and trace the source",
+    "outcomes": [
+     {
+      "text": "A damaged scrubber cartridge is isolated before readings turn dangerous.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": -4
+      },
+      "thread": {
+       "kind": "colonist",
+       "title": "The metallic air",
+       "memory": "On Mars, a strange taste in the air once turned every breath into a systems question.",
+       "strength": 58,
+       "tags": [
+        "mars",
+        "life-support"
+       ]
+      }
+     },
+     {
+      "text": "The source is harder to find, but careful isolation keeps exposure low.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Trust the instruments",
+    "outcomes": [
+     {
+      "text": "The taste fades and the numbers never move. Someone probably overheated a tool coating.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "The sensor was calibrated wrong. The emergency alarm arrives late.",
+      "weight": 1,
+      "effects": {
+       "health": -7,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Move everyone to the backup module",
+    "outcomes": [
+     {
+      "text": "The relocation is tedious and entirely worth the peace of mind.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The backup module is cramped enough to start three arguments before lunch.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.colony.rations",
+  "icon": "🥫",
+  "title": "Someone is stealing dessert",
+  "text": "Inventory says twelve chocolate bars are missing. On Mars, this qualifies as both petty theft and a crisis of civilization.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Audit the pantry quietly",
+    "outcomes": [
+     {
+      "text": "You find an honest counting error and save the colony from interrogating itself over candy.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The pattern points to one shift, but not one person. You tighten access without naming anyone.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a joke of it at dinner",
+    "outcomes": [
+     {
+      "text": "The guilty colonist returns six bars anonymously by morning.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The joke lands badly with people already tired of rationing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Treat it as a serious security issue",
+    "outcomes": [
+     {
+      "text": "The theft stops immediately. So does casual conversation when you enter the pantry.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "The investigation becomes more disruptive than the missing food ever was.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.colony.greenhouse",
+  "icon": "🌱",
+  "title": "White fuzz in the greenhouse",
+  "text": "A fast-growing fungus appears on one tray of crops. The agronomist says it may be harmless. “May” is doing a lot of work in that sentence.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Destroy the affected tray",
+    "outcomes": [
+     {
+      "text": "You lose vegetables and save the crop cycle.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The colony complains until a second tray shows spores and everyone stops complaining.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quarantine and study it",
+    "outcomes": [
+     {
+      "text": "The fungus turns out to be benign and potentially useful for composting.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Containment fails and half the harvest has to be discarded.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask Earth for guidance",
+    "outcomes": [
+     {
+      "text": "The answer arrives late but useful: a low-tech heat treatment works.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The response arrives after the team has already solved it themselves.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.colony.dust",
+  "icon": "🌪️",
+  "title": "The horizon disappears",
+  "text": "A dust storm rolls over the colony until the windows show nothing but rust-colored static.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Lock down and conserve power",
+    "outcomes": [
+     {
+      "text": "The habitat goes quiet, dim and safe. The storm passes without major damage.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "Conservation keeps life support stable through a longer storm than forecast.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "health": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use the storm to test exterior sensors",
+    "outcomes": [
+     {
+      "text": "The data is excellent and the equipment somehow survives.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "One sensor tears loose and disappears into the red dark.",
+      "weight": 1,
+      "effects": {
+       "money": -1200,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Watch from the observation dome",
+    "outcomes": [
+     {
+      "text": "Mars looks enormous and hostile and beautiful enough to make everyone quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": -2
+      },
+      "thread": {
+       "kind": "colonist",
+       "title": "The storm that erased the horizon",
+       "memory": "A dust storm once made the whole world outside the glass disappear.",
+       "strength": 52,
+       "tags": [
+        "mars",
+        "storm"
+       ]
+      }
+     },
+     {
+      "text": "A sudden impact against the dome ends the sightseeing instantly.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.colony.earth_delay",
+  "icon": "📡",
+  "title": "Seven minutes each way",
+  "text": "You send an urgent technical question to Earth. The reply cannot arrive quickly enough for anyone there to make the decision for you.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Make the call locally",
+    "outcomes": [
+     {
+      "text": "The fix works. For once, the communication delay feels like independence instead of isolation.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The fix is imperfect but stable enough to wait for expert review.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for Earth",
+    "outcomes": [
+     {
+      "text": "The answer is cautious, detailed and useful.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "By the time the answer arrives, the situation has changed and half the advice is obsolete.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put it to the colony council",
+    "outcomes": [
+     {
+      "text": "The argument is loud and the decision belongs to everyone afterward.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "Consensus takes so long that the original problem becomes two problems.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 6
+ },
+ {
+  "id": "v07.colony.rover",
+  "icon": "🤖",
+  "title": "The rover did not come home",
+  "text": "An autonomous rover misses its return window. Its last packet ended beside a shallow canyon thirty kilometers away.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Send a recovery team",
+    "outcomes": [
+     {
+      "text": "The rover is stuck on a rock that looks insultingly small once you arrive.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 2
+      },
+      "flags": [
+       "colony_rover_saved"
+      ],
+      "schedule": {
+       "event": "v07.colony.rover_cache",
+       "years": [
+        2,
+        5
+       ]
+      }
+     },
+     {
+      "text": "The trip becomes a cold, exhausting repair under a sky that offers no help.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try remote recovery overnight",
+    "outcomes": [
+     {
+      "text": "A tiny steering correction frees it after six hours of patient commands.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The wheels spin deeper. Morning brings the same problem and less battery.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write it off as lost",
+    "outcomes": [
+     {
+      "text": "The colony hates losing equipment, but nobody risks a person for a machine.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": 2
+      }
+     },
+     {
+      "text": "A later satellite pass shows it sitting intact. The decision becomes a running joke.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 7
+ },
+ {
+  "id": "v07.colony.signal_argument",
+  "icon": "📶",
+  "title": "Nobody agrees what the signal means",
+  "text": "A repeating anomaly in the data has divided the habitat between “instrument noise,” “interesting,” and “please do not say aliens during breakfast.”",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Demand blind replication",
+    "outcomes": [
+     {
+      "text": "A second instrument finds the same pattern. The room gets much quieter.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "stress": 3
+      },
+      "thread": {
+       "kind": "colonist",
+       "title": "The signal argument",
+       "memory": "Before anyone knew what it was, we argued about a repeating pattern in the static.",
+       "strength": 70,
+       "tags": [
+        "mars",
+        "signal"
+       ]
+      },
+      "flags": [
+       "colony_signal_repeat"
+      ],
+      "schedule": {
+       "event": "v07.colony.signal_repeat",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The replication fails. Everyone learns something useful about wanting an answer too badly.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it confidential until there is proof",
+    "outcomes": [
+     {
+      "text": "The team works without outside pressure and documents every boring possibility first.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": -1
+      }
+     },
+     {
+      "text": "A rumor leaks anyway and Earth media invents an answer before the data does.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Release the raw data publicly",
+    "outcomes": [
+     {
+      "text": "Researchers on Earth find a calibration artifact nobody on Mars considered.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The internet names the signal, merchandises it and starts arguments your team has no time for.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 10
+ },
+ {
+  "id": "v07.colony.birthday",
+  "icon": "🎂",
+  "title": "A birthday under another sky",
+  "text": "The colony has become old enough that someone suggests celebrating its landing date like a birthday.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "colonist"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Make it a real holiday",
+    "outcomes": [
+     {
+      "text": "Everyone gets one unnecessary meal, terrible decorations and an evening without work rotations.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "stress": -6,
+       "money": -300
+      },
+      "thread": {
+       "kind": "colonist",
+       "title": "The colony birthday",
+       "memory": "We celebrated the day this place stopped being equipment and started becoming a home.",
+       "strength": 56,
+       "tags": [
+        "mars",
+        "community"
+       ]
+      },
+      "flags": [
+       "colony_holiday"
+      ],
+      "schedule": {
+       "event": "v07.colony.holiday_echo",
+       "years": [
+        2,
+        5
+       ]
+      }
+     },
+     {
+      "text": "The decorations keep falling in low gravity, which only makes people laugh harder.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it small",
+    "outcomes": [
+     {
+      "text": "A shared dessert and a speech are enough to change the mood for a night.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -3
+      }
+     },
+     {
+      "text": "People appreciate the gesture, though someone loudly requests a real holiday next year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say survival is celebration enough",
+    "outcomes": [
+     {
+      "text": "A few veterans agree. Younger settlers roll their eyes with impressive coordination.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "The shift proceeds normally and feels much longer than usual.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.time.photo",
+  "icon": "📷",
+  "title": "You are in the photograph",
+  "text": "At a market stall, you find an old photograph of a crowd. Near the edge is a face that looks exactly like yours, wearing clothes from years before you arrived.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "traveler"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Buy the photograph and hide it",
+    "outcomes": [
+     {
+      "text": "You tuck it into your private things and spend weeks comparing the background to places you know.",
+      "weight": 1,
+      "effects": {
+       "money": -25,
+       "stress": 5,
+       "smarts": 2
+      },
+      "thread": {
+       "kind": "traveler",
+       "title": "The photograph that should not exist",
+       "memory": "I found my own face in a picture taken before I arrived.",
+       "strength": 82,
+       "tags": [
+        "time",
+        "paradox"
+       ]
+      },
+      "flags": [
+       "time_photo_kept"
+      ],
+      "schedule": {
+       "event": "v07.time.photo_echo",
+       "years": [
+        3,
+        9
+       ]
+      }
+     },
+     {
+      "text": "The seller mentions another copy exists somewhere. That information is not comforting.",
+      "weight": 1,
+      "effects": {
+       "money": -25,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask the seller who the person is",
+    "outcomes": [
+     {
+      "text": "They shrug and give you a family name you have never heard.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "They say the person was locally famous for disappearing without explanation.",
+      "weight": 1,
+      "effects": {
+       "stress": 9
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it there",
+    "outcomes": [
+     {
+      "text": "You walk away and make it three blocks before turning back. The stall is gone.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      }
+     },
+     {
+      "text": "You leave it. For years afterward, crowded photographs make you uneasy.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.time.future_fact",
+  "icon": "📰",
+  "title": "You know tomorrow’s headline",
+  "text": "A public argument is raging over an event whose outcome you remember clearly from history.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "traveler"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "The event unfolds exactly as you remember. Keeping quiet feels safer and lonelier.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "One small detail differs from your memory. You spend the night wondering why.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "thread": {
+       "kind": "traveler",
+       "title": "The headline I remembered wrong",
+       "memory": "History once differed from my memory by one tiny detail, and I never learned why.",
+       "strength": 72,
+       "tags": [
+        "time",
+        "timeline"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a small private prediction",
+    "outcomes": [
+     {
+      "text": "The prediction comes true and someone begins treating you like a genius.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The prediction fails publicly enough to protect your secret by accident.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use the knowledge to make money",
+    "outcomes": [
+     {
+      "text": "A careful wager pays off without attracting much attention.",
+      "weight": 1,
+      "effects": {
+       "money": 2200,
+       "karma": -1,
+       "stress": 2
+      }
+     },
+     {
+      "text": "The opportunity has already moved differently than you remember. You lose money to your own certainty.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.time.doctor1850",
+  "icon": "🩺",
+  "title": "Medicine from another century",
+  "text": "You are sick enough to need help, but the available medical advice belongs to a century you have read about for all the wrong reasons.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "traveler",
+   "era_year_max": 1899
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Find the most cautious physician you can",
+    "outcomes": [
+     {
+      "text": "Clean instruments and restraint matter more than the doctor’s grand theories. You recover.",
+      "weight": 1,
+      "effects": {
+       "money": -20,
+       "health": 5,
+       "stress": -3
+      }
+     },
+     {
+      "text": "The treatment is uncomfortable but avoids the worst practices of the era.",
+      "weight": 1,
+      "effects": {
+       "money": -15,
+       "health": 1,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use only knowledge you can safely explain",
+    "outcomes": [
+     {
+      "text": "Rest, clean water and basic hygiene do more than the dramatic remedies offered nearby.",
+      "weight": 1,
+      "effects": {
+       "health": 4,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "Your advice attracts uncomfortable questions about where you learned it.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept the standard treatment",
+    "outcomes": [
+     {
+      "text": "You get lucky and improve despite the treatment rather than because of it.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": 5
+      }
+     },
+     {
+      "text": "The remedy makes you significantly worse before your body turns the corner.",
+      "weight": 1,
+      "effects": {
+       "health": -8,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 10
+ },
+ {
+  "id": "v07.time.radio",
+  "icon": "📻",
+  "title": "A voice from a wooden box",
+  "text": "Radio ownership is spreading, and a family nearby invites everyone over to hear a broadcast as if the future has arrived in their sitting room.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "traveler",
+   "era_year_min": 1915,
+   "era_year_max": 1945
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Enjoy it like it is new",
+    "outcomes": [
+     {
+      "text": "You let yourself be impressed by something you once took completely for granted.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": -3
+      },
+      "thread": {
+       "kind": "traveler",
+       "title": "The first radio night",
+       "memory": "I heard a room experience broadcast audio as a miracle instead of background noise.",
+       "strength": 48,
+       "tags": [
+        "time",
+        "technology"
+       ]
+      }
+     },
+     {
+      "text": "The signal fades in and out, but nobody seems to mind.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Explain where the technology will go",
+    "outcomes": [
+     {
+      "text": "Everyone thinks you are joking. That is probably for the best.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     },
+     {
+      "text": "One technically minded guest starts asking questions you cannot safely answer.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend you are unimpressed",
+    "outcomes": [
+     {
+      "text": "Your indifference makes you look sophisticated instead of suspicious.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "Someone asks what could possibly be more impressive. You have to invent an answer.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.time.1970computer",
+  "icon": "🖥️",
+  "title": "A room-sized future",
+  "text": "A workplace has acquired a computer that occupies more space than some apartments. People argue about whether machines like it will ever matter outside institutions.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "life": "traveler",
+   "era_year_min": 1965,
+   "era_year_max": 1985
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Volunteer to learn it",
+    "outcomes": [
+     {
+      "text": "You understand the concepts much faster than anyone expects and become the person everyone calls when it jams.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Knowing future interfaces does not make punch cards intuitive. You learn humility and the machine.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a careful prediction about personal computers",
+    "outcomes": [
+     {
+      "text": "Everyone laughs at the idea of a computer in every home.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "One colleague takes you seriously and starts sketching ideas that look uncomfortably familiar.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "smarts": 2
+      },
+      "thread": {
+       "kind": "traveler",
+       "title": "The prediction someone believed",
+       "memory": "I mentioned a future technology too early and watched the idea take root in someone else.",
+       "strength": 67,
+       "tags": [
+        "time",
+        "technology"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay away from it",
+    "outcomes": [
+     {
+      "text": "Avoiding the machine keeps your cover simple.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "You miss an opportunity you know would have been historically interesting.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "v07.time.patent",
+  "icon": "💡",
+  "title": "An idea not invented yet",
+  "text": "A conversation turns toward a problem you know will eventually be solved by a very profitable invention.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "life": "traveler"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Keep the future to yourself",
+    "outcomes": [
+     {
+      "text": "You change the subject and preserve one more piece of history from yourself.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "Restraint feels noble until you remember what your bank balance looks like.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer only the principle",
+    "outcomes": [
+     {
+      "text": "The inventor runs with the hint in a direction you did not expect.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 3
+      },
+      "thread": {
+       "kind": "traveler",
+       "title": "The idea I nudged",
+       "memory": "I gave history one small push and never learned whether it mattered.",
+       "strength": 62,
+       "tags": [
+        "time",
+        "invention"
+       ]
+      },
+      "flags": [
+       "time_idea_nudged"
+      ],
+      "schedule": {
+       "event": "v07.time.patent_echo",
+       "years": [
+        5,
+        15
+       ]
+      }
+     },
+     {
+      "text": "The explanation is too advanced for the available materials and dies as an interesting conversation.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try to claim the invention yourself",
+    "outcomes": [
+     {
+      "text": "You make money, but every success increases the fear of what else you changed.",
+      "weight": 1,
+      "effects": {
+       "money": 8000,
+       "stress": 8,
+       "karma": -4
+      }
+     },
+     {
+      "text": "Your prototype cannot be built reliably with current manufacturing. You lose money and credibility.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.time.language",
+  "icon": "🗣️",
+  "title": "You used a word that does not exist yet",
+  "text": "Conversation stops for half a beat after you use a piece of slang nobody around you recognizes.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "traveler"
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Pretend it is from your hometown",
+    "outcomes": [
+     {
+      "text": "People accept the explanation and immediately start using the word incorrectly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     },
+     {
+      "text": "Someone asks where your hometown is. The lie develops branches.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Laugh and rephrase",
+    "outcomes": [
+     {
+      "text": "The moment disappears into conversation.",
+      "weight": 1,
+      "effects": {
+       "stress": -3
+      }
+     },
+     {
+      "text": "A friend keeps repeating the strange word because they like it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      },
+      "thread": {
+       "kind": "traveler",
+       "title": "The word I brought too early",
+       "memory": "One careless piece of slang almost became evidence that I did not belong in the decade.",
+       "strength": 50,
+       "tags": [
+        "time",
+        "cover"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Explain the future meaning honestly",
+    "outcomes": [
+     {
+      "text": "Everyone assumes you are inventing nonsense for fun.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "One person does not laugh and starts watching you much more carefully.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 5
+ },
+ {
+  "id": "v07.time.ancestor",
+  "icon": "🌳",
+  "title": "A familiar surname",
+  "text": "Someone introduces themselves with a surname from your own family tree and mentions a hometown that makes the coincidence much harder to dismiss.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "life": "traveler",
+   "era_year_max": 1975
+  },
+  "weight": 6,
+  "choices": [
+   {
+    "label": "Keep the conversation ordinary",
+    "outcomes": [
+     {
+      "text": "You learn almost nothing and preserve the safest possible distance.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "A harmless family detail confirms the connection anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask careful questions about their family",
+    "outcomes": [
+     {
+      "text": "You hear a story that survived into your childhood in a completely different form.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 5
+      },
+      "thread": {
+       "kind": "family",
+       "title": "A family story before it became history",
+       "memory": "I met someone connected to my family before the story reached my generation.",
+       "strength": 78,
+       "tags": [
+        "time",
+        "family"
+       ]
+      },
+      "flags": [
+       "time_ancestor_met"
+      ],
+      "schedule": {
+       "event": "v07.time.ancestor_echo",
+       "years": [
+        4,
+        12
+       ]
+      }
+     },
+     {
+      "text": "The questions become too specific and they ask why you care so much.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave before you learn more",
+    "outcomes": [
+     {
+      "text": "You choose ignorance on purpose. It feels strangely responsible.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "You leave quickly enough to look suspicious and spend the day checking who followed you.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "v07.pirate.rival_again",
+  "icon": "🍷",
+  "title": "The rival remembers",
+  "text": "Years later, your rival captain repeats a detail from that old tavern encounter that you assumed nobody important noticed.",
+  "conditions": {
+   "life": "pirate",
+   "flags": [
+    "pirate_rival_memory"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Use the shared history to bargain",
+    "outcomes": [
+     {
+      "text": "Old hostility becomes a temporary truce over a profitable route.",
+      "weight": 1,
+      "effects": {
+       "money": 3200,
+       "happiness": 4,
+       "stress": -2
+      },
+      "unflags": [
+       "pirate_rival_memory"
+      ]
+     },
+     {
+      "text": "The bargain works, but neither crew stops watching the other.",
+      "weight": 1,
+      "effects": {
+       "money": 1800,
+       "stress": 3
+      },
+      "unflags": [
+       "pirate_rival_memory"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Remind them you are still rivals",
+    "outcomes": [
+     {
+      "text": "The argument becomes performance. Both crews cheer and nobody draws steel.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "unflags": [
+       "pirate_rival_memory"
+      ]
+     },
+     {
+      "text": "The old insult lands harder than intended and the truce evaporates.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "unflags": [
+       "pirate_rival_memory"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Ask what they actually remember",
+    "outcomes": [
+     {
+      "text": "Their version is different enough to make you question your own memory.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      },
+      "unflags": [
+       "pirate_rival_memory"
+      ]
+     },
+     {
+      "text": "They remember the exact moment you were hoping they forgot.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      },
+      "unflags": [
+       "pirate_rival_memory"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.pirate.stowaway_later",
+  "icon": "⚓",
+  "title": "A debt from the hold",
+  "text": "The former stowaway finds you again, older and carrying news from a port you thought had forgotten your name.",
+  "conditions": {
+   "life": "pirate",
+   "flags": [
+    "pirate_stowaway_kept"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Hear them out",
+    "outcomes": [
+     {
+      "text": "Their warning about an ambush saves the ship a week later.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "happiness": 5
+      },
+      "unflags": [
+       "pirate_stowaway_kept"
+      ]
+     },
+     {
+      "text": "The news is mostly gossip, but seeing them alive and capable is reward enough.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "unflags": [
+       "pirate_stowaway_kept"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Offer them another berth",
+    "outcomes": [
+     {
+      "text": "They rejoin for one voyage and work like someone with something to prove.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": 900
+      },
+      "unflags": [
+       "pirate_stowaway_kept"
+      ]
+     },
+     {
+      "text": "They smile and refuse. They built a life on land and wanted you to know.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "unflags": [
+       "pirate_stowaway_kept"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Keep the meeting brief",
+    "outcomes": [
+     {
+      "text": "You exchange a nod and let the past remain a complete story.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "unflags": [
+       "pirate_stowaway_kept"
+      ]
+     },
+     {
+      "text": "They leave hurt that you remembered the problem better than the person.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "unflags": [
+       "pirate_stowaway_kept"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.pirate.share_audit",
+  "icon": "🪙",
+  "title": "The missing coins return",
+  "text": "The old dispute over a crew share resurfaces when the quartermaster finds a ledger page that never matched the official count.",
+  "conditions": {
+   "life": "pirate",
+   "flags": [
+    "pirate_bad_share"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Admit what you took",
+    "outcomes": [
+     {
+      "text": "The confession costs coin and pride, but the crew respects finally hearing the truth.",
+      "weight": 1,
+      "effects": {
+       "money": -1400,
+       "karma": 4,
+       "stress": -5
+      },
+      "unflags": [
+       "pirate_bad_share"
+      ]
+     },
+     {
+      "text": "The crew takes the repayment without forgiving the lie.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "stress": 3
+      },
+      "unflags": [
+       "pirate_bad_share"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Blame the old ledger",
+    "outcomes": [
+     {
+      "text": "Enough people accept the explanation to end the meeting.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "karma": -2
+      },
+      "unflags": [
+       "pirate_bad_share"
+      ]
+     },
+     {
+      "text": "The quartermaster produces a second page in your handwriting.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "karma": -4
+      },
+      "unflags": [
+       "pirate_bad_share"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Repay everyone without explaining",
+    "outcomes": [
+     {
+      "text": "Coin is distributed and nobody asks why you suddenly became generous.",
+      "weight": 1,
+      "effects": {
+       "money": -2200,
+       "happiness": 3
+      },
+      "unflags": [
+       "pirate_bad_share"
+      ]
+     },
+     {
+      "text": "The unexplained generosity convinces half the crew you stole even more than they suspected.",
+      "weight": 1,
+      "effects": {
+       "money": -2200,
+       "stress": 5
+      },
+      "unflags": [
+       "pirate_bad_share"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.colony.rover_cache",
+  "icon": "🛰️",
+  "title": "What the rover saw",
+  "text": "Data recovered from the rover includes a geological pattern nobody noticed during the rescue.",
+  "conditions": {
+   "life": "colonist",
+   "flags": [
+    "colony_rover_saved"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Lead a survey team back",
+    "outcomes": [
+     {
+      "text": "The formation contains useful ice deposits close enough to change planning.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "happiness": 6
+      },
+      "unflags": [
+       "colony_rover_saved"
+      ]
+     },
+     {
+      "text": "The pattern is geologically interesting but not economically useful.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 2
+      },
+      "unflags": [
+       "colony_rover_saved"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Publish the data to Earth",
+    "outcomes": [
+     {
+      "text": "Researchers pick up the result and credit the colony team properly.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 4
+      },
+      "unflags": [
+       "colony_rover_saved"
+      ]
+     },
+     {
+      "text": "Earth researchers argue over the interpretation for months.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 2
+      },
+      "unflags": [
+       "colony_rover_saved"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Archive it for later",
+    "outcomes": [
+     {
+      "text": "A later planning team is grateful you kept the raw files organized.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -2
+      },
+      "unflags": [
+       "colony_rover_saved"
+      ]
+     },
+     {
+      "text": "The data sits untouched, another quiet possibility under a very large sky.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "unflags": [
+       "colony_rover_saved"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.colony.signal_repeat",
+  "icon": "📡",
+  "title": "The pattern returns",
+  "text": "The anomaly that divided the habitat appears again on a different instrument, during a different shift, with the same strange spacing.",
+  "conditions": {
+   "life": "colonist",
+   "flags": [
+    "colony_signal_repeat"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Treat it as a real research program",
+    "outcomes": [
+     {
+      "text": "The colony dedicates scheduled time to replication instead of arguing in hallways.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "stress": -3
+      },
+      "unflags": [
+       "colony_signal_repeat"
+      ]
+     },
+     {
+      "text": "Formal study makes the anomaly less exciting and much more credible.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 3
+      },
+      "unflags": [
+       "colony_signal_repeat"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Send the full record to Earth",
+    "outcomes": [
+     {
+      "text": "Independent observatories confirm that something unusual is there.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "stress": 3
+      },
+      "unflags": [
+       "colony_signal_repeat"
+      ]
+     },
+     {
+      "text": "Earth finds no match, which is somehow more unsettling than a mundane explanation.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "unflags": [
+       "colony_signal_repeat"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Keep it inside the colony",
+    "outcomes": [
+     {
+      "text": "The small team works carefully without spectacle.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "smarts": 2
+      },
+      "unflags": [
+       "colony_signal_repeat"
+      ]
+     },
+     {
+      "text": "Secrecy breeds rumors faster than data can answer them.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      },
+      "unflags": [
+       "colony_signal_repeat"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.time.patent_echo",
+  "icon": "📰",
+  "title": "A familiar invention",
+  "text": "Years after your careful hint, a newspaper describes a new product whose central idea sounds uncomfortably close to that old conversation.",
+  "conditions": {
+   "life": "traveler",
+   "flags": [
+    "time_idea_nudged"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Accept that history may have absorbed the nudge",
+    "outcomes": [
+     {
+      "text": "The world keeps moving and nobody points at you. You decide that is enough.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "happiness": 3
+      },
+      "unflags": [
+       "time_idea_nudged"
+      ]
+     },
+     {
+      "text": "A tiny design detail matches your exact wording. The coincidence is difficult to dismiss.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "unflags": [
+       "time_idea_nudged"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Find the inventor",
+    "outcomes": [
+     {
+      "text": "They barely remember the conversation and insist the solution came from years of work.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "smarts": 2
+      },
+      "unflags": [
+       "time_idea_nudged"
+      ]
+     },
+     {
+      "text": "They recognize you immediately and ask how you knew.",
+      "weight": 1,
+      "effects": {
+       "stress": 9
+      },
+      "unflags": [
+       "time_idea_nudged"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Document the divergence privately",
+    "outcomes": [
+     {
+      "text": "You add another page to a notebook nobody else can ever safely read.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": 1
+      },
+      "unflags": [
+       "time_idea_nudged"
+      ]
+     },
+     {
+      "text": "The notebook already contains a version of the event that did not happen this way.",
+      "weight": 1,
+      "effects": {
+       "stress": 10
+      },
+      "unflags": [
+       "time_idea_nudged"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.time.ancestor_echo",
+  "icon": "📦",
+  "title": "A family object before it was an heirloom",
+  "text": "The person tied to your family history shows you an ordinary household object you recognize from stories told generations later.",
+  "conditions": {
+   "life": "traveler",
+   "flags": [
+    "time_ancestor_met"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Ask about the object’s story",
+    "outcomes": [
+     {
+      "text": "The real origin is smaller, stranger and more human than the family legend.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "smarts": 2
+      },
+      "unflags": [
+       "time_ancestor_met"
+      ]
+     },
+     {
+      "text": "The story contradicts what your family always believed, and now only you know.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "smarts": 2
+      },
+      "unflags": [
+       "time_ancestor_met"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Say nothing about recognizing it",
+    "outcomes": [
+     {
+      "text": "You let the object remain ordinary in its own time.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": -2
+      },
+      "unflags": [
+       "time_ancestor_met"
+      ]
+     },
+     {
+      "text": "The silence feels like protecting a memory that technically has not happened yet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "unflags": [
+       "time_ancestor_met"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Leave a tiny mark where your family will one day find it",
+    "outcomes": [
+     {
+      "text": "The mark is subtle enough to become a mystery instead of proof.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": -1
+      },
+      "unflags": [
+       "time_ancestor_met"
+      ]
+     },
+     {
+      "text": "You stop yourself halfway through, frightened by how badly you want evidence.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "unflags": [
+       "time_ancestor_met"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.time.photo_echo",
+  "icon": "🖼️",
+  "title": "The second copy",
+  "text": "In another city, another shop has the same impossible photograph—except one person in the background is missing from this copy.",
+  "conditions": {
+   "life": "traveler",
+   "flags": [
+    "time_photo_kept"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Compare both copies carefully",
+    "outcomes": [
+     {
+      "text": "Everything else matches. The missing figure is the only difference.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "stress": 7
+      },
+      "unflags": [
+       "time_photo_kept"
+      ]
+     },
+     {
+      "text": "A second difference appears after an hour: a storefront sign uses a name you do not remember.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": 8
+      },
+      "unflags": [
+       "time_photo_kept"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Destroy the copy you own",
+    "outcomes": [
+     {
+      "text": "The evidence is gone. The memory is not.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "unflags": [
+       "time_photo_kept"
+      ]
+     },
+     {
+      "text": "You burn it and immediately wonder whether the other copy changed.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      },
+      "unflags": [
+       "time_photo_kept"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Hide both copies in separate places",
+    "outcomes": [
+     {
+      "text": "You create a private test for whether the timeline changes again.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": 4
+      },
+      "unflags": [
+       "time_photo_kept"
+      ]
+     },
+     {
+      "text": "One hiding place is empty when you return months later.",
+      "weight": 1,
+      "effects": {
+       "stress": 10
+      },
+      "unflags": [
+       "time_photo_kept"
+      ]
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "v07.casino.bigwin_echo",
+  "icon": "🏦",
+  "title": "The win after the excitement",
+  "text": "Years later, the casino win is no longer a flashing number. It is whatever you turned it into—or whatever is left.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "flags": [
+    "bigwin_settled"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Look at what the money changed",
+    "outcomes": [
+     {
+      "text": "Savings, purchases and paid-off obligations tell a quieter story than the original jackpot did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -4
+      },
+      "unflags": [
+       "bigwin_settled"
+      ]
+     },
+     {
+      "text": "The balance is smaller than you remember, but several problems are gone because of it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      },
+      "unflags": [
+       "bigwin_settled"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Go back to the casino for nostalgia",
+    "outcomes": [
+     {
+      "text": "You play small, enjoy the memory and leave without trying to recreate it.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "happiness": 4
+      },
+      "unflags": [
+       "bigwin_settled"
+      ]
+     },
+     {
+      "text": "The old feeling returns faster than expected and you leave uneasy.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 5
+      },
+      "unflags": [
+       "bigwin_settled"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Treat it as ancient history",
+    "outcomes": [
+     {
+      "text": "The win has become one strange chapter among many.",
+      "weight": 1,
+      "effects": {
+       "stress": -3
+      },
+      "unflags": [
+       "bigwin_settled"
+      ]
+     },
+     {
+      "text": "A promotional email still knows exactly which memory to press on.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "unflags": [
+       "bigwin_settled"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "v07.home.offer_return",
+  "icon": "🏡",
+  "title": "The buyer comes back",
+  "text": "The person who once made an unsolicited offer returns with a new number and a note saying they are still serious.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "flags": [
+    "home_buyer_return"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Hear the new offer",
+    "outcomes": [
+     {
+      "text": "The number is higher enough to make the room go quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "unflags": [
+       "home_buyer_return"
+      ]
+     },
+     {
+      "text": "The new offer is barely different. You decline without drama.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "unflags": [
+       "home_buyer_return"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Ask why they want this house",
+    "outcomes": [
+     {
+      "text": "Their reason is personal: a relative once lived nearby and they have been trying to return for years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      },
+      "unflags": [
+       "home_buyer_return"
+      ]
+     },
+     {
+      "text": "They give a vague investment answer that makes the whole thing feel less mysterious.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      },
+      "unflags": [
+       "home_buyer_return"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Tell them the house is not for sale",
+    "outcomes": [
+     {
+      "text": "They finally accept the answer. The house feels oddly more yours afterward.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "unflags": [
+       "home_buyer_return"
+      ]
+     },
+     {
+      "text": "They leave a business card anyway. You throw it in a drawer.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      },
+      "unflags": [
+       "home_buyer_return"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "v07.colony.holiday_echo",
+  "icon": "🎈",
+  "title": "The holiday became tradition",
+  "text": "Years after the first landing-day celebration, children in the habitat argue over the “correct” way to decorate for it.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "flags": [
+    "colony_holiday"
+   ]
+  },
+  "weight": 0.01,
+  "once": true,
+  "choices": [
+   {
+    "label": "Let the younger generation decide",
+    "outcomes": [
+     {
+      "text": "They invent traditions nobody from the landing crew would have imagined.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -4
+      },
+      "unflags": [
+       "colony_holiday"
+      ]
+     },
+     {
+      "text": "Their version is louder and sillier than yours. That is probably a good sign.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "unflags": [
+       "colony_holiday"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Keep the original rituals",
+    "outcomes": [
+     {
+      "text": "The old meal and speech still mean something, especially to the veterans.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -2
+      },
+      "unflags": [
+       "colony_holiday"
+      ]
+     },
+     {
+      "text": "The younger colonists participate politely and immediately add their own traditions afterward.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "unflags": [
+       "colony_holiday"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Tell the real survival stories",
+    "outcomes": [
+     {
+      "text": "The celebration gains weight without losing joy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 2
+      },
+      "unflags": [
+       "colony_holiday"
+      ]
+     },
+     {
+      "text": "A few stories are too heavy for a party, but nobody asks you to stop.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "unflags": [
+       "colony_holiday"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

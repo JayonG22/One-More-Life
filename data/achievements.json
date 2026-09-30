@@ -1,0 +1,3818 @@
+[
+ {
+  "id": "born",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "Hello, World",
+  "desc": "Start your first life.",
+  "req": {
+   "lives_total": 1
+  }
+ },
+ {
+  "id": "age_1",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🎂",
+  "name": "All Grown Up",
+  "desc": "Reach age 18.",
+  "req": {
+   "age": 18
+  }
+ },
+ {
+  "id": "age_2",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🎂",
+  "name": "Half Century",
+  "desc": "Reach age 50.",
+  "req": {
+   "age": 50
+  },
+  "needs": [
+   "age_1"
+  ]
+ },
+ {
+  "id": "age_3",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🎂",
+  "name": "Octogenarian",
+  "desc": "Reach age 80.",
+  "req": {
+   "age": 80
+  },
+  "needs": [
+   "age_2"
+  ]
+ },
+ {
+  "id": "age_4",
+  "cat": "life",
+  "tier": "platinum",
+  "icon": "🎂",
+  "name": "Centenarian",
+  "desc": "Reach age 100.",
+  "req": {
+   "age": 100
+  },
+  "needs": [
+   "age_3"
+  ]
+ },
+ {
+  "id": "age_110",
+  "cat": "life",
+  "tier": "platinum",
+  "icon": "🐢",
+  "name": "Still Here",
+  "desc": "Reach age 110.",
+  "req": {
+   "age": 110
+  },
+  "needs": [
+   "age_4"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "joy",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "😁",
+  "name": "Pure Joy",
+  "desc": "Hit 100% happiness.",
+  "req": {
+   "happiness": 100
+  }
+ },
+ {
+  "id": "genius",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🧠",
+  "name": "Genius",
+  "desc": "Hit 100% smarts.",
+  "req": {
+   "smarts": 100
+  }
+ },
+ {
+  "id": "stunning",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "✨",
+  "name": "Stunning",
+  "desc": "Hit 100% looks.",
+  "req": {
+   "looks": 100
+  }
+ },
+ {
+  "id": "peak",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "💪",
+  "name": "Peak Condition",
+  "desc": "Hit 100% health.",
+  "req": {
+   "health": 100
+  }
+ },
+ {
+  "id": "zen",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🧘",
+  "name": "Zen",
+  "desc": "Reach 0% stress as an adult.",
+  "req": {
+   "age": 18
+  },
+  "req_max": {
+   "stress": 0
+  }
+ },
+ {
+  "id": "saint",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "😇",
+  "name": "Saint",
+  "desc": "Reach +80 karma.",
+  "req": {
+   "karma": 80
+  },
+  "title": "saintly",
+  "title_name": "The Saintly"
+ },
+ {
+  "id": "villain_arc",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "😈",
+  "name": "Villain Arc",
+  "desc": "Sink to -80 karma.",
+  "req": {},
+  "req_max": {
+   "karma": -80
+  }
+ },
+ {
+  "id": "degree_1",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🎓",
+  "name": "Graduate",
+  "desc": "Earn 1 degree(s).",
+  "req": {
+   "degrees": 1
+  }
+ },
+ {
+  "id": "degree_2",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🎓",
+  "name": "Double Major",
+  "desc": "Earn 2 degree(s).",
+  "req": {
+   "degrees": 2
+  },
+  "needs": [
+   "degree_1"
+  ]
+ },
+ {
+  "id": "degree_3",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🎓",
+  "name": "Scholar",
+  "desc": "Earn 3 degree(s).",
+  "req": {
+   "degrees": 3
+  },
+  "needs": [
+   "degree_2"
+  ]
+ },
+ {
+  "id": "grad",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "📜",
+  "name": "Doctor, Doctor",
+  "desc": "Finish a graduate degree.",
+  "req": {
+   "grad_degree": true
+  },
+  "needs": [
+   "degree_1"
+  ]
+ },
+ {
+  "id": "emig_1",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🌍",
+  "name": "Fresh Start",
+  "desc": "Emigrate 1 time(s).",
+  "req": {
+   "emigrated": 1
+  }
+ },
+ {
+  "id": "emig_2",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🌍",
+  "name": "Nomad",
+  "desc": "Emigrate 3 time(s).",
+  "req": {
+   "emigrated": 3
+  },
+  "needs": [
+   "emig_1"
+  ]
+ },
+ {
+  "id": "vac_1",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🏖️",
+  "name": "Tourist",
+  "desc": "Take 3 vacations.",
+  "req": {
+   "vacations": 3
+  }
+ },
+ {
+  "id": "vac_2",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏖️",
+  "name": "Globetrotter",
+  "desc": "Take 10 vacations.",
+  "req": {
+   "vacations": 10
+  },
+  "needs": [
+   "vac_1"
+  ]
+ },
+ {
+  "id": "first_love",
+  "cat": "family",
+  "tier": "bronze",
+  "icon": "💕",
+  "name": "First Love",
+  "desc": "Start a relationship.",
+  "req": {
+   "partners": 1
+  }
+ },
+ {
+  "id": "wed",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "💍",
+  "name": "Wedding Bells",
+  "desc": "Get married.",
+  "req": {
+   "married": true
+  },
+  "needs": [
+   "first_love"
+  ]
+ },
+ {
+  "id": "kids_1",
+  "cat": "family",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "Parenthood",
+  "desc": "Have 1 child(ren).",
+  "req": {
+   "children": 1
+  }
+ },
+ {
+  "id": "kids_2",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "👶",
+  "name": "Full House",
+  "desc": "Have 3 child(ren).",
+  "req": {
+   "children": 3
+  },
+  "needs": [
+   "kids_1"
+  ]
+ },
+ {
+  "id": "kids_3",
+  "cat": "family",
+  "tier": "gold",
+  "icon": "👶",
+  "name": "Village",
+  "desc": "Have 6 child(ren).",
+  "req": {
+   "children": 6
+  },
+  "needs": [
+   "kids_2"
+  ]
+ },
+ {
+  "id": "kids_4",
+  "cat": "family",
+  "tier": "platinum",
+  "icon": "👶",
+  "name": "The Brood",
+  "desc": "Have 10 child(ren).",
+  "req": {
+   "children": 10
+  },
+  "needs": [
+   "kids_3"
+  ]
+ },
+ {
+  "id": "twins",
+  "cat": "family",
+  "tier": "gold",
+  "icon": "👯",
+  "name": "Double Trouble",
+  "desc": "Have twins or triplets.",
+  "req": {
+   "multiples": 1
+  },
+  "hidden": true
+ },
+ {
+  "id": "partners_1",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "💘",
+  "name": "Serial Dater",
+  "desc": "Date 5 people in one life.",
+  "req": {
+   "partners": 5
+  }
+ },
+ {
+  "id": "partners_2",
+  "cat": "family",
+  "tier": "gold",
+  "icon": "💘",
+  "name": "Heartbreaker",
+  "desc": "Date 10 people in one life.",
+  "req": {
+   "partners": 10
+  },
+  "needs": [
+   "partners_1"
+  ]
+ },
+ {
+  "id": "widowed",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🖤",
+  "name": "Till Death",
+  "desc": "Lose your spouse.",
+  "req": {
+   "widowed": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "pets_1",
+  "cat": "family",
+  "tier": "bronze",
+  "icon": "🐾",
+  "name": "Best Friend",
+  "desc": "Have 1 pet(s).",
+  "req": {
+   "pets": 1
+  }
+ },
+ {
+  "id": "pets_2",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🐾",
+  "name": "Animal Lover",
+  "desc": "Have 4 pet(s).",
+  "req": {
+   "pets": 4
+  },
+  "needs": [
+   "pets_1"
+  ]
+ },
+ {
+  "id": "gen_1",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🌳",
+  "name": "Legacy",
+  "desc": "Reach generation 2.",
+  "req": {
+   "generation": 2
+  }
+ },
+ {
+  "id": "gen_2",
+  "cat": "family",
+  "tier": "gold",
+  "icon": "🌳",
+  "name": "Dynasty",
+  "desc": "Reach generation 3.",
+  "req": {
+   "generation": 3
+  },
+  "needs": [
+   "gen_1"
+  ]
+ },
+ {
+  "id": "gen_3",
+  "cat": "family",
+  "tier": "platinum",
+  "icon": "🌳",
+  "name": "Bloodline",
+  "desc": "Reach generation 5.",
+  "req": {
+   "generation": 5
+  },
+  "needs": [
+   "gen_2"
+  ]
+ },
+ {
+  "id": "amends",
+  "cat": "family",
+  "tier": "bronze",
+  "icon": "🕊️",
+  "name": "Olive Branch",
+  "desc": "Make amends with someone who held a grudge.",
+  "req": {
+   "amends": 1
+  }
+ },
+ {
+  "id": "amends_5",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🤝",
+  "name": "Peacemaker",
+  "desc": "Make amends 5 times.",
+  "req": {
+   "amends": 5
+  },
+  "needs": [
+   "amends"
+  ]
+ },
+ {
+  "id": "nw_1",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "💰",
+  "name": "Comfortable",
+  "desc": "Reach a net worth of $100,000.",
+  "req": {
+   "net_worth": 100000
+  }
+ },
+ {
+  "id": "nw_2",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "💰",
+  "name": "Millionaire",
+  "desc": "Reach a net worth of $1,000,000.",
+  "req": {
+   "net_worth": 1000000
+  },
+  "needs": [
+   "nw_1"
+  ]
+ },
+ {
+  "id": "nw_3",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "💰",
+  "name": "Multimillionaire",
+  "desc": "Reach a net worth of $10,000,000.",
+  "req": {
+   "net_worth": 10000000
+  },
+  "needs": [
+   "nw_2"
+  ]
+ },
+ {
+  "id": "nw_4",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "💰",
+  "name": "Mogul",
+  "desc": "Reach a net worth of $100,000,000.",
+  "req": {
+   "net_worth": 100000000
+  },
+  "needs": [
+   "nw_3"
+  ]
+ },
+ {
+  "id": "nw_5",
+  "cat": "wealth",
+  "tier": "platinum",
+  "icon": "💰",
+  "name": "Billionaire",
+  "desc": "Reach a net worth of $1,000,000,000.",
+  "req": {
+   "net_worth": 1000000000
+  },
+  "needs": [
+   "nw_4"
+  ],
+  "title": "billionaire",
+  "title_name": "The Billionaire"
+ },
+ {
+  "id": "cash",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "💵",
+  "name": "Cash Is King",
+  "desc": "Hold $1,000,000 in cash.",
+  "req": {
+   "money": 1000000
+  }
+ },
+ {
+  "id": "investor",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "📈",
+  "name": "Market Wizard",
+  "desc": "Hold $1,000,000 in stocks and crypto.",
+  "req": {
+   "investments": 1000000
+  }
+ },
+ {
+  "id": "prop_1",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "🏘️",
+  "name": "Landlord",
+  "desc": "Own 1 propert(ies).",
+  "req": {
+   "properties": 1
+  }
+ },
+ {
+  "id": "prop_2",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "🏘️",
+  "name": "Property Baron",
+  "desc": "Own 5 propert(ies).",
+  "req": {
+   "properties": 5
+  },
+  "needs": [
+   "prop_1"
+  ]
+ },
+ {
+  "id": "prop_3",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "🏘️",
+  "name": "Real Estate Empire",
+  "desc": "Own 10 propert(ies).",
+  "req": {
+   "properties": 10
+  },
+  "needs": [
+   "prop_2"
+  ]
+ },
+ {
+  "id": "island",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "🏝️",
+  "name": "Castaway by Choice",
+  "desc": "Own a private island.",
+  "req": {
+   "island": true
+  }
+ },
+ {
+  "id": "collector",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "🖼️",
+  "name": "Collector",
+  "desc": "Own 10 possessions.",
+  "req": {
+   "possessions": 10
+  }
+ },
+ {
+  "id": "rock_bottom",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "📉",
+  "name": "Rock Bottom",
+  "desc": "Declare bankruptcy.",
+  "req": {
+   "bankruptcies": 1
+  }
+ },
+ {
+  "id": "comeback",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "🔥",
+  "name": "Comeback Kid",
+  "desc": "Reach $1M net worth after going bankrupt in the same life.",
+  "req": {
+   "comeback": true
+  },
+  "needs": [
+   "rock_bottom"
+  ],
+  "title": "phoenix2",
+  "title_name": "Risen From Ashes"
+ },
+ {
+  "id": "repo",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "🚚",
+  "name": "Repo Man",
+  "desc": "Have something repossessed.",
+  "req": {
+   "repossessions": 1
+  }
+ },
+ {
+  "id": "gamble_1",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "🎰",
+  "name": "Feeling Lucky",
+  "desc": "Gamble 10 times in one life.",
+  "req": {
+   "gambles": 10
+  }
+ },
+ {
+  "id": "gamble_2",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "🎰",
+  "name": "High Roller",
+  "desc": "Gamble 50 times in one life.",
+  "req": {
+   "gambles": 50
+  },
+  "needs": [
+   "gamble_1"
+  ]
+ },
+ {
+  "id": "jackpot",
+  "cat": "wealth",
+  "tier": "platinum",
+  "icon": "🎟️",
+  "name": "Jackpot",
+  "desc": "Win the lottery.",
+  "req": {
+   "lottery": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "credit_800",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "💳",
+  "name": "Golden Credit",
+  "desc": "Reach a credit score of 800.",
+  "req": {
+   "credit": 800,
+   "age": 18
+  }
+ },
+ {
+  "id": "rich_inmate",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "⛓️",
+  "name": "Commissary King",
+  "desc": "Be a millionaire in prison.",
+  "req": {
+   "rich_inmate": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "paycheck",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "💼",
+  "name": "First Paycheck",
+  "desc": "Get hired.",
+  "req": {
+   "hired": 1
+  }
+ },
+ {
+  "id": "promo_1",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "📈",
+  "name": "Moving Up",
+  "desc": "Get promoted 1 time(s) in one life.",
+  "req": {
+   "promotions": 1
+  }
+ },
+ {
+  "id": "promo_2",
+  "cat": "career",
+  "tier": "silver",
+  "icon": "📈",
+  "name": "Climber",
+  "desc": "Get promoted 5 time(s) in one life.",
+  "req": {
+   "promotions": 5
+  },
+  "needs": [
+   "promo_1"
+  ]
+ },
+ {
+  "id": "promo_3",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "📈",
+  "name": "Corner Office",
+  "desc": "Get promoted 10 time(s) in one life.",
+  "req": {
+   "promotions": 10
+  },
+  "needs": [
+   "promo_2"
+  ]
+ },
+ {
+  "id": "retired",
+  "cat": "career",
+  "tier": "silver",
+  "icon": "🏖️",
+  "name": "Golden Years",
+  "desc": "Retire.",
+  "req": {
+   "retired": true
+  }
+ },
+ {
+  "id": "tried_1",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🔀",
+  "name": "Career Change",
+  "desc": "Try 2 special careers in one life.",
+  "req": {
+   "careers_tried": 2
+  }
+ },
+ {
+  "id": "tried_2",
+  "cat": "career",
+  "tier": "silver",
+  "icon": "🔀",
+  "name": "Jack of All Trades",
+  "desc": "Try 4 special careers in one life.",
+  "req": {
+   "careers_tried": 4
+  },
+  "needs": [
+   "tried_1"
+  ]
+ },
+ {
+  "id": "tried_3",
+  "cat": "career",
+  "tier": "platinum",
+  "icon": "🔀",
+  "name": "Renaissance Soul",
+  "desc": "Try 7 special careers in one life.",
+  "req": {
+   "careers_tried": 7
+  },
+  "needs": [
+   "tried_2"
+  ]
+ },
+ {
+  "id": "start_actor",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🎬",
+  "name": "Aspiring Actor",
+  "desc": "Start a career as an Actor.",
+  "req": {
+   "career_actor": true
+  }
+ },
+ {
+  "id": "top_actor",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🎬",
+  "name": "Hollywood Legend",
+  "desc": "Reach the top rank as an Actor.",
+  "req": {
+   "rank_actor": 5
+  },
+  "needs": [
+   "start_actor"
+  ]
+ },
+ {
+  "id": "start_musician",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🎸",
+  "name": "Aspiring Musician",
+  "desc": "Start a career as a Musician.",
+  "req": {
+   "career_musician": true
+  }
+ },
+ {
+  "id": "top_musician",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🎸",
+  "name": "Music Icon",
+  "desc": "Reach the top rank as a Musician.",
+  "req": {
+   "rank_musician": 5
+  },
+  "needs": [
+   "start_musician"
+  ]
+ },
+ {
+  "id": "start_athlete",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🏆",
+  "name": "Aspiring Pro Athlete",
+  "desc": "Start a career as a Pro Athlete.",
+  "req": {
+   "career_athlete": true
+  }
+ },
+ {
+  "id": "top_athlete",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🏆",
+  "name": "Hall of Famer",
+  "desc": "Reach the top rank as a Pro Athlete.",
+  "req": {
+   "rank_athlete": 5
+  },
+  "needs": [
+   "start_athlete"
+  ]
+ },
+ {
+  "id": "start_politician",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🏛️",
+  "name": "Aspiring Politician",
+  "desc": "Start a career as a Politician.",
+  "req": {
+   "career_politician": true
+  }
+ },
+ {
+  "id": "top_politician",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🏛️",
+  "name": "Commander in Chief",
+  "desc": "Become President.",
+  "req": {
+   "rank_politician": 0,
+   "president": 1
+  },
+  "needs": [
+   "start_politician"
+  ]
+ },
+ {
+  "id": "start_mafia",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🕴️",
+  "name": "Aspiring Mafia",
+  "desc": "Start a career as a Mafia.",
+  "req": {
+   "career_mafia": true
+  }
+ },
+ {
+  "id": "top_mafia",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🕴️",
+  "name": "The Godfather",
+  "desc": "Reach the top rank as a Mafia.",
+  "req": {
+   "rank_mafia": 5
+  },
+  "needs": [
+   "start_mafia"
+  ]
+ },
+ {
+  "id": "start_hustler",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🎲",
+  "name": "Aspiring Street Hustler",
+  "desc": "Start a career as a Street Hustler.",
+  "req": {
+   "career_hustler": true
+  }
+ },
+ {
+  "id": "top_hustler",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🎲",
+  "name": "Street King",
+  "desc": "Reach the top rank as a Street Hustler.",
+  "req": {
+   "rank_hustler": 3
+  },
+  "needs": [
+   "start_hustler"
+  ]
+ },
+ {
+  "id": "start_astronaut",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🚀",
+  "name": "Aspiring Astronaut",
+  "desc": "Start a career as an Astronaut.",
+  "req": {
+   "career_astronaut": true
+  }
+ },
+ {
+  "id": "top_astronaut",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🚀",
+  "name": "Chief Astronaut",
+  "desc": "Reach the top rank as an Astronaut.",
+  "req": {
+   "rank_astronaut": 4
+  },
+  "needs": [
+   "start_astronaut"
+  ]
+ },
+ {
+  "id": "start_model",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "💃",
+  "name": "Aspiring Model",
+  "desc": "Start a career as a Model.",
+  "req": {
+   "career_model": true
+  }
+ },
+ {
+  "id": "top_model",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "💃",
+  "name": "Supermodel",
+  "desc": "Reach the top rank as a Model.",
+  "req": {
+   "rank_model": 4
+  },
+  "needs": [
+   "start_model"
+  ]
+ },
+ {
+  "id": "start_fighter",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🥊",
+  "name": "Aspiring Fighter",
+  "desc": "Start a career as a Fighter.",
+  "req": {
+   "career_fighter": true
+  }
+ },
+ {
+  "id": "top_fighter",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🥊",
+  "name": "Undisputed",
+  "desc": "Reach the top rank as a Fighter.",
+  "req": {
+   "rank_fighter": 5
+  },
+  "needs": [
+   "start_fighter"
+  ]
+ },
+ {
+  "id": "start_director",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🎥",
+  "name": "Aspiring Director",
+  "desc": "Start a career as a Director.",
+  "req": {
+   "career_director": true
+  }
+ },
+ {
+  "id": "top_director",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🎥",
+  "name": "Auteur",
+  "desc": "Reach the top rank as a Director.",
+  "req": {
+   "rank_director": 4
+  },
+  "needs": [
+   "start_director"
+  ]
+ },
+ {
+  "id": "start_agent",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🕵️",
+  "name": "Aspiring Secret Agent",
+  "desc": "Start a career as a Secret Agent.",
+  "req": {
+   "career_agent": true
+  }
+ },
+ {
+  "id": "top_agent",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🕵️",
+  "name": "Spymaster",
+  "desc": "Reach the top rank as a Secret Agent.",
+  "req": {
+   "rank_agent": 4
+  },
+  "needs": [
+   "start_agent"
+  ]
+ },
+ {
+  "id": "oscar",
+  "cat": "career",
+  "tier": "platinum",
+  "icon": "🏅",
+  "name": "Golden Statue",
+  "desc": "Win a top acting award.",
+  "req": {
+   "awards": 1
+  },
+  "needs": [
+   "start_actor"
+  ]
+ },
+ {
+  "id": "diamond",
+  "cat": "career",
+  "tier": "platinum",
+  "icon": "💎",
+  "name": "Diamond Record",
+  "desc": "Sell a Diamond album.",
+  "req": {
+   "diamond": 1
+  },
+  "needs": [
+   "start_musician"
+  ]
+ },
+ {
+  "id": "champ",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🏆",
+  "name": "Champion",
+  "desc": "Win a championship or a title belt.",
+  "req": {
+   "titles": 1
+  }
+ },
+ {
+  "id": "space",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🌌",
+  "name": "Pale Blue Dot",
+  "desc": "Go to space.",
+  "req": {
+   "space": true
+  },
+  "needs": [
+   "start_astronaut"
+  ]
+ },
+ {
+  "id": "films5",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🎞️",
+  "name": "Filmography",
+  "desc": "Direct 5 films.",
+  "req": {
+   "films": 5
+  },
+  "needs": [
+   "start_director"
+  ]
+ },
+ {
+  "id": "ops10",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🗂️",
+  "name": "Classified",
+  "desc": "Complete 10 operations as an agent.",
+  "req": {
+   "ops": 10
+  },
+  "needs": [
+   "start_agent"
+  ]
+ },
+ {
+  "id": "fame_1",
+  "cat": "fame",
+  "tier": "bronze",
+  "icon": "⭐",
+  "name": "Local Celebrity",
+  "desc": "Reach 25 fame.",
+  "req": {
+   "fame": 25
+  }
+ },
+ {
+  "id": "fame_2",
+  "cat": "fame",
+  "tier": "silver",
+  "icon": "⭐",
+  "name": "Famous",
+  "desc": "Reach 50 fame.",
+  "req": {
+   "fame": 50
+  },
+  "needs": [
+   "fame_1"
+  ]
+ },
+ {
+  "id": "fame_3",
+  "cat": "fame",
+  "tier": "gold",
+  "icon": "⭐",
+  "name": "Icon",
+  "desc": "Reach 90 fame.",
+  "req": {
+   "fame": 90
+  },
+  "needs": [
+   "fame_2"
+  ],
+  "title": "icon",
+  "title_name": "The Icon"
+ },
+ {
+  "id": "fol_1",
+  "cat": "fame",
+  "tier": "silver",
+  "icon": "📱",
+  "name": "Influencer",
+  "desc": "Reach 1,000,000 followers.",
+  "req": {
+   "followers": 1000000
+  }
+ },
+ {
+  "id": "fol_2",
+  "cat": "fame",
+  "tier": "platinum",
+  "icon": "📱",
+  "name": "Global Superstar",
+  "desc": "Reach 100,000,000 followers.",
+  "req": {
+   "followers": 100000000
+  },
+  "needs": [
+   "fol_1"
+  ]
+ },
+ {
+  "id": "viral_1",
+  "cat": "fame",
+  "tier": "bronze",
+  "icon": "🔥",
+  "name": "Gone Viral",
+  "desc": "Go viral 1 time(s).",
+  "req": {
+   "viral": 1
+  }
+ },
+ {
+  "id": "viral_2",
+  "cat": "fame",
+  "tier": "silver",
+  "icon": "🔥",
+  "name": "Viral Machine",
+  "desc": "Go viral 5 time(s).",
+  "req": {
+   "viral": 5
+  },
+  "needs": [
+   "viral_1"
+  ]
+ },
+ {
+  "id": "celebrity",
+  "cat": "fame",
+  "tier": "gold",
+  "icon": "🌟",
+  "name": "A-Lister",
+  "desc": "Become a celebrity.",
+  "req": {
+   "celebrity": true
+  }
+ },
+ {
+  "id": "crime_1",
+  "cat": "crime",
+  "tier": "bronze",
+  "icon": "🦹",
+  "name": "First Offense",
+  "desc": "Commit 1 crime(s) in one life.",
+  "req": {
+   "crimes": 1
+  }
+ },
+ {
+  "id": "crime_2",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🦹",
+  "name": "Career Criminal",
+  "desc": "Commit 10 crime(s) in one life.",
+  "req": {
+   "crimes": 10
+  },
+  "needs": [
+   "crime_1"
+  ]
+ },
+ {
+  "id": "crime_3",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "🦹",
+  "name": "Crime Wave",
+  "desc": "Commit 40 crime(s) in one life.",
+  "req": {
+   "crimes": 40
+  },
+  "needs": [
+   "crime_2"
+  ]
+ },
+ {
+  "id": "prison_1",
+  "cat": "crime",
+  "tier": "bronze",
+  "icon": "⛓️",
+  "name": "Doing Time",
+  "desc": "Spend 1 year(s) in prison.",
+  "req": {
+   "prison_total": 1
+  }
+ },
+ {
+  "id": "prison_2",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "⛓️",
+  "name": "Hardened",
+  "desc": "Spend 10 year(s) in prison.",
+  "req": {
+   "prison_total": 10
+  },
+  "needs": [
+   "prison_1"
+  ]
+ },
+ {
+  "id": "prison_3",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "⛓️",
+  "name": "Lifer",
+  "desc": "Spend 25 year(s) in prison.",
+  "req": {
+   "prison_total": 25
+  },
+  "needs": [
+   "prison_2"
+  ]
+ },
+ {
+  "id": "most_wanted",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "🚨",
+  "name": "Most Wanted",
+  "desc": "Hit 100 heat.",
+  "req": {
+   "heat": 100
+  },
+  "title": "wanted",
+  "title_name": "Most Wanted"
+ },
+ {
+  "id": "fence_1",
+  "cat": "crime",
+  "tier": "bronze",
+  "icon": "🕶️",
+  "name": "Know a Guy",
+  "desc": "Fence 1 stolen item(s).",
+  "req": {
+   "fenced": 1
+  }
+ },
+ {
+  "id": "fence_2",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🕶️",
+  "name": "Fence Master",
+  "desc": "Fence 10 stolen item(s).",
+  "req": {
+   "fenced": 10
+  },
+  "needs": [
+   "fence_1"
+  ]
+ },
+ {
+  "id": "fugitive",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "🏃",
+  "name": "Fugitive",
+  "desc": "Escape the law.",
+  "req": {
+   "fugitive": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "fled",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🛂",
+  "name": "Ghost",
+  "desc": "Flee the country on a forged passport.",
+  "req": {
+   "fled_country": true
+  }
+ },
+ {
+  "id": "pardoned",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🕊️",
+  "name": "Pardoned",
+  "desc": "Receive a pardon.",
+  "req": {
+   "pardoned": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "exonerated",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "⚖️",
+  "name": "Innocent All Along",
+  "desc": "Be exonerated of a crime you didn't commit.",
+  "req": {
+   "exonerated": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "clean_100",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "😇",
+  "name": "Spotless",
+  "desc": "Reach 80 without a single crime or prison day.",
+  "req": {
+   "age": 80
+  },
+  "req_max": {
+   "crimes": 0,
+   "prison_total": 0,
+   "record": 0
+  }
+ },
+ {
+  "id": "founder",
+  "cat": "empires",
+  "tier": "bronze",
+  "icon": "📈",
+  "name": "Founder",
+  "desc": "Start a business.",
+  "req": {
+   "businesses": 1
+  }
+ },
+ {
+  "id": "biz_1",
+  "cat": "empires",
+  "tier": "silver",
+  "icon": "🏢",
+  "name": "Growing Company",
+  "desc": "Build a company worth $1,000,000.",
+  "req": {
+   "business_value": 1000000
+  }
+ },
+ {
+  "id": "biz_2",
+  "cat": "empires",
+  "tier": "gold",
+  "icon": "🏢",
+  "name": "Corporation",
+  "desc": "Build a company worth $100,000,000.",
+  "req": {
+   "business_value": 100000000
+  },
+  "needs": [
+   "biz_1"
+  ]
+ },
+ {
+  "id": "ipo",
+  "cat": "empires",
+  "tier": "gold",
+  "icon": "🔔",
+  "name": "Ring the Bell",
+  "desc": "Take a company public.",
+  "req": {
+   "biz_public": true
+  },
+  "needs": [
+   "founder"
+  ]
+ },
+ {
+  "id": "cult_1",
+  "cat": "empires",
+  "tier": "bronze",
+  "icon": "🛐",
+  "name": "Following",
+  "desc": "Lead a cult of 10 members.",
+  "req": {
+   "cult_members": 10
+  }
+ },
+ {
+  "id": "cult_2",
+  "cat": "empires",
+  "tier": "silver",
+  "icon": "🛐",
+  "name": "Movement",
+  "desc": "Lead a cult of 250 members.",
+  "req": {
+   "cult_members": 250
+  },
+  "needs": [
+   "cult_1"
+  ]
+ },
+ {
+  "id": "cult_3",
+  "cat": "empires",
+  "tier": "gold",
+  "icon": "🛐",
+  "name": "Faith",
+  "desc": "Lead a cult of 1,000 members.",
+  "req": {
+   "cult_members": 1000
+  },
+  "needs": [
+   "cult_2"
+  ]
+ },
+ {
+  "id": "cult_4",
+  "cat": "empires",
+  "tier": "platinum",
+  "icon": "🛐",
+  "name": "Religion",
+  "desc": "Lead a cult of 10,000 members.",
+  "req": {
+   "cult_members": 10000
+  },
+  "needs": [
+   "cult_3"
+  ],
+  "title": "prophet2",
+  "title_name": "The Messiah"
+ },
+ {
+  "id": "zoo_1",
+  "cat": "empires",
+  "tier": "bronze",
+  "icon": "🦁",
+  "name": "Zookeeper",
+  "desc": "Keep 1 kinds of animals in your zoo.",
+  "req": {
+   "zoo_species": 1
+  }
+ },
+ {
+  "id": "zoo_2",
+  "cat": "empires",
+  "tier": "gold",
+  "icon": "🦁",
+  "name": "Menagerie",
+  "desc": "Keep 10 kinds of animals in your zoo.",
+  "req": {
+   "zoo_species": 10
+  },
+  "needs": [
+   "zoo_1"
+  ]
+ },
+ {
+  "id": "zoo_crowd",
+  "cat": "empires",
+  "tier": "gold",
+  "icon": "🎟️",
+  "name": "Packed House",
+  "desc": "Draw 100,000 visitors to your zoo in a year.",
+  "req": {
+   "zoo_visitors": 100000
+  },
+  "needs": [
+   "zoo_1"
+  ]
+ },
+ {
+  "id": "trips_1",
+  "cat": "outdoors",
+  "tier": "bronze",
+  "icon": "🏕️",
+  "name": "Into the Wild",
+  "desc": "Take 1 outdoor trips in one life.",
+  "req": {
+   "trips": 1
+  }
+ },
+ {
+  "id": "trips_2",
+  "cat": "outdoors",
+  "tier": "silver",
+  "icon": "🏕️",
+  "name": "Seasoned Explorer",
+  "desc": "Take 25 outdoor trips in one life.",
+  "req": {
+   "trips": 25
+  },
+  "needs": [
+   "trips_1"
+  ]
+ },
+ {
+  "id": "journal_1",
+  "cat": "outdoors",
+  "tier": "silver",
+  "icon": "📓",
+  "name": "Field Notes",
+  "desc": "Spot 10 kinds of wildlife.",
+  "req": {
+   "journal_species": 10
+  }
+ },
+ {
+  "id": "journal_2",
+  "cat": "outdoors",
+  "tier": "platinum",
+  "icon": "📓",
+  "name": "Naturalist",
+  "desc": "Spot 24 kinds of wildlife.",
+  "req": {
+   "journal_species": 24
+  },
+  "needs": [
+   "journal_1"
+  ]
+ },
+ {
+  "id": "fishj_1",
+  "cat": "outdoors",
+  "tier": "bronze",
+  "icon": "🐟",
+  "name": "Angler",
+  "desc": "Catch 5 kinds of fish.",
+  "req": {
+   "journal_fish": 5
+  }
+ },
+ {
+  "id": "fishj_2",
+  "cat": "outdoors",
+  "tier": "gold",
+  "icon": "🐟",
+  "name": "Master Angler",
+  "desc": "Catch 16 kinds of fish.",
+  "req": {
+   "journal_fish": 16
+  },
+  "needs": [
+   "fishj_1"
+  ]
+ },
+ {
+  "id": "trophy",
+  "cat": "outdoors",
+  "tier": "silver",
+  "icon": "🏆",
+  "name": "Trophy Catch",
+  "desc": "Catch a trophy fish.",
+  "req": {
+   "trophy_fish": 1
+  }
+ },
+ {
+  "id": "finds_1",
+  "cat": "outdoors",
+  "tier": "bronze",
+  "icon": "💎",
+  "name": "Lucky Find",
+  "desc": "Find 1 treasure(s) outdoors.",
+  "req": {
+   "finds": 1
+  }
+ },
+ {
+  "id": "finds_2",
+  "cat": "outdoors",
+  "tier": "gold",
+  "icon": "💎",
+  "name": "Treasure Hunter",
+  "desc": "Find 8 treasure(s) outdoors.",
+  "req": {
+   "finds": 8
+  },
+  "needs": [
+   "finds_1"
+  ]
+ },
+ {
+  "id": "museum",
+  "cat": "outdoors",
+  "tier": "gold",
+  "icon": "🏛️",
+  "name": "The Wing",
+  "desc": "Get a museum wing named after you (5 donations).",
+  "req": {
+   "museum_donations": 5
+  }
+ },
+ {
+  "id": "mg_1",
+  "cat": "minigames",
+  "tier": "bronze",
+  "icon": "🎮",
+  "name": "Player One",
+  "desc": "Play 1 minigame(s) yourself in one life.",
+  "req": {
+   "minigames": 1
+  }
+ },
+ {
+  "id": "mg_2",
+  "cat": "minigames",
+  "tier": "silver",
+  "icon": "🎮",
+  "name": "Gamer",
+  "desc": "Play 25 minigame(s) yourself in one life.",
+  "req": {
+   "minigames": 25
+  },
+  "needs": [
+   "mg_1"
+  ]
+ },
+ {
+  "id": "mg_3",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🎮",
+  "name": "No-Lifer",
+  "desc": "Play 100 minigame(s) yourself in one life.",
+  "req": {
+   "minigames": 100
+  },
+  "needs": [
+   "mg_2"
+  ]
+ },
+ {
+  "id": "mgg_1",
+  "cat": "minigames",
+  "tier": "bronze",
+  "icon": "🌟",
+  "name": "Great!",
+  "desc": "Score Great or better 1 time(s).",
+  "req": {
+   "mg_great": 1
+  }
+ },
+ {
+  "id": "mgg_2",
+  "cat": "minigames",
+  "tier": "silver",
+  "icon": "🌟",
+  "name": "Consistent",
+  "desc": "Score Great or better 15 time(s).",
+  "req": {
+   "mg_great": 15
+  },
+  "needs": [
+   "mgg_1"
+  ]
+ },
+ {
+  "id": "mgp_1",
+  "cat": "minigames",
+  "tier": "silver",
+  "icon": "💯",
+  "name": "Perfect!",
+  "desc": "Score Perfect 1 time(s).",
+  "req": {
+   "mg_perfect": 1
+  }
+ },
+ {
+  "id": "mgp_2",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "💯",
+  "name": "Flawless",
+  "desc": "Score Perfect 10 time(s).",
+  "req": {
+   "mg_perfect": 10
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_audition",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🎭",
+  "name": "Show Stopper",
+  "desc": "Score Perfect in the Audition minigame.",
+  "req": {
+   "mgp_audition": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_rhythm",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🎸",
+  "name": "Perfect Pitch",
+  "desc": "Score Perfect in the Rhythm minigame.",
+  "req": {
+   "mgp_rhythm": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_clutch",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🏆",
+  "name": "Ice in the Veins",
+  "desc": "Score Perfect in the Clutch minigame.",
+  "req": {
+   "mgp_clutch": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_debate",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🎙️",
+  "name": "Silver Tongue",
+  "desc": "Score Perfect in the Debate minigame.",
+  "req": {
+   "mgp_debate": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_safecrack",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🔐",
+  "name": "Golden Ears",
+  "desc": "Score Perfect in the Safecrack minigame.",
+  "req": {
+   "mgp_safecrack": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_pickpocket",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "👛",
+  "name": "Ghost Fingers",
+  "desc": "Score Perfect in the Pickpocket minigame.",
+  "req": {
+   "mgp_pickpocket": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_docking",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🚀",
+  "name": "Soft Touch",
+  "desc": "Score Perfect in the Docking minigame.",
+  "req": {
+   "mgp_docking": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_runway",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "💃",
+  "name": "Picture Perfect",
+  "desc": "Score Perfect in the Runway minigame.",
+  "req": {
+   "mgp_runway": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_fight",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🥊",
+  "name": "Untouchable",
+  "desc": "Score Perfect in the Fight minigame.",
+  "req": {
+   "mgp_fight": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_onset",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🎬",
+  "name": "One Take",
+  "desc": "Score Perfect in the On Set minigame.",
+  "req": {
+   "mgp_onset": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_infiltrate",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🕵️",
+  "name": "Shadow",
+  "desc": "Score Perfect in the Infiltrate minigame.",
+  "req": {
+   "mgp_infiltrate": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "mgp_fishing",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "🎣",
+  "name": "The Big One",
+  "desc": "Score Perfect in the Fishing minigame.",
+  "req": {
+   "mgp_fishing": 1
+  },
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "twist_1",
+  "cat": "grit",
+  "tier": "bronze",
+  "icon": "⚡",
+  "name": "Plot Twist",
+  "desc": "Live through 1 Turning Point(s) in one life.",
+  "req": {
+   "twists": 1
+  }
+ },
+ {
+  "id": "twist_2",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "⚡",
+  "name": "Eventful",
+  "desc": "Live through 4 Turning Point(s) in one life.",
+  "req": {
+   "twists": 4
+  },
+  "needs": [
+   "twist_1"
+  ]
+ },
+ {
+  "id": "twist_3",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "⚡",
+  "name": "Chaos Magnet",
+  "desc": "Live through 8 Turning Point(s) in one life.",
+  "req": {
+   "twists": 8
+  },
+  "needs": [
+   "twist_2"
+  ],
+  "title": "chaos",
+  "title_name": "Agent of Chaos"
+ },
+ {
+  "id": "scar_1",
+  "cat": "grit",
+  "tier": "bronze",
+  "icon": "🩹",
+  "name": "Battle Scars",
+  "desc": "Collect 1 permanent scar(s).",
+  "req": {
+   "scars": 1
+  }
+ },
+ {
+  "id": "scar_2",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🩹",
+  "name": "Held Together",
+  "desc": "Collect 4 permanent scar(s).",
+  "req": {
+   "scars": 4
+  },
+  "needs": [
+   "scar_1"
+  ]
+ },
+ {
+  "id": "healed",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "🩼",
+  "name": "Mended",
+  "desc": "Heal a scar.",
+  "req": {
+   "scars_healed": 1
+  },
+  "needs": [
+   "scar_1"
+  ]
+ },
+ {
+  "id": "habit",
+  "cat": "grit",
+  "tier": "bronze",
+  "icon": "🎰",
+  "name": "Hooked",
+  "desc": "Develop a habit.",
+  "req": {
+   "habits_formed": 1
+  }
+ },
+ {
+  "id": "clean_1",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "🏥",
+  "name": "One Day at a Time",
+  "desc": "Beat 1 habit(s).",
+  "req": {
+   "habits_beaten": 1
+  },
+  "needs": [
+   "habit"
+  ]
+ },
+ {
+  "id": "clean_2",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🏥",
+  "name": "Unbreakable",
+  "desc": "Beat 3 habit(s).",
+  "req": {
+   "habits_beaten": 3
+  },
+  "needs": [
+   "clean_1"
+  ]
+ },
+ {
+  "id": "coma",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🛌",
+  "name": "Rip Van Winkle",
+  "desc": "Wake from a coma.",
+  "req": {
+   "coma": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "witness",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🎭",
+  "name": "New Me",
+  "desc": "Enter witness protection.",
+  "req": {
+   "witness_protection": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "cheated",
+  "cat": "grit",
+  "tier": "platinum",
+  "icon": "💨",
+  "name": "Cheated Death",
+  "desc": "Survive a fatal moment with Second Wind.",
+  "req": {
+   "cheated_death": 1
+  }
+ },
+ {
+  "id": "cancer",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🎗️",
+  "name": "Survivor",
+  "desc": "Beat cancer.",
+  "req": {
+   "beat_cancer": true
+  },
+  "hidden": true,
+  "title": "survivor2",
+  "title_name": "The Fighter"
+ },
+ {
+  "id": "enemies_1",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "😠",
+  "name": "Burned Bridges",
+  "desc": "Have 3 people holding grudges against you at once.",
+  "req": {
+   "grudges": 3
+  }
+ },
+ {
+  "id": "enemies_2",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "😠",
+  "name": "Public Enemy",
+  "desc": "Have 8 people holding grudges against you at once.",
+  "req": {
+   "grudges": 8
+  },
+  "needs": [
+   "enemies_1"
+  ]
+ },
+ {
+  "id": "retal_1",
+  "cat": "grit",
+  "tier": "bronze",
+  "icon": "🗡️",
+  "name": "Payback",
+  "desc": "Suffer 1 act(s) of revenge.",
+  "req": {
+   "retaliations": 1
+  }
+ },
+ {
+  "id": "retal_2",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "🗡️",
+  "name": "Target",
+  "desc": "Suffer 6 act(s) of revenge.",
+  "req": {
+   "retaliations": 6
+  },
+  "needs": [
+   "retal_1"
+  ]
+ },
+ {
+  "id": "gritty_1",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "🩸",
+  "name": "Hard Mode",
+  "desc": "Reach age 40 on Gritty difficulty.",
+  "req": {
+   "gritty_age": 40
+  }
+ },
+ {
+  "id": "gritty_2",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🩸",
+  "name": "Tough as Nails",
+  "desc": "Reach age 70 on Gritty difficulty.",
+  "req": {
+   "gritty_age": 70
+  },
+  "needs": [
+   "gritty_1"
+  ]
+ },
+ {
+  "id": "gritty_3",
+  "cat": "grit",
+  "tier": "platinum",
+  "icon": "🩸",
+  "name": "Unbreakable Will",
+  "desc": "Reach age 90 on Gritty difficulty.",
+  "req": {
+   "gritty_age": 90
+  },
+  "needs": [
+   "gritty_2"
+  ],
+  "title": "ironclad",
+  "title_name": "Ironclad"
+ },
+ {
+  "id": "nursing",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "🏥",
+  "name": "Alone at the End",
+  "desc": "Spend your last years in a nursing home.",
+  "req": {
+   "nursing_home": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "estranged",
+  "cat": "grit",
+  "tier": "silver",
+  "icon": "🚪",
+  "name": "Silent Phone",
+  "desc": "Have a child cut you off.",
+  "req": {
+   "estranged": 1
+  },
+  "hidden": true
+ },
+ {
+  "id": "broke_old",
+  "cat": "grit",
+  "tier": "gold",
+  "icon": "🪙",
+  "name": "Nothing to Show",
+  "desc": "Reach 80 with nothing to your name.",
+  "req": {
+   "broke_old": true
+  },
+  "hidden": true
+ },
+ {
+  "id": "lives_1",
+  "cat": "legacy",
+  "tier": "bronze",
+  "icon": "♾️",
+  "name": "Reincarnated",
+  "desc": "Live 5 lives.",
+  "req": {
+   "lives_total": 5
+  }
+ },
+ {
+  "id": "lives_2",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "♾️",
+  "name": "Old Soul",
+  "desc": "Live 25 lives.",
+  "req": {
+   "lives_total": 25
+  },
+  "needs": [
+   "lives_1"
+  ]
+ },
+ {
+  "id": "lives_3",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "♾️",
+  "name": "Eternal",
+  "desc": "Live 100 lives.",
+  "req": {
+   "lives_total": 100
+  },
+  "needs": [
+   "lives_2"
+  ]
+ },
+ {
+  "id": "years_1",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "⏳",
+  "name": "Time Traveler",
+  "desc": "Live 500 years in total across all lives.",
+  "req": {
+   "years_total": 500
+  }
+ },
+ {
+  "id": "years_2",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "⏳",
+  "name": "Ancient One",
+  "desc": "Live 5,000 years in total across all lives.",
+  "req": {
+   "years_total": 5000
+  },
+  "needs": [
+   "years_1"
+  ]
+ },
+ {
+  "id": "achs_1",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "🏆",
+  "name": "Achiever",
+  "desc": "Unlock 25 achievements.",
+  "req": {
+   "ach_count": 25
+  }
+ },
+ {
+  "id": "achs_2",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "🏆",
+  "name": "Completionist",
+  "desc": "Unlock 75 achievements.",
+  "req": {
+   "ach_count": 75
+  },
+  "needs": [
+   "achs_1"
+  ]
+ },
+ {
+  "id": "achs_3",
+  "cat": "legacy",
+  "tier": "platinum",
+  "icon": "🏆",
+  "name": "Living Legend",
+  "desc": "Unlock 150 achievements.",
+  "req": {
+   "ach_count": 150
+  },
+  "needs": [
+   "achs_2"
+  ],
+  "title": "legend2",
+  "title_name": "The Legend"
+ },
+ {
+  "id": "missions_1",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "🎯",
+  "name": "On a Mission",
+  "desc": "Claim 10 missions.",
+  "req": {
+   "missions_done": 10
+  }
+ },
+ {
+  "id": "missions_2",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "🎯",
+  "name": "Taskmaster",
+  "desc": "Claim 100 missions.",
+  "req": {
+   "missions_done": 100
+  },
+  "needs": [
+   "missions_1"
+  ]
+ },
+ {
+  "id": "ribbons_1",
+  "cat": "legacy",
+  "tier": "bronze",
+  "icon": "🎀",
+  "name": "Ribbon Collector",
+  "desc": "Collect 5 different ribbons.",
+  "req": {
+   "ribbons_distinct": 5
+  }
+ },
+ {
+  "id": "ribbons_2",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "🎀",
+  "name": "Ribbon Hoarder",
+  "desc": "Collect 15 different ribbons.",
+  "req": {
+   "ribbons_distinct": 15
+  },
+  "needs": [
+   "ribbons_1"
+  ]
+ },
+ {
+  "id": "ribbons_3",
+  "cat": "legacy",
+  "tier": "platinum",
+  "icon": "🎀",
+  "name": "Every Ribbon",
+  "desc": "Collect 21 different ribbons.",
+  "req": {
+   "ribbons_distinct": 21
+  },
+  "needs": [
+   "ribbons_2"
+  ]
+ },
+ {
+  "id": "chal_1",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "🏅",
+  "name": "Challenger",
+  "desc": "Complete 1 challenge(s).",
+  "req": {
+   "challenges_done": 1
+  }
+ },
+ {
+  "id": "chal_2",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "🏅",
+  "name": "Challenge Master",
+  "desc": "Complete 5 challenge(s).",
+  "req": {
+   "challenges_done": 5
+  },
+  "needs": [
+   "chal_1"
+  ]
+ },
+ {
+  "id": "stars500",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "⭐",
+  "name": "Starry Eyed",
+  "desc": "Earn 500 Stars.",
+  "req": {
+   "stars_total": 500
+  }
+ },
+ {
+  "id": "glives_1",
+  "cat": "legacy",
+  "tier": "bronze",
+  "icon": "🩸",
+  "name": "Brave",
+  "desc": "Start 1 life/lives on Gritty.",
+  "req": {
+   "gritty_lives": 1
+  }
+ },
+ {
+  "id": "glives_2",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "🩸",
+  "name": "Masochist",
+  "desc": "Start 10 life/lives on Gritty.",
+  "req": {
+   "gritty_lives": 10
+  },
+  "needs": [
+   "glives_1"
+  ]
+ },
+ {
+  "id": "cave_death",
+  "cat": "secret",
+  "tier": "silver",
+  "icon": "🤿",
+  "name": "Too Deep",
+  "desc": "Die cave diving.",
+  "req": {
+   "cause": "a cave diving accident"
+  },
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "space_death",
+  "cat": "secret",
+  "tier": "silver",
+  "icon": "☄️",
+  "name": "Lost in Space",
+  "desc": "Die in a spacecraft accident.",
+  "req": {
+   "cause": "a spacecraft accident"
+  },
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "young",
+  "cat": "secret",
+  "tier": "bronze",
+  "icon": "🕯️",
+  "name": "Gone Too Soon",
+  "desc": "Die before 25.",
+  "req": {
+   "dead": true
+  },
+  "req_max": {
+   "age": 24
+  },
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "modified_rich",
+  "cat": "secret",
+  "tier": "bronze",
+  "icon": "🧪",
+  "name": "Silver Spoon",
+  "desc": "Reach $1M net worth in a Modified life.",
+  "req": {
+   "modified": true,
+   "net_worth": 1000000
+  },
+  "hidden": true
+ },
+ {
+  "id": "married_thrice",
+  "cat": "secret",
+  "tier": "silver",
+  "icon": "💒",
+  "name": "Third Time's the Charm",
+  "desc": "Get married 3 times in one life.",
+  "req": {
+   "marriages": 3
+  },
+  "hidden": true
+ },
+ {
+  "id": "zero_friends",
+  "cat": "secret",
+  "tier": "silver",
+  "icon": "🏚️",
+  "name": "Hermit",
+  "desc": "Reach 60 with nobody close to you.",
+  "req": {
+   "age": 60
+  },
+  "req_max": {
+   "closest": 10
+  },
+  "hidden": true
+ },
+ {
+  "id": "peaceful_gritty",
+  "cat": "secret",
+  "tier": "platinum",
+  "icon": "👑",
+  "name": "Against All Odds",
+  "desc": "Die at 90+ on Gritty with no scars and no record.",
+  "req": {
+   "gritty": true,
+   "age": 90,
+   "dead": true
+  },
+  "req_max": {
+   "scars": 0,
+   "record": 0
+  },
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "heir",
+  "cat": "secret",
+  "tier": "silver",
+  "icon": "🧬",
+  "name": "Inheritance",
+  "desc": "Inherit a family feud.",
+  "req": {
+   "feuds": 1
+  },
+  "hidden": true
+ },
+ {
+  "id": "royal_born",
+  "cat": "paths",
+  "tier": "bronze",
+  "icon": "👑",
+  "name": "Born to Rule",
+  "desc": "Be born into a royal family.",
+  "req": {
+   "life_royal": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "royal_crowned",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🏰",
+  "name": "Long Live the Monarch",
+  "desc": "Take the throne.",
+  "req": {
+   "coronations": 1
+  },
+  "v": 5,
+  "needs": [
+   "royal_born"
+  ],
+  "title": "majesty",
+  "title_name": "Your Majesty"
+ },
+ {
+  "id": "royal_reign",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "🎆",
+  "name": "Golden Jubilee",
+  "desc": "Reign for 25 years.",
+  "req": {
+   "reign": 25
+  },
+  "v": 5,
+  "needs": [
+   "royal_crowned"
+  ]
+ },
+ {
+  "id": "royal_decrees",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "📜",
+  "name": "By Royal Decree",
+  "desc": "Issue 10 royal decrees in one reign.",
+  "req": {
+   "decrees": 10
+  },
+  "v": 5,
+  "needs": [
+   "royal_crowned"
+  ]
+ },
+ {
+  "id": "royal_consort",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "💍",
+  "name": "Fairy Tale",
+  "desc": "Marry into a royal family.",
+  "req": {
+   "life_royal_consort": 1
+  },
+  "v": 5,
+  "hidden": true
+ },
+ {
+  "id": "royal_overthrown",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🏴",
+  "name": "Heavy Is the Head",
+  "desc": "Lose your crown to a revolution.",
+  "req": {
+   "overthrown": true
+  },
+  "v": 5,
+  "needs": [
+   "royal_crowned"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "vamp_turned",
+  "cat": "paths",
+  "tier": "bronze",
+  "icon": "🧛",
+  "name": "Creature of the Night",
+  "desc": "Become a vampire.",
+  "req": {
+   "life_vampire": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "vamp_feeds",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🩸",
+  "name": "Well Fed",
+  "desc": "Feed 25 times in one unlife.",
+  "req": {
+   "feeds": 25
+  },
+  "v": 5,
+  "needs": [
+   "vamp_turned"
+  ]
+ },
+ {
+  "id": "vamp_sire",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🦇",
+  "name": "Sire",
+  "desc": "Turn 3 people into vampires.",
+  "req": {
+   "fledglings": 3
+  },
+  "v": 5,
+  "needs": [
+   "vamp_turned"
+  ]
+ },
+ {
+  "id": "vamp_century",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "⏳",
+  "name": "Ageless",
+  "desc": "Live 100 years as a vampire.",
+  "req": {
+   "vamp_years": 100
+  },
+  "v": 5,
+  "needs": [
+   "vamp_turned"
+  ],
+  "title": "ageless",
+  "title_name": "The Ageless"
+ },
+ {
+  "id": "vamp_ancient",
+  "cat": "paths",
+  "tier": "platinum",
+  "icon": "🏚️",
+  "name": "Older Than Nations",
+  "desc": "Live 250 years as a vampire.",
+  "req": {
+   "vamp_years": 250
+  },
+  "v": 5,
+  "needs": [
+   "vamp_century"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "vamp_cured",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "🌅",
+  "name": "Mortal Again",
+  "desc": "Be cured of vampirism.",
+  "req": {
+   "vamp_cured": true
+  },
+  "v": 5,
+  "needs": [
+   "vamp_turned"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "rev_rise",
+  "cat": "paths",
+  "tier": "bronze",
+  "icon": "🧟",
+  "name": "Unfinished Business",
+  "desc": "Rise from the grave.",
+  "req": {
+   "life_revenant": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "rev_done",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🕊️",
+  "name": "Rest Easy",
+  "desc": "Finish your unfinished business.",
+  "req": {
+   "business_done": 1
+  },
+  "v": 5,
+  "needs": [
+   "rev_rise"
+  ]
+ },
+ {
+  "id": "witch_gift",
+  "cat": "paths",
+  "tier": "bronze",
+  "icon": "🧙",
+  "name": "The Gift",
+  "desc": "Awaken as a witch.",
+  "req": {
+   "life_witch": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "witch_spells",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🪄",
+  "name": "Spellbound",
+  "desc": "Cast 25 spells in one life.",
+  "req": {
+   "spells": 25
+  },
+  "v": 5,
+  "needs": [
+   "witch_gift"
+  ]
+ },
+ {
+  "id": "witch_brewer",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "⚗️",
+  "name": "Apothecary",
+  "desc": "Brew 30 potions in one life.",
+  "req": {
+   "potions_brewed": 30
+  },
+  "v": 5,
+  "needs": [
+   "witch_gift"
+  ]
+ },
+ {
+  "id": "witch_master",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "🌟",
+  "name": "Masterwork",
+  "desc": "Brew a perfect batch.",
+  "req": {
+   "masterworks": 1
+  },
+  "v": 5,
+  "needs": [
+   "witch_gift"
+  ]
+ },
+ {
+  "id": "witch_grimoire",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "📖",
+  "name": "Complete Grimoire",
+  "desc": "Discover all six recipes (your grimoire carries across lives).",
+  "req": {
+   "grimoire_recipes": 6
+  },
+  "v": 5,
+  "needs": [
+   "witch_gift"
+  ],
+  "title": "grimoire",
+  "title_name": "Keeper of the Grimoire"
+ },
+ {
+  "id": "witch_hex",
+  "cat": "paths",
+  "tier": "bronze",
+  "icon": "☠️",
+  "name": "Hexmaster",
+  "desc": "Curse or hex 5 people in one life.",
+  "req": {
+   "curses": 5
+  },
+  "v": 5,
+  "needs": [
+   "witch_gift"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "super_powers",
+  "cat": "paths",
+  "tier": "bronze",
+  "icon": "⚡",
+  "name": "With Great Power",
+  "desc": "Develop superpowers.",
+  "req": {
+   "life_super": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "super_saves",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🦸",
+  "name": "Guardian",
+  "desc": "Save people 20 times as a hero.",
+  "req": {
+   "saves": 20
+  },
+  "v": 5,
+  "needs": [
+   "super_powers"
+  ]
+ },
+ {
+  "id": "super_heists",
+  "cat": "paths",
+  "tier": "silver",
+  "icon": "🦹",
+  "name": "Supervillain",
+  "desc": "Pull off 10 heists as a villain.",
+  "req": {
+   "heists": 10
+  },
+  "v": 5,
+  "needs": [
+   "super_powers"
+  ]
+ },
+ {
+  "id": "super_nemesis",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "⚔️",
+  "name": "Arch-Nemesis",
+  "desc": "Defeat your nemesis for good.",
+  "req": {
+   "nemesis_defeated": 1
+  },
+  "v": 5,
+  "needs": [
+   "super_powers"
+  ]
+ },
+ {
+  "id": "super_revealed",
+  "cat": "paths",
+  "tier": "gold",
+  "icon": "🎭",
+  "name": "No More Secrets",
+  "desc": "Reveal your secret identity to the world.",
+  "req": {
+   "revealed": true
+  },
+  "v": 5,
+  "needs": [
+   "super_powers"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "world_history",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🌍",
+  "name": "Living History",
+  "desc": "Live through 10 world events in one life.",
+  "req": {
+   "world_events": 10
+  },
+  "v": 5
+ },
+ {
+  "id": "world_move",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🚚",
+  "name": "New in Town",
+  "desc": "Move to another city.",
+  "req": {
+   "relocations": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "world_licenses",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🪪",
+  "name": "Card-Carrying",
+  "desc": "Hold 4 licenses at once.",
+  "req": {
+   "licenses": 4
+  },
+  "v": 5
+ },
+ {
+  "id": "world_suspended",
+  "cat": "grit",
+  "tier": "bronze",
+  "icon": "🚫",
+  "name": "Suspended",
+  "desc": "Have a license suspended.",
+  "req": {
+   "license_suspensions": 1
+  },
+  "v": 5,
+  "hidden": true
+ },
+ {
+  "id": "bb_team",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "🏟️",
+  "name": "Owner's Box",
+  "desc": "Own a sports team.",
+  "req": {
+   "team_owner": true
+  },
+  "v": 5,
+  "needs": [
+   "nw_5"
+  ]
+ },
+ {
+  "id": "bb_titles",
+  "cat": "wealth",
+  "tier": "platinum",
+  "icon": "🏆",
+  "name": "Dynasty Owner",
+  "desc": "Win 3 championships as a team owner.",
+  "req": {
+   "team_titles": 3
+  },
+  "v": 5,
+  "needs": [
+   "bb_team"
+  ]
+ },
+ {
+  "id": "bb_mega",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "🏙️",
+  "name": "Monument",
+  "desc": "Build a megaproject.",
+  "req": {
+   "megaprojects": 1
+  },
+  "v": 5,
+  "needs": [
+   "nw_5"
+  ]
+ },
+ {
+  "id": "bb_pledge",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "🤲",
+  "name": "The Giving Pledge",
+  "desc": "Pledge your fortune to charity.",
+  "req": {
+   "giving_pledge": true
+  },
+  "v": 5,
+  "needs": [
+   "nw_5"
+  ],
+  "title": "benefactor",
+  "title_name": "The Benefactor"
+ },
+ {
+  "id": "bb_nation",
+  "cat": "wealth",
+  "tier": "platinum",
+  "icon": "🏳️",
+  "name": "Sovereign",
+  "desc": "Found your own micronation.",
+  "req": {
+   "micronation": true
+  },
+  "v": 5,
+  "needs": [
+   "nw_5"
+  ],
+  "title": "sovereign",
+  "title_name": "The Sovereign"
+ },
+ {
+  "id": "mgp_potion",
+  "cat": "minigames",
+  "tier": "gold",
+  "icon": "⚗️",
+  "name": "Perfect Brew",
+  "desc": "Score Perfect in the Potion Brewing minigame.",
+  "req": {
+   "mgp_potion": 1
+  },
+  "v": 5,
+  "needs": [
+   "mgp_1"
+  ]
+ },
+ {
+  "id": "heir_1",
+  "cat": "legacy",
+  "tier": "bronze",
+  "icon": "🎁",
+  "name": "Family Treasure",
+  "desc": "Open your first daily heirloom.",
+  "req": {
+   "heirlooms_found": 1
+  },
+  "v": 5
+ },
+ {
+  "id": "heir_10",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "🗝️",
+  "name": "Curator",
+  "desc": "Discover 10 different heirlooms.",
+  "req": {
+   "heirlooms_found": 10
+  },
+  "v": 5,
+  "needs": [
+   "heir_1"
+  ]
+ },
+ {
+  "id": "heir_all",
+  "cat": "legacy",
+  "tier": "platinum",
+  "icon": "🏛️",
+  "name": "The Whole Collection",
+  "desc": "Discover every heirloom.",
+  "req": {
+   "heirlooms_found": 24
+  },
+  "v": 5,
+  "needs": [
+   "heir_10"
+  ],
+  "title": "curator",
+  "title_name": "The Curator"
+ },
+ {
+  "id": "heir_legend",
+  "cat": "legacy",
+  "tier": "gold",
+  "icon": "🌠",
+  "name": "Legendary Find",
+  "desc": "Find a legendary heirloom.",
+  "req": {
+   "heirlooms_legendary": 1
+  },
+  "v": 5,
+  "needs": [
+   "heir_1"
+  ],
+  "hidden": true
+ },
+ {
+  "id": "v6_wed",
+  "cat": "family",
+  "tier": "bronze",
+  "icon": "💒",
+  "name": "I Do",
+  "desc": "Get married.",
+  "req": {
+   "marriages": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_bigwed",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "💍",
+  "name": "Serial Spouse",
+  "desc": "Get married 3 times in one life.",
+  "req": {
+   "marriages": 3
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_adopt",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🏠",
+  "name": "Chosen Family",
+  "desc": "Adopt a child.",
+  "req": {
+   "adoptions": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_foster",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🧸",
+  "name": "Open Door",
+  "desc": "Foster 3 children in one life.",
+  "req": {
+   "fostered": 3
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_grand",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "👵",
+  "name": "Grandparent",
+  "desc": "Become a grandparent.",
+  "req": {
+   "grandchildren": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_grand5",
+  "cat": "family",
+  "tier": "gold",
+  "icon": "👨‍👩‍👧‍👦",
+  "name": "Dynasty",
+  "desc": "Have 5 grandchildren in one life.",
+  "req": {
+   "grandchildren": 5
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_generous",
+  "cat": "family",
+  "tier": "silver",
+  "icon": "🎁",
+  "name": "Big Heart",
+  "desc": "Give gifts or money to loved ones 15 times in one life.",
+  "req": {
+   "generous": 15
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_shop",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "🛍️",
+  "name": "Retail Therapy",
+  "desc": "Buy 10 items from the shops in one life.",
+  "req": {
+   "purchases": 10
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_spend",
+  "cat": "wealth",
+  "tier": "gold",
+  "icon": "💳",
+  "name": "Big Spender",
+  "desc": "Spend $1,000,000 at the shops in one life.",
+  "req": {
+   "spent": 1000000
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_ticket",
+  "cat": "wealth",
+  "tier": "bronze",
+  "icon": "🎟️",
+  "name": "Feeling Lucky",
+  "desc": "Buy 10 lottery tickets in one life.",
+  "req": {
+   "lottery_tickets": 10
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_jackpot",
+  "cat": "secret",
+  "tier": "gold",
+  "icon": "🍀",
+  "name": "Jackpot!",
+  "desc": "Win the lottery jackpot.",
+  "req": {
+   "jackpots": 1
+  },
+  "v": 6,
+  "hidden": true
+ },
+ {
+  "id": "v6_casino",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "🎰",
+  "name": "House Money",
+  "desc": "Win 10 casino bets in one life.",
+  "req": {
+   "gamble_wins": 10
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_posts",
+  "cat": "fame",
+  "tier": "bronze",
+  "icon": "📱",
+  "name": "Content Creator",
+  "desc": "Post 25 times in one life.",
+  "req": {
+   "posts": 25
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_viral",
+  "cat": "fame",
+  "tier": "silver",
+  "icon": "🚀",
+  "name": "Gone Viral",
+  "desc": "Go viral 3 times in one life.",
+  "req": {
+   "viral": 3
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_verify",
+  "cat": "fame",
+  "tier": "silver",
+  "icon": "✅",
+  "name": "Blue Check",
+  "desc": "Get verified on any platform.",
+  "req": {
+   "verified": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_collab",
+  "cat": "fame",
+  "tier": "gold",
+  "icon": "🤝",
+  "name": "Collab King",
+  "desc": "Collab with a celebrity.",
+  "req": {
+   "collabs": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_sponsor",
+  "cat": "fame",
+  "tier": "silver",
+  "icon": "💸",
+  "name": "Sponsored",
+  "desc": "Land 5 sponsorship deals in one life.",
+  "req": {
+   "sponsors": 5
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_deals",
+  "cat": "crime",
+  "tier": "bronze",
+  "icon": "💊",
+  "name": "Corner Boy",
+  "desc": "Make 20 deals as a dealer in one life.",
+  "req": {
+   "deals": 20
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_zones",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "🗺️",
+  "name": "Kingpin",
+  "desc": "Take over 4 whole zones in one life.",
+  "req": {
+   "zones_owned": 4
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_wars",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🔫",
+  "name": "Turf War",
+  "desc": "Win 3 turf wars in one life.",
+  "req": {
+   "turf_wars": 3
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_burgle",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🥷",
+  "name": "Cat Burglar",
+  "desc": "Pull off 5 burglaries in one life.",
+  "req": {
+   "burglaries": 5
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_escape",
+  "cat": "crime",
+  "tier": "gold",
+  "icon": "🔓",
+  "name": "Houdini",
+  "desc": "Escape from prison.",
+  "req": {
+   "escapes": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_medal",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🎖️",
+  "name": "Decorated",
+  "desc": "Earn a medal on deployment.",
+  "req": {
+   "medals": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_deploy",
+  "cat": "career",
+  "tier": "silver",
+  "icon": "🪖",
+  "name": "Boots on the Ground",
+  "desc": "Complete 3 deployments in one life.",
+  "req": {
+   "deployments": 3
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_belt",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🥋",
+  "name": "Black Belt",
+  "desc": "Earn 8 martial arts belts in one life.",
+  "req": {
+   "belts_earned": 8
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_prom",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "👑",
+  "name": "Prom Royalty",
+  "desc": "Be crowned at prom.",
+  "req": {
+   "prom_crowns": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_captain",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏅",
+  "name": "Team Captain",
+  "desc": "Become captain of a school team.",
+  "req": {
+   "captain": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_clubs",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🎭",
+  "name": "Joiner",
+  "desc": "Join 3 school clubs in one life.",
+  "req": {
+   "clubs_joined": 3
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_vacay",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏝️",
+  "name": "Jet Setter",
+  "desc": "Take 10 vacations in one life.",
+  "req": {
+   "vacations": 10
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_fights",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🥊",
+  "name": "Brawler",
+  "desc": "Win 5 fights in one life.",
+  "req": {
+   "fights_won": 5
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_talent",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🌟",
+  "name": "Showstopper",
+  "desc": "Win the school talent show.",
+  "req": {
+   "talent_wins": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v6_surgery",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "💉",
+  "name": "New Face",
+  "desc": "Get plastic surgery.",
+  "req": {
+   "surgeries": 1
+  },
+  "v": 6
+ },
+ {
+  "id": "v8_case_closed",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🕵️",
+  "name": "Case Closed",
+  "desc": "Solve your first detective case.",
+  "req": {
+   "cases_solved": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_casebook",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "📚",
+  "name": "Casebook",
+  "desc": "Solve 10 detective cases in one life.",
+  "req": {
+   "cases_solved": 10
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_saved",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🩺",
+  "name": "Good Outcome",
+  "desc": "Save a patient through clinical care.",
+  "req": {
+   "patients_saved": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_surgeon",
+  "cat": "career",
+  "tier": "silver",
+  "icon": "🔪",
+  "name": "Steady Hands",
+  "desc": "Complete 5 successful operations in one life.",
+  "req": {
+   "surgeries_success": 5
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_teacher_doc",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🎓",
+  "name": "See One, Teach One",
+  "desc": "Mentor a medical trainee.",
+  "req": {
+   "medical_mentees": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_pet_title",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "🏆",
+  "name": "Best in Class",
+  "desc": "Win a pet-show title.",
+  "req": {
+   "pet_titles": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_pet_family",
+  "cat": "family",
+  "tier": "bronze",
+  "icon": "🐾",
+  "name": "Tiny Footprints",
+  "desc": "Raise a litter from one of your pets.",
+  "req": {
+   "pet_litters": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_support_pet",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🫂",
+  "name": "Good Company",
+  "desc": "Certify a therapy or support animal.",
+  "req": {
+   "therapy_pets": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_pet_biz",
+  "cat": "wealth",
+  "tier": "silver",
+  "icon": "🐕",
+  "name": "Pet Project",
+  "desc": "Open a pet-centered business.",
+  "req": {
+   "pet_businesses": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_portfolio",
+  "cat": "empires",
+  "tier": "silver",
+  "icon": "🏢",
+  "name": "Portfolio Builder",
+  "desc": "Build a portfolio of 3 additional companies in one life.",
+  "req": {
+   "portfolio_companies": 3
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_acquirer",
+  "cat": "empires",
+  "tier": "gold",
+  "icon": "🤝",
+  "name": "Deal Maker",
+  "desc": "Acquire 3 companies in one life.",
+  "req": {
+   "company_acquisitions": 3
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_successor",
+  "cat": "legacy",
+  "tier": "silver",
+  "icon": "📜",
+  "name": "Continuity Plan",
+  "desc": "Name a child to inherit your company portfolio.",
+  "req": {
+   "succession_plans": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_playoffs",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🏟️",
+  "name": "Postseason",
+  "desc": "Reach the professional postseason.",
+  "req": {
+   "sports_playoffs": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_awards",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🥇",
+  "name": "Decorated Pro",
+  "desc": "Win 3 distinct professional sports awards in one life.",
+  "req": {
+   "sports_awards": 3
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_traded",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "🔄",
+  "name": "New Colors",
+  "desc": "Successfully force a trade to another team.",
+  "req": {
+   "sports_trades": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_project",
+  "cat": "career",
+  "tier": "bronze",
+  "icon": "📊",
+  "name": "Own the Work",
+  "desc": "Lead a major professional project to success.",
+  "req": {
+   "career_projects_won": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_network",
+  "cat": "career",
+  "tier": "silver",
+  "icon": "🤝",
+  "name": "I Know Someone",
+  "desc": "Build 10 professional connections in one life.",
+  "req": {
+   "career_connections": 10
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_appeal",
+  "cat": "crime",
+  "tier": "silver",
+  "icon": "🏛️",
+  "name": "Reversed",
+  "desc": "Win an appeal and overturn a conviction.",
+  "req": {
+   "appeals_won": 1
+  },
+  "v": 8
+ },
+ {
+  "id": "v8_champion",
+  "cat": "career",
+  "tier": "gold",
+  "icon": "🏆",
+  "name": "League Champion",
+  "desc": "Win a professional league championship.",
+  "req": {
+   "sports_titles": 1
+  },
+  "v": 8
+ }
+]

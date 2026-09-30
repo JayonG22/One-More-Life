@@ -1,0 +1,3296 @@
+[
+ {
+  "id": "heat.tail",
+  "icon": "🚗",
+  "title": "Being followed",
+  "text": "The same gray sedan has been parked across the street for three days.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "min_heat": 30
+  },
+  "choices": [
+   {
+    "label": "Lay low for a while",
+    "outcomes": [
+     {
+      "text": "I stayed in, stayed quiet. The sedan disappeared.",
+      "weight": 3,
+      "effects": {
+       "heat": -15,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "I went quiet for four months and they simply waited me out. The sedan was there the week I came back.",
+      "weight": 1,
+      "effects": {
+       "heat": 5,
+       "happiness": -10,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Confront the driver",
+    "outcomes": [
+     {
+      "text": "It was a detective. Now they know I know.",
+      "weight": 1,
+      "effects": {
+       "heat": 10,
+       "stress": 8
+      }
+     },
+     {
+      "text": "It was a private investigator hired by my ex. Awkward.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask {cop.first} about it",
+    "outcomes": [
+     {
+      "text": "{cop.first} made a call. The sedan was gone the next day.",
+      "weight": 3,
+      "relationship": {
+       "cop": -5
+      },
+      "effects": {
+       "heat": -20
+      }
+     },
+     {
+      "text": "{cop.first} asked why I wanted to know, and I could hear {cop.him} deciding something about me.",
+      "weight": 1,
+      "relationship": {
+       "cop": -25
+      },
+      "effects": {
+       "heat": 10,
+       "stress": 10
+      }
+     }
+    ],
+    "requires": {
+     "role": "cop"
+    }
+   }
+  ],
+  "weight": 7,
+  "roles": {
+   "cop": {
+    "contact": [
+     "cop"
+    ],
+    "min_close": 25,
+    "optional": true
+   }
+  }
+ },
+ {
+  "id": "heat.informant",
+  "icon": "🐀",
+  "title": "Informant",
+  "text": "An old associate got arrested and is offering to testify against you.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "min_heat": 45,
+   "has_record": true
+  },
+  "choices": [
+   {
+    "label": "Pay for their lawyer",
+    "outcomes": [
+     {
+      "text": "They got a good lawyer and kept their mouth shut.",
+      "weight": 3,
+      "effects": {
+       "money": -30000,
+       "heat": -15
+      }
+     },
+     {
+      "text": "I paid for the lawyer, and the lawyer advised them that cooperating was the better deal.",
+      "weight": 1,
+      "effects": {
+       "money": -30000,
+       "heat": 25,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave town for a bit",
+    "outcomes": [
+     {
+      "text": "I disappeared for a few months. The case went cold.",
+      "weight": 3,
+      "effects": {
+       "heat": -25,
+       "happiness": -8
+      }
+     },
+     {
+      "text": "I left town, and leaving town was the detail that made them certain it had been me.",
+      "weight": 1,
+      "effects": {
+       "heat": 20,
+       "happiness": -12,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do nothing",
+    "outcomes": [
+     {
+      "text": "They talked.",
+      "weight": 1,
+      "trial": [
+       "conspiracy",
+       1,
+       6
+      ]
+     },
+     {
+      "text": "They didn't know as much as they thought.",
+      "weight": 1,
+      "effects": {
+       "heat": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "bm.intro",
+  "icon": "🕶️",
+  "title": "A shady offer",
+  "text": "{s.first}, a friend of a friend, says {s.he} can get you anything. Anything at all.",
+  "conditions": {
+   "age": [
+    16,
+    70
+   ],
+   "has_record": true
+  },
+  "choices": [
+   {
+    "label": "Take {s.his} number",
+    "outcomes": [
+     {
+      "text": "{s.first} gave me an address. The Black Market is open to me now.",
+      "weight": 3,
+      "empire": "bm_known",
+      "effects": {
+       "heat": 2
+      }
+     },
+     {
+      "text": "{s.first} gave me an address and made a point of taking my number as well, which I had not offered.",
+      "weight": 1,
+      "empire": "bm_known",
+      "effects": {
+       "heat": 10,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk away",
+    "outcomes": [
+     {
+      "text": "I walked away. I don't need that kind of trouble.",
+      "weight": 3,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "I walked away, and {s.first} told the friend of a friend that I was not to be trusted with anything.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask what {s.first} wants out of it",
+    "outcomes": [
+     {
+      "text": "{s.first} wanted a name, not money. I gave {s.him} one and got the address for free.",
+      "weight": 2,
+      "empire": "bm_known",
+      "effects": {
+       "karma": -5,
+       "heat": 4
+      }
+     },
+     {
+      "text": "Asking was the wrong move. {s.first} decided I was police and the friend of a friend stopped calling.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "s": {
+    "new": "friend",
+    "age": [
+     22,
+     50
+    ],
+    "closeness": 30
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "bm.fake_found",
+  "icon": "🔍",
+  "title": "Sharp eyes",
+  "text": "At a party, a jeweler looks closely at your watch and smirks.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "has_possessions": true
+  },
+  "choices": [
+   {
+    "label": "Laugh it off",
+    "outcomes": [
+     {
+      "text": "\"It's a fake? No way.\" Everyone laughed. I didn't.",
+      "weight": 3,
+      "effects": {
+       "happiness": -4,
+       "looks": -1
+      }
+     },
+     {
+      "text": "I laughed first and loudest and turned it into the story of the evening. Nobody remembered it as a humiliation.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "trait_bonus": {
+       "Funny": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Insist it's real",
+    "outcomes": [
+     {
+      "text": "I insisted. The jeweler dropped it, but word got around.",
+      "weight": 3,
+      "effects": {
+       "fame": -1
+      }
+     },
+     {
+      "text": "I insisted, and he offered to open the back of it there and then in front of everybody.",
+      "weight": 1,
+      "effects": {
+       "fame": -3,
+       "happiness": -8,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask him what a real one is worth",
+    "outcomes": [
+     {
+      "text": "He told me, and then told me where the fake had been made, which was more interesting than the watch.",
+      "weight": 2,
+      "effects": {
+       "smarts": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "He told me what the real one costs, loudly, and then what mine was worth, more loudly.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "fame": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2
+ },
+ {
+  "id": "bm.stolen_recognized",
+  "icon": "🖼️",
+  "title": "Recognized",
+  "text": "A guest at your house recognizes a painting on your wall. It was in the news. It was stolen.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "flags": [
+    "black_market_buyer"
+   ],
+   "has_possessions": true
+  },
+  "choices": [
+   {
+    "label": "Say it's a replica",
+    "outcomes": [
+     {
+      "text": "They bought it. I moved the painting to the basement.",
+      "weight": 3,
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "They said they believed me and photographed it on the way out.",
+      "weight": 1,
+      "effects": {
+       "heat": 20,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay them to forget",
+    "outcomes": [
+     {
+      "text": "They took the money. I hope.",
+      "weight": 3,
+      "effects": {
+       "money": -20000,
+       "heat": 8
+      }
+     },
+     {
+      "text": "They took the money, and came back for more of it every year after that.",
+      "weight": 1,
+      "effects": {
+       "money": -20000,
+       "heat": 5,
+       "stress": 18
+      },
+      "flags": [
+       "being_blackmailed"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Do nothing",
+    "outcomes": [
+     {
+      "text": "They called the police.",
+      "weight": 3,
+      "effects": {
+       "heat": 25
+      }
+     },
+     {
+      "text": "They said nothing at all, to me or to anybody. I never worked out why.",
+      "weight": 1,
+      "effects": {
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "bm.exotic_pet_attack",
+  "icon": "🐅",
+  "title": "Exotic pet",
+  "text": "Your exotic pet {x.first} got out and is sitting on the neighbor's car.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lure {x.first} back with meat",
+    "outcomes": [
+     {
+      "text": "It worked. The neighbor has moved out.",
+      "weight": 3,
+      "effects": {
+       "heat": 5
+      }
+     },
+     {
+      "text": "The meat worked on {x.first} and not on the neighbour, who had already been on the phone for ten minutes.",
+      "weight": 1,
+      "effects": {
+       "heat": 20,
+       "money": -4000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call animal control",
+    "outcomes": [
+     {
+      "text": "Animal control confiscated {x.first} and fined me $10,000.",
+      "weight": 3,
+      "effects": {
+       "money": -10000,
+       "heat": 10,
+       "happiness": -10
+      },
+      "relation_change": {
+       "x": "zoo_animal"
+      }
+     },
+     {
+      "text": "Animal control came, and the officer who arrived had wanted one of these {x.his} whole life and quietly wrote it up as a stray.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "happiness": -4
+      },
+      "relation_change": {
+       "x": "zoo_animal"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Donate {x.first} to your zoo",
+    "outcomes": [
+     {
+      "text": "{x.first} now lives in a proper enclosure at my zoo.",
+      "weight": 3,
+      "relation_change": {
+       "x": "zoo_animal"
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "{x.first} went to the zoo and never settled. Some animals know the difference between a big cage and outside.",
+      "weight": 1,
+      "relation_change": {
+       "x": "zoo_animal"
+      },
+      "effects": {
+       "happiness": -6,
+       "karma": -3
+      }
+     }
+    ],
+    "requires": {
+     "has_zoo": true
+    }
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "x": {
+    "from": "exotic_pet"
+   }
+  }
+ },
+ {
+  "id": "bm.forger_busted",
+  "icon": "📜",
+  "title": "Forger arrested",
+  "text": "The forger who made your documents was arrested. Police have his client list.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "flags": [
+    "forged_passport"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Use the passport now",
+    "outcomes": [
+     {
+      "text": "I booked the next flight out.",
+      "weight": 3,
+      "effects": {
+       "stress": 10
+      }
+     },
+     {
+      "text": "I used it, and it worked perfectly, which means it is still out there working for somebody.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "heat": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Burn it",
+    "outcomes": [
+     {
+      "text": "I burned the passport in the sink.",
+      "weight": 3,
+      "unflags": [
+       "forged_passport"
+      ],
+      "effects": {
+       "heat": -5
+      }
+     },
+     {
+      "text": "I burned it, and a fortnight later needed exactly the thing I had burned.",
+      "weight": 1,
+      "unflags": [
+       "forged_passport"
+      ],
+      "effects": {
+       "heat": -5,
+       "stress": 12,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait it out",
+    "outcomes": [
+     {
+      "text": "They came knocking.",
+      "weight": 1,
+      "trial": [
+       "document forgery",
+       1,
+       3
+      ]
+     },
+     {
+      "text": "Nobody came. My name must not have been in the book.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "bm.counterfeit_bust",
+  "icon": "👜",
+  "title": "Market sweep",
+  "text": "Police are sweeping the street market where you sell knockoffs.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "flags": [
+    "black_market_buyer"
+   ],
+   "min_heat": 20
+  },
+  "choices": [
+   {
+    "label": "Run",
+    "outcomes": [
+     {
+      "text": "I got away with half my stock.",
+      "weight": 1,
+      "effects": {
+       "heat": 5
+      }
+     },
+     {
+      "text": "I tripped over a table of handbags. Arrested.",
+      "weight": 1,
+      "trial": [
+       "selling counterfeit goods",
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Act like a shopper",
+    "outcomes": [
+     {
+      "text": "I bought a scarf from the stall next to mine. Nobody looked twice.",
+      "weight": 3,
+      "effects": {
+       "money": -20,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I played the shopper right up until an officer asked me to open the bag I was carrying.",
+      "weight": 1,
+      "effects": {
+       "heat": 25,
+       "money": -1500,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give the stock away to the crowd",
+    "outcomes": [
+     {
+      "text": "I emptied the table into a hundred pairs of hands in about forty seconds. There was nothing left to seize.",
+      "weight": 2,
+      "effects": {
+       "money": -900,
+       "happiness": 6,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I gave it away, and three of the people I gave it to were stopped at the end of the street with it.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "heat": 15,
+       "karma": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "heat.clean_slate",
+  "icon": "🕊️",
+  "title": "Clean slate",
+  "text": "It's been a quiet year. Maybe it's time to go straight for good.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "min_heat": 10,
+   "max_heat": 40
+  },
+  "choices": [
+   {
+    "label": "Go straight",
+    "outcomes": [
+     {
+      "text": "I cut ties with the old crowd.",
+      "weight": 3,
+      "effects": {
+       "heat": -15,
+       "karma": 5,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I went straight, and the old crowd took that as a statement about them, and behaved accordingly.",
+      "weight": 1,
+      "effects": {
+       "heat": -10,
+       "karma": 5,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "One more score",
+    "outcomes": [
+     {
+      "text": "Old habits die hard.",
+      "weight": 3,
+      "effects": {
+       "heat": 5,
+       "money": 3000
+      }
+     },
+     {
+      "text": "One more score turned out to be a much bigger one than advertised, and a much worse one.",
+      "weight": 1,
+      "effects": {
+       "heat": 35,
+       "money": 25000,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go straight, and give back what you can",
+    "outcomes": [
+     {
+      "text": "I paid back everybody I could find. It cost most of what I had and it is the only thing I am proud of.",
+      "weight": 2,
+      "effects": {
+       "heat": -30,
+       "karma": 25,
+       "money": -60000,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "Paying people back meant contacting them, and two of them took that as an admission and used it.",
+      "weight": 1,
+      "effects": {
+       "heat": 15,
+       "karma": 20,
+       "money": -60000,
+       "stress": 15
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 3
+ },
+ {
+  "id": "out.lost",
+  "icon": "🧭",
+  "title": "Lost in the woods",
+  "text": "On a hike, you realize you haven't seen a trail marker in an hour.",
+  "conditions": {
+   "age": [
+    10,
+    90
+   ],
+   "min_trips": 1
+  },
+  "choices": [
+   {
+    "label": "Follow the stream downhill",
+    "outcomes": [
+     {
+      "text": "The stream led to a road. I hitchhiked home.",
+      "weight": 2,
+      "effects": {
+       "stress": 6,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "The stream led nowhere. Search and rescue found me two days later.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "stress": 15,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay put and wait",
+    "outcomes": [
+     {
+      "text": "A ranger found me at dusk.",
+      "weight": 3,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I stayed put for two nights. They found me on the third morning about four hundred metres from a road.",
+      "weight": 1,
+      "effects": {
+       "stress": 20,
+       "health": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Climb for a signal",
+    "outcomes": [
+     {
+      "text": "One bar at the top of the ridge was all it took. They picked me up in ninety minutes.",
+      "weight": 2,
+      "effects": {
+       "stress": 8,
+       "health": -4
+      }
+     },
+     {
+      "text": "I climbed for an hour, got no signal, and could no longer find the way I had come up.",
+      "weight": 1,
+      "effects": {
+       "stress": 22,
+       "health": -18
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "out.bear",
+  "icon": "🐻",
+  "title": "Bear!",
+  "text": "A black bear is standing on the trail, twenty feet away.",
+  "conditions": {
+   "age": [
+    8,
+    90
+   ],
+   "min_trips": 2
+  },
+  "choices": [
+   {
+    "label": "Make yourself big and loud",
+    "outcomes": [
+     {
+      "text": "It stared, then lumbered off. My legs didn't stop shaking for an hour.",
+      "weight": 4,
+      "effects": {
+       "stress": 8,
+       "happiness": 4
+      },
+      "empire": "random_find"
+     },
+     {
+      "text": "I made myself big and it decided to make itself bigger. I got down the trail on adrenaline and a badly turned ankle.",
+      "weight": 1,
+      "effects": {
+       "stress": 20,
+       "health": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run",
+    "outcomes": [
+     {
+      "text": "Never run from a bear. It chased me. I survived, barely.",
+      "weight": 3,
+      "effects": {
+       "health": -30,
+       "stress": 20
+      }
+     },
+     {
+      "text": "I ran, which was the wrong thing, and it did not follow, which was pure luck and I know it.",
+      "weight": 1,
+      "effects": {
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a photo",
+    "outcomes": [
+     {
+      "text": "The photo won a local wildlife contest.",
+      "weight": 3,
+      "effects": {
+       "fame": 1,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I got the phone up and it came four steps closer, and the photograph is of nothing but blur and grass.",
+      "weight": 1,
+      "effects": {
+       "stress": 20,
+       "health": -8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "out.fishing_tourney",
+  "icon": "🏆",
+  "title": "Fishing tournament",
+  "text": "There's a fishing tournament at the lake this weekend. $5,000 prize.",
+  "conditions": {
+   "age": [
+    10,
+    90
+   ],
+   "min_trips": 1
+  },
+  "choices": [
+   {
+    "label": "Enter",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 3,
+      "play": {
+       "id": "fishing",
+       "kind": "fishing",
+       "params": {
+        "skill": 55,
+        "difficulty": 1.1
+       }
+      }
+     },
+     {
+      "text": "",
+      "weight": 1,
+      "play": {
+       "id": "fishing",
+       "kind": "fishing",
+       "params": {
+        "skill": 55,
+        "difficulty": 1.5
+       }
+      }
+     }
+    ]
+   },
+   {
+    "label": "Watch from the dock",
+    "outcomes": [
+     {
+      "text": "I watched and ate a hot dog. A good day.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I watched from the dock and the man who won told me afterwards I should have entered. He was right.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enter, and fish where nobody else is",
+    "outcomes": [
+     {
+      "text": "Everybody crowded the inlet. I went to the far bank and took second place and a thousand dollars.",
+      "weight": 2,
+      "effects": {
+       "money": 1000,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "There was a reason nobody was fishing the far bank. I caught weed for six hours.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "money": -40
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "out.family_trip",
+  "icon": "🏕️",
+  "title": "Family trip",
+  "text": "{k.first} begs you to take {k.him} camping.",
+  "conditions": {
+   "age": [
+    25,
+    80
+   ],
+   "min_trips": 1
+  },
+  "choices": [
+   {
+    "label": "Go camping together",
+    "outcomes": [
+     {
+      "text": "We roasted marshmallows and counted shooting stars. {k.first} will remember this forever.",
+      "weight": 3,
+      "relationship": {
+       "k": 20
+      },
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "It rained for three days and the tent leaked and {k.first} talks about that trip more than any other.",
+      "weight": 1,
+      "relationship": {
+       "k": 25
+      },
+      "effects": {
+       "happiness": 6,
+       "health": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Too busy",
+    "outcomes": [
+     {
+      "text": "{k.first} was crushed.",
+      "weight": 3,
+      "relationship": {
+       "k": -12
+      }
+     },
+     {
+      "text": "I said I was too busy, and {k.first} said it was fine, and stopped asking after that.",
+      "weight": 1,
+      "relationship": {
+       "k": -20
+      },
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go, but take the whole family",
+    "outcomes": [
+     {
+      "text": "All of us in two tents. It was chaos and it is the trip everybody still talks about.",
+      "weight": 2,
+      "relationship": {
+       "k": 15
+      },
+      "effects": {
+       "happiness": 12,
+       "money": -600
+      }
+     },
+     {
+      "text": "All of us in two tents, and by the second night it was clear {k.first} had wanted it to be just the two of us.",
+      "weight": 1,
+      "relationship": {
+       "k": -5
+      },
+      "effects": {
+       "happiness": 2,
+       "money": -600
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "k": {
+    "relation_any": [
+     "child",
+     "grandchild"
+    ],
+    "min_age": 5
+   }
+  }
+ },
+ {
+  "id": "out.treasure",
+  "icon": "🗺️",
+  "title": "Old map",
+  "text": "You found an old hand-drawn map in a secondhand book about the local caves.",
+  "conditions": {
+   "age": [
+    12,
+    90
+   ],
+   "min_trips": 2
+  },
+  "choices": [
+   {
+    "label": "Follow it",
+    "outcomes": [
+     {
+      "text": "At the end of the map: a rusted box of old coins.",
+      "weight": 1,
+      "empire": "random_find",
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "At the end of the map: a note reading \"made you look.\"",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sell it to a collector",
+    "outcomes": [
+     {
+      "text": "A collector paid $300 for it.",
+      "weight": 3,
+      "effects": {
+       "money": 300
+      }
+     },
+     {
+      "text": "The collector paid three hundred, and there was a piece in the paper eight months later about what he found.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it to the local museum",
+    "outcomes": [
+     {
+      "text": "The curator went very quiet and then very excited. There is a case with my name on the card.",
+      "weight": 2,
+      "effects": {
+       "karma": 12,
+       "fame": 3,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "The museum took it, filed it, and I have never once seen it on display.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "once": true
+ },
+ {
+  "id": "out.injured_hawk",
+  "icon": "🦅",
+  "title": "Injured hawk",
+  "text": "You find a hawk with a broken wing by the trail.",
+  "conditions": {
+   "age": [
+    8,
+    90
+   ],
+   "min_trips": 1
+  },
+  "choices": [
+   {
+    "label": "Take it to a rehab center",
+    "outcomes": [
+     {
+      "text": "They saved it. They let me release it myself a month later.",
+      "weight": 3,
+      "effects": {
+       "karma": 6,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "They tried for three weeks. The wing had been broken too long before I found it.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it to your zoo",
+    "outcomes": [
+     {
+      "text": "The hawk joined the rescue wing at my zoo.",
+      "weight": 3,
+      "effects": {
+       "karma": 4
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "The hawk went to my zoo and is the only bird there the keepers will not go near.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
+      }
+     }
+    ],
+    "requires": {
+     "has_zoo": true
+    }
+   },
+   {
+    "label": "Leave it",
+    "outcomes": [
+     {
+      "text": "I left it. I thought about it for days.",
+      "weight": 3,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "I left it, and walked the same trail a week later, and it was still there.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "happiness": -8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "out.dirtbike_race",
+  "icon": "🏁",
+  "title": "Dirt race",
+  "text": "A local motocross race needs one more rider.",
+  "conditions": {
+   "age": [
+    16,
+    70
+   ],
+   "license": "motorcycle"
+  },
+  "choices": [
+   {
+    "label": "Race",
+    "outcomes": [
+     {
+      "text": "I finished on the podium!",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "fame": 1
+      }
+     },
+     {
+      "text": "I ate dirt on the first corner. Broken wrist.",
+      "weight": 1,
+      "effects": {
+       "health": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spectate",
+    "outcomes": [
+     {
+      "text": "I cheered from the fence and got covered in mud.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I watched, and one of the riders went into the barrier at the second corner, and nobody cheered after that.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Race on somebody else's bike",
+    "outcomes": [
+     {
+      "text": "I borrowed a bike I had never sat on and came fourth, which I have decided counts as winning.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "health": -4
+      }
+     },
+     {
+      "text": "I borrowed a bike I did not know and put it into a fence, and had to pay for the fence and the bike.",
+      "weight": 1,
+      "effects": {
+       "money": -3500,
+       "health": -18,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "out.astronaut_meteorite",
+  "icon": "☄️",
+  "title": "Something fell",
+  "text": "A streak of light crossed the sky and landed in the field behind your house.",
+  "conditions": {
+   "age": [
+    8,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go look",
+    "outcomes": [
+     {
+      "text": "A real meteorite! Still warm.",
+      "weight": 3,
+      "empire": "random_find",
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I found the crater and a lump of somebody's satellite, which a very serious man came to collect the next day.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 3,
+       "money": 2000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay inside",
+    "outcomes": [
+     {
+      "text": "The next day, a neighbor was on the news with a meteorite.",
+      "weight": 3,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I stayed in, and it turned out to be a transformer fire that took out half the field.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call somebody who would know",
+    "outcomes": [
+     {
+      "text": "I rang the university. Two of them drove out that night and let me keep a piece of it.",
+      "weight": 2,
+      "effects": {
+       "smarts": 6,
+       "happiness": 10,
+       "karma": 4
+      }
+     },
+     {
+      "text": "I rang the university and they sent somebody the following Tuesday, by which point half the field had been dug over.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "once": true
+ },
+ {
+  "id": "web.doctor_friend",
+  "icon": "🩺",
+  "title": "Friendly checkup",
+  "text": "{d.first}, who works as a doctor, notices you look pale at dinner.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let {d.first} check you out",
+    "outcomes": [
+     {
+      "text": "{d.first} caught something early. It could have been serious.",
+      "weight": 3,
+      "effects": {
+       "health": 10
+      },
+      "relationship": {
+       "d": 8
+      }
+     },
+     {
+      "text": "{d.first} looked me over at the table, said it was nothing, and I have never been sure {d.he} looked properly.",
+      "weight": 1,
+      "relationship": {
+       "d": 4
+      },
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Brush it off",
+    "outcomes": [
+     {
+      "text": "I told {d.first} I'm fine. I'm probably fine.",
+      "weight": 3,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I brushed it off, and {d.first} quietly rang a fortnight later to ask if I had seen anybody about it. {d.He} had not been asking idly.",
+      "weight": 1,
+      "relationship": {
+       "d": 10
+      },
+      "effects": {
+       "health": 6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask {d.first} properly, at a surgery",
+    "outcomes": [
+     {
+      "text": "I booked a real appointment instead of asking over dinner. {d.first} said that was the most sensible thing I had ever done.",
+      "weight": 2,
+      "relationship": {
+       "d": 12
+      },
+      "effects": {
+       "health": 12,
+       "money": -200
+      }
+     },
+     {
+      "text": "I booked properly, waited eleven weeks, and by then whatever it was had gone.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -200
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "d": {
+    "contact": [
+     "doctor",
+     "nurse"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.lawyer_contract",
+  "icon": "📑",
+  "title": "Fine print",
+  "text": "You're about to sign a big contract. {lw.first} offers to read it first.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let {lw.first} read it",
+    "outcomes": [
+     {
+      "text": "{lw.first} found a clause that would have cost me everything.",
+      "weight": 3,
+      "effects": {
+       "money": 5000
+      },
+      "relationship": {
+       "lw": 6
+      }
+     },
+     {
+      "text": "{lw.first} read it, found nothing, and the thing that went wrong two years later was in the part neither of us thought mattered.",
+      "weight": 1,
+      "relationship": {
+       "lw": -5
+      },
+      "effects": {
+       "money": -12000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sign it anyway",
+    "outcomes": [
+     {
+      "text": "I signed it. It was fine. Probably.",
+      "weight": 3,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I signed without reading, and clause eleven cost me a great deal more than a favour would have.",
+      "weight": 1,
+      "effects": {
+       "money": -30000,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay {lw.first} properly for the work",
+    "outcomes": [
+     {
+      "text": "I insisted on paying. {lw.first} read it like a paying client's contract, which is to say twice.",
+      "weight": 2,
+      "relationship": {
+       "lw": 15
+      },
+      "effects": {
+       "money": -2000,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "Paying turned a friend into a supplier, and it has been slightly formal between us ever since.",
+      "weight": 1,
+      "relationship": {
+       "lw": -6
+      },
+      "effects": {
+       "money": -2000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "lw": {
+    "contact": [
+     "lawyer"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.mechanic",
+  "icon": "🔧",
+  "title": "Car trouble",
+  "text": "Your car is making a horrible grinding noise. {mc.first} is a mechanic.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Ask {mc.first}",
+    "outcomes": [
+     {
+      "text": "{mc.first} fixed it in an afternoon for the cost of a pizza.",
+      "weight": 3,
+      "relationship": {
+       "mc": 6
+      },
+      "effects": {
+       "money": -30
+      }
+     },
+     {
+      "text": "{mc.first} fixed it and it went again a month later, and now neither of us knows how to raise it.",
+      "weight": 1,
+      "relationship": {
+       "mc": -8
+      },
+      "effects": {
+       "money": -1400,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it to a garage",
+    "outcomes": [
+     {
+      "text": "The garage charged me $1,800.",
+      "weight": 3,
+      "effects": {
+       "money": -1800
+      }
+     },
+     {
+      "text": "The garage charged eighteen hundred and did it properly, and {mc.first} heard I had not asked.",
+      "weight": 1,
+      "effects": {
+       "money": -1800
+      },
+      "relationship": {
+       "mc": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask {mc.first} to show you how",
+    "outcomes": [
+     {
+      "text": "We did it together in {mc.his} garage on a Sunday. I can do it myself now and we do this most months.",
+      "weight": 2,
+      "relationship": {
+       "mc": 20
+      },
+      "effects": {
+       "money": -60,
+       "smarts": 4,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "{mc.first} showed me, and I understood none of it, and we both pretended otherwise.",
+      "weight": 1,
+      "relationship": {
+       "mc": 4
+      },
+      "effects": {
+       "money": -60
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "mc": {
+    "contact": [
+     "mechanic"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.journalist_scoop",
+  "icon": "📰",
+  "title": "The scoop",
+  "text": "{jr.first}, a journalist, is working on a story that mentions you.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "min_fame": 20
+  },
+  "choices": [
+   {
+    "label": "Give {jr.first} an exclusive",
+    "outcomes": [
+     {
+      "text": "{jr.first}'s piece was glowing.",
+      "weight": 3,
+      "effects": {
+       "fame": 4
+      },
+      "relationship": {
+       "jr": 8
+      }
+     },
+     {
+      "text": "I gave {jr.first} everything and {jr.he} wrote the piece {jr.he} had already decided to write.",
+      "weight": 1,
+      "effects": {
+       "fame": 6,
+       "happiness": -10
+      },
+      "relationship": {
+       "jr": -20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask {jr.first} to kill it",
+    "outcomes": [
+     {
+      "text": "{jr.first} cut my name out.",
+      "weight": 1,
+      "relationship": {
+       "jr": -10
+      }
+     },
+     {
+      "text": "{jr.first} refused. Journalistic integrity.",
+      "weight": 1,
+      "relationship": {
+       "jr": -5
+      },
+      "effects": {
+       "fame": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give {jr.first} a better story instead",
+    "outcomes": [
+     {
+      "text": "I handed {jr.first} something more interesting than me, and {jr.he} took it, and the piece about me never ran.",
+      "weight": 2,
+      "relationship": {
+       "jr": 12
+      },
+      "effects": {
+       "smarts": 4
+      }
+     },
+     {
+      "text": "{jr.first} took the better story and ran both.",
+      "weight": 1,
+      "relationship": {
+       "jr": -8
+      },
+      "effects": {
+       "fame": 6,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "jr": {
+    "contact": [
+     "journalist"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.banker_tip",
+  "icon": "🏦",
+  "title": "Insider tip",
+  "text": "{b.first}, who works at a bank, hints that a big merger is coming.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Buy stock",
+    "outcomes": [
+     {
+      "text": "The merger went through. I made $40,000.",
+      "weight": 1,
+      "effects": {
+       "money": 40000,
+       "karma": -4
+      }
+     },
+     {
+      "text": "The SEC noticed the timing.",
+      "weight": 1,
+      "effects": {
+       "heat": 25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell {b.first} you didn't hear that",
+    "outcomes": [
+     {
+      "text": "{b.first} looked relieved.",
+      "weight": 3,
+      "relationship": {
+       "b": 5
+      },
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "I told {b.first} I had not heard it, and watched the merger go through, and did the arithmetic anyway.",
+      "weight": 1,
+      "relationship": {
+       "b": 5
+      },
+      "effects": {
+       "karma": 3,
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "I reported the conversation. {b.first} lost {b.his} job, and the regulator wrote to thank me.",
+      "weight": 2,
+      "relationship": {
+       "b": -60
+      },
+      "effects": {
+       "karma": 12
+      },
+      "grudge": {
+       "b": 50
+      }
+     },
+     {
+      "text": "I reported it and nothing whatever happened, except that {b.first} found out who had.",
+      "weight": 1,
+      "relationship": {
+       "b": -60
+      },
+      "effects": {
+       "karma": 8,
+       "stress": 12
+      },
+      "grudge": {
+       "b": 50
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "b": {
+    "contact": [
+     "banker"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.cop_favor",
+  "icon": "👮",
+  "title": "A favor",
+  "text": "{cop.first}, a police officer, asks you to keep an eye on a neighbor they suspect.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help {cop.first}",
+    "outcomes": [
+     {
+      "text": "My tip led to an arrest. {cop.first} owes me one.",
+      "weight": 3,
+      "relationship": {
+       "cop": 15
+      },
+      "effects": {
+       "heat": -10
+      }
+     },
+     {
+      "text": "I watched for a month and there was nothing to see. I had been spying on a man who fed birds.",
+      "weight": 1,
+      "relationship": {
+       "cop": 5
+      },
+      "effects": {
+       "karma": -5,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay out of it",
+    "outcomes": [
+     {
+      "text": "I stayed out of it.",
+      "weight": 3,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "I stayed out of it, and what the neighbour was actually doing came out eighteen months later.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the neighbour instead",
+    "outcomes": [
+     {
+      "text": "I told him he was being watched. Whatever he had been doing, he stopped, and nobody was arrested.",
+      "weight": 2,
+      "effects": {
+       "karma": 5,
+       "heat": 10
+      },
+      "relationship": {
+       "cop": -20
+      }
+     },
+     {
+      "text": "I warned him, and he thanked me, and moved what he had been keeping to a house two streets over.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "heat": 15
+      },
+      "relationship": {
+       "cop": -25
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "cop": {
+    "contact": [
+     "cop"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.producer_intro",
+  "icon": "🎬",
+  "title": "Industry intro",
+  "text": "{pr.first}, a film producer, invites you to a party full of industry people.",
+  "conditions": {
+   "age": [
+    16,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and network",
+    "outcomes": [
+     {
+      "text": "I met a casting director who asked for my number.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I spilled wine on a studio head. Memorable, at least.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I stayed home.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I stayed home, and {pr.first} stopped inviting me to things, which is how that works.",
+      "weight": 1,
+      "relationship": {
+       "pr": -10
+      },
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go, but not to network",
+    "outcomes": [
+     {
+      "text": "I went and talked to nobody important and had an excellent evening, and got a call the following week anyway.",
+      "weight": 2,
+      "relationship": {
+       "pr": 10
+      },
+      "effects": {
+       "happiness": 8,
+       "fame": 2
+      }
+     },
+     {
+      "text": "I went with no agenda, and spent four hours watching a room full of people who all had one.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "smarts": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "pr": {
+    "contact": [
+     "producer",
+     "agent"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.realtor_deal",
+  "icon": "🏘️",
+  "title": "Off-market",
+  "text": "{re.first}, a real estate agent, knows about a house being sold below value.",
+  "conditions": {
+   "age": [
+    21,
+    100
+   ],
+   "min_money": 80000
+  },
+  "choices": [
+   {
+    "label": "Buy it",
+    "outcomes": [
+     {
+      "text": "I bought it for a steal and rented it out.",
+      "weight": 3,
+      "effects": {
+       "money": -80000,
+       "happiness": 5
+      },
+      "flags": [
+       "realtor_deal"
+      ]
+     },
+     {
+      "text": "It was below value for a reason that was under the floor and cost more to fix than the discount.",
+      "weight": 1,
+      "effects": {
+       "money": -140000,
+       "stress": 15
+      },
+      "flags": [
+       "realtor_deal"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "I passed. Someone else got a bargain.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I passed, and the buyer spent two years and a fortune discovering what was wrong with it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Have it surveyed first",
+    "outcomes": [
+     {
+      "text": "The survey came back clean and I bought it knowing exactly what I was buying.",
+      "weight": 2,
+      "effects": {
+       "money": -81000,
+       "happiness": 8,
+       "smarts": 3
+      },
+      "flags": [
+       "realtor_deal"
+      ]
+     },
+     {
+      "text": "The survey took nine days and somebody else bought it on the fourth.",
+      "weight": 1,
+      "effects": {
+       "money": -1000,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "re": {
+    "contact": [
+     "realtor"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.teacher_tutor",
+  "icon": "🍎",
+  "title": "Tutoring",
+  "text": "{t.first}, who's a teacher, offers to tutor {k.first} for free.",
+  "conditions": {
+   "age": [
+    25,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Gratefully accept",
+    "outcomes": [
+     {
+      "text": "{k.first}'s grades went way up.",
+      "weight": 3,
+      "relationship": {
+       "t": 8,
+       "k": 5
+      }
+     },
+     {
+      "text": "{t.first} tutored {k.first} for a term and the two of them got on so well that {k.first} now wants to teach.",
+      "weight": 1,
+      "relationship": {
+       "t": 12,
+       "k": 12
+      },
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Insist on paying {t.first}",
+    "outcomes": [
+     {
+      "text": "I paid the going rate. {t.first} took it, and worked {k.first} much harder than a favour would have.",
+      "weight": 2,
+      "relationship": {
+       "t": 10,
+       "k": 8
+      },
+      "effects": {
+       "money": -2000
+      }
+     },
+     {
+      "text": "{t.first} was offended by the offer and the tutoring quietly did not happen.",
+      "weight": 1,
+      "relationship": {
+       "t": -12
+      },
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no thank you",
+    "outcomes": [
+     {
+      "text": "{k.first} wanted to manage it alone, and did, and I am glad I listened.",
+      "weight": 2,
+      "relationship": {
+       "k": 12
+      },
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I turned it down on {k.first}'s behalf without asking {k.him}, which {k.he} found out about.",
+      "weight": 1,
+      "relationship": {
+       "k": -15
+      },
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "t": {
+    "contact": [
+     "teacher"
+    ],
+    "min_close": 25
+   },
+   "k": {
+    "relation": "child",
+    "min_age": 6
+   }
+  }
+ },
+ {
+  "id": "web.chef_party",
+  "icon": "👨‍🍳",
+  "title": "Dinner party",
+  "text": "{ch.first}, who's a chef, offers to cater your party.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let {ch.first} cook",
+    "outcomes": [
+     {
+      "text": "People are still talking about the food.",
+      "weight": 3,
+      "effects": {
+       "happiness": 8,
+       "fame": 1
+      },
+      "relationship": {
+       "ch": 6
+      }
+     },
+     {
+      "text": "{ch.first} cooked for forty people for nothing and I did not think, until afterwards, about what I had asked for.",
+      "weight": 1,
+      "relationship": {
+       "ch": -10
+      },
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Order pizza",
+    "outcomes": [
+     {
+      "text": "Pizza is also good.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I ordered pizza with a chef in the room, which {ch.first} found much funnier than I had feared.",
+      "weight": 1,
+      "relationship": {
+       "ch": 6
+      },
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cook it yourself",
+    "outcomes": [
+     {
+      "text": "I cooked for twenty with a chef in the room and {ch.first} said two things that made all of it work.",
+      "weight": 2,
+      "relationship": {
+       "ch": 12
+      },
+      "effects": {
+       "happiness": 10,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I cooked it myself in front of a professional, which is a thing I will not be doing again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "ch": {
+    "contact": [
+     "chef"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.pilot_trip",
+  "icon": "✈️",
+  "title": "Buddy pass",
+  "text": "{pl.first} is a pilot and can get you a cheap flight anywhere.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Fly somewhere amazing",
+    "outcomes": [
+     {
+      "text": "I flew to the other side of the world for $80.",
+      "weight": 3,
+      "effects": {
+       "happiness": 12,
+       "stress": -8,
+       "money": -80
+      }
+     },
+     {
+      "text": "Standby is standby. I spent two days in an airport and flew home without leaving the terminal.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 10,
+       "money": -300
+      }
+     }
+    ]
+   },
+   {
+    "label": "Maybe later",
+    "outcomes": [
+     {
+      "text": "Maybe later.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I said maybe later for four years, and then {pl.first} changed airlines.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take somebody with you",
+    "outcomes": [
+     {
+      "text": "Two buddy passes and a week on the other side of the world with the person I most wanted to see it with.",
+      "weight": 2,
+      "effects": {
+       "happiness": 18,
+       "stress": -10,
+       "money": -400
+      },
+      "counter": {
+       "vacations": 1
+      }
+     },
+     {
+      "text": "Two standby seats never came up together. One of us flew and it was not me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "money": -200
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "pl": {
+    "contact": [
+     "pilot"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.firefighter",
+  "icon": "🚒",
+  "title": "Fire!",
+  "text": "A fire broke out in your kitchen. {ff.first} happened to be visiting.",
+  "conditions": {
+   "age": [
+    10,
+    100
+   ],
+   "chance": 0.3
+  },
+  "choices": [
+   {
+    "label": "Let {ff.first} handle it",
+    "outcomes": [
+     {
+      "text": "{ff.first} put it out in seconds with a towel and a lid.",
+      "weight": 3,
+      "relationship": {
+       "ff": 10
+      }
+     },
+     {
+      "text": "{ff.first} put it out and then walked me round the house pointing at everything else that was going to happen one day.",
+      "weight": 1,
+      "relationship": {
+       "ff": 12
+      },
+      "effects": {
+       "smarts": 3,
+       "money": -400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put it out yourself",
+    "outcomes": [
+     {
+      "text": "Lid on, gas off, done, with a professional watching. {ff.first} said I would have been fine either way.",
+      "weight": 2,
+      "relationship": {
+       "ff": 8
+      },
+      "effects": {
+       "happiness": 6,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I threw water on a pan fire with a firefighter three metres away, and {ff.first} has never let it go.",
+      "weight": 1,
+      "relationship": {
+       "ff": 5
+      },
+      "effects": {
+       "health": -10,
+       "money": -2500
+      },
+      "scar": "burns"
+     }
+    ]
+   },
+   {
+    "label": "Get everyone out and call it in",
+    "outcomes": [
+     {
+      "text": "{ff.first} got everyone onto the drive first and the brigade did the rest. The kitchen is gone and nobody is hurt.",
+      "weight": 2,
+      "relationship": {
+       "ff": 12
+      },
+      "effects": {
+       "money": -9000,
+       "karma": 4
+      }
+     },
+     {
+      "text": "We got out, and it was a pan fire that would have gone out under a lid, and the brigade were extremely nice about it.",
+      "weight": 1,
+      "relationship": {
+       "ff": 8
+      },
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "ff": {
+    "contact": [
+     "firefighter"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "web.employee_perk",
+  "icon": "🤝",
+  "title": "Working for you",
+  "text": "{e.first}, who works at {biz}, invited the whole team to {e.his} house for a barbecue.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "It was a great night. The team feels like a family.",
+      "weight": 3,
+      "relationship": {
+       "e": 10
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "I went, stayed too long, and heard three things about my own company that nobody would have said at work.",
+      "weight": 1,
+      "relationship": {
+       "e": 6
+      },
+      "effects": {
+       "smarts": 4,
+       "happiness": -4
+      },
+      "empire": "biz_boost"
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I skipped it. The boss shouldn't hang out with staff.",
+      "weight": 3,
+      "relationship": {
+       "e": -5
+      }
+     },
+     {
+      "text": "I skipped it, and the photos went up on Monday, and I was the only person in the office not in any of them.",
+      "weight": 1,
+      "relationship": {
+       "e": -12
+      },
+      "effects": {
+       "happiness": -5
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Go for an hour and pay for the food",
+    "outcomes": [
+     {
+      "text": "I turned up, paid for the lot, and left before anybody had to watch what they were saying.",
+      "weight": 2,
+      "relationship": {
+       "e": 14
+      },
+      "effects": {
+       "money": -400
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "Paying for it made it a work event, which is precisely what it had not been until I arrived.",
+      "weight": 1,
+      "relationship": {
+       "e": -6
+      },
+      "effects": {
+       "money": -400,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "e": {
+    "from": "biz_crew"
+   }
+  }
+ },
+ {
+  "id": "web.soldier_home",
+  "icon": "🎖️",
+  "title": "Home from deployment",
+  "text": "{s.first} is home from a military deployment.",
+  "conditions": {
+   "age": [
+    10,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Throw a welcome-home party",
+    "outcomes": [
+     {
+      "text": "{s.first} teared up when {s.he} saw everyone.",
+      "weight": 3,
+      "relationship": {
+       "s": 15
+      },
+      "effects": {
+       "happiness": 6,
+       "money": -300
+      }
+     },
+     {
+      "text": "I filled a room with people and noise, and {s.first} lasted twenty minutes before going and sitting in the car.",
+      "weight": 1,
+      "relationship": {
+       "s": 5
+      },
+      "effects": {
+       "money": -300,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just call",
+    "outcomes": [
+     {
+      "text": "We talked for an hour.",
+      "weight": 3,
+      "relationship": {
+       "s": 5
+      }
+     },
+     {
+      "text": "I just called, and it was the right call. {s.first} said the last thing {s.he} wanted was a room full of people.",
+      "weight": 1,
+      "relationship": {
+       "s": 18
+      },
+      "effects": {
+       "karma": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask {s.first} what {s.he} wants",
+    "outcomes": [
+     {
+      "text": "{s.first} wanted a quiet pint and no questions. That is what we did, every week, for a year.",
+      "weight": 2,
+      "relationship": {
+       "s": 25
+      },
+      "effects": {
+       "karma": 6,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I asked, and {s.first} said {s.he} did not know, and neither of us knew what to do with that.",
+      "weight": 1,
+      "relationship": {
+       "s": 8
+      },
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "s": {
+    "contact": [
+     "soldier"
+    ],
+    "min_close": 25
+   }
+  }
+ },
+ {
+  "id": "x.athlete_gym",
+  "icon": "🏋️",
+  "title": "Name on the door",
+  "text": "Your old sports fame could sell gym memberships.",
+  "conditions": {
+   "age": [
+    25,
+    90
+   ],
+   "past_career": [
+    "athlete",
+    "fighter"
+   ],
+   "has_business": false
+  },
+  "choices": [
+   {
+    "label": "Start a gym chain",
+    "outcomes": [
+     {
+      "text": "Head to Occupation → Business. Your past career gives you an edge in fitness.",
+      "weight": 3,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I put my name on a door. It turns out a name gets people through it once and nothing else.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Coach instead",
+    "outcomes": [
+     {
+      "text": "No chain, no name on a door. One gym, one squad, and four of them went further than I did.",
+      "weight": 2,
+      "effects": {
+       "happiness": 12,
+       "karma": 10,
+       "money": -5000
+      }
+     },
+     {
+      "text": "I coached for two seasons and could not stand watching people do badly the thing I used to do well.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep your name to yourself",
+    "outcomes": [
+     {
+      "text": "I said no. It was my name before it was worth anything and I would like it back.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I turned it down, and somebody opened a chain two years later with a name close enough to sue over and not close enough to win.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "once": true
+ },
+ {
+  "id": "x.musician_label",
+  "icon": "💿",
+  "title": "Own your masters",
+  "text": "Your old label still owns your songs. You could start your own.",
+  "conditions": {
+   "age": [
+    25,
+    90
+   ],
+   "past_career": [
+    "musician"
+   ],
+   "has_business": false
+  },
+  "choices": [
+   {
+    "label": "Start a record label",
+    "outcomes": [
+     {
+      "text": "I'm going to build my own label. Occupation → Business.",
+      "weight": 3,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I looked into buying my masters back first. The number they quoted is the reason I am starting a label.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Re-record everything instead",
+    "outcomes": [
+     {
+      "text": "I recorded the whole catalogue again, older and better, and told everybody which version to buy.",
+      "weight": 2,
+      "effects": {
+       "money": -60000,
+       "fame": 8,
+       "happiness": 12
+      }
+     },
+     {
+      "text": "I re-recorded it all and nobody wanted the new versions. The originals are the originals.",
+      "weight": 1,
+      "effects": {
+       "money": -60000,
+       "happiness": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "They own the songs. They do not own what it was like to write them.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I let it go, and then heard one of them in an advert for something I would never have agreed to.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "money": 12000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "once": true
+ },
+ {
+  "id": "x.politician_cult",
+  "icon": "🏛️",
+  "title": "True believers",
+  "text": "Your old campaign volunteers still send you letters. They'd follow you anywhere.",
+  "conditions": {
+   "age": [
+    30,
+    90
+   ],
+   "past_career": [
+    "politician"
+   ],
+   "has_cult": false
+  },
+  "choices": [
+   {
+    "label": "Found a movement",
+    "outcomes": [
+     {
+      "text": "I'm thinking about starting something bigger than a campaign. Activities → Social → Cult.",
+      "weight": 3,
+      "effects": {
+       "karma": -2
+      }
+     },
+     {
+      "text": "I wrote to all of them at once, and four hundred people replied within a week.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "fame": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write back politely",
+    "outcomes": [
+     {
+      "text": "I wrote back thanking them.",
+      "weight": 3,
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "I wrote back politely, and the letters kept coming for eleven years, and I answered every one.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": 5,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put them to work on something real",
+    "outcomes": [
+     {
+      "text": "I pointed four hundred true believers at a housing campaign. They won it in eleven months.",
+      "weight": 2,
+      "effects": {
+       "karma": 20,
+       "fame": 6,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I gave them a cause and they wanted a leader, and kept coming back to ask what I thought about everything.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "once": true
+ },
+ {
+  "id": "x.mafia_zoo",
+  "icon": "🐅",
+  "title": "The boss's tiger",
+  "text": "The Don is going to prison and needs someone to take care of his tiger.",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ],
+   "career": "mafia",
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Take the tiger to your zoo",
+    "outcomes": [
+     {
+      "text": "The tiger is now the star of my zoo. Nobody asks where it came from.",
+      "weight": 3,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "heat": 6
+      }
+     },
+     {
+      "text": "The tiger came with paperwork that did not survive contact with an inspector.",
+      "weight": 1,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "heat": 25,
+       "money": -30000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "The Don won't forget this.",
+      "weight": 3,
+      "effects": {
+       "skill": -5
+      }
+     },
+     {
+      "text": "I refused, and the tiger went somewhere much worse, and I hear about it occasionally.",
+      "weight": 1,
+      "effects": {
+       "skill": -5,
+       "karma": -5,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it, and report where it came from",
+    "outcomes": [
+     {
+      "text": "I took the tiger and told the authorities exactly where it had come from. The paperwork is clean and so is the enclosure.",
+      "weight": 2,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "karma": 12,
+       "skill": -10
+      }
+     },
+     {
+      "text": "I took it and reported it, and the Don found out which of those two things I had done.",
+      "weight": 1,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "karma": 12,
+       "skill": -15,
+       "heat": 20,
+       "stress": 20
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "once": true
+ },
+ {
+  "id": "x.agent_security",
+  "icon": "🛡️",
+  "title": "Security consulting",
+  "text": "Your old intelligence contacts want to hire a private firm for off-the-books work.",
+  "conditions": {
+   "age": [
+    30,
+    90
+   ],
+   "past_career": [
+    "agent"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the contract",
+    "outcomes": [
+     {
+      "text": "I made $200,000 for a week of work I can't talk about.",
+      "weight": 3,
+      "effects": {
+       "money": 200000,
+       "heat": 8
+      }
+     },
+     {
+      "text": "The week of work went wrong in a country I had not been told I was going to.",
+      "weight": 1,
+      "effects": {
+       "money": 200000,
+       "heat": 25,
+       "health": -20,
+       "stress": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay retired",
+    "outcomes": [
+     {
+      "text": "I'm out. For real this time.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I stayed retired, and they took it well, and asked again every eighteen months for the rest of my life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it, but only the legal part",
+    "outcomes": [
+     {
+      "text": "I did the risk assessments and none of the rest. Less money, no nights awake.",
+      "weight": 2,
+      "effects": {
+       "money": 60000,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I took the clean half and found out afterwards what the clean half had been used to plan.",
+      "weight": 1,
+      "effects": {
+       "money": 60000,
+       "karma": -10,
+       "stress": 15
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "x.celebrity_cult",
+  "icon": "⭐",
+  "title": "Superfans",
+  "text": "Your fans have started a Discord that is getting a little... worshipful.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "min_fame": 55,
+   "has_cult": false
+  },
+  "choices": [
+   {
+    "label": "Lean into it",
+    "outcomes": [
+     {
+      "text": "I'm going to give them something to believe in. Activities → Social → Cult.",
+      "weight": 3,
+      "effects": {
+       "fame": 2,
+       "karma": -3
+      }
+     },
+     {
+      "text": "I leaned in, and within a month it had rules I had not written and a hierarchy I did not choose.",
+      "weight": 1,
+      "effects": {
+       "fame": 6,
+       "karma": -6,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to calm down",
+    "outcomes": [
+     {
+      "text": "They calmed down. Mostly.",
+      "weight": 3,
+      "effects": {
+       "karma": 2
+      }
+     },
+     {
+      "text": "I asked them to calm down, and they decided that asking was itself a message, and read it very closely.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 10,
+       "fame": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Point them at a charity",
+    "outcomes": [
+     {
+      "text": "I asked them to raise money instead of worship. They raised an amount that embarrassed me.",
+      "weight": 2,
+      "effects": {
+       "karma": 18,
+       "fame": 5,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "They raised the money and then wanted to know what I would like them to do next, and next, and next.",
+      "weight": 1,
+      "effects": {
+       "karma": 12,
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "once": true
+ }
+]

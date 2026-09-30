@@ -1,0 +1,162 @@
+[
+ {
+  "question": "Why do you want to work here?",
+  "answers": [
+   {
+    "text": "I've followed your company for years.",
+    "score": 0.12
+   },
+   {
+    "text": "I need the money, honestly.",
+    "score": -0.05
+   },
+   {
+    "text": "Because I'm the best person you'll meet today.",
+    "score": 0.18,
+    "trait": "Charmer"
+   },
+   {
+    "text": "My mom said I had to apply.",
+    "score": -0.25
+   }
+  ]
+ },
+ {
+  "question": "What's your greatest weakness?",
+  "answers": [
+   {
+    "text": "I care too much about my work.",
+    "score": 0.0
+   },
+   {
+    "text": "I get nervous in interviews, like now.",
+    "score": 0.05
+   },
+   {
+    "text": "Kryptonite.",
+    "score": 0.15,
+    "trait": "Funny"
+   },
+   {
+    "text": "Mornings. And people. And work.",
+    "score": -0.25
+   }
+  ]
+ },
+ {
+  "question": "Tell me about a time you solved a hard problem.",
+  "answers": [
+   {
+    "text": "Walk them through a real example, step by step.",
+    "score": 0.15
+   },
+   {
+    "text": "Make something up on the spot.",
+    "score": -0.05
+   },
+   {
+    "text": "\"I don't really have problems.\"",
+    "score": -0.2
+   }
+  ]
+ },
+ {
+  "question": "Where do you see yourself in five years?",
+  "answers": [
+   {
+    "text": "Growing with this company.",
+    "score": 0.1
+   },
+   {
+    "text": "In your chair.",
+    "score": 0.14,
+    "trait": "Ambitious"
+   },
+   {
+    "text": "On a beach, retired early.",
+    "score": -0.12
+   },
+   {
+    "text": "I don't plan that far ahead.",
+    "score": -0.05
+   }
+  ]
+ },
+ {
+  "question": "How do you handle conflict with a coworker?",
+  "answers": [
+   {
+    "text": "Talk it out privately and calmly.",
+    "score": 0.14
+   },
+   {
+    "text": "Take it to the manager right away.",
+    "score": 0.0
+   },
+   {
+    "text": "Settle it in the parking lot.",
+    "score": -0.3
+   },
+   {
+    "text": "Avoid them forever.",
+    "score": -0.08
+   }
+  ]
+ },
+ {
+  "question": "What salary are you expecting?",
+  "answers": [
+   {
+    "text": "Whatever is fair for the role.",
+    "score": 0.08
+   },
+   {
+    "text": "Name a number 30% above market.",
+    "score": -0.08
+   },
+   {
+    "text": "Negotiate with a confident smile.",
+    "score": 0.14,
+    "trait": "Charmer"
+   },
+   {
+    "text": "Honestly, anything.",
+    "score": 0.02
+   }
+  ]
+ },
+ {
+  "question": "Do you have any questions for us?",
+  "answers": [
+   {
+    "text": "Ask about the team and the challenges they face.",
+    "score": 0.15
+   },
+   {
+    "text": "\"How soon can I take vacation?\"",
+    "score": -0.15
+   },
+   {
+    "text": "\"No, I think I'm good.\"",
+    "score": -0.05
+   }
+  ]
+ },
+ {
+  "question": "Why did you leave your last position?",
+  "answers": [
+   {
+    "text": "I was looking for new challenges.",
+    "score": 0.1
+   },
+   {
+    "text": "My boss was an idiot.",
+    "score": -0.25
+   },
+   {
+    "text": "This is my first real job.",
+    "score": 0.03
+   }
+  ]
+ }
+]

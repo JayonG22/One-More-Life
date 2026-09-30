@@ -1,0 +1,942 @@
+[
+ {
+  "id": "pt_cashier",
+  "field": "Retail",
+  "salary": 9000,
+  "ranks": [
+   "Part-Time Cashier"
+  ],
+  "edu": "none",
+  "min_age": 14,
+  "stress": 2,
+  "part_time": true,
+  "icon": "🧾"
+ },
+ {
+  "id": "pt_burger",
+  "field": "Food",
+  "salary": 8500,
+  "ranks": [
+   "Part-Time Burger Flipper"
+  ],
+  "edu": "none",
+  "min_age": 14,
+  "stress": 3,
+  "part_time": true,
+  "icon": "🍳"
+ },
+ {
+  "id": "pt_lifeguard",
+  "field": "Recreation",
+  "salary": 10000,
+  "ranks": [
+   "Part-Time Lifeguard"
+  ],
+  "edu": "none",
+  "min_age": 15,
+  "stress": 2,
+  "part_time": true,
+  "icon": "🛟"
+ },
+ {
+  "id": "pt_babysitter",
+  "field": "Care",
+  "salary": 7000,
+  "ranks": [
+   "Babysitter"
+  ],
+  "edu": "none",
+  "min_age": 13,
+  "stress": 3,
+  "part_time": true,
+  "icon": "🍼"
+ },
+ {
+  "id": "pt_dogwalker",
+  "field": "Care",
+  "salary": 6500,
+  "ranks": [
+   "Dog Walker"
+  ],
+  "edu": "none",
+  "min_age": 13,
+  "stress": 1,
+  "part_time": true,
+  "icon": "🦮"
+ },
+ {
+  "id": "pt_tutor",
+  "field": "Education",
+  "salary": 11000,
+  "ranks": [
+   "Part-Time Tutor"
+  ],
+  "edu": "none",
+  "min_age": 16,
+  "stress": 2,
+  "part_time": true,
+  "min_smarts": 65,
+  "icon": "✏️"
+ },
+ {
+  "id": "pt_barista",
+  "field": "Food",
+  "salary": 9500,
+  "ranks": [
+   "Part-Time Barista"
+  ],
+  "edu": "none",
+  "min_age": 15,
+  "stress": 3,
+  "part_time": true,
+  "icon": "☕"
+ },
+ {
+  "id": "pt_stocker",
+  "field": "Retail",
+  "salary": 9000,
+  "ranks": [
+   "Night Stocker"
+  ],
+  "edu": "none",
+  "min_age": 16,
+  "stress": 2,
+  "part_time": true,
+  "icon": "🏬"
+ },
+ {
+  "id": "pt_delivery",
+  "field": "Transport",
+  "salary": 10500,
+  "ranks": [
+   "Delivery Driver"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "part_time": true,
+  "icon": "🚚"
+ },
+ {
+  "id": "retail",
+  "field": "Retail",
+  "salary": 26000,
+  "ranks": [
+   "Sales Associate",
+   "Senior Associate",
+   "Assistant Manager",
+   "Store Manager",
+   "District Manager"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 4,
+  "icon": "🏬"
+ },
+ {
+  "id": "fastfood",
+  "field": "Food",
+  "salary": 23000,
+  "ranks": [
+   "Crew Member",
+   "Shift Lead",
+   "Assistant Manager",
+   "Restaurant Manager"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "🍳"
+ },
+ {
+  "id": "warehouse",
+  "field": "Logistics",
+  "salary": 31000,
+  "ranks": [
+   "Warehouse Worker",
+   "Forklift Operator",
+   "Team Lead",
+   "Warehouse Supervisor",
+   "Operations Manager"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "📦"
+ },
+ {
+  "id": "trucker",
+  "field": "Transport",
+  "salary": 48000,
+  "ranks": [
+   "Truck Driver",
+   "Senior Driver",
+   "Fleet Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "🚛"
+ },
+ {
+  "id": "janitor",
+  "field": "Facilities",
+  "salary": 25000,
+  "ranks": [
+   "Custodian",
+   "Head Custodian",
+   "Facilities Manager"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 2,
+  "icon": "🧹"
+ },
+ {
+  "id": "security",
+  "field": "Security",
+  "salary": 30000,
+  "ranks": [
+   "Security Guard",
+   "Senior Guard",
+   "Security Supervisor"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "icon": "🛡️"
+ },
+ {
+  "id": "receptionist",
+  "field": "Office",
+  "salary": 32000,
+  "ranks": [
+   "Receptionist",
+   "Office Coordinator",
+   "Office Manager"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "🗂️"
+ },
+ {
+  "id": "electrician",
+  "field": "Trades",
+  "salary": 42000,
+  "ranks": [
+   "Apprentice Electrician",
+   "Journeyman Electrician",
+   "Master Electrician",
+   "Electrical Contractor"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "icon": "🔌"
+ },
+ {
+  "id": "plumber",
+  "field": "Trades",
+  "salary": 41000,
+  "ranks": [
+   "Apprentice Plumber",
+   "Journeyman Plumber",
+   "Master Plumber",
+   "Plumbing Contractor"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "icon": "🔧"
+ },
+ {
+  "id": "mechanic",
+  "field": "Trades",
+  "salary": 38000,
+  "ranks": [
+   "Apprentice Mechanic",
+   "Mechanic",
+   "Senior Mechanic",
+   "Shop Owner"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "icon": "🔩"
+ },
+ {
+  "id": "carpenter",
+  "field": "Trades",
+  "salary": 39000,
+  "ranks": [
+   "Apprentice Carpenter",
+   "Carpenter",
+   "Master Carpenter",
+   "Construction Foreman"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "icon": "🪚"
+ },
+ {
+  "id": "hairstylist",
+  "field": "Beauty",
+  "salary": 30000,
+  "ranks": [
+   "Junior Stylist",
+   "Hairstylist",
+   "Senior Stylist",
+   "Salon Owner"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "💇"
+ },
+ {
+  "id": "line_cook",
+  "field": "Food",
+  "salary": 29000,
+  "ranks": [
+   "Line Cook",
+   "Sous Chef",
+   "Head Chef"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 6,
+  "icon": "🍳"
+ },
+ {
+  "id": "firefighter",
+  "field": "Public Safety",
+  "salary": 45000,
+  "ranks": [
+   "Firefighter",
+   "Engineer",
+   "Lieutenant",
+   "Captain",
+   "Fire Chief"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 7,
+  "clean_record": true,
+  "icon": "🚒"
+ },
+ {
+  "id": "mail",
+  "field": "Government",
+  "salary": 40000,
+  "ranks": [
+   "Mail Carrier",
+   "Senior Carrier",
+   "Postmaster"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 3,
+  "clean_record": true,
+  "icon": "🏛️"
+ },
+ {
+  "id": "flight_attendant",
+  "field": "Aviation",
+  "salary": 42000,
+  "ranks": [
+   "Flight Attendant",
+   "Senior Flight Attendant",
+   "Purser"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "🧳"
+ },
+ {
+  "id": "developer",
+  "field": "Tech",
+  "salary": 78000,
+  "ranks": [
+   "Junior Developer",
+   "Software Engineer",
+   "Senior Engineer",
+   "Engineering Manager",
+   "CTO"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "computer_science",
+   "engineering",
+   "game_dev"
+  ],
+  "icon": "💻"
+ },
+ {
+  "id": "game_dev",
+  "field": "Tech",
+  "salary": 62000,
+  "ranks": [
+   "Junior Game Developer",
+   "Game Developer",
+   "Senior Game Developer",
+   "Lead Designer",
+   "Creative Director"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 7,
+  "majors": [
+   "game_dev",
+   "computer_science",
+   "graphic_design"
+  ],
+  "icon": "💻"
+ },
+ {
+  "id": "nurse",
+  "field": "Healthcare",
+  "salary": 68000,
+  "ranks": [
+   "Registered Nurse",
+   "Charge Nurse",
+   "Nurse Manager",
+   "Chief Nursing Officer"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 7,
+  "majors": [
+   "nursing"
+  ],
+  "icon": "💉"
+ },
+ {
+  "id": "teacher",
+  "field": "Education",
+  "salary": 46000,
+  "ranks": [
+   "Teacher",
+   "Department Head",
+   "Assistant Principal",
+   "Principal",
+   "Superintendent"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "education",
+   "english",
+   "biology",
+   "music"
+  ],
+  "clean_record": true,
+  "icon": "🍎"
+ },
+ {
+  "id": "police",
+  "field": "Public Safety",
+  "salary": 52000,
+  "ranks": [
+   "Police Officer",
+   "Detective",
+   "Sergeant",
+   "Lieutenant",
+   "Police Chief"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 8,
+  "clean_record": true,
+  "icon": "👮"
+ },
+ {
+  "id": "accountant",
+  "field": "Finance",
+  "salary": 60000,
+  "ranks": [
+   "Staff Accountant",
+   "Senior Accountant",
+   "Controller",
+   "CFO"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "accounting",
+   "economics",
+   "business"
+  ],
+  "icon": "🧮"
+ },
+ {
+  "id": "marketing",
+  "field": "Business",
+  "salary": 52000,
+  "ranks": [
+   "Marketing Assistant",
+   "Marketing Specialist",
+   "Marketing Manager",
+   "Marketing Director",
+   "CMO"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "business",
+   "communications",
+   "psychology"
+  ],
+  "icon": "📋"
+ },
+ {
+  "id": "analyst",
+  "field": "Finance",
+  "salary": 70000,
+  "ranks": [
+   "Financial Analyst",
+   "Senior Analyst",
+   "Portfolio Manager",
+   "Managing Director"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 8,
+  "majors": [
+   "economics",
+   "business",
+   "accounting"
+  ],
+  "icon": "📈"
+ },
+ {
+  "id": "engineer",
+  "field": "Engineering",
+  "salary": 74000,
+  "ranks": [
+   "Junior Engineer",
+   "Engineer",
+   "Senior Engineer",
+   "Chief Engineer"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "engineering"
+  ],
+  "icon": "⚙️"
+ },
+ {
+  "id": "architect",
+  "field": "Design",
+  "salary": 64000,
+  "ranks": [
+   "Junior Architect",
+   "Architect",
+   "Senior Architect",
+   "Principal Architect"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "architecture"
+  ],
+  "icon": "📐"
+ },
+ {
+  "id": "designer",
+  "field": "Design",
+  "salary": 50000,
+  "ranks": [
+   "Junior Designer",
+   "Graphic Designer",
+   "Senior Designer",
+   "Art Director",
+   "Creative Director"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "graphic_design"
+  ],
+  "icon": "🎨"
+ },
+ {
+  "id": "journalist",
+  "field": "Media",
+  "salary": 45000,
+  "ranks": [
+   "Staff Writer",
+   "Reporter",
+   "Senior Correspondent",
+   "Editor-in-Chief"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "communications",
+   "english",
+   "political_science"
+  ],
+  "icon": "📰"
+ },
+ {
+  "id": "counselor",
+  "field": "Healthcare",
+  "salary": 48000,
+  "ranks": [
+   "Counselor",
+   "Senior Counselor",
+   "Clinical Director"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "psychology"
+  ],
+  "icon": "🗣️"
+ },
+ {
+  "id": "lab_tech",
+  "field": "Science",
+  "salary": 47000,
+  "ranks": [
+   "Lab Technician",
+   "Research Associate",
+   "Lab Manager"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "majors": [
+   "biology"
+  ],
+  "icon": "🔬"
+ },
+ {
+  "id": "chef",
+  "field": "Food",
+  "salary": 42000,
+  "ranks": [
+   "Junior Chef",
+   "Sous Chef",
+   "Executive Chef"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 7,
+  "majors": [
+   "culinary"
+  ],
+  "icon": "👨‍🍳"
+ },
+ {
+  "id": "music_teacher",
+  "field": "Education",
+  "salary": 40000,
+  "ranks": [
+   "Music Teacher",
+   "Band Director",
+   "Conservatory Faculty"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 3,
+  "majors": [
+   "music"
+  ],
+  "icon": "🍎"
+ },
+ {
+  "id": "paralegal",
+  "field": "Legal",
+  "salary": 45000,
+  "ranks": [
+   "Paralegal",
+   "Senior Paralegal"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "political_science",
+   "criminal_justice",
+   "english"
+  ],
+  "icon": "📑"
+ },
+ {
+  "id": "probation",
+  "field": "Government",
+  "salary": 47000,
+  "ranks": [
+   "Probation Officer",
+   "Senior Officer",
+   "Chief Probation Officer"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "criminal_justice",
+   "psychology"
+  ],
+  "clean_record": true,
+  "icon": "🏛️"
+ },
+ {
+  "id": "civil_servant",
+  "field": "Government",
+  "salary": 50000,
+  "ranks": [
+   "Policy Aide",
+   "Policy Analyst",
+   "Department Director",
+   "Deputy Minister"
+  ],
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "majors": [
+   "political_science",
+   "economics"
+  ],
+  "clean_record": true,
+  "icon": "🏛️"
+ },
+ {
+  "id": "lawyer",
+  "field": "Legal",
+  "salary": 110000,
+  "ranks": [
+   "Associate Attorney",
+   "Senior Associate",
+   "Partner",
+   "Senior Partner",
+   "Judge"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 9,
+  "majors": [
+   "law"
+  ],
+  "clean_record": true,
+  "icon": "⚖️"
+ },
+ {
+  "id": "doctor",
+  "field": "Healthcare",
+  "salary": 140000,
+  "ranks": [
+   "Resident",
+   "Physician",
+   "Attending Physician",
+   "Surgeon",
+   "Chief of Medicine"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 9,
+  "majors": [
+   "medicine"
+  ],
+  "clean_record": true,
+  "icon": "🩺"
+ },
+ {
+  "id": "dentist",
+  "field": "Healthcare",
+  "salary": 125000,
+  "ranks": [
+   "Associate Dentist",
+   "Dentist",
+   "Practice Owner"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "dentistry"
+  ],
+  "icon": "🦷"
+ },
+ {
+  "id": "pharmacist",
+  "field": "Healthcare",
+  "salary": 115000,
+  "ranks": [
+   "Pharmacist",
+   "Senior Pharmacist",
+   "Pharmacy Director"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "pharmacy"
+  ],
+  "icon": "💊"
+ },
+ {
+  "id": "vet",
+  "field": "Healthcare",
+  "salary": 95000,
+  "ranks": [
+   "Associate Veterinarian",
+   "Veterinarian",
+   "Clinic Owner"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "veterinary"
+  ],
+  "icon": "🐾"
+ },
+ {
+  "id": "executive",
+  "field": "Business",
+  "salary": 120000,
+  "ranks": [
+   "Associate",
+   "Manager",
+   "Director",
+   "Vice President",
+   "CEO"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 9,
+  "majors": [
+   "mba"
+  ],
+  "icon": "📋"
+ },
+ {
+  "id": "professor",
+  "field": "Education",
+  "salary": 82000,
+  "ranks": [
+   "Assistant Professor",
+   "Associate Professor",
+   "Professor",
+   "Dean"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 5,
+  "majors": [
+   "phd"
+  ],
+  "icon": "🎓"
+ },
+ {
+  "id": "scientist",
+  "field": "Science",
+  "salary": 90000,
+  "ranks": [
+   "Research Scientist",
+   "Senior Scientist",
+   "Principal Scientist",
+   "Chief Scientist"
+  ],
+  "edu": "graduate",
+  "min_age": 18,
+  "stress": 6,
+  "majors": [
+   "phd"
+  ],
+  "icon": "🔬"
+ },
+ {
+  "id": "army",
+  "field": "Military",
+  "salary": 33000,
+  "ranks": [
+   "Private",
+   "Corporal",
+   "Sergeant",
+   "Lieutenant",
+   "Captain",
+   "Major",
+   "Colonel",
+   "General"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 8,
+  "clean_record": true,
+  "icon": "🎖️"
+ },
+ {
+  "id": "navy",
+  "field": "Military",
+  "salary": 34000,
+  "ranks": [
+   "Seaman",
+   "Petty Officer",
+   "Chief Petty Officer",
+   "Ensign",
+   "Lieutenant",
+   "Commander",
+   "Captain",
+   "Admiral"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 7,
+  "clean_record": true,
+  "icon": "🎖️"
+ },
+ {
+  "id": "air_force",
+  "field": "Military",
+  "salary": 35000,
+  "ranks": [
+   "Airman",
+   "Senior Airman",
+   "Staff Sergeant",
+   "Lieutenant",
+   "Captain",
+   "Major",
+   "Colonel",
+   "General"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 7,
+  "clean_record": true,
+  "icon": "🎖️"
+ },
+ {
+  "id": "pilot",
+  "field": "Aviation",
+  "salary": 95000,
+  "ranks": [
+   "First Officer",
+   "Captain",
+   "Senior Captain",
+   "Chief Pilot"
+  ],
+  "edu": "high_school",
+  "min_age": 21,
+  "stress": 6,
+  "license": "pilot",
+  "clean_record": true,
+  "icon": "✈️"
+ }
+]

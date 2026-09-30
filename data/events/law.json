@@ -1,0 +1,269 @@
+[
+ {
+  "id": "law.speeding",
+  "icon": "🚓",
+  "title": "Pulled over",
+  "text": "Red and blue lights flash in your mirror. You were going 20 over.",
+  "conditions": {
+   "age": [
+    16,
+    95
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Apologize",
+    "outcomes": [
+     {
+      "text": "The officer let me off with a warning.",
+      "weight": 1,
+      "karma_bonus": 1.0
+     },
+     {
+      "text": "I got a $200 ticket.",
+      "weight": 1,
+      "effects": {
+       "money": -200
+      }
+     }
+    ]
+   },
+   {
+    "label": "Argue",
+    "outcomes": [
+     {
+      "text": "That was a $400 ticket and a lecture.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Floor it",
+    "outcomes": [
+     {
+      "text": "I lost them! My heart hasn't stopped pounding.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 10
+      }
+     },
+     {
+      "text": "I didn't lose them.",
+      "weight": 2,
+      "trial": [
+       "evading police",
+       0,
+       2
+      ],
+      "effects": {
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "law.witness",
+  "icon": "👀",
+  "title": "Witness",
+  "text": "You saw a hit-and-run. The police want you to testify.",
+  "conditions": {
+   "age": [
+    12,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Testify",
+    "outcomes": [
+     {
+      "text": "My testimony put the driver away.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say you didn't see anything",
+    "outcomes": [
+     {
+      "text": "I stayed out of it.",
+      "weight": 1,
+      "effects": {
+       "karma": -4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "law.neighbor_suit",
+  "icon": "📄",
+  "title": "Property line",
+  "text": "Your neighbor claims your fence is two feet onto their land.",
+  "conditions": {
+   "age": [
+    25,
+    95
+   ],
+   "housing": [
+    "house"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Move the fence",
+    "outcomes": [
+     {
+      "text": "I moved it. Peace restored.",
+      "weight": 1,
+      "effects": {
+       "money": -2000
+      },
+      "relationship": {
+       "nb": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fight it in court",
+    "outcomes": [
+     {
+      "text": "The survey proved I was right.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "happiness": 5
+      },
+      "relationship": {
+       "nb": -30
+      }
+     },
+     {
+      "text": "I lost and had to move it anyway.",
+      "weight": 1,
+      "effects": {
+       "money": -9000
+      },
+      "relationship": {
+       "nb": -30
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "nb": {
+    "relation": "neighbor",
+    "or_new": true
+   }
+  }
+ },
+ {
+  "id": "law.jury_bribe",
+  "icon": "🤫",
+  "title": "An offer",
+  "text": "As a juror, a stranger offers you $10,000 to vote \"not guilty\".",
+  "conditions": {
+   "age": [
+    21,
+    95
+   ],
+   "chance": 0.3
+  },
+  "choices": [
+   {
+    "label": "Take the money",
+    "outcomes": [
+     {
+      "text": "$10,000 richer. Every news story about the case makes me feel sick.",
+      "weight": 1,
+      "effects": {
+       "money": 10000,
+       "karma": -15
+      }
+     },
+     {
+      "text": "It was a sting. I was arrested.",
+      "weight": 1,
+      "trial": [
+       "jury tampering",
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "The judge thanked me personally.",
+      "weight": 1,
+      "effects": {
+       "karma": 10
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "law.expunge",
+  "icon": "🧽",
+  "title": "Clean slate",
+  "text": "A legal aid clinic offers to help expunge your old record.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Apply",
+    "outcomes": [
+     {
+      "text": "My record was cleared.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "clear_record": true
+     },
+     {
+      "text": "The judge denied it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Not worth it",
+    "outcomes": [
+     {
+      "text": "I left it alone.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {}
+ }
+]

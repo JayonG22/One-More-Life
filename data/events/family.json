@@ -1,0 +1,917 @@
+[
+ {
+  "id": "family.parent_bills",
+  "icon": "🏥",
+  "title": "Medical bills",
+  "text": "{par.first}, your {par.rel}, is struggling with medical bills and asks if you can help with $5,000.",
+  "conditions": {
+   "age": [
+    25,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pay all of it",
+    "outcomes": [
+     {
+      "text": "{par.first} hugged me for a long time.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "karma": 6
+      },
+      "relationship": {
+       "par": 20
+      }
+     }
+    ],
+    "requires": {
+     "money": 5000
+    }
+   },
+   {
+    "label": "Pay half",
+    "outcomes": [
+     {
+      "text": "It helped. {par.first} was grateful.",
+      "weight": 1,
+      "effects": {
+       "money": -2500,
+       "karma": 3
+      },
+      "relationship": {
+       "par": 10
+      }
+     }
+    ],
+    "requires": {
+     "money": 2500
+    }
+   },
+   {
+    "label": "Say you can't",
+    "outcomes": [
+     {
+      "text": "{par.first} said {par.he} understood.",
+      "weight": 1,
+      "relationship": {
+       "par": -10
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "par": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  }
+ },
+ {
+  "id": "family.sibling_loan",
+  "icon": "💵",
+  "title": "A favor",
+  "text": "{sib.first} asks to borrow $2,000.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lend it",
+    "outcomes": [
+     {
+      "text": "{sib.first} promised to pay me back soon.",
+      "weight": 1,
+      "effects": {
+       "money": -2000
+      },
+      "relationship": {
+       "sib": 10
+      },
+      "schedule": {
+       "event": "family.sibling_repays",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 2000
+    }
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "{sib.first} was hurt.",
+      "weight": 1,
+      "relationship": {
+       "sib": -10
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "sib": {
+    "relation": "sibling",
+    "min_age": 18
+   }
+  }
+ },
+ {
+  "id": "family.sibling_repays",
+  "icon": "💵",
+  "title": "Old debt",
+  "text": "",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ]
+  },
+  "followup_only": true,
+  "roles": {
+   "sib": {
+    "relation": "sibling"
+   }
+  },
+  "outcomes": [
+   {
+    "text": "{sib.first} paid back the $2,000 with interest!",
+    "weight": 2,
+    "effects": {
+     "money": 2400,
+     "happiness": 4
+    },
+    "relationship": {
+     "sib": 8
+    }
+   },
+   {
+    "text": "{sib.first} still hasn't paid me back. At this point, it's a gift.",
+    "weight": 1,
+    "effects": {
+     "happiness": -3
+    },
+    "relationship": {
+     "sib": -10
+    }
+   }
+  ]
+ },
+ {
+  "id": "family.grandparent_stories",
+  "icon": "👵",
+  "title": "Old stories",
+  "text": "{gp.first}, your {gp.rel}, wants to tell you about the old days.",
+  "conditions": {
+   "age": [
+    6,
+    40
+   ]
+  },
+  "choices": [
+   {
+    "label": "Listen",
+    "outcomes": [
+     {
+      "text": "{gp.first} told me about growing up with nothing. I'll remember it forever.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      },
+      "relationship": {
+       "gp": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make an excuse",
+    "outcomes": [
+     {
+      "text": "I said I had homework.",
+      "weight": 1,
+      "relationship": {
+       "gp": -6
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "gp": {
+    "relation": "grandparent"
+   }
+  },
+  "cooldown": 6
+ },
+ {
+  "id": "family.kid_trouble",
+  "icon": "📞",
+  "title": "Call from school",
+  "text": "The principal calls: {kid.first} got into a fight at school.",
+  "conditions": {
+   "age": [
+    25,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Talk it through",
+    "outcomes": [
+     {
+      "text": "{kid.first} opened up about being bullied. We made a plan together.",
+      "weight": 1,
+      "relationship": {
+       "kid": 12
+      },
+      "effects": {
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ground them",
+    "outcomes": [
+     {
+      "text": "{kid.first} is grounded for a month and furious with me.",
+      "weight": 1,
+      "relationship": {
+       "kid": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask who won",
+    "outcomes": [
+     {
+      "text": "{kid.first} won. I was a little proud. Don't tell anyone.",
+      "weight": 1,
+      "relationship": {
+       "kid": 6
+      },
+      "effects": {
+       "karma": -1
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 7
+   }
+  }
+ },
+ {
+  "id": "family.kid_milestone",
+  "icon": "🎈",
+  "title": "Proud moment",
+  "text": "",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ]
+  },
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 3
+   }
+  },
+  "cooldown": 4,
+  "outcomes": [
+   {
+    "text": "{kid.first} made the honor roll. I stuck it on the fridge.",
+    "weight": 1,
+    "effects": {
+     "happiness": 4
+    }
+   },
+   {
+    "text": "{kid.first} lost {kid.his} first tooth and demanded a raise from the tooth fairy.",
+    "weight": 1,
+    "effects": {
+     "happiness": 3
+    }
+   },
+   {
+    "text": "{kid.first} scored the winning goal. I screamed louder than any other parent.",
+    "weight": 1,
+    "effects": {
+     "happiness": 5
+    }
+   }
+  ]
+ },
+ {
+  "id": "family.anniversary",
+  "icon": "💐",
+  "title": "Anniversary",
+  "text": "It's your anniversary with {sp.first}.",
+  "conditions": {
+   "age": [
+    20,
+    95
+   ],
+   "married": true
+  },
+  "choices": [
+   {
+    "label": "Plan a surprise dinner ($200)",
+    "outcomes": [
+     {
+      "text": "{sp.first} loved it.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": 5
+      },
+      "relationship": {
+       "sp": 14
+      }
+     }
+    ],
+    "requires": {
+     "money": 200
+    }
+   },
+   {
+    "label": "Write a heartfelt letter",
+    "outcomes": [
+     {
+      "text": "{sp.first} kept the letter in {sp.his} nightstand.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "sp": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Forget it",
+    "outcomes": [
+     {
+      "text": "I forgot. {sp.first} did not.",
+      "weight": 1,
+      "relationship": {
+       "sp": -15
+      },
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "sp": {
+    "relation": "partner"
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "family.pet_old",
+  "icon": "🐾",
+  "title": "Old friend",
+  "text": "",
+  "conditions": {
+   "age": [
+    5,
+    99
+   ]
+  },
+  "roles": {
+   "pet": {
+    "relation": "pet",
+    "min_age": 9
+   }
+  },
+  "cooldown": 5,
+  "outcomes": [
+   {
+    "text": "{pet.first} is getting gray around the muzzle, but still greets me at the door every day.",
+    "weight": 1,
+    "effects": {
+     "happiness": 3
+    },
+    "relationship": {
+     "pet": 5
+    }
+   }
+  ]
+ },
+ {
+  "id": "agency.gift",
+  "icon": "🎁",
+  "title": "A surprise",
+  "text": "{them.first} surprised you with a thoughtful gift.",
+  "conditions": {
+   "age": [
+    6,
+    99
+   ],
+   "agency": "good"
+  },
+  "choices": [
+   {
+    "label": "Thank them warmly",
+    "outcomes": [
+     {
+      "text": "{them.first} got me something I'd mentioned once, months ago. They listen.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "them": 6
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.money_help",
+  "icon": "💵",
+  "title": "Help arrives",
+  "text": "{them.first} heard things have been tight and sends you $1,000.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "agency": "good",
+   "them_relations": [
+    "mother",
+    "father",
+    "grandparent",
+    "best_friend",
+    "sibling",
+    "auntuncle"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Accept gratefully",
+    "outcomes": [
+     {
+      "text": "{them.first} wouldn't take no for an answer.",
+      "weight": 1,
+      "effects": {
+       "money": 1000,
+       "happiness": 4
+      },
+      "relationship": {
+       "them": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Politely refuse",
+    "outcomes": [
+     {
+      "text": "I told {them.first} I'm okay. {them.He} made me promise to call if that changes.",
+      "weight": 1,
+      "relationship": {
+       "them": 6
+      },
+      "effects": {
+       "karma": 2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.setup",
+  "icon": "🍝",
+  "title": "Matchmaker",
+  "text": "{them.first} insists on setting you up with a friend of {them.his}.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "agency": "good",
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Go on the date",
+    "outcomes": [
+     {
+      "text": "{date.first} and I really hit it off. We're dating!",
+      "weight": 1,
+      "new_partner": "date",
+      "keep_role": "date",
+      "effects": {
+       "happiness": 8
+      },
+      "stat_bonus": {
+       "looks": 0.8
+      }
+     },
+     {
+      "text": "{date.first} talked about crypto for three hours.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I told {them.first} I'm happy on my own.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "date": {
+    "new": "crush",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "agency.rumor",
+  "icon": "🗣️",
+  "title": "Rumors",
+  "text": "{them.first} has been spreading rumors about you.",
+  "conditions": {
+   "age": [
+    10,
+    99
+   ],
+   "agency": "bad"
+  },
+  "choices": [
+   {
+    "label": "Confront them",
+    "outcomes": [
+     {
+      "text": "{them.first} backed down, embarrassed.",
+      "weight": 1,
+      "relationship": {
+       "them": -5
+      },
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "It turned into a screaming match.",
+      "weight": 1,
+      "relationship": {
+       "them": -15
+      },
+      "effects": {
+       "stress": 6
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rise above it",
+    "outcomes": [
+     {
+      "text": "I ignored {them.first}'s rumors. The truth came out on its own.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spread worse rumors about them",
+    "outcomes": [
+     {
+      "text": "I spread worse rumors about {them.first}. Now nobody trusts either of us.",
+      "weight": 1,
+      "effects": {
+       "karma": -6
+      },
+      "relationship": {
+       "them": -20
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.stole",
+  "icon": "😒",
+  "title": "Missing money",
+  "text": "You're pretty sure {them.first} took $200 from your wallet.",
+  "conditions": {
+   "age": [
+    12,
+    99
+   ],
+   "agency": "bad",
+   "them_relations": [
+    "sibling",
+    "friend",
+    "partner",
+    "child",
+    "ex",
+    "coworker",
+    "auntuncle"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Confront them",
+    "outcomes": [
+     {
+      "text": "{them.first} admitted it and paid me back.",
+      "weight": 1,
+      "relationship": {
+       "them": 5
+      }
+     },
+     {
+      "text": "{them.first} denied it and stormed off.",
+      "weight": 1,
+      "relationship": {
+       "them": -15
+      },
+      "effects": {
+       "money": -200
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it slide",
+    "outcomes": [
+     {
+      "text": "I let it go. Keeping my wallet closer from now on.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call the police",
+    "outcomes": [
+     {
+      "text": "The police made a report. Family dinners are awkward now.",
+      "weight": 1,
+      "effects": {
+       "money": -200
+      },
+      "relationship": {
+       "them": -40
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.lawsuit",
+  "icon": "📄",
+  "title": "You're being sued",
+  "text": "{them.first} is suing you for $8,000, claiming you damaged {them.his} property.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "agency": "bad",
+   "them_relations": [
+    "ex",
+    "rival",
+    "neighbor",
+    "former_coworker",
+    "coworker"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Fight it with a lawyer ($1,500)",
+    "outcomes": [
+     {
+      "text": "I won the case. {them.first} got nothing.",
+      "weight": 2,
+      "effects": {
+       "money": -1500,
+       "happiness": 5
+      },
+      "stat_bonus": {
+       "smarts": 0.6
+      }
+     },
+     {
+      "text": "I lost. I have to pay the $8,000 too.",
+      "weight": 1,
+      "effects": {
+       "money": -9500,
+       "happiness": -8
+      }
+     }
+    ],
+    "requires": {
+     "money": 1500
+    }
+   },
+   {
+    "label": "Settle for $3,000",
+    "outcomes": [
+     {
+      "text": "I settled. At least it's over.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I lost by default and owe $8,000.",
+      "weight": 1,
+      "effects": {
+       "money": -8000,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.argue",
+  "icon": "😤",
+  "title": "Bad blood",
+  "text": "{them.first} picked a fight with you over something small.",
+  "conditions": {
+   "age": [
+    8,
+    99
+   ],
+   "agency": "bad"
+  },
+  "choices": [
+   {
+    "label": "Apologize anyway",
+    "outcomes": [
+     {
+      "text": "{them.first} and I made up.",
+      "weight": 1,
+      "relationship": {
+       "them": 12
+      },
+      "effects": {
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Argue back",
+    "outcomes": [
+     {
+      "text": "{them.first} and I are barely speaking now.",
+      "weight": 1,
+      "relationship": {
+       "them": -10
+      },
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk away",
+    "outcomes": [
+     {
+      "text": "I walked away from {them.first} before it got worse.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.partner_cheat",
+  "icon": "💔",
+  "title": "Suspicious texts",
+  "text": "You notice {them.first} has been texting someone late at night.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "agency": "bad",
+   "them_relations": [
+    "partner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask about it calmly",
+    "outcomes": [
+     {
+      "text": "It was a surprise party planning chat. Oops.",
+      "weight": 1,
+      "relationship": {
+       "them": 8
+      }
+     },
+     {
+      "text": "{them.first} admitted to an affair.",
+      "weight": 1,
+      "relationship": {
+       "them": -40
+      },
+      "effects": {
+       "happiness": -15,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Read their phone",
+    "outcomes": [
+     {
+      "text": "I found nothing and {them.first} found out I looked.",
+      "weight": 1,
+      "relationship": {
+       "them": -20
+      }
+     },
+     {
+      "text": "I found proof of an affair.",
+      "weight": 1,
+      "relationship": {
+       "them": -50
+      },
+      "effects": {
+       "happiness": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I decided to trust {them.first}.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

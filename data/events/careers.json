@@ -1,0 +1,2015 @@
+[
+ {
+  "id": "actor.typecast",
+  "icon": "🎭",
+  "title": "Typecast",
+  "text": "Casting directors only call you for the same kind of role: the grumpy neighbor.",
+  "conditions": {
+   "age": [
+    8,
+    90
+   ],
+   "career": "actor"
+  },
+  "choices": [
+   {
+    "label": "Lean into it",
+    "outcomes": [
+     {
+      "text": "I became the most beloved grumpy neighbor in the business.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "money": 15000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold out for different roles",
+    "outcomes": [
+     {
+      "text": "It took a year, but I broke the mold with a dramatic role.",
+      "weight": 1,
+      "effects": {
+       "skill": 5,
+       "fame": 2
+      }
+     },
+     {
+      "text": "Nobody called for a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "actor.method",
+  "icon": "🎥",
+  "title": "Method acting",
+  "text": "Your director wants you to stay in character for the whole shoot. You're playing a lighthouse keeper.",
+  "conditions": {
+   "age": [
+    14,
+    90
+   ],
+   "career": "actor",
+   "career_rank_min": 2
+  },
+  "choices": [
+   {
+    "label": "Commit fully",
+    "outcomes": [
+     {
+      "text": "I lived alone on a rock for three months. The performance was astonishing.",
+      "weight": 1,
+      "effects": {
+       "skill": 7,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "I got so deep into character I forgot my own birthday.",
+      "weight": 1,
+      "effects": {
+       "skill": 5,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Politely refuse",
+    "outcomes": [
+     {
+      "text": "The director sulked, but the movie turned out fine.",
+      "weight": 1,
+      "effects": {
+       "skill": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "actor.costar_romance",
+  "icon": "💘",
+  "title": "On-set chemistry",
+  "text": "Your co-star {costar.first} keeps lingering after scenes wrap.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "career": "actor",
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Ask them to dinner",
+    "outcomes": [
+     {
+      "text": "{costar.first} and I are dating. The tabloids are thrilled.",
+      "weight": 1,
+      "new_partner": "costar",
+      "keep_role": "costar",
+      "effects": {
+       "fame": 3,
+       "happiness": 8
+      },
+      "stat_bonus": {
+       "looks": 1.0
+      }
+     },
+     {
+      "text": "{costar.first} said it was just good acting.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it professional",
+    "outcomes": [
+     {
+      "text": "Our chemistry stayed on screen.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "costar": {
+    "new": "coworker",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true,
+  "weight": 6
+ },
+ {
+  "id": "actor.sequel_offer",
+  "icon": "🎬",
+  "title": "Sequel!",
+  "text": "The studio wants a sequel to one of your hit movies, and they want you back.",
+  "conditions": {
+   "age": [
+    10,
+    95
+   ],
+   "career": "actor"
+  },
+  "choices": [
+   {
+    "label": "Sign on (big paycheck)",
+    "outcomes": [
+     {
+      "text": "The sequel paid three times the original.",
+      "weight": 2,
+      "effects": {
+       "money": 250000,
+       "fame": 5,
+       "happiness": 6
+      },
+      "actor_role": {
+       "title": "The Sequel",
+       "tier": "Studio blockbuster",
+       "pay": 250000
+      }
+     },
+     {
+      "text": "The sequel was a mess, but the check cleared.",
+      "weight": 1,
+      "effects": {
+       "money": 180000,
+       "fame": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Only if the script is good",
+    "outcomes": [
+     {
+      "text": "They rewrote it for me. Critics call it better than the first.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "fame": 6,
+       "money": 150000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "I passed. They recast my character. It stings.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "followup_only": true,
+  "weight": 6
+ },
+ {
+  "id": "actor.award_nom",
+  "icon": "🏅",
+  "title": "Nominated",
+  "text": "Your latest performance earned an award nomination.",
+  "conditions": {
+   "age": [
+    10,
+    95
+   ],
+   "career": "actor",
+   "career_rank_min": 3,
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Campaign hard",
+    "outcomes": [
+     {
+      "text": "I didn't win, but the campaign raised my profile.",
+      "weight": 2,
+      "effects": {
+       "fame": 4,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I won! My speech made people cry.",
+      "weight": 1,
+      "effects": {
+       "fame": 10,
+       "happiness": 15
+      },
+      "counter": {
+       "awards": 1
+      },
+      "milestone": "won a Golden Statue"
+     }
+    ]
+   },
+   {
+    "label": "Stay humble",
+    "outcomes": [
+     {
+      "text": "I lost gracefully. People liked that.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "karma": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "actor.fan_encounter",
+  "icon": "🙋",
+  "title": "Fan",
+  "text": "A fan recognizes you at the grocery store and starts crying.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ],
+   "career": "actor",
+   "min_fame": 20
+  },
+  "choices": [
+   {
+    "label": "Take a selfie with them",
+    "outcomes": [
+     {
+      "text": "They posted it. It's their profile picture now.",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "happiness": 3,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend you're someone else",
+    "outcomes": [
+     {
+      "text": "\"I get that a lot.\" They didn't believe me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "actor.stunt",
+  "icon": "💥",
+  "title": "The stunt",
+  "text": "The stunt double is sick. The director asks you to do your own stunt.",
+  "conditions": {
+   "age": [
+    14,
+    70
+   ],
+   "career": "actor"
+  },
+  "choices": [
+   {
+    "label": "Do it",
+    "outcomes": [
+     {
+      "text": "I nailed it. The crew applauded.",
+      "weight": 2,
+      "effects": {
+       "fame": 2,
+       "skill": 2
+      },
+      "trait_bonus": {
+       "Athletic": 2
+      }
+     },
+     {
+      "text": "I broke my wrist on the landing.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for the double",
+    "outcomes": [
+     {
+      "text": "We lost a day. The producers weren't happy.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "actor.child_star",
+  "icon": "👶",
+  "title": "Child star",
+  "text": "Being a child actor is exhausting. Your parents want you to keep going.",
+  "conditions": {
+   "age": [
+    6,
+    15
+   ],
+   "career": "actor"
+  },
+  "choices": [
+   {
+    "label": "Keep acting",
+    "outcomes": [
+     {
+      "text": "I kept going. School suffers, but the roles keep coming.",
+      "weight": 1,
+      "effects": {
+       "school": -6,
+       "fame": 3,
+       "money": 8000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a normal childhood",
+    "outcomes": [
+     {
+      "text": "{par.first} agreed to let me take a break.",
+      "weight": 1,
+      "career_quit": true,
+      "relationship": {
+       "par": 10
+      },
+      "effects": {
+       "happiness": 8
+      }
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "roles": {
+   "par": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "weight": 6
+ },
+ {
+  "id": "music.writers_block",
+  "icon": "🧱",
+  "title": "Writer's block",
+  "text": "You haven't written anything good in months.",
+  "conditions": {
+   "age": [
+    10,
+    95
+   ],
+   "career": "musician"
+  },
+  "choices": [
+   {
+    "label": "Go on a road trip for inspiration",
+    "outcomes": [
+     {
+      "text": "I came back with three new songs.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "skill": 3,
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Collaborate with a stranger online",
+    "outcomes": [
+     {
+      "text": "The collab was weird and wonderful.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Force it",
+    "outcomes": [
+     {
+      "text": "Everything I wrote sounded like a cereal jingle.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "music.bandmate_quit",
+  "icon": "🎸",
+  "title": "Creative differences",
+  "text": "{bm.first} wants to leave the band to go solo.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ],
+   "career": "musician"
+  },
+  "choices": [
+   {
+    "label": "Beg them to stay",
+    "outcomes": [
+     {
+      "text": "{bm.first} stayed, for now.",
+      "weight": 1,
+      "relationship": {
+       "bm": 10
+      }
+     },
+     {
+      "text": "{bm.first} left anyway.",
+      "weight": 1,
+      "relation_change": {
+       "bm": "former_coworker"
+      },
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them go",
+    "outcomes": [
+     {
+      "text": "We parted as friends.",
+      "weight": 1,
+      "relation_change": {
+       "bm": "friend"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Kick them out first",
+    "outcomes": [
+     {
+      "text": "Messy. The fans took sides.",
+      "weight": 1,
+      "relation_change": {
+       "bm": "rival"
+      },
+      "effects": {
+       "fame": 1,
+       "karma": -3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "bm": {
+    "relation": "bandmate"
+   }
+  },
+  "weight": 6
+ },
+ {
+  "id": "music.viral_song",
+  "icon": "📈",
+  "title": "Trending",
+  "text": "One of your old songs is suddenly trending because of a dance challenge.",
+  "conditions": {
+   "age": [
+    12,
+    95
+   ],
+   "career": "musician",
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Join the dance challenge",
+    "outcomes": [
+     {
+      "text": "My dance went viral too. Double win.",
+      "weight": 1,
+      "effects": {
+       "fame": 6,
+       "happiness": 6
+      },
+      "trait_bonus": {
+       "Funny": 2
+      }
+     },
+     {
+      "text": "My dance was... memorable.",
+      "weight": 1,
+      "effects": {
+       "fame": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay mysterious",
+    "outcomes": [
+     {
+      "text": "The mystery made people even more curious.",
+      "weight": 1,
+      "effects": {
+       "fame": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "music.festival",
+  "icon": "🎪",
+  "title": "Festival slot",
+  "text": "A big summer festival offers you a slot.",
+  "conditions": {
+   "age": [
+    14,
+    90
+   ],
+   "career": "musician",
+   "min_fame": 10
+  },
+  "choices": [
+   {
+    "label": "Headline the side stage",
+    "outcomes": [
+     {
+      "text": "The crowd sang every word.",
+      "weight": 2,
+      "effects": {
+       "fame": 5,
+       "money": 12000,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "It rained the whole set. Still magical.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "money": 8000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I needed the rest.",
+      "weight": 1,
+      "effects": {
+       "stress": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "music.reunion",
+  "icon": "🎤",
+  "title": "Reunion",
+  "text": "Your old bandmates call. The fans want a reunion tour.",
+  "conditions": {
+   "age": [
+    20,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Reunite",
+    "outcomes": [
+     {
+      "text": "The reunion tour sold out in minutes.",
+      "weight": 2,
+      "effects": {
+       "money": 150000,
+       "fame": 8,
+       "happiness": 10
+      },
+      "milestone": "went on a reunion tour"
+     },
+     {
+      "text": "We fought again by the third show.",
+      "weight": 1,
+      "effects": {
+       "money": 40000,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Some things should stay in the past",
+    "outcomes": [
+     {
+      "text": "I said no. The nostalgia stayed intact.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "music.stage_fright",
+  "icon": "😰",
+  "title": "Stage fright",
+  "text": "Your hands shake before a big show.",
+  "conditions": {
+   "age": [
+    10,
+    90
+   ],
+   "career": "musician"
+  },
+  "choices": [
+   {
+    "label": "Breathe and go on",
+    "outcomes": [
+     {
+      "text": "I played the best show of my life.",
+      "weight": 2,
+      "effects": {
+       "skill": 3,
+       "fame": 2
+      }
+     },
+     {
+      "text": "I forgot the lyrics to my own song.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cancel the show",
+    "outcomes": [
+     {
+      "text": "Fans were disappointed.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "stress": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "music.label_contract",
+  "icon": "📄",
+  "title": "Contract fine print",
+  "text": "Your label wants to own your masters in the new contract.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "career": "musician"
+  },
+  "choices": [
+   {
+    "label": "Sign it",
+    "outcomes": [
+     {
+      "text": "Big advance, but I don't own my own songs anymore.",
+      "weight": 1,
+      "effects": {
+       "money": 80000,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fight for your masters",
+    "outcomes": [
+     {
+      "text": "After a long fight, I own my work.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "karma": 3
+      },
+      "trait_bonus": {
+       "Charmer": 2,
+       "Rebel": 2
+      }
+     },
+     {
+      "text": "They dropped me instead.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "music.groupie",
+  "icon": "🌹",
+  "title": "Superfan",
+  "text": "A superfan has been showing up at every single show, front row.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "career": "musician",
+   "min_fame": 25
+  },
+  "choices": [
+   {
+    "label": "Invite them backstage",
+    "outcomes": [
+     {
+      "text": "They cried, I signed their arm, they got it tattooed.",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get security involved",
+    "outcomes": [
+     {
+      "text": "Security handled it. Awkward.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "sport.rival_player",
+  "icon": "😤",
+  "title": "Trash talk",
+  "text": "A player on a rival team calls you overrated on live TV.",
+  "conditions": {
+   "age": [
+    16,
+    45
+   ],
+   "career": "athlete"
+  },
+  "choices": [
+   {
+    "label": "Answer on the field",
+    "outcomes": [
+     {
+      "text": "I dropped a career-best game on them.",
+      "weight": 2,
+      "effects": {
+       "skill": 2,
+       "fame": 4
+      },
+      "keep_role": "rv"
+     },
+     {
+      "text": "They outplayed me. Ouch.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "happiness": -4
+      },
+      "keep_role": "rv"
+     }
+    ]
+   },
+   {
+    "label": "Fire back on social media",
+    "outcomes": [
+     {
+      "text": "The feud became a league storyline.",
+      "weight": 1,
+      "effects": {
+       "fame": 3
+      },
+      "keep_role": "rv"
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I took the high road.",
+      "weight": 1,
+      "effects": {
+       "karma": 2
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "rv": {
+    "new": "rival",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true,
+  "weight": 6
+ },
+ {
+  "id": "sport.doping",
+  "icon": "💉",
+  "title": "Shortcut",
+  "text": "A trainer offers you something that will \"help you recover faster\".",
+  "conditions": {
+   "age": [
+    16,
+    45
+   ],
+   "career": "athlete"
+  },
+  "choices": [
+   {
+    "label": "Take it",
+    "outcomes": [
+     {
+      "text": "My numbers jumped. Nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "skill": 8,
+       "karma": -8
+      },
+      "flags": [
+       "doped"
+      ],
+      "schedule": {
+       "event": "sport.doping_test",
+       "years": [
+        1,
+        3
+       ]
+      }
+     },
+     {
+      "text": "I failed a drug test. Suspended for a year.",
+      "weight": 1,
+      "effects": {
+       "fame": -10,
+       "skill": -5,
+       "happiness": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "I'll get there clean.",
+      "weight": 1,
+      "effects": {
+       "karma": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "sport.doping_test",
+  "icon": "🧪",
+  "title": "Random test",
+  "text": "The league announces surprise drug testing.",
+  "conditions": {
+   "age": [
+    16,
+    50
+   ]
+  },
+  "choices": [
+   {
+    "label": "Hope for the best",
+    "outcomes": [
+     {
+      "text": "Somehow, I passed.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      }
+     },
+     {
+      "text": "I failed. My reputation is ruined.",
+      "weight": 2,
+      "effects": {
+       "fame": -15,
+       "happiness": -15
+      },
+      "milestone": "was suspended for doping"
+     }
+    ]
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "sport.trade",
+  "icon": "🔁",
+  "title": "Traded",
+  "text": "Your team is trading you to another city.",
+  "conditions": {
+   "age": [
+    18,
+    40
+   ],
+   "career": "athlete",
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Accept gracefully",
+    "outcomes": [
+     {
+      "text": "New city, new fans. They welcomed me warmly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Demand a better deal",
+    "outcomes": [
+     {
+      "text": "The new team sweetened my contract.",
+      "weight": 1,
+      "effects": {
+       "money": 50000
+      },
+      "trait_bonus": {
+       "Ambitious": 2
+      }
+     },
+     {
+      "text": "I got a reputation as difficult.",
+      "weight": 1,
+      "effects": {
+       "fame": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "sport.kid_fan",
+  "icon": "🧒",
+  "title": "Hospital visit",
+  "text": "The team asks you to visit a children's hospital.",
+  "conditions": {
+   "age": [
+    18,
+    45
+   ],
+   "career": "athlete"
+  },
+  "choices": [
+   {
+    "label": "Go and spend the whole day",
+    "outcomes": [
+     {
+      "text": "A kid named me their hero. I'll never forget it.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": 8,
+       "fame": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a signed jersey instead",
+    "outcomes": [
+     {
+      "text": "They appreciated the jersey.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "sport.olympics",
+  "icon": "🥇",
+  "title": "The Games",
+  "text": "You've been selected to represent your country at the international games.",
+  "conditions": {
+   "age": [
+    18,
+    36
+   ],
+   "career": "athlete",
+   "career_rank_min": 3,
+   "chance": 0.3
+  },
+  "choices": [
+   {
+    "label": "Go for gold",
+    "outcomes": [
+     {
+      "text": "I won GOLD for my country!",
+      "weight": 1,
+      "effects": {
+       "fame": 15,
+       "happiness": 20
+      },
+      "milestone": "won a gold medal",
+      "counter": {
+       "titles": 1
+      },
+      "stat_bonus": {
+       "health": 0.5
+      }
+     },
+     {
+      "text": "Silver. Bittersweet, but still a medal.",
+      "weight": 1,
+      "effects": {
+       "fame": 8,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I didn't medal. Next time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "weight": 6
+ },
+ {
+  "id": "sport.coach_offer",
+  "icon": "📋",
+  "title": "Coaching",
+  "text": "A college team wants you as an assistant coach after you retire.",
+  "conditions": {
+   "age": [
+    34,
+    60
+   ],
+   "career": "none",
+   "chance": 0.4
+  },
+  "choices": [
+   {
+    "label": "Accept",
+    "outcomes": [
+     {
+      "text": "I started coaching. Passing it on feels good.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": 60000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enjoy retirement",
+    "outcomes": [
+     {
+      "text": "I declined. Golf every day.",
+      "weight": 1,
+      "effects": {
+       "stress": -5
+      }
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "roles": {},
+  "weight": 6
+ },
+ {
+  "id": "politics.debate",
+  "icon": "🎙️",
+  "title": "The debate",
+  "text": "Tonight's televised debate could swing the race.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "career": "politician"
+  },
+  "choices": [
+   {
+    "label": "Stick to the facts",
+    "outcomes": [
+     {
+      "text": "I won the debate on substance.",
+      "weight": 1,
+      "effects": {
+       "approval": 6,
+       "skill": 2
+      },
+      "stat_bonus": {
+       "smarts": 1.0
+      }
+     },
+     {
+      "text": "I was accurate but boring.",
+      "weight": 1,
+      "effects": {
+       "approval": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Land a zinger",
+    "outcomes": [
+     {
+      "text": "My one-liner went viral.",
+      "weight": 1,
+      "effects": {
+       "approval": 5,
+       "fame": 4
+      },
+      "trait_bonus": {
+       "Funny": 2,
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "The zinger fell flat.",
+      "weight": 1,
+      "effects": {
+       "approval": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Attack your opponent",
+    "outcomes": [
+     {
+      "text": "It worked, but people called it dirty.",
+      "weight": 1,
+      "effects": {
+       "approval": 3,
+       "karma": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "politics.bribe_scandal",
+  "icon": "📰",
+  "title": "Scandal",
+  "text": "A journalist has proof of the \"gifts\" you took from a donor.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "career": "politician"
+  },
+  "choices": [
+   {
+    "label": "Apologize publicly",
+    "outcomes": [
+     {
+      "text": "My approval cratered, but I survived.",
+      "weight": 1,
+      "effects": {
+       "approval": -20,
+       "karma": 3
+      },
+      "unflags": [
+       "took_bribe"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Deny everything",
+    "outcomes": [
+     {
+      "text": "It blew over.",
+      "weight": 1,
+      "effects": {
+       "approval": -5
+      }
+     },
+     {
+      "text": "The evidence was undeniable. I was forced to resign.",
+      "weight": 1,
+      "career_quit": true,
+      "effects": {
+       "happiness": -15
+      },
+      "milestone": "resigned in scandal"
+     }
+    ]
+   },
+   {
+    "label": "Blame your staff",
+    "outcomes": [
+     {
+      "text": "A staffer took the fall. I feel terrible.",
+      "weight": 1,
+      "effects": {
+       "approval": -6,
+       "karma": -8
+      }
+     }
+    ]
+   }
+  ],
+  "followup_only": true,
+  "weight": 6
+ },
+ {
+  "id": "politics.crisis",
+  "icon": "🌊",
+  "title": "Crisis",
+  "text": "A flood hits your district. Everyone is watching how you respond.",
+  "conditions": {
+   "age": [
+    21,
+    95
+   ],
+   "career": "politician",
+   "in_office": true
+  },
+  "choices": [
+   {
+    "label": "Show up with sandbags",
+    "outcomes": [
+     {
+      "text": "Photos of me in waders made the front page.",
+      "weight": 1,
+      "effects": {
+       "approval": 10,
+       "karma": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Coordinate from the office",
+    "outcomes": [
+     {
+      "text": "The response was efficient but invisible.",
+      "weight": 1,
+      "effects": {
+       "approval": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go on vacation",
+    "outcomes": [
+     {
+      "text": "Photos of me on a beach during the flood. Career-defining, in the wrong way.",
+      "weight": 1,
+      "effects": {
+       "approval": -25,
+       "fame": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "politics.lobbyist",
+  "icon": "🥂",
+  "title": "Lobbyist",
+  "text": "A lobbyist invites you on a luxury \"fact-finding\" trip.",
+  "conditions": {
+   "age": [
+    21,
+    95
+   ],
+   "career": "politician",
+   "in_office": true
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "The trip was lovely. The headlines weren't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "approval": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline and disclose it",
+    "outcomes": [
+     {
+      "text": "Transparency won me points.",
+      "weight": 1,
+      "effects": {
+       "approval": 4,
+       "karma": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "politics.opponent_dirt",
+  "icon": "🗂️",
+  "title": "Opposition research",
+  "text": "Your staff found embarrassing dirt on your opponent.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "career": "politician"
+  },
+  "choices": [
+   {
+    "label": "Leak it",
+    "outcomes": [
+     {
+      "text": "My opponent's campaign collapsed.",
+      "weight": 1,
+      "effects": {
+       "approval": 5,
+       "karma": -8
+      }
+     },
+     {
+      "text": "It backfired. People sympathized with them.",
+      "weight": 1,
+      "effects": {
+       "approval": -6,
+       "karma": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bury it",
+    "outcomes": [
+     {
+      "text": "I won't win like that.",
+      "weight": 1,
+      "effects": {
+       "karma": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "politics.town_hall",
+  "icon": "🏛️",
+  "title": "Town hall",
+  "text": "An angry voter corners you at a town hall.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "career": "politician"
+  },
+  "choices": [
+   {
+    "label": "Listen and promise to act",
+    "outcomes": [
+     {
+      "text": "They left calmer. So did I.",
+      "weight": 1,
+      "effects": {
+       "approval": 4,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Argue back",
+    "outcomes": [
+     {
+      "text": "The clip trended for all the wrong reasons.",
+      "weight": 1,
+      "effects": {
+       "approval": -6,
+       "fame": 3
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "mafia.loyalty_test",
+  "icon": "🩸",
+  "title": "Loyalty test",
+  "text": "The boss asks you to hold a package for a week. No questions.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "mafia"
+  },
+  "choices": [
+   {
+    "label": "Hold it",
+    "outcomes": [
+     {
+      "text": "A week later the boss nodded at me. That nod means everything.",
+      "weight": 1,
+      "effects": {
+       "respect": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look inside",
+    "outcomes": [
+     {
+      "text": "I looked. I wish I hadn't. The boss knows I looked.",
+      "weight": 1,
+      "effects": {
+       "respect": -10,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "The boss was very quiet. Too quiet.",
+      "weight": 1,
+      "effects": {
+       "respect": -15
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "mafia.sitdown",
+  "icon": "🍝",
+  "title": "The sit-down",
+  "text": "The families meet over dinner to settle a dispute. You're at the table.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "mafia",
+   "career_rank_min": 2
+  },
+  "choices": [
+   {
+    "label": "Keep the peace",
+    "outcomes": [
+     {
+      "text": "A deal was struck. Everyone went home alive.",
+      "weight": 1,
+      "effects": {
+       "respect": 6,
+       "skill": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a bold demand",
+    "outcomes": [
+     {
+      "text": "They gave in. My family got the docks.",
+      "weight": 1,
+      "effects": {
+       "respect": 12
+      },
+      "trait_bonus": {
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "The dinner ended in flipped tables.",
+      "weight": 1,
+      "effects": {
+       "respect": -6,
+       "heat": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "mafia.informant",
+  "icon": "👂",
+  "title": "A rat",
+  "text": "Someone in the crew is talking to the feds. You think it's {cm.first}.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "mafia"
+  },
+  "choices": [
+   {
+    "label": "Tell the boss",
+    "outcomes": [
+     {
+      "text": "{cm.first} disappeared. The boss trusts me more now.",
+      "weight": 1,
+      "effects": {
+       "respect": 10,
+       "karma": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Warn them to run",
+    "outcomes": [
+     {
+      "text": "{cm.first} vanished into witness protection. Nobody suspects me.",
+      "weight": 1,
+      "effects": {
+       "karma": 6
+      },
+      "keep_role": "cm"
+     },
+     {
+      "text": "The boss found out I warned them.",
+      "weight": 1,
+      "effects": {
+       "respect": -20,
+       "health": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do nothing",
+    "outcomes": [
+     {
+      "text": "I kept my mouth shut.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "cm": {
+    "new": "friend",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true,
+  "weight": 6
+ },
+ {
+  "id": "mafia.funeral",
+  "icon": "🕯️",
+  "title": "A funeral",
+  "text": "A made man was killed. The whole family attends the funeral, and so do the feds with cameras.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "mafia"
+  },
+  "choices": [
+   {
+    "label": "Pay respects openly",
+    "outcomes": [
+     {
+      "text": "The family noticed my loyalty. So did the FBI.",
+      "weight": 1,
+      "effects": {
+       "respect": 5,
+       "heat": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send flowers",
+    "outcomes": [
+     {
+      "text": "I sent a big wreath and stayed home.",
+      "weight": 1,
+      "effects": {
+       "respect": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "mafia.promotion_offer",
+  "icon": "🤵",
+  "title": "Making your bones",
+  "text": "The boss says one more job and you'll be \"made\".",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "mafia",
+   "career_rank_min": 0
+  },
+  "choices": [
+   {
+    "label": "Do whatever it takes",
+    "outcomes": [
+     {
+      "text": "I'm a made man now.",
+      "weight": 1,
+      "effects": {
+       "respect": 15,
+       "karma": -15,
+       "heat": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hesitate",
+    "outcomes": [
+     {
+      "text": "The boss looked disappointed.",
+      "weight": 1,
+      "effects": {
+       "respect": -5
+      }
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "weight": 6
+ },
+ {
+  "id": "hustle.mark_cop",
+  "icon": "👮",
+  "title": "Undercover",
+  "text": "Your next \"customer\" asks way too many questions.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ],
+   "career": "hustler"
+  },
+  "choices": [
+   {
+    "label": "Sell anyway",
+    "outcomes": [
+     {
+      "text": "It was a cop. I got fined $1,000.",
+      "weight": 1,
+      "effects": {
+       "money": -1000,
+       "heat": 15
+      },
+      "fine": 0
+     },
+     {
+      "text": "False alarm. Just a nervous tourist.",
+      "weight": 1,
+      "effects": {
+       "money": 200,
+       "cred": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Shut it down and walk",
+    "outcomes": [
+     {
+      "text": "Smart move. It was an undercover cop.",
+      "weight": 1,
+      "effects": {
+       "cred": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "hustle.rival_crew",
+  "icon": "🥊",
+  "title": "Turf war",
+  "text": "A rival crew is working your corner.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ],
+   "career": "hustler"
+  },
+  "choices": [
+   {
+    "label": "Run them off",
+    "outcomes": [
+     {
+      "text": "They left. My corner, my rules.",
+      "weight": 1,
+      "effects": {
+       "cred": 8
+      },
+      "trait_bonus": {
+       "Hothead": 1.5,
+       "Athletic": 1.5
+      },
+      "fight_win": true
+     },
+     {
+      "text": "They ran me off instead.",
+      "weight": 1,
+      "effects": {
+       "health": -8,
+       "cred": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer a truce",
+    "outcomes": [
+     {
+      "text": "We split the block. Business is business.",
+      "weight": 1,
+      "effects": {
+       "cred": 2,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Move to a new spot",
+    "outcomes": [
+     {
+      "text": "New corner, fewer tourists.",
+      "weight": 1,
+      "effects": {
+       "cred": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "hustle.big_score",
+  "icon": "💰",
+  "title": "The big score",
+  "text": "A tourist flashes a thick wallet at the market.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ],
+   "career": "hustler"
+  },
+  "choices": [
+   {
+    "label": "Go for it",
+    "outcomes": [
+     {
+      "text": "$2,400 in cash. Best day ever.",
+      "weight": 1,
+      "effects": {
+       "money": 2400,
+       "cred": 4,
+       "heat": 8,
+       "karma": -5
+      }
+     },
+     {
+      "text": "They grabbed my wrist and screamed for the police.",
+      "weight": 1,
+      "effects": {
+       "heat": 20,
+       "cred": -3
+      },
+      "trial": [
+       "theft",
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "Not worth the risk.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "hustle.go_straight",
+  "icon": "🧭",
+  "title": "A way out",
+  "text": "A social worker offers you a spot in a job training program.",
+  "conditions": {
+   "age": [
+    16,
+    60
+   ],
+   "career": "hustler"
+  },
+  "choices": [
+   {
+    "label": "Take it",
+    "outcomes": [
+     {
+      "text": "I left the streets behind.",
+      "weight": 1,
+      "career_quit": true,
+      "effects": {
+       "karma": 8,
+       "happiness": 6
+      },
+      "milestone": "left the streets for a fresh start"
+     }
+    ]
+   },
+   {
+    "label": "Not yet",
+    "outcomes": [
+     {
+      "text": "Maybe someday.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ }
+]

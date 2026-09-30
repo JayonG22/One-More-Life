@@ -1,0 +1,714 @@
+[
+ {
+  "id": "life.class_reunion",
+  "icon": "🎓",
+  "title": "Reunion",
+  "text": "Your 20-year school reunion is this weekend.",
+  "conditions": {
+   "age": [
+    36,
+    40
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and show off",
+    "outcomes": [
+     {
+      "text": "Everyone asked what I do now. I enjoyed answering.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "My old crush is doing way better than me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go and reconnect",
+    "outcomes": [
+     {
+      "text": "I reconnected with an old friend, {old.first}.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "keep_role": "old",
+      "relation_change": {
+       "old": "friend"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "Some chapters stay closed.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "roles": {
+   "old": {
+    "new": "classmate",
+    "age": "same",
+    "closeness": 55
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "life.volunteer_fire",
+  "icon": "🔥",
+  "title": "House fire",
+  "text": "Your neighbor's house is on fire, and you hear a dog barking inside.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Run in",
+    "outcomes": [
+     {
+      "text": "I got the dog out! The whole street cheered.",
+      "weight": 1,
+      "effects": {
+       "karma": 12,
+       "happiness": 8,
+       "fame": 2,
+       "health": -4
+      }
+     },
+     {
+      "text": "The smoke was too much. Firefighters pulled us both out.",
+      "weight": 1,
+      "effects": {
+       "health": -15,
+       "karma": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call 911",
+    "outcomes": [
+     {
+      "text": "The firefighters saved the dog.",
+      "weight": 1,
+      "effects": {
+       "karma": 3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "life.lost_kid",
+  "icon": "🧒",
+  "title": "Lost kid",
+  "text": "A little kid is crying alone in the mall.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help them find their parents",
+    "outcomes": [
+     {
+      "text": "Their mom hugged me like I was family.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell security",
+    "outcomes": [
+     {
+      "text": "Security took over.",
+      "weight": 1,
+      "effects": {
+       "karma": 2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "life.bucket_list",
+  "icon": "🪂",
+  "title": "Bucket list",
+  "text": "You've always wanted to skydive.",
+  "conditions": {
+   "age": [
+    25,
+    75
+   ]
+  },
+  "choices": [
+   {
+    "label": "Jump",
+    "outcomes": [
+     {
+      "text": "Best 60 seconds of my life.",
+      "weight": 3,
+      "effects": {
+       "happiness": 12,
+       "stress": -8
+      }
+     },
+     {
+      "text": "The parachute opened late. I landed in a cow field.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": -4
+      }
+     }
+    ],
+    "requires": {
+     "money": 300
+    }
+   },
+   {
+    "label": "Maybe next year",
+    "outcomes": [
+     {
+      "text": "Next year, for sure.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "life.dna_test",
+  "icon": "🧬",
+  "title": "DNA test",
+  "text": "You took a mail-in DNA test for fun. The results are in.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "once": true,
+  "outcomes": [
+   {
+    "text": "The DNA test says I'm 3% Viking. I bought a helmet.",
+    "weight": 2,
+    "effects": {
+     "happiness": 3
+    }
+   },
+   {
+    "text": "The DNA test says I'm related to half of a small town in the mountains.",
+    "weight": 1,
+    "effects": {
+     "happiness": 2
+    }
+   }
+  ]
+ },
+ {
+  "id": "life.old_rival_reunion",
+  "icon": "🤝",
+  "title": "Old rival",
+  "text": "You run into {rv.first}, your old rival, at a coffee shop.",
+  "conditions": {
+   "age": [
+    25,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Bury the hatchet",
+    "outcomes": [
+     {
+      "text": "We laughed about the old days. We're friends now.",
+      "weight": 1,
+      "relation_change": {
+       "rv": "friend"
+      },
+      "relationship": {
+       "rv": 40
+      },
+      "effects": {
+       "karma": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend you didn't see them",
+    "outcomes": [
+     {
+      "text": "I hid behind a menu.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Gloat about your life",
+    "outcomes": [
+     {
+      "text": "They gloated back. It became a competition.",
+      "weight": 1,
+      "relationship": {
+       "rv": -10
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "rv": {
+    "relation": "rival"
+   }
+  }
+ },
+ {
+  "id": "life.parent_retire",
+  "icon": "🏖️",
+  "title": "Retirement party",
+  "text": "{par.first} is retiring and throwing a party.",
+  "conditions": {
+   "age": [
+    20,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Give a heartfelt toast",
+    "outcomes": [
+     {
+      "text": "{par.first} cried. So did I.",
+      "weight": 1,
+      "relationship": {
+       "par": 15
+      },
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Roast them",
+    "outcomes": [
+     {
+      "text": "The room roared. {par.first} laughed hardest.",
+      "weight": 1,
+      "relationship": {
+       "par": 10
+      },
+      "effects": {
+       "happiness": 6
+      },
+      "trait_bonus": {
+       "Funny": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "{par.first} noticed I wasn't there.",
+      "weight": 1,
+      "relationship": {
+       "par": -15
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "par": {
+    "relation_any": [
+     "mother",
+     "father"
+    ],
+    "min_age": 60
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "life.adult_kid_money",
+  "icon": "💵",
+  "title": "Loan request",
+  "text": "{kid.first} asks to borrow $10,000 to start a business.",
+  "conditions": {
+   "age": [
+    40,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lend it",
+    "outcomes": [
+     {
+      "text": "{kid.first}'s business took off! {kid.He} paid me back double.",
+      "weight": 1,
+      "effects": {
+       "money": 10000,
+       "happiness": 8
+      },
+      "relationship": {
+       "kid": 15
+      }
+     },
+     {
+      "text": "The business failed. {kid.first} is embarrassed.",
+      "weight": 2,
+      "effects": {
+       "money": -10000
+      },
+      "relationship": {
+       "kid": 10
+      }
+     }
+    ],
+    "requires": {
+     "money": 10000
+    }
+   },
+   {
+    "label": "Give advice instead",
+    "outcomes": [
+     {
+      "text": "{kid.first} rolled {kid.his} eyes, then took the advice.",
+      "weight": 1,
+      "relationship": {
+       "kid": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no",
+    "outcomes": [
+     {
+      "text": "{kid.first} was disappointed.",
+      "weight": 1,
+      "relationship": {
+       "kid": -10
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 20
+   }
+  }
+ },
+ {
+  "id": "life.grandchild",
+  "icon": "👶",
+  "title": "Grandparent",
+  "text": "{kid.first} just had a baby. You're a grandparent!",
+  "conditions": {
+   "age": [
+    40,
+    99
+   ],
+   "chance": 0.35
+  },
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 22
+   }
+  },
+  "outcomes": [
+   {
+    "text": "{kid.first} just had a baby. I'm a grandparent!",
+    "weight": 1,
+    "effects": {
+     "happiness": 12
+    },
+    "milestone": "became a grandparent",
+    "counter": {
+     "grandkids": 1
+    }
+   }
+  ]
+ },
+ {
+  "id": "life.health_scare",
+  "icon": "🩺",
+  "title": "Checkup",
+  "text": "Your doctor wants to run more tests after your checkup.",
+  "conditions": {
+   "age": [
+    40,
+    99
+   ],
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Run every test",
+    "outcomes": [
+     {
+      "text": "All clear. Just a scare.",
+      "weight": 3,
+      "effects": {
+       "stress": -4,
+       "money": -500
+      }
+     },
+     {
+      "text": "They caught something early. Treatment worked.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "money": -3000
+      },
+      "milestone": "beat a health scare"
+     }
+    ]
+   },
+   {
+    "label": "Skip them",
+    "outcomes": [
+     {
+      "text": "I skipped the tests. Hopefully that was fine.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "life.new_hobby",
+  "icon": "🎨",
+  "title": "New hobby",
+  "text": "",
+  "conditions": {
+   "age": [
+    14,
+    90
+   ]
+  },
+  "cooldown": 6,
+  "outcomes": [
+   {
+    "text": "I picked up pottery. My first bowl looks like a hat.",
+    "weight": 1,
+    "effects": {
+     "happiness": 4
+    }
+   },
+   {
+    "text": "I got really into birdwatching. I have binoculars now.",
+    "weight": 1,
+    "effects": {
+     "happiness": 4,
+     "stress": -3
+    }
+   },
+   {
+    "text": "I started running. My knees filed a complaint.",
+    "weight": 1,
+    "effects": {
+     "health": 3,
+     "happiness": 2
+    }
+   },
+   {
+    "text": "I learned to bake bread. Everyone at work loves me now.",
+    "weight": 1,
+    "effects": {
+     "happiness": 4
+    }
+   }
+  ]
+ },
+ {
+  "id": "life.random_kindness",
+  "icon": "💌",
+  "title": "Anonymous gift",
+  "text": "",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "chance": 0.3
+  },
+  "cooldown": 10,
+  "outcomes": [
+   {
+    "text": "Someone anonymously paid for my groceries. I paid it forward the next day.",
+    "weight": 1,
+    "effects": {
+     "happiness": 6,
+     "karma": 2
+    }
+   }
+  ]
+ },
+ {
+  "id": "life.moving_friend",
+  "icon": "📦",
+  "title": "Moving day",
+  "text": "{fr.first} begs you to help move a piano up four flights of stairs.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help",
+    "outcomes": [
+     {
+      "text": "We got the piano up. My back will never forgive me.",
+      "weight": 1,
+      "effects": {
+       "health": -2
+      },
+      "relationship": {
+       "fr": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Suddenly remember a dentist appointment",
+    "outcomes": [
+     {
+      "text": "{fr.first} knew I was lying.",
+      "weight": 1,
+      "relationship": {
+       "fr": -10
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "fr": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "sibling"
+    ]
+   }
+  }
+ },
+ {
+  "id": "life.world_event",
+  "icon": "🌍",
+  "title": "World news",
+  "text": "",
+  "conditions": {
+   "age": [
+    10,
+    99
+   ],
+   "chance": 0.25
+  },
+  "cooldown": 5,
+  "outcomes": [
+   {
+    "text": "A new pandemic swept the world. Everything shut down for months.",
+    "weight": 1,
+    "effects": {
+     "stress": 8,
+     "happiness": -6,
+     "health": -3
+    }
+   },
+   {
+    "text": "A major war broke out overseas. The news was hard to watch.",
+    "weight": 1,
+    "effects": {
+     "stress": 6,
+     "happiness": -4
+    }
+   },
+   {
+    "text": "Scientists announced a cure for a common disease. The world celebrated.",
+    "weight": 1,
+    "effects": {
+     "happiness": 4
+    }
+   },
+   {
+    "text": "Humans landed on Mars. I watched it live with tears in my eyes.",
+    "weight": 1,
+    "effects": {
+     "happiness": 6
+    }
+   }
+  ]
+ },
+ {
+  "id": "life.half_sibling",
+  "icon": "🧬",
+  "title": "Surprise sibling",
+  "text": "",
+  "conditions": {
+   "age": [
+    20,
+    80
+   ],
+   "chance": 0.2
+  },
+  "once": true,
+  "roles": {
+   "sib": {
+    "new": "sibling",
+    "age": [
+     18,
+     60
+    ],
+    "closeness": 30
+   }
+  },
+  "outcomes": [
+   {
+    "text": "A stranger named {sib.first} messaged me: a DNA site says we're half-siblings.",
+    "weight": 1,
+    "effects": {
+     "happiness": 2
+    }
+   }
+  ]
+ }
+]

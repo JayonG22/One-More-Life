@@ -1,0 +1,3971 @@
+[
+ {
+  "id": "kid.vegetables",
+  "icon": "🥦",
+  "title": "Broccoli standoff",
+  "text": "{par.first} says you can't leave the table until you eat your broccoli.",
+  "conditions": {
+   "age": [
+    3,
+    9
+   ]
+  },
+  "choices": [
+   {
+    "label": "Eat it",
+    "outcomes": [
+     {
+      "text": "It was fine. I'll never admit that.",
+      "weight": 3,
+      "effects": {
+       "health": 1
+      },
+      "relationship": {
+       "par": 3
+      }
+     },
+     {
+      "text": "I ate it in one go to get it over with and was immediately, spectacularly sick on the tablecloth.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "happiness": -2
+      },
+      "relationship": {
+       "par": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Feed it to the dog",
+    "outcomes": [
+     {
+      "text": "The dog loved it. Nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "{par.first} saw everything.",
+      "weight": 1,
+      "relationship": {
+       "par": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stage a hunger strike",
+    "outcomes": [
+     {
+      "text": "I lasted eleven minutes.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      },
+      "trait_bonus": {
+       "Rebel": 2
+      }
+     },
+     {
+      "text": "I lasted until half past nine, and they gave in first. I have never let anyone forget it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "par": -2
+      },
+      "trait_bonus": {
+       "Rebel": 3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "par": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  }
+ },
+ {
+  "id": "kid.sleepover",
+  "icon": "🏕️",
+  "title": "Sleepover",
+  "text": "You're invited to your first sleepover at {fr.first}'s house.",
+  "conditions": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "We stayed up until 2 a.m. telling ghost stories.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "fr": 12
+      }
+     },
+     {
+      "text": "I got homesick and called my parents at midnight.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I stayed home.",
+      "weight": 3,
+      "relationship": {
+       "fr": -4
+      }
+     },
+     {
+      "text": "I stayed home, and heard all week about the thing that happened at two in the morning that I would have had to be there for.",
+      "weight": 1,
+      "relationship": {
+       "fr": -8
+      },
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go, but ask to be picked up at bedtime",
+    "outcomes": [
+     {
+      "text": "I did the party and came home to my own bed. Best of both, and nobody teased me about it.",
+      "weight": 2,
+      "relationship": {
+       "fr": 5
+      },
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I asked to go home at nine and heard about it at school for a month.",
+      "weight": 1,
+      "relationship": {
+       "fr": -3
+      },
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "fr": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "classmate"
+    ],
+    "or_new": true
+   }
+  }
+ },
+ {
+  "id": "kid.broken_window",
+  "icon": "🪟",
+  "title": "Broken window",
+  "text": "Your baseball just smashed the neighbor's window.",
+  "conditions": {
+   "age": [
+    6,
+    13
+   ]
+  },
+  "choices": [
+   {
+    "label": "Knock and confess",
+    "outcomes": [
+     {
+      "text": "The neighbor was impressed by my honesty and let me mow the lawn to pay it off.",
+      "weight": 3,
+      "effects": {
+       "karma": 5
+      }
+     },
+     {
+      "text": "I knocked and confessed, and he shouted at me in front of the whole street and then phoned my parents anyway.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": -4,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run",
+    "outcomes": [
+     {
+      "text": "I got away with it.",
+      "weight": 1,
+      "effects": {
+       "karma": -4
+      }
+     },
+     {
+      "text": "My name was written on the ball.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "karma": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell your parents first",
+    "outcomes": [
+     {
+      "text": "I told them before the neighbour could. They went round with me and paid, and I paid them back all summer.",
+      "weight": 2,
+      "effects": {
+       "karma": 4,
+       "money": -40
+      },
+      "relationship": {
+       "par": 6
+      }
+     },
+     {
+      "text": "I told them first and they made me go alone anyway, which I have since understood was the entire point.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "par": {
+    "relation_any": [
+     "mother",
+     "father"
+    ],
+    "optional": true
+   }
+  }
+ },
+ {
+  "id": "kid.spelling_bee",
+  "icon": "🐝",
+  "title": "Spelling bee",
+  "text": "You made the final round of the spelling bee. The word is \"onomatopoeia\".",
+  "conditions": {
+   "age": [
+    8,
+    13
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Spell it confidently",
+    "outcomes": [
+     {
+      "text": "O-N-O-M-A-T-O-P-O-E-I-A. I won!",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "school": 5
+      },
+      "stat_bonus": {
+       "smarts": 1.5
+      },
+      "milestone": "won the spelling bee"
+     },
+     {
+      "text": "I added an extra \"E\". Second place.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for the definition to buy time",
+    "outcomes": [
+     {
+      "text": "It didn't help. Still second place.",
+      "weight": 3,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The definition was the hint I needed. I spelled it, and I have been able to spell it ever since without thinking.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "smarts": 3
+      },
+      "milestone": "won the school spelling bee"
+     }
+    ]
+   },
+   {
+    "label": "Guess and sit down",
+    "outcomes": [
+     {
+      "text": "I guessed, got it wrong on purpose, and went and sat with my friends. I was seven and it was the right call.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3,
+       "school": -2
+      }
+     },
+     {
+      "text": "I guessed to get out of it and guessed right, which meant another round, which was not the plan.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "school": 3,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kid.lemonade",
+  "icon": "🍋",
+  "title": "Lemonade stand",
+  "text": "It's a hot summer day. Perfect for a lemonade stand.",
+  "conditions": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Charge $1 a cup",
+    "outcomes": [
+     {
+      "text": "I made $23 and a sunburn.",
+      "weight": 3,
+      "effects": {
+       "money": 23,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A road crew turned up at the end of the street and I sold out by eleven.",
+      "weight": 1,
+      "effects": {
+       "money": 68,
+       "happiness": 8,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Charge $5 a cup",
+    "outcomes": [
+     {
+      "text": "I sold one cup, to my grandmother.",
+      "weight": 3,
+      "effects": {
+       "money": 5
+      }
+     },
+     {
+      "text": "I held the price all afternoon, and the man who eventually paid it told me that was the whole lesson.",
+      "weight": 1,
+      "effects": {
+       "money": 20,
+       "smarts": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it away free",
+    "outcomes": [
+     {
+      "text": "The whole neighborhood came by. I felt like a hero.",
+      "weight": 3,
+      "effects": {
+       "karma": 4,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I gave it away, and somebody left a twenty under the jug without saying anything.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 8,
+       "money": 20
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kid.nightmare",
+  "icon": "👻",
+  "title": "Nightmare",
+  "text": "You woke up from a terrible nightmare.",
+  "conditions": {
+   "age": [
+    3,
+    9
+   ]
+  },
+  "choices": [
+   {
+    "label": "Run to your parents' room",
+    "outcomes": [
+     {
+      "text": "I slept between my parents. Safe.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "They sent me back to my own bed and left the hall light on, which I have decided since was the right call.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Face it alone",
+    "outcomes": [
+     {
+      "text": "I checked under the bed. Nothing. I was very brave.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2,
+       "stress": -1
+      }
+     },
+     {
+      "text": "I faced it alone and did not sleep again until it got light. I did not tell anybody.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "health": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wake your brother or sister",
+    "outcomes": [
+     {
+      "text": "We sat up with a torch until it got light. Neither of us ever mentioned it again and both of us remember it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I woke them and they told me to go away, loudly enough to wake the whole house.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "teen.part_time_boss",
+  "icon": "😒",
+  "title": "Bad boss",
+  "text": "Your manager at work keeps scheduling you during school hours.",
+  "conditions": {
+   "age": [
+    14,
+    17
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Push back",
+    "outcomes": [
+     {
+      "text": "They fixed the schedule.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "They cut my hours.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip school for shifts",
+    "outcomes": [
+     {
+      "text": "More money, worse grades.",
+      "weight": 3,
+      "effects": {
+       "money": 300,
+       "school": -8
+      }
+     },
+     {
+      "text": "I took the shifts, and the school rang home about the attendance before the money added up to anything.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "school": -16,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quit",
+    "outcomes": [
+     {
+      "text": "I handed in my apron. There are other jobs and only one set of exams.",
+      "weight": 2,
+      "effects": {
+       "school": 4,
+       "money": -200
+      }
+     },
+     {
+      "text": "I quit and it took seven months to find anything else, by which point I badly needed the money.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "teen.prom",
+  "icon": "💃",
+  "title": "Prom",
+  "text": "Prom is coming up. You don't have a date yet.",
+  "conditions": {
+   "age": [
+    16,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask someone",
+    "outcomes": [
+     {
+      "text": "{dt.first} said yes! Best night ever.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "relation_change": {
+       "dt": "friend"
+      },
+      "keep_role": "dt",
+      "stat_bonus": {
+       "looks": 0.8
+      }
+     },
+     {
+      "text": "{dt.first} already had a date.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go with friends",
+    "outcomes": [
+     {
+      "text": "We danced like idiots all night.",
+      "weight": 3,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "We went as a group, and it turned into the night two of my friends got together and I sat outside with the third.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip prom",
+    "outcomes": [
+     {
+      "text": "I skipped prom. No regrets. Some regrets.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I skipped it and four of us went to the coast instead, and that is the night everybody actually remembers.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      }
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "roles": {
+   "dt": {
+    "new": "crush",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "teen.curfew",
+  "icon": "🌙",
+  "title": "Curfew",
+  "text": "It's 1 a.m. and you were supposed to be home at 11.",
+  "conditions": {
+   "age": [
+    14,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Sneak in through the window",
+    "outcomes": [
+     {
+      "text": "I made it! Barely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "trait_bonus": {
+       "Rebel": 2
+      }
+     },
+     {
+      "text": "My dad was sitting in the dark. Grounded.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call and apologize",
+    "outcomes": [
+     {
+      "text": "They were mad but grateful I called.",
+      "weight": 3,
+      "effects": {
+       "karma": 2
+      }
+     },
+     {
+      "text": "I called, and got the speech about how calling did not make it all right, which was fair and took forty minutes.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wake them and tell them where you were",
+    "outcomes": [
+     {
+      "text": "I woke them at one in the morning and told the truth. It cost me a fortnight of weekends and bought me years of being believed.",
+      "weight": 2,
+      "effects": {
+       "karma": 6,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I told the truth and it was worse than the lie would have been, and it was still the right thing.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": -8,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "teen.band_garage",
+  "icon": "🥁",
+  "title": "Garage band",
+  "text": "Some kids from school want you in their garage band.",
+  "conditions": {
+   "age": [
+    13,
+    17
+   ],
+   "career": "none"
+  },
+  "choices": [
+   {
+    "label": "Join",
+    "outcomes": [
+     {
+      "text": "We're terrible. It's the best part of my week.",
+      "weight": 3,
+      "effects": {
+       "happiness": 6
+      },
+      "counter": {
+       "music": 2
+      }
+     },
+     {
+      "text": "We were terrible and then, over about a year, we were not. We played a real venue with a real door charge.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "fame": 3,
+       "money": 200
+      },
+      "counter": {
+       "music": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I'm not a rock star.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I said no, and watched them from the crowd four years later wondering what the other version of that had been.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join, but do the sound instead",
+    "outcomes": [
+     {
+      "text": "I ran the desk. I could not play a note and I was the only one they could not replace.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "smarts": 3
+      },
+      "counter": {
+       "music": 1
+      }
+     },
+     {
+      "text": "I did the sound, and nobody in the band ever once introduced me as being in the band.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "teen.job_shadow",
+  "icon": "👔",
+  "title": "Career day",
+  "text": "Career day at school! Which job do you shadow?",
+  "conditions": {
+   "age": [
+    14,
+    17
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Doctor",
+    "outcomes": [
+     {
+      "text": "I watched a surgery. I did not faint. Much.",
+      "weight": 3,
+      "effects": {
+       "smarts": 2
+      },
+      "flags": [
+       "career_day_medicine"
+      ]
+     },
+     {
+      "text": "I fainted in the first ten minutes and woke up being looked after by the person I had come to watch.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Firefighter",
+    "outcomes": [
+     {
+      "text": "I got to slide down the pole.",
+      "weight": 3,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A call came in while I was there and I spent an hour outside a house I have never stopped thinking about.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 3,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Movie set",
+    "outcomes": [
+     {
+      "text": "I was an extra for one scene. Look closely, I'm there.",
+      "weight": 3,
+      "effects": {
+       "fame": 1,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I spent nine hours watching them shoot eleven seconds of film, and decided that was not for me at all.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay in class",
+    "outcomes": [
+     {
+      "text": "I stayed in class. Boring.",
+      "weight": 3,
+      "effects": {
+       "school": 1
+      }
+     },
+     {
+      "text": "I stayed in class and the substitute talked for an hour about a job she used to have. That was the one that stuck.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "smarts": 3
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "teen.acne",
+  "icon": "😖",
+  "title": "Breakout",
+  "text": "You woke up with a huge pimple on picture day.",
+  "conditions": {
+   "age": [
+    12,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cover it up",
+    "outcomes": [
+     {
+      "text": "It mostly worked.",
+      "weight": 3,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "It came off under the lights and the photograph went in the yearbook exactly as it was.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "looks": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Own it",
+    "outcomes": [
+     {
+      "text": "I named it Gerald. People loved Gerald.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      },
+      "trait_bonus": {
+       "Funny": 3
+      }
+     },
+     {
+      "text": "I owned it loudly, and somebody I did not expect said it was the most confident thing they had ever seen a fifteen-year-old do.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "looks": 1
+      },
+      "trait_bonus": {
+       "Funny": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip picture day",
+    "outcomes": [
+     {
+      "text": "I stayed home. My yearbook page says ABSENT and I have never regretted it.",
+      "weight": 2,
+      "effects": {
+       "school": -2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I skipped it, and the yearbook used a photo of me from the back of somebody else's.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "teen.online_friend",
+  "icon": "💻",
+  "title": "Online friend",
+  "text": "You've been gaming every night with {of.first}, someone you met online.",
+  "conditions": {
+   "age": [
+    13,
+    19
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep playing together",
+    "outcomes": [
+     {
+      "text": "{of.first} is one of my closest friends now.",
+      "weight": 3,
+      "keep_role": "of",
+      "relationship": {
+       "of": 20
+      }
+     },
+     {
+      "text": "We played every night for six years and then met in person, and it was exactly as good as I had hoped.",
+      "weight": 1,
+      "keep_role": "of",
+      "relationship": {
+       "of": 35
+      },
+      "effects": {
+       "happiness": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drift apart",
+    "outcomes": [
+     {
+      "text": "We stopped logging on at the same time.",
+      "weight": 3,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "We drifted, and years later a message arrived out of nowhere that picked up exactly where we had left off.",
+      "weight": 1,
+      "keep_role": "of",
+      "relationship": {
+       "of": 12
+      },
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask to meet in person",
+    "outcomes": [
+     {
+      "text": "We met at a station halfway between us. It was awkward for nine minutes and then it was exactly the same as always.",
+      "weight": 2,
+      "keep_role": "of",
+      "relationship": {
+       "of": 30
+      },
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I asked, and {of.first} went quiet for a fortnight and then said {of.he} would rather not, and I never pushed it.",
+      "weight": 1,
+      "keep_role": "of",
+      "relationship": {
+       "of": -5
+      },
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "of": {
+    "new": "friend",
+    "age": "same",
+    "closeness": 50
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "love.meet_cute",
+  "icon": "☕",
+  "title": "Meet cute",
+  "text": "A stranger spills coffee on you and apologizes, blushing.",
+  "conditions": {
+   "age": [
+    18,
+    55
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Laugh and ask their name",
+    "outcomes": [
+     {
+      "text": "{st.first} and I talked for an hour. We're dating now.",
+      "weight": 1,
+      "new_partner": "st",
+      "keep_role": "st",
+      "effects": {
+       "happiness": 8
+      },
+      "stat_bonus": {
+       "looks": 0.8
+      },
+      "trait_bonus": {
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "{st.first} had to run. We never saw each other again.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Be annoyed",
+    "outcomes": [
+     {
+      "text": "I had coffee on my shirt all day.",
+      "weight": 3,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I was short with them, and thought about it on and off for about a decade.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer to buy them a replacement coffee",
+    "outcomes": [
+     {
+      "text": "They were the one apologising and I bought the coffee, which made no sense and worked perfectly.",
+      "weight": 2,
+      "keep_role": "st",
+      "relationship": {
+       "st": 20
+      },
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "They said thank you, took the coffee, and left with somebody who had been waiting by the door.",
+      "weight": 1,
+      "effects": {
+       "money": -5,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "st": {
+    "new": "crush",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "love.anniversary_trip",
+  "icon": "✈️",
+  "title": "Getaway",
+  "text": "{pt.first} suggests a weekend getaway together.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Go ($1,500)",
+    "outcomes": [
+     {
+      "text": "The trip brought us closer.",
+      "weight": 3,
+      "effects": {
+       "money": -1500,
+       "happiness": 8
+      },
+      "relationship": {
+       "pt": 15
+      }
+     },
+     {
+      "text": "We spent fifteen hundred to have the same argument somewhere with a better view.",
+      "weight": 1,
+      "effects": {
+       "money": -1500,
+       "happiness": -4,
+       "stress": 6
+      },
+      "relationship": {
+       "pt": -8
+      }
+     }
+    ],
+    "requires": {
+     "money": 1500
+    }
+   },
+   {
+    "label": "Staycation",
+    "outcomes": [
+     {
+      "text": "We built a blanket fort. It counts.",
+      "weight": 3,
+      "relationship": {
+       "pt": 8
+      },
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The staycation lasted until somebody's work rang on the Saturday morning.",
+      "weight": 1,
+      "relationship": {
+       "pt": -5
+      },
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Too busy",
+    "outcomes": [
+     {
+      "text": "{pt.first} was disappointed.",
+      "weight": 3,
+      "relationship": {
+       "pt": -10
+      }
+     },
+     {
+      "text": "I said I was too busy, and {pt.first} went alone and had a much better time than either of us expected.",
+      "weight": 1,
+      "relationship": {
+       "pt": -18
+      },
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pt": {
+    "relation": "partner"
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "love.jealous",
+  "icon": "😠",
+  "title": "Jealousy",
+  "text": "{pt.first} is upset about how much time you spend with a coworker.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Reassure them",
+    "outcomes": [
+     {
+      "text": "{pt.first} felt better after we talked.",
+      "weight": 3,
+      "relationship": {
+       "pt": 8
+      }
+     },
+     {
+      "text": "I reassured {pt.him}, and it came up again the next month, and the month after that.",
+      "weight": 1,
+      "relationship": {
+       "pt": -5
+      },
+      "effects": {
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get defensive",
+    "outcomes": [
+     {
+      "text": "We had a huge fight.",
+      "weight": 3,
+      "relationship": {
+       "pt": -15
+      },
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "I got defensive, and somewhere in the shouting we both said the real thing and it was better afterwards.",
+      "weight": 1,
+      "relationship": {
+       "pt": 10
+      },
+      "effects": {
+       "stress": 10,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Change what you're doing",
+    "outcomes": [
+     {
+      "text": "I stopped the late dinners with work and did not make a speech about it. {pt.first} noticed within a fortnight.",
+      "weight": 2,
+      "relationship": {
+       "pt": 18
+      },
+      "effects": {
+       "job_perf": -4
+      }
+     },
+     {
+      "text": "I changed everything and it still was not the thing {pt.He} was actually worried about.",
+      "weight": 1,
+      "relationship": {
+       "pt": -5
+      },
+      "effects": {
+       "job_perf": -6,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pt": {
+    "relation": "partner"
+   }
+  }
+ },
+ {
+  "id": "love.ex_returns",
+  "icon": "📱",
+  "title": "Ex texts",
+  "text": "Your ex {ex.first} texted: \"u up?\"",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Reply",
+    "outcomes": [
+     {
+      "text": "We got coffee. Old feelings came back.",
+      "weight": 1,
+      "relationship": {
+       "ex": 20
+      }
+     },
+     {
+      "text": "It reminded me why we broke up.",
+      "weight": 1,
+      "relationship": {
+       "ex": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave them on read",
+    "outcomes": [
+     {
+      "text": "Growth.",
+      "weight": 3,
+      "effects": {
+       "karma": 1
+      }
+     },
+     {
+      "text": "I left it, and then read it eleven more times over the following week.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Block them",
+    "outcomes": [
+     {
+      "text": "Blocked. Peace.",
+      "weight": 3,
+      "relationship": {
+       "ex": -30
+      }
+     },
+     {
+      "text": "I blocked {ex.first}, and {ex.he} turned up at my work a fortnight later to ask why.",
+      "weight": 1,
+      "relationship": {
+       "ex": -45
+      },
+      "effects": {
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "ex": {
+    "relation": "ex"
+   }
+  }
+ },
+ {
+  "id": "love.wedding_planning",
+  "icon": "💒",
+  "title": "Wedding jitters",
+  "text": "Your wedding is coming up and {pt.first} wants a giant party. You want something small.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Give them the big party",
+    "outcomes": [
+     {
+      "text": "{pt.first} was over the moon.",
+      "weight": 3,
+      "relationship": {
+       "pt": 12
+      },
+      "effects": {
+       "money": -5000
+      }
+     },
+     {
+      "text": "I gave in on the party, and it grew from a hundred and twenty people to two hundred and ninety.",
+      "weight": 1,
+      "relationship": {
+       "pt": 12
+      },
+      "effects": {
+       "money": -22000,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold firm",
+    "outcomes": [
+     {
+      "text": "We compromised on medium.",
+      "weight": 3,
+      "relationship": {
+       "pt": 2
+      }
+     },
+     {
+      "text": "I held firm, got the small wedding, and spent a good part of it aware of who had not been invited.",
+      "weight": 1,
+      "relationship": {
+       "pt": -8
+      },
+      "effects": {
+       "money": -2000,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them have the party and pay for it yourself",
+    "outcomes": [
+     {
+      "text": "{pt.first} got the wedding {pt.he} had wanted since {pt.he} was nine, and I got to be the person who made that happen.",
+      "weight": 2,
+      "relationship": {
+       "pt": 25
+      },
+      "effects": {
+       "money": -18000,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I paid for all of it and spent the day quietly working out what it had cost.",
+      "weight": 1,
+      "relationship": {
+       "pt": 12
+      },
+      "effects": {
+       "money": -18000,
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pt": {
+    "relation": "partner"
+   }
+  }
+ },
+ {
+  "id": "family.twins_fight",
+  "icon": "👬",
+  "title": "Sibling fight",
+  "text": "Your kids {k1.first} and {k2.first} are fighting over the TV remote. Again.",
+  "conditions": {
+   "age": [
+    25,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the remote away",
+    "outcomes": [
+     {
+      "text": "Nobody watched TV. Peace, of a kind.",
+      "weight": 3,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "I took the remote and they united against me instead, which I suppose was a kind of progress.",
+      "weight": 1,
+      "relationship": {
+       "k1": -3,
+       "k2": -3
+      },
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make them share",
+    "outcomes": [
+     {
+      "text": "They made a schedule. I'm a genius.",
+      "weight": 3,
+      "relationship": {
+       "k1": 3,
+       "k2": 3
+      }
+     },
+     {
+      "text": "The schedule lasted four days and the argument came back bigger and now with a document to argue about.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put them both outside",
+    "outcomes": [
+     {
+      "text": "Out you go, both of you. They came back in two hours later as allies, filthy, and did not fight again for a week.",
+      "weight": 2,
+      "relationship": {
+       "k1": 4,
+       "k2": 4
+      },
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I sent them out and it rained, and I was the villain of that afternoon for years afterwards.",
+      "weight": 1,
+      "relationship": {
+       "k1": -4,
+       "k2": -4
+      },
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "k1": {
+    "relation": "child",
+    "min_age": 5
+   },
+   "k2": {
+    "relation": "child",
+    "min_age": 5
+   }
+  }
+ },
+ {
+  "id": "family.teen_kid",
+  "icon": "🙄",
+  "title": "Teenager",
+  "text": "{kid.first} says you're \"so embarrassing\" in front of {kid.his} friends.",
+  "conditions": {
+   "age": [
+    30,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Laugh it off",
+    "outcomes": [
+     {
+      "text": "{kid.first} rolled {kid.his} eyes, but smiled a little.",
+      "weight": 3,
+      "relationship": {
+       "kid": 3
+      }
+     },
+     {
+      "text": "I laughed it off and {kid.first} did not, and it turned out {kid.he} had meant it.",
+      "weight": 1,
+      "relationship": {
+       "kid": -8
+      },
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be extra embarrassing on purpose",
+    "outcomes": [
+     {
+      "text": "I did the dance. {kid.first} will never forgive me.",
+      "weight": 3,
+      "effects": {
+       "happiness": 5
+      },
+      "relationship": {
+       "kid": -5
+      },
+      "trait_bonus": {
+       "Funny": 2
+      }
+     },
+     {
+      "text": "I went so far over the top that {kid.first}'s friends decided I was the best parent any of them had.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "kid": 8
+      },
+      "trait_bonus": {
+       "Funny": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Apologise, and mean it",
+    "outcomes": [
+     {
+      "text": "I said sorry properly, in private, later. {kid.first} did not say much, but something shifted after that.",
+      "weight": 2,
+      "relationship": {
+       "kid": 15
+      },
+      "effects": {
+       "karma": 4
+      }
+     },
+     {
+      "text": "I apologised and {kid.first} said it was fine in the voice that means it is not fine.",
+      "weight": 1,
+      "relationship": {
+       "kid": 2
+      },
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 13
+   }
+  },
+  "cooldown": 6
+ },
+ {
+  "id": "family.kid_college",
+  "icon": "🎓",
+  "title": "Empty nest",
+  "text": "{kid.first} is leaving for college.",
+  "conditions": {
+   "age": [
+    35,
+    75
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help pay tuition ($20,000)",
+    "outcomes": [
+     {
+      "text": "{kid.first} hugged me at the dorm and didn't let go.",
+      "weight": 3,
+      "effects": {
+       "money": -20000
+      },
+      "relationship": {
+       "kid": 20
+      }
+     },
+     {
+      "text": "I paid the tuition and {kid.first} changed course twice and dropped out in the third year.",
+      "weight": 1,
+      "effects": {
+       "money": -20000,
+       "happiness": -6
+      },
+      "relationship": {
+       "kid": 5
+      }
+     }
+    ],
+    "requires": {
+     "money": 20000
+    }
+   },
+   {
+    "label": "Send them with a care package",
+    "outcomes": [
+     {
+      "text": "{kid.first} called to say the cookies were gone in an hour.",
+      "weight": 3,
+      "relationship": {
+       "kid": 8
+      }
+     },
+     {
+      "text": "I sent a care package instead of money, and got a very polite thank-you that said everything.",
+      "weight": 1,
+      "relationship": {
+       "kid": -6
+      },
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them to pay their own way",
+    "outcomes": [
+     {
+      "text": "{kid.first} worked through the degree and finished it owing nothing, and is insufferably proud of that.",
+      "weight": 2,
+      "relationship": {
+       "kid": 6
+      },
+      "effects": {
+       "karma": 2
+      }
+     },
+     {
+      "text": "{kid.first} worked two jobs, failed a year, and has a view about it that has never entirely gone away.",
+      "weight": 1,
+      "relationship": {
+       "kid": -15
+      },
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 18
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "family.reunion",
+  "icon": "👪",
+  "title": "Family reunion",
+  "text": "It's time for the big family reunion.",
+  "conditions": {
+   "age": [
+    5,
+    99
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "Great food, too many questions about my love life.",
+      "weight": 3,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I went, and it turned out to be the last one my grandmother was at. I am glad I did not skip it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "My mother will mention this for years.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I skipped it and had the whole weekend to myself for the first time in a year. It was excellent.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go, and organise it",
+    "outcomes": [
+     {
+      "text": "I did the lists and the tables and the booking. Nobody thanked me and everybody came.",
+      "weight": 2,
+      "effects": {
+       "karma": 8,
+       "stress": 10,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I organised it and then spent the whole day in the kitchen while everyone else had the reunion.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "stress": 12,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "family.parent_advice",
+  "icon": "💬",
+  "title": "Wise words",
+  "text": "{par.first} gives you some advice you didn't ask for.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ]
+  },
+  "choices": [
+   {
+    "label": "Listen",
+    "outcomes": [
+     {
+      "text": "Annoyingly, {par.first} was right.",
+      "weight": 3,
+      "relationship": {
+       "par": 5
+      },
+      "effects": {
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I listened carefully and followed it, and it was advice for a world that no longer exists.",
+      "weight": 1,
+      "relationship": {
+       "par": 5
+      },
+      "effects": {
+       "happiness": -3,
+       "money": -800
+      }
+     }
+    ]
+   },
+   {
+    "label": "Change the subject",
+    "outcomes": [
+     {
+      "text": "I changed the subject. Smoothly. Not smoothly.",
+      "weight": 3,
+      "relationship": {
+       "par": -2
+      }
+     },
+     {
+      "text": "I changed the subject, and {par.first} let me, and I could see {par.him} decide not to bring it up again.",
+      "weight": 1,
+      "relationship": {
+       "par": -6
+      },
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them why you're not going to take it",
+    "outcomes": [
+     {
+      "text": "I explained my reasoning instead of nodding. {par.first} argued for an hour and then said {par.he} saw my point.",
+      "weight": 2,
+      "relationship": {
+       "par": 10
+      },
+      "effects": {
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I explained, and {par.first} took it as being told {par.he} was out of touch, which in fairness is roughly what I had said.",
+      "weight": 1,
+      "relationship": {
+       "par": -10
+      },
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "par": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "cooldown": 5
+ },
+ {
+  "id": "work.side_hustle",
+  "icon": "💡",
+  "title": "Side hustle idea",
+  "text": "You have an idea for a side business selling custom phone cases.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go for it ($500)",
+    "outcomes": [
+     {
+      "text": "It made $3,000 this year!",
+      "weight": 1,
+      "effects": {
+       "money": 2500,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I have 400 phone cases in my closet.",
+      "weight": 2,
+      "effects": {
+       "money": -500
+      }
+     }
+    ],
+    "requires": {
+     "money": 500
+    }
+   },
+   {
+    "label": "Just an idea",
+    "outcomes": [
+     {
+      "text": "It stayed an idea.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "It stayed an idea, and somebody else's version of it was in every shop within two years.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Test it for a month before spending anything",
+    "outcomes": [
+     {
+      "text": "I sold eleven of them made on my kitchen table before spending a penny. Then I spent the five hundred.",
+      "weight": 2,
+      "effects": {
+       "money": 900,
+       "smarts": 4
+      }
+     },
+     {
+      "text": "I tested it for a month, sold two, and learned something cheap that would have been expensive.",
+      "weight": 1,
+      "effects": {
+       "money": -60,
+       "smarts": 5
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "work.team_building",
+  "icon": "🧗",
+  "title": "Team building",
+  "text": "Your company forces everyone to go rock climbing for team building.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Climb to the top",
+    "outcomes": [
+     {
+      "text": "I reached the top first. The boss noticed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "health": 1
+      },
+      "trait_bonus": {
+       "Athletic": 2
+      }
+     },
+     {
+      "text": "I got stuck halfway for 40 minutes.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold the rope",
+    "outcomes": [
+     {
+      "text": "Safe and reliable. Like my spreadsheets.",
+      "weight": 3,
+      "effects": {
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "I held the rope for the head of the department, who has remembered my name ever since.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse to go",
+    "outcomes": [
+     {
+      "text": "I said no thank you and worked. Two other people did the same, and the year after they stopped running it.",
+      "weight": 2,
+      "effects": {
+       "job_perf": -3,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I refused, and it was noted, in the way these things are noted rather than said.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -10,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "work.reply_all",
+  "icon": "📧",
+  "title": "Reply all",
+  "text": "You accidentally hit \"reply all\" on an email complaining about the boss.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Apologize immediately",
+    "outcomes": [
+     {
+      "text": "The boss was cold for a week, then let it go.",
+      "weight": 3,
+      "effects": {
+       "job_perf": -6
+      }
+     },
+     {
+      "text": "I apologised within four minutes, and the boss replied all with something much funnier than anything I had written.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame a hacker",
+    "outcomes": [
+     {
+      "text": "Nobody believed me.",
+      "weight": 3,
+      "effects": {
+       "job_perf": -10,
+       "karma": -2
+      }
+     },
+     {
+      "text": "I blamed a hacker, and IT took it seriously enough to run a two-week investigation that found me.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -22,
+       "karma": -5,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Double down",
+    "outcomes": [
+     {
+      "text": "Half the office bought me lunch. The boss did not.",
+      "weight": 3,
+      "effects": {
+       "job_perf": -15,
+       "happiness": 5
+      },
+      "trait_bonus": {
+       "Rebel": 2
+      }
+     },
+     {
+      "text": "I doubled down, and it turned out most of the floor had been waiting for somebody to say it out loud.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -8,
+       "happiness": 10
+      },
+      "trait_bonus": {
+       "Rebel": 3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "work.promotion_rival",
+  "icon": "🏁",
+  "title": "Promotion race",
+  "text": "You and {cw.first} are up for the same promotion.",
+  "conditions": {
+   "age": [
+    20,
+    65
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Compete fair and square",
+    "outcomes": [
+     {
+      "text": "I got it. {cw.first} congratulated me.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10
+      },
+      "stat_bonus": {
+       "smarts": 0.6
+      }
+     },
+     {
+      "text": "{cw.first} got it. I'll get the next one.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Undermine them",
+    "outcomes": [
+     {
+      "text": "It worked, and I hate myself a little.",
+      "weight": 3,
+      "effects": {
+       "job_perf": 12,
+       "karma": -8
+      },
+      "relationship": {
+       "cw": -30
+      }
+     },
+     {
+      "text": "I undermined {cw.first} and it got back to the panel before the decision did.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -18,
+       "karma": -10,
+       "stress": 12
+      },
+      "relationship": {
+       "cw": -40
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell {cw.first} you both deserve it",
+    "outcomes": [
+     {
+      "text": "We agreed neither of us would play games, and then neither of us did. {cw.first} got it, and told the board I should be next.",
+      "weight": 2,
+      "relationship": {
+       "cw": 30
+      },
+      "effects": {
+       "job_perf": 8,
+       "karma": 8
+      }
+     },
+     {
+      "text": "I offered a truce and {cw.first} agreed to it and then did not honour it.",
+      "weight": 1,
+      "relationship": {
+       "cw": -35
+      },
+      "effects": {
+       "job_perf": -8,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "cw": {
+    "relation": "coworker"
+   }
+  }
+ },
+ {
+  "id": "work.remote",
+  "icon": "🏠",
+  "title": "Work from home",
+  "text": "Your company lets you work from home.",
+  "conditions": {
+   "age": [
+    20,
+    70
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Work from home",
+    "outcomes": [
+     {
+      "text": "No commute, lots of pajamas.",
+      "weight": 3,
+      "effects": {
+       "happiness": 6,
+       "stress": -4
+      }
+     },
+     {
+      "text": "No commute, and no reason to leave the flat, and by the third month I was talking to the radio.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "health": -4,
+       "job_perf": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep going to the office",
+    "outcomes": [
+     {
+      "text": "I like people. Mostly.",
+      "weight": 3,
+      "effects": {
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "I kept going in, and being the only one there got me into rooms I would never otherwise have been in.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do both, on your own schedule",
+    "outcomes": [
+     {
+      "text": "Two days in, three at home, and I got more done than in either arrangement on its own.",
+      "weight": 2,
+      "effects": {
+       "job_perf": 8,
+       "happiness": 6,
+       "stress": -3
+      }
+     },
+     {
+      "text": "I split it, and ended up being the person who was never in on the day anybody needed me.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -8,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "pet.escape",
+  "icon": "🐕",
+  "title": "Escape artist",
+  "text": "{pet.first} dug under the fence and ran off.",
+  "conditions": {
+   "age": [
+    6,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Search the whole neighborhood",
+    "outcomes": [
+     {
+      "text": "I found {pet.first} rolling in mud two blocks away.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      },
+      "relationship": {
+       "pet": 5
+      }
+     },
+     {
+      "text": "{pet.first} came home on {pet.his} own, very proud.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Put up posters",
+    "outcomes": [
+     {
+      "text": "A neighbor brought {pet.first} home.",
+      "weight": 3,
+      "relationship": {
+       "pet": 3
+      }
+     },
+     {
+      "text": "The posters worked, eventually. {pet.first} came home nine days later, thinner and extremely pleased with {pet.himself}.",
+      "weight": 1,
+      "relationship": {
+       "pet": 8
+      },
+      "effects": {
+       "stress": 10,
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fix the fence and wait",
+    "outcomes": [
+     {
+      "text": "I mended the hole and left the gate open and a bowl out. {pet.first} was on the step by morning.",
+      "weight": 2,
+      "relationship": {
+       "pet": 8
+      },
+      "effects": {
+       "money": -150,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I fixed the fence and waited three days, and it was the longest three days of that year.",
+      "weight": 1,
+      "relationship": {
+       "pet": 5
+      },
+      "effects": {
+       "money": -150,
+       "stress": 15
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pet": {
+    "relation": "pet"
+   }
+  }
+ },
+ {
+  "id": "pet.chewed",
+  "icon": "👟",
+  "title": "Chewed",
+  "text": "{pet.first} chewed up your favorite shoes.",
+  "conditions": {
+   "age": [
+    6,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Forgive them",
+    "outcomes": [
+     {
+      "text": "How could I stay mad at that face?",
+      "weight": 3,
+      "relationship": {
+       "pet": 5
+      }
+     },
+     {
+      "text": "I forgave {pet.him}, and {pet.he} took that as permission and did the other shoe on Thursday.",
+      "weight": 1,
+      "relationship": {
+       "pet": 5
+      },
+      "effects": {
+       "money": -120,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy new shoes ($120)",
+    "outcomes": [
+     {
+      "text": "New shoes, new rules.",
+      "weight": 3,
+      "effects": {
+       "money": -120
+      }
+     },
+     {
+      "text": "New shoes, and a cupboard door with a lock on it, and a dog who has worked out how the lock opens.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give them something better to chew",
+    "outcomes": [
+     {
+      "text": "Turns out {pet.he} was bored, not wicked. A proper toy and a longer walk fixed it in a week.",
+      "weight": 2,
+      "relationship": {
+       "pet": 10
+      },
+      "effects": {
+       "money": -30,
+       "health": 2
+      }
+     },
+     {
+      "text": "I bought the toy. {pet.first} buried it and went back to the shoes.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pet": {
+    "relation": "pet"
+   }
+  }
+ },
+ {
+  "id": "pet.show",
+  "icon": "🏅",
+  "title": "Pet show",
+  "text": "There's a local pet show this weekend.",
+  "conditions": {
+   "age": [
+    8,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Enter {pet.first}",
+    "outcomes": [
+     {
+      "text": "{pet.first} won Best in Show!",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": 200
+      }
+     },
+     {
+      "text": "{pet.first} tried to eat the judge's hat.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just watch",
+    "outcomes": [
+     {
+      "text": "So many good dogs.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "We only went to watch, and a judge stopped us on the way out to ask why {pet.first} was not entered.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "pet": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enter, but in the scruffiest category",
+    "outcomes": [
+     {
+      "text": "Waggiest tail. {pet.first} won it outright and the rosette is still on the fridge.",
+      "weight": 2,
+      "relationship": {
+       "pet": 12
+      },
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "We entered waggiest tail and {pet.first} sat down in the ring and refused to move for eleven minutes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pet": {
+    "relation": "pet"
+   }
+  }
+ },
+ {
+  "id": "elder.tech",
+  "icon": "📱",
+  "title": "New phone",
+  "text": "Your family bought you a new smartphone. It's very confusing.",
+  "conditions": {
+   "age": [
+    65,
+    110
+   ]
+  },
+  "choices": [
+   {
+    "label": "Learn it properly",
+    "outcomes": [
+     {
+      "text": "I can video call my grandkids now!",
+      "weight": 3,
+      "effects": {
+       "happiness": 6,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I learned it properly, and now I am the one in this family who fixes everybody else's.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "smarts": 4,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it as a paperweight",
+    "outcomes": [
+     {
+      "text": "It's a very nice paperweight.",
+      "weight": 3,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I never learned it, and slowly stopped being included in things that were arranged on it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get a grandchild to teach you",
+    "outcomes": [
+     {
+      "text": "My granddaughter spent a Saturday on it with me. I learned the phone and she learned that I am not stupid.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "smarts": 3,
+       "karma": 3
+      }
+     },
+     {
+      "text": "He did the whole thing for me in four minutes without explaining any of it, and I was back where I started by Tuesday.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elder.cruise",
+  "icon": "🛳️",
+  "title": "Cruise",
+  "text": "Your friends want you to come on a cruise.",
+  "conditions": {
+   "age": [
+    60,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go ($4,000)",
+    "outcomes": [
+     {
+      "text": "I won the ship's shuffleboard tournament.",
+      "weight": 3,
+      "effects": {
+       "money": -4000,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I spent four thousand to be seasick off a coastline I could have driven to.",
+      "weight": 1,
+      "effects": {
+       "money": -4000,
+       "health": -5,
+       "happiness": -2
+      }
+     }
+    ],
+    "requires": {
+     "money": 4000
+    }
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I stayed home with my garden.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I stayed home, and they came back with a fortnight of stories I was not in.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go somewhere of your own instead",
+    "outcomes": [
+     {
+      "text": "I did not fancy the ship, so I took the train to the town I grew up in and stayed a week.",
+      "weight": 2,
+      "effects": {
+       "money": -700,
+       "happiness": 12
+      },
+      "counter": {
+       "vacations": 1
+      }
+     },
+     {
+      "text": "I went back to the town I grew up in and there was nothing left of it that I recognised.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elder.wisdom",
+  "icon": "🦉",
+  "title": "Advice",
+  "text": "A young neighbor asks you for life advice.",
+  "conditions": {
+   "age": [
+    60,
+    110
+   ]
+  },
+  "choices": [
+   {
+    "label": "Share what you've learned",
+    "outcomes": [
+     {
+      "text": "They wrote it down. I felt useful.",
+      "weight": 3,
+      "effects": {
+       "happiness": 6,
+       "karma": 3
+      }
+     },
+     {
+      "text": "I told them the truest thing I know and watched it not land at all, because it never does at that age.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them to get off your lawn",
+    "outcomes": [
+     {
+      "text": "It felt good to finally say it.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I told them to clear off, and then spent the evening wishing I had said any of the other things.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them about themselves instead",
+    "outcomes": [
+     {
+      "text": "I asked questions for an hour instead of answering them. They came back the following week.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "karma": 6
+      }
+     },
+     {
+      "text": "I turned it round on them and they clearly wanted an answer, not an interview, and left early.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elder.will",
+  "icon": "📝",
+  "title": "Your will",
+  "text": "Your lawyer suggests updating your will.",
+  "conditions": {
+   "age": [
+    55,
+    110
+   ]
+  },
+  "choices": [
+   {
+    "label": "Split everything equally",
+    "outcomes": [
+     {
+      "text": "I updated my will: equal shares for everyone.",
+      "weight": 3,
+      "effects": {
+       "karma": 2,
+       "stress": -3
+      }
+     },
+     {
+      "text": "Equal shares, and I wrote each of them a letter to go with it explaining why. That took longer than the will.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "stress": -6,
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it all to the cat",
+    "outcomes": [
+     {
+      "text": "The cat is thrilled. The family is not.",
+      "weight": 3,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I left it to the cat, and my solicitor talked me down to a trust for the cat and the rest to the family, which was probably wise.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Donate most to charity",
+    "outcomes": [
+     {
+      "text": "I left most of it to charity.",
+      "weight": 3,
+      "effects": {
+       "karma": 10
+      }
+     },
+     {
+      "text": "I left most of it to charity and told the family beforehand, which turned one shock into a long argument I got to be alive for.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "stress": 8,
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "school.group_project",
+  "icon": "📂",
+  "title": "Group project",
+  "text": "You're stuck doing a group project with people who do nothing.",
+  "conditions": {
+   "age": [
+    10,
+    22
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Do it all yourself",
+    "outcomes": [
+     {
+      "text": "We got an A. They got the credit.",
+      "weight": 3,
+      "effects": {
+       "school": 6,
+       "stress": 5
+      }
+     },
+     {
+      "text": "I did the lot and got an A, and the teacher pulled me aside afterwards to say she knew exactly what had happened.",
+      "weight": 1,
+      "effects": {
+       "school": 10,
+       "stress": 5,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the teacher",
+    "outcomes": [
+     {
+      "text": "The teacher graded us individually.",
+      "weight": 3,
+      "effects": {
+       "school": 3
+      }
+     },
+     {
+      "text": "I told the teacher, and the group found out I had, and the rest of that term was long.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "happiness": -6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do nothing too",
+    "outcomes": [
+     {
+      "text": "We got a D together.",
+      "weight": 3,
+      "effects": {
+       "school": -6
+      }
+     },
+     {
+      "text": "I did nothing too, and one of them panicked at the last minute and carried all four of us.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "karma": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "school.crush_note",
+  "icon": "📝",
+  "title": "Passed note",
+  "text": "Someone slipped a note into your locker: \"I like you. Guess who?\"",
+  "conditions": {
+   "age": [
+    11,
+    17
+   ],
+   "in_school": true
+  },
+  "outcomes": [
+   {
+    "text": "Someone slipped a secret-admirer note into my locker. I still don't know who.",
+    "weight": 1,
+    "effects": {
+     "happiness": 4
+    }
+   }
+  ],
+  "choices": [
+   {
+    "label": "Write back",
+    "outcomes": [
+     {
+      "text": "I wrote back and left it in the same locker. We passed notes for a term before either of us said a word out loud.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I wrote back, and found out it had been a dare, and read my own reply out loud to me in the corridor.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Work out who it was",
+    "outcomes": [
+     {
+      "text": "Three days of handwriting comparison and I had it. I was right, and being right was the best week of that year.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I was completely wrong, and told the wrong person I knew it was them.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw it away",
+    "outcomes": [
+     {
+      "text": "I binned it. If somebody has something to say they can say it.",
+      "weight": 2,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "I binned it, and spent the rest of that year looking at everybody slightly differently.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "school.exam",
+  "icon": "📑",
+  "title": "Final exam",
+  "text": "Your final exam is tomorrow and you haven't studied.",
+  "conditions": {
+   "age": [
+    12,
+    24
+   ],
+   "chance": 0.6
+  },
+  "choices": [
+   {
+    "label": "Cram all night",
+    "outcomes": [
+     {
+      "text": "I passed! Barely conscious, but passed.",
+      "weight": 1,
+      "effects": {
+       "school": 4,
+       "health": -2,
+       "stress": 5
+      }
+     },
+     {
+      "text": "I fell asleep on my notes.",
+      "weight": 1,
+      "effects": {
+       "school": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sleep and hope",
+    "outcomes": [
+     {
+      "text": "Well-rested and completely wrong.",
+      "weight": 1,
+      "effects": {
+       "school": -5
+      }
+     },
+     {
+      "text": "I remembered more than I thought!",
+      "weight": 1,
+      "effects": {
+       "school": 3
+      },
+      "stat_bonus": {
+       "smarts": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Find someone who did the reading",
+    "outcomes": [
+     {
+      "text": "I bought a friend chips and got the whole syllabus explained in two hours. Best money I ever spent.",
+      "weight": 2,
+      "effects": {
+       "school": 8,
+       "money": -12,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "The person I asked had not done the reading either and was extremely convincing about it.",
+      "weight": 1,
+      "effects": {
+       "school": -7,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "uni.party",
+  "icon": "🍻",
+  "title": "Frat party",
+  "text": "Your dorm neighbors are throwing a massive party the night before exams.",
+  "conditions": {
+   "age": [
+    18,
+    24
+   ],
+   "university": true
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "Legendary party. Terrible exam.",
+      "weight": 3,
+      "effects": {
+       "happiness": 7,
+       "school": -6
+      }
+     },
+     {
+      "text": "I went for an hour, left, slept, and it remains the single best decision of my degree.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "school": 3,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Study",
+    "outcomes": [
+     {
+      "text": "I aced the exam. My neighbors were still asleep.",
+      "weight": 3,
+      "effects": {
+       "school": 7
+      }
+     },
+     {
+      "text": "I studied through it with a pillow over my head and sat the exam having absorbed nothing but bass.",
+      "weight": 1,
+      "effects": {
+       "school": -3,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go, and take your notes with you",
+    "outcomes": [
+     {
+      "text": "I revised in the kitchen with the party happening around me and somehow both went fine.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5,
+       "school": 2
+      }
+     },
+     {
+      "text": "The notes got used as a coaster. I sat the exam knowing a great deal about somebody else's break-up.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "school": -9
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "uni.roommate",
+  "icon": "🛏️",
+  "title": "Roommate",
+  "text": "Your college roommate {rm.first} eats your food and never cleans.",
+  "conditions": {
+   "age": [
+    18,
+    24
+   ],
+   "university": true
+  },
+  "choices": [
+   {
+    "label": "Talk it out",
+    "outcomes": [
+     {
+      "text": "{rm.first} actually changed. We're good friends now.",
+      "weight": 3,
+      "keep_role": "rm",
+      "relationship": {
+       "rm": 25
+      }
+     },
+     {
+      "text": "We talked it out, {rm.first} agreed with everything, and nothing changed at all.",
+      "weight": 1,
+      "keep_role": "rm",
+      "relationship": {
+       "rm": -8
+      },
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Label all your food",
+    "outcomes": [
+     {
+      "text": "Passive aggression works.",
+      "weight": 3,
+      "keep_role": "rm",
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I labelled everything and {rm.first} started labelling things back, and we lived like that for a year without ever discussing it.",
+      "weight": 1,
+      "keep_role": "rm",
+      "relationship": {
+       "rm": -12
+      },
+      "effects": {
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Request a new roommate",
+    "outcomes": [
+     {
+      "text": "New roommate, new problems.",
+      "weight": 3,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "The new roommate was the best one I ever had, and I have felt slightly guilty about the first one ever since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -4
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "rm": {
+    "new": "friend",
+    "age": "same",
+    "closeness": 40
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "uni.study_abroad",
+  "icon": "🌐",
+  "title": "Study abroad",
+  "text": "You could spend a semester studying abroad.",
+  "conditions": {
+   "age": [
+    18,
+    24
+   ],
+   "university": true
+  },
+  "choices": [
+   {
+    "label": "Go ($5,000)",
+    "outcomes": [
+     {
+      "text": "The best semester of my life. I came back a different person.",
+      "weight": 3,
+      "effects": {
+       "money": -5000,
+       "happiness": 12,
+       "smarts": 3
+      },
+      "counter": {
+       "vacations": 1
+      },
+      "milestone": "studied abroad"
+     },
+     {
+      "text": "I was homesick for nine weeks of the twelve, and then spent the last three not wanting to leave.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "happiness": 4,
+       "smarts": 4,
+       "stress": 8
+      },
+      "counter": {
+       "vacations": 1
+      },
+      "milestone": "studied abroad"
+     }
+    ]
+   },
+   {
+    "label": "Stay put",
+    "outcomes": [
+     {
+      "text": "Maybe grad school.",
+      "weight": 3,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I stayed put, kept the five thousand, and used it as a deposit two years earlier than I otherwise could have.",
+      "weight": 1,
+      "effects": {
+       "money": 5000,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go somewhere cheap and harder",
+    "outcomes": [
+     {
+      "text": "I went somewhere nobody else applied for, spoke none of the language, and came back changed in a way the brochure places do not manage.",
+      "weight": 2,
+      "effects": {
+       "money": -1800,
+       "smarts": 8,
+       "happiness": 10
+      },
+      "counter": {
+       "vacations": 1
+      },
+      "milestone": "studied abroad"
+     },
+     {
+      "text": "It was cheap and it was hard and I was miserable for most of it. I would not undo it and I would not do it again.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "smarts": 6,
+       "happiness": -6,
+       "stress": 12
+      },
+      "counter": {
+       "vacations": 1
+      },
+      "milestone": "studied abroad"
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "misc.jury_car",
+  "icon": "🚙",
+  "title": "Fender bender",
+  "text": "Someone rear-ended your car at a stoplight.",
+  "conditions": {
+   "age": [
+    16,
+    95
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Exchange insurance calmly",
+    "outcomes": [
+     {
+      "text": "Their insurance paid for everything.",
+      "weight": 3,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "We exchanged details politely and their insurer then spent eight months arguing it had been my fault.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "money": -1200
+      }
+     }
+    ]
+   },
+   {
+    "label": "Yell at them",
+    "outcomes": [
+     {
+      "text": "Very satisfying. Very unproductive.",
+      "weight": 3,
+      "effects": {
+       "stress": 4
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     },
+     {
+      "text": "I shouted at them in the road and somebody filmed it and put it online with a caption.",
+      "weight": 1,
+      "effects": {
+       "stress": 15,
+       "fame": 2,
+       "happiness": -6
+      },
+      "trait_bonus": {
+       "Hothead": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Check they're all right first",
+    "outcomes": [
+     {
+      "text": "I asked if they were hurt before I looked at the bumper. They burst into tears and said nobody ever does.",
+      "weight": 2,
+      "effects": {
+       "karma": 8,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I asked if they were all right and they used it in the claim as an admission that I had been at fault.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "money": -900,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "misc.flat_mates",
+  "icon": "🏠",
+  "title": "New neighbors",
+  "text": "New neighbors just moved in next door.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "housing": [
+    "apartment",
+    "house"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Bring cookies",
+    "outcomes": [
+     {
+      "text": "{nb.first} and I hit it off.",
+      "weight": 3,
+      "keep_role": "nb",
+      "relationship": {
+       "nb": 20
+      },
+      "effects": {
+       "karma": 2
+      }
+     },
+     {
+      "text": "I brought cookies and {nb.first} took them, said thank you, and shut the door. We have never spoken since.",
+      "weight": 1,
+      "keep_role": "nb",
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wave from the window",
+    "outcomes": [
+     {
+      "text": "They waved back. Neighborly.",
+      "weight": 3,
+      "keep_role": "nb"
+     },
+     {
+      "text": "I waved from the window for two years, and then we got talking in a power cut and should have done it sooner.",
+      "weight": 1,
+      "keep_role": "nb",
+      "relationship": {
+       "nb": 15
+      },
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait and see what they're like",
+    "outcomes": [
+     {
+      "text": "I gave it a month. They turned out to be quiet, kind and better at this than I am.",
+      "weight": 2,
+      "keep_role": "nb",
+      "relationship": {
+       "nb": 10
+      }
+     },
+     {
+      "text": "I waited, and so did they, and four years later we still nod in the car park and know nothing about each other.",
+      "weight": 1,
+      "keep_role": "nb",
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "nb": {
+    "new": "neighbor",
+    "age": [
+     22,
+     70
+    ],
+    "closeness": 45
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "misc.blackout",
+  "icon": "🕯️",
+  "title": "Blackout",
+  "text": "The power went out for the whole night.",
+  "conditions": {
+   "age": [
+    5,
+    99
+   ]
+  },
+  "cooldown": 8,
+  "outcomes": [
+   {
+    "text": "The power went out all night. We played cards by candlelight. Kind of perfect.",
+    "weight": 1,
+    "effects": {
+     "happiness": 3
+    }
+   },
+   {
+    "text": "The power went out and my freezer thawed. RIP, frozen pizzas.",
+    "weight": 1,
+    "effects": {
+     "money": -80
+    }
+   }
+  ],
+  "choices": [
+   {
+    "label": "Light candles and stay up",
+    "outcomes": [
+     {
+      "text": "No screens, no lights, and the best conversation this house has had in about a year.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "stress": -6
+      }
+     },
+     {
+      "text": "A candle went over on the windowsill and took the curtains with it before I got there.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 12,
+       "health": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go and check on the neighbours",
+    "outcomes": [
+     {
+      "text": "Half the street ended up in somebody's front garden with torches. Nobody wanted the power to come back.",
+      "weight": 2,
+      "effects": {
+       "karma": 10,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I went round knocking and found somebody on their own who had been on their own for a lot longer than one evening.",
+      "weight": 1,
+      "effects": {
+       "karma": 15,
+       "happiness": 4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to bed",
+    "outcomes": [
+     {
+      "text": "Nothing to do, so I slept ten hours for the first time in years.",
+      "weight": 2,
+      "effects": {
+       "health": 4,
+       "stress": -8
+      }
+     },
+     {
+      "text": "I went to bed, and the power came back at three in the morning with every light and both televisions on.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "health": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "misc.lost_phone",
+  "icon": "📱",
+  "title": "Lost phone",
+  "text": "You left your phone in a taxi.",
+  "conditions": {
+   "age": [
+    14,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call it from a friend's phone",
+    "outcomes": [
+     {
+      "text": "The driver brought it back!",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 1
+      }
+     },
+     {
+      "text": "It's gone. New phone time.",
+      "weight": 1,
+      "effects": {
+       "money": -600
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept your fate",
+    "outcomes": [
+     {
+      "text": "I bought a new one.",
+      "weight": 3,
+      "effects": {
+       "money": -600
+      }
+     },
+     {
+      "text": "I bought a new one, and a fortnight later the driver posted the old one back with a note.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "karma": 3,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Track it and go and get it",
+    "outcomes": [
+     {
+      "text": "The map showed it sitting outside a depot. The driver handed it over and would not take anything for it.",
+      "weight": 2,
+      "effects": {
+       "karma": 3,
+       "happiness": 5,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I followed the dot to a house, knocked, and had a conversation I should probably not have had alone.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "stress": 15,
+       "health": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "misc.charity",
+  "icon": "🎗️",
+  "title": "Donation drive",
+  "text": "A charity is collecting donations at your door.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ]
+  },
+  "choices": [
+   {
+    "label": "Donate $100",
+    "outcomes": [
+     {
+      "text": "They thanked me warmly.",
+      "weight": 3,
+      "effects": {
+       "money": -100,
+       "karma": 4,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I gave a hundred, and read a year later that almost none of it had reached anybody.",
+      "weight": 1,
+      "effects": {
+       "money": -100,
+       "karma": 2,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Donate $1,000",
+    "outcomes": [
+     {
+      "text": "They thanked me with a hug and a sticker.",
+      "weight": 3,
+      "effects": {
+       "money": -1000,
+       "karma": 10,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A thousand put my name on a list, and the letters and the calls did not stop for years.",
+      "weight": 1,
+      "effects": {
+       "money": -1000,
+       "karma": 10,
+       "stress": 6
+      }
+     }
+    ],
+    "requires": {
+     "money": 1000
+    }
+   },
+   {
+    "label": "Pretend nobody's home",
+    "outcomes": [
+     {
+      "text": "I hid behind the couch.",
+      "weight": 3,
+      "effects": {
+       "karma": -1
+      }
+     },
+     {
+      "text": "I hid behind the couch, and they had seen me through the window, and waited a full minute before leaving.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

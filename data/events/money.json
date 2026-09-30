@@ -1,0 +1,566 @@
+[
+ {
+  "id": "money.hot_tip",
+  "icon": "📈",
+  "title": "Hot tip",
+  "text": "A coworker swears a certain stock is about to skyrocket.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "min_money": 2000
+  },
+  "choices": [
+   {
+    "label": "Buy in with $2,000",
+    "outcomes": [
+     {
+      "text": "It doubled! I cashed out at $4,000.",
+      "weight": 1,
+      "effects": {
+       "money": 2000,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "It crashed. My $2,000 is gone.",
+      "weight": 2,
+      "effects": {
+       "money": -2000,
+       "happiness": -4
+      }
+     }
+    ],
+    "requires": {
+     "money": 2000
+    }
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "I passed. Probably smart.",
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "money.crypto_friend",
+  "icon": "🪙",
+  "title": "Crypto evangelist",
+  "text": "{fr.first} won't stop talking about a new coin called \"FrogCash\".",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Throw in $1,000",
+    "outcomes": [
+     {
+      "text": "FrogCash went up 40x. I made $39,000.",
+      "weight": 1,
+      "effects": {
+       "money": 39000,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "FrogCash's founder vanished with everyone's money.",
+      "weight": 3,
+      "effects": {
+       "money": -1000,
+       "happiness": -4
+      }
+     }
+    ],
+    "requires": {
+     "money": 1000
+    }
+   },
+   {
+    "label": "Politely nod",
+    "outcomes": [
+     {
+      "text": "I nodded until {fr.first} changed the subject.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "fr": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "sibling",
+     "coworker"
+    ]
+   }
+  }
+ },
+ {
+  "id": "money.inheritance_dispute",
+  "icon": "📜",
+  "title": "The will",
+  "text": "Your {rel.rel} left behind a confusing will, and the family is fighting over it.",
+  "conditions": {
+   "age": [
+    25,
+    90
+   ],
+   "chance": 0.4
+  },
+  "choices": [
+   {
+    "label": "Fight for your share",
+    "outcomes": [
+     {
+      "text": "I got $20,000 and a family feud.",
+      "weight": 1,
+      "effects": {
+       "money": 20000,
+       "karma": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the others have it",
+    "outcomes": [
+     {
+      "text": "Peace in the family is worth more.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "rel": {
+    "relation_any": [
+     "grandparent",
+     "auntuncle"
+    ]
+   }
+  }
+ },
+ {
+  "id": "money.tax_audit",
+  "icon": "🧾",
+  "title": "Audit",
+  "text": "The tax office wants to audit your finances.",
+  "conditions": {
+   "age": [
+    22,
+    90
+   ],
+   "min_money": 20000,
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Hire an accountant ($2,000)",
+    "outcomes": [
+     {
+      "text": "Everything checked out.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "stress": -2
+      }
+     }
+    ],
+    "requires": {
+     "money": 2000
+    }
+   },
+   {
+    "label": "Handle it yourself",
+    "outcomes": [
+     {
+      "text": "I found a deduction I'd missed. Refund!",
+      "weight": 1,
+      "effects": {
+       "money": 1500
+      },
+      "stat_bonus": {
+       "smarts": 1.2
+      }
+     },
+     {
+      "text": "I owed $8,000 in back taxes.",
+      "weight": 1,
+      "effects": {
+       "money": -8000,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "money.tenant_late",
+  "icon": "🏚️",
+  "title": "Late rent",
+  "text": "Your tenant {ten.first} says rent will be late because {ten.he} lost {ten.his} job.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "has_property": true
+  },
+  "choices": [
+   {
+    "label": "Give them extra time",
+    "outcomes": [
+     {
+      "text": "{ten.first} paid in full three months later with a thank-you card.",
+      "weight": 2,
+      "effects": {
+       "karma": 5
+      },
+      "relationship": {
+       "ten": 20
+      }
+     },
+     {
+      "text": "{ten.first} never paid.",
+      "weight": 1,
+      "effects": {
+       "money": -5000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start eviction",
+    "outcomes": [
+     {
+      "text": "{ten.first} moved out angry.",
+      "weight": 1,
+      "effects": {
+       "karma": -5
+      },
+      "relation_change": {
+       "ten": "former_tenant"
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "ten": {
+    "relation": "tenant"
+   }
+  },
+  "weight": 5
+ },
+ {
+  "id": "money.tenant_damage",
+  "icon": "🔧",
+  "title": "Burst pipe",
+  "text": "A pipe burst in one of your rental properties.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "has_property": true
+  },
+  "choices": [
+   {
+    "label": "Fix it properly ($6,000)",
+    "outcomes": [
+     {
+      "text": "Good as new.",
+      "weight": 1,
+      "effects": {
+       "money": -6000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cheap patch job ($800)",
+    "outcomes": [
+     {
+      "text": "It held... for now.",
+      "weight": 1,
+      "effects": {
+       "money": -800
+      }
+     },
+     {
+      "text": "It burst again, worse.",
+      "weight": 1,
+      "effects": {
+       "money": -9000,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "money.great_tenant",
+  "icon": "🍪",
+  "title": "Great tenant",
+  "text": "Your tenant {ten.first} fixed the fence and planted a garden on {ten.his} own dime.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "has_property": true
+  },
+  "choices": [
+   {
+    "label": "Knock $100 off the rent",
+    "outcomes": [
+     {
+      "text": "{ten.first} was thrilled.",
+      "weight": 1,
+      "relationship": {
+       "ten": 20
+      },
+      "effects": {
+       "karma": 3,
+       "money": -1200
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say thanks",
+    "outcomes": [
+     {
+      "text": "{ten.first} smiled and kept gardening.",
+      "weight": 1,
+      "relationship": {
+       "ten": 5
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "ten": {
+    "relation": "tenant"
+   }
+  },
+  "weight": 5
+ },
+ {
+  "id": "money.appraisal",
+  "icon": "🔍",
+  "title": "Appraisal show",
+  "text": "A TV antiques show is filming in your town.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "has_possessions": true
+  },
+  "choices": [
+   {
+    "label": "Bring your most valuable item",
+    "outcomes": [
+     {
+      "text": "The appraiser gasped. It's worth twice what I thought.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "fame": 1
+      },
+      "appraise": 2.0
+     },
+     {
+      "text": "It's a clever fake. Worth almost nothing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      },
+      "appraise": 0.1
+     },
+     {
+      "text": "Worth exactly what I paid.",
+      "weight": 2,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I watched it on TV instead.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "money.island_party",
+  "icon": "🏝️",
+  "title": "Island party",
+  "text": "Everyone wants an invite to a party on your private island.",
+  "conditions": {
+   "age": [
+    21,
+    99
+   ],
+   "flags": [
+    "island_owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Throw the party of the decade",
+    "outcomes": [
+     {
+      "text": "Celebrities, politicians, a live orchestra on the beach. Legendary.",
+      "weight": 1,
+      "effects": {
+       "money": -250000,
+       "fame": 8,
+       "happiness": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it family-only",
+    "outcomes": [
+     {
+      "text": "A quiet week with the people I love.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "stress": -10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5
+ },
+ {
+  "id": "money.lottery_friend",
+  "icon": "🎟️",
+  "title": "Office pool",
+  "text": "The office lottery pool asks if you want in for $20.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Join",
+    "outcomes": [
+     {
+      "text": "We won $4,000,000 split twelve ways. My share: $333,000!",
+      "weight": 1,
+      "effects": {
+       "money": 333000,
+       "happiness": 20
+      }
+     },
+     {
+      "text": "We lost, obviously.",
+      "weight": 40,
+      "effects": {
+       "money": -20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I skipped it.",
+      "weight": 8
+     },
+     {
+      "text": "I skipped it. They won. Nobody lets me forget it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -15
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "money.gold_digger",
+  "icon": "💍",
+  "title": "Too good to be true",
+  "text": "Your new partner {pt.first} keeps asking how much money you have.",
+  "conditions": {
+   "age": [
+    25,
+    99
+   ],
+   "has_partner": true,
+   "min_money": 500000
+  },
+  "choices": [
+   {
+    "label": "Ask for a prenup",
+    "outcomes": [
+     {
+      "text": "{pt.first} left the same week. That answers that.",
+      "weight": 1,
+      "relation_change": {
+       "pt": "ex"
+      },
+      "unpartner": true
+     },
+     {
+      "text": "{pt.first} signed without blinking. We're good.",
+      "weight": 1,
+      "relationship": {
+       "pt": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Trust them",
+    "outcomes": [
+     {
+      "text": "I chose to trust {pt.first}.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "pt": {
+    "relation": "partner"
+   }
+  }
+ }
+]

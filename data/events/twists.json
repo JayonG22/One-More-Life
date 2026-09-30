@@ -1,0 +1,5699 @@
+[
+ {
+  "id": "tw.identity_theft",
+  "icon": "🕵️",
+  "title": "Identity stolen",
+  "text": "Your bank calls at 6 a.m. Someone has been living as you for months: credit cards, loans, a car. All in your name.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Freeze everything and fight it",
+    "outcomes": [
+     {
+      "text": "I spent a year on hold with banks. I got most of it back, but my credit is wrecked.",
+      "weight": 2,
+      "lose_money_pct": 0.25,
+      "credit": -120,
+      "effects": {
+       "stress": 15
+      },
+      "schedule": {
+       "event": "tw.thief_caught",
+       "years": [
+        2,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I fought it and won. The banks reversed nearly everything.",
+      "weight": 1,
+      "karma_bonus": 1,
+      "credit": -40,
+      "effects": {
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get {lw.first} on it",
+    "outcomes": [
+     {
+      "text": "{lw.first} took it on and then stopped answering. Months later I found out {lw.he} had let the deadline to dispute it pass.",
+      "weight": 1,
+      "relationship": {
+       "lw": -18
+      },
+      "credit": -140,
+      "debt": 6000,
+      "effects": {
+       "stress": 18
+      }
+     },
+     {
+      "text": "{lw.first} found the thief's name in the paperwork in a fortnight. It was somebody who had been in my house.",
+      "weight": 1,
+      "relationship": {
+       "lw": 10
+      },
+      "credit": -30,
+      "schedule": {
+       "event": "tw.thief_caught",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "role": "lw"
+    }
+   },
+   {
+    "label": "Pretend it isn't happening",
+    "outcomes": [
+     {
+      "text": "I ignored it and got lucky: the bank's own fraud team caught it and unwound everything without me lifting a finger.",
+      "weight": 1,
+      "karma_bonus": 1,
+      "credit": -30,
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "By the time a court summons arrived, the debts were legally mine to argue about. I lost the argument.",
+      "weight": 1,
+      "lose_money_pct": 0.6,
+      "credit": -300,
+      "debt": 40000,
+      "effects": {
+       "stress": 25,
+       "happiness": -12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "lw": {
+    "contact": [
+     "lawyer"
+    ],
+    "min_close": 25,
+    "optional": true
+   }
+  }
+ },
+ {
+  "id": "tw.house_fire",
+  "icon": "🔥",
+  "title": "Fire!",
+  "text": "You wake up coughing. The hallway is orange. Your home is on fire.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Grab the family photos",
+    "outcomes": [
+     {
+      "text": "I went back for the albums and found the hallway already gone. I got out with nothing but smoke in my lungs.",
+      "weight": 1,
+      "scar": "lungs",
+      "lose_possessions": 1.0,
+      "house_destroyed": true,
+      "effects": {
+       "health": -28,
+       "happiness": -18
+      }
+     },
+     {
+      "text": "I grabbed the box and made it out clean. Everything else burned, but the box was the part nobody could replace.",
+      "weight": 1,
+      "stat_bonus": {
+       "health": 0.6
+      },
+      "lose_possessions": 0.7,
+      "house_destroyed": true,
+      "effects": {
+       "health": -6,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get everyone out first",
+    "outcomes": [
+     {
+      "text": "Everyone got out. We stood on the lawn and watched it all burn.",
+      "weight": 2,
+      "karma_bonus": 1,
+      "lose_possessions": 0.8,
+      "house_destroyed": true,
+      "effects": {
+       "happiness": -15,
+       "karma": 5
+      },
+      "milestone": "saved their family from a house fire"
+     },
+     {
+      "text": "Everyone got out, but the smoke got into my lungs.",
+      "weight": 1,
+      "scar": "lungs",
+      "lose_possessions": 0.8,
+      "house_destroyed": true,
+      "effects": {
+       "health": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Jump from the window",
+    "outcomes": [
+     {
+      "text": "I jumped, and the hedge took most of it. I walked away from a house I would never walk back into.",
+      "weight": 1,
+      "lose_possessions": 0.9,
+      "house_destroyed": true,
+      "effects": {
+       "health": -5,
+       "stress": 12
+      }
+     },
+     {
+      "text": "I jumped badly. The fall did more damage than the fire would have.",
+      "weight": 1,
+      "scar": "back_injury",
+      "lose_possessions": 0.9,
+      "house_destroyed": true,
+      "effects": {
+       "health": -32,
+       "happiness": -10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.wrongful",
+  "icon": "🚨",
+  "title": "Wrong person",
+  "text": "Police arrest you at work. A witness picked you out of a lineup for a robbery you know nothing about.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "max_heat": 30
+  },
+  "choices": [
+   {
+    "label": "Trust the public defender",
+    "outcomes": [
+     {
+      "text": "The jury believed the witness. I was convicted of a crime I didn't commit.",
+      "weight": 2,
+      "jail": [
+       3,
+       8
+      ],
+      "crime": "armed robbery",
+      "milestone": "was wrongfully convicted",
+      "schedule": {
+       "event": "tw.exonerated",
+       "years": [
+        3,
+        9
+       ]
+      },
+      "scar": "haunted"
+     },
+     {
+      "text": "The defender found a camera that proved I was across town. Case dismissed.",
+      "weight": 1,
+      "karma_bonus": 1.5,
+      "effects": {
+       "stress": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spend everything on a top lawyer",
+    "outcomes": [
+     {
+      "text": "It cost me almost everything, but I walked free.",
+      "weight": 2,
+      "lose_money_pct": 0.7,
+      "effects": {
+       "stress": 15
+      }
+     },
+     {
+      "text": "Even the best money could buy lost. Convicted.",
+      "weight": 1,
+      "lose_money_pct": 0.7,
+      "jail": [
+       3,
+       7
+      ],
+      "crime": "armed robbery",
+      "schedule": {
+       "event": "tw.exonerated",
+       "years": [
+        3,
+        9
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take the plea deal",
+    "outcomes": [
+     {
+      "text": "I pleaded to a lesser charge and was out in a year. The word 'guilty' is still on paper with my name beside it.",
+      "weight": 2,
+      "jail": [
+       1,
+       1
+      ],
+      "crime": "robbery",
+      "scar": "broken_trust"
+     },
+     {
+      "text": "I took the plea, and eleven years later a lab technician reopened the file.",
+      "weight": 1,
+      "jail": [
+       2,
+       3
+      ],
+      "crime": "robbery",
+      "scar": "broken_trust",
+      "schedule": {
+       "event": "tw.exonerated",
+       "years": [
+        6,
+        12
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.adopted",
+  "icon": "📂",
+  "title": "The box in the attic",
+  "text": "In a box in the attic, you find adoption papers. Your name is on them.",
+  "conditions": {
+   "age": [
+    12,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Find your birth parent",
+    "outcomes": [
+     {
+      "text": "I found {b.first} {b.last}. We sat in a diner for four hours and cried.",
+      "weight": 2,
+      "relation_change": {
+       "b": "bio_parent"
+      },
+      "relationship": {
+       "b": 30
+      },
+      "keep_role": "b",
+      "schedule": {
+       "event": "tw.bio_family",
+       "years": [
+        1,
+        4
+       ]
+      },
+      "milestone": "found their birth parent"
+     },
+     {
+      "text": "I found {b.first}. {b.He} didn't want to be found.",
+      "weight": 1,
+      "relation_change": {
+       "b": "bio_parent"
+      },
+      "relationship": {
+       "b": -10
+      },
+      "scar": "broken_trust"
+     }
+    ]
+   },
+   {
+    "label": "Confront {m.first}",
+    "outcomes": [
+     {
+      "text": "{m.first} had been waiting thirty years to be asked. {m.He} cried, and then {m.he} told me everything.",
+      "weight": 1,
+      "relationship": {
+       "m": 20
+      },
+      "effects": {
+       "happiness": 8
+      },
+      "schedule": {
+       "event": "tw.bio_family",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "{m.first} denied it with the papers in {m.his} hand. We have not spoken properly since.",
+      "weight": 1,
+      "relationship": {
+       "m": -45
+      },
+      "effects": {
+       "happiness": -16,
+       "stress": 14
+      },
+      "scar": "broken_trust"
+     }
+    ]
+   },
+   {
+    "label": "Put the box back",
+    "outcomes": [
+     {
+      "text": "I put the box back and genuinely let it go. It stopped being a secret and became a fact I simply did not need.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I put the box back and thought about it every day for years, until somebody else found it.",
+      "weight": 1,
+      "effects": {
+       "stress": 16,
+       "happiness": -8
+      },
+      "schedule": {
+       "event": "tw.bio_family",
+       "years": [
+        3,
+        9
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "b": {
+    "new": "friend",
+    "age": [
+     40,
+     80
+    ],
+    "closeness": 10
+   },
+   "m": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "tw.secret_sibling",
+  "icon": "🧬",
+  "title": "A DNA match",
+  "text": "A DNA website says you have a sibling you've never heard of. {s.first} {s.last} has already messaged you.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Meet {s.first}",
+    "outcomes": [
+     {
+      "text": "{s.first} has my laugh. We've been making up for lost time.",
+      "weight": 2,
+      "relation_change": {
+       "s": "sibling"
+      },
+      "relationship": {
+       "s": 35
+      },
+      "keep_role": "s"
+     },
+     {
+      "text": "{s.first} only wanted to know if there was money in the family.",
+      "weight": 1,
+      "relation_change": {
+       "s": "sibling"
+      },
+      "relationship": {
+       "s": -10
+      },
+      "keep_role": "s"
+     }
+    ]
+   },
+   {
+    "label": "Ask your parents about it",
+    "outcomes": [
+     {
+      "text": "My parents sat me down and told the whole story themselves. It was sadder than I expected, and nobody was a villain.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relation_change": {
+       "s": "sibling"
+      },
+      "keep_role": "s"
+     },
+     {
+      "text": "My parents' marriage did not survive the conversation.",
+      "weight": 1,
+      "effects": {
+       "happiness": -12
+      },
+      "relation_change": {
+       "s": "sibling"
+      },
+      "keep_role": "s",
+      "grudge": {
+       "m": 25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore the message",
+    "outcomes": [
+     {
+      "text": "I deleted the message. It still sits in the back of my mind.",
+      "weight": 2,
+      "effects": {
+       "stress": 5
+      }
+     },
+     {
+      "text": "I deleted it, and {s.first} turned up at my door two years later, having found the address anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 12
+      },
+      "keep_role": "s",
+      "relation_change": {
+       "s": "sibling"
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "s": {
+    "new": "friend",
+    "age": [
+     10,
+     70
+    ],
+    "closeness": 20
+   },
+   "m": {
+    "relation_any": [
+     "mother",
+     "father"
+    ],
+    "optional": true
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "tw.double_life",
+  "icon": "💔",
+  "title": "The other family",
+  "text": "A work trip gets cancelled and you surprise {p.first} in another city. {p.He} opens the door holding a baby. It isn't yours.",
+  "conditions": {
+   "age": [
+    25,
+    80
+   ],
+   "married": true
+  },
+  "choices": [
+   {
+    "label": "Leave {p.first}",
+    "outcomes": [
+     {
+      "text": "I filed for divorce the next morning. I still don't know which of our years were real.",
+      "weight": 2,
+      "unpartner": true,
+      "relation_change": {
+       "p": "ex"
+      },
+      "lose_money_pct": 0.3,
+      "scar": "broken_trust",
+      "grudge": {
+       "p": 40
+      },
+      "milestone": "discovered their spouse's secret family",
+      "schedule": {
+       "event": "tw.other_kids",
+       "years": [
+        3,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I left, and the court believed every word of it. {p.first} kept the house and the story.",
+      "weight": 1,
+      "unpartner": true,
+      "relation_change": {
+       "p": "ex"
+      },
+      "lose_money_pct": 0.6,
+      "scar": "broken_trust",
+      "grudge": {
+       "p": 60
+      },
+      "effects": {
+       "happiness": -14
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay for the kids",
+    "outcomes": [
+     {
+      "text": "We never talked about it again. The silence at dinner is deafening.",
+      "weight": 2,
+      "relationship": {
+       "p": -40
+      },
+      "effects": {
+       "happiness": -20,
+       "stress": 15
+      },
+      "scar": "broken_trust"
+     },
+     {
+      "text": "I stayed, and eight years later the children were grown and I left the same week the youngest did.",
+      "weight": 1,
+      "relationship": {
+       "p": -55
+      },
+      "effects": {
+       "happiness": -10,
+       "stress": 20
+      },
+      "scar": "broken_trust",
+      "unpartner": true,
+      "relation_change": {
+       "p": "ex"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Expose {p.first} publicly",
+    "outcomes": [
+     {
+      "text": "I posted everything. {p.first} lost {p.his} job, and I lost my privacy.",
+      "weight": 2,
+      "unpartner": true,
+      "relation_change": {
+       "p": "ex"
+      },
+      "grudge": {
+       "p": 80
+      },
+      "effects": {
+       "fame": 8,
+       "happiness": -8
+      }
+     },
+     {
+      "text": "I posted everything, and the internet decided I was the one who came out of it badly.",
+      "weight": 1,
+      "unpartner": true,
+      "relation_change": {
+       "p": "ex"
+      },
+      "grudge": {
+       "p": 80
+      },
+      "effects": {
+       "fame": 12,
+       "happiness": -22,
+       "stress": 18
+      },
+      "scar": "public_shame"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "p": {
+    "relation": "partner"
+   }
+  }
+ },
+ {
+  "id": "tw.witness",
+  "icon": "👁️",
+  "title": "Wrong place, wrong time",
+  "text": "You saw a man shot in an alley. The shooter saw you too. The FBI says you'll only be safe as someone else.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Enter witness protection",
+    "outcomes": [
+     {
+      "text": "I testified, then vanished. New name, new country, no goodbyes.",
+      "weight": 2,
+      "new_identity": true,
+      "effects": {
+       "happiness": -15,
+       "stress": 10
+      }
+     },
+     {
+      "text": "I testified and vanished, and the new life turned out to suit me far better than the old one.",
+      "weight": 1,
+      "new_identity": true,
+      "effects": {
+       "happiness": 6,
+       "stress": 8,
+       "smarts": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse and testify anyway",
+    "outcomes": [
+     {
+      "text": "I testified. For years I checked every car that slowed down.",
+      "weight": 2,
+      "effects": {
+       "karma": 10,
+       "stress": 25
+      },
+      "scar": "haunted"
+     },
+     {
+      "text": "I testified. Months later, someone tried to run me off the road.",
+      "weight": 1,
+      "effects": {
+       "health": -25
+      },
+      "scar": "limp"
+     }
+    ]
+   },
+   {
+    "label": "Say you saw nothing",
+    "outcomes": [
+     {
+      "text": "I said nothing. The shooter walked. I never went down that street again.",
+      "weight": 2,
+      "effects": {
+       "karma": -10,
+       "stress": 10
+      }
+     },
+     {
+      "text": "I said nothing, and somebody else spoke. The shooter went away for thirty years and never learned my name.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 14
+      },
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.coma",
+  "icon": "🏥",
+  "title": "Lights out",
+  "text": "A car runs a red light. The last thing you remember is the sound of glass.",
+  "conditions": {
+   "age": [
+    25,
+    75
+   ]
+  },
+  "choices": [
+   {
+    "label": "Everything goes black",
+    "outcomes": [
+     {
+      "text": "Everything went black.",
+      "weight": 1,
+      "coma": [
+       1,
+       4
+      ],
+      "scar": "back_injury"
+     },
+     {
+      "text": "Everything went black.",
+      "weight": 1,
+      "coma": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Stand on the brakes",
+    "outcomes": [
+     {
+      "text": "I braked and took it side-on. I was awake for all of it, which I have since decided was worse.",
+      "weight": 2,
+      "scar": "back_injury",
+      "effects": {
+       "health": -35,
+       "stress": 30
+      }
+     },
+     {
+      "text": "I braked in time to turn a catastrophe into a wreck. I walked away from a car that did not.",
+      "weight": 1,
+      "stat_bonus": {
+       "skill": 0.8
+      },
+      "effects": {
+       "health": -10,
+       "stress": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Swerve for the ditch",
+    "outcomes": [
+     {
+      "text": "I put it in the ditch instead of into them. The ditch was unkind but it was mine to choose.",
+      "weight": 2,
+      "scar": "bad_knee",
+      "effects": {
+       "health": -22,
+       "karma": 8
+      }
+     },
+     {
+      "text": "I swerved and rolled it. They came out of it untouched and I came out of it in pieces.",
+      "weight": 1,
+      "coma": [
+       1,
+       2
+      ],
+      "scar": "back_injury",
+      "effects": {
+       "karma": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 3,
+  "twist": true
+ },
+ {
+  "id": "tw.car_crash",
+  "icon": "🚗",
+  "title": "The crash",
+  "text": "Black ice. Your car spins across two lanes and into a ditch.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Call for help",
+    "outcomes": [
+     {
+      "text": "The paramedics cut me out. I'll walk again, but not the same way.",
+      "weight": 1,
+      "scar": "limp",
+      "effects": {
+       "health": -25
+      }
+     },
+     {
+      "text": "I walked away with bruises and a totaled car.",
+      "weight": 2,
+      "karma_bonus": 1,
+      "effects": {
+       "health": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help the other driver first",
+    "outcomes": [
+     {
+      "text": "I pulled the other driver out before the car caught fire. The local news called me a hero.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "fame": 4,
+       "health": -10
+      },
+      "scar": "burns"
+     },
+     {
+      "text": "I got the other driver out. My back gave out doing it.",
+      "weight": 1,
+      "scar": "back_injury",
+      "effects": {
+       "karma": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get your story straight first",
+    "outcomes": [
+     {
+      "text": "I worked out what I was going to say before I called anyone. It held up.",
+      "weight": 2,
+      "effects": {
+       "karma": -10,
+       "stress": 15
+      }
+     },
+     {
+      "text": "I worked out my story and a dashcam in the car behind had a better one.",
+      "weight": 1,
+      "effects": {
+       "karma": -12,
+       "heat": 25,
+       "stress": 25
+      },
+      "trial": [
+       "dangerous driving",
+       0,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.bank_collapse",
+  "icon": "🏦",
+  "title": "Bank run",
+  "text": "Your bank has collapsed overnight. The doors are chained. Hundreds of people are already outside.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "min_money": 1000
+  },
+  "choices": [
+   {
+    "label": "Join the class action",
+    "outcomes": [
+     {
+      "text": "Years later the lawsuit returned 40 cents on the dollar.",
+      "weight": 2,
+      "lose_savings_pct": 0.6,
+      "effects": {
+       "stress": 12
+      }
+     },
+     {
+      "text": "The class action ran eleven years, outlived two of the plaintiffs, and paid out almost nothing.",
+      "weight": 1,
+      "lose_savings_pct": 0.92,
+      "effects": {
+       "stress": 20,
+       "happiness": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push to the front of the line",
+    "outcomes": [
+     {
+      "text": "I got some of my savings out before they stopped paying.",
+      "weight": 2,
+      "lose_savings_pct": 0.35,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "I shoved my way to the counter and the doors closed four people ahead of me. I got nothing and a photograph of my face in the paper.",
+      "weight": 1,
+      "lose_savings_pct": 0.85,
+      "effects": {
+       "karma": -8,
+       "stress": 18,
+       "fame": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept it",
+    "outcomes": [
+     {
+      "text": "It's gone. I started over.",
+      "weight": 2,
+      "lose_savings_pct": 0.8,
+      "effects": {
+       "happiness": -12
+      }
+     },
+     {
+      "text": "I accepted it, and two years later the government guarantee paid out more than the people who fought for it got.",
+      "weight": 1,
+      "lose_savings_pct": 0.25,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.pandemic",
+  "icon": "🦠",
+  "title": "The outbreak",
+  "text": "A new virus is spreading fast. Schools close. Offices empty. The streets go quiet.",
+  "conditions": {
+   "age": [
+    8,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lock down and stay home",
+    "outcomes": [
+     {
+      "text": "A lonely year, but we got through it.",
+      "weight": 2,
+      "effects": {
+       "happiness": -10,
+       "stress": 8
+      },
+      "empire": "biz_hit",
+      "world_start": "pandemic"
+     },
+     {
+      "text": "I lost my job when the company collapsed.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "happiness": -8
+      },
+      "world_start": "pandemic"
+     }
+    ]
+   },
+   {
+    "label": "Keep going to work",
+    "outcomes": [
+     {
+      "text": "I caught it early. The cough never quite left.",
+      "weight": 1,
+      "scar": "lungs",
+      "effects": {
+       "health": -20
+      },
+      "world_start": "pandemic"
+     },
+     {
+      "text": "I kept my job when others didn't.",
+      "weight": 1,
+      "effects": {
+       "money": 10000,
+       "stress": 10
+      },
+      "world_start": "pandemic"
+     }
+    ]
+   },
+   {
+    "label": "Volunteer at the hospital",
+    "outcomes": [
+     {
+      "text": "I held hands with strangers at the end. I will never forget it.",
+      "weight": 2,
+      "effects": {
+       "karma": 15
+      },
+      "scar": "haunted",
+      "world_start": "pandemic"
+     },
+     {
+      "text": "I volunteered, caught it in the second month, and spent six weeks on the wrong side of the ward.",
+      "weight": 1,
+      "effects": {
+       "karma": 15,
+       "health": -30
+      },
+      "illness": "long covid",
+      "scar": "lungs",
+      "world_start": "pandemic"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "once": true
+ },
+ {
+  "id": "tw.market_crash",
+  "icon": "📉",
+  "title": "Black Monday",
+  "text": "The market opens down 30% and keeps falling. Your phone won't stop buzzing.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "has_investments": true
+  },
+  "choices": [
+   {
+    "label": "Sell everything",
+    "outcomes": [
+     {
+      "text": "I sold at the bottom. I'll be thinking about that for years.",
+      "weight": 2,
+      "market_crash": true,
+      "effects": {
+       "stress": 15
+      }
+     },
+     {
+      "text": "I sold everything on the first morning, which turned out to be the only day that week it was still worth anything.",
+      "weight": 1,
+      "market_crash": true,
+      "effects": {
+       "stress": 6,
+       "money": 15000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold and wait",
+    "outcomes": [
+     {
+      "text": "I held. The prices are brutal, but I'm still in.",
+      "weight": 2,
+      "market_crash": true,
+      "effects": {
+       "stress": 10
+      }
+     },
+     {
+      "text": "I held through all of it and four years later was further ahead than before the crash. It did not feel like patience at the time.",
+      "weight": 1,
+      "market_crash": true,
+      "effects": {
+       "stress": 14,
+       "money": 60000,
+       "smarts": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy the dip",
+    "outcomes": [
+     {
+      "text": "I bought while everyone panicked.",
+      "weight": 2,
+      "market_crash": true,
+      "effects": {
+       "stress": 5,
+       "money": -5000
+      }
+     },
+     {
+      "text": "I bought the dip, and then the dip kept going for another eighteen months.",
+      "weight": 1,
+      "market_crash": true,
+      "effects": {
+       "stress": 22,
+       "money": -45000,
+       "happiness": -10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.stranger_will",
+  "icon": "📜",
+  "title": "A stranger's will",
+  "text": "A lawyer calls. A woman you met once, years ago, left you her entire estate.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Accept the inheritance",
+    "outcomes": [
+     {
+      "text": "She left me $900,000 and a note: \"You were kind to me on a bad day.\"",
+      "weight": 2,
+      "effects": {
+       "money": 900000,
+       "happiness": 15
+      },
+      "karma_bonus": 1.5,
+      "milestone": "inherited a fortune from a stranger"
+     },
+     {
+      "text": "The estate came with $300,000 in debts. The lawyer smiled and handed me the bill.",
+      "weight": 1,
+      "debt": 300000,
+      "credit": -60
+     }
+    ]
+   },
+   {
+    "label": "Decline it",
+    "outcomes": [
+     {
+      "text": "I declined. Her family seemed to need it more.",
+      "weight": 2,
+      "effects": {
+       "karma": 10
+      }
+     },
+     {
+      "text": "I declined, and the lawyer told me what it had been worth. I have had a long time to think about that number.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "happiness": -8,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Find out who she was first",
+    "outcomes": [
+     {
+      "text": "I spent a month on it. She had sat with my mother in a hospital in 1974 and never forgot the kindness.",
+      "weight": 2,
+      "effects": {
+       "money": 300000,
+       "happiness": 18,
+       "karma": 5
+      },
+      "milestone": "inherited a stranger's estate"
+     },
+     {
+      "text": "I dug until I found out why she had no family left to leave it to, and then I could not take it.",
+      "weight": 1,
+      "effects": {
+       "karma": 15,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.guardian",
+  "icon": "🧸",
+  "title": "Guardian",
+  "text": "Your sibling was in an accident and can't care for their children. The court asks if you'll take them in.",
+  "conditions": {
+   "age": [
+    22,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take them in",
+    "outcomes": [
+     {
+      "text": "{k.first} cried for a week, then asked me to read {k.him} a story. I have kids now.",
+      "weight": 2,
+      "relation_change": {
+       "k": "child",
+       "k2": "child"
+      },
+      "keep_role": "k",
+      "effects": {
+       "money": -5000,
+       "stress": 12
+      },
+      "milestone": "became guardian of their nieces and nephews"
+     },
+     {
+      "text": "I took them in and it nearly finished me. Two years of shouting before any of us worked out how to be a family.",
+      "weight": 1,
+      "relation_change": {
+       "k": "child",
+       "k2": "child"
+      },
+      "keep_role": "k",
+      "effects": {
+       "money": -18000,
+       "stress": 28,
+       "happiness": -10
+      },
+      "milestone": "became guardian of their nieces and nephews"
+     }
+    ]
+   },
+   {
+    "label": "Let foster care take them",
+    "outcomes": [
+     {
+      "text": "They went into foster care. My family hasn't forgiven me.",
+      "weight": 2,
+      "grudge": {
+       "s": 70
+      },
+      "relationship": {
+       "s": -50
+      },
+      "effects": {
+       "karma": -12
+      }
+     },
+     {
+      "text": "They went into care and landed with people who were better at it than I would have been. It does not stop me thinking about it.",
+      "weight": 1,
+      "grudge": {
+       "s": 40
+      },
+      "relationship": {
+       "s": -30
+      },
+      "effects": {
+       "karma": -6,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take the youngest only",
+    "outcomes": [
+     {
+      "text": "I took the one I could manage and the others went elsewhere. They know which of them I chose.",
+      "weight": 2,
+      "relation_change": {
+       "k": "child"
+      },
+      "keep_role": "k",
+      "effects": {
+       "money": -3000,
+       "stress": 14,
+       "karma": -5
+      },
+      "grudge": {
+       "k2": 40
+      }
+     },
+     {
+      "text": "I took one and spent the next ten years driving to see the others every second weekend, which is not nothing.",
+      "weight": 1,
+      "relation_change": {
+       "k": "child"
+      },
+      "keep_role": "k",
+      "effects": {
+       "money": -9000,
+       "stress": 18,
+       "karma": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "s": {
+    "relation": "sibling"
+   },
+   "k": {
+    "new": "friend",
+    "age": [
+     3,
+     12
+    ],
+    "closeness": 50
+   },
+   "k2": {
+    "new": "friend",
+    "age": [
+     1,
+     9
+    ],
+    "closeness": 45
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "tw.embezzle",
+  "icon": "💸",
+  "title": "Cooked by someone else",
+  "text": "Your accountant just vanished. So did a large part of {biz}'s money.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Call the police",
+    "outcomes": [
+     {
+      "text": "They caught him in Portugal. The money was already gone.",
+      "weight": 2,
+      "empire": "biz_embezzle",
+      "schedule": {
+       "event": "tw.embezzler_returns",
+       "years": [
+        3,
+        7
+       ]
+      }
+     },
+     {
+      "text": "The police asked why my own signature was on four of the transfers. The investigation turned around and faced me.",
+      "weight": 1,
+      "empire": "biz_embezzle",
+      "effects": {
+       "heat": 25,
+       "stress": 20
+      },
+      "trial": [
+       "fraud",
+       0,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Hire an investigator",
+    "outcomes": [
+     {
+      "text": "The investigator found half the money in an offshore account.",
+      "weight": 2,
+      "empire": "biz_hit",
+      "effects": {
+       "money": -20000
+      }
+     },
+     {
+      "text": "The investigator spent my money for eight months and found a forwarding address in a country with no extradition.",
+      "weight": 1,
+      "empire": "biz_embezzle",
+      "effects": {
+       "money": -45000,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide it from the investors",
+    "outcomes": [
+     {
+      "text": "I papered over the hole. It's still there.",
+      "weight": 2,
+      "empire": "biz_embezzle",
+      "effects": {
+       "heat": 15
+      },
+      "flags": [
+       "hid_embezzlement"
+      ]
+     },
+     {
+      "text": "I papered over the hole, and an investor's accountant found it within the year.",
+      "weight": 1,
+      "empire": "biz_embezzle",
+      "effects": {
+       "heat": 40,
+       "stress": 25
+      },
+      "flags": [
+       "hid_embezzlement"
+      ],
+      "trial": [
+       "fraud",
+       1,
+       5
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.cold_case",
+  "icon": "🗃️",
+  "title": "Cold case",
+  "text": "A detective knocks on your door. They've reopened a case from years ago, with new DNA technology.",
+  "conditions": {
+   "age": [
+    25,
+    95
+   ],
+   "has_record": true
+  },
+  "choices": [
+   {
+    "label": "Lawyer up",
+    "outcomes": [
+     {
+      "text": "They didn't have enough. The case went cold again.",
+      "weight": 1,
+      "effects": {
+       "stress": 15
+      }
+     },
+     {
+      "text": "The DNA matched. I went back to court.",
+      "weight": 1,
+      "trial": [
+       "an old crime",
+       2,
+       8
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Confess",
+    "outcomes": [
+     {
+      "text": "I told the truth. It was a relief, until the sentencing.",
+      "weight": 2,
+      "jail": [
+       1,
+       4
+      ],
+      "crime": "an old crime",
+      "effects": {
+       "karma": 10
+      }
+     },
+     {
+      "text": "I confessed, and the confession turned out to be the only evidence they had. My lawyer had it thrown out and I walked.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "stress": 20,
+       "heat": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run",
+    "outcomes": [
+     {
+      "text": "I ran. Now I'm a fugitive.",
+      "weight": 2,
+      "effects": {
+       "heat": 60,
+       "stress": 20
+      },
+      "flags": [
+       "fugitive"
+      ]
+     },
+     {
+      "text": "I ran as far as the airport before working out that running was the confession they needed.",
+      "weight": 1,
+      "jail": [
+       2,
+       6
+      ],
+      "crime": "an old crime",
+      "effects": {
+       "stress": 25
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.viral",
+  "icon": "📱",
+  "title": "Overnight famous",
+  "text": "A stranger filmed you doing something ridiculous. It has 80 million views. Your name is trending.",
+  "conditions": {
+   "age": [
+    12,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ride the wave",
+    "outcomes": [
+     {
+      "text": "Talk shows, brand deals, a fan club. I'm famous now.",
+      "weight": 2,
+      "effects": {
+       "fame": 30,
+       "money": 40000,
+       "happiness": 10
+      },
+      "milestone": "became famous overnight"
+     },
+     {
+      "text": "The internet turned on me by Thursday.",
+      "weight": 1,
+      "effects": {
+       "fame": 20,
+       "happiness": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide until it blows over",
+    "outcomes": [
+     {
+      "text": "I didn't leave my apartment for a month. It blew over.",
+      "weight": 2,
+      "effects": {
+       "fame": 8,
+       "stress": 10
+      }
+     },
+     {
+      "text": "I hid, and the silence made it worse. A year on, strangers still recognised me and told me what they had decided I was.",
+      "weight": 1,
+      "effects": {
+       "fame": 18,
+       "stress": 22,
+       "happiness": -12
+      },
+      "scar": "public_shame"
+     }
+    ]
+   },
+   {
+    "label": "Get ahead of it",
+    "outcomes": [
+     {
+      "text": "I made the joke about myself before anyone else could. It bought me the whole room.",
+      "weight": 2,
+      "stat_bonus": {
+       "smarts": 0.6
+      },
+      "effects": {
+       "fame": 14,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I tried to get ahead of it and produced a second clip that did better than the first, for the wrong reasons.",
+      "weight": 1,
+      "effects": {
+       "fame": 22,
+       "happiness": -14,
+       "stress": 18
+      },
+      "scar": "public_shame"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.lottery",
+  "icon": "🎟️",
+  "title": "Jackpot",
+  "text": "You check the numbers three times. Then a fourth. You just won $12,000,000.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go public",
+    "outcomes": [
+     {
+      "text": "Everyone I ever met called within a week.",
+      "weight": 2,
+      "effects": {
+       "money": 12000000,
+       "happiness": 25,
+       "fame": 10
+      },
+      "milestone": "won the lottery",
+      "schedule": {
+       "event": "tw.lottery_vultures",
+       "years": [
+        1,
+        2
+       ]
+      }
+     },
+     {
+      "text": "I went public, and a journalist ran a piece on me that was accurate and humiliating in equal measure.",
+      "weight": 1,
+      "effects": {
+       "money": 12000000,
+       "happiness": 8,
+       "fame": 22,
+       "stress": 18
+      },
+      "milestone": "won the lottery",
+      "schedule": {
+       "event": "tw.lottery_vultures",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay anonymous",
+    "outcomes": [
+     {
+      "text": "I told no one. I quietly paid off everything I owed.",
+      "weight": 2,
+      "effects": {
+       "money": 12000000,
+       "happiness": 20
+      },
+      "milestone": "won the lottery"
+     },
+     {
+      "text": "I told no one, and keeping it turned out to be its own full-time job. I lied to everybody I loved for years.",
+      "weight": 1,
+      "effects": {
+       "money": 12000000,
+       "happiness": 6,
+       "stress": 22
+      },
+      "milestone": "won the lottery"
+     }
+    ]
+   },
+   {
+    "label": "Take it in yearly payments",
+    "outcomes": [
+     {
+      "text": "I took it over thirty years. Less money, but nobody could talk me out of next year's.",
+      "weight": 2,
+      "effects": {
+       "money": 3000000,
+       "happiness": 18,
+       "smarts": 4
+      },
+      "milestone": "won the lottery"
+     },
+     {
+      "text": "I took the annuity and the company administering it went under in the eleventh year.",
+      "weight": 1,
+      "effects": {
+       "money": 2000000,
+       "happiness": 8,
+       "stress": 20
+      },
+      "milestone": "won the lottery"
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "twist": true
+ },
+ {
+  "id": "tw.diagnosis",
+  "icon": "🩻",
+  "title": "The scan",
+  "text": "The doctor asks you to sit down. The scan found cancer.",
+  "conditions": {
+   "age": [
+    30,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Aggressive treatment",
+    "outcomes": [
+     {
+      "text": "Chemo stripped me down to nothing. We'll know in a year.",
+      "weight": 2,
+      "illness": "cancer",
+      "effects": {
+       "money": -40000,
+       "health": -20,
+       "looks": -10
+      },
+      "schedule": {
+       "event": "tw.remission",
+       "years": [
+        1,
+        2
+       ]
+      }
+     },
+     {
+      "text": "They caught it early enough that the treatment was brutal and short. Six months and a very long scar.",
+      "weight": 1,
+      "illness": "cancer",
+      "scar": "surgery",
+      "effects": {
+       "money": -55000,
+       "health": -10
+      },
+      "schedule": {
+       "event": "tw.remission",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Alternative medicine",
+    "outcomes": [
+     {
+      "text": "I tried herbs and diets instead. The doctors warned me.",
+      "weight": 2,
+      "illness": "cancer",
+      "effects": {
+       "money": -8000,
+       "health": -10
+      },
+      "schedule": {
+       "event": "tw.remission",
+       "years": [
+        1,
+        3
+       ]
+      }
+     },
+     {
+      "text": "I spent eleven months and most of my savings on a clinic abroad that turned out to be selling vitamins.",
+      "weight": 1,
+      "illness": "cancer",
+      "effects": {
+       "money": -90000,
+       "health": -25,
+       "stress": 20
+      },
+      "schedule": {
+       "event": "tw.remission",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it secret",
+    "outcomes": [
+     {
+      "text": "I didn't tell anyone. I carried it alone.",
+      "weight": 2,
+      "illness": "cancer",
+      "effects": {
+       "stress": 20
+      },
+      "schedule": {
+       "event": "tw.remission",
+       "years": [
+        1,
+        3
+       ]
+      }
+     },
+     {
+      "text": "I kept it secret until somebody found the letters. Then I had to have every conversation at once, late.",
+      "weight": 1,
+      "illness": "cancer",
+      "effects": {
+       "stress": 28,
+       "happiness": -14
+      },
+      "schedule": {
+       "event": "tw.remission",
+       "years": [
+        1,
+        2
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.kidney",
+  "icon": "🫘",
+  "title": "A match",
+  "text": "{s.first} needs a kidney transplant. You're a perfect match.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Donate",
+    "outcomes": [
+     {
+      "text": "The surgery went well. {s.first} and I share more than blood now.",
+      "weight": 2,
+      "relationship": {
+       "s": 40
+      },
+      "effects": {
+       "health": -15,
+       "karma": 20
+      },
+      "milestone": "donated a kidney to their sibling"
+     },
+     {
+      "text": "{s.first}'s body rejected it anyway. I'm down a kidney and {s.he} is still sick.",
+      "weight": 1,
+      "relationship": {
+       "s": 25
+      },
+      "effects": {
+       "health": -15,
+       "karma": 15
+      },
+      "scar": "weak_heart"
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "I said no. {s.first} found another donor, but never looked at me the same.",
+      "weight": 2,
+      "relationship": {
+       "s": -50
+      },
+      "grudge": {
+       "s": 60
+      },
+      "effects": {
+       "karma": -15
+      }
+     },
+     {
+      "text": "I said no. There was no other donor.",
+      "weight": 1,
+      "relationship": {
+       "s": -70
+      },
+      "grudge": {
+       "s": 90
+      },
+      "effects": {
+       "karma": -25,
+       "happiness": -20
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Say yes, but ask {s.first} to cover what it costs you",
+    "outcomes": [
+     {
+      "text": "{s.first} covered my lost months without an argument. We both got to keep our dignity.",
+      "weight": 2,
+      "relationship": {
+       "s": 30
+      },
+      "scar": "surgery",
+      "effects": {
+       "health": -12,
+       "karma": 12,
+       "money": 20000
+      },
+      "milestone": "donated a kidney"
+     },
+     {
+      "text": "Asking turned it into a transaction. {s.first} paid, and has never once mentioned the kidney since.",
+      "weight": 1,
+      "relationship": {
+       "s": -15
+      },
+      "scar": "surgery",
+      "effects": {
+       "health": -12,
+       "karma": 5,
+       "money": 20000
+      },
+      "milestone": "donated a kidney"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "s": {
+    "relation_any": [
+     "sibling",
+     "mother",
+     "father",
+     "child"
+    ]
+   }
+  }
+ },
+ {
+  "id": "tw.stalker",
+  "icon": "👤",
+  "title": "Someone is watching",
+  "text": "Letters arrive with photos of you through your own window.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "min_fame": 25
+  },
+  "choices": [
+   {
+    "label": "Hire security",
+    "outcomes": [
+     {
+      "text": "Security caught the stalker on my roof.",
+      "weight": 2,
+      "effects": {
+       "money": -60000,
+       "stress": 10
+      }
+     },
+     {
+      "text": "Security cost a fortune and caught nobody. The letters simply stopped, which was somehow worse.",
+      "weight": 1,
+      "effects": {
+       "money": -60000,
+       "stress": 22
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Go to the police",
+    "outcomes": [
+     {
+      "text": "The police said there wasn't enough to act on. The letters kept coming.",
+      "weight": 2,
+      "scar": "haunted",
+      "effects": {
+       "stress": 20
+      }
+     },
+     {
+      "text": "One officer took it seriously, sat on my street for three nights, and arrested somebody I had waved to for years.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "karma": 4
+      },
+      "scar": "broken_trust"
+     }
+    ]
+   },
+   {
+    "label": "Move away",
+    "outcomes": [
+     {
+      "text": "I sold everything and moved. The letters stopped. The fear didn't.",
+      "weight": 2,
+      "effects": {
+       "money": -20000,
+       "happiness": -8
+      }
+     },
+     {
+      "text": "I moved, and eight months later a letter arrived at the new address.",
+      "weight": 1,
+      "effects": {
+       "money": -20000,
+       "happiness": -18,
+       "stress": 25
+      },
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.kidnapped",
+  "icon": "🚐",
+  "title": "Taken",
+  "text": "A van, a hood, a basement. They want money for your release.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "min_money": 500000
+  },
+  "choices": [
+   {
+    "label": "Pay the ransom",
+    "outcomes": [
+     {
+      "text": "I paid. They let me go on a highway at night.",
+      "weight": 2,
+      "lose_money_pct": 0.35,
+      "scar": "haunted"
+     },
+     {
+      "text": "I paid, and they kept me another eleven days while they worked out whether there was more.",
+      "weight": 1,
+      "lose_money_pct": 0.6,
+      "scar": "haunted",
+      "effects": {
+       "health": -18,
+       "stress": 30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try to escape",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 3,
+      "play": {
+       "id": "fight",
+       "kind": "brawl",
+       "params": {
+        "difficulty": 1.2,
+        "opponent": "The kidnapper"
+       }
+      },
+      "scar": "haunted"
+     },
+     {
+      "text": "I did not wait for a good moment. The door was unlatched, the road was two fields away, and I ran the whole thing barefoot.",
+      "weight": 1,
+      "scar": "haunted",
+      "effects": {
+       "health": -15,
+       "stress": 25,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for the police",
+    "outcomes": [
+     {
+      "text": "A SWAT team broke down the door on day six.",
+      "weight": 1,
+      "karma_bonus": 1,
+      "effects": {
+       "health": -15,
+       "stress": 20
+      }
+     },
+     {
+      "text": "On day nine, I paid what they wanted anyway.",
+      "weight": 1,
+      "lose_money_pct": 0.5,
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.disaster",
+  "icon": "🌪️",
+  "title": "The storm",
+  "text": "A hurricane tears through your town. By morning, whole streets are gone.",
+  "conditions": {
+   "age": [
+    6,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Rebuild",
+    "outcomes": [
+     {
+      "text": "We lost the house. We didn't lose each other.",
+      "weight": 2,
+      "house_destroyed": true,
+      "lose_property": true,
+      "lose_possessions": 0.4,
+      "effects": {
+       "happiness": -15
+      }
+     },
+     {
+      "text": "I rebuilt, and the insurer found a clause about flood plains. I paid for the whole thing twice.",
+      "weight": 1,
+      "house_destroyed": true,
+      "lose_property": true,
+      "lose_possessions": 0.4,
+      "effects": {
+       "happiness": -18,
+       "money": -80000,
+       "stress": 22
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help the neighbors first",
+    "outcomes": [
+     {
+      "text": "I spent weeks helping dig people out.",
+      "weight": 2,
+      "house_destroyed": true,
+      "lose_possessions": 0.4,
+      "effects": {
+       "karma": 15,
+       "health": -8
+      }
+     },
+     {
+      "text": "I got three people out of a collapsed roof and the town has not let me pay for a drink since.",
+      "weight": 1,
+      "house_destroyed": true,
+      "lose_possessions": 0.4,
+      "effects": {
+       "karma": 25,
+       "health": -14,
+       "fame": 6
+      },
+      "milestone": "pulled neighbours out of the rubble"
+     }
+    ]
+   },
+   {
+    "label": "Leave for good",
+    "outcomes": [
+     {
+      "text": "I packed what survived and left town.",
+      "weight": 2,
+      "house_destroyed": true,
+      "lose_possessions": 0.6,
+      "effects": {
+       "stress": 10
+      }
+     },
+     {
+      "text": "I left, and the place I landed in turned out to be the best thing the storm did for me.",
+      "weight": 1,
+      "house_destroyed": true,
+      "lose_possessions": 0.6,
+      "effects": {
+       "stress": 6,
+       "happiness": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.draft",
+  "icon": "🎖️",
+  "title": "Called up",
+  "text": "A war has broken out. A letter arrives: you've been drafted.",
+  "conditions": {
+   "age": [
+    18,
+    30
+   ],
+   "employed": false,
+   "world": "war"
+  },
+  "choices": [
+   {
+    "label": "Serve",
+    "outcomes": [
+     {
+      "text": "I came home. Not everyone in my unit did.",
+      "weight": 2,
+      "scar": "haunted",
+      "effects": {
+       "karma": 8
+      },
+      "milestone": "served in a war"
+     },
+     {
+      "text": "I came home with a medal and a limp.",
+      "weight": 1,
+      "scar": "limp",
+      "effects": {
+       "fame": 3
+      },
+      "milestone": "was decorated for bravery in a war"
+     }
+    ]
+   },
+   {
+    "label": "Dodge the draft",
+    "outcomes": [
+     {
+      "text": "I fled across the border. I can't go home.",
+      "weight": 1,
+      "emigrate": "mx",
+      "effects": {
+       "happiness": -10
+      }
+     },
+     {
+      "text": "They found me. Draft evasion.",
+      "weight": 1,
+      "trial": [
+       "draft evasion",
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Pay for a medical exemption",
+    "outcomes": [
+     {
+      "text": "A doctor signed the papers for $20,000.",
+      "weight": 2,
+      "effects": {
+       "money": -20000,
+       "karma": -10
+      }
+     },
+     {
+      "text": "The doctor took the money and then got caught doing it for eleven other people. My name was on his list.",
+      "weight": 1,
+      "effects": {
+       "money": -20000,
+       "karma": -10,
+       "heat": 25
+      },
+      "trial": [
+       "fraud",
+       0,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "twist": true,
+  "once": true
+ },
+ {
+  "id": "tw.scandal",
+  "icon": "📸",
+  "title": "Out of context",
+  "text": "A clip of you is going viral, cut to make you look like a monster.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Apologize",
+    "outcomes": [
+     {
+      "text": "I apologized for something I didn't do. It didn't matter; I was fired.",
+      "weight": 2,
+      "fired": true,
+      "effects": {
+       "happiness": -10
+      }
+     },
+     {
+      "text": "I apologised early and plainly, and the story died in four days because there was nothing left to argue with.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "fame": 3,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fight back with the full video",
+    "outcomes": [
+     {
+      "text": "The full video cleared my name.",
+      "weight": 1,
+      "karma_bonus": 1,
+      "effects": {
+       "fame": 4
+      }
+     },
+     {
+      "text": "Nobody watched the full video. I was fired.",
+      "weight": 1,
+      "fired": true
+     }
+    ]
+   },
+   {
+    "label": "Sue the person who posted it",
+    "outcomes": [
+     {
+      "text": "I won the defamation suit.",
+      "weight": 1,
+      "effects": {
+       "money": 50000
+      }
+     },
+     {
+      "text": "I lost the suit and paid their legal fees.",
+      "weight": 1,
+      "effects": {
+       "money": -30000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.first_love",
+  "icon": "💌",
+  "title": "The one that got away",
+  "text": "{f.first}, your first love, is back in town and wants to see you.",
+  "conditions": {
+   "age": [
+    28,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Meet {f.first}",
+    "outcomes": [
+     {
+      "text": "It was like no time had passed.",
+      "weight": 1,
+      "relationship": {
+       "f": 30
+      },
+      "keep_role": "f"
+     },
+     {
+      "text": "Too much time had passed. We were strangers.",
+      "weight": 1,
+      "relationship": {
+       "f": 5
+      },
+      "keep_role": "f"
+     }
+    ]
+   },
+   {
+    "label": "Leave everything for {f.first}",
+    "outcomes": [
+     {
+      "text": "I left my life for {f.first}. Some people will never forgive me.",
+      "weight": 2,
+      "grudge": {
+       "p": 60
+      },
+      "unpartner": true,
+      "new_partner": "f",
+      "keep_role": "f"
+     },
+     {
+      "text": "I left everything, and within two years remembered exactly why it had ended the first time.",
+      "weight": 1,
+      "grudge": {
+       "p": 60
+      },
+      "unpartner": true,
+      "keep_role": "f",
+      "effects": {
+       "happiness": -22,
+       "stress": 18
+      },
+      "relation_change": {
+       "f": "ex"
+      }
+     }
+    ],
+    "requires": {
+     "role": "p"
+    }
+   },
+   {
+    "label": "Stay away",
+    "outcomes": [
+     {
+      "text": "I didn't go. I think about it sometimes.",
+      "weight": 2,
+      "effects": {
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I didn't go, and hearing years later how {f.his} life turned out settled something I had been carrying.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same",
+    "closeness": 45
+   },
+   "p": {
+    "relation": "partner",
+    "optional": true
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "tw.doppelganger",
+  "icon": "🪞",
+  "title": "Your double",
+  "text": "Police are asking where you were last Tuesday. Someone who looks exactly like you has been committing crimes.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Prove your alibi",
+    "outcomes": [
+     {
+      "text": "My alibi held. My face is still on a wanted poster somewhere.",
+      "weight": 2,
+      "effects": {
+       "heat": 15,
+       "stress": 10
+      }
+     },
+     {
+      "text": "My alibi held for two of the dates and not the third. I spent four months proving where I had been on an ordinary Tuesday.",
+      "weight": 1,
+      "effects": {
+       "heat": 35,
+       "stress": 25,
+       "money": -18000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hunt down your double",
+    "outcomes": [
+     {
+      "text": "I found them. We stared at each other for a full minute.",
+      "weight": 1,
+      "effects": {
+       "heat": -10,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The double found me first.",
+      "weight": 1,
+      "effects": {
+       "health": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put your face on the news yourself",
+    "outcomes": [
+     {
+      "text": "I went to a reporter with it. Somebody recognised him within a fortnight.",
+      "weight": 2,
+      "effects": {
+       "fame": 12,
+       "heat": -10,
+       "karma": 5
+      }
+     },
+     {
+      "text": "The story ran, and for the rest of my life half the people who recognised me remembered the wrong half of it.",
+      "weight": 1,
+      "effects": {
+       "fame": 18,
+       "stress": 20,
+       "happiness": -12
+      },
+      "scar": "public_shame"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.whistle",
+  "icon": "📂",
+  "title": "The files",
+  "text": "You found proof your employer has been poisoning a river and hiding it.",
+  "conditions": {
+   "age": [
+    20,
+    70
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Blow the whistle",
+    "outcomes": [
+     {
+      "text": "I went to the press. I was fired within the hour.",
+      "weight": 2,
+      "fired": true,
+      "effects": {
+       "karma": 15,
+       "fame": 8
+      },
+      "schedule": {
+       "event": "tw.whistle_reward",
+       "years": [
+        2,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I went to the press and the company's lawyers got there first. The story ran as a piece about a disgruntled employee.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "karma": 15,
+       "fame": 4,
+       "stress": 25,
+       "happiness": -14
+      },
+      "scar": "public_shame"
+     }
+    ]
+   },
+   {
+    "label": "Stay quiet",
+    "outcomes": [
+     {
+      "text": "I kept my head down and my paycheck coming.",
+      "weight": 2,
+      "effects": {
+       "karma": -15
+      },
+      "schedule": {
+       "event": "tw.whistle_implicated",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I stayed quiet, and somebody braver did it eighteen months later. Nobody ever knew I had known first.",
+      "weight": 1,
+      "effects": {
+       "karma": -15,
+       "stress": 18,
+       "happiness": -10
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Blackmail your boss",
+    "outcomes": [
+     {
+      "text": "My boss gave me a huge raise and a nervous look.",
+      "weight": 2,
+      "effects": {
+       "money": 80000,
+       "karma": -20,
+       "heat": 15
+      }
+     },
+     {
+      "text": "My boss recorded the conversation. I was arrested outside the building.",
+      "weight": 1,
+      "effects": {
+       "karma": -20,
+       "heat": 40
+      },
+      "trial": [
+       "extortion",
+       1,
+       5
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.cult_coup",
+  "icon": "🗡️",
+  "title": "Coup",
+  "text": "Your inner circle has turned on you and claims {cult} for themselves.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "has_cult": true
+  },
+  "choices": [
+   {
+    "label": "Crush the rebellion",
+    "outcomes": [
+     {
+      "text": "I expelled the traitors. The faithful fear me now.",
+      "weight": 2,
+      "empire": "cult_devotion",
+      "effects": {
+       "heat": 15,
+       "karma": -10
+      }
+     },
+     {
+      "text": "I moved to crush it and found out how few of them had been mine to begin with. I held the building and lost the movement.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "heat": 25,
+       "karma": -15,
+       "happiness": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them have it",
+    "outcomes": [
+     {
+      "text": "I walked away from the movement I built.",
+      "weight": 2,
+      "empire": "cult_disband",
+      "effects": {
+       "happiness": -10
+      }
+     },
+     {
+      "text": "I handed it over, and watching what they did with it from the outside was its own education.",
+      "weight": 1,
+      "empire": "cult_disband",
+      "effects": {
+       "happiness": -4,
+       "smarts": 6,
+       "karma": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "We split {cult} in two. Half the members followed them.",
+      "weight": 2,
+      "empire": "cult_shrink"
+     },
+     {
+      "text": "We negotiated for a month and they used every day of it to take the rest of the membership with them.",
+      "weight": 1,
+      "empire": "cult_disband",
+      "effects": {
+       "happiness": -14,
+       "heat": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.zoo_plague",
+  "icon": "🦠",
+  "title": "Outbreak at the zoo",
+  "text": "A virus is tearing through the animals at {zoo}.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Quarantine everything",
+    "outcomes": [
+     {
+      "text": "We lost half the animals. The rest survived.",
+      "weight": 2,
+      "empire": "zoo_plague",
+      "effects": {
+       "money": -50000
+      }
+     },
+     {
+      "text": "I shut everything down within a day and the vets said afterwards it was the only reason anything lived.",
+      "weight": 1,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "money": -80000,
+       "karma": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call {v.first}",
+    "outcomes": [
+     {
+      "text": "{v.first} worked 20-hour days and saved most of them.",
+      "weight": 2,
+      "relationship": {
+       "v": 15
+      },
+      "effects": {
+       "money": -10000
+      }
+     },
+     {
+      "text": "{v.first} came, worked until {v.he} could not stand up, and it was still not enough for the older animals.",
+      "weight": 1,
+      "relationship": {
+       "v": 22
+      },
+      "empire": "zoo_plague",
+      "effects": {
+       "money": -30000,
+       "happiness": -12
+      }
+     }
+    ],
+    "requires": {
+     "role": "v"
+    }
+   },
+   {
+    "label": "Keep the zoo open",
+    "outcomes": [
+     {
+      "text": "It spread to a keeper. The zoo was shut down for a year.",
+      "weight": 2,
+      "empire": "zoo_plague",
+      "effects": {
+       "money": -120000,
+       "heat": 10
+      }
+     },
+     {
+      "text": "I kept the gates open and got away with it. I have never told anybody how close it was.",
+      "weight": 1,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "money": 40000,
+       "karma": -12,
+       "stress": 20
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "v": {
+    "contact": [
+     "vet"
+    ],
+    "min_close": 20,
+    "optional": true
+   }
+  }
+ },
+ {
+  "id": "tw.biz_boom",
+  "icon": "🚀",
+  "title": "It went viral",
+  "text": "A product from {biz} went viral overnight. Orders are pouring in faster than you can handle.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Scale up fast",
+    "outcomes": [
+     {
+      "text": "We tripled the staff and doubled the value of the company.",
+      "weight": 2,
+      "empire": "biz_double",
+      "effects": {
+       "stress": 15
+      }
+     },
+     {
+      "text": "We grew too fast and couldn't deliver. The hype turned to hate.",
+      "weight": 1,
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Stay small and careful",
+    "outcomes": [
+     {
+      "text": "We grew slowly. Our customers loved us for it.",
+      "weight": 2,
+      "empire": "biz_boost"
+     },
+     {
+      "text": "We stayed small, and a bigger company copied the product and had it in every shop within a year.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "happiness": -14,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sell while it's hot",
+    "outcomes": [
+     {
+      "text": "I sold at the top to people who were certain they had got a bargain.",
+      "weight": 2,
+      "empire": "biz_sell",
+      "effects": {
+       "happiness": 10
+      },
+      "milestone": "sold their business at the peak"
+     },
+     {
+      "text": "I sold, and watched them turn it into something ten times the size with my name still on the door.",
+      "weight": 1,
+      "empire": "biz_sell",
+      "effects": {
+       "happiness": -12,
+       "stress": 10
+      },
+      "milestone": "sold their business at the peak"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.prison_riot",
+  "icon": "🔥",
+  "title": "Riot",
+  "text": "The cell block erupts. Guards are down. Smoke everywhere.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "prison": true
+  },
+  "choices": [
+   {
+    "label": "Join in",
+    "outcomes": [
+     {
+      "text": "I got an extra three years and a scar across my face.",
+      "weight": 2,
+      "jail": [
+       2,
+       3
+      ],
+      "crime": "rioting",
+      "scar": "facial_scar"
+     },
+     {
+      "text": "I was in the middle of it and on none of the cameras. Nothing was ever added to my sentence.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 15
+      },
+      "flags": [
+       "riot_unseen"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Hide in your cell",
+    "outcomes": [
+     {
+      "text": "I hid under my bunk until it was over.",
+      "weight": 2,
+      "effects": {
+       "stress": 15
+      }
+     },
+     {
+      "text": "I hid, and the block decided afterwards what that had made me. The rest of my sentence was lonely.",
+      "weight": 1,
+      "effects": {
+       "stress": 25,
+       "happiness": -12
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Protect a guard",
+    "outcomes": [
+     {
+      "text": "I shielded an injured guard. The parole board heard about it.",
+      "weight": 2,
+      "effects": {
+       "karma": 15
+      },
+      "flags": [
+       "protected_guard"
+      ],
+      "scar": "facial_scar"
+     },
+     {
+      "text": "I got the guard out and the block found out who had done it. Protection custody for the rest of my time.",
+      "weight": 1,
+      "effects": {
+       "karma": 15,
+       "stress": 25,
+       "happiness": -10
+      },
+      "flags": [
+       "protected_guard"
+      ],
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.escape",
+  "icon": "🕳️",
+  "title": "The tunnel",
+  "text": "Your cellmate has been digging for two years. Tonight's the night. There's room for two.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "prison": true
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "I crawled out into the rain, a free and hunted person.",
+      "weight": 1,
+      "effects": {
+       "heat": 70
+      },
+      "flags": [
+       "fugitive"
+      ],
+      "clear_prison": true,
+      "milestone": "escaped from prison"
+     },
+     {
+      "text": "The searchlight found us halfway across the yard.",
+      "weight": 1,
+      "jail": [
+       3,
+       5
+      ],
+      "crime": "attempted escape"
+     }
+    ]
+   },
+   {
+    "label": "Stay",
+    "outcomes": [
+     {
+      "text": "I watched him go. He was caught two days later.",
+      "weight": 2,
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "I stayed. He was never found, and I have wondered ever since which of us chose right.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the guards",
+    "outcomes": [
+     {
+      "text": "I told them. My sentence came down by two years and I served every remaining day alone.",
+      "weight": 2,
+      "effects": {
+       "karma": -5,
+       "stress": 25,
+       "happiness": -12
+      },
+      "flags": [
+       "informant"
+      ],
+      "scar": "haunted"
+     },
+     {
+      "text": "I told them, and they never worked out who had. I got my two years and kept my name out of it.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "stress": 12
+      },
+      "flags": [
+       "informant"
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.child_arrest",
+  "icon": "🚓",
+  "title": "One phone call",
+  "text": "{c.first} is calling from a police station. {c.He} has been arrested.",
+  "conditions": {
+   "age": [
+    35,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pay for a good lawyer",
+    "outcomes": [
+     {
+      "text": "{c.first} got off with community service.",
+      "weight": 2,
+      "relationship": {
+       "c": 20
+      },
+      "effects": {
+       "money": -25000
+      }
+     },
+     {
+      "text": "The lawyer cost everything I had and {c.first} went away anyway. {c.He} thanked me for trying.",
+      "weight": 1,
+      "relationship": {
+       "c": 25
+      },
+      "effects": {
+       "money": -60000,
+       "happiness": -12
+      }
+     },
+     {
+      "text": "{c.first} walked, and did the same thing again within two years, knowing I would pay again.",
+      "weight": 1,
+      "relationship": {
+       "c": 10
+      },
+      "effects": {
+       "money": -25000,
+       "stress": 18
+      },
+      "schedule": {
+       "event": "tw.child_arrest",
+       "years": [
+        2,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let {c.first} face it",
+    "outcomes": [
+     {
+      "text": "{c.first} did six months. {c.He} said I abandoned {c.him}.",
+      "weight": 2,
+      "relationship": {
+       "c": -35
+      },
+      "grudge": {
+       "c": 30
+      }
+     },
+     {
+      "text": "{c.first} faced it alone, and came out the other side somebody I recognised again.",
+      "weight": 1,
+      "relationship": {
+       "c": 15
+      },
+      "effects": {
+       "karma": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Disown {c.first}",
+    "outcomes": [
+     {
+      "text": "I told {c.first} not to call again.",
+      "weight": 2,
+      "relationship": {
+       "c": -70
+      },
+      "grudge": {
+       "c": 70
+      }
+     },
+     {
+      "text": "I disowned {c.first} in a phone call I have replayed ever since. {c.He} did not call again.",
+      "weight": 1,
+      "relationship": {
+       "c": -90
+      },
+      "grudge": {
+       "c": 90
+      },
+      "effects": {
+       "happiness": -20,
+       "karma": -12
+      },
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "c": {
+    "relation": "child",
+    "min_age": 15
+   }
+  }
+ },
+ {
+  "id": "tw.parent_care",
+  "icon": "🧓",
+  "title": "{m.first} is forgetting",
+  "text": "{m.first} called you by a stranger's name today. The doctor says {m.he} can't live alone anymore.",
+  "conditions": {
+   "age": [
+    25,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Move {m.first} in with you",
+    "outcomes": [
+     {
+      "text": "It's exhausting. Some mornings {m.he} knows me and smiles.",
+      "weight": 2,
+      "relationship": {
+       "m": 30
+      },
+      "effects": {
+       "stress": 20,
+       "money": -15000,
+       "karma": 10
+      }
+     },
+     {
+      "text": "I moved {m.first} in and lost my job to it inside a year. I would do it again and I would still resent it.",
+      "weight": 1,
+      "relationship": {
+       "m": 30
+      },
+      "fired": true,
+      "effects": {
+       "stress": 32,
+       "money": -15000,
+       "karma": 10,
+       "happiness": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay for a care home",
+    "outcomes": [
+     {
+      "text": "I found a good place. I visit on Sundays.",
+      "weight": 2,
+      "effects": {
+       "money": -60000
+      }
+     },
+     {
+      "text": "The home was expensive and careless. I moved {m.first} twice before finding somewhere I could sleep at night about.",
+      "weight": 1,
+      "effects": {
+       "money": -95000,
+       "stress": 22,
+       "happiness": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it to your siblings",
+    "outcomes": [
+     {
+      "text": "My siblings handled it. They remember that I didn't.",
+      "weight": 2,
+      "effects": {
+       "karma": -10
+      },
+      "grudge": {
+       "sib": 50
+      }
+     },
+     {
+      "text": "I left it to my siblings and they did not manage either. Nobody visited {m.first} for most of a year.",
+      "weight": 1,
+      "effects": {
+       "karma": -22,
+       "happiness": -16
+      },
+      "grudge": {
+       "sib": 30
+      },
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "m": {
+    "relation_any": [
+     "mother",
+     "father"
+    ],
+    "min_age": 65
+   },
+   "sib": {
+    "relation": "sibling",
+    "optional": true
+   }
+  }
+ },
+ {
+  "id": "tw.amnesia",
+  "icon": "🌀",
+  "title": "Blank",
+  "text": "You wake up in a hospital. You don't know your own name.",
+  "conditions": {
+   "age": [
+    20,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Rebuild your life",
+    "outcomes": [
+     {
+      "text": "It took two years to remember who I was. Some things never came back.",
+      "weight": 2,
+      "scar": "concussions",
+      "fired": true,
+      "effects": {
+       "skill": -30,
+       "smarts": -10,
+       "happiness": -10
+      },
+      "milestone": "lost their memory and rebuilt their life"
+     },
+     {
+      "text": "I rebuilt it from the outside in: job, address, people, in that order. Two years later somebody called me by a nickname and all of it arrived at once.",
+      "weight": 1,
+      "scar": "concussions",
+      "fired": true,
+      "effects": {
+       "skill": -20,
+       "smarts": -4,
+       "happiness": 6
+      },
+      "milestone": "lost their memory and rebuilt their life"
+     }
+    ]
+   },
+   {
+    "label": "Chase down every scrap of who you were",
+    "outcomes": [
+     {
+      "text": "I interviewed my own life like a stranger's. Most of it came back. Some of it I wish had not.",
+      "weight": 2,
+      "effects": {
+       "smarts": -4,
+       "stress": 20,
+       "happiness": -6
+      },
+      "milestone": "lost their memory and went looking for it"
+     },
+     {
+      "text": "I found out who I had been and decided, with the whole file in front of me, not to go back to being him.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "smarts": -8,
+       "happiness": 10,
+       "karma": 5
+      },
+      "milestone": "lost their memory and chose not to go back"
+     }
+    ]
+   },
+   {
+    "label": "Let the old life go",
+    "outcomes": [
+     {
+      "text": "I never chased it. I built something new out of a blank page, which almost nobody gets offered.",
+      "weight": 2,
+      "fired": true,
+      "new_identity": true,
+      "effects": {
+       "smarts": -10,
+       "happiness": 12
+      },
+      "milestone": "began again from nothing"
+     },
+     {
+      "text": "I let it go, and everyone who had loved the old me treated the new one like an impostor in his house.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "smarts": -10,
+       "happiness": -18,
+       "stress": 22
+      },
+      "scar": "broken_trust"
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "twist": true
+ },
+ {
+  "id": "tw.treasure",
+  "icon": "💰",
+  "title": "Under the floorboards",
+  "text": "While fixing a floorboard, you find a rusted box stuffed with old bills and gold coins.",
+  "conditions": {
+   "age": [
+    10,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep it quiet",
+    "outcomes": [
+     {
+      "text": "I kept it. $240,000, give or take.",
+      "weight": 2,
+      "effects": {
+       "money": 240000
+      },
+      "schedule": {
+       "event": "tw.treasure_claim",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "I kept it quiet and the dealer I sold the coins to kept it quiet too. Nobody ever came asking.",
+      "weight": 1,
+      "effects": {
+       "money": 180000,
+       "happiness": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "The law let me keep a finder's share: $60,000.",
+      "weight": 2,
+      "effects": {
+       "money": 60000,
+       "karma": 10
+      }
+     },
+     {
+      "text": "I reported it, and the state kept every coin and thanked me in a letter.",
+      "weight": 1,
+      "effects": {
+       "money": 0,
+       "karma": 15,
+       "happiness": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the whole family",
+    "outcomes": [
+     {
+      "text": "Everyone suddenly had an opinion about how to spend it.",
+      "weight": 2,
+      "effects": {
+       "money": 120000,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I told the family, and two of them stopped speaking to each other over a box neither of them found.",
+      "weight": 1,
+      "effects": {
+       "money": 120000,
+       "happiness": -10
+      },
+      "family_upset": true
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.pardon",
+  "icon": "🕊️",
+  "title": "A second chance",
+  "text": "The governor's office calls. Your case is being considered for a full pardon.",
+  "conditions": {
+   "age": [
+    25,
+    95
+   ],
+   "has_record": true
+  },
+  "choices": [
+   {
+    "label": "Accept with gratitude",
+    "outcomes": [
+     {
+      "text": "My record was wiped clean. I get to start over.",
+      "weight": 2,
+      "clear_record": true,
+      "effects": {
+       "happiness": 20
+      },
+      "milestone": "was pardoned"
+     },
+     {
+      "text": "The pardon came through, and it turned out a clean record does not clean out anything else.",
+      "weight": 1,
+      "clear_record": true,
+      "effects": {
+       "happiness": 6,
+       "stress": 12
+      },
+      "milestone": "was pardoned"
+     }
+    ]
+   },
+   {
+    "label": "Refuse on principle",
+    "outcomes": [
+     {
+      "text": "I refused. I did what I did.",
+      "weight": 2,
+      "effects": {
+       "karma": 5
+      }
+     },
+     {
+      "text": "I refused, and the refusal made the papers. Strangers wrote to tell me what they thought of it, both kinds.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "fame": 6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept, but make them say what went wrong",
+    "outcomes": [
+     {
+      "text": "They issued the pardon and a statement naming the mistakes. It changed the way that office works.",
+      "weight": 2,
+      "clear_record": true,
+      "effects": {
+       "happiness": 22,
+       "karma": 12,
+       "fame": 8
+      },
+      "milestone": "was pardoned, and made them explain why"
+     },
+     {
+      "text": "I pushed for an admission and the office quietly withdrew the whole thing rather than write one.",
+      "weight": 1,
+      "effects": {
+       "happiness": -18,
+       "stress": 20,
+       "karma": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "twist": true
+ },
+ {
+  "id": "tw.miracle",
+  "icon": "✨",
+  "title": "Miracle",
+  "text": "The doctors had given up. Then, one morning, you felt better. Much better.",
+  "conditions": {
+   "age": [
+    20,
+    100
+   ],
+   "max_stat": {
+    "health": 30
+   }
+  },
+  "choices": [
+   {
+    "label": "Thank whoever's listening",
+    "outcomes": [
+     {
+      "text": "My recovery made the medical journals.",
+      "weight": 2,
+      "cure": true,
+      "effects": {
+       "health": 45,
+       "happiness": 20
+      },
+      "milestone": "made a miraculous recovery"
+     },
+     {
+      "text": "I got better and nobody could say why. I stopped asking and started living instead.",
+      "weight": 1,
+      "cure": true,
+      "effects": {
+       "health": 40,
+       "happiness": 25,
+       "karma": 5
+      },
+      "milestone": "made a miraculous recovery"
+     }
+    ]
+   },
+   {
+    "label": "Let them study you",
+    "outcomes": [
+     {
+      "text": "I let them take everything they wanted. Two of the papers are still cited.",
+      "weight": 2,
+      "cure": true,
+      "effects": {
+       "health": 40,
+       "happiness": 12,
+       "karma": 12,
+       "fame": 8
+      },
+      "milestone": "made a miraculous recovery"
+     },
+     {
+      "text": "Three years of tests found nothing, and I spent those years being a case rather than a person.",
+      "weight": 1,
+      "cure": true,
+      "effects": {
+       "health": 38,
+       "happiness": -6,
+       "stress": 18
+      },
+      "milestone": "made a miraculous recovery"
+     }
+    ]
+   },
+   {
+    "label": "Give the extra years to something",
+    "outcomes": [
+     {
+      "text": "I got better, and I spent what came after on other people. It was not a bargain I made with anyone; it just seemed right.",
+      "weight": 2,
+      "cure": true,
+      "effects": {
+       "health": 40,
+       "happiness": 22,
+       "karma": 25
+      },
+      "milestone": "recovered, and gave the years away"
+     },
+     {
+      "text": "I promised myself I would do something with it, and then went back to exactly the life I had before.",
+      "weight": 1,
+      "cure": true,
+      "effects": {
+       "health": 42,
+       "happiness": 8,
+       "stress": 10
+      },
+      "milestone": "made a miraculous recovery"
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "twist": true
+ },
+ {
+  "id": "tw.automated",
+  "icon": "🤖",
+  "title": "Replaced",
+  "text": "Your whole department was replaced by software overnight. You got a two-line email.",
+  "conditions": {
+   "age": [
+    22,
+    65
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Go back to school",
+    "outcomes": [
+     {
+      "text": "I went back to school at my age. It felt strange, then it felt right.",
+      "weight": 2,
+      "fired": true,
+      "effects": {
+       "smarts": 8,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "I retrained for two years into a field that was automated six months after I qualified.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "smarts": 8,
+       "happiness": -16,
+       "money": -25000,
+       "stress": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take whatever job you can find",
+    "outcomes": [
+     {
+      "text": "I took a job I'm overqualified for. Rent is rent.",
+      "weight": 2,
+      "fired": true,
+      "effects": {
+       "happiness": -10,
+       "money": -5000
+      }
+     },
+     {
+      "text": "I took anything going, and the anything turned into something I liked far more than the career I lost.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "happiness": 8,
+       "stress": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sue the company",
+    "outcomes": [
+     {
+      "text": "The class action paid everyone $30,000.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "money": 30000
+      }
+     },
+     {
+      "text": "We lost.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.grand_will",
+  "icon": "🏰",
+  "title": "The will",
+  "text": "{g.first} died and left everything to you and nothing to anyone else in the family.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep all of it",
+    "outcomes": [
+     {
+      "text": "I inherited $1.5 million and a family that won't speak to me.",
+      "weight": 2,
+      "effects": {
+       "money": 1500000
+      },
+      "grudge": {
+       "s": 60
+      },
+      "relationship": {
+       "s": -40
+      }
+     },
+     {
+      "text": "I kept all of it, and the family contested the will for six years. The lawyers took a third.",
+      "weight": 1,
+      "effects": {
+       "money": 950000,
+       "stress": 22
+      },
+      "grudge": {
+       "s": 75
+      },
+      "relationship": {
+       "s": -55
+      }
+     }
+    ]
+   },
+   {
+    "label": "Split it with the family",
+    "outcomes": [
+     {
+      "text": "I split it evenly. Grandma would have wanted that. Probably.",
+      "weight": 2,
+      "effects": {
+       "money": 400000,
+       "karma": 10
+      },
+      "relationship": {
+       "s": 20
+      }
+     },
+     {
+      "text": "I split it evenly and half of them still felt short-changed. Money does that.",
+      "weight": 1,
+      "effects": {
+       "money": 400000,
+       "karma": 10,
+       "happiness": -8
+      },
+      "grudge": {
+       "s": 25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give all of it away",
+    "outcomes": [
+     {
+      "text": "I gave the lot to the hospice that looked after {g.first}. The family were furious with me for a different reason.",
+      "weight": 2,
+      "effects": {
+       "karma": 30,
+       "happiness": 12,
+       "fame": 5
+      },
+      "grudge": {
+       "s": 30
+      },
+      "milestone": "gave away an entire inheritance"
+     },
+     {
+      "text": "I gave it all away and then had a decade in which I could have done with some of it.",
+      "weight": 1,
+      "effects": {
+       "karma": 30,
+       "happiness": -8,
+       "stress": 15
+      },
+      "milestone": "gave away an entire inheritance"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "g": {
+    "relation": "grandparent"
+   },
+   "s": {
+    "relation_any": [
+     "sibling",
+     "auntuncle"
+    ]
+   }
+  }
+ },
+ {
+  "id": "tw.plane",
+  "icon": "✈️",
+  "title": "Brace, brace",
+  "text": "The plane shudders. The oxygen masks drop. The captain says: brace for impact.",
+  "conditions": {
+   "age": [
+    10,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help the people around you",
+    "outcomes": [
+     {
+      "text": "We landed in a field. I carried a child out before the fire spread.",
+      "weight": 2,
+      "scar": "burns",
+      "effects": {
+       "karma": 20,
+       "fame": 10
+      },
+      "milestone": "survived a plane crash"
+     },
+     {
+      "text": "I stayed to help and got out last. Most of what I remember is the sound and the heat.",
+      "weight": 1,
+      "scar": "haunted",
+      "effects": {
+       "karma": 20,
+       "health": -25,
+       "stress": 30
+      },
+      "milestone": "survived a plane crash"
+     }
+    ]
+   },
+   {
+    "label": "Brace and pray",
+    "outcomes": [
+     {
+      "text": "Everyone survived. I haven't flown since.",
+      "weight": 2,
+      "scar": "haunted",
+      "effects": {
+       "money": 250000
+      },
+      "milestone": "survived a plane crash"
+     },
+     {
+      "text": "I walked away without a scratch. The airline settlement was generous.",
+      "weight": 1,
+      "effects": {
+       "money": 400000,
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get yourself out",
+    "outcomes": [
+     {
+      "text": "I went over the seats and out of the exit. I was on the grass before most people had their belts off.",
+      "weight": 2,
+      "effects": {
+       "karma": -8,
+       "stress": 25
+      },
+      "milestone": "survived a plane crash"
+     },
+     {
+      "text": "I got myself out, and for years afterwards I could name the people I climbed past.",
+      "weight": 1,
+      "effects": {
+       "karma": -12,
+       "stress": 30,
+       "happiness": -15
+      },
+      "scar": "haunted",
+      "milestone": "survived a plane crash"
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "twist": true
+ },
+ {
+  "id": "tw.betrayal",
+  "icon": "🗡️",
+  "title": "Et tu",
+  "text": "{b.first}, your best friend, has been sleeping with your partner.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "End both relationships",
+    "outcomes": [
+     {
+      "text": "I lost my partner and my best friend in one afternoon.",
+      "weight": 2,
+      "unpartner": true,
+      "relation_change": {
+       "b": "ex_friend",
+       "p": "ex"
+      },
+      "grudge": {
+       "b": 60
+      },
+      "scar": "broken_trust",
+      "effects": {
+       "happiness": -20
+      }
+     },
+     {
+      "text": "I ended both of it cleanly and found, a year on, that I had lost less than I thought.",
+      "weight": 1,
+      "unpartner": true,
+      "relation_change": {
+       "b": "ex_friend",
+       "p": "ex"
+      },
+      "grudge": {
+       "b": 40
+      },
+      "effects": {
+       "happiness": -8,
+       "stress": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Forgive them",
+    "outcomes": [
+     {
+      "text": "I forgave them. I'm not sure I meant it.",
+      "weight": 2,
+      "relationship": {
+       "b": -30,
+       "p": -30
+      },
+      "effects": {
+       "happiness": -10
+      }
+     },
+     {
+      "text": "I forgave them, and three years later found out it had never actually stopped.",
+      "weight": 1,
+      "relationship": {
+       "b": -70,
+       "p": -70
+      },
+      "unpartner": true,
+      "relation_change": {
+       "p": "ex",
+       "b": "ex_friend"
+      },
+      "grudge": {
+       "b": 80
+      },
+      "scar": "broken_trust",
+      "effects": {
+       "happiness": -25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get revenge",
+    "outcomes": [
+     {
+      "text": "I made sure everyone knew. It felt good for about a day.",
+      "weight": 2,
+      "relation_change": {
+       "b": "rival"
+      },
+      "grudge": {
+       "b": 70,
+       "p": 50
+      },
+      "unpartner": true,
+      "effects": {
+       "karma": -8
+      }
+     },
+     {
+      "text": "I went after both of them, and the people we knew in common decided I was the difficult one.",
+      "weight": 1,
+      "relation_change": {
+       "b": "rival"
+      },
+      "grudge": {
+       "b": 70,
+       "p": 50
+      },
+      "unpartner": true,
+      "effects": {
+       "karma": -15,
+       "happiness": -18,
+       "fame": -3
+      },
+      "scar": "public_shame"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "b": {
+    "relation": "best_friend"
+   },
+   "p": {
+    "relation": "partner"
+   }
+  }
+ },
+ {
+  "id": "tw.hit_and_run",
+  "icon": "🌃",
+  "title": "Hit and run",
+  "text": "You hit something in the dark. You get out. It's a person, and they're not moving.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Call an ambulance and stay",
+    "outcomes": [
+     {
+      "text": "They survived. I was charged with reckless driving.",
+      "weight": 1,
+      "trial": [
+       "reckless driving",
+       1,
+       3
+      ],
+      "effects": {
+       "karma": 5
+      }
+     },
+     {
+      "text": "They survived. The police called it an accident.",
+      "weight": 1,
+      "effects": {
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive away",
+    "outcomes": [
+     {
+      "text": "I drove away. Every siren since then has been for me.",
+      "weight": 2,
+      "effects": {
+       "karma": -25,
+       "heat": 30
+      },
+      "scar": "haunted",
+      "schedule": {
+       "event": "tw.hit_run_found",
+       "years": [
+        1,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I drove away, and the next morning the local news said a passer-by had found them in time.",
+      "weight": 1,
+      "effects": {
+       "karma": -18,
+       "heat": 15,
+       "stress": 20
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Move them off the road, then go",
+    "outcomes": [
+     {
+      "text": "I dragged them onto the verge where a car would not finish it, and then I drove. It is the only part of that night I can stand.",
+      "weight": 2,
+      "effects": {
+       "karma": -15,
+       "heat": 25,
+       "stress": 28
+      },
+      "scar": "haunted",
+      "schedule": {
+       "event": "tw.hit_run_found",
+       "years": [
+        1,
+        6
+       ]
+      }
+     },
+     {
+      "text": "Moving them was what did the damage. The doctors were clear about that afterwards, in court.",
+      "weight": 1,
+      "effects": {
+       "karma": -25,
+       "heat": 40
+      },
+      "scar": "haunted",
+      "trial": [
+       "hit and run",
+       3,
+       10
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.fraud_victim",
+  "icon": "📞",
+  "title": "Too good to be true",
+  "text": "The \"investment advisor\" you trusted with your savings has disappeared.",
+  "conditions": {
+   "age": [
+    30,
+    95
+   ],
+   "min_money": 20000
+  },
+  "choices": [
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "The police said they'd look into it. The money is gone.",
+      "weight": 2,
+      "lose_money_pct": 0.4,
+      "lose_savings_pct": 0.5,
+      "effects": {
+       "stress": 15
+      }
+     },
+     {
+      "text": "The fraud squad had been building a case for two years and my file was the one that finished it. I got a third of it back.",
+      "weight": 1,
+      "lose_money_pct": 0.15,
+      "lose_savings_pct": 0.3,
+      "effects": {
+       "stress": 10,
+       "karma": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Track him down yourself",
+    "outcomes": [
+     {
+      "text": "I found him in a beach town and got some of it back.",
+      "weight": 1,
+      "lose_money_pct": 0.2,
+      "effects": {
+       "stress": 10,
+       "heat": 5
+      }
+     },
+     {
+      "text": "He saw me coming.",
+      "weight": 1,
+      "lose_money_pct": 0.4,
+      "lose_savings_pct": 0.5,
+      "effects": {
+       "health": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Warn everyone else he took money from",
+    "outcomes": [
+     {
+      "text": "I found eleven others and got us all in one room. Together we were loud enough to be taken seriously.",
+      "weight": 2,
+      "lose_money_pct": 0.25,
+      "lose_savings_pct": 0.35,
+      "effects": {
+       "karma": 15,
+       "stress": 12,
+       "fame": 4
+      }
+     },
+     {
+      "text": "I warned the others and two of them decided I had been in on it. The forum thread is still up.",
+      "weight": 1,
+      "lose_money_pct": 0.4,
+      "lose_savings_pct": 0.5,
+      "effects": {
+       "karma": 10,
+       "stress": 22,
+       "happiness": -12
+      },
+      "scar": "public_shame"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.evicted",
+  "icon": "📦",
+  "title": "Condemned",
+  "text": "The city has condemned your building. You have 48 hours to get out.",
+  "conditions": {
+   "age": [
+    18,
+    95
+   ],
+   "housing": [
+    "apartment"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Couch-surf with friends",
+    "outcomes": [
+     {
+      "text": "I slept on couches for two months. My friends were patient. Mostly.",
+      "weight": 2,
+      "effects": {
+       "happiness": -10,
+       "stress": 12
+      }
+     },
+     {
+      "text": "Two months on couches turned into a year, and I ran out of friends before I ran out of nights.",
+      "weight": 1,
+      "effects": {
+       "happiness": -22,
+       "stress": 25,
+       "health": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sue the landlord",
+    "outcomes": [
+     {
+      "text": "The landlord settled for $15,000.",
+      "weight": 1,
+      "effects": {
+       "money": 15000
+      }
+     },
+     {
+      "text": "The landlord declared bankruptcy. I got nothing.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse to go",
+    "outcomes": [
+     {
+      "text": "I stayed past the deadline and a housing lawyer got me rehoused rather than removed.",
+      "weight": 2,
+      "stat_bonus": {
+       "smarts": 0.6
+      },
+      "effects": {
+       "stress": 20,
+       "karma": 5
+      }
+     },
+     {
+      "text": "They came at six in the morning with a van and put my life on the pavement.",
+      "weight": 1,
+      "effects": {
+       "stress": 30,
+       "happiness": -20,
+       "health": -8
+      },
+      "lose_possessions": 0.5
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true
+ },
+ {
+  "id": "tw.long_lost_child",
+  "icon": "👶",
+  "title": "A letter",
+  "text": "A letter arrives: \"I think you're my parent.\" A DNA test says it's true.",
+  "conditions": {
+   "age": [
+    35,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Welcome {k.first} into your life",
+    "outcomes": [
+     {
+      "text": "{k.first} is so much like me it hurts. We have years to make up.",
+      "weight": 2,
+      "relation_change": {
+       "k": "child"
+      },
+      "relationship": {
+       "k": 30
+      },
+      "keep_role": "k",
+      "milestone": "met a child they never knew they had"
+     },
+     {
+      "text": "I welcomed {k.first} in, and {k.he} wanted an apology I did not know how to give. We are still working at it.",
+      "weight": 1,
+      "relation_change": {
+       "k": "child"
+      },
+      "relationship": {
+       "k": 5
+      },
+      "keep_role": "k",
+      "effects": {
+       "stress": 15
+      },
+      "milestone": "met a child they never knew they had"
+     }
+    ]
+   },
+   {
+    "label": "Keep your distance",
+    "outcomes": [
+     {
+      "text": "I sent money but kept my distance. {k.first} deserved more.",
+      "weight": 2,
+      "relation_change": {
+       "k": "child"
+      },
+      "relationship": {
+       "k": -10
+      },
+      "keep_role": "k",
+      "effects": {
+       "money": -10000
+      }
+     },
+     {
+      "text": "I kept my distance for a decade and then {k.first} stopped asking. That was the part I had not planned for.",
+      "weight": 1,
+      "relation_change": {
+       "k": "child"
+      },
+      "relationship": {
+       "k": -35
+      },
+      "keep_role": "k",
+      "effects": {
+       "money": -10000,
+       "happiness": -14
+      }
+     }
+    ]
+   },
+   {
+    "label": "Deny it",
+    "outcomes": [
+     {
+      "text": "I denied it. {k.first} told everyone.",
+      "weight": 2,
+      "relation_change": {
+       "k": "child"
+      },
+      "grudge": {
+       "k": 60
+      },
+      "keep_role": "k",
+      "effects": {
+       "karma": -10
+      }
+     },
+     {
+      "text": "I denied it, and the test came back again, publicly, with a journalist holding it.",
+      "weight": 1,
+      "relation_change": {
+       "k": "child"
+      },
+      "grudge": {
+       "k": 80
+      },
+      "keep_role": "k",
+      "effects": {
+       "karma": -18,
+       "fame": 8,
+       "happiness": -16
+      },
+      "scar": "public_shame"
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "twist": true,
+  "roles": {
+   "k": {
+    "new": "friend",
+    "age": [
+     16,
+     40
+    ],
+    "closeness": 25
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "tw.thief_caught",
+  "icon": "🚔",
+  "title": "They caught the thief",
+  "text": "Police arrested the person who stole your identity. It was {x.first}, someone you trusted.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Press charges",
+    "outcomes": [
+     {
+      "text": "{x.first} went to prison. I got some money back.",
+      "weight": 2,
+      "effects": {
+       "money": 20000
+      },
+      "credit": 60
+     },
+     {
+      "text": "I pressed charges and the trial took three years, in which I explained my own bank statements to strangers eleven times.",
+      "weight": 1,
+      "effects": {
+       "money": 6000,
+       "stress": 20
+      },
+      "credit": 40
+     }
+    ]
+   },
+   {
+    "label": "Drop the charges",
+    "outcomes": [
+     {
+      "text": "I let {x.first} go. I don't know why.",
+      "weight": 2,
+      "effects": {
+       "karma": 8
+      },
+      "credit": 30
+     },
+     {
+      "text": "I dropped the charges and {x.first} did it to somebody else within the year. They found my name in the file.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "stress": 15
+      },
+      "credit": 20
+     }
+    ]
+   },
+   {
+    "label": "Ask to meet {x.first} first",
+    "outcomes": [
+     {
+      "text": "I sat across a table from {x.first} and asked why. The answer was small and sad and it was enough.",
+      "weight": 2,
+      "effects": {
+       "karma": 10,
+       "happiness": 8
+      },
+      "credit": 30
+     },
+     {
+      "text": "{x.first} used the meeting to work out what else I had. I pressed charges the same afternoon.",
+      "weight": 1,
+      "effects": {
+       "money": 15000,
+       "stress": 15,
+       "karma": -3
+      },
+      "credit": 50
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true,
+  "roles": {
+   "x": {
+    "relation_any": [
+     "friend",
+     "coworker",
+     "sibling",
+     "ex",
+     "neighbor"
+    ],
+    "or_new": true
+   }
+  }
+ },
+ {
+  "id": "tw.exonerated",
+  "icon": "⚖️",
+  "title": "Exonerated",
+  "text": "New DNA evidence proves you were innocent all along. The judge apologizes.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Walk out free",
+    "outcomes": [
+     {
+      "text": "I walked out into the sun. The state paid me $1,000,000 for the years it took.",
+      "weight": 2,
+      "clear_record": true,
+      "clear_prison": true,
+      "effects": {
+       "money": 1000000,
+       "happiness": 25
+      },
+      "milestone": "was exonerated"
+     },
+     {
+      "text": "I walked out with an apology and a compensation claim that took another six years to pay.",
+      "weight": 1,
+      "clear_record": true,
+      "clear_prison": true,
+      "effects": {
+       "money": 200000,
+       "happiness": 15,
+       "stress": 12
+      },
+      "milestone": "was exonerated"
+     }
+    ]
+   },
+   {
+    "label": "Sue the state for all of it",
+    "outcomes": [
+     {
+      "text": "I took them to court for the years and won more than they offered. It took another four years to get it.",
+      "weight": 2,
+      "clear_record": true,
+      "clear_prison": true,
+      "effects": {
+       "money": 3000000,
+       "happiness": 15,
+       "stress": 20,
+       "fame": 10
+      },
+      "milestone": "was exonerated, then sued the state"
+     },
+     {
+      "text": "I sued and lost on a technicality about who exactly had made the mistake.",
+      "weight": 1,
+      "clear_record": true,
+      "clear_prison": true,
+      "effects": {
+       "money": -40000,
+       "happiness": -10,
+       "stress": 25
+      },
+      "milestone": "was exonerated"
+     }
+    ]
+   },
+   {
+    "label": "Find the detective who put you away",
+    "outcomes": [
+     {
+      "text": "I found him retired and unrepentant. I said what I had come to say and left him with it.",
+      "weight": 2,
+      "clear_record": true,
+      "clear_prison": true,
+      "effects": {
+       "money": 1000000,
+       "happiness": 10,
+       "stress": 18
+      },
+      "milestone": "was exonerated"
+     },
+     {
+      "text": "I found him, and he had spent those years trying to reopen it himself. I did not know where to put that.",
+      "weight": 1,
+      "clear_record": true,
+      "clear_prison": true,
+      "effects": {
+       "money": 1000000,
+       "happiness": 18,
+       "karma": 8
+      },
+      "milestone": "was exonerated"
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.bio_family",
+  "icon": "👪",
+  "title": "The other half",
+  "text": "Your birth parent invites you to meet the rest of their family.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "I met half-siblings who look like me. I have two families now.",
+      "weight": 2,
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "I went, and they were strangers with my nose. Everyone was kind and nobody knew what to say.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Not ready",
+    "outcomes": [
+     {
+      "text": "I said not yet. They said they'd wait.",
+      "weight": 2,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I said not yet, and by the time I was ready the person who had invited me had died.",
+      "weight": 1,
+      "effects": {
+       "happiness": -14,
+       "stress": 10
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Go, but take your own family with you",
+    "outcomes": [
+     {
+      "text": "I brought everybody. Two families met in one kitchen and it was loud and fine.",
+      "weight": 2,
+      "effects": {
+       "happiness": 18,
+       "karma": 5
+      }
+     },
+     {
+      "text": "Bringing them made it a performance. Everyone was polite and nobody said anything true.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.lottery_vultures",
+  "icon": "🦅",
+  "title": "Everybody's cousin",
+  "text": "Since the jackpot, relatives you haven't seen in years keep asking for \"loans\".",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Give to everyone",
+    "outcomes": [
+     {
+      "text": "I gave away $2 million. Most of it was never mentioned again.",
+      "weight": 2,
+      "effects": {
+       "money": -2000000,
+       "karma": 10
+      }
+     },
+     {
+      "text": "I gave to everyone who asked, and the asking did not stop. It stopped when the money did.",
+      "weight": 1,
+      "effects": {
+       "money": -5000000,
+       "karma": 10,
+       "stress": 20,
+       "happiness": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse everyone",
+    "outcomes": [
+     {
+      "text": "I said no. Family gatherings got very quiet.",
+      "weight": 2,
+      "grudge": {
+       "f": 50
+      },
+      "relationship": {
+       "f": -30
+      }
+     },
+     {
+      "text": "I said no to all of it, and the two people who never asked are the two I still speak to.",
+      "weight": 1,
+      "grudge": {
+       "f": 35
+      },
+      "relationship": {
+       "f": -20
+      },
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get a financial advisor",
+    "outcomes": [
+     {
+      "text": "I set up trusts for the people I love and a firm no for everyone else.",
+      "weight": 2,
+      "effects": {
+       "money": -50000
+      }
+     },
+     {
+      "text": "The advisor handled the family beautifully and put a worrying amount of the rest into something I did not understand.",
+      "weight": 1,
+      "effects": {
+       "money": -400000,
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "sibling",
+     "auntuncle",
+     "mother",
+     "father"
+    ]
+   }
+  }
+ },
+ {
+  "id": "tw.remission",
+  "icon": "🎗️",
+  "title": "The results",
+  "text": "The doctor has your latest scan results.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Read them",
+    "outcomes": [
+     {
+      "text": "Remission. I cried in the parking lot for an hour.",
+      "weight": 2,
+      "karma_bonus": 1,
+      "cure": true,
+      "effects": {
+       "happiness": 25,
+       "health": 15
+      },
+      "milestone": "beat cancer"
+     },
+     {
+      "text": "It's spread. The doctor says to get my affairs in order.",
+      "weight": 1,
+      "effects": {
+       "health": -30,
+       "happiness": -20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Have the doctor read them to you",
+    "outcomes": [
+     {
+      "text": "She read it out and then said the word 'remission' twice because I did not react the first time.",
+      "weight": 2,
+      "cure": true,
+      "effects": {
+       "health": 20,
+       "happiness": 25
+      },
+      "milestone": "went into remission"
+     },
+     {
+      "text": "She read it out carefully, and then explained what the next round would involve.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "happiness": -18,
+       "stress": 25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave the envelope shut for a week",
+    "outcomes": [
+     {
+      "text": "I had one ordinary week first. Whatever the paper said, I got to keep that week.",
+      "weight": 2,
+      "cure": true,
+      "effects": {
+       "health": 18,
+       "happiness": 22,
+       "stress": -5
+      },
+      "milestone": "went into remission"
+     },
+     {
+      "text": "I waited a week, and the week cost me the start of the treatment they had been hoping to begin at once.",
+      "weight": 1,
+      "effects": {
+       "health": -18,
+       "stress": 25,
+       "happiness": -12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.whistle_reward",
+  "icon": "🏅",
+  "title": "Vindicated",
+  "text": "The company was convicted. Whistleblower law entitles you to a share of the fine.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Collect",
+    "outcomes": [
+     {
+      "text": "I received $2.4 million and a lot of handshakes.",
+      "weight": 2,
+      "effects": {
+       "money": 2400000,
+       "fame": 5,
+       "happiness": 15
+      },
+      "milestone": "won a whistleblower reward"
+     },
+     {
+      "text": "The award was $2.4 million and the legal fees, the tax and the four years took most of the shine off it.",
+      "weight": 1,
+      "effects": {
+       "money": 900000,
+       "fame": 5,
+       "happiness": 8,
+       "stress": 10
+      },
+      "milestone": "won a whistleblower reward"
+     }
+    ]
+   },
+   {
+    "label": "Give it to the people downstream",
+    "outcomes": [
+     {
+      "text": "I put all of it into the towns along that river. My name is on a water treatment plant.",
+      "weight": 2,
+      "effects": {
+       "karma": 35,
+       "fame": 15,
+       "happiness": 20
+      },
+      "milestone": "gave away a whistleblower award"
+     },
+     {
+      "text": "I gave it away and the fund was run badly by people I had trusted to do it properly.",
+      "weight": 1,
+      "effects": {
+       "karma": 20,
+       "fame": 8,
+       "stress": 18,
+       "happiness": -8
+      },
+      "milestone": "gave away a whistleblower award"
+     }
+    ]
+   },
+   {
+    "label": "Take it and go somewhere nobody knows",
+    "outcomes": [
+     {
+      "text": "I took the money and moved somewhere with no reason to have heard of me. It was the quietest twenty years of my life.",
+      "weight": 2,
+      "effects": {
+       "money": 2400000,
+       "happiness": 18,
+       "fame": -5,
+       "stress": -10
+      },
+      "milestone": "won a whistleblower reward"
+     },
+     {
+      "text": "I took it and left, and found out that the thing I had wanted to get away from travelled with me.",
+      "weight": 1,
+      "effects": {
+       "money": 2400000,
+       "happiness": -8,
+       "stress": 15
+      },
+      "milestone": "won a whistleblower reward",
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.whistle_implicated",
+  "icon": "🧾",
+  "title": "Implicated",
+  "text": "The poisoning scandal broke. Your emails prove you knew.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cooperate with prosecutors",
+    "outcomes": [
+     {
+      "text": "I testified and kept my freedom, if not my reputation.",
+      "weight": 2,
+      "fired": true,
+      "effects": {
+       "fame": -5
+      }
+     },
+     {
+      "text": "I cooperated fully and the prosecutors decided my emails made me a defendant rather than a witness.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "fame": -8,
+       "stress": 25
+      },
+      "trial": [
+       "conspiracy",
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Deny it",
+    "outcomes": [
+     {
+      "text": "They had the emails.",
+      "weight": 2,
+      "trial": [
+       "conspiracy",
+       1,
+       5
+      ]
+     },
+     {
+      "text": "I denied it, and the emails turned out to have been sent from an account four people shared. It was not enough to charge me.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "stress": 25,
+       "heat": 20,
+       "fame": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Resign before it lands",
+    "outcomes": [
+     {
+      "text": "I resigned on the Friday and the story broke on the Monday without my name in the first paragraph.",
+      "weight": 2,
+      "fired": true,
+      "effects": {
+       "fame": -2,
+       "stress": 15
+      }
+     },
+     {
+      "text": "Resigning that week looked exactly like what it was, and the prosecutors said so in open court.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "stress": 25
+      },
+      "trial": [
+       "conspiracy",
+       1,
+       4
+      ]
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.treasure_claim",
+  "icon": "📜",
+  "title": "The rightful heirs",
+  "text": "A family claims the treasure you found was their grandfather's and is suing you.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Settle",
+    "outcomes": [
+     {
+      "text": "I gave them half.",
+      "weight": 2,
+      "effects": {
+       "money": -120000
+      }
+     },
+     {
+      "text": "I settled quickly and cheaply, and then another branch of the family read about the settlement.",
+      "weight": 1,
+      "effects": {
+       "money": -60000,
+       "stress": 15
+      },
+      "schedule": {
+       "event": "tw.treasure_claim",
+       "years": [
+        2,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fight it",
+    "outcomes": [
+     {
+      "text": "I won. Finders keepers, the judge said, more or less.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      }
+     },
+     {
+      "text": "I lost and paid it all back, plus costs.",
+      "weight": 1,
+      "effects": {
+       "money": -280000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give all of it back",
+    "outcomes": [
+     {
+      "text": "I handed the lot over. Their grandfather's name is on a museum case because of it.",
+      "weight": 2,
+      "effects": {
+       "money": -240000,
+       "karma": 20,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I gave it all back and their lawyer still billed me for the fortnight it took to arrange.",
+      "weight": 1,
+      "effects": {
+       "money": -255000,
+       "karma": 20,
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.embezzler_returns",
+  "icon": "📨",
+  "title": "A letter from prison",
+  "text": "Your old accountant writes from prison. He says he knows where the rest of the money is.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Visit him",
+    "outcomes": [
+     {
+      "text": "He told me. I recovered $200,000.",
+      "weight": 1,
+      "effects": {
+       "money": 200000
+      }
+     },
+     {
+      "text": "It was a con to get me to put money on his books.",
+      "weight": 1,
+      "effects": {
+       "money": -5000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw the letter away",
+    "outcomes": [
+     {
+      "text": "I threw it out.",
+      "weight": 2,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I threw it out, and he wrote again every year until the letters stopped coming, which told me the rest.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send the letter to the police",
+    "outcomes": [
+     {
+      "text": "The fraud squad read it with great interest. Some of the money came home.",
+      "weight": 2,
+      "empire": "biz_boost",
+      "effects": {
+       "money": 60000,
+       "karma": 8
+      }
+     },
+     {
+      "text": "He had written it knowing I would pass it on. It named two of my own directors, accurately.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "stress": 22,
+       "heat": 15
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.other_kids",
+  "icon": "👧",
+  "title": "Half-siblings",
+  "text": "Your ex's secret children found you. They want to know their half-siblings.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let them meet",
+    "outcomes": [
+     {
+      "text": "The kids got along instantly. Kids are better at this than adults.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "karma": 5
+      }
+     },
+     {
+      "text": "I let them meet, and my own children wanted to know why I had never told them. That was the harder conversation.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "karma": 5,
+       "stress": 14
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no",
+    "outcomes": [
+     {
+      "text": "I said no. It's still too raw.",
+      "weight": 2,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I said no, and my children found them on their own six years later and said nothing to me about it for a while.",
+      "weight": 1,
+      "effects": {
+       "stress": 15,
+       "happiness": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Meet them yourself first",
+    "outcomes": [
+     {
+      "text": "I met them alone in a café and found out they were as confused as I was. It made the rest easier.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "karma": 8,
+       "stress": 6
+      }
+     },
+     {
+      "text": "I met them first and they wanted things from me I was never going to be able to give.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "stress": 18
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ },
+ {
+  "id": "tw.hit_run_found",
+  "icon": "🚨",
+  "title": "They found the car",
+  "text": "Detectives traced the paint on the victim's clothes to your car.",
+  "conditions": {
+   "age": [
+    0,
+    120
+   ]
+  },
+  "choices": [
+   {
+    "label": "Confess",
+    "outcomes": [
+     {
+      "text": "I confessed. It was almost a relief.",
+      "weight": 2,
+      "jail": [
+       2,
+       6
+      ],
+      "crime": "hit and run",
+      "effects": {
+       "karma": 10
+      }
+     },
+     {
+      "text": "I confessed, and the family asked the court for leniency. I did not know what to do with that.",
+      "weight": 1,
+      "jail": [
+       1,
+       2
+      ],
+      "crime": "hit and run",
+      "effects": {
+       "karma": 15,
+       "happiness": -12
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Deny everything",
+    "outcomes": [
+     {
+      "text": "They had the paint, the camera and my phone records.",
+      "weight": 2,
+      "trial": [
+       "hit and run",
+       3,
+       10
+      ]
+     },
+     {
+      "text": "I denied it, and the paint match was thrown out over how the sample had been stored. I walked out of that courtroom and have never slept properly since.",
+      "weight": 1,
+      "effects": {
+       "karma": -20,
+       "stress": 30,
+       "heat": 20
+      },
+      "scar": "haunted"
+     }
+    ]
+   },
+   {
+    "label": "Go to them before the police do",
+    "outcomes": [
+     {
+      "text": "I went to the family first and said it to their faces. The court heard about that, and so did I, for the rest of my life.",
+      "weight": 2,
+      "jail": [
+       1,
+       3
+      ],
+      "crime": "hit and run",
+      "effects": {
+       "karma": 20,
+       "happiness": -10
+      },
+      "scar": "haunted"
+     },
+     {
+      "text": "I went to their door and they called the police from the hallway while I was still talking.",
+      "weight": 1,
+      "jail": [
+       3,
+       8
+      ],
+      "crime": "hit and run",
+      "effects": {
+       "karma": 8,
+       "stress": 28
+      },
+      "scar": "haunted"
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "twist": true,
+  "followup_only": true
+ }
+]

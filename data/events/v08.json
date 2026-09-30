@@ -1,0 +1,6277 @@
+[
+  {
+    "id": "v08.police.bodycam",
+    "icon": "📹",
+    "title": "The missing minute",
+    "text": "Your body camera skipped a minute during a tense arrest. Nothing obvious happened in the gap, but the defense has already noticed it.",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Report the malfunction immediately",
+        "outcomes": [
+          {
+            "text": "I documented the gap before anyone could accuse me of hiding it.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 5
+            },
+            "schedule": {
+              "event": "v08.police.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The report triggered an equipment audit that found the fault in several cameras.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 6,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Trust the written report",
+        "outcomes": [
+          {
+            "text": "My notes were solid, but the missing footage still became a courtroom argument.",
+            "weight": 1,
+            "effects": {
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -2
+            }
+          },
+          {
+            "text": "The arrest held up because independent witnesses matched my report.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Say nothing unless asked",
+        "outcomes": [
+          {
+            "text": "The gap surfaced later and looked worse because I had not disclosed it.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -7,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "police_ia",
+              "value": 1
+            }
+          },
+          {
+            "text": "Nobody challenged the footage this time, but I know I left a vulnerability in the file.",
+            "weight": 1,
+            "effects": {
+              "karma": -2,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": -4
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.police.partner_force",
+    "icon": "🛑",
+    "title": "Your partner crossed a line",
+    "text": "During a rough arrest, your partner kept using force after the suspect was already controlled. They look at you and say, “We are good, right?”",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 7,
+    "choices": [
+      {
+        "label": "Report exactly what happened",
+        "outcomes": [
+          {
+            "text": "I wrote the report the way I saw it. My partner stopped speaking to me.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "stress": 7,
+              "karma": 5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 8
+            },
+            "thread": {
+              "kind": "relationship",
+              "title": "The partner I reported",
+              "memory": "I chose the report over the blue wall when my partner crossed a line.",
+              "strength": 65,
+              "tags": [
+                "police",
+                "integrity"
+              ]
+            },
+            "schedule": {
+              "event": "v08.police.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "Supervisors thanked me privately, then assigned me a new partner.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 7,
+              "stress": 4,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell your partner to self-report",
+        "outcomes": [
+          {
+            "text": "They did. The honesty softened the discipline and preserved some trust between us.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 4,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 5
+            }
+          },
+          {
+            "text": "They promised to do it, then wrote a sanitized report. Now my silence is part of the problem.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -4,
+              "stress": 8,
+              "karma": -3
+            },
+            "ambition": {
+              "kind": "police_ia",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Back their version",
+        "outcomes": [
+          {
+            "text": "The reports matched—until a storefront camera surfaced.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -12,
+              "stress": 12,
+              "karma": -8
+            },
+            "ambition": {
+              "kind": "police_ia",
+              "value": 2
+            }
+          },
+          {
+            "text": "The complaint went nowhere, but the decision sits badly with me.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 6,
+              "karma": -5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": -10
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.police.informant",
+    "icon": "📞",
+    "title": "The informant wants out",
+    "text": "An informant who helped your unit build several cases says they are being watched and wants their name removed from anything that could expose them.",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Prioritize their safety",
+        "outcomes": [
+          {
+            "text": "I slowed the case down and moved the informant out of the immediate danger.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "stress": 5,
+              "karma": 5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 5
+            },
+            "schedule": {
+              "event": "v08.police.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The protection plan cost us a lead, but the informant stayed alive and cooperative.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "karma": 6
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask for one final meeting",
+        "outcomes": [
+          {
+            "text": "They agreed, and the last detail broke open a major lead.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 8,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "case_evidence",
+              "value": 8
+            }
+          },
+          {
+            "text": "They never arrived. I spent the rest of the night wondering whether I asked too much.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "stress": 10
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell them the deal is the deal",
+        "outcomes": [
+          {
+            "text": "They disappeared and stopped answering every number we had.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -6,
+              "karma": -6,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -5
+            }
+          },
+          {
+            "text": "They kept cooperating, but fear made every new tip less reliable.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "karma": -4,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": -4
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.police.prosecutor",
+    "icon": "⚖️",
+    "title": "The prosecutor sends it back",
+    "text": "A prosecutor says your arrest is probably right but the evidence is not clean enough to survive trial. The victim’s family thinks the system is stalling.",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Rebuild the weak parts",
+        "outcomes": [
+          {
+            "text": "I went back through the file and found a chain-of-custody mistake before the defense could.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 6,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "case_evidence",
+              "value": 8
+            }
+          },
+          {
+            "text": "Weeks of extra work produced one small corroborating detail—enough to keep moving.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "case_evidence",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Push for charges now",
+        "outcomes": [
+          {
+            "text": "The prosecutor filed narrowly and warned me that the margin for error is gone.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -1
+            }
+          },
+          {
+            "text": "They refused and documented why. The disagreement is now in the case file.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Explain the delay to the family",
+        "outcomes": [
+          {
+            "text": "They hated the answer but appreciated that I did not pretend certainty.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 4
+            }
+          },
+          {
+            "text": "The meeting became angry and painful. I listened anyway.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "karma": 2
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.police.friendfavor",
+    "icon": "🤝",
+    "title": "A favor from an old friend",
+    "text": "A childhood friend calls after being stopped by another officer. They ask if you can “just make the ticket disappear.”",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Refuse the favor",
+        "outcomes": [
+          {
+            "text": "I told them my badge is not a coupon. They hung up angry.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 5
+            }
+          },
+          {
+            "text": "They complained, then admitted they should not have put me in that position.",
+            "weight": 1,
+            "effects": {
+              "karma": 3,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Explain the proper appeal process",
+        "outcomes": [
+          {
+            "text": "I gave them the same information I would give anyone else.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 3
+            }
+          },
+          {
+            "text": "They took it as a lecture and our friendship cooled.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Call the officer unofficially",
+        "outcomes": [
+          {
+            "text": "The citation vanished, and so did a little of my confidence in my own boundaries.",
+            "weight": 1,
+            "effects": {
+              "karma": -6,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": -8
+            }
+          },
+          {
+            "text": "The officer reported the call to a supervisor.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -8,
+              "stress": 9
+            },
+            "ambition": {
+              "kind": "police_ia",
+              "value": 1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.police.neighborhood",
+    "icon": "🏀",
+    "title": "The court after shift",
+    "text": "A neighborhood group asks officers to spend one evening at a youth basketball event instead of only showing up when something goes wrong.",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Go in uniform",
+        "outcomes": [
+          {
+            "text": "Kids who normally avoid patrol cars argued with me about foul calls instead.",
+            "weight": 1,
+            "effects": {
+              "happiness": 5,
+              "karma": 5
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 6
+            }
+          },
+          {
+            "text": "The event was awkward at first, then surprisingly normal.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3,
+              "stress": -3
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Go off duty as yourself",
+        "outcomes": [
+          {
+            "text": "Without the uniform, people asked questions they would never ask on a traffic stop.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "happiness": 5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 3
+            }
+          },
+          {
+            "text": "I spent more time listening than talking and left with several names I recognized later.",
+            "weight": 1,
+            "effects": {
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Skip it and take overtime",
+        "outcomes": [
+          {
+            "text": "The overtime check helped. The invitation did not come again next year.",
+            "weight": 1,
+            "effects": {
+              "money": 650,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -2
+            }
+          },
+          {
+            "text": "A serious call came in during the shift, reminding me that community work and emergency work compete for the same hours.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 3,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.police.colleague_tip",
+    "icon": "🧾",
+    "title": "A name inside the tip",
+    "text": "An anonymous corruption tip names an officer you know well. The evidence is thin, but the details are specific enough that ignoring it would be a choice.",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Send it to Internal Affairs",
+        "outcomes": [
+          {
+            "text": "I forwarded the tip without adding my own conclusions.",
+            "weight": 1,
+            "effects": {
+              "stress": 5,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 6
+            }
+          },
+          {
+            "text": "Internal Affairs opened a quiet review and told me not to discuss it.",
+            "weight": 1,
+            "effects": {
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Verify one detail first",
+        "outcomes": [
+          {
+            "text": "The first detail checked out, making the rest harder to dismiss.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 4
+            }
+          },
+          {
+            "text": "The supposed smoking gun turned out to have an ordinary explanation.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Warn the officer privately",
+        "outcomes": [
+          {
+            "text": "They thanked me—and immediately changed behavior in ways that made investigators suspicious.",
+            "weight": 1,
+            "effects": {
+              "karma": -6,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "police_ia",
+              "value": 1
+            }
+          },
+          {
+            "text": "They were innocent, but my warning still violated procedure.",
+            "weight": 1,
+            "effects": {
+              "karma": -3,
+              "job_perf": -3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": -5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.police.victimupdate",
+    "icon": "🕯️",
+    "title": "“Do you know anything yet?”",
+    "text": "A victim’s family has called three times this week. Your case has not moved, and there is no useful answer to give them.",
+    "conditions": {
+      "age": [
+        20,
+        70
+      ],
+      "job_id": "police"
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Call back with the truth",
+        "outcomes": [
+          {
+            "text": "I told them what we know, what we do not know, and what happens next.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "The silence on the other end hurt, but at least it was an honest silence.",
+            "weight": 1,
+            "effects": {
+              "stress": 6,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Wait until there is real news",
+        "outcomes": [
+          {
+            "text": "A break came two days later, and the call finally had substance.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 3,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "case_evidence",
+              "value": 4
+            }
+          },
+          {
+            "text": "Another week passed. Their frustration turned into a complaint to my supervisor.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "job_perf": -3
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask a victim advocate to call",
+        "outcomes": [
+          {
+            "text": "The advocate handled the conversation better than I would have and kept the family connected to the process.",
+            "weight": 1,
+            "effects": {
+              "karma": 3,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "The family still wanted to hear directly from the detective, not another office.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.med.exhausted",
+    "icon": "🪫",
+    "title": "The sixteenth hour",
+    "text": "The shift has stretched far beyond what anyone planned. You are still functioning, but you can feel your attention getting narrower.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 7,
+    "choices": [
+      {
+        "label": "Hand off what can safely wait",
+        "outcomes": [
+          {
+            "text": "I gave a careful handoff and went home before fatigue became a clinical decision.",
+            "weight": 1,
+            "effects": {
+              "health": 2,
+              "stress": -6,
+              "job_perf": 2
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -6
+            },
+            "schedule": {
+              "event": "v08.med.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The next team caught a small issue I might have missed if I had stayed.",
+            "weight": 1,
+            "effects": {
+              "stress": -3,
+              "job_perf": 3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Stay until every chart is closed",
+        "outcomes": [
+          {
+            "text": "I finished everything, then realized I had read the same sentence four times.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "health": -2,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": 8
+            }
+          },
+          {
+            "text": "The extra time helped a deteriorating patient get attention early.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 7,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": 6
+            }
+          }
+        ]
+      },
+      {
+        "label": "Take ten minutes before the next case",
+        "outcomes": [
+          {
+            "text": "Water, food and ten quiet minutes brought my thinking back online.",
+            "weight": 1,
+            "effects": {
+              "health": 2,
+              "stress": -4
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -3
+            }
+          },
+          {
+            "text": "The pager went off three minutes in. Even the break became triage.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": 2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 4
+  },
+  {
+    "id": "v08.med.error",
+    "icon": "🧾",
+    "title": "A colleague’s medication error",
+    "text": "You notice that a colleague entered the wrong dose. The patient has not received it yet, and fixing the order will expose the mistake.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Stop the dose and report the near miss",
+        "outcomes": [
+          {
+            "text": "The patient was protected, and the review found a confusing order screen that contributed to the error.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 6,
+              "karma": 5,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 5
+            },
+            "schedule": {
+              "event": "v08.med.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "My colleague was embarrassed but later thanked me for catching it before harm was done.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Fix it quietly and tell the colleague",
+        "outcomes": [
+          {
+            "text": "The patient was safe, but the system learned nothing from the near miss.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "karma": 1
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 1
+            }
+          },
+          {
+            "text": "The colleague appreciated the warning and started double-checking high-risk orders.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 3,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Assume they will catch it themselves",
+        "outcomes": [
+          {
+            "text": "Another nurse caught it minutes later and asked why I had not acted.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -7,
+              "stress": 8,
+              "karma": -4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -6
+            }
+          },
+          {
+            "text": "The dose was given before anyone noticed. The patient needed monitoring and a difficult disclosure.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -12,
+              "stress": 12,
+              "karma": -7
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -10
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.med.familyrefusal",
+    "icon": "🫂",
+    "title": "The family says no",
+    "text": "A seriously ill patient cannot decide for themselves. Their family refuses a treatment the team believes offers the best chance of recovery.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Slow down and explain again",
+        "outcomes": [
+          {
+            "text": "A calmer conversation uncovered a misunderstanding about what the treatment would actually involve.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "job_perf": 4,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            },
+            "schedule": {
+              "event": "v08.med.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "They still refused, but the decision became informed rather than frightened.",
+            "weight": 1,
+            "effects": {
+              "karma": 3,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Request an ethics consult",
+        "outcomes": [
+          {
+            "text": "The ethics team clarified the patient’s prior wishes and gave everyone a path forward.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "The consult did not change the answer, but it kept the disagreement from becoming personal.",
+            "weight": 1,
+            "effects": {
+              "stress": -1,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Push the family hard",
+        "outcomes": [
+          {
+            "text": "They agreed, but trust in the team never recovered.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -2
+            }
+          },
+          {
+            "text": "The pressure backfired and they demanded a different clinician.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -5,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.med.uncertain",
+    "icon": "🧪",
+    "title": "The numbers do not agree",
+    "text": "The symptoms point one way, the first test points another, and the patient wants a definite answer before leaving today.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Say what is still uncertain",
+        "outcomes": [
+          {
+            "text": "I explained the probabilities instead of pretending the medicine was cleaner than it is.",
+            "weight": 1,
+            "effects": {
+              "karma": 3,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "The patient was frustrated by uncertainty but agreed to close follow-up.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Order one targeted test",
+        "outcomes": [
+          {
+            "text": "The extra test resolved the contradiction and changed the treatment plan.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 6,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 5
+            }
+          },
+          {
+            "text": "The test was inconclusive too, adding cost without clarity.",
+            "weight": 1,
+            "effects": {
+              "stress": 5,
+              "job_perf": -1
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Choose the most likely diagnosis now",
+        "outcomes": [
+          {
+            "text": "The working diagnosis was right and treatment helped quickly.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "The first diagnosis was wrong. The patient returned sicker and far less trusting.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -9,
+              "stress": 10
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -8
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.med.resident",
+    "icon": "🎓",
+    "title": "The resident freezes",
+    "text": "A resident you supervise suddenly blanks during a difficult case and looks to you for the answer while the room waits.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Coach them through the next step",
+        "outcomes": [
+          {
+            "text": "One question at a time got them moving again without humiliating them.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "They recovered enough to finish the case and later asked to review it together.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3,
+              "job_perf": 3
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Take over immediately",
+        "outcomes": [
+          {
+            "text": "The case moved faster, but the resident learned mostly that I do not trust them under pressure.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 1
+            }
+          },
+          {
+            "text": "Taking over prevented a delay that could have harmed the patient.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 6,
+              "karma": 2
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Correct them sharply in front of everyone",
+        "outcomes": [
+          {
+            "text": "They remembered the lesson. They also avoided me for the rest of the rotation.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "karma": -3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -3
+            }
+          },
+          {
+            "text": "The humiliation made them more hesitant on the next case, not less.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.med.badnews",
+    "icon": "🕯️",
+    "title": "The conversation after the scan",
+    "text": "The scan confirms that the patient’s disease has progressed. Their family is waiting in a small room for you to explain what that means.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Give the facts, then leave silence",
+        "outcomes": [
+          {
+            "text": "I explained what we know and let the room be quiet long enough for it to land.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 5
+            }
+          },
+          {
+            "text": "They asked the same question three different ways. I answered it three times.",
+            "weight": 1,
+            "effects": {
+              "stress": 8,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Focus on what can still be done",
+        "outcomes": [
+          {
+            "text": "The family left with a plan instead of false hope.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 3,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "One relative heard the plan as a promise. I had to carefully correct that.",
+            "weight": 1,
+            "effects": {
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let another clinician handle it",
+        "outcomes": [
+          {
+            "text": "A colleague who knew the family better led the conversation well.",
+            "weight": 1,
+            "effects": {
+              "stress": -3,
+              "job_perf": 1
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -2
+            }
+          },
+          {
+            "text": "The handoff felt like avoidance, and the family noticed.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -3
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.med.protocol",
+    "icon": "📚",
+    "title": "The protocol changes",
+    "text": "New evidence changes a treatment you have used for years. The old approach still feels natural; the new one requires relearning part of your routine.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Study the evidence carefully",
+        "outcomes": [
+          {
+            "text": "I understood why the recommendation changed instead of just memorizing the new steps.",
+            "weight": 1,
+            "effects": {
+              "smarts": 2,
+              "job_perf": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "The literature was messy, but I found where the consensus was actually strong.",
+            "weight": 1,
+            "effects": {
+              "smarts": 2,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Adopt it immediately",
+        "outcomes": [
+          {
+            "text": "The new protocol fit smoothly and improved the team’s outcomes.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "I followed the headline before learning the exceptions and had to correct course.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -2,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep doing what has worked for you",
+        "outcomes": [
+          {
+            "text": "Nothing went wrong this year, which made the habit harder to question.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -1
+            }
+          },
+          {
+            "text": "A colleague challenged the outdated approach during review.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -5,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.med.vip",
+    "icon": "⭐",
+    "title": "A famous patient",
+    "text": "A public figure arrives under an alias. Administration reminds everyone about privacy—then quietly asks you to “make sure this goes perfectly.”",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 3,
+    "choices": [
+      {
+        "label": "Treat them like every other patient",
+        "outcomes": [
+          {
+            "text": "The care was ordinary in the best possible way. Their team noticed the discretion.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "They were difficult, but the chart stayed private and professional.",
+            "weight": 1,
+            "effects": {
+              "stress": 4,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Give them extra attention",
+        "outcomes": [
+          {
+            "text": "The extra coordination made the visit seamless and impressed administration.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "Other patients waited longer, and one complained about obvious favoritism.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "karma": -3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell a trusted friend after work",
+        "outcomes": [
+          {
+            "text": "The friend kept the secret, but I regretted testing their discretion with someone else’s privacy.",
+            "weight": 1,
+            "effects": {
+              "karma": -5,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -4
+            }
+          },
+          {
+            "text": "The story leaked sideways and compliance opened an investigation.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -12,
+              "stress": 12,
+              "karma": -8
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -12
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 10
+  },
+  {
+    "id": "v08.sport.contract",
+    "icon": "📝",
+    "title": "The contract year",
+    "text": "Your deal expires after this season. Your agent says a bigger payday is possible if you accept the risk of playing the year without an extension.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Bet on yourself",
+        "outcomes": [
+          {
+            "text": "I entered the season without an extension and played like every week mattered.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "fame": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 6
+            },
+            "schedule": {
+              "event": "v08.sport.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The pressure got into my head early and every mistake felt expensive.",
+            "weight": 1,
+            "effects": {
+              "stress": 9,
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Take the extension now",
+        "outcomes": [
+          {
+            "text": "The guaranteed money quieted one kind of pressure and let me focus on the season.",
+            "weight": 1,
+            "effects": {
+              "happiness": 5,
+              "stress": -5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 3
+            }
+          },
+          {
+            "text": "I signed, then watched the market jump. Security came with a little envy.",
+            "weight": 1,
+            "effects": {
+              "happiness": 1,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell your agent to test the market quietly",
+        "outcomes": [
+          {
+            "text": "Two teams expressed interest and my current club suddenly found more money.",
+            "weight": 1,
+            "effects": {
+              "fame": 3,
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 4
+            }
+          },
+          {
+            "text": "The leak hit the media and teammates wondered whether I was already gone.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -3
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.sport.rookie",
+    "icon": "🧢",
+    "title": "The rookie behind you",
+    "text": "A younger player at your position is having a brilliant camp. Reporters are already asking whether your job is safe.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Mentor them anyway",
+        "outcomes": [
+          {
+            "text": "Helping the rookie improved both of us. Competition stopped feeling personal.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 5
+            },
+            "schedule": {
+              "event": "v08.sport.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "They learned quickly—maybe too quickly—but the locker room respected me for it.",
+            "weight": 1,
+            "effects": {
+              "fame": 2,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Raise your own training load",
+        "outcomes": [
+          {
+            "text": "The extra work sharpened my form without tipping into overtraining.",
+            "weight": 1,
+            "effects": {
+              "health": 1,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 7
+            }
+          },
+          {
+            "text": "I pushed too hard and spent the next week managing soreness.",
+            "weight": 1,
+            "effects": {
+              "health": -4,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Freeze them out socially",
+        "outcomes": [
+          {
+            "text": "The locker room noticed before the rookie did.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3,
+              "karma": -4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -5
+            }
+          },
+          {
+            "text": "The rivalry became great television and bad team chemistry.",
+            "weight": 1,
+            "effects": {
+              "fame": 4,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -4
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.sport.hurt",
+    "icon": "🩻",
+    "title": "Available is not healthy",
+    "text": "The medical staff clears you to play, but only barely. A crucial game is coming and you know the difference between “cleared” and “right.”",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Sit until you are truly ready",
+        "outcomes": [
+          {
+            "text": "I hated watching, but the extra recovery gave me my movement back.",
+            "weight": 1,
+            "effects": {
+              "health": 5,
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 2
+            },
+            "schedule": {
+              "event": "v08.sport.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The team lost without me and the debate followed me into every interview.",
+            "weight": 1,
+            "effects": {
+              "health": 4,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Play with restrictions",
+        "outcomes": [
+          {
+            "text": "I gave the team useful minutes without pretending I was at full speed.",
+            "weight": 1,
+            "effects": {
+              "health": -1,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 4
+            }
+          },
+          {
+            "text": "Compensation changed my mechanics and I left sorer than I arrived.",
+            "weight": 1,
+            "effects": {
+              "health": -5,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell everyone you are 100%",
+        "outcomes": [
+          {
+            "text": "Adrenaline got me through a huge performance.",
+            "weight": 1,
+            "effects": {
+              "fame": 4,
+              "health": -3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 8
+            }
+          },
+          {
+            "text": "The injury worsened and the postgame scan was ugly.",
+            "weight": 1,
+            "effects": {
+              "health": -9,
+              "happiness": -8
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -8
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.sport.coach",
+    "icon": "📋",
+    "title": "The coach changes your role",
+    "text": "Your coach wants to use you differently this season—fewer touches, more defensive work, and less of the role that made you famous.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Learn the new role",
+        "outcomes": [
+          {
+            "text": "The box score got quieter while coaches started trusting me in bigger moments.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 6
+            }
+          },
+          {
+            "text": "It took months to feel natural, but the team improved while I adjusted.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask for a compromise",
+        "outcomes": [
+          {
+            "text": "We found a role that used my strengths without breaking the system.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 5
+            }
+          },
+          {
+            "text": "The conversation stayed professional but changed nothing.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Complain publicly",
+        "outcomes": [
+          {
+            "text": "Fans rallied behind me and every press conference became a referendum on the coach.",
+            "weight": 1,
+            "effects": {
+              "fame": 5,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -4
+            }
+          },
+          {
+            "text": "Management fined me and the locker room got tired of the distraction.",
+            "weight": 1,
+            "effects": {
+              "money": -25000,
+              "happiness": -5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -7
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.sport.rival",
+    "icon": "🔥",
+    "title": "The rivalry gets personal",
+    "text": "Your biggest rival spends an interview mocking your game, your contract, and the way your last season ended.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Answer on the field",
+        "outcomes": [
+          {
+            "text": "I gave the quote no oxygen and saved the response for the next matchup.",
+            "weight": 1,
+            "effects": {
+              "stress": 2,
+              "fame": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 6
+            }
+          },
+          {
+            "text": "The next matchup went badly and the old quote came roaring back.",
+            "weight": 1,
+            "effects": {
+              "happiness": -5,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Fire back",
+        "outcomes": [
+          {
+            "text": "The exchange became the league’s favorite storyline and ticket prices jumped.",
+            "weight": 1,
+            "effects": {
+              "fame": 6,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 3
+            }
+          },
+          {
+            "text": "I said one thing too many and spent a week explaining it.",
+            "weight": 1,
+            "effects": {
+              "fame": 3,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Call them privately",
+        "outcomes": [
+          {
+            "text": "We agreed the rivalry could be fierce without becoming stupid.",
+            "weight": 1,
+            "effects": {
+              "karma": 3,
+              "stress": -3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 3
+            }
+          },
+          {
+            "text": "They laughed and leaked that I called. Now it looks like they got under my skin.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -3
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.sport.sponsor",
+    "icon": "📣",
+    "title": "The sponsor wants a script",
+    "text": "A major sponsor offers a lucrative campaign, but the talking points sound nothing like you and one claim is technically misleading.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Rewrite the claim before signing",
+        "outcomes": [
+          {
+            "text": "The brand accepted cleaner language and the campaign still paid.",
+            "weight": 1,
+            "effects": {
+              "money": 45000,
+              "fame": 3,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 2
+            }
+          },
+          {
+            "text": "They dropped the deal rather than change the copy.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2,
+              "karma": 4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Read the script exactly",
+        "outcomes": [
+          {
+            "text": "The campaign was everywhere and the check cleared.",
+            "weight": 1,
+            "effects": {
+              "money": 65000,
+              "fame": 5,
+              "karma": -2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 1
+            }
+          },
+          {
+            "text": "Fans fact-checked the claim within hours and the endorsement became a joke.",
+            "weight": 1,
+            "effects": {
+              "money": 65000,
+              "fame": -2,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Turn it down",
+        "outcomes": [
+          {
+            "text": "My agent hated leaving money on the table. I slept fine.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 2
+            }
+          },
+          {
+            "text": "Another athlete took the campaign and became suddenly much more famous.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.sport.playoffs",
+    "icon": "🏟️",
+    "title": "Everything is louder now",
+    "text": "The postseason turns every mistake into a clip and every good play into mythology. Sleep is getting harder as the next game approaches.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Keep the routine boring",
+        "outcomes": [
+          {
+            "text": "Same breakfast, same warm-up, same breathing. The noise stayed outside the routine.",
+            "weight": 1,
+            "effects": {
+              "stress": -5,
+              "discipline": 1
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 5
+            }
+          },
+          {
+            "text": "The routine helped until one bad bounce made the game chaotic anyway.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Feed off the pressure",
+        "outcomes": [
+          {
+            "text": "The atmosphere sharpened me and the biggest moments felt slower.",
+            "weight": 1,
+            "effects": {
+              "fame": 3,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 8
+            }
+          },
+          {
+            "text": "I came out too hot and burned energy before the game settled.",
+            "weight": 1,
+            "effects": {
+              "health": -2,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Avoid every headline",
+        "outcomes": [
+          {
+            "text": "Turning off the noise helped me sleep.",
+            "weight": 1,
+            "effects": {
+              "stress": -6,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 3
+            }
+          },
+          {
+            "text": "I missed a team media obligation and created a different headline.",
+            "weight": 1,
+            "effects": {
+              "fame": -1,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 4
+  },
+  {
+    "id": "v08.sport.retire",
+    "icon": "⏳",
+    "title": "Someone asks about the end",
+    "text": "A reporter asks whether you have thought about retirement. You had not—at least not out loud.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Admit that you have",
+        "outcomes": [
+          {
+            "text": "Saying it made the future feel real instead of threatening.",
+            "weight": 1,
+            "effects": {
+              "stress": -2,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 1
+            },
+            "thread": {
+              "kind": "relationship",
+              "title": "The first time retirement felt real",
+              "memory": "A simple question made me imagine who I would be after the uniform.",
+              "strength": 48,
+              "tags": [
+                "sports",
+                "career",
+                "aging"
+              ]
+            }
+          },
+          {
+            "text": "The quote was treated like an announcement and trade rumors started instantly.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "fame": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Say you are nowhere near done",
+        "outcomes": [
+          {
+            "text": "The answer came out with enough conviction that I believed it too.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 4
+            }
+          },
+          {
+            "text": "My body disagreed with the quote during the next recovery session.",
+            "weight": 1,
+            "effects": {
+              "health": -2,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Make a joke and move on",
+        "outcomes": [
+          {
+            "text": "Everyone laughed and the question disappeared for a week.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 1
+            }
+          },
+          {
+            "text": "The joke became a meme about my age.",
+            "weight": 1,
+            "effects": {
+              "fame": 3,
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 9
+  },
+  {
+    "id": "v08.pet.escape",
+    "icon": "🚪",
+    "title": "The front door was open",
+    "text": "A delivery arrives, the door stays open half a second too long, and one of your pets is suddenly sprinting down the street.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 7,
+    "choices": [
+      {
+        "label": "Run after them immediately",
+        "outcomes": [
+          {
+            "text": "I found them two blocks away investigating a trash can like nothing happened.",
+            "weight": 1,
+            "effects": {
+              "health": 1,
+              "stress": 6,
+              "happiness": 5
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 3
+            },
+            "schedule": {
+              "event": "v08.pet.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The chase ended with scraped knees and a very pleased pet in my arms.",
+            "weight": 1,
+            "effects": {
+              "health": -2,
+              "stress": 7,
+              "happiness": 5
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Use their recall training",
+        "outcomes": [
+          {
+            "text": "One call cut through the excitement and they turned around.",
+            "weight": 1,
+            "effects": {
+              "happiness": 6,
+              "stress": -4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 5
+            },
+            "schedule": {
+              "event": "v08.pet.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "They hesitated just long enough to remind me recall still needs work.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Search by car and ask neighbors",
+        "outcomes": [
+          {
+            "text": "Three neighbors joined the search and someone spotted them behind a hedge.",
+            "weight": 1,
+            "effects": {
+              "happiness": 5,
+              "karma": 2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 1
+            }
+          },
+          {
+            "text": "The search took hours, but a local post finally brought them home.",
+            "weight": 1,
+            "effects": {
+              "stress": 9,
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.pet.aging",
+    "icon": "🐾",
+    "title": "The stairs get taller",
+    "text": "Your pet pauses at the bottom of the stairs and looks up at you before trying. They are not old in your memories, but their body is becoming old now.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Adapt the house around them",
+        "outcomes": [
+          {
+            "text": "Rugs, ramps and a new sleeping spot gave them back some confidence.",
+            "weight": 1,
+            "effects": {
+              "happiness": 5,
+              "stress": -3
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 5
+            },
+            "thread": {
+              "kind": "family",
+              "title": "Growing old beside a pet",
+              "memory": "I changed the house when the stairs became harder for my pet.",
+              "strength": 62,
+              "tags": [
+                "pet",
+                "aging",
+                "home"
+              ]
+            },
+            "schedule": {
+              "event": "v08.pet.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The changes helped, even if accepting why they were needed hurt.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Book a senior vet check",
+        "outcomes": [
+          {
+            "text": "The vet found treatable arthritis and started a comfort plan.",
+            "weight": 1,
+            "effects": {
+              "money": -240,
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 7
+            }
+          },
+          {
+            "text": "The check was reassuring: slower, yes; suffering, no.",
+            "weight": 1,
+            "effects": {
+              "money": -240,
+              "stress": -5
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep the routine unchanged",
+        "outcomes": [
+          {
+            "text": "They adapted on their own for now.",
+            "weight": 1,
+            "effects": {
+              "happiness": 1
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": -1
+            }
+          },
+          {
+            "text": "A bad slip made it clear the routine had to change after all.",
+            "weight": 1,
+            "effects": {
+              "health": -1,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": -6
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.pet.showjudge",
+    "icon": "🏅",
+    "title": "The judge’s decision",
+    "text": "A pet-show judge places your animal below a flashy competitor despite a clean performance. Another exhibitor mutters that the judge always favors that kennel.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Accept the result",
+        "outcomes": [
+          {
+            "text": "I congratulated the winners and spent the ride home thinking about what to train next.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 3
+            },
+            "schedule": {
+              "event": "v08.pet.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The loss stung, but my pet seemed much more interested in the treats.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask for specific feedback",
+        "outcomes": [
+          {
+            "text": "The judge pointed out two small handling mistakes I had not noticed.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 6
+            }
+          },
+          {
+            "text": "The feedback was vague, but staying calm kept the conversation useful.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Accuse the judge of favoritism",
+        "outcomes": [
+          {
+            "text": "Other exhibitors agreed privately and disappeared publicly.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": -1
+            }
+          },
+          {
+            "text": "The argument got me warned by the show organizer.",
+            "weight": 1,
+            "effects": {
+              "stress": 8,
+              "karma": -2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.pet.partner",
+    "icon": "🐕",
+    "title": "Not everyone loves the same animal",
+    "text": "Your partner says the pet’s barking, fur, or nighttime routine is becoming a real strain on living together.",
+    "conditions": {
+      "age": [
+        18,
+        95
+      ],
+      "has_pet": true,
+      "has_partner": true
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Work on the behavior",
+        "outcomes": [
+          {
+            "text": "Training and a better routine took the edge off the conflict.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": -4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 7
+            }
+          },
+          {
+            "text": "The behavior improved slowly, but my partner noticed the effort.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Create pet-free spaces",
+        "outcomes": [
+          {
+            "text": "A few clear boundaries made the home feel shared again.",
+            "weight": 1,
+            "effects": {
+              "stress": -4,
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 2
+            }
+          },
+          {
+            "text": "The compromise worked, though the closed bedroom door caused dramatic sighing from the hallway.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell your partner to deal with it",
+        "outcomes": [
+          {
+            "text": "The argument became about respect instead of the pet.",
+            "weight": 1,
+            "effects": {
+              "happiness": -6,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": -1
+            }
+          },
+          {
+            "text": "They backed down for now and started spending less time at home.",
+            "weight": 1,
+            "effects": {
+              "happiness": -8,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.pet.vetbill",
+    "icon": "🩺",
+    "title": "The expensive test",
+    "text": "A vet recommends imaging that could explain your pet’s symptoms. It is not cheap, and the result may still be inconclusive.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Approve the test",
+        "outcomes": [
+          {
+            "text": "The scan found the problem early enough to treat it.",
+            "weight": 1,
+            "effects": {
+              "money": -900,
+              "happiness": 5,
+              "stress": -5
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 10
+            }
+          },
+          {
+            "text": "The scan ruled out the worst possibilities, which was still valuable information.",
+            "weight": 1,
+            "effects": {
+              "money": -900,
+              "stress": -5
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask about a lower-cost plan",
+        "outcomes": [
+          {
+            "text": "The vet built a stepwise plan that started with the most useful cheaper tests.",
+            "weight": 1,
+            "effects": {
+              "money": -280,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 5
+            }
+          },
+          {
+            "text": "The cheaper route bought time but not a clear answer.",
+            "weight": 1,
+            "effects": {
+              "money": -280,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Wait and monitor",
+        "outcomes": [
+          {
+            "text": "The symptoms settled without intervention.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 2
+            }
+          },
+          {
+            "text": "The condition worsened and the eventual treatment cost more than the test would have.",
+            "weight": 1,
+            "effects": {
+              "money": -1200,
+              "stress": 9
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": -9
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.pet.litter",
+    "icon": "🍼",
+    "title": "Too many small paws",
+    "text": "A recent litter has reached the age where each animal needs a permanent home, and several people want one for reasons you do not entirely trust.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Screen every home carefully",
+        "outcomes": [
+          {
+            "text": "It took longer, but each animal went somewhere I felt good about.",
+            "weight": 1,
+            "effects": {
+              "karma": 6,
+              "stress": 4,
+              "happiness": 6
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 3
+            }
+          },
+          {
+            "text": "One family backed out after the questions. Another, better match appeared a week later.",
+            "weight": 1,
+            "effects": {
+              "karma": 5,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep one in the family",
+        "outcomes": [
+          {
+            "text": "The house got louder and somehow warmer.",
+            "weight": 1,
+            "effects": {
+              "happiness": 7,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 1
+            }
+          },
+          {
+            "text": "The older pet needed time to accept the new little shadow following them everywhere.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 0
+            }
+          }
+        ]
+      },
+      {
+        "label": "Choose homes quickly",
+        "outcomes": [
+          {
+            "text": "Everyone found a home, though I wondered whether I asked enough questions.",
+            "weight": 1,
+            "effects": {
+              "stress": -2,
+              "karma": -1
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 0
+            }
+          },
+          {
+            "text": "One new owner called days later saying they were overwhelmed and wanted to return the animal.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 9
+  },
+  {
+    "id": "v08.pet.rescue",
+    "icon": "🛟",
+    "title": "No room left",
+    "text": "Your pet business is asked to take in several animals after a local rescue suddenly closes. Space, staff, and money are already tight.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "pet_business": true
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Take only what you can safely house",
+        "outcomes": [
+          {
+            "text": "We accepted fewer animals than people wanted, but every one received proper care.",
+            "weight": 1,
+            "effects": {
+              "karma": 5,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 4
+            }
+          },
+          {
+            "text": "Another rescue found space for the animals we could not take.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Take them all and improvise",
+        "outcomes": [
+          {
+            "text": "Staff pulled together and the community donated supplies.",
+            "weight": 1,
+            "effects": {
+              "karma": 7,
+              "stress": 9
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 5
+            }
+          },
+          {
+            "text": "Overcrowding made everything harder and one preventable illness spread through the group.",
+            "weight": 1,
+            "effects": {
+              "stress": 12,
+              "money": -1800
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -7
+            }
+          }
+        ]
+      },
+      {
+        "label": "Donate money instead",
+        "outcomes": [
+          {
+            "text": "The donation helped a larger shelter absorb the emergency.",
+            "weight": 1,
+            "effects": {
+              "money": -1200,
+              "karma": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 1
+            }
+          },
+          {
+            "text": "The check helped, though some customers accused the business of avoiding hands-on responsibility.",
+            "weight": 1,
+            "effects": {
+              "money": -1200,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.pet.therapy",
+    "icon": "🫂",
+    "title": "A quiet interruption",
+    "text": "During a rough evening, your trained support animal interrupts the spiral by leaning against you and refusing to move.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Follow the routine you practiced",
+        "outcomes": [
+          {
+            "text": "Breathing, pressure, and familiarity brought the room back into focus.",
+            "weight": 1,
+            "effects": {
+              "stress": -9,
+              "happiness": 5
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 2
+            },
+            "thread": {
+              "kind": "recovery",
+              "title": "The animal who noticed first",
+              "memory": "My pet interrupted a hard moment before I could disappear into it.",
+              "strength": 65,
+              "tags": [
+                "pet",
+                "recovery",
+                "mental-health"
+              ]
+            }
+          },
+          {
+            "text": "It did not erase the problem, but it kept the moment from growing bigger.",
+            "weight": 1,
+            "effects": {
+              "stress": -6,
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Take them outside for a walk",
+        "outcomes": [
+          {
+            "text": "The block was cold and ordinary and exactly what I needed.",
+            "weight": 1,
+            "effects": {
+              "health": 2,
+              "stress": -7,
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 2
+            }
+          },
+          {
+            "text": "We walked farther than planned and returned tired in a good way.",
+            "weight": 1,
+            "effects": {
+              "health": 2,
+              "stress": -5
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ignore the interruption",
+        "outcomes": [
+          {
+            "text": "They stayed nearby anyway, patient and stubborn.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 0
+            }
+          },
+          {
+            "text": "The moment lasted longer than it needed to, and the pet eventually curled up outside the door.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.biz.ceo",
+    "icon": "🧑‍💼",
+    "title": "Your CEO pushes back",
+    "text": "The CEO running one of your companies says your latest directive looks good from the owner’s chair and terrible from the floor.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Ask them to prove it with numbers",
+        "outcomes": [
+          {
+            "text": "Their data exposed a bottleneck I had not seen from above.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 6
+            },
+            "schedule": {
+              "event": "v08.biz.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The numbers supported my plan more than theirs, and we adjusted without turning it personal.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Give them discretion",
+        "outcomes": [
+          {
+            "text": "They changed the rollout and staff adopted it faster than expected.",
+            "weight": 1,
+            "effects": {
+              "stress": -3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 7
+            },
+            "schedule": {
+              "event": "v08.biz.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The experiment cost money, but it revealed a better long-term process.",
+            "weight": 1,
+            "effects": {
+              "money": -5000,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Remind them who owns the company",
+        "outcomes": [
+          {
+            "text": "The directive happened exactly as written and morale dropped immediately.",
+            "weight": 1,
+            "effects": {
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -7
+            }
+          },
+          {
+            "text": "The CEO complied, then quietly started taking recruiter calls.",
+            "weight": 1,
+            "effects": {
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.biz.supplier",
+    "icon": "🚚",
+    "title": "The supplier cannot deliver",
+    "text": "A key supplier says a disruption will cut your next shipment in half. You can pay much more for an emergency source or accept a bad quarter.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Pay for the backup supplier",
+        "outcomes": [
+          {
+            "text": "Margins hurt, but customers barely noticed the disruption.",
+            "weight": 1,
+            "effects": {
+              "money": -12000,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 5
+            },
+            "schedule": {
+              "event": "v08.biz.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The expensive backup arrived late too, but it prevented a total shutdown.",
+            "weight": 1,
+            "effects": {
+              "money": -15000,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Reduce output honestly",
+        "outcomes": [
+          {
+            "text": "We warned customers early and protected quality instead of stretching materials.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 3
+            }
+          },
+          {
+            "text": "Sales dropped for the quarter, but complaints stayed manageable.",
+            "weight": 1,
+            "effects": {
+              "money": -5000,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Stretch the inventory",
+        "outcomes": [
+          {
+            "text": "We made the numbers work by cutting corners no one noticed immediately.",
+            "weight": 1,
+            "effects": {
+              "money": 6000,
+              "karma": -4
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -6
+            }
+          },
+          {
+            "text": "Customers noticed immediately and returns erased the savings.",
+            "weight": 1,
+            "effects": {
+              "money": -10000,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -10
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.biz.workers",
+    "icon": "👥",
+    "title": "The staff petition",
+    "text": "Employees present a signed request for higher pay and more predictable schedules after a profitable year.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Negotiate a real package",
+        "outcomes": [
+          {
+            "text": "We found raises the companies could carry without pretending costs did not exist.",
+            "weight": 1,
+            "effects": {
+              "karma": 5,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 7
+            },
+            "schedule": {
+              "event": "v08.biz.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The package was expensive, but turnover dropped enough to recover part of it.",
+            "weight": 1,
+            "effects": {
+              "money": -8000,
+              "karma": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 6
+            }
+          }
+        ]
+      },
+      {
+        "label": "Offer a smaller raise plus bonuses",
+        "outcomes": [
+          {
+            "text": "The compromise landed better than I expected because the bonus formula was transparent.",
+            "weight": 1,
+            "effects": {
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 4
+            }
+          },
+          {
+            "text": "Staff accepted it, but the predictable-schedule issue stayed unresolved.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Reject the petition",
+        "outcomes": [
+          {
+            "text": "A few top employees left within a month.",
+            "weight": 1,
+            "effects": {
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -7
+            }
+          },
+          {
+            "text": "The staff began organizing around the rejection instead of moving on from it.",
+            "weight": 1,
+            "effects": {
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.biz.recall",
+    "icon": "📦",
+    "title": "A product might be unsafe",
+    "text": "A defect report suggests one of your companies may have shipped a product that can fail under rare conditions. The evidence is incomplete.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Recall it before certainty",
+        "outcomes": [
+          {
+            "text": "The recall was expensive and boring—which is exactly how a safety problem should end.",
+            "weight": 1,
+            "effects": {
+              "money": -18000,
+              "karma": 7,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 7
+            }
+          },
+          {
+            "text": "The defect turned out to be narrower than feared, but customers trusted the response.",
+            "weight": 1,
+            "effects": {
+              "money": -12000,
+              "karma": 6
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 6
+            }
+          }
+        ]
+      },
+      {
+        "label": "Investigate for forty-eight hours",
+        "outcomes": [
+          {
+            "text": "The engineering team isolated the defect and limited the recall to one batch.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 5
+            }
+          },
+          {
+            "text": "A failure occurred during the investigation window and made the later recall look reactive.",
+            "weight": 1,
+            "effects": {
+              "money": -22000,
+              "stress": 10
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -8
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep selling until the evidence is stronger",
+        "outcomes": [
+          {
+            "text": "Nothing happened and the quarter closed cleanly, but the risk remains in the field.",
+            "weight": 1,
+            "effects": {
+              "money": 9000,
+              "karma": -6
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -4
+            }
+          },
+          {
+            "text": "A customer was hurt by the exact failure described in the report.",
+            "weight": 1,
+            "effects": {
+              "money": -35000,
+              "karma": -10,
+              "stress": 12
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -14
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 9
+  },
+  {
+    "id": "v08.biz.cash",
+    "icon": "🏦",
+    "title": "Profitable on paper, short on cash",
+    "text": "Several companies in your portfolio are healthy, but bills are due before customers pay. The group is facing a liquidity squeeze.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Inject personal cash",
+        "outcomes": [
+          {
+            "text": "My own balance took the hit and payroll went out on time.",
+            "weight": 1,
+            "effects": {
+              "money": -20000,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_debt",
+              "value": -8000
+            }
+          },
+          {
+            "text": "The bridge carried the companies through, but I felt the risk personally for the first time.",
+            "weight": 1,
+            "effects": {
+              "money": -15000,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Open a short-term credit line",
+        "outcomes": [
+          {
+            "text": "The interest hurt less than missing payroll would have.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "company_debt",
+              "value": 12000
+            }
+          },
+          {
+            "text": "The bank approved less than requested, forcing a second round of cuts.",
+            "weight": 1,
+            "effects": {
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "company_debt",
+              "value": 9000
+            }
+          }
+        ]
+      },
+      {
+        "label": "Delay nonessential bills",
+        "outcomes": [
+          {
+            "text": "Vendors gave us a week and the receivables finally landed.",
+            "weight": 1,
+            "effects": {
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 1
+            }
+          },
+          {
+            "text": "One important vendor froze the account until every overdue invoice was cleared.",
+            "weight": 1,
+            "effects": {
+              "money": -7000,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -4
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.biz.heir",
+    "icon": "🌳",
+    "title": "A child asks to sit in",
+    "text": "One of your children asks if they can attend a board meeting—not for an allowance, but because they want to understand what you built.",
+    "conditions": {
+      "age": [
+        35,
+        95
+      ],
+      "min_companies": 1,
+      "has_children": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Give them a real seat at the table",
+        "outcomes": [
+          {
+            "text": "They asked sharper questions than I expected and took notes through the boring parts.",
+            "weight": 1,
+            "effects": {
+              "happiness": 7,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 3
+            },
+            "thread": {
+              "kind": "family",
+              "title": "The first board meeting together",
+              "memory": "My child asked to understand the companies instead of merely inheriting them.",
+              "strength": 62,
+              "tags": [
+                "family",
+                "business",
+                "legacy"
+              ]
+            }
+          },
+          {
+            "text": "They discovered that business meetings contain far fewer movie speeches than promised.",
+            "weight": 1,
+            "effects": {
+              "happiness": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Start them with a summer job",
+        "outcomes": [
+          {
+            "text": "Working beside ordinary staff taught them more than a boardroom tour would have.",
+            "weight": 1,
+            "effects": {
+              "karma": 4,
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 4
+            }
+          },
+          {
+            "text": "They hated the job but gained respect for the people doing it.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Tell them it is not their concern yet",
+        "outcomes": [
+          {
+            "text": "They accepted the answer and stopped asking.",
+            "weight": 1,
+            "effects": {
+              "stress": -1,
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 0
+            }
+          },
+          {
+            "text": "They heard “you do not trust me,” even though that was not what I meant.",
+            "weight": 1,
+            "effects": {
+              "happiness": -5,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 10
+  },
+  {
+    "id": "v08.biz.poach",
+    "icon": "🎯",
+    "title": "A competitor calls your best manager",
+    "text": "A rival company offers one of your strongest managers a large raise and a bigger title. They give you a chance to respond before deciding.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Match the offer",
+        "outcomes": [
+          {
+            "text": "The manager stayed, and the retention bill became the new benchmark for everyone watching.",
+            "weight": 1,
+            "effects": {
+              "money": -9000,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 5
+            }
+          },
+          {
+            "text": "They stayed for the money but asked for a clearer path to actual authority.",
+            "weight": 1,
+            "effects": {
+              "money": -9000
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Offer ownership instead of salary",
+        "outcomes": [
+          {
+            "text": "A small stake made them think like a long-term builder instead of a flight risk.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 7
+            }
+          },
+          {
+            "text": "They wanted cash, not philosophy, and left anyway.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Wish them well",
+        "outcomes": [
+          {
+            "text": "They left cleanly and recommended an excellent replacement.",
+            "weight": 1,
+            "effects": {
+              "karma": 3,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 1
+            }
+          },
+          {
+            "text": "They took two other employees with them and joined the rival by Monday.",
+            "weight": 1,
+            "effects": {
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -8
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.biz.culture",
+    "icon": "🏢",
+    "title": "Two companies, one hallway",
+    "text": "After an acquisition, teams from two companies are being combined. They disagree about everything from meeting culture to whose software is “obviously” better.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Let each team keep what works",
+        "outcomes": [
+          {
+            "text": "The integration became slower and far less destructive.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 6
+            }
+          },
+          {
+            "text": "A hybrid process emerged that neither side would have designed alone.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 7
+            }
+          }
+        ]
+      },
+      {
+        "label": "Standardize everything now",
+        "outcomes": [
+          {
+            "text": "The company got one system quickly, at the cost of a rough month.",
+            "weight": 1,
+            "effects": {
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          },
+          {
+            "text": "The forced migration broke workflows nobody had bothered to map.",
+            "weight": 1,
+            "effects": {
+              "stress": 9
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -7
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let the stronger team absorb the other",
+        "outcomes": [
+          {
+            "text": "Decision-making got simpler and resentment got louder.",
+            "weight": 1,
+            "effects": {
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -3
+            }
+          },
+          {
+            "text": "Several valuable employees interpreted “integration” as “replacement” and resigned.",
+            "weight": 1,
+            "effects": {
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -8
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.justice.job",
+    "icon": "💼",
+    "title": "The background-check box",
+    "text": "A promising employer asks you to explain your record before the final interview. The application gives you one small text box.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Explain it directly",
+        "outcomes": [
+          {
+            "text": "I described what happened, what I completed, and what has been different since.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3,
+              "stress": 5,
+              "karma": 2
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The interviewer appreciated the candor but chose another candidate.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 4,
+              "karma": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep the explanation minimal",
+        "outcomes": [
+          {
+            "text": "I answered only what was asked and kept the interview focused on the work.",
+            "weight": 1,
+            "effects": {
+              "stress": 2,
+              "smarts": 1
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The short answer sounded evasive to the hiring panel.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3,
+              "stress": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Leave it blank",
+        "outcomes": [
+          {
+            "text": "The background report filled the silence for me.",
+            "weight": 1,
+            "effects": {
+              "stress": 8,
+              "happiness": -4
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The employer never followed up after the report came back.",
+            "weight": 1,
+            "effects": {
+              "happiness": -6,
+              "stress": 5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.justice.probation",
+    "icon": "🕘",
+    "title": "The curfew and the opportunity",
+    "text": "A legitimate work opportunity would keep you out past a supervision curfew. Missing it could hurt your career; breaking curfew could hurt much more.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "on_probation": true
+    },
+    "weight": 6,
+    "choices": [
+      {
+        "label": "Ask permission in advance",
+        "outcomes": [
+          {
+            "text": "My officer approved the schedule change because I asked before making it their problem.",
+            "weight": 1,
+            "effects": {
+              "stress": -3,
+              "karma": 3
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": -1
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The request was denied, but the paper trail protected me from a violation.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2,
+              "karma": 2
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "Decline the opportunity",
+        "outcomes": [
+          {
+            "text": "I hated saying no, but the year stayed clean.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": -1
+            }
+          },
+          {
+            "text": "Another opportunity appeared later with hours I could actually keep.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Go and hope nobody checks",
+        "outcomes": [
+          {
+            "text": "Nobody checked that night.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2,
+              "karma": -4
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": 1
+            }
+          },
+          {
+            "text": "A routine check turned one late shift into a violation hearing.",
+            "weight": 1,
+            "effects": {
+              "stress": 10,
+              "karma": -5
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": 2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 5
+  },
+  {
+    "id": "v08.justice.expunge",
+    "icon": "📄",
+    "title": "A cleaner record might be possible",
+    "text": "A legal clinic says part of your record may qualify for sealing or expungement, but the process is slow and not guaranteed.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "File the petition",
+        "outcomes": [
+          {
+            "text": "The petition was granted. The past is not erased, but fewer doors close before I reach them.",
+            "weight": 1,
+            "effects": {
+              "money": -900,
+              "happiness": 9,
+              "stress": -6
+            },
+            "ambition": {
+              "kind": "court_case",
+              "crime": "record relief",
+              "result": "overturned",
+              "years": 0,
+              "evidence": 0
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The judge denied the petition for now but explained when I can try again.",
+            "weight": 1,
+            "effects": {
+              "money": -900,
+              "happiness": -3,
+              "stress": 4
+            },
+            "schedule": {
+              "event": "v08.justice.followup",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "Use a legal-aid clinic",
+        "outcomes": [
+          {
+            "text": "The wait was longer, but the clinic built a careful petition at low cost.",
+            "weight": 1,
+            "effects": {
+              "money": -120,
+              "stress": 2,
+              "karma": 2
+            },
+            "ambition": {
+              "kind": "court_case",
+              "crime": "record relief",
+              "result": "recorded",
+              "years": 0
+            }
+          },
+          {
+            "text": "The clinic was overwhelmed and could only give me a self-help packet.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "smarts": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Put it off",
+        "outcomes": [
+          {
+            "text": "Nothing changed, which was easier this month and harder every application afterward.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            }
+          },
+          {
+            "text": "A later employer rejected me before I had a chance to explain anything.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 5
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 10
+  },
+  {
+    "id": "v08.justice.landlord",
+    "icon": "🏠",
+    "title": "The apartment application",
+    "text": "A landlord likes your income and references, then spots the criminal record on the screening report.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Offer context and references",
+        "outcomes": [
+          {
+            "text": "A former supervisor vouched for me and the landlord approved the lease.",
+            "weight": 1,
+            "effects": {
+              "happiness": 6,
+              "stress": -4,
+              "karma": 2
+            }
+          },
+          {
+            "text": "The landlord listened respectfully and still said no.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Offer a larger deposit",
+        "outcomes": [
+          {
+            "text": "The extra deposit overcame their concern and secured the apartment.",
+            "weight": 1,
+            "effects": {
+              "money": -1400,
+              "happiness": 5
+            }
+          },
+          {
+            "text": "They refused the money and the application anyway.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Move on to another listing",
+        "outcomes": [
+          {
+            "text": "The next landlord cared more about current income than old paperwork.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            }
+          },
+          {
+            "text": "Three applications later, the fees were becoming their own punishment.",
+            "weight": 1,
+            "effects": {
+              "money": -300,
+              "happiness": -4,
+              "stress": 7
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 7
+  },
+  {
+    "id": "v08.justice.witness",
+    "icon": "👁️",
+    "title": "A witness contacts you",
+    "text": "Someone connected to an old case sends a message saying they remember something differently now. You cannot tell whether it helps or creates a new problem.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Send it to your lawyer",
+        "outcomes": [
+          {
+            "text": "Counsel preserved the message and told me not to contaminate the witness’s memory.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "smarts": 1
+            }
+          },
+          {
+            "text": "The lawyer said the new detail was important enough to investigate formally.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3,
+              "stress": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask what changed",
+        "outcomes": [
+          {
+            "text": "They explained a detail they had been afraid to admit during the original case.",
+            "weight": 1,
+            "effects": {
+              "stress": 6
+            }
+          },
+          {
+            "text": "The conversation got messy enough that I stopped before creating a worse record.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "smarts": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ignore the message",
+        "outcomes": [
+          {
+            "text": "Nothing else came of it this year.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            }
+          },
+          {
+            "text": "The witness later gave the information to someone else, and I learned about it secondhand.",
+            "weight": 1,
+            "effects": {
+              "stress": 6,
+              "happiness": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 9
+  },
+  {
+    "id": "v08.justice.plea_memory",
+    "icon": "⚖️",
+    "title": "The plea still follows you",
+    "text": "Years after accepting a plea, someone casually describes you as guilty of the worst version of what happened. The legal shorthand has become a social story.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Correct the record calmly",
+        "outcomes": [
+          {
+            "text": "I explained what the plea actually covered without pretending it meant nothing.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "karma": 2
+            }
+          },
+          {
+            "text": "They listened, though I could tell the label had already done some work.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2,
+              "stress": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let it go",
+        "outcomes": [
+          {
+            "text": "I decided I did not owe every room my case file.",
+            "weight": 1,
+            "effects": {
+              "stress": -3,
+              "happiness": 2
+            }
+          },
+          {
+            "text": "Silence protected my energy and left the misunderstanding intact.",
+            "weight": 1,
+            "effects": {
+              "stress": -1,
+              "happiness": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Get angry",
+        "outcomes": [
+          {
+            "text": "The argument became bigger than the original comment.",
+            "weight": 1,
+            "effects": {
+              "stress": 7,
+              "happiness": -4
+            }
+          },
+          {
+            "text": "I said something cruel enough that the room stopped being about my record.",
+            "weight": 1,
+            "effects": {
+              "stress": 8,
+              "karma": -3
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.justice.fine",
+    "icon": "💸",
+    "title": "One more fee",
+    "text": "A supervision fee, court balance, or old fine resurfaces just as your budget finally begins to stabilize.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 5,
+    "choices": [
+      {
+        "label": "Pay it now",
+        "outcomes": [
+          {
+            "text": "The balance disappeared and so did one small source of background anxiety.",
+            "weight": 1,
+            "effects": {
+              "money": -650,
+              "stress": -4
+            }
+          },
+          {
+            "text": "Paying it hurt this month but prevented new penalties.",
+            "weight": 1,
+            "effects": {
+              "money": -650,
+              "stress": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Set up a payment plan",
+        "outcomes": [
+          {
+            "text": "The court accepted manageable payments and stopped adding late penalties.",
+            "weight": 1,
+            "effects": {
+              "money": -150,
+              "stress": -2
+            }
+          },
+          {
+            "text": "The payment plan was affordable, if annoyingly long.",
+            "weight": 1,
+            "effects": {
+              "money": -150,
+              "stress": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ignore the notice",
+        "outcomes": [
+          {
+            "text": "Nothing happened immediately, which made avoidance feel deceptively successful.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            }
+          },
+          {
+            "text": "A late fee and collection notice arrived together.",
+            "weight": 1,
+            "effects": {
+              "money": -250,
+              "stress": 6
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 6
+  },
+  {
+    "id": "v08.justice.support",
+    "icon": "🫂",
+    "title": "Someone asks what would actually help",
+    "text": "A family member says they want to support you after the case or release, but they do not know whether you need money, rides, space, or simply normal conversation.",
+    "conditions": {
+      "age": [
+        18,
+        90
+      ],
+      "has_record": true
+    },
+    "weight": 4,
+    "choices": [
+      {
+        "label": "Ask for practical help",
+        "outcomes": [
+          {
+            "text": "A few rides and one paid bill did more than a dozen speeches about second chances.",
+            "weight": 1,
+            "effects": {
+              "money": 250,
+              "stress": -5,
+              "happiness": 5
+            }
+          },
+          {
+            "text": "They could not do everything I asked, but the specific request made support possible.",
+            "weight": 1,
+            "effects": {
+              "stress": -3,
+              "happiness": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask them to treat you normally",
+        "outcomes": [
+          {
+            "text": "For one evening, nobody talked about court, prison, probation, or “getting back on track.”",
+            "weight": 1,
+            "effects": {
+              "happiness": 7,
+              "stress": -6
+            }
+          },
+          {
+            "text": "Normal turned out to be something we had to relearn together.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Say you are fine",
+        "outcomes": [
+          {
+            "text": "They respected the answer and gave me room.",
+            "weight": 1,
+            "effects": {
+              "stress": -1
+            }
+          },
+          {
+            "text": "I protected my pride and made the week harder than it needed to be.",
+            "weight": 1,
+            "effects": {
+              "stress": 5,
+              "happiness": -3
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 8
+  },
+  {
+    "id": "v08.police.followup",
+    "icon": "📂",
+    "title": "The file comes back",
+    "text": "A decision from an earlier police situation has returned in a supervisor’s review. The details are no longer fresh, but the record is.",
+    "conditions": {
+      "age": [
+        20,
+        80
+      ],
+      "job_id": "police"
+    },
+    "weight": 0.01,
+    "choices": [
+      {
+        "label": "Walk through your reasoning",
+        "outcomes": [
+          {
+            "text": "The review accepted the decision because the reasoning was documented, not reconstructed.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": -3
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "One assumption looked weaker in hindsight, and I wrote down what I would do differently.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask to see the full file first",
+        "outcomes": [
+          {
+            "text": "The complete record reminded me of facts I had forgotten and prevented a sloppy answer.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "police_integrity",
+              "value": 3
+            }
+          },
+          {
+            "text": "Reading every page reopened stress I thought had faded.",
+            "weight": 1,
+            "effects": {
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Treat it as routine paperwork",
+        "outcomes": [
+          {
+            "text": "The review closed with no issue.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": 1
+            }
+          },
+          {
+            "text": "A vague answer created more questions than the original decision did.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "police_reputation",
+              "value": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 99
+  },
+  {
+    "id": "v08.med.followup",
+    "icon": "🏥",
+    "title": "A familiar chart",
+    "text": "A patient or clinical decision from a previous year returns to your service. This time you know how the first chapter ended.",
+    "conditions": {
+      "age": [
+        24,
+        80
+      ],
+      "job_id": [
+        "doctor",
+        "nurse"
+      ]
+    },
+    "weight": 0.01,
+    "choices": [
+      {
+        "label": "Review the old notes before walking in",
+        "outcomes": [
+          {
+            "text": "The history changed how I framed the next decision and the patient noticed I remembered.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "The old notes exposed a pattern nobody had connected across visits.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "job_perf": 5
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Start fresh with the current problem",
+        "outcomes": [
+          {
+            "text": "A clean look prevented the old diagnosis from anchoring my thinking.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "I nearly repeated a test the chart had already answered.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -2,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask a colleague to review it too",
+        "outcomes": [
+          {
+            "text": "Two perspectives caught a subtle change that one set of eyes might have missed.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "medical_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "We disagreed again, but the disagreement made the final plan more explicit.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "medical_burnout",
+              "value": -1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 99
+  },
+  {
+    "id": "v08.sport.followup",
+    "icon": "🏟️",
+    "title": "The next season remembers",
+    "text": "A decision from last season has followed you into camp: teammates, coaches, and your own body remember more than the stat line does.",
+    "conditions": {
+      "age": [
+        18,
+        45
+      ],
+      "career": "athlete"
+    },
+    "weight": 0.01,
+    "choices": [
+      {
+        "label": "Address it directly",
+        "outcomes": [
+          {
+            "text": "Naming the tension made the first week lighter than the last offseason.",
+            "weight": 1,
+            "effects": {
+              "stress": -4,
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 5
+            }
+          },
+          {
+            "text": "The conversation was uncomfortable but cleared the air before games mattered.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let performance reset the story",
+        "outcomes": [
+          {
+            "text": "A strong camp gave everyone a newer thing to talk about.",
+            "weight": 1,
+            "effects": {
+              "fame": 2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 7
+            }
+          },
+          {
+            "text": "The first poor practice revived every old question at once.",
+            "weight": 1,
+            "effects": {
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": -3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep your circle small",
+        "outcomes": [
+          {
+            "text": "A quieter offseason helped me arrive rested and less reactive.",
+            "weight": 1,
+            "effects": {
+              "health": 2,
+              "stress": -4
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 3
+            }
+          },
+          {
+            "text": "Isolation protected my focus and weakened some locker-room relationships.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2
+            },
+            "ambition": {
+              "kind": "sports_form",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 99
+  },
+  {
+    "id": "v08.pet.followup",
+    "icon": "🐾",
+    "title": "A habit that stayed",
+    "text": "Something you taught, changed, or worried about with your pet has become part of the household routine.",
+    "conditions": {
+      "age": [
+        12,
+        95
+      ],
+      "has_pet": true
+    },
+    "weight": 0.01,
+    "choices": [
+      {
+        "label": "Keep reinforcing the routine",
+        "outcomes": [
+          {
+            "text": "Consistency turned the behavior into something I barely have to think about now.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 5
+            }
+          },
+          {
+            "text": "Progress was slow, but the setbacks became smaller and easier to recover from.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Relax the rules a little",
+        "outcomes": [
+          {
+            "text": "The household found a comfortable middle ground.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": -3
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 1
+            }
+          },
+          {
+            "text": "The old behavior returned almost immediately, impressed by its own comeback.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": -2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Turn it into a new activity together",
+        "outcomes": [
+          {
+            "text": "Training became play instead of correction and closeness grew with it.",
+            "weight": 1,
+            "effects": {
+              "happiness": 6,
+              "health": 1
+            },
+            "ambition": {
+              "kind": "pet_training",
+              "value": 4
+            }
+          },
+          {
+            "text": "The pet mostly invented their own version of the activity, which was somehow better.",
+            "weight": 1,
+            "effects": {
+              "happiness": 5
+            },
+            "ambition": {
+              "kind": "pet_health",
+              "value": 2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 99
+  },
+  {
+    "id": "v08.biz.followup",
+    "icon": "📊",
+    "title": "The quarterly consequences",
+    "text": "A business decision from an earlier year has finally made it through a full operating cycle. The spreadsheet now shows what the meeting could only predict.",
+    "conditions": {
+      "age": [
+        21,
+        90
+      ],
+      "min_companies": 1
+    },
+    "weight": 0.01,
+    "choices": [
+      {
+        "label": "Keep the strategy",
+        "outcomes": [
+          {
+            "text": "The numbers support staying the course, with a few boring adjustments.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 4
+            }
+          },
+          {
+            "text": "The plan is working, just more slowly than the optimistic deck promised.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Correct what is not working",
+        "outcomes": [
+          {
+            "text": "Cutting one weak assumption improved the whole plan.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 5
+            }
+          },
+          {
+            "text": "The correction cost money now and protected far more later.",
+            "weight": 1,
+            "effects": {
+              "money": -6000
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": 6
+            }
+          }
+        ]
+      },
+      {
+        "label": "Blame the team",
+        "outcomes": [
+          {
+            "text": "People learned to make the next report look safer instead of more honest.",
+            "weight": 1,
+            "effects": {
+              "stress": 5,
+              "karma": -3
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -6
+            }
+          },
+          {
+            "text": "One senior employee pushed back publicly and forced a more honest review.",
+            "weight": 1,
+            "effects": {
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "company_quality",
+              "value": -2
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 99
+  },
+  {
+    "id": "v08.justice.followup",
+    "icon": "📬",
+    "title": "The next piece of paperwork",
+    "text": "A choice you made around your record, supervision, or reentry has produced another letter. Progress turns out to have paperwork too.",
+    "conditions": {
+      "age": [
+        18,
+        95
+      ],
+      "has_record": true
+    },
+    "weight": 0.01,
+    "choices": [
+      {
+        "label": "Handle it immediately",
+        "outcomes": [
+          {
+            "text": "The form took twenty minutes and removed a problem that could have lasted months.",
+            "weight": 1,
+            "effects": {
+              "stress": -4,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": -1
+            }
+          },
+          {
+            "text": "The office needed one more document, but at least the process was moving.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": -1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask for help understanding it",
+        "outcomes": [
+          {
+            "text": "A clerk or advocate explained the part the letter somehow made less clear.",
+            "weight": 1,
+            "effects": {
+              "stress": -3,
+              "karma": 1
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": -1
+            }
+          },
+          {
+            "text": "The first person could not answer, but they gave me the right number instead of guessing.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": 0
+            }
+          }
+        ]
+      },
+      {
+        "label": "Put it in a drawer for later",
+        "outcomes": [
+          {
+            "text": "Later arrived before the deadline, barely.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": 0
+            }
+          },
+          {
+            "text": "I missed a deadline and created a second problem out of the first.",
+            "weight": 1,
+            "effects": {
+              "stress": 8,
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "justice_probation",
+              "value": 1
+            }
+          }
+        ]
+      }
+    ],
+    "cooldown": 99
+  },
+  {
+    "id": "v08.work.credit",
+    "icon": "🧾",
+    "title": "Whose name goes on the work?",
+    "text": "A coworker presents a successful piece of work to leadership and tells the story as if your contribution was background support.",
+    "conditions": {
+      "age": [
+        18,
+        72
+      ],
+      "employed": true
+    },
+    "weight": 7,
+    "cooldown": 5,
+    "choices": [
+      {
+        "label": "Correct the record in the room",
+        "outcomes": [
+          {
+            "text": "I described my part without turning the meeting into a public fight.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 5
+            }
+          },
+          {
+            "text": "The correction was accurate, but the room remembered the tension too.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Talk to the coworker afterward",
+        "outcomes": [
+          {
+            "text": "They apologized and sent a follow-up note crediting the work properly.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "They insisted that “everyone knows it was a team effort.” I now know how they play.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let the result speak for itself",
+        "outcomes": [
+          {
+            "text": "My boss asked me privately about the details and knew exactly who had done the hard part.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "Nobody corrected the story, and the wrong version became the official one.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": -3
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v08.work.mentor",
+    "icon": "🧭",
+    "title": "Your mentor opens a door",
+    "text": "A senior person you respect offers to introduce you to someone influential in the field, but warns that the meeting will be informal and unstructured.",
+    "conditions": {
+      "age": [
+        18,
+        72
+      ],
+      "employed": true
+    },
+    "weight": 5,
+    "cooldown": 7,
+    "choices": [
+      {
+        "label": "Take the meeting and prepare anyway",
+        "outcomes": [
+          {
+            "text": "The conversation wandered into exactly the topic I had researched the night before.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 8
+            }
+          },
+          {
+            "text": "Preparation could not manufacture chemistry, but I left with a useful new contact.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask your mentor what matters most",
+        "outcomes": [
+          {
+            "text": "Their advice helped me avoid performing and have an actual conversation.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 6
+            }
+          },
+          {
+            "text": "The advice was vague, but asking showed that I took the opportunity seriously.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "label": "Decline until you feel more ready",
+        "outcomes": [
+          {
+            "text": "My mentor respected the honesty and offered again months later.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 1
+            }
+          },
+          {
+            "text": "The opportunity went to someone else and did not circle back.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": -1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v08.work.failure",
+    "icon": "📉",
+    "title": "The project misses",
+    "text": "A project tied closely to your name is late, over budget, or simply not working. Leadership wants an explanation before deciding what happens next.",
+    "conditions": {
+      "age": [
+        18,
+        72
+      ],
+      "employed": true
+    },
+    "weight": 6,
+    "cooldown": 6,
+    "choices": [
+      {
+        "label": "Own the mistakes precisely",
+        "outcomes": [
+          {
+            "text": "I separated what I controlled from what I did not and brought a recovery plan instead of excuses.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "job_perf": 3,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "The honesty hurt in the meeting and helped in the weeks after it.",
+            "weight": 1,
+            "effects": {
+              "stress": 6
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Share the blame across the team",
+        "outcomes": [
+          {
+            "text": "The explanation was technically true and made everyone trust me a little less.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": -4
+            }
+          },
+          {
+            "text": "A teammate challenged my version with timestamps and notes.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -6,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": -7
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask for one more week before judging it",
+        "outcomes": [
+          {
+            "text": "The extra week produced a smaller version that actually worked.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 5,
+              "stress": 7
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 5
+            }
+          },
+          {
+            "text": "The extra week changed nothing except the date on the failure.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -4,
+              "stress": 8
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": -3
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v08.work.poached",
+    "icon": "📨",
+    "title": "A recruiter knows your name",
+    "text": "A recruiter from another organization reaches out with a role that sounds better on paper: more money, more responsibility, and a lot you cannot verify yet.",
+    "conditions": {
+      "age": [
+        18,
+        72
+      ],
+      "employed": true
+    },
+    "weight": 5,
+    "cooldown": 7,
+    "choices": [
+      {
+        "label": "Take the exploratory call",
+        "outcomes": [
+          {
+            "text": "The call gave me useful market information even before I decided whether I wanted the job.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 6
+            }
+          },
+          {
+            "text": "The role was mostly title inflation wrapped around worse hours.",
+            "weight": 1,
+            "effects": {
+              "stress": 1,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Use the interest to reassess your current job",
+        "outcomes": [
+          {
+            "text": "I realized the thing I wanted was not actually a new employer—it was more responsibility where I already was.",
+            "weight": 1,
+            "effects": {
+              "happiness": 3
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 2
+            }
+          },
+          {
+            "text": "The comparison made problems at my current job harder to ignore.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ignore the recruiter",
+        "outcomes": [
+          {
+            "text": "The message disappeared into the inbox and my week stayed simple.",
+            "weight": 1,
+            "effects": {
+              "stress": -2
+            }
+          },
+          {
+            "text": "Months later, someone I knew took the role and loved it.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v08.work.conference",
+    "icon": "🎟️",
+    "title": "The conference hallway",
+    "text": "Your employer sends you to a professional conference where the sessions are useful, but the real opportunities seem to happen in hallways between them.",
+    "conditions": {
+      "age": [
+        18,
+        72
+      ],
+      "employed": true
+    },
+    "weight": 4,
+    "cooldown": 8,
+    "choices": [
+      {
+        "label": "Introduce yourself to strangers",
+        "outcomes": [
+          {
+            "text": "Three awkward conversations produced one genuinely useful connection.",
+            "weight": 1,
+            "effects": {
+              "stress": 3,
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 7
+            }
+          },
+          {
+            "text": "Most conversations went nowhere, which is apparently how networking works.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "label": "Stay close to your own team",
+        "outcomes": [
+          {
+            "text": "I strengthened relationships with coworkers I normally only see under deadlines.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "We had a good trip and came home knowing exactly the same people as before.",
+            "weight": 1,
+            "effects": {
+              "happiness": 2
+            },
+            "ambition": {
+              "kind": "career_network",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "label": "Attend every technical session",
+        "outcomes": [
+          {
+            "text": "I came home with pages of notes and one idea that immediately improved my work.",
+            "weight": 1,
+            "effects": {
+              "smarts": 2,
+              "job_perf": 3
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 3
+            }
+          },
+          {
+            "text": "By the final session my brain had stopped accepting new information.",
+            "weight": 1,
+            "effects": {
+              "smarts": 1,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v08.work.promotion",
+    "icon": "⬆️",
+    "title": "The role above yours opens",
+    "text": "A position one level above yours becomes available. You are qualified, but so are two people who have been doing visible work all year.",
+    "conditions": {
+      "age": [
+        18,
+        72
+      ],
+      "employed": true
+    },
+    "weight": 6,
+    "cooldown": 5,
+    "choices": [
+      {
+        "label": "Apply with a concrete case",
+        "outcomes": [
+          {
+            "text": "I walked into the interview with examples, numbers, and no need to pretend I was perfect.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 4,
+              "stress": 4
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 6
+            }
+          },
+          {
+            "text": "The panel liked the case but chose someone with more experience.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3,
+              "stress": 3
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask your mentor or boss what is missing",
+        "outcomes": [
+          {
+            "text": "The answer was uncomfortable and useful: I needed to show leadership before receiving the title.",
+            "weight": 1,
+            "effects": {
+              "smarts": 2,
+              "stress": 2
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 4
+            }
+          },
+          {
+            "text": "They told me I was already competitive and should stop waiting for permission.",
+            "weight": 1,
+            "effects": {
+              "happiness": 4
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "Do not apply this time",
+        "outcomes": [
+          {
+            "text": "I used the year to build a stronger portfolio instead of forcing the timing.",
+            "weight": 1,
+            "effects": {
+              "stress": -2,
+              "smarts": 1
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 2
+            }
+          },
+          {
+            "text": "The person hired above me was someone I had been training for months.",
+            "weight": 1,
+            "effects": {
+              "happiness": -4,
+              "stress": 5
+            },
+            "ambition": {
+              "kind": "career_reputation",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

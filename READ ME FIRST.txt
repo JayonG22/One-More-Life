@@ -1,0 +1,24 @@
+ONE MORE LIFE — v0.14.0 "Where You Started"
+
+WINDOWS
+  Game\Windows\OneMoreLife.exe   —  double-click it. That's all.
+  No Godot, no install. SmartScreen may ask once ("More info" -> "Run anyway")
+  because the .exe isn't code-signed yet.
+
+LINUX
+  Game/Linux/OneMoreLife.x86_64  —  chmod +x it once, then run it.
+
+SOURCE
+  Source/  — the full Godot 4.4.1 project.
+
+START A NEW LIFE
+  Old saves still load, but a life begun before this update has no origin,
+  no wanted record and no relationship clock, so those read empty. The new
+  systems only show properly on a fresh life.
+
+WHAT'S NEW
+  See CHANGELOG-v0.14.0.md. Short version: your parents are actually married
+  to each other now (that was a real bug), you aren't always born into a full
+  family, smarts fade if you never use them, a failing life warns you before
+  it ends, crimes give you wanted stars, and there's a "Become a..." tab where
+  you can go after any of seventeen paths instead of waiting to be found.

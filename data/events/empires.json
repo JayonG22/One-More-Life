@@ -1,0 +1,2979 @@
+[
+ {
+  "id": "biz.poach",
+  "icon": "🧲",
+  "title": "Poached",
+  "text": "A competitor is trying to poach {e.first}, who works for you at {biz}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Match their offer",
+    "outcomes": [
+     {
+      "text": "I gave {e.first} a raise. {e.He} stayed and worked harder than ever.",
+      "weight": 3,
+      "effects": {
+       "money": -15000
+      },
+      "relationship": {
+       "e": 10
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "I matched it, and {e.first} used the new number to go back to them one more time.",
+      "weight": 1,
+      "effects": {
+       "money": -15000
+      },
+      "relationship": {
+       "e": -10
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Let {e.first} go with your blessing",
+    "outcomes": [
+     {
+      "text": "{e.first} left for the competitor. We're still friends.",
+      "weight": 3,
+      "relationship": {
+       "e": 5
+      },
+      "empire": "biz_hit"
+     },
+     {
+      "text": "{e.first} left with my blessing and two of my clients, which had not been part of the blessing.",
+      "weight": 1,
+      "relationship": {
+       "e": -20
+      },
+      "empire": "biz_hit",
+      "effects": {
+       "money": -25000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Guilt trip {e.first}",
+    "outcomes": [
+     {
+      "text": "{e.first} stayed, but resents me now.",
+      "weight": 3,
+      "relationship": {
+       "e": -20
+      }
+     },
+     {
+      "text": "The guilt trip worked for about four months and then {e.first} left without notice on a Friday.",
+      "weight": 1,
+      "relationship": {
+       "e": -35
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "e": {
+    "from": "biz_crew"
+   }
+  }
+ },
+ {
+  "id": "biz.family_screwup",
+  "icon": "😬",
+  "title": "Family business",
+  "text": "{e.first} made a huge mistake at {biz} and a client walked.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Fire {e.first}",
+    "outcomes": [
+     {
+      "text": "I fired {e.first}. Thanksgiving is going to be tense.",
+      "weight": 3,
+      "relationship": {
+       "e": -40
+      },
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "I fired {e.first} and it was the making of {e.him}. {e.He} runs something better than mine now.",
+      "weight": 1,
+      "relationship": {
+       "e": -10
+      },
+      "effects": {
+       "stress": 6,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cover for {e.first}",
+    "outcomes": [
+     {
+      "text": "I took the blame. {e.first} will never forget it.",
+      "weight": 3,
+      "relationship": {
+       "e": 20
+      },
+      "empire": "biz_hit"
+     },
+     {
+      "text": "I covered for {e.first}, and {e.he} did it again within the year because nothing had happened the first time.",
+      "weight": 1,
+      "relationship": {
+       "e": 10
+      },
+      "empire": "biz_hit",
+      "effects": {
+       "money": -40000,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Yell at {e.first} in front of everyone",
+    "outcomes": [
+     {
+      "text": "{e.first} cried in the bathroom. The whole staff heard.",
+      "weight": 3,
+      "relationship": {
+       "e": -25
+      },
+      "effects": {
+       "karma": -4
+      }
+     },
+     {
+      "text": "I shouted in front of everybody, and two good people handed in their notice that week over it.",
+      "weight": 1,
+      "relationship": {
+       "e": -25
+      },
+      "effects": {
+       "karma": -8
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "e": {
+    "from": "biz_crew"
+   }
+  }
+ },
+ {
+  "id": "biz.viral_review",
+  "icon": "⭐",
+  "title": "Viral review",
+  "text": "A famous influencer reviewed {biz}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Read it",
+    "outcomes": [
+     {
+      "text": "Five stars. Sales exploded.",
+      "weight": 2,
+      "empire": "biz_buzz",
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "One star. \"Overpriced and soulless.\" Sales tanked.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Reply to it publicly",
+    "outcomes": [
+     {
+      "text": "I replied underneath, honestly, and the reply did better numbers than the review.",
+      "weight": 2,
+      "empire": "biz_buzz",
+      "effects": {
+       "fame": 4
+      }
+     },
+     {
+      "text": "I replied underneath and it read as defensive, because it was.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "fame": 3,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't look at it",
+    "outcomes": [
+     {
+      "text": "I did not read it and got on with the day. The queue outside told me enough.",
+      "weight": 2,
+      "empire": "biz_boost",
+      "effects": {
+       "stress": -5
+      }
+     },
+     {
+      "text": "I did not read it, and found out what it said from a customer, in person, at the counter.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.buyout",
+  "icon": "💼",
+  "title": "Buyout offer",
+  "text": "A conglomerate wants to buy {biz} outright.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Hear them out",
+    "outcomes": [
+     {
+      "text": "Their offer was insulting. I sent them away.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "They doubled the offer after I walked away. I'm thinking about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Not for sale",
+    "outcomes": [
+     {
+      "text": "{biz} is not for sale. Not today.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I turned them down, and they bought my biggest competitor instead and spent three years pricing me out.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sell, but stay on to run it",
+    "outcomes": [
+     {
+      "text": "I took the money and the chair. Same desk, same people, somebody else's problem at the end of the quarter.",
+      "weight": 2,
+      "empire": "biz_boost",
+      "effects": {
+       "money": 1200000,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I sold and stayed, and within a year I was being managed in the company I had built.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "money": 1200000,
+       "happiness": -15,
+       "stress": 18
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.investor_pitch",
+  "icon": "🎤",
+  "title": "Shark tank",
+  "text": "A TV show wants you to pitch {biz} to a panel of billionaire investors.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true,
+   "public_company": false,
+   "min_fame": 0
+  },
+  "choices": [
+   {
+    "label": "Pitch on live TV",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 3,
+      "play": {
+       "id": "debate",
+       "kind": "biz_pitch",
+       "params": {
+        "flavor": "pitch",
+        "skill": 55
+       }
+      },
+      "effects": {
+       "fame": 2
+      }
+     },
+     {
+      "text": "",
+      "weight": 1,
+      "effects": {
+       "fame": 3
+      },
+      "play": {
+       "id": "debate",
+       "kind": "biz_pitch",
+       "params": {
+        "flavor": "pitch",
+        "skill": 75
+       }
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I passed. Not everything needs to be on TV.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I declined, and one of the panel looked us up anyway and made an offer off air.",
+      "weight": 1,
+      "empire": "biz_boost",
+      "effects": {
+       "money": 150000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pitch, but turn down whatever they offer",
+    "outcomes": [
+     {
+      "text": "I went on, pitched well, and said no to all of them on air. The phone did not stop for a fortnight.",
+      "weight": 2,
+      "empire": "biz_buzz",
+      "effects": {
+       "fame": 8,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I turned them down on television and one of them explained, at length and accurately, why nobody should back me.",
+      "weight": 1,
+      "empire": "biz_hit",
+      "effects": {
+       "fame": 5,
+       "happiness": -10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.strike",
+  "icon": "🪧",
+  "title": "Strike",
+  "text": "Workers at {biz} are on strike over pay.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Give them raises",
+    "outcomes": [
+     {
+      "text": "Morale shot up and so did productivity.",
+      "weight": 3,
+      "effects": {
+       "money": -40000,
+       "karma": 5
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "I gave the raises, and the margin they came out of was the one keeping the doors open.",
+      "weight": 1,
+      "effects": {
+       "money": -40000,
+       "karma": 5,
+       "stress": 15
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Hire replacements",
+    "outcomes": [
+     {
+      "text": "I hired replacements. The union picketed my house.",
+      "weight": 3,
+      "effects": {
+       "karma": -6,
+       "stress": 8
+      },
+      "empire": "biz_hit"
+     },
+     {
+      "text": "The replacements could not do the work, and by the sixth week I was negotiating anyway, from further back.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 20,
+       "money": -60000
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Negotiate personally",
+    "outcomes": [
+     {
+      "text": "I sat down with them for 14 hours. We found a deal.",
+      "weight": 2,
+      "effects": {
+       "stress": 6,
+       "karma": 3
+      }
+     },
+     {
+      "text": "Talks collapsed. The strike dragged on for months.",
+      "weight": 1,
+      "empire": "biz_hit"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.competitor_dirt",
+  "icon": "🕵️",
+  "title": "Dirt on a rival",
+  "text": "Someone offers you stolen documents from your biggest competitor.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Buy them",
+    "outcomes": [
+     {
+      "text": "The documents gave us a huge edge.",
+      "weight": 1,
+      "empire": "biz_boost",
+      "effects": {
+       "karma": -8,
+       "heat": 12
+      }
+     },
+     {
+      "text": "It was a sting. I was charged with corporate espionage.",
+      "weight": 1,
+      "trial": [
+       "corporate espionage",
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "I reported it. The competitor sent me a thank-you bottle of whiskey.",
+      "weight": 3,
+      "effects": {
+       "karma": 6
+      }
+     },
+     {
+      "text": "I reported it, and the competitor assumed I had read it all first, and has treated me that way ever since.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell your rival who offered them",
+    "outcomes": [
+     {
+      "text": "I rang my competitor and gave them the name. We have had a quiet understanding ever since.",
+      "weight": 2,
+      "effects": {
+       "karma": 10,
+       "smarts": 4
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "I gave them the name, and they assumed I had only done it because I had already copied everything.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.accountant_help",
+  "icon": "🧮",
+  "title": "Numbers",
+  "text": "{acc.first}, your accountant friend, looked at {biz}'s books and frowned.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Hire {acc.first} to fix them",
+    "outcomes": [
+     {
+      "text": "{acc.first} found $60,000 in wasted spending.",
+      "weight": 3,
+      "effects": {
+       "money": 60000
+      },
+      "relationship": {
+       "acc": 8
+      }
+     },
+     {
+      "text": "{acc.first} went through the books properly and found something I had not been looking for and did not want to know.",
+      "weight": 1,
+      "relationship": {
+       "acc": 6
+      },
+      "effects": {
+       "money": -15000,
+       "stress": 18
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I told {acc.first} to mind {acc.his} business.",
+      "weight": 3,
+      "relationship": {
+       "acc": -10
+      }
+     },
+     {
+      "text": "I ignored {acc.first}, and eighteen months later an auditor found exactly what {acc.he} had been frowning at.",
+      "weight": 1,
+      "relationship": {
+       "acc": -10
+      },
+      "effects": {
+       "heat": 20,
+       "money": -50000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get a full audit",
+    "outcomes": [
+     {
+      "text": "I paid for a proper audit. It was expensive, it was awful, and everything since has been clean.",
+      "weight": 2,
+      "effects": {
+       "money": -35000,
+       "heat": -15,
+       "stress": 12
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "The audit found the problem and also created a document about the problem.",
+      "weight": 1,
+      "effects": {
+       "money": -35000,
+       "heat": 15,
+       "stress": 18
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "acc": {
+    "contact": [
+     "accountant"
+    ],
+    "min_close": 30
+   }
+  }
+ },
+ {
+  "id": "biz.cooked_whistle",
+  "icon": "📢",
+  "title": "Whistleblower",
+  "text": "An employee has noticed the numbers at {biz} don't add up.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true,
+   "cooked_books": true
+  },
+  "choices": [
+   {
+    "label": "Pay them off",
+    "outcomes": [
+     {
+      "text": "They took the money and kept quiet. For now.",
+      "weight": 2,
+      "effects": {
+       "money": -50000,
+       "heat": 5
+      }
+     },
+     {
+      "text": "They took the money AND went to the press.",
+      "weight": 1,
+      "effects": {
+       "money": -50000,
+       "heat": 25,
+       "fame": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fire them",
+    "outcomes": [
+     {
+      "text": "I fired them. They went straight to regulators.",
+      "weight": 3,
+      "effects": {
+       "heat": 30
+      }
+     },
+     {
+      "text": "I fired them, and they went home and said nothing to anybody, which was worse to live with.",
+      "weight": 1,
+      "effects": {
+       "heat": 8,
+       "karma": -10,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Come clean",
+    "outcomes": [
+     {
+      "text": "I stopped cooking the books and restated the numbers. Painful, but legal.",
+      "weight": 3,
+      "effects": {
+       "heat": -20,
+       "karma": 6,
+       "happiness": -8
+      }
+     },
+     {
+      "text": "I came clean, and the restatement was large enough that the regulator came anyway, more gently.",
+      "weight": 1,
+      "effects": {
+       "heat": -5,
+       "karma": 10,
+       "money": -80000
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.ipo_party",
+  "icon": "🔔",
+  "title": "Market day",
+  "text": "{biz}'s stock jumped 40% in a day after a rumor.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true,
+   "public_company": true
+  },
+  "choices": [
+   {
+    "label": "Sell some shares",
+    "outcomes": [
+     {
+      "text": "I sold into the rally and made a fortune.",
+      "weight": 3,
+      "effects": {
+       "money": 500000,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I sold into the rally, and the rumour was true, and the price tripled again by Christmas.",
+      "weight": 1,
+      "effects": {
+       "money": 500000,
+       "happiness": -8,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold",
+    "outcomes": [
+     {
+      "text": "I held. The rumor was true. Or maybe not. Time will tell.",
+      "weight": 3,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I held, the rumour was nonsense, and the price came back down through where it started.",
+      "weight": 1,
+      "effects": {
+       "stress": 12
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Find out where the rumour came from",
+    "outcomes": [
+     {
+      "text": "It came from inside the building. I dealt with it before the regulator had to.",
+      "weight": 2,
+      "effects": {
+       "smarts": 5,
+       "heat": -10
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "It came from inside the building, from somebody I could not afford to lose.",
+      "weight": 1,
+      "effects": {
+       "heat": 20,
+       "stress": 18
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.celebrity_endorse",
+  "icon": "🤩",
+  "title": "Endorsement",
+  "text": "A celebrity wants to endorse {biz}, for a huge fee.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Pay the fee",
+    "outcomes": [
+     {
+      "text": "The endorsement was a massive hit.",
+      "weight": 2,
+      "effects": {
+       "money": -100000
+      },
+      "empire": "biz_buzz"
+     },
+     {
+      "text": "The celebrity got canceled a week later. Awkward.",
+      "weight": 1,
+      "effects": {
+       "money": -100000
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Do it yourself",
+    "outcomes": [
+     {
+      "text": "I starred in my own commercial. It was charmingly bad.",
+      "weight": 3,
+      "effects": {
+       "fame": 2
+      },
+      "empire": "biz_buzz"
+     },
+     {
+      "text": "I did it myself and it was so bad it went round the internet on its own, which was free.",
+      "weight": 1,
+      "effects": {
+       "fame": 10
+      },
+      "empire": "biz_boost"
+     }
+    ]
+   },
+   {
+    "label": "Find someone nobody has heard of yet",
+    "outcomes": [
+     {
+      "text": "I paid almost nothing to someone with four thousand followers who was very good. Eighteen months later they were everywhere, still holding our product.",
+      "weight": 2,
+      "empire": "biz_buzz",
+      "effects": {
+       "money": -4000,
+       "fame": 6
+      }
+     },
+     {
+      "text": "I picked an unknown and they stayed unknown, and so did the campaign.",
+      "weight": 1,
+      "effects": {
+       "money": -4000,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.burnout",
+  "icon": "🔥",
+  "title": "Burnout",
+  "text": "You haven't taken a day off from {biz} in two years.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Take a vacation",
+    "outcomes": [
+     {
+      "text": "Two weeks on a beach. I came back with fresh ideas.",
+      "weight": 3,
+      "effects": {
+       "stress": -20,
+       "happiness": 10,
+       "money": -8000
+      }
+     },
+     {
+      "text": "I took two weeks and spent all of them on the phone to the office.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "money": -8000,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push through",
+    "outcomes": [
+     {
+      "text": "I pushed through. My doctor is worried.",
+      "weight": 3,
+      "effects": {
+       "health": -8,
+       "stress": 12
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "I pushed through until my body made the decision for me, in a meeting, in front of the board.",
+      "weight": 1,
+      "effects": {
+       "health": -25,
+       "stress": 20
+      },
+      "illness": "exhaustion"
+     }
+    ]
+   },
+   {
+    "label": "Hire somebody to run it",
+    "outcomes": [
+     {
+      "text": "I hired a manager who was better at it than me and went home at six for the first time in years.",
+      "weight": 2,
+      "empire": "biz_boost",
+      "effects": {
+       "money": -90000,
+       "stress": -25,
+       "happiness": 12
+      }
+     },
+     {
+      "text": "I hired somebody to run it and spent eight months unable to stop telling them how to run it.",
+      "weight": 1,
+      "effects": {
+       "money": -90000,
+       "stress": 10
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "biz.kid_joins",
+  "icon": "👧",
+  "title": "Next generation",
+  "text": "{k.first} wants to learn the family business at {biz}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Teach {k.first} everything",
+    "outcomes": [
+     {
+      "text": "{k.first} has a real head for business.",
+      "weight": 3,
+      "relationship": {
+       "k": 20
+      },
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I taught {k.first} everything, and everything turned out to include all of my bad habits.",
+      "weight": 1,
+      "relationship": {
+       "k": 10
+      },
+      "empire": "biz_hit",
+      "effects": {
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell {k.first} to find {k.his} own path",
+    "outcomes": [
+     {
+      "text": "{k.first} went off to do {k.his} own thing.",
+      "weight": 3,
+      "relationship": {
+       "k": -5
+      }
+     },
+     {
+      "text": "I sent {k.first} away to find {k.his} own path, and {k.he} found one, and it is better than mine.",
+      "weight": 1,
+      "relationship": {
+       "k": 15
+      },
+      "effects": {
+       "happiness": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start {k.first} at the bottom like anybody else",
+    "outcomes": [
+     {
+      "text": "{k.first} did two years of the worst jobs in the building and the staff decided {k.he} was all right.",
+      "weight": 2,
+      "relationship": {
+       "k": 15
+      },
+      "empire": "biz_boost",
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "{k.first} lasted five months at the bottom and left, and told everybody why.",
+      "weight": 1,
+      "relationship": {
+       "k": -25
+      },
+      "effects": {
+       "happiness": -8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "k": {
+    "relation": "child",
+    "min_age": 16
+   }
+  }
+ },
+ {
+  "id": "biz.food_poisoning",
+  "icon": "🤢",
+  "title": "Health inspection",
+  "text": "A health inspector is at {biz} after customers got sick.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_business": true,
+   "biz_ind": [
+    "restaurant"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Close for a deep clean",
+    "outcomes": [
+     {
+      "text": "We closed for a week and reopened spotless.",
+      "weight": 3,
+      "effects": {
+       "money": -20000
+      }
+     },
+     {
+      "text": "We closed for a week, and the week became five while they traced where it had come from.",
+      "weight": 1,
+      "effects": {
+       "money": -70000,
+       "stress": 15
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Bribe the inspector",
+    "outcomes": [
+     {
+      "text": "The inspector pocketed the cash and left.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "karma": -6,
+       "heat": 6
+      }
+     },
+     {
+      "text": "The inspector reported the bribe.",
+      "weight": 1,
+      "effects": {
+       "heat": 20
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   },
+   {
+    "label": "Find out what actually happened",
+    "outcomes": [
+     {
+      "text": "It was a supplier, not us. I had the paperwork within two days and the inspector wrote it up that way.",
+      "weight": 2,
+      "effects": {
+       "smarts": 5,
+       "money": -4000
+      },
+      "empire": "biz_boost"
+     },
+     {
+      "text": "It was us. It was a fridge nobody had checked since the spring.",
+      "weight": 1,
+      "effects": {
+       "money": -45000,
+       "karma": -6,
+       "heat": 15
+      },
+      "empire": "biz_hit"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.defector",
+  "icon": "🏃",
+  "title": "The defector",
+  "text": "{m.first} wants to leave {cult} and is threatening to talk.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true
+  },
+  "choices": [
+   {
+    "label": "Let {m.first} go in peace",
+    "outcomes": [
+     {
+      "text": "{m.first} left quietly. I respected that.",
+      "weight": 3,
+      "relationship": {
+       "m": 10
+      },
+      "effects": {
+       "karma": 4
+      }
+     },
+     {
+      "text": "I let {m.first} go, and {m.he} wrote a book about us three years later that was entirely accurate.",
+      "weight": 1,
+      "relationship": {
+       "m": 5
+      },
+      "effects": {
+       "karma": 4,
+       "heat": 15,
+       "fame": 6
+      },
+      "empire": "cult_shrink"
+     }
+    ]
+   },
+   {
+    "label": "Promise {m.first} a higher rank",
+    "outcomes": [
+     {
+      "text": "{m.first} stayed. Devotion is up.",
+      "weight": 3,
+      "empire": "cult_devotion"
+     },
+     {
+      "text": "I gave {m.first} a rank, and {m.he} used it to take forty people with {m.him} when {m.he} left anyway.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "relationship": {
+       "m": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Threaten {m.first}",
+    "outcomes": [
+     {
+      "text": "{m.first} went straight to the police.",
+      "weight": 3,
+      "effects": {
+       "heat": 20
+      },
+      "relationship": {
+       "m": -50
+      }
+     },
+     {
+      "text": "{m.first} was frightened enough to stay, and everybody else could see exactly why.",
+      "weight": 1,
+      "empire": "cult_devotion",
+      "effects": {
+       "karma": -12
+      },
+      "relationship": {
+       "m": -50
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "m": {
+    "from": "cult_inner"
+   }
+  }
+ },
+ {
+  "id": "cult.prophecy",
+  "icon": "🔮",
+  "title": "The prophecy",
+  "text": "Your followers are asking when the prophecy you made will come true. The date was yesterday.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true
+  },
+  "choices": [
+   {
+    "label": "Recalculate the date",
+    "outcomes": [
+     {
+      "text": "I announced a new date. Most of them believed me.",
+      "weight": 2,
+      "empire": "cult_devotion"
+     },
+     {
+      "text": "Half of them left.",
+      "weight": 1,
+      "empire": "cult_shrink"
+     }
+    ]
+   },
+   {
+    "label": "Claim it came true spiritually",
+    "outcomes": [
+     {
+      "text": "\"It happened in our hearts.\" Some bought it.",
+      "weight": 3,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "The spiritual reading satisfied nobody, and the ones who left were the ones who had believed hardest.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "karma": -3,
+       "happiness": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Admit you were wrong",
+    "outcomes": [
+     {
+      "text": "I stood up and said I had got it wrong. Half of them left and the half that stayed have never doubted me since.",
+      "weight": 2,
+      "empire": "cult_devotion",
+      "effects": {
+       "karma": 12,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I admitted it, and admitting it turned out to be the end of the whole thing.",
+      "weight": 1,
+      "empire": "cult_disband",
+      "effects": {
+       "karma": 15,
+       "happiness": -12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.celebrity_joins",
+  "icon": "🌟",
+  "title": "Famous recruit",
+  "text": "A famous actor wants to join {cult}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true
+  },
+  "choices": [
+   {
+    "label": "Welcome them with a ceremony",
+    "outcomes": [
+     {
+      "text": "The actor's fans followed them in. Membership exploded.",
+      "weight": 3,
+      "empire": "cult_grow",
+      "effects": {
+       "fame": 6,
+       "heat": 8
+      }
+     },
+     {
+      "text": "The ceremony was filmed from a hillside and the footage was on the news by the weekend.",
+      "weight": 1,
+      "empire": "cult_grow",
+      "effects": {
+       "fame": 15,
+       "heat": 25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it low-key",
+    "outcomes": [
+     {
+      "text": "They joined quietly. Word still got out.",
+      "weight": 3,
+      "empire": "cult_grow",
+      "effects": {
+       "fame": 2
+      }
+     },
+     {
+      "text": "They joined quietly and left quietly eight months later, and the leaving was the part that got reported.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "fame": 6,
+       "heat": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Turn them down",
+    "outcomes": [
+     {
+      "text": "I said no. The membership found out and it did more for devotion than any recruit ever had.",
+      "weight": 2,
+      "empire": "cult_devotion",
+      "effects": {
+       "karma": 5
+      }
+     },
+     {
+      "text": "I turned them down and they spent the next year telling chat shows about the cult that had rejected them.",
+      "weight": 1,
+      "effects": {
+       "fame": 10,
+       "heat": 15
+      },
+      "empire": "cult_shrink"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.sermon_crisis",
+  "icon": "🕯️",
+  "title": "Crisis of faith",
+  "text": "A storm destroyed half the compound. Your followers are shaken and gathered in the hall.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true
+  },
+  "choices": [
+   {
+    "label": "Give the sermon of your life",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 3,
+      "play": {
+       "id": "debate",
+       "kind": "cult_sermon",
+       "params": {
+        "flavor": "sermon",
+        "skill": 55
+       }
+      }
+     },
+     {
+      "text": "",
+      "weight": 1,
+      "play": {
+       "id": "debate",
+       "kind": "cult_sermon",
+       "params": {
+        "flavor": "sermon",
+        "skill": 78
+       }
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame outsiders",
+    "outcomes": [
+     {
+      "text": "I blamed the outside world. Fear kept them together.",
+      "weight": 3,
+      "empire": "cult_devotion",
+      "effects": {
+       "heat": 6,
+       "karma": -4
+      }
+     },
+     {
+      "text": "I blamed outsiders, and three of them went and did something about it on my behalf.",
+      "weight": 1,
+      "empire": "cult_devotion",
+      "effects": {
+       "heat": 30,
+       "karma": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rebuild before you say anything",
+    "outcomes": [
+     {
+      "text": "I picked up a hammer instead of a microphone, and by the end of the week nobody needed a sermon.",
+      "weight": 2,
+      "empire": "cult_devotion",
+      "effects": {
+       "health": -6,
+       "karma": 8,
+       "money": -40000
+      }
+     },
+     {
+      "text": "I rebuilt in silence and they took the silence badly. Some of them had needed to be told what it meant.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "health": -6,
+       "money": -40000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.family_intervention",
+  "icon": "🫂",
+  "title": "Intervention",
+  "text": "Your family has staged an intervention about {cult}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true
+  },
+  "choices": [
+   {
+    "label": "Listen to them",
+    "outcomes": [
+     {
+      "text": "They cried. I cried. I promised to think about it.",
+      "weight": 3,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "f": 10
+      }
+     },
+     {
+      "text": "I listened for four hours, and something one of them said stayed with me for the rest of my life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "smarts": 4
+      },
+      "relationship": {
+       "f": 20
+      },
+      "empire": "cult_shrink"
+     }
+    ]
+   },
+   {
+    "label": "Recruit them instead",
+    "outcomes": [
+     {
+      "text": "{f.first} joined. The rest of the family is horrified.",
+      "weight": 1,
+      "relationship": {
+       "f": 10
+      },
+      "empire": "cult_grow"
+     },
+     {
+      "text": "It did not go well. {f.first} stopped speaking to me.",
+      "weight": 1,
+      "relationship": {
+       "f": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Storm out",
+    "outcomes": [
+     {
+      "text": "I stormed out. They haven't called since.",
+      "weight": 3,
+      "relationship": {
+       "f": -20
+      }
+     },
+     {
+      "text": "I stormed out, and half of them were at the compound gate within a month asking to come in.",
+      "weight": 1,
+      "relationship": {
+       "f": -20
+      },
+      "empire": "cult_grow",
+      "effects": {
+       "karma": -8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "mother",
+     "father",
+     "sibling",
+     "grandparent"
+    ]
+   }
+  }
+ },
+ {
+  "id": "cult.tax",
+  "icon": "🧾",
+  "title": "Tax status",
+  "text": "The tax office is asking why {cult} hasn't filed any returns.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true,
+   "min_members": 50
+  },
+  "choices": [
+   {
+    "label": "Register as a church",
+    "outcomes": [
+     {
+      "text": "{cult} is now a registered church. Tax-free.",
+      "weight": 3,
+      "effects": {
+       "money": -10000,
+       "heat": -10
+      }
+     },
+     {
+      "text": "The application was refused, in writing, with a paragraph about the nature of the organisation.",
+      "weight": 1,
+      "effects": {
+       "money": -10000,
+       "heat": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore them",
+    "outcomes": [
+     {
+      "text": "They stopped asking. For now.",
+      "weight": 3,
+      "effects": {
+       "heat": 15
+      }
+     },
+     {
+      "text": "They did not stop asking. They stopped asking and started arriving.",
+      "weight": 1,
+      "effects": {
+       "heat": 35,
+       "money": -60000,
+       "stress": 18
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get {acc.first} to handle it",
+    "outcomes": [
+     {
+      "text": "{acc.first} made it disappear.",
+      "weight": 3,
+      "relationship": {
+       "acc": 5
+      },
+      "effects": {
+       "heat": -8
+      }
+     },
+     {
+      "text": "{acc.first} made it disappear in a way that made {acc.him} part of it, and {acc.he} has been nervous ever since.",
+      "weight": 1,
+      "relationship": {
+       "acc": -10
+      },
+      "effects": {
+       "heat": -8,
+       "stress": 10
+      }
+     }
+    ],
+    "requires": {
+     "role": "acc"
+    }
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "acc": {
+    "contact": [
+     "accountant",
+     "lawyer"
+    ],
+    "optional": true,
+    "min_close": 30
+   }
+  }
+ },
+ {
+  "id": "cult.documentary",
+  "icon": "🎥",
+  "title": "Documentary",
+  "text": "A streaming service is making a documentary about {cult}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true,
+   "min_members": 100
+  },
+  "choices": [
+   {
+    "label": "Cooperate fully",
+    "outcomes": [
+     {
+      "text": "They made us look like a quirky wellness group. Membership soared.",
+      "weight": 1,
+      "empire": "cult_grow",
+      "effects": {
+       "fame": 8
+      }
+     },
+     {
+      "text": "They made me look like a monster.",
+      "weight": 1,
+      "effects": {
+       "fame": 10,
+       "heat": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse and threaten to sue",
+    "outcomes": [
+     {
+      "text": "They made it anyway, with ominous music.",
+      "weight": 3,
+      "effects": {
+       "fame": 6,
+       "heat": 12
+      }
+     },
+     {
+      "text": "The lawsuit failed, cost a fortune, and got the documentary four times the audience it would have had.",
+      "weight": 1,
+      "effects": {
+       "fame": 15,
+       "heat": 20,
+       "money": -200000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make your own instead",
+    "outcomes": [
+     {
+      "text": "We filmed it ourselves and put it out first. Theirs came out to an audience that had already decided.",
+      "weight": 2,
+      "empire": "cult_grow",
+      "effects": {
+       "money": -80000,
+       "fame": 10
+      }
+     },
+     {
+      "text": "Ours looked exactly like what it was, and the comparison between the two films made both of them worse for us.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "money": -80000,
+       "fame": 8,
+       "heat": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.nature_retreat",
+  "icon": "🌿",
+  "title": "Forest pilgrimage",
+  "text": "Your followers want a pilgrimage into the wild.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true,
+   "doctrine": "nature"
+  },
+  "choices": [
+   {
+    "label": "Lead them into the forest",
+    "outcomes": [
+     {
+      "text": "We spent a week in the woods. Devotion has never been higher.",
+      "weight": 3,
+      "empire": "cult_devotion",
+      "effects": {
+       "health": 4
+      }
+     },
+     {
+      "text": "A week in the woods in weather nobody had checked. Two of them needed a hospital and everybody noticed who had not checked.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "health": -12,
+       "karma": -8,
+       "heat": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send them without you",
+    "outcomes": [
+     {
+      "text": "They came back with poison ivy and doubts.",
+      "weight": 3,
+      "empire": "cult_shrink"
+     },
+     {
+      "text": "They went without me and came back having decided something among themselves that I was not part of.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a small group and go properly",
+    "outcomes": [
+     {
+      "text": "Eight of us, a week, real preparation. Those eight now run everything.",
+      "weight": 2,
+      "empire": "cult_devotion",
+      "effects": {
+       "health": 6,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "Taking eight and not the rest created a tier I had not meant to create, and everybody else could see it.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.doomsday_bunker",
+  "icon": "☄️",
+  "title": "The bunker",
+  "text": "Your followers want to build a doomsday bunker. They've pooled their savings.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true,
+   "doctrine": "doomsday"
+  },
+  "choices": [
+   {
+    "label": "Build it",
+    "outcomes": [
+     {
+      "text": "We built a bunker under the compound. The faithful sleep better.",
+      "weight": 3,
+      "empire": "cult_devotion",
+      "effects": {
+       "money": 50000,
+       "heat": 8
+      }
+     },
+     {
+      "text": "We built it, and the building control officer who came to look at it asked a great many questions.",
+      "weight": 1,
+      "empire": "cult_devotion",
+      "effects": {
+       "money": 20000,
+       "heat": 30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the money",
+    "outcomes": [
+     {
+      "text": "I kept the money. They noticed the new car.",
+      "weight": 3,
+      "effects": {
+       "money": 120000,
+       "karma": -10,
+       "heat": 10
+      },
+      "empire": "cult_shrink"
+     },
+     {
+      "text": "I kept the money, and told them the bunker was spiritual, and a surprising number of them accepted that.",
+      "weight": 1,
+      "effects": {
+       "money": 120000,
+       "karma": -15
+      },
+      "empire": "cult_devotion"
+     }
+    ]
+   },
+   {
+    "label": "Give them their savings back",
+    "outcomes": [
+     {
+      "text": "I handed every penny back. Two of them cried. Nobody left.",
+      "weight": 2,
+      "empire": "cult_devotion",
+      "effects": {
+       "karma": 20,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I returned the money and a good number of them took it as proof I no longer believed what I had told them.",
+      "weight": 1,
+      "empire": "cult_shrink",
+      "effects": {
+       "karma": 20,
+       "happiness": -8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "cult.raid",
+  "icon": "🚔",
+  "title": "Raid",
+  "text": "Police have surrounded the compound. A negotiator is on the phone.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_cult": true,
+   "min_heat": 55
+  },
+  "choices": [
+   {
+    "label": "Surrender peacefully",
+    "outcomes": [
+     {
+      "text": "I walked out with my hands up. The charges: fraud.",
+      "weight": 3,
+      "trial": [
+       "fraud",
+       1,
+       6
+      ],
+      "empire": "cult_disband"
+     },
+     {
+      "text": "I surrendered first and every one of them followed me out, which the negotiator later said was the only reason nobody died.",
+      "weight": 1,
+      "trial": [
+       "fraud",
+       0,
+       3
+      ],
+      "empire": "cult_disband",
+      "effects": {
+       "karma": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "After three days, they left. The whole country watched.",
+      "weight": 1,
+      "effects": {
+       "fame": 15,
+       "heat": 10,
+       "stress": 20
+      }
+     },
+     {
+      "text": "Talks broke down. I was arrested.",
+      "weight": 1,
+      "trial": [
+       "fraud",
+       2,
+       8
+      ],
+      "empire": "cult_disband"
+     }
+    ]
+   },
+   {
+    "label": "Escape through the tunnel",
+    "outcomes": [
+     {
+      "text": "I escaped. {cult} did not survive it.",
+      "weight": 3,
+      "empire": "cult_disband",
+      "effects": {
+       "heat": 20,
+       "happiness": -10
+      }
+     },
+     {
+      "text": "I got as far as the treeline. They had somebody at the treeline.",
+      "weight": 1,
+      "trial": [
+       "fraud",
+       3,
+       10
+      ],
+      "empire": "cult_disband",
+      "effects": {
+       "heat": 30
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "zoo.baby_boom",
+  "icon": "🍼",
+  "title": "Baby boom",
+  "text": "A rare baby was born at {zoo}. The whole city wants to see it.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Hold a naming contest",
+    "outcomes": [
+     {
+      "text": "50,000 people voted. The baby's name is Sir Fluffington.",
+      "weight": 3,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "happiness": 8,
+       "fame": 2
+      }
+     },
+     {
+      "text": "The internet voted, and the internet is the internet, and we had to quietly run the vote again.",
+      "weight": 1,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "happiness": 4,
+       "fame": 6,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Name it after {k.first}",
+    "outcomes": [
+     {
+      "text": "{k.first} was over the moon.",
+      "weight": 3,
+      "relationship": {
+       "k": 15
+      },
+      "empire": "zoo_baby"
+     },
+     {
+      "text": "I named it after {k.first}, and the keepers have called it something else since the first week.",
+      "weight": 1,
+      "relationship": {
+       "k": 8
+      },
+      "empire": "zoo_baby"
+     }
+    ],
+    "requires": {
+     "role": "k"
+    }
+   },
+   {
+    "label": "Keep the press away from it",
+    "outcomes": [
+     {
+      "text": "No cameras, no contest, no crowds for six weeks. The keepers said it was the only reason it thrived.",
+      "weight": 2,
+      "empire": "zoo_baby",
+      "effects": {
+       "karma": 8,
+       "money": -20000
+      }
+     },
+     {
+      "text": "I kept the press out, and the press wrote about a zoo with something to hide.",
+      "weight": 1,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "karma": 8,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "k": {
+    "relation_any": [
+     "child",
+     "partner",
+     "mother",
+     "father"
+    ],
+    "optional": true
+   }
+  }
+ },
+ {
+  "id": "zoo.activist",
+  "icon": "🪧",
+  "title": "Protest",
+  "text": "Animal rights activists are protesting outside {zoo}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Invite them in for a tour",
+    "outcomes": [
+     {
+      "text": "They left impressed. One became a volunteer.",
+      "weight": 3,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "karma": 4
+      }
+     },
+     {
+      "text": "I showed them round and they found the one enclosure I had been meaning to replace for four years.",
+      "weight": 1,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "karma": 4,
+       "money": -60000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call the police",
+    "outcomes": [
+     {
+      "text": "The arrests made the evening news.",
+      "weight": 3,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "fame": 2
+      }
+     },
+     {
+      "text": "The police came and declined to arrest anybody, on camera, which made a better story than the protest.",
+      "weight": 1,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "fame": 6,
+       "karma": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Release an animal to the wild",
+    "outcomes": [
+     {
+      "text": "I released a rehabilitated animal back into the wild on camera.",
+      "weight": 3,
+      "effects": {
+       "karma": 8,
+       "fame": 3
+      }
+     },
+     {
+      "text": "The release went beautifully and the animal was back at the fence within a fortnight.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "fame": 3,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "zoo.keeper_bitten",
+  "icon": "🦷",
+  "title": "Keeper bitten",
+  "text": "{k.first} was bitten while feeding the animals at {zoo}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Pay for everything",
+    "outcomes": [
+     {
+      "text": "I covered every bill. {k.first} was back at work in a month.",
+      "weight": 3,
+      "effects": {
+       "money": -20000
+      },
+      "relationship": {
+       "k": 15
+      }
+     },
+     {
+      "text": "I paid for everything, and {k.first} never came back to the enclosures, and I do not blame {k.him}.",
+      "weight": 1,
+      "effects": {
+       "money": -20000,
+       "happiness": -6
+      },
+      "relationship": {
+       "k": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame {k.first}'s carelessness",
+    "outcomes": [
+     {
+      "text": "{k.first} quit and told the local paper.",
+      "weight": 3,
+      "relationship": {
+       "k": -40
+      },
+      "empire": "zoo_rating_down"
+     },
+     {
+      "text": "I blamed {k.first}, and the safety investigation found the latch had been reported twice.",
+      "weight": 1,
+      "relationship": {
+       "k": -40
+      },
+      "empire": "zoo_rating_down",
+      "effects": {
+       "money": -80000,
+       "karma": -10,
+       "heat": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Close the enclosure and rebuild it",
+    "outcomes": [
+     {
+      "text": "I shut it, rebuilt it properly, and put {k.first} in charge of the design.",
+      "weight": 2,
+      "relationship": {
+       "k": 25
+      },
+      "effects": {
+       "money": -120000,
+       "karma": 10
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "The rebuild took eleven months and cost more than the zoo made that year.",
+      "weight": 1,
+      "relationship": {
+       "k": 15
+      },
+      "effects": {
+       "money": -260000,
+       "stress": 18
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "k": {
+    "from": "zoo_crew"
+   }
+  }
+ },
+ {
+  "id": "zoo.celebrity_visit",
+  "icon": "📸",
+  "title": "Famous visitor",
+  "text": "A pop star posted a selfie with your penguins.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true,
+   "zoo_animal": "penguin"
+  },
+  "choices": [
+   {
+    "label": "Repost it",
+    "outcomes": [
+     {
+      "text": "Visitors doubled over the weekend.",
+      "weight": 3,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I reposted it, and so did a great many people who then arrived all at once at a zoo built for a third of them.",
+      "weight": 1,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "money": 40000,
+       "stress": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invite them back for something real",
+    "outcomes": [
+     {
+      "text": "I asked them to open the new conservation wing. They did it for free and brought a camera crew.",
+      "weight": 2,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "fame": 8,
+       "money": 60000
+      }
+     },
+     {
+      "text": "They agreed, cancelled twice, and came on a wet Tuesday with no notice and nobody there.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it alone",
+    "outcomes": [
+     {
+      "text": "I let it be their post rather than ours. It did fine on its own.",
+      "weight": 2,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I did nothing, and the moment passed, and the marketing manager has mentioned it every year since.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "zoo.vet_emergency",
+  "icon": "🩺",
+  "title": "Animal emergency",
+  "text": "One of your animals is seriously ill in the middle of the night.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Call {v.first}",
+    "outcomes": [
+     {
+      "text": "{v.first} drove over at 2 a.m. and saved the animal.",
+      "weight": 3,
+      "relationship": {
+       "v": 10
+      },
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "{v.first} came at two in the morning and there had never been anything to be done.",
+      "weight": 1,
+      "relationship": {
+       "v": 12
+      },
+      "effects": {
+       "happiness": -8
+      }
+     }
+    ],
+    "requires": {
+     "role": "v"
+    }
+   },
+   {
+    "label": "Pay an emergency vet",
+    "outcomes": [
+     {
+      "text": "The emergency vet saved it. The bill was brutal.",
+      "weight": 3,
+      "effects": {
+       "money": -15000
+      }
+     },
+     {
+      "text": "The emergency vet arrived at four, worked until seven, and sent a bill for both.",
+      "weight": 1,
+      "effects": {
+       "money": -28000,
+       "happiness": -8
+      },
+      "empire": "zoo_rating_down"
+     }
+    ]
+   },
+   {
+    "label": "Wait until morning",
+    "outcomes": [
+     {
+      "text": "The animal didn't make it through the night.",
+      "weight": 3,
+      "effects": {
+       "happiness": -8,
+       "karma": -3
+      },
+      "empire": "zoo_rating_down"
+     },
+     {
+      "text": "I waited, and it was fine by morning, and I have not slept properly on a night shift since.",
+      "weight": 1,
+      "effects": {
+       "stress": 15,
+       "karma": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "v": {
+    "contact": [
+     "vet",
+     "doctor"
+    ],
+    "optional": true,
+    "min_close": 30
+   }
+  }
+ },
+ {
+  "id": "zoo.panda_loan",
+  "icon": "🐼",
+  "title": "Panda diplomacy",
+  "text": "A foreign government offers to loan {zoo} a pair of giant pandas.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Accept (huge fee)",
+    "outcomes": [
+     {
+      "text": "The pandas arrived to a crowd of thousands.",
+      "weight": 3,
+      "effects": {
+       "money": -300000
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "The pandas arrived, and the annual fee turned out to be the smaller of the two numbers involved.",
+      "weight": 1,
+      "effects": {
+       "money": -520000,
+       "stress": 12
+      },
+      "empire": "zoo_rating_up"
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I declined. Pandas are expensive divas anyway.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I declined, and the zoo two cities over accepted, and our visitor numbers noticed.",
+      "weight": 1,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put the money into what you already have",
+    "outcomes": [
+     {
+      "text": "No pandas. Three enclosures rebuilt and a proper vet on staff, which is the part nobody queues for.",
+      "weight": 2,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "money": -300000,
+       "karma": 12
+      }
+     },
+     {
+      "text": "I spent it on the animals we had, and the visitor numbers went to the zoo that took the pandas.",
+      "weight": 1,
+      "effects": {
+       "money": -300000,
+       "karma": 12,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "zoo.school_trip",
+  "icon": "🚌",
+  "title": "School trips",
+  "text": "Every school in the district wants a field trip to {zoo}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Give the kids free admission",
+    "outcomes": [
+     {
+      "text": "Thousands of kids. The parents came back on weekends.",
+      "weight": 3,
+      "effects": {
+       "karma": 6
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "Free admission for every school in the district turned out to mean eleven thousand children and not enough staff.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "money": -30000,
+       "stress": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Charge full price",
+    "outcomes": [
+     {
+      "text": "Money is money.",
+      "weight": 3,
+      "effects": {
+       "money": 15000
+      }
+     },
+     {
+      "text": "I charged full price, and two schools could not afford it, and one of the head teachers said so in the paper.",
+      "weight": 1,
+      "effects": {
+       "money": 15000,
+       "karma": -6
+      },
+      "empire": "zoo_rating_down"
+     }
+    ]
+   },
+   {
+    "label": "Charge the schools that can pay",
+    "outcomes": [
+     {
+      "text": "Full price for the ones with money, free for the ones without, and nobody had to say which was which.",
+      "weight": 2,
+      "effects": {
+       "money": 9000,
+       "karma": 10
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "Working out who could pay turned into a means test that embarrassed exactly the people it was meant to help.",
+      "weight": 1,
+      "effects": {
+       "money": 9000,
+       "karma": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "zoo.tiger_king",
+  "icon": "🐅",
+  "title": "Documentary",
+  "text": "A film crew wants to make a reality show about {zoo}.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Say yes",
+    "outcomes": [
+     {
+      "text": "The show was a hit. I'm recognized at the grocery store now.",
+      "weight": 3,
+      "effects": {
+       "fame": 12,
+       "heat": 8
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "They filmed for nine months and cut it into something about a man who is not quite right. That man was me.",
+      "weight": 1,
+      "effects": {
+       "fame": 20,
+       "heat": 15,
+       "happiness": -12
+      },
+      "scar": "public_shame"
+     }
+    ]
+   },
+   {
+    "label": "Say no",
+    "outcomes": [
+     {
+      "text": "I said no. Some things should stay normal.",
+      "weight": 3,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I said no, and they made it about the zoo down the road instead, and that zoo is now famous.",
+      "weight": 1,
+      "empire": "zoo_rating_down",
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say yes, with editorial control",
+    "outcomes": [
+     {
+      "text": "I made final cut a condition. They agreed, grudgingly, and the show is the best advert this zoo has ever had.",
+      "weight": 2,
+      "empire": "zoo_rating_up",
+      "effects": {
+       "fame": 10,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I asked for editorial control and they walked away, and made one about somewhere else.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "zoo.escape_town",
+  "icon": "🦓",
+  "title": "Loose in town",
+  "text": "A zebra from {zoo} is trotting down Main Street.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true,
+   "zoo_animal": "zebra"
+  },
+  "choices": [
+   {
+    "label": "Chase it yourself",
+    "outcomes": [
+     {
+      "text": "I caught it outside a coffee shop. The video went viral.",
+      "weight": 3,
+      "effects": {
+       "fame": 3,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I chased it for two miles on foot and it went through a garden fence and a greenhouse before anybody sensible got involved.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "money": -9000,
+       "health": -8
+      },
+      "empire": "zoo_rating_down"
+     }
+    ]
+   },
+   {
+    "label": "Call animal control",
+    "outcomes": [
+     {
+      "text": "Animal control got it back. The town was charmed.",
+      "weight": 3,
+      "effects": {
+       "money": -2000
+      }
+     },
+     {
+      "text": "Animal control took four hours to arrive and the zebra had, by then, been photographed on a roundabout by everybody.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "fame": 6
+      },
+      "empire": "zoo_rating_down"
+     }
+    ]
+   },
+   {
+    "label": "Let the keepers handle it",
+    "outcomes": [
+     {
+      "text": "I stayed out of the way and the people who do this for a living had it back in ninety minutes.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I stayed out of it, and the local news found me anyway and asked why I had not been there.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "stress": 8
+      },
+      "empire": "zoo_rating_down"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "zoo.inherit",
+  "icon": "🦜",
+  "title": "A parrot's will",
+  "text": "A regular visitor died and left {zoo} her 40-year-old parrot and $50,000.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ],
+   "has_zoo": true
+  },
+  "choices": [
+   {
+    "label": "Accept the gift",
+    "outcomes": [
+     {
+      "text": "Captain Beakbeard is now our most popular resident.",
+      "weight": 3,
+      "effects": {
+       "money": 50000,
+       "happiness": 6
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "The parrot arrived with forty years of somebody's private conversations and repeats them at volume, daily.",
+      "weight": 1,
+      "effects": {
+       "money": 50000,
+       "happiness": 10,
+       "fame": 4
+      },
+      "empire": "zoo_rating_up"
+     }
+    ]
+   },
+   {
+    "label": "Accept, and find out who she was",
+    "outcomes": [
+     {
+      "text": "She had come every Thursday for thirty-one years. There is a bench now, and the parrot sits near it.",
+      "weight": 2,
+      "effects": {
+       "money": 50000,
+       "happiness": 12,
+       "karma": 8
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "Nobody at the zoo could tell me anything about her, which is its own kind of answer.",
+      "weight": 1,
+      "effects": {
+       "money": 50000,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline the money and take the parrot",
+    "outcomes": [
+     {
+      "text": "I sent the fifty thousand to her next of kin and kept the bird. It was the bird she had been worried about.",
+      "weight": 2,
+      "effects": {
+       "karma": 20,
+       "happiness": 10
+      },
+      "empire": "zoo_rating_up"
+     },
+     {
+      "text": "There was no next of kin, which is why the parrot came to us in the first place.",
+      "weight": 1,
+      "effects": {
+       "money": 50000,
+       "karma": 10,
+       "happiness": -6
+      },
+      "empire": "zoo_rating_up"
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ }
+]

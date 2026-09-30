@@ -1,0 +1,1004 @@
+[
+ {
+  "id": "adult.found_wallet",
+  "icon": "👛",
+  "title": "Found wallet",
+  "text": "You find a wallet on the sidewalk with $300 and an ID inside.",
+  "conditions": {
+   "age": [
+    12,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Return it",
+    "outcomes": [
+     {
+      "text": "The owner was so grateful they gave me $50.",
+      "weight": 2,
+      "effects": {
+       "karma": 8,
+       "money": 50,
+       "happiness": 4
+      },
+      "karma_bonus": 1.0
+     },
+     {
+      "text": "I returned it. They didn't even say thanks.",
+      "weight": 1,
+      "effects": {
+       "karma": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the cash",
+    "outcomes": [
+     {
+      "text": "$300 richer. Slightly guiltier.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "karma": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it",
+    "outcomes": [
+     {
+      "text": "I walked on. Not my problem.",
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "adult.noisy_neighbor",
+  "icon": "🥁",
+  "title": "Noisy neighbor",
+  "text": "Your neighbor {nb.first} is playing the drums at 2 a.m. Again.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "housing": [
+    "apartment",
+    "house"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Knock and ask nicely",
+    "outcomes": [
+     {
+      "text": "{nb.first} apologized and switched to an electronic kit.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "relationship": {
+       "nb": 10
+      },
+      "trait_bonus": {
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "{nb.first} shut the door in my face.",
+      "weight": 1,
+      "relationship": {
+       "nb": -10
+      },
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Complain to the landlord",
+    "outcomes": [
+     {
+      "text": "It stopped. {nb.first} glares at me in the hallway now.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "relationship": {
+       "nb": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blast your own music",
+    "outcomes": [
+     {
+      "text": "A noise war began. Nobody slept.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      },
+      "relationship": {
+       "nb": -20
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy earplugs",
+    "outcomes": [
+     {
+      "text": "I bought earplugs and slept like a baby.",
+      "weight": 1,
+      "effects": {
+       "money": -15
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "nb": {
+    "relation": "neighbor",
+    "or_new": true
+   }
+  }
+ },
+ {
+  "id": "adult.car_trouble",
+  "icon": "🔧",
+  "title": "Car trouble",
+  "text": "Your car makes a horrible grinding noise and dies on the highway.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Pay a mechanic ($800)",
+    "outcomes": [
+     {
+      "text": "Fixed. My wallet is lighter.",
+      "weight": 1,
+      "effects": {
+       "money": -800
+      }
+     }
+    ],
+    "requires": {
+     "money": 800
+    }
+   },
+   {
+    "label": "Fix it yourself",
+    "outcomes": [
+     {
+      "text": "I fixed it with a YouTube tutorial and some duct tape.",
+      "weight": 1,
+      "effects": {
+       "money": -80,
+       "happiness": 6
+      },
+      "stat_bonus": {
+       "smarts": 1.2
+      }
+     },
+     {
+      "text": "I made it worse. Much worse. $1,500 worse.",
+      "weight": 1,
+      "effects": {
+       "money": -1500,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call a friend for help",
+    "outcomes": [
+     {
+      "text": "A friend towed me home and refused my gas money.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "adult.jury_duty",
+  "icon": "⚖️",
+  "title": "Jury duty",
+  "text": "You've been summoned for jury duty.",
+  "conditions": {
+   "age": [
+    21,
+    75
+   ]
+  },
+  "choices": [
+   {
+    "label": "Serve",
+    "outcomes": [
+     {
+      "text": "The trial was more interesting than I expected.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try to get out of it",
+    "outcomes": [
+     {
+      "text": "I got out of it.",
+      "weight": 1,
+      "trait_bonus": {
+       "Charmer": 3
+      }
+     },
+     {
+      "text": "The judge saw right through me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore the summons",
+    "outcomes": [
+     {
+      "text": "I was fined $500 for ignoring jury duty.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "karma": -2
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "adult.email_scam",
+  "icon": "📧",
+  "title": "You've won!",
+  "text": "An email says you've won $2,000,000 in a foreign lottery. You just need to send a $500 processing fee.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ]
+  },
+  "choices": [
+   {
+    "label": "Send the fee",
+    "outcomes": [
+     {
+      "text": "I never heard back. Obviously.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "happiness": -4
+      }
+     }
+    ],
+    "requires": {
+     "money": 500
+    }
+   },
+   {
+    "label": "Delete it",
+    "outcomes": [
+     {
+      "text": "Nice try, internet.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Scam the scammer",
+    "outcomes": [
+     {
+      "text": "I wasted three hours of a scammer's day. Worth it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ],
+    "requires": {
+     "trait": "Funny"
+    }
+   }
+  ]
+ },
+ {
+  "id": "adult.food_truck_pitch",
+  "icon": "🌮",
+  "title": "Investment pitch",
+  "text": "{friend.first} wants you to invest in {friend.his} food truck.",
+  "conditions": {
+   "age": [
+    21,
+    70
+   ],
+   "min_money": 1000
+  },
+  "choices": [
+   {
+    "label": "Invest $1,000",
+    "outcomes": [
+     {
+      "text": "The truck is a hit! My share paid back $3,000.",
+      "weight": 1,
+      "effects": {
+       "money": 2000,
+       "happiness": 4
+      },
+      "relationship": {
+       "friend": 10
+      }
+     },
+     {
+      "text": "The truck went under. The $1,000 is gone.",
+      "weight": 2,
+      "effects": {
+       "money": -1000
+      },
+      "relationship": {
+       "friend": 3
+      }
+     }
+    ],
+    "requires": {
+     "money": 1000
+    }
+   },
+   {
+    "label": "Invest $10,000",
+    "outcomes": [
+     {
+      "text": "The truck became a chain. My stake is worth $40,000!",
+      "weight": 1,
+      "effects": {
+       "money": 30000,
+       "happiness": 10
+      },
+      "relationship": {
+       "friend": 15
+      }
+     },
+     {
+      "text": "The truck caught fire. So did my $10,000.",
+      "weight": 2,
+      "effects": {
+       "money": -10000,
+       "happiness": -6
+      }
+     }
+    ],
+    "requires": {
+     "money": 10000
+    }
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "I passed. {friend.first} understood. Mostly.",
+      "weight": 1,
+      "relationship": {
+       "friend": -4
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "friend": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "sibling"
+    ]
+   }
+  }
+ },
+ {
+  "id": "adult.wedding_invite",
+  "icon": "💌",
+  "title": "Wedding invitation",
+  "text": "{friend.first} is getting married and invited you.",
+  "conditions": {
+   "age": [
+    20,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and bring a gift ($150)",
+    "outcomes": [
+     {
+      "text": "I cried at the vows and danced all night.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "happiness": 6
+      },
+      "relationship": {
+       "friend": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I sent my regrets.",
+      "weight": 1,
+      "relationship": {
+       "friend": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Object during the ceremony",
+    "outcomes": [
+     {
+      "text": "Nobody has ever been escorted out of a wedding faster.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "happiness": 3
+      },
+      "relationship": {
+       "friend": -60
+      }
+     }
+    ],
+    "requires": {
+     "trait": "Rebel"
+    }
+   }
+  ],
+  "roles": {
+   "friend": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "coworker"
+    ]
+   }
+  }
+ },
+ {
+  "id": "adult.midlife",
+  "icon": "🏎️",
+  "title": "Midlife moment",
+  "text": "You wake up one morning wondering if this is all there is.",
+  "conditions": {
+   "age": [
+    40,
+    52
+   ]
+  },
+  "choices": [
+   {
+    "label": "Buy a sports car",
+    "outcomes": [
+     {
+      "text": "I bought a sports car. I feel twenty again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "money": -95000
+      }
+     }
+    ],
+    "requires": {
+     "money": 95000
+    }
+   },
+   {
+    "label": "Learn the guitar",
+    "outcomes": [
+     {
+      "text": "I started guitar lessons. My neighbors are thrilled.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "counter": {
+       "music": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get a tattoo",
+    "outcomes": [
+     {
+      "text": "I got a tattoo. It's either a dragon or a potato.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "looks": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Talk to a therapist",
+    "outcomes": [
+     {
+      "text": "Therapy helped me see what I already have.",
+      "weight": 1,
+      "effects": {
+       "stress": -12,
+       "happiness": 6
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "adult.stray_dog",
+  "icon": "🐕",
+  "title": "A stray",
+  "text": "A scruffy stray dog has followed you all the way home.",
+  "conditions": {
+   "age": [
+    8,
+    85
+   ]
+  },
+  "choices": [
+   {
+    "label": "Adopt the dog",
+    "outcomes": [
+     {
+      "text": "I named the dog {dog.first}. Best decision ever.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "keep_role": "dog"
+     }
+    ]
+   },
+   {
+    "label": "Take it to a shelter",
+    "outcomes": [
+     {
+      "text": "The shelter found {dog.first} a good home.",
+      "weight": 1,
+      "effects": {
+       "karma": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Shoo it away",
+    "outcomes": [
+     {
+      "text": "The dog left. I feel a little bad.",
+      "weight": 1,
+      "effects": {
+       "karma": -3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "dog": {
+    "new": "pet",
+    "species": "dog",
+    "age": [
+     1,
+     6
+    ],
+    "closeness": 60
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "adult.good_samaritan",
+  "icon": "🛒",
+  "title": "Groceries",
+  "text": "An elderly neighbor is struggling to carry groceries up the stairs.",
+  "conditions": {
+   "age": [
+    10,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help carry them",
+    "outcomes": [
+     {
+      "text": "She gave me a homemade pie as thanks.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep walking",
+    "outcomes": [
+     {
+      "text": "I pretended I didn't see.",
+      "weight": 1,
+      "effects": {
+       "karma": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "adult.stuck_car",
+  "icon": "🚙",
+  "title": "Stuck in the snow",
+  "text": "A stranger's car is stuck in a snowbank.",
+  "conditions": {
+   "age": [
+    16,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help push",
+    "outcomes": [
+     {
+      "text": "We got it out! The stranger hugged me.",
+      "weight": 2,
+      "effects": {
+       "karma": 5,
+       "happiness": 3,
+       "health": -1
+      }
+     },
+     {
+      "text": "I slipped and landed face-first in the snow.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive past",
+    "outcomes": [
+     {
+      "text": "I drove past.",
+      "weight": 1,
+      "effects": {
+       "karma": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "adult.minor_injury",
+  "icon": "🤕",
+  "title": "Ouch",
+  "text": "",
+  "conditions": {
+   "age": [
+    5,
+    90
+   ]
+  },
+  "cooldown": 6,
+  "outcomes": [
+   {
+    "text": "I sprained my ankle stepping off a curb.",
+    "weight": 2,
+    "effects": {
+     "health": -6,
+     "happiness": -2
+    }
+   },
+   {
+    "text": "I cut my hand cooking dinner. Four stitches.",
+    "weight": 1,
+    "effects": {
+     "health": -4
+    }
+   },
+   {
+    "text": "I stubbed my toe so hard I saw colors.",
+    "weight": 2,
+    "effects": {
+     "health": -1,
+     "happiness": -1
+    }
+   }
+  ]
+ },
+ {
+  "id": "adult.windfall",
+  "icon": "💸",
+  "title": "Surprise",
+  "text": "",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "chance": 0.5
+  },
+  "cooldown": 10,
+  "outcomes": [
+   {
+    "text": "A distant relative I'd never met left me $5,000.",
+    "weight": 1,
+    "effects": {
+     "money": 5000,
+     "happiness": 6
+    }
+   },
+   {
+    "text": "I found $100 in an old coat pocket.",
+    "weight": 3,
+    "effects": {
+     "money": 100,
+     "happiness": 3
+    }
+   },
+   {
+    "text": "I got an unexpected tax refund of $900.",
+    "weight": 2,
+    "effects": {
+     "money": 900,
+     "happiness": 3
+    }
+   }
+  ]
+ },
+ {
+  "id": "adult.cheating_resurfaces",
+  "icon": "🗞️",
+  "title": "Old secrets",
+  "text": "A former classmate posts online that you cheated on a test back in school. People are talking.",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Own up to it",
+    "outcomes": [
+     {
+      "text": "I admitted it. Most people respected the honesty.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": -3,
+       "job_perf": -3
+      },
+      "unflags": [
+       "cheated_test"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Deny everything",
+    "outcomes": [
+     {
+      "text": "It blew over. For now.",
+      "weight": 1,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "Someone found the old test. My boss is not impressed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -12,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a joke of it",
+    "outcomes": [
+     {
+      "text": "\"I peaked in tenth grade.\" The internet loved it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ],
+    "requires": {
+     "trait": "Funny"
+    }
+   }
+  ],
+  "followup_only": true
+ },
+ {
+  "id": "adult.mentor_reference",
+  "icon": "📨",
+  "title": "A letter",
+  "text": "",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "followup_only": true,
+  "roles": {
+   "teacher": {
+    "relation_any": [
+     "mentor",
+     "teacher"
+    ]
+   }
+  },
+  "outcomes": [
+   {
+    "text": "My old teacher {teacher.first} {teacher.last} wrote me a glowing reference letter. It opened doors.",
+    "weight": 1,
+    "effects": {
+     "job_perf": 10,
+     "happiness": 5
+    },
+    "relationship": {
+     "teacher": 10
+    }
+   }
+  ]
+ },
+ {
+  "id": "adult.neighbor_bbq",
+  "icon": "🍖",
+  "title": "Backyard barbecue",
+  "text": "Your neighbors invite you to a barbecue.",
+  "conditions": {
+   "age": [
+    22,
+    85
+   ],
+   "housing": [
+    "house"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Bring potato salad",
+    "outcomes": [
+     {
+      "text": "Everyone loved it. {nb.first} and I hit it off.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "relationship": {
+       "nb": 20
+      },
+      "keep_role": "nb"
+     }
+    ]
+   },
+   {
+    "label": "Bring nothing",
+    "outcomes": [
+     {
+      "text": "I ate three burgers and left.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I stayed in.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "nb": {
+    "new": "neighbor",
+    "age": [
+     25,
+     70
+    ]
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "adult.lost_luggage",
+  "icon": "🧳",
+  "title": "Big news",
+  "text": "",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "chance": 0.3
+  },
+  "cooldown": 12,
+  "outcomes": [
+   {
+    "text": "My city was hit by a heat wave. I spent a week hiding next to a fan.",
+    "weight": 1,
+    "effects": {
+     "health": -1,
+     "happiness": -1
+    }
+   },
+   {
+    "text": "A huge storm knocked out power for three days.",
+    "weight": 1,
+    "effects": {
+     "stress": 3
+    }
+   },
+   {
+    "text": "The economy dipped this year. Everyone's a little tighter on money.",
+    "weight": 1,
+    "effects": {
+     "stress": 3
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,198 @@
+[
+ {
+  "id": "prison.cellmate",
+  "icon": "🛏️",
+  "title": "New cellmate",
+  "text": "Your new cellmate, {cm.first}, is sizing you up.",
+  "conditions": {
+   "age": [
+    12,
+    110
+   ],
+   "prison": true
+  },
+  "choices": [
+   {
+    "label": "Offer to share your snacks",
+    "outcomes": [
+     {
+      "text": "{cm.first} and I get along now.",
+      "weight": 1,
+      "relationship": {
+       "cm": 30
+      },
+      "keep_role": "cm",
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Establish dominance",
+    "outcomes": [
+     {
+      "text": "{cm.first} backed off.",
+      "weight": 1,
+      "trait_bonus": {
+       "Athletic": 2,
+       "Hothead": 1.5
+      },
+      "keep_role": "cm",
+      "relationship": {
+       "cm": -20
+      },
+      "fight_win": true
+     },
+     {
+      "text": "{cm.first} beat me up.",
+      "weight": 1,
+      "effects": {
+       "health": -10,
+       "happiness": -6
+      },
+      "keep_role": "cm",
+      "relationship": {
+       "cm": -20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep to yourself",
+    "outcomes": [
+     {
+      "text": "I kept my head down.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "cm": {
+    "new": "cellmate",
+    "age": [
+     20,
+     60
+    ]
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "prison.riot",
+  "icon": "🔥",
+  "title": "Riot",
+  "text": "A riot is breaking out in the cafeteria.",
+  "conditions": {
+   "age": [
+    12,
+    110
+   ],
+   "prison": true
+  },
+  "choices": [
+   {
+    "label": "Join in",
+    "outcomes": [
+     {
+      "text": "I got caught. Extra year added to my sentence.",
+      "weight": 1,
+      "jail": [
+       1,
+       1
+      ],
+      "crime": "rioting",
+      "effects": {
+       "health": -4
+      }
+     },
+     {
+      "text": "Chaos. I escaped with bruises and a reputation.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide in your cell",
+    "outcomes": [
+     {
+      "text": "I stayed out of it.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Help a guard",
+    "outcomes": [
+     {
+      "text": "The warden noted my help. Good for my parole.",
+      "weight": 1,
+      "effects": {
+       "karma": 5
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "prison.visit",
+  "icon": "🪟",
+  "title": "Visitor",
+  "text": "{vis.first} came to visit you in prison.",
+  "conditions": {
+   "age": [
+    12,
+    110
+   ],
+   "prison": true
+  },
+  "choices": [
+   {
+    "label": "Thank them for coming",
+    "outcomes": [
+     {
+      "text": "{vis.first} promised to be there when I get out.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "relationship": {
+       "vis": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them not to come again",
+    "outcomes": [
+     {
+      "text": "{vis.first} left in tears.",
+      "weight": 1,
+      "relationship": {
+       "vis": -15
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "vis": {
+    "relation_any": [
+     "mother",
+     "father",
+     "partner",
+     "sibling",
+     "best_friend",
+     "friend",
+     "child"
+    ]
+   }
+  }
+ }
+]

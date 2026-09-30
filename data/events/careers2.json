@@ -1,0 +1,1767 @@
+[
+ {
+  "id": "astro.anomaly",
+  "icon": "🛰️",
+  "title": "Station alarm",
+  "text": "An alarm screams through the station at 3 a.m. A coolant line is leaking and mission control's instructions are garbled.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "astronaut"
+  },
+  "choices": [
+   {
+    "label": "Fix it yourself by the book",
+    "outcomes": [
+     {
+      "text": "I traced the leak, sealed it and went back to sleep. Mission control called it textbook.",
+      "weight": 2,
+      "effects": {
+       "skill": 5,
+       "fame": 2
+      }
+     },
+     {
+      "text": "The patch held, but I inhaled fumes and spent a week in the medical bay.",
+      "weight": 1,
+      "effects": {
+       "health": -10,
+       "skill": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Improvise with duct tape",
+    "outcomes": [
+     {
+      "text": "Duct tape and a sock. It worked. The internet made me a meme.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "The tape failed. We had to abort the experiment and come home early.",
+      "weight": 1,
+      "effects": {
+       "skill": -3,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wake the commander",
+    "outcomes": [
+     {
+      "text": "The commander fixed it and quietly wrote me up for hesitating.",
+      "weight": 1,
+      "effects": {
+       "skill": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "astro.spacewalk",
+  "icon": "👨‍🚀",
+  "title": "Spacewalk",
+  "text": "You're scheduled for your first spacewalk. Your heart rate is already at 130.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "astronaut",
+   "chance": 0.6
+  },
+  "choices": [
+   {
+    "label": "Go out and do the job",
+    "outcomes": [
+     {
+      "text": "I floated above the Earth for six hours. I cried inside my helmet. Nobody could see.",
+      "weight": 3,
+      "effects": {
+       "happiness": 15,
+       "skill": 6,
+       "fame": 3
+      },
+      "milestone": "went on a spacewalk"
+     },
+     {
+      "text": "My tether snagged and I drifted for 40 terrifying seconds before it caught.",
+      "weight": 1,
+      "effects": {
+       "stress": 20,
+       "skill": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a sim run first",
+    "outcomes": [
+     {
+      "text": "The extra practice paid off. The spacewalk went perfectly.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "happiness": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "astro.zero_g_romance",
+  "icon": "💫",
+  "title": "Close quarters",
+  "text": "Six months in a tin can with {c.first}. Things have gotten... cozy.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "astronaut",
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Start something",
+    "outcomes": [
+     {
+      "text": "I started a relationship in orbit. Mission control pretended not to notice.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "new_partner": "c"
+     },
+     {
+      "text": "{c.first} was not interested. The next four months were very awkward.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it professional",
+    "outcomes": [
+     {
+      "text": "I kept it professional. We're still good friends.",
+      "weight": 1,
+      "relationship": {
+       "c": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "c": {
+    "new": "friend",
+    "age": [
+     26,
+     45
+    ],
+    "closeness": 55
+   }
+  }
+ },
+ {
+  "id": "astro.recruit_friend",
+  "icon": "🧑‍🚀",
+  "title": "Selection board",
+  "text": "The agency asks you to recommend a candidate for the next astronaut class. {f.first} would kill for this.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "astronaut",
+   "career_rank_min": 2
+  },
+  "choices": [
+   {
+    "label": "Recommend {f.first}",
+    "outcomes": [
+     {
+      "text": "{f.first} was selected. {f.He} hugged me so hard I felt it in my ribs.",
+      "weight": 2,
+      "relationship": {
+       "f": 25
+      },
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "{f.first} washed out of training and blamed me for getting {f.his} hopes up.",
+      "weight": 1,
+      "relationship": {
+       "f": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Recommend the best candidate",
+    "outcomes": [
+     {
+      "text": "I recommended a stranger with a better record. {f.first} found out.",
+      "weight": 1,
+      "relationship": {
+       "f": -20
+      },
+      "effects": {
+       "karma": 2,
+       "skill": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "sibling"
+    ],
+    "min_age": 22
+   }
+  }
+ },
+ {
+  "id": "astro.meteorite",
+  "icon": "☄️",
+  "title": "Space rock",
+  "text": "A collector offers to buy a sliver of moon rock you 'accidentally' brought home.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "astronaut"
+  },
+  "choices": [
+   {
+    "label": "Sell it quietly",
+    "outcomes": [
+     {
+      "text": "I sold it for $80,000. Then the agency's inventory audit came around.",
+      "weight": 1,
+      "effects": {
+       "money": 80000,
+       "heat": 25,
+       "karma": -8
+      }
+     },
+     {
+      "text": "The collector was a federal agent. I was charged with theft of government property.",
+      "weight": 1,
+      "trial": [
+       "theft of government property",
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Return it",
+    "outcomes": [
+     {
+      "text": "I returned it. The agency never knew it was gone.",
+      "weight": 1,
+      "effects": {
+       "karma": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "astro.family_launch",
+  "icon": "🚀",
+  "title": "Launch day",
+  "text": "Your family is at the viewing stands for your launch.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "astronaut"
+  },
+  "choices": [
+   {
+    "label": "Wave to {m.first} from the gantry",
+    "outcomes": [
+     {
+      "text": "I waved from the gantry. {m.first} said it was the proudest day of {m.his} life.",
+      "weight": 1,
+      "relationship": {
+       "m": 15
+      },
+      "effects": {
+       "happiness": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "m": {
+    "relation_any": [
+     "mother",
+     "father",
+     "partner",
+     "child"
+    ]
+   }
+  },
+  "cooldown": 8
+ },
+ {
+  "id": "astro.memoir",
+  "icon": "📘",
+  "title": "Memoir offer",
+  "text": "A publisher wants the book of your life in orbit.",
+  "conditions": {
+   "age": [
+    20,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Write it yourself",
+    "outcomes": [
+     {
+      "text": "\"The View From Up There\" became a bestseller.",
+      "weight": 2,
+      "effects": {
+       "money": 400000,
+       "fame": 8,
+       "happiness": 10
+      },
+      "milestone": "wrote a bestselling space memoir"
+     },
+     {
+      "text": "The book was honest, slow and sold modestly.",
+      "weight": 1,
+      "effects": {
+       "money": 60000,
+       "smarts": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use a ghostwriter",
+    "outcomes": [
+     {
+      "text": "The ghostwriter made me sound like an action hero. It sold well.",
+      "weight": 1,
+      "effects": {
+       "money": 250000,
+       "fame": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "followup_only": true
+ },
+ {
+  "id": "model.diet",
+  "icon": "🥗",
+  "title": "Size zero",
+  "text": "Your agency says you need to lose weight for the fall shows.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "model"
+  },
+  "choices": [
+   {
+    "label": "Refuse and speak up about it",
+    "outcomes": [
+     {
+      "text": "My post about it went viral. Other models thanked me.",
+      "weight": 2,
+      "effects": {
+       "fame": 5,
+       "karma": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The agency dropped me for being 'difficult'.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "skill": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Change agencies",
+    "outcomes": [
+     {
+      "text": "I found an agency that books me as I am.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Train sensibly with a coach",
+    "outcomes": [
+     {
+      "text": "I worked with a nutritionist and got stronger, not smaller.",
+      "weight": 1,
+      "effects": {
+       "health": 6,
+       "money": -2000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "model.photographer",
+  "icon": "📸",
+  "title": "Creepy photographer",
+  "text": "A famous photographer keeps making inappropriate comments during a shoot.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "model"
+  },
+  "choices": [
+   {
+    "label": "Walk off the set",
+    "outcomes": [
+     {
+      "text": "I walked out. Three other models followed me.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 3,
+       "skill": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Report it publicly",
+    "outcomes": [
+     {
+      "text": "I went public. He was dropped by every magazine.",
+      "weight": 2,
+      "effects": {
+       "fame": 6,
+       "karma": 6
+      }
+     },
+     {
+      "text": "Nobody believed me at first. It cost me bookings for a year.",
+      "weight": 1,
+      "effects": {
+       "money": -10000,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Finish the shoot",
+    "outcomes": [
+     {
+      "text": "I finished the shoot and felt awful about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "money": 5000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "model.brand_collab",
+  "icon": "👗",
+  "title": "Your own line",
+  "text": "A fast-fashion giant wants to launch a collection with your name on it.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "model",
+   "min_fame": 35
+  },
+  "choices": [
+   {
+    "label": "Sign the deal",
+    "outcomes": [
+     {
+      "text": "The collection sold out in an hour. I made $600,000.",
+      "weight": 2,
+      "effects": {
+       "money": 600000,
+       "fame": 4
+      }
+     },
+     {
+      "text": "The clothes fell apart after one wash. Fans were furious.",
+      "weight": 1,
+      "effects": {
+       "money": 300000,
+       "fame": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start your own label instead",
+    "outcomes": [
+     {
+      "text": "I turned them down and started planning my own fashion label.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 2
+      },
+      "empire": "biz_buzz"
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "model.rival",
+  "icon": "💅",
+  "title": "Runway rival",
+  "text": "{r.first}, a rival model, 'accidentally' spilled coffee on your outfit before the show.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "model"
+  },
+  "choices": [
+   {
+    "label": "Walk anyway",
+    "outcomes": [
+     {
+      "text": "I walked in the stained outfit like it was on purpose. It became the look of the season.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "skill": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get even",
+    "outcomes": [
+     {
+      "text": "I switched {r.first}'s shoes for a size smaller. {r.He} stumbled on the runway.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "happiness": 4
+      },
+      "relationship": {
+       "r": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the designer",
+    "outcomes": [
+     {
+      "text": "The designer cut {r.first} from the show.",
+      "weight": 1,
+      "relationship": {
+       "r": -20
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "r": {
+    "new": "rival",
+    "age": [
+     18,
+     30
+    ],
+    "closeness": 20
+   }
+  }
+ },
+ {
+  "id": "model.scouted_friend",
+  "icon": "🤳",
+  "title": "Scout",
+  "text": "A scout at your agency spots {f.first} in your photos and wants {f.him} too.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "model"
+  },
+  "choices": [
+   {
+    "label": "Bring {f.first} in",
+    "outcomes": [
+     {
+      "text": "{f.first} signed with the agency. We did our first shoot together.",
+      "weight": 1,
+      "relationship": {
+       "f": 20
+      },
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say {f.first} isn't interested",
+    "outcomes": [
+     {
+      "text": "I kept my spotlight to myself. {f.first} never found out.",
+      "weight": 1,
+      "effects": {
+       "karma": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "sibling"
+    ],
+    "min_age": 16
+   }
+  }
+ },
+ {
+  "id": "model.aging",
+  "icon": "⏳",
+  "title": "New faces",
+  "text": "The agency is sending all the good bookings to 19-year-olds.",
+  "conditions": {
+   "age": [
+    27,
+    40
+   ],
+   "career": "model"
+  },
+  "choices": [
+   {
+    "label": "Pivot to acting",
+    "outcomes": [
+     {
+      "text": "I started taking acting classes. The camera already loves me.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4
+      },
+      "flags": [
+       "model_to_actor"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Become a top booker",
+    "outcomes": [
+     {
+      "text": "I moved behind the scenes and started scouting.",
+      "weight": 1,
+      "effects": {
+       "money": 20000,
+       "smarts": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep hustling",
+    "outcomes": [
+     {
+      "text": "I kept taking every job I could get.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "money": 8000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "fighter.weight_cut",
+  "icon": "⚖️",
+  "title": "Weight cut",
+  "text": "You're four pounds over with 24 hours until weigh-ins.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "fighter"
+  },
+  "choices": [
+   {
+    "label": "Sauna suit and no water",
+    "outcomes": [
+     {
+      "text": "I made weight but felt like a ghost in the cage.",
+      "weight": 1,
+      "effects": {
+       "health": -6,
+       "skill": -1
+      }
+     },
+     {
+      "text": "I collapsed in the sauna and was rushed to the hospital.",
+      "weight": 1,
+      "effects": {
+       "health": -20,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Miss weight and pay the fine",
+    "outcomes": [
+     {
+      "text": "I paid a 20% fine and fought at full strength.",
+      "weight": 1,
+      "effects": {
+       "money": -15000,
+       "fame": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fighter.callout",
+  "icon": "🎤",
+  "title": "Callout",
+  "text": "After your last win, you grab the mic. The crowd is roaring.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "fighter"
+  },
+  "choices": [
+   {
+    "label": "Call out the champion",
+    "outcomes": [
+     {
+      "text": "The clip got 20 million views. The champion accepted.",
+      "weight": 2,
+      "effects": {
+       "fame": 6,
+       "stress": 5
+      }
+     },
+     {
+      "text": "The champion laughed it off. I looked desperate.",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Thank your family",
+    "outcomes": [
+     {
+      "text": "I thanked my mom on live TV. Everyone loved it.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "karma": 3,
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fighter.street",
+  "icon": "👊",
+  "title": "Street challenge",
+  "text": "A guy at a bar recognizes you and wants to prove he can take you.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "fighter"
+  },
+  "choices": [
+   {
+    "label": "Fight him in the parking lot",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 1,
+      "play": {
+       "id": "fight",
+       "kind": "brawl",
+       "params": {
+        "difficulty": 0.7,
+        "opponent": "A drunk tough guy"
+       }
+      },
+      "effects": {
+       "heat": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk away",
+    "outcomes": [
+     {
+      "text": "I walked away. Professionals don't fight for free.",
+      "weight": 1,
+      "effects": {
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sign him to a sparring session",
+    "outcomes": [
+     {
+      "text": "I told him to come to my gym. He lasted 40 seconds.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "fame": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fighter.cte",
+  "icon": "🧠",
+  "title": "Doctor's warning",
+  "text": "After your last fight, a neurologist wants to talk about the long-term damage.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "fighter",
+   "career_rank_min": 2
+  },
+  "choices": [
+   {
+    "label": "Retire on top",
+    "outcomes": [
+     {
+      "text": "I retired while I could still remember my wins.",
+      "weight": 1,
+      "career_quit": true,
+      "effects": {
+       "health": 5,
+       "happiness": 4
+      },
+      "milestone": "retired from fighting"
+     }
+    ]
+   },
+   {
+    "label": "Keep fighting",
+    "outcomes": [
+     {
+      "text": "I kept fighting. My hands shake a little in the mornings now.",
+      "weight": 1,
+      "effects": {
+       "health": -8,
+       "smarts": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "fighter.cornerman",
+  "icon": "🥊",
+  "title": "Corner",
+  "text": "{f.first} offers to be your cornerman for the next fight.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "fighter"
+  },
+  "choices": [
+   {
+    "label": "Accept",
+    "outcomes": [
+     {
+      "text": "{f.first} was a natural in the corner. We won the next fight together.",
+      "weight": 2,
+      "relationship": {
+       "f": 20
+      },
+      "effects": {
+       "skill": 4
+      }
+     },
+     {
+      "text": "{f.first} threw in the towel too early. We argued for weeks.",
+      "weight": 1,
+      "relationship": {
+       "f": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stick with your coach",
+    "outcomes": [
+     {
+      "text": "I kept my old coach. {f.first} understood.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "father",
+     "sibling",
+     "best_friend",
+     "friend"
+    ],
+    "min_age": 18
+   }
+  }
+ },
+ {
+  "id": "fighter.gym_offer",
+  "icon": "🏋️",
+  "title": "Your own gym",
+  "text": "An investor wants to open a gym chain with your name on the door.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "fighter",
+   "min_fame": 30,
+   "has_business": false
+  },
+  "choices": [
+   {
+    "label": "Go into business",
+    "outcomes": [
+     {
+      "text": "I put my name on a line of gyms. The first one opened to a line around the block.",
+      "weight": 1,
+      "effects": {
+       "money": 50000,
+       "fame": 2
+      },
+      "milestone": "lent their name to a gym chain"
+     }
+    ]
+   },
+   {
+    "label": "Stay focused on fighting",
+    "outcomes": [
+     {
+      "text": "I stayed focused. The belt comes first.",
+      "weight": 1,
+      "effects": {
+       "skill": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "director.diva",
+  "icon": "🎭",
+  "title": "Diva on set",
+  "text": "Your lead actor is refusing to leave their trailer until the script is rewritten.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "director"
+  },
+  "choices": [
+   {
+    "label": "Rewrite the scene together",
+    "outcomes": [
+     {
+      "text": "The rewrite was actually better. The movie improved.",
+      "weight": 1,
+      "effects": {
+       "skill": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Threaten to recast",
+    "outcomes": [
+     {
+      "text": "They came out in five minutes flat.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "They quit. Reshoots cost $2 million.",
+      "weight": 1,
+      "effects": {
+       "money": -200000,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Film the tantrum for the blooper reel",
+    "outcomes": [
+     {
+      "text": "The blooper reel went viral before the movie came out.",
+      "weight": 1,
+      "effects": {
+       "fame": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "director.studio_notes",
+  "icon": "📝",
+  "title": "Studio notes",
+  "text": "The studio wants a happier ending. Test audiences cried too much.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "director"
+  },
+  "choices": [
+   {
+    "label": "Fight for your ending",
+    "outcomes": [
+     {
+      "text": "I won the fight. Critics called it brave.",
+      "weight": 2,
+      "effects": {
+       "skill": 5,
+       "fame": 2
+      }
+     },
+     {
+      "text": "The studio took the movie away from me and recut it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "skill": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give them the happy ending",
+    "outcomes": [
+     {
+      "text": "I gave them the happy ending. It made more money and meant less.",
+      "weight": 1,
+      "effects": {
+       "money": 80000,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "director.cast_family",
+  "icon": "🎬",
+  "title": "Nepotism",
+  "text": "{k.first} wants a part in your next movie. {k.He} has never acted.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "director"
+  },
+  "choices": [
+   {
+    "label": "Cast {k.first}",
+    "outcomes": [
+     {
+      "text": "{k.first} was a revelation. The critics loved {k.him}.",
+      "weight": 1,
+      "relationship": {
+       "k": 25
+      },
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "{k.first} was wooden and the reviews said so. By name.",
+      "weight": 2,
+      "relationship": {
+       "k": 5
+      },
+      "effects": {
+       "fame": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer a cameo instead",
+    "outcomes": [
+     {
+      "text": "{k.first} got one line. {k.He} practiced it for a month.",
+      "weight": 1,
+      "relationship": {
+       "k": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "k": {
+    "relation_any": [
+     "child",
+     "sibling",
+     "partner",
+     "friend"
+    ],
+    "min_age": 8
+   }
+  }
+ },
+ {
+  "id": "director.festival",
+  "icon": "🏆",
+  "title": "Film festival",
+  "text": "Your movie was selected for a big European film festival.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "director",
+   "career_rank_min": 1
+  },
+  "choices": [
+   {
+    "label": "Attend the premiere",
+    "outcomes": [
+     {
+      "text": "A ten-minute standing ovation. I have never felt anything like it.",
+      "weight": 2,
+      "effects": {
+       "fame": 6,
+       "happiness": 14,
+       "skill": 4
+      }
+     },
+     {
+      "text": "People walked out. One critic booed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "fame": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home and work",
+    "outcomes": [
+     {
+      "text": "I stayed home and started my next script.",
+      "weight": 1,
+      "effects": {
+       "skill": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "director.stunt_accident",
+  "icon": "🚑",
+  "title": "Stunt gone wrong",
+  "text": "A stunt performer was hurt on your set. The union is investigating.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "director"
+  },
+  "choices": [
+   {
+    "label": "Take responsibility",
+    "outcomes": [
+     {
+      "text": "I paid for everything and changed our safety rules. The union respected it.",
+      "weight": 1,
+      "effects": {
+       "money": -50000,
+       "karma": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame the stunt coordinator",
+    "outcomes": [
+     {
+      "text": "The coordinator was fired. The crew didn't forget.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "skill": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call a lawyer",
+    "outcomes": [
+     {
+      "text": "{lw.first} handled everything quietly.",
+      "weight": 1,
+      "requires": {
+       "role": "lw"
+      },
+      "relationship": {
+       "lw": 5
+      }
+     }
+    ],
+    "requires": {
+     "role": "lw"
+    }
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "lw": {
+    "contact": [
+     "lawyer"
+    ],
+    "optional": true,
+    "min_close": 30
+   }
+  }
+ },
+ {
+  "id": "director.studio_deal",
+  "icon": "🎞️",
+  "title": "Studio offer",
+  "text": "A studio wants to buy your production company, or back you in building your own.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "director",
+   "career_rank_min": 2,
+   "has_business": false
+  },
+  "choices": [
+   {
+    "label": "Found your own film studio",
+    "outcomes": [
+     {
+      "text": "I'll build my own studio. Look for it under Occupation → Business.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take the overall deal",
+    "outcomes": [
+     {
+      "text": "I signed an overall deal worth $2 million.",
+      "weight": 1,
+      "effects": {
+       "money": 2000000
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "agent.honeytrap",
+  "icon": "🍸",
+  "title": "Honeytrap",
+  "text": "A charming stranger at the embassy party is asking a lot of questions about your 'insurance work'.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "agent"
+  },
+  "choices": [
+   {
+    "label": "Play along and turn them",
+    "outcomes": [
+     {
+      "text": "By dawn, they were working for us.",
+      "weight": 1,
+      "effects": {
+       "skill": 6,
+       "money": 20000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave immediately",
+    "outcomes": [
+     {
+      "text": "I slipped out the kitchen door. Better safe.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fall for it",
+    "outcomes": [
+     {
+      "text": "I said too much. HQ pulled me in for a very long conversation.",
+      "weight": 1,
+      "effects": {
+       "skill": -6,
+       "stress": 14
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "agent.cover_blown",
+  "icon": "🎭",
+  "title": "Cover story",
+  "text": "{f.first} saw you in a city you weren't supposed to be in.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "agent"
+  },
+  "choices": [
+   {
+    "label": "Lie smoothly",
+    "outcomes": [
+     {
+      "text": "{f.first} bought it. I felt terrible.",
+      "weight": 2,
+      "effects": {
+       "karma": -2
+      }
+     },
+     {
+      "text": "{f.first} didn't believe me. Things are different between us now.",
+      "weight": 1,
+      "relationship": {
+       "f": -20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell {f.first} the truth",
+    "outcomes": [
+     {
+      "text": "I told {f.first}. HQ found out.",
+      "weight": 1,
+      "relationship": {
+       "f": 15
+      },
+      "effects": {
+       "skill": -8,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "partner",
+     "best_friend",
+     "mother",
+     "father",
+     "sibling"
+    ]
+   }
+  }
+ },
+ {
+  "id": "agent.mole",
+  "icon": "🐀",
+  "title": "The mole",
+  "text": "Someone in your unit is selling secrets. All the evidence points to {c.first}, your closest colleague.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "agent",
+   "career_rank_min": 1
+  },
+  "choices": [
+   {
+    "label": "Turn {c.first} in",
+    "outcomes": [
+     {
+      "text": "{c.first} was the mole. I was promoted.",
+      "weight": 2,
+      "effects": {
+       "skill": 8,
+       "money": 30000
+      }
+     },
+     {
+      "text": "{c.first} was innocent. The real mole framed {c.him}.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Investigate quietly",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 1,
+      "play": {
+       "id": "infiltrate",
+       "kind": "infiltrate",
+       "params": {
+        "difficulty": 1.0
+       }
+      }
+     }
+    ]
+   },
+   {
+    "label": "Warn {c.first}",
+    "outcomes": [
+     {
+      "text": "{c.first} vanished the next day. So did the evidence.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "heat": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "roles": {
+   "c": {
+    "new": "coworker",
+    "age": [
+     28,
+     50
+    ],
+    "closeness": 60
+   }
+  }
+ },
+ {
+  "id": "agent.burn_notice",
+  "icon": "🔥",
+  "title": "Burn notice",
+  "text": "HQ has disavowed you. Your accounts are frozen and your cover is useless.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "career": "agent",
+   "chance": 0.4
+  },
+  "choices": [
+   {
+    "label": "Clear your name",
+    "outcomes": [
+     {
+      "text": "I spent a year proving my innocence. I got my job back and a medal.",
+      "weight": 1,
+      "effects": {
+       "skill": 10,
+       "stress": 15,
+       "fame": 0
+      }
+     },
+     {
+      "text": "I couldn't clear it. I left the service for good.",
+      "weight": 1,
+      "career_quit": true,
+      "effects": {
+       "happiness": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go off the grid",
+    "outcomes": [
+     {
+      "text": "I disappeared. New name, new country, new life.",
+      "weight": 1,
+      "career_quit": true,
+      "effects": {
+       "heat": -50,
+       "happiness": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ },
+ {
+  "id": "agent.revenge",
+  "icon": "🕴️",
+  "title": "Old friends",
+  "text": "Two men from your old crime family are waiting outside your house. They know you were the informant.",
+  "conditions": {
+   "age": [
+    18,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Fight your way out",
+    "outcomes": [
+     {
+      "text": "",
+      "weight": 1,
+      "play": {
+       "id": "fight",
+       "kind": "brawl",
+       "params": {
+        "difficulty": 1.3,
+        "opponent": "Two mob enforcers"
+       }
+      },
+      "effects": {
+       "health": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call your old handler",
+    "outcomes": [
+     {
+      "text": "A black van arrived in four minutes. I never saw those men again.",
+      "weight": 2,
+      "effects": {
+       "stress": 10
+      }
+     },
+     {
+      "text": "My handler didn't answer. I barely escaped.",
+      "weight": 1,
+      "effects": {
+       "health": -25,
+       "stress": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Flee the country",
+    "outcomes": [
+     {
+      "text": "I left that night with one suitcase.",
+      "weight": 1,
+      "effects": {
+       "heat": -40,
+       "happiness": -10
+      },
+      "emigrate": "uk"
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "followup_only": true
+ },
+ {
+  "id": "agent.retirement",
+  "icon": "🏡",
+  "title": "Quiet life",
+  "text": "After years of lies, you just want to garden and see your family.",
+  "conditions": {
+   "age": [
+    45,
+    90
+   ],
+   "career": "agent"
+  },
+  "choices": [
+   {
+    "label": "Retire from the service",
+    "outcomes": [
+     {
+      "text": "I retired with a pension and a medal I can never show anyone.",
+      "weight": 1,
+      "career_quit": true,
+      "effects": {
+       "money": 150000,
+       "happiness": 10
+      },
+      "milestone": "retired from the intelligence service"
+     }
+    ]
+   },
+   {
+    "label": "One last mission",
+    "outcomes": [
+     {
+      "text": "One last mission. They always say that.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "once": true
+ }
+]

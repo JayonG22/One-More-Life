@@ -1,0 +1,217 @@
+[
+ {
+  "id": "rags",
+  "name": "Rags to Riches",
+  "icon": "💸",
+  "badge": "💸",
+  "desc": "Born with nothing in the Philippines or Nigeria. Die a multimillionaire.",
+  "start": {
+   "countries": [
+    "ph",
+    "ng"
+   ]
+  },
+  "goals": [
+   {
+    "type": "net_worth",
+    "value": 10000000,
+    "label": "Net worth of $10,000,000"
+   }
+  ]
+ },
+ {
+  "id": "godfather",
+  "name": "The Godfather",
+  "icon": "🕴️",
+  "badge": "🕴️",
+  "desc": "Rise to Godfather of a crime family before you turn 45.",
+  "goals": [
+   {
+    "type": "career_rank",
+    "career": "mafia",
+    "rank": 5,
+    "label": "Become Godfather"
+   },
+   {
+    "type": "max_age",
+    "value": 45,
+    "label": "Before age 45"
+   }
+  ]
+ },
+ {
+  "id": "president",
+  "name": "Commander in Chief",
+  "icon": "🏛️",
+  "badge": "🏛️",
+  "desc": "Win the presidency.",
+  "goals": [
+   {
+    "type": "president",
+    "value": 1,
+    "label": "Be elected President"
+   }
+  ]
+ },
+ {
+  "id": "statue",
+  "name": "Golden Statue",
+  "icon": "🎬",
+  "badge": "🎬",
+  "desc": "Win an acting award for a masterpiece role.",
+  "goals": [
+   {
+    "type": "awards",
+    "value": 1,
+    "label": "Win a Golden Statue"
+   }
+  ]
+ },
+ {
+  "id": "diamond",
+  "name": "Diamond Record",
+  "icon": "💎",
+  "badge": "💎",
+  "desc": "Release an album that goes Diamond.",
+  "goals": [
+   {
+    "type": "diamond",
+    "value": 1,
+    "label": "Release a Diamond album"
+   }
+  ]
+ },
+ {
+  "id": "dynasty",
+  "name": "Dynasty",
+  "icon": "🏆",
+  "badge": "🏆",
+  "desc": "Win three championships as a pro athlete.",
+  "goals": [
+   {
+    "type": "titles",
+    "value": 3,
+    "label": "Win 3 championships"
+   }
+  ]
+ },
+ {
+  "id": "dozen",
+  "name": "Cheaper by the Half Dozen",
+  "icon": "👨‍👩‍👧‍👦",
+  "badge": "🍼",
+  "desc": "Raise a big family.",
+  "goals": [
+   {
+    "type": "married",
+    "value": 1,
+    "label": "Get married"
+   },
+   {
+    "type": "children",
+    "value": 6,
+    "label": "Have 6 children"
+   }
+  ]
+ },
+ {
+  "id": "scholar",
+  "name": "Scholar Supreme",
+  "icon": "🎓",
+  "badge": "🎓",
+  "desc": "Collect three university degrees.",
+  "goals": [
+   {
+    "type": "degrees",
+    "value": 3,
+    "label": "Earn 3 degrees"
+   }
+  ]
+ },
+ {
+  "id": "landlord",
+  "name": "Landlord Tycoon",
+  "icon": "🏘️",
+  "badge": "🏘️",
+  "desc": "Own five properties at the same time.",
+  "goals": [
+   {
+    "type": "properties",
+    "value": 5,
+    "label": "Own 5 properties"
+   }
+  ]
+ },
+ {
+  "id": "centenarian",
+  "name": "Centenarian",
+  "icon": "🐢",
+  "badge": "🐢",
+  "desc": "Live to 100.",
+  "goals": [
+   {
+    "type": "age",
+    "value": 100,
+    "label": "Reach age 100"
+   }
+  ]
+ },
+ {
+  "id": "saint",
+  "name": "Clean Slate",
+  "icon": "😇",
+  "badge": "😇",
+  "desc": "Reach 80 with a good heart and a spotless record.",
+  "goals": [
+   {
+    "type": "age",
+    "value": 80,
+    "label": "Reach age 80"
+   },
+   {
+    "type": "karma",
+    "value": 50,
+    "label": "Karma 50+"
+   },
+   {
+    "type": "clean_record",
+    "value": 1,
+    "label": "No criminal record"
+   }
+  ]
+ },
+ {
+  "id": "legend",
+  "name": "Street to Suite",
+  "icon": "🎲",
+  "badge": "🎲",
+  "desc": "Become a Street Legend, then get rich.",
+  "goals": [
+   {
+    "type": "career_rank",
+    "career": "hustler",
+    "rank": 3,
+    "label": "Become Street Legend"
+   },
+   {
+    "type": "net_worth",
+    "value": 1000000,
+    "label": "Net worth of $1,000,000"
+   }
+  ]
+ },
+ {
+  "id": "famous",
+  "name": "Household Name",
+  "icon": "⭐",
+  "badge": "⭐",
+  "desc": "Reach 90 fame by any means.",
+  "goals": [
+   {
+    "type": "fame",
+    "value": 90,
+    "label": "Fame 90+"
+   }
+  ]
+ }
+]

@@ -1,0 +1,202 @@
+[
+ {
+  "id": "computer_science",
+  "name": "Computer Science",
+  "degree": "B.S. in Computer Science",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "💻"
+ },
+ {
+  "id": "nursing",
+  "name": "Nursing",
+  "degree": "B.S. in Nursing",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "💉"
+ },
+ {
+  "id": "business",
+  "name": "Business",
+  "degree": "B.A. in Business",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "📋"
+ },
+ {
+  "id": "criminal_justice",
+  "name": "Criminal Justice",
+  "degree": "B.A. in Criminal Justice",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "👮"
+ },
+ {
+  "id": "education",
+  "name": "Education",
+  "degree": "B.A. in Education",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🍎"
+ },
+ {
+  "id": "engineering",
+  "name": "Engineering",
+  "degree": "B.S. in Engineering",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "⚙️"
+ },
+ {
+  "id": "biology",
+  "name": "Biology",
+  "degree": "B.S. in Biology",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🧬"
+ },
+ {
+  "id": "psychology",
+  "name": "Psychology",
+  "degree": "B.A. in Psychology",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🧠"
+ },
+ {
+  "id": "graphic_design",
+  "name": "Graphic Design",
+  "degree": "B.F.A. in Graphic Design",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🎨"
+ },
+ {
+  "id": "communications",
+  "name": "Communications",
+  "degree": "B.A. in Communications",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "📣"
+ },
+ {
+  "id": "economics",
+  "name": "Economics",
+  "degree": "B.A. in Economics",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "📈"
+ },
+ {
+  "id": "culinary",
+  "name": "Culinary Arts",
+  "degree": "B.A. in Culinary Arts",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "👨‍🍳"
+ },
+ {
+  "id": "music",
+  "name": "Music",
+  "degree": "B.M. in Music",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🎵"
+ },
+ {
+  "id": "political_science",
+  "name": "Political Science",
+  "degree": "B.A. in Political Science",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🏛️"
+ },
+ {
+  "id": "english",
+  "name": "English",
+  "degree": "B.A. in English",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "📖"
+ },
+ {
+  "id": "architecture",
+  "name": "Architecture",
+  "degree": "B.Arch. in Architecture",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "📐"
+ },
+ {
+  "id": "accounting",
+  "name": "Accounting",
+  "degree": "B.S. in Accounting",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🧾"
+ },
+ {
+  "id": "game_dev",
+  "name": "Game Development",
+  "degree": "B.S. in Game Development",
+  "level": "bachelor",
+  "years": 4,
+  "icon": "🎮"
+ },
+ {
+  "id": "law",
+  "name": "Law School",
+  "degree": "Juris Doctor (J.D.)",
+  "level": "graduate",
+  "years": 3,
+  "icon": "⚖️"
+ },
+ {
+  "id": "medicine",
+  "name": "Medical School",
+  "degree": "Doctor of Medicine (M.D.)",
+  "level": "graduate",
+  "years": 4,
+  "icon": "🩺"
+ },
+ {
+  "id": "mba",
+  "name": "Business School (MBA)",
+  "degree": "MBA",
+  "level": "graduate",
+  "years": 2,
+  "icon": "📈"
+ },
+ {
+  "id": "dentistry",
+  "name": "Dental School",
+  "degree": "Doctor of Dental Surgery",
+  "level": "graduate",
+  "years": 4,
+  "icon": "🦷"
+ },
+ {
+  "id": "pharmacy",
+  "name": "Pharmacy School",
+  "degree": "Doctor of Pharmacy",
+  "level": "graduate",
+  "years": 4,
+  "icon": "💊"
+ },
+ {
+  "id": "veterinary",
+  "name": "Veterinary School",
+  "degree": "Doctor of Veterinary Medicine",
+  "level": "graduate",
+  "years": 4,
+  "icon": "🐾"
+ },
+ {
+  "id": "phd",
+  "name": "PhD Program",
+  "degree": "PhD",
+  "level": "graduate",
+  "years": 5,
+  "icon": "🎓"
+ }
+]

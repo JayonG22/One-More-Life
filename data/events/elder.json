@@ -1,0 +1,236 @@
+[
+ {
+  "id": "elder.hobby",
+  "icon": "🎨",
+  "title": "Something new",
+  "text": "With more free time, you're thinking about a new hobby.",
+  "conditions": {
+   "age": [
+    60,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Gardening",
+    "outcomes": [
+     {
+      "text": "My tomatoes are the envy of the street.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Painting",
+    "outcomes": [
+     {
+      "text": "I painted a portrait of my family. Everyone looks a bit like a potato.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join a bowling league",
+    "outcomes": [
+     {
+      "text": "Our team is called the Gutter Gang. We're terrible and happy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "health": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write your memoirs",
+    "outcomes": [
+     {
+      "text": "I started writing down my life story.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 2
+      }
+     }
+    ]
+   }
+  ],
+  "cooldown": 8
+ },
+ {
+  "id": "elder.scam_call",
+  "icon": "☎️",
+  "title": "Urgent call",
+  "text": "A caller claims your grandchild is in jail and needs $3,000 wired right now.",
+  "conditions": {
+   "age": [
+    60,
+    110
+   ]
+  },
+  "choices": [
+   {
+    "label": "Send the money",
+    "outcomes": [
+     {
+      "text": "It was a scam. The money is gone.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "happiness": -8
+      }
+     }
+    ],
+    "requires": {
+     "money": 3000
+    }
+   },
+   {
+    "label": "Hang up",
+    "outcomes": [
+     {
+      "text": "I hung up. Nice try.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Keep them talking for an hour",
+    "outcomes": [
+     {
+      "text": "I told them about my knee surgery in great detail. They hung up on me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elder.yearbook",
+  "icon": "📔",
+  "title": "Memory lane",
+  "text": "",
+  "conditions": {
+   "age": [
+    65,
+    110
+   ]
+  },
+  "cooldown": 10,
+  "outcomes": [
+   {
+    "text": "I found my old high school yearbook and laughed at my haircut.",
+    "weight": 2,
+    "effects": {
+     "happiness": 4
+    }
+   },
+   {
+    "text": "I found an old love letter in a shoebox and read it twice.",
+    "weight": 1,
+    "effects": {
+     "happiness": 3
+    }
+   }
+  ]
+ },
+ {
+  "id": "elder.fall",
+  "icon": "🦯",
+  "title": "A fall",
+  "text": "You slipped on the stairs.",
+  "conditions": {
+   "age": [
+    70,
+    110
+   ],
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Go to the hospital",
+    "outcomes": [
+     {
+      "text": "Just a bruise. The doctor said to be careful.",
+      "weight": 2,
+      "effects": {
+       "health": -3
+      }
+     },
+     {
+      "text": "I broke my hip. Recovery was long.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk it off",
+    "outcomes": [
+     {
+      "text": "I walked it off. Mostly.",
+      "weight": 1,
+      "effects": {
+       "health": -6
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elder.grand_visit",
+  "icon": "👨‍👩‍👧",
+  "title": "Family visit",
+  "text": "",
+  "conditions": {
+   "age": [
+    55,
+    110
+   ]
+  },
+  "roles": {
+   "kid": {
+    "relation": "child",
+    "min_age": 20
+   }
+  },
+  "cooldown": 3,
+  "outcomes": [
+   {
+    "text": "{kid.first} came to visit and cooked me dinner.",
+    "weight": 1,
+    "effects": {
+     "happiness": 6
+    },
+    "relationship": {
+     "kid": 8
+    }
+   },
+   {
+    "text": "{kid.first} called just to say {kid.he} loves me.",
+    "weight": 1,
+    "effects": {
+     "happiness": 5
+    },
+    "relationship": {
+     "kid": 6
+    }
+   }
+  ]
+ }
+]

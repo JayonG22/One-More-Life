@@ -1,0 +1,492 @@
+[
+ {
+  "id": "teen.first_crush",
+  "icon": "💘",
+  "title": "First crush",
+  "text": "You can't stop thinking about {crush.first}, who sits two rows ahead of you.",
+  "conditions": {
+   "age": [
+    13,
+    16
+   ]
+  },
+  "choices": [
+   {
+    "label": "Confess your feelings",
+    "outcomes": [
+     {
+      "text": "{crush.first} likes me too! We're dating.",
+      "weight": 1,
+      "new_partner": "crush",
+      "keep_role": "crush",
+      "effects": {
+       "happiness": 12
+      },
+      "stat_bonus": {
+       "looks": 1.0
+      },
+      "trait_bonus": {
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "{crush.first} said {crush.he} just wants to be friends.",
+      "weight": 1,
+      "relation_change": {
+       "crush": "friend"
+      },
+      "keep_role": "crush",
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write an anonymous note",
+    "outcomes": [
+     {
+      "text": "{crush.first} read it out loud to the class. Nobody guessed it was me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "{crush.first} figured out it was me, and smiled.",
+      "weight": 1,
+      "relation_change": {
+       "crush": "friend"
+      },
+      "relationship": {
+       "crush": 20
+      },
+      "keep_role": "crush",
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it secret",
+    "outcomes": [
+     {
+      "text": "I kept my feelings to myself.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "crush": {
+    "new": "crush",
+    "age": "same"
+   }
+  },
+  "once": true,
+  "discard_unkept": true
+ },
+ {
+  "id": "teen.party",
+  "icon": "🎉",
+  "title": "House party",
+  "text": "{friend.first} invites you to a party while {friend.his} parents are out of town.",
+  "conditions": {
+   "age": [
+    14,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "Best night of the year.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8
+      },
+      "relationship": {
+       "friend": 8
+      }
+     },
+     {
+      "text": "The cops showed up and I ran through three backyards.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "health": -1
+      },
+      "trait_bonus": {
+       "Rebel": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sneak out without telling your parents",
+    "outcomes": [
+     {
+      "text": "I got away with it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "trait_bonus": {
+       "Rebel": 2
+      }
+     },
+     {
+      "text": "My parents were waiting in the kitchen when I got home.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I stayed home and watched movies.",
+      "weight": 1,
+      "relationship": {
+       "friend": -5
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "friend": {
+    "relation_any": [
+     "friend",
+     "best_friend",
+     "classmate"
+    ],
+    "or_new": true
+   }
+  }
+ },
+ {
+  "id": "teen.driving_test",
+  "icon": "🚗",
+  "title": "Driving test",
+  "text": "It's the day of your driving test.",
+  "conditions": {
+   "age": [
+    16,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Study the handbook first",
+    "outcomes": [
+     {
+      "text": "I passed on the first try!",
+      "weight": 3,
+      "effects": {
+       "happiness": 8
+      },
+      "flags": [
+       "drivers_license"
+      ],
+      "stat_bonus": {
+       "smarts": 0.6
+      },
+      "milestone": "got a driver's license"
+     },
+     {
+      "text": "I failed parallel parking. Next time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wing it",
+    "outcomes": [
+     {
+      "text": "I passed! Barely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "flags": [
+       "drivers_license"
+      ],
+      "milestone": "got a driver's license"
+     },
+     {
+      "text": "I hit a cone, then another cone. Failed.",
+      "weight": 2,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "teen.dare",
+  "icon": "🌊",
+  "title": "The dare",
+  "text": "Your friends dare you to jump off the old pier into the lake.",
+  "conditions": {
+   "age": [
+    13,
+    19
+   ]
+  },
+  "choices": [
+   {
+    "label": "Jump",
+    "outcomes": [
+     {
+      "text": "The water was freezing and I was a legend for a week.",
+      "weight": 3,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I landed badly and sprained my ankle.",
+      "weight": 1,
+      "effects": {
+       "health": -8,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "They called me chicken. I'm fine with that.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push the dare-er in instead",
+    "outcomes": [
+     {
+      "text": "Everyone lost it laughing. Even the guy in the lake.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": -1
+      }
+     }
+    ],
+    "requires": {
+     "trait": "Rebel"
+    }
+   }
+  ]
+ },
+ {
+  "id": "teen.sibling_hoodie",
+  "icon": "👕",
+  "title": "Borrowed hoodie",
+  "text": "{sib.first} borrowed your favorite hoodie without asking and got paint all over it.",
+  "conditions": {
+   "age": [
+    10,
+    19
+   ]
+  },
+  "choices": [
+   {
+    "label": "Yell at them",
+    "outcomes": [
+     {
+      "text": "We didn't speak for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "relationship": {
+       "sib": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Forgive them",
+    "outcomes": [
+     {
+      "text": "{sib.first} felt so bad {sib.he} bought me a new one.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
+      },
+      "relationship": {
+       "sib": 12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get revenge",
+    "outcomes": [
+     {
+      "text": "I \"borrowed\" {sib.his} headphones for a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": -2
+      },
+      "relationship": {
+       "sib": -8
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "sib": {
+    "relation": "sibling",
+    "min_age": 6
+   }
+  }
+ },
+ {
+  "id": "teen.viral_video",
+  "icon": "📱",
+  "title": "Going viral",
+  "text": "A video of you tripping in the cafeteria is going viral.",
+  "conditions": {
+   "age": [
+    13,
+    20
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lean into it",
+    "outcomes": [
+     {
+      "text": "I made a parody. Now I'm the funny one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "trait_bonus": {
+       "Funny": 3
+      }
+     },
+     {
+      "text": "I tried to lean in. It made it worse.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for it to be taken down",
+    "outcomes": [
+     {
+      "text": "It came down, eventually.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide in your room for a week",
+    "outcomes": [
+     {
+      "text": "By the time I came out, everyone had moved on.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "teen.college_mail",
+  "icon": "📬",
+  "title": "College brochures",
+  "text": "",
+  "conditions": {
+   "age": [
+    16,
+    17
+   ],
+   "in_school": true
+  },
+  "once": true,
+  "outcomes": [
+   {
+    "text": "Brochures from universities keep showing up in the mail.",
+    "weight": 1,
+    "effects": {
+     "happiness": 1
+    }
+   }
+  ]
+ },
+ {
+  "id": "teen.summer_job_offer",
+  "icon": "🍦",
+  "title": "Summer job",
+  "text": "The ice-cream shop down the street needs summer help.",
+  "conditions": {
+   "age": [
+    14,
+    17
+   ],
+   "employed": false
+  },
+  "choices": [
+   {
+    "label": "Take it",
+    "outcomes": [
+     {
+      "text": "I scooped ice cream all summer and earned $1,200.",
+      "weight": 1,
+      "effects": {
+       "money": 1200,
+       "happiness": 3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enjoy your summer",
+    "outcomes": [
+     {
+      "text": "I spent the summer doing absolutely nothing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,441 @@
+[
+ {
+  "id": "fame.paparazzi",
+  "icon": "📸",
+  "title": "Paparazzi",
+  "text": "Paparazzi are camped outside your home.",
+  "conditions": {
+   "age": [
+    10,
+    99
+   ],
+   "min_fame": 35
+  },
+  "choices": [
+   {
+    "label": "Give them a wave",
+    "outcomes": [
+     {
+      "text": "The photo made me look great.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "They caught me mid-sneeze. It's a meme now.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw your coffee at them",
+    "outcomes": [
+     {
+      "text": "It made the front page. I got sued.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "money": -15000,
+       "karma": -4
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sneak out the back",
+    "outcomes": [
+     {
+      "text": "I made it out unseen.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fame.cancel",
+  "icon": "🚫",
+  "title": "Canceled",
+  "text": "An old post of yours resurfaced and people are furious.",
+  "conditions": {
+   "age": [
+    14,
+    99
+   ],
+   "min_fame": 25
+  },
+  "choices": [
+   {
+    "label": "Sincere apology video",
+    "outcomes": [
+     {
+      "text": "Most people accepted it.",
+      "weight": 1,
+      "effects": {
+       "fame": -3,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The apology made it worse.",
+      "weight": 1,
+      "effects": {
+       "fame": -10,
+       "happiness": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Double down",
+    "outcomes": [
+     {
+      "text": "Half the internet loves me now. The other half really doesn't.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "karma": -5,
+       "stress": 6
+      },
+      "trait_bonus": {
+       "Rebel": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Log off for a while",
+    "outcomes": [
+     {
+      "text": "It blew over while I was gone.",
+      "weight": 1,
+      "effects": {
+       "fame": -4,
+       "stress": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fame.talk_show",
+  "icon": "📺",
+  "title": "Talk show",
+  "text": "A late-night talk show invites you on.",
+  "conditions": {
+   "age": [
+    16,
+    99
+   ],
+   "min_fame": 30
+  },
+  "choices": [
+   {
+    "label": "Tell a wild story",
+    "outcomes": [
+     {
+      "text": "The audience howled.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "happiness": 5
+      },
+      "trait_bonus": {
+       "Funny": 3
+      }
+     },
+     {
+      "text": "The story went on too long.",
+      "weight": 1,
+      "effects": {
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Promote your work",
+    "outcomes": [
+     {
+      "text": "Solid appearance. Numbers went up.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "money": 5000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I passed.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fame.stalker",
+  "icon": "👁️",
+  "title": "Too close",
+  "text": "Someone has been sending you unsettling letters and showing up where you are.",
+  "conditions": {
+   "age": [
+    16,
+    99
+   ],
+   "min_fame": 45,
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Hire security",
+    "outcomes": [
+     {
+      "text": "A bodyguard now follows me everywhere. I feel safer.",
+      "weight": 1,
+      "effects": {
+       "money": -40000,
+       "stress": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get a restraining order",
+    "outcomes": [
+     {
+      "text": "The court granted it. The letters stopped.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "money": -3000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It got worse before it got better.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fame.charity_gala",
+  "icon": "🎗️",
+  "title": "Charity gala",
+  "text": "You're invited to host a star-studded charity gala.",
+  "conditions": {
+   "age": [
+    18,
+    99
+   ],
+   "min_fame": 40
+  },
+  "choices": [
+   {
+    "label": "Host and donate $50,000",
+    "outcomes": [
+     {
+      "text": "We raised millions. I felt wonderful.",
+      "weight": 1,
+      "effects": {
+       "money": -50000,
+       "karma": 10,
+       "fame": 3,
+       "happiness": 6
+      }
+     }
+    ],
+    "requires": {
+     "money": 50000
+    }
+   },
+   {
+    "label": "Host only",
+    "outcomes": [
+     {
+      "text": "I hosted. People noticed I didn't donate.",
+      "weight": 1,
+      "effects": {
+       "fame": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I skipped the gala.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fame.celeb_feud",
+  "icon": "⚡",
+  "title": "Celebrity feud",
+  "text": "Another celebrity threw shade at you in an interview.",
+  "conditions": {
+   "age": [
+    16,
+    99
+   ],
+   "celebrity": true
+  },
+  "choices": [
+   {
+    "label": "Clap back",
+    "outcomes": [
+     {
+      "text": "The feud dominated headlines for weeks.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Kill them with kindness",
+    "outcomes": [
+     {
+      "text": "I sent them flowers. The internet called it iconic.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "karma": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ },
+ {
+  "id": "fame.memoir",
+  "icon": "📘",
+  "title": "Book deal",
+  "text": "A publisher wants your memoir.",
+  "conditions": {
+   "age": [
+    25,
+    99
+   ],
+   "min_fame": 40
+  },
+  "choices": [
+   {
+    "label": "Tell all",
+    "outcomes": [
+     {
+      "text": "The tell-all became a bestseller. Some people aren't speaking to me.",
+      "weight": 1,
+      "effects": {
+       "money": 400000,
+       "fame": 5,
+       "karma": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it classy",
+    "outcomes": [
+     {
+      "text": "A thoughtful memoir. Critics loved it.",
+      "weight": 1,
+      "effects": {
+       "money": 150000,
+       "fame": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "My story isn't finished.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "once": true,
+  "weight": 6
+ },
+ {
+  "id": "fame.influencer_trip",
+  "icon": "🏝️",
+  "title": "Free trip",
+  "text": "A brand offers you a free luxury trip in exchange for posts.",
+  "conditions": {
+   "age": [
+    16,
+    70
+   ],
+   "min_fame": 20
+  },
+  "choices": [
+   {
+    "label": "Go and post everything",
+    "outcomes": [
+     {
+      "text": "Best free vacation ever.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "stress": -8,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go but barely post",
+    "outcomes": [
+     {
+      "text": "The brand was not happy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6
+ }
+]

@@ -1,0 +1,678 @@
+[
+ {
+  "id": "school.lunch_money_thief",
+  "icon": "💰",
+  "title": "Lunch money",
+  "text": "{rival.first} {rival.last} has taken your lunch money all week. Today {rival.he} holds out {rival.his} hand again.",
+  "conditions": {
+   "age": [
+    7,
+    11
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Hand it over",
+    "outcomes": [
+     {
+      "text": "I went hungry again. {rival.first} smirked.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      },
+      "flags": [
+       "lunch_thief_paid"
+      ],
+      "schedule": {
+       "event": "work.rival_is_boss",
+       "years": [
+        15,
+        24
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Punch them",
+    "outcomes": [
+     {
+      "text": "{rival.first} went down. The whole playground saw it.",
+      "weight": 3,
+      "effects": {
+       "happiness": 8
+      },
+      "relationship": {
+       "rival": -30
+      },
+      "trait_bonus": {
+       "Hothead": 1.5,
+       "Athletic": 1.5
+      },
+      "flags": [
+       "punched_bully"
+      ],
+      "schedule": {
+       "event": "work.rival_is_boss",
+       "years": [
+        15,
+        24
+       ]
+      },
+      "fight_win": true
+     },
+     {
+      "text": "I missed. Detention for me, a story for everyone else.",
+      "weight": 2,
+      "effects": {
+       "happiness": -4,
+       "school": -4
+      },
+      "flags": [
+       "detention_record"
+      ],
+      "schedule": {
+       "event": "work.rival_is_boss",
+       "years": [
+        15,
+        24
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell a teacher",
+    "outcomes": [
+     {
+      "text": "The teacher handled it quietly. {rival.first} left me alone after that.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "work.rival_is_boss",
+       "years": [
+        15,
+        24
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer to split it",
+    "outcomes": [
+     {
+      "text": "{rival.first} was so confused that {rival.he} became my friend.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      },
+      "relation_change": {
+       "rival": "friend"
+      },
+      "relationship": {
+       "rival": 50
+      },
+      "flags": [
+       "rival_turned_friend"
+      ]
+     }
+    ],
+    "requires": {
+     "trait": "Charmer"
+    }
+   }
+  ],
+  "roles": {
+   "rival": {
+    "new": "rival",
+    "age": "same"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "school.science_fair",
+  "icon": "🔬",
+  "title": "Science fair",
+  "text": "The science fair is next week. What's your project?",
+  "conditions": {
+   "age": [
+    8,
+    14
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Baking-soda volcano",
+    "outcomes": [
+     {
+      "text": "Classic. I got an honorable mention.",
+      "weight": 2,
+      "effects": {
+       "school": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "My volcano erupted onto the judge's shoes.",
+      "weight": 1,
+      "effects": {
+       "school": -2,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Build a tiny robot",
+    "outcomes": [
+     {
+      "text": "My robot won first place!",
+      "weight": 1,
+      "effects": {
+       "school": 8,
+       "smarts": 3,
+       "happiness": 8
+      },
+      "stat_bonus": {
+       "smarts": 1.2
+      },
+      "milestone": "won the school science fair"
+     },
+     {
+      "text": "The robot caught fire. Small fire. Mostly fine.",
+      "weight": 1,
+      "effects": {
+       "school": -3,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I skipped the science fair.",
+      "weight": 1,
+      "effects": {
+       "school": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "school.cheat_offer",
+  "icon": "📝",
+  "title": "Answer key",
+  "text": "{classmate.first} has the answers to tomorrow's test and offers you a copy.",
+  "conditions": {
+   "age": [
+    11,
+    17
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Take the answers",
+    "outcomes": [
+     {
+      "text": "I aced the test. Nobody knows. For now.",
+      "weight": 2,
+      "effects": {
+       "school": 10,
+       "karma": -5
+      },
+      "flags": [
+       "cheated_test"
+      ],
+      "schedule": {
+       "event": "adult.cheating_resurfaces",
+       "years": [
+        10,
+        20
+       ]
+      },
+      "keep_role": "classmate"
+     },
+     {
+      "text": "The teacher caught us both. Zero on the test.",
+      "weight": 1,
+      "effects": {
+       "school": -10,
+       "happiness": -6,
+       "karma": -3
+      },
+      "flags": [
+       "caught_cheating"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "I studied on my own and did fine.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "school": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "The test was rewritten. {classmate.first} hasn't spoken to me since.",
+      "weight": 1,
+      "effects": {
+       "karma": 4
+      },
+      "relation_change": {
+       "classmate": "rival"
+      },
+      "relationship": {
+       "classmate": -30
+      },
+      "keep_role": "classmate"
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "classmate": {
+    "new": "classmate",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "school.talent_show",
+  "icon": "🎤",
+  "title": "Talent show",
+  "text": "Sign-ups for the school talent show close today.",
+  "conditions": {
+   "age": [
+    8,
+    16
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Sing",
+    "outcomes": [
+     {
+      "text": "I nailed it. People are still humming my song.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "looks": 1
+      },
+      "stat_bonus": {
+       "looks": 0.5
+      }
+     },
+     {
+      "text": "My voice cracked on the high note. Everyone noticed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stand-up comedy",
+    "outcomes": [
+     {
+      "text": "I got a standing ovation.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "trait_bonus": {
+       "Funny": 3
+      }
+     },
+     {
+      "text": "Crickets. Actual crickets.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Magic trick",
+    "outcomes": [
+     {
+      "text": "The rabbit escaped mid-trick. Funniest act of the night.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't sign up",
+    "outcomes": [
+     {
+      "text": "I watched from the audience.",
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "school.teacher_mentor",
+  "icon": "👩‍🏫",
+  "title": "A teacher notices",
+  "text": "{teacher.first} {teacher.last}, your teacher, says you have potential and offers extra lessons after school.",
+  "conditions": {
+   "age": [
+    9,
+    15
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Accept",
+    "outcomes": [
+     {
+      "text": "The extra lessons paid off. {teacher.last} believes in me.",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "school": 8
+      },
+      "relationship": {
+       "teacher": 30
+      },
+      "relation_change": {
+       "teacher": "mentor"
+      },
+      "flags": [
+       "had_mentor"
+      ],
+      "schedule": {
+       "event": "adult.mentor_reference",
+       "years": [
+        8,
+        14
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Politely decline",
+    "outcomes": [
+     {
+      "text": "I thanked {teacher.first} but said no.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Ask for a better grade instead",
+    "outcomes": [
+     {
+      "text": "{teacher.first} was not amused.",
+      "weight": 1,
+      "effects": {
+       "school": -3
+      },
+      "relationship": {
+       "teacher": -15
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "teacher": {
+    "new": "teacher",
+    "age": [
+     30,
+     60
+    ]
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "school.debate_team",
+  "icon": "🎙️",
+  "title": "Debate team",
+  "text": "Your teacher notices your effort in class and offers you a spot on the school debate team.",
+  "conditions": {
+   "age": [
+    12,
+    17
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Join the debate team",
+    "outcomes": [
+     {
+      "text": "We made it to the regional finals!",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 6,
+       "school": 4
+      },
+      "stat_bonus": {
+       "smarts": 1.0
+      },
+      "flags": [
+       "debate_team"
+      ]
+     },
+     {
+      "text": "I froze during my first debate but got better every week.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "school": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for more details",
+    "outcomes": [
+     {
+      "text": "It's two afternoons a week and a trip to state. I signed up.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "school": 3
+      },
+      "flags": [
+       "debate_team"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Decline politely",
+    "outcomes": [
+     {
+      "text": "I told my teacher I'd think about it next year.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I pretended I didn't hear.",
+      "weight": 1,
+      "effects": {
+       "school": -1
+      }
+     }
+    ]
+   }
+  ],
+  "once": true
+ },
+ {
+  "id": "school.field_trip",
+  "icon": "🚌",
+  "title": "Field trip",
+  "text": "",
+  "conditions": {
+   "age": [
+    6,
+    14
+   ],
+   "in_school": true
+  },
+  "cooldown": 3,
+  "outcomes": [
+   {
+    "text": "Our class went to the natural history museum. I stared at the T. rex for an hour.",
+    "weight": 2,
+    "effects": {
+     "smarts": 2,
+     "happiness": 3
+    }
+   },
+   {
+    "text": "I got lost on the field trip to the zoo and found my way back by following the penguins.",
+    "weight": 1,
+    "effects": {
+     "happiness": 3
+    }
+   },
+   {
+    "text": "The field trip bus broke down. We sang for three hours.",
+    "weight": 1,
+    "effects": {
+     "happiness": 2
+    }
+   }
+  ]
+ },
+ {
+  "id": "school.bully_again",
+  "icon": "😠",
+  "title": "Hallway trouble",
+  "text": "{bully.first} shoves you into a locker in front of everyone.",
+  "conditions": {
+   "age": [
+    10,
+    17
+   ],
+   "in_school": true
+  },
+  "choices": [
+   {
+    "label": "Shove back",
+    "outcomes": [
+     {
+      "text": "I stood my ground. {bully.first} backed off.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "trait_bonus": {
+       "Athletic": 2,
+       "Hothead": 1.5
+      },
+      "keep_role": "bully",
+      "relationship": {
+       "bully": -20
+      },
+      "fight_win": true
+     },
+     {
+      "text": "We both got suspended.",
+      "weight": 1,
+      "effects": {
+       "school": -6,
+       "happiness": -4
+      },
+      "keep_role": "bully"
+     }
+    ]
+   },
+   {
+    "label": "Make a joke",
+    "outcomes": [
+     {
+      "text": "Everyone laughed at {bully.first} instead of me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "keep_role": "bully"
+     }
+    ],
+    "requires": {
+     "trait": "Funny"
+    }
+   },
+   {
+    "label": "Walk away",
+    "outcomes": [
+     {
+      "text": "I walked away. It still stung.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the principal",
+    "outcomes": [
+     {
+      "text": "{bully.first} got detention for a month.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 2
+      },
+      "keep_role": "bully",
+      "relationship": {
+       "bully": -20
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "bully": {
+    "new": "rival",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true
+ }
+]

@@ -1,0 +1,516 @@
+[
+ {
+  "id": "baby.first_word",
+  "icon": "🍼",
+  "title": "First word",
+  "text": "",
+  "conditions": {
+   "age": [
+    1,
+    2
+   ]
+  },
+  "roles": {
+   "mom": {
+    "relation": "mother"
+   }
+  },
+  "once": true,
+  "outcomes": [
+   {
+    "text": "My first word was \"{mom.first}\"! My mother cried.",
+    "weight": 3,
+    "effects": {
+     "happiness": 3
+    },
+    "relationship": {
+     "mom": 8
+    }
+   },
+   {
+    "text": "My first word was \"no\". My parents were not surprised.",
+    "weight": 1,
+    "effects": {
+     "happiness": 2
+    }
+   },
+   {
+    "text": "My first word was \"dog\", which offended the cat.",
+    "weight": 1,
+    "effects": {
+     "happiness": 2
+    }
+   }
+  ]
+ },
+ {
+  "id": "baby.walk",
+  "icon": "👣",
+  "title": "First steps",
+  "text": "I took my first wobbly steps across the living room.",
+  "conditions": {
+   "age": [
+    1,
+    2
+   ]
+  },
+  "once": true,
+  "effects": {
+   "health": 2,
+   "happiness": 2
+  }
+ },
+ {
+  "id": "baby.tantrum",
+  "icon": "🍭",
+  "title": "Checkout drama",
+  "text": "You want the candy by the checkout. {mom.first} says no.",
+  "conditions": {
+   "age": [
+    2,
+    4
+   ]
+  },
+  "choices": [
+   {
+    "label": "Scream until you get it",
+    "outcomes": [
+     {
+      "text": "{mom.first} gave in. The candy was worth it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "mom": -5
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     },
+     {
+      "text": "{mom.first} carried me out of the store like a sack of potatoes.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      },
+      "relationship": {
+       "mom": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept it quietly",
+    "outcomes": [
+     {
+      "text": "{mom.first} was so proud she bought me the candy anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      },
+      "relationship": {
+       "mom": 6
+      }
+     },
+     {
+      "text": "I sulked quietly all the way home.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stare into her soul",
+    "outcomes": [
+     {
+      "text": "{mom.first} laughed so hard she forgot to say no again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "mom": 3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "mom": {
+    "relation": "mother"
+   }
+  }
+ },
+ {
+  "id": "child.imaginary_friend",
+  "icon": "🧸",
+  "title": "Imaginary friend",
+  "text": "You've been talking to an invisible friend named Mr. Buttons. {mom.first} is starting to worry.",
+  "conditions": {
+   "age": [
+    3,
+    6
+   ]
+  },
+  "choices": [
+   {
+    "label": "Introduce him to Mom",
+    "outcomes": [
+     {
+      "text": "{mom.first} set a place for Mr. Buttons at dinner. Best mom ever.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "mom": 6
+      },
+      "flags": [
+       "mr_buttons"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Say he moved away",
+    "outcomes": [
+     {
+      "text": "Mr. Buttons moved to Florida. I miss him a little.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame him for the broken vase",
+    "outcomes": [
+     {
+      "text": "It worked. Mr. Buttons got grounded.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": -2
+      },
+      "flags": [
+       "mr_buttons"
+      ]
+     },
+     {
+      "text": "{mom.first} didn't buy it. I got grounded instead.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "relationship": {
+       "mom": -3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "mom": {
+    "relation": "mother"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "child.lost_tooth",
+  "icon": "🦷",
+  "title": "Lost tooth",
+  "text": "",
+  "conditions": {
+   "age": [
+    5,
+    8
+   ]
+  },
+  "cooldown": 2,
+  "outcomes": [
+   {
+    "text": "I lost a tooth and the tooth fairy left me $2.",
+    "weight": 3,
+    "effects": {
+     "money": 2,
+     "happiness": 2
+    }
+   },
+   {
+    "text": "I lost a tooth and swallowed it. No money for me.",
+    "weight": 1,
+    "effects": {
+     "happiness": -1
+    }
+   }
+  ]
+ },
+ {
+  "id": "child.puppy_request",
+  "icon": "🐶",
+  "title": "A puppy, please?",
+  "text": "You really, really want a puppy. Your parents are in the kitchen.",
+  "conditions": {
+   "age": [
+    5,
+    10
+   ]
+  },
+  "choices": [
+   {
+    "label": "Beg relentlessly",
+    "outcomes": [
+     {
+      "text": "They caved! We adopted a puppy named {pup.first}.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12
+      },
+      "keep_role": "pup"
+     },
+     {
+      "text": "Nope. \"Maybe when you're older.\"",
+      "weight": 2,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Promise to do chores forever",
+    "outcomes": [
+     {
+      "text": "They said yes if I keep my promise. Meet {pup.first}!",
+      "weight": 2,
+      "effects": {
+       "happiness": 12
+      },
+      "flags": [
+       "chore_promise"
+      ],
+      "trait_bonus": {
+       "Loyal": 2
+      }
+     },
+     {
+      "text": "They said no, but they were impressed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "relationship": {
+       "mom": 3,
+       "dad": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Draw them a presentation",
+    "outcomes": [
+     {
+      "text": "My crayon slideshow won them over. We got {pup.first}!",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "smarts": 1
+      },
+      "stat_bonus": {
+       "smarts": 1.0
+      }
+     },
+     {
+      "text": "They framed the drawings, but still said no.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "mom": {
+    "relation": "mother"
+   },
+   "dad": {
+    "relation": "father"
+   },
+   "pup": {
+    "new": "pet",
+    "species": "dog",
+    "age": [
+     0,
+     1
+    ],
+    "closeness": 80
+   }
+  },
+  "once": true,
+  "discard_unkept": true
+ },
+ {
+  "id": "child.new_kid",
+  "icon": "🧒",
+  "title": "The new kid",
+  "text": "A new kid, {kid.first}, is eating lunch alone.",
+  "conditions": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Invite them to sit with you",
+    "outcomes": [
+     {
+      "text": "{kid.first} and I became friends.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 4
+      },
+      "relation_change": {
+       "kid": "friend"
+      },
+      "relationship": {
+       "kid": 25
+      },
+      "keep_role": "kid"
+     }
+    ]
+   },
+   {
+    "label": "Ignore them",
+    "outcomes": [
+     {
+      "text": "I stuck with my usual group.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Make fun of them",
+    "outcomes": [
+     {
+      "text": "Everyone laughed. {kid.first} didn't.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "happiness": 1
+      },
+      "relation_change": {
+       "kid": "rival"
+      },
+      "relationship": {
+       "kid": -30
+      },
+      "keep_role": "kid"
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "kid": {
+    "new": "classmate",
+    "age": "same"
+   }
+  },
+  "discard_unkept": true
+ },
+ {
+  "id": "child.bike",
+  "icon": "🚲",
+  "title": "Learning to ride",
+  "text": "{dad.first} is running behind your bike, holding the seat.",
+  "conditions": {
+   "age": [
+    5,
+    9
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pedal faster",
+    "outcomes": [
+     {
+      "text": "I rode on my own! {dad.first} cheered from down the street.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "health": 2
+      },
+      "relationship": {
+       "dad": 6
+      }
+     },
+     {
+      "text": "I crashed into a hedge. Scraped knees, big pride.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for training wheels back",
+    "outcomes": [
+     {
+      "text": "{dad.first} put them back on. Maybe next summer.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "dad": {
+    "relation": "father"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "child.snow_day",
+  "icon": "❄️",
+  "title": "Snow day",
+  "text": "",
+  "conditions": {
+   "age": [
+    5,
+    12
+   ]
+  },
+  "cooldown": 3,
+  "outcomes": [
+   {
+    "text": "School was canceled for a snow day. I built a snowman taller than me.",
+    "weight": 2,
+    "effects": {
+     "happiness": 5
+    }
+   },
+   {
+    "text": "Snow day! I got into an epic snowball fight with the neighborhood kids.",
+    "weight": 1,
+    "effects": {
+     "happiness": 6,
+     "health": 1
+    }
+   }
+  ]
+ }
+]

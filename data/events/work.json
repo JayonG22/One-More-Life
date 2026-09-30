@@ -1,0 +1,531 @@
+[
+ {
+  "id": "work.coworker_credit",
+  "icon": "🙄",
+  "title": "Stolen credit",
+  "text": "{cw.first}, your coworker, presented your idea in the meeting as {cw.his} own.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Confront them privately",
+    "outcomes": [
+     {
+      "text": "{cw.first} apologized and credited me in the next email.",
+      "weight": 1,
+      "relationship": {
+       "cw": -5
+      },
+      "effects": {
+       "job_perf": 4
+      }
+     },
+     {
+      "text": "{cw.first} denied everything.",
+      "weight": 1,
+      "relationship": {
+       "cw": -15
+      },
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the boss",
+    "outcomes": [
+     {
+      "text": "The boss believed me.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8
+      },
+      "relationship": {
+       "cw": -20
+      }
+     },
+     {
+      "text": "The boss thinks I'm petty now.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let it go. It still bugs me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sabotage their next project",
+    "outcomes": [
+     {
+      "text": "It worked. {cw.first} looked terrible.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "job_perf": 3
+      },
+      "relationship": {
+       "cw": -10
+      }
+     },
+     {
+      "text": "I got caught and was fired.",
+      "weight": 1,
+      "effects": {
+       "karma": -8
+      },
+      "fired": true
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "cw": {
+    "relation": "coworker"
+   }
+  }
+ },
+ {
+  "id": "work.weekend",
+  "icon": "📅",
+  "title": "Weekend work",
+  "text": "Your boss, {boss.first}, asks you to come in this weekend.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Say yes",
+    "outcomes": [
+     {
+      "text": "I worked all weekend. {boss.first} noticed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "stress": 6,
+       "happiness": -2
+      },
+      "relationship": {
+       "boss": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no",
+    "outcomes": [
+     {
+      "text": "{boss.first} said \"okay\" in a tone I did not like.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4
+      },
+      "relationship": {
+       "boss": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate overtime pay",
+    "outcomes": [
+     {
+      "text": "I got double pay for the weekend.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "job_perf": 5,
+       "stress": 4
+      },
+      "trait_bonus": {
+       "Charmer": 2,
+       "Ambitious": 2
+      }
+     },
+     {
+      "text": "{boss.first} refused and asked me to reconsider my attitude.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "boss": {
+    "relation": "boss"
+   }
+  }
+ },
+ {
+  "id": "work.office_romance",
+  "icon": "💼",
+  "title": "Office flirting",
+  "text": "{cw.first} from work has been lingering by your desk and laughing at everything you say.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "employed": true,
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Ask them out",
+    "outcomes": [
+     {
+      "text": "{cw.first} said yes! Office romance begins.",
+      "weight": 1,
+      "new_partner": "cw",
+      "effects": {
+       "happiness": 8
+      },
+      "stat_bonus": {
+       "looks": 1.0
+      }
+     },
+     {
+      "text": "{cw.first} was just being friendly. Awkward.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it professional",
+    "outcomes": [
+     {
+      "text": "I kept things professional.",
+      "weight": 1
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "cw": {
+    "relation": "coworker"
+   }
+  }
+ },
+ {
+  "id": "work.rival_is_boss",
+  "icon": "😳",
+  "title": "Your new manager",
+  "text": "Your new manager walks in. It's {rival.first} {rival.last}, the kid who took your lunch money in grade school.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Bring it up with a laugh",
+    "outcomes": [
+     {
+      "text": "{rival.first} laughed, then apologized. We're good now.",
+      "weight": 1,
+      "set_boss": "rival",
+      "relationship": {
+       "rival": 30
+      },
+      "effects": {
+       "happiness": 5
+      },
+      "trait_bonus": {
+       "Funny": 2,
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "{rival.first} did not laugh. This is going to be a long year.",
+      "weight": 1,
+      "set_boss": "rival",
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend you don't remember",
+    "outcomes": [
+     {
+      "text": "{rival.first} pretends too. It's weird.",
+      "weight": 1,
+      "set_boss": "rival",
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quit on the spot",
+    "outcomes": [
+     {
+      "text": "I quit. Some people never change, and I don't need to find out.",
+      "weight": 1,
+      "quit_job": true,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Work twice as hard to outshine them",
+    "outcomes": [
+     {
+      "text": "I worked twice as hard. Soon I'll outrank {rival.first}.",
+      "weight": 1,
+      "set_boss": "rival",
+      "effects": {
+       "job_perf": 12,
+       "stress": 6
+      },
+      "trait_bonus": {
+       "Ambitious": 2
+      }
+     }
+    ]
+   }
+  ],
+  "followup_only": true,
+  "roles": {
+   "rival": {
+    "relation_any": [
+     "rival",
+     "classmate",
+     "friend",
+     "former_coworker"
+    ]
+   }
+  }
+ },
+ {
+  "id": "work.relocation",
+  "icon": "🏙️",
+  "title": "Big offer",
+  "text": "Your company offers you a promotion if you relocate to another city.",
+  "conditions": {
+   "age": [
+    22,
+    60
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Accept",
+    "outcomes": [
+     {
+      "text": "I moved and took the promotion. New city, bigger paycheck.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10,
+       "money": 5000,
+       "happiness": 2,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I stayed. Home is home.",
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "work.layoffs",
+  "icon": "📉",
+  "title": "Layoffs",
+  "text": "Rumors of layoffs are spreading through the office.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "employed": true,
+   "chance": 0.6
+  },
+  "choices": [
+   {
+    "label": "Work harder than ever",
+    "outcomes": [
+     {
+      "text": "I survived the layoffs.",
+      "weight": 3,
+      "effects": {
+       "stress": 6,
+       "job_perf": 6
+      }
+     },
+     {
+      "text": "I was laid off anyway.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "happiness": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start job hunting",
+    "outcomes": [
+     {
+      "text": "I polished my résumé, just in case.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Befriend the boss",
+    "outcomes": [
+     {
+      "text": "{boss.first} protected me when the cuts came.",
+      "weight": 1,
+      "relationship": {
+       "boss": 10
+      },
+      "trait_bonus": {
+       "Charmer": 2
+      }
+     },
+     {
+      "text": "The boss got laid off too.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "boss": {
+    "relation": "boss"
+   }
+  }
+ },
+ {
+  "id": "work.award",
+  "icon": "🏆",
+  "title": "Employee of the month",
+  "text": "",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "employed": true,
+   "chance": 0.5
+  },
+  "outcomes": [
+   {
+    "text": "I was named employee of the month! There's a plaque.",
+    "weight": 1,
+    "effects": {
+     "job_perf": 6,
+     "happiness": 5
+    }
+   }
+  ]
+ },
+ {
+  "id": "work.bad_customer",
+  "icon": "😤",
+  "title": "Difficult customer",
+  "text": "A customer is screaming at you over something that isn't your fault.",
+  "conditions": {
+   "age": [
+    14,
+    75
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Stay calm",
+    "outcomes": [
+     {
+      "text": "I stayed calm. My manager noticed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Yell back",
+    "outcomes": [
+     {
+      "text": "It felt great for five seconds. Then I got written up.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -8,
+       "happiness": 2
+      },
+      "trait_bonus": {
+       "Hothead": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Kill them with kindness",
+    "outcomes": [
+     {
+      "text": "They ended up apologizing.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "karma": 2
+      },
+      "trait_bonus": {
+       "Kind": 2
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

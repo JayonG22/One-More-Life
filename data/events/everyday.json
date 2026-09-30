@@ -1,0 +1,8400 @@
+[
+ {
+  "id": "tod.crayon",
+  "icon": "🖍️",
+  "title": "Masterpiece",
+  "text": [
+   "You found the crayons. And a very large, very white wall.",
+   "Your parents left you alone for thirty seconds. The wall now has art on it."
+  ],
+  "conditions": {
+   "age": [
+    1,
+    4
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep drawing",
+    "outcomes": [
+     {
+      "text": "I drew a dinosaur eating the sun. Nobody appreciated it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "p": -3
+      }
+     },
+     {
+      "text": "My parents framed a photo of the wall. They'll show it at my wedding.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Eat the crayon",
+    "outcomes": [
+     {
+      "text": "Purple tastes like purple.",
+      "weight": 2,
+      "effects": {
+       "health": -1,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "A parent's hand came out of nowhere and removed it. I have never forgotten the betrayal.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Draw on yourself instead",
+    "outcomes": [
+     {
+      "text": "I covered both arms. It took four baths and my parents took photographs of every one.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "It turned out not to wash off, and I went to a family gathering looking like that.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "looks": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  }
+ },
+ {
+  "id": "tod.bath",
+  "icon": "🛁",
+  "title": "Bath time",
+  "text": [
+   "It's bath time. You have other plans.",
+   "Someone is running a bath. You know what that means."
+  ],
+  "conditions": {
+   "age": [
+    1,
+    4
+   ]
+  },
+  "choices": [
+   {
+    "label": "Splash everywhere",
+    "outcomes": [
+     {
+      "text": "The bathroom floor is a lake. I'm very proud.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I soaked the bathroom, the hallway and one very surprised cat. Bath time is shorter now, permanently.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run away naked",
+    "outcomes": [
+     {
+      "text": "I made it all the way to the front yard.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I slipped on the wet floor and bonked my head.",
+      "weight": 1,
+      "effects": {
+       "health": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Behave",
+    "outcomes": [
+     {
+      "text": "Rubber duck and I had a peaceful soak.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I behaved so well they let me stay in until my fingers went strange and wrinkled.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "health": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4
+ },
+ {
+  "id": "tod.words",
+  "icon": "🗣️",
+  "title": "A new word",
+  "text": [
+   "You learned a new word today. You won't stop saying it.",
+   "A grown-up said a word you'd never heard. You liked it."
+  ],
+  "conditions": {
+   "age": [
+    1,
+    3
+   ]
+  },
+  "choices": [
+   {
+    "label": "Say it to everyone",
+    "outcomes": [
+     {
+      "text": "My new word was \"no\". I said it 400 times.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2
+      }
+     },
+     {
+      "text": "The word was one my dad said when he stubbed his toe. Grandma heard it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Save it for later",
+    "outcomes": [
+     {
+      "text": "I whispered it to the cat.",
+      "weight": 2,
+      "effects": {
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I forgot it entirely by dinner. Whatever it was, it is gone now.",
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Use it wrong, constantly",
+    "outcomes": [
+     {
+      "text": "I used it in completely the wrong places for a month and nobody had the heart to correct me.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "Somebody corrected me in front of everyone and I did not say it again for a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4
+ },
+ {
+  "id": "tod.dog",
+  "icon": "🐕",
+  "title": "A big dog",
+  "text": "A dog the size of a pony walks up to your stroller.",
+  "conditions": {
+   "age": [
+    1,
+    4
+   ]
+  },
+  "choices": [
+   {
+    "label": "Grab its ear",
+    "outcomes": [
+     {
+      "text": "The dog licked my entire face. Best friends.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "The dog knocked me over. I cried. The dog also cried, I think.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Scream",
+    "outcomes": [
+     {
+      "text": "I screamed. The dog ran. So did the owner.",
+      "weight": 2,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I screamed, and the dog thought it was a game. It licked my entire face while I kept screaming.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer it your snack",
+    "outcomes": [
+     {
+      "text": "It took the biscuit with enormous gentleness and then sat down next to the stroller like a bodyguard.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "It took the biscuit and my entire hand went in with it. No damage, enormous noise.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4
+ },
+ {
+  "id": "tod.daycare",
+  "icon": "🏫",
+  "title": "Daycare",
+  "text": [
+   "It's your first day at daycare.",
+   "Someone dropped you off at a room full of other tiny humans."
+  ],
+  "conditions": {
+   "age": [
+    2,
+    4
+   ]
+  },
+  "choices": [
+   {
+    "label": "Make a friend",
+    "outcomes": [
+     {
+      "text": "I shared my blocks with a kid named {f.first}. Now we share everything.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      },
+      "relation_change": {
+       "f": "friend"
+      },
+      "keep_role": "f"
+     },
+     {
+      "text": "I tried to share, but a kid bit me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cry until someone comes",
+    "outcomes": [
+     {
+      "text": "I cried for three hours. The teacher deserves a medal.",
+      "weight": 2,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I cried for eleven minutes and then discovered the sand table. I did not think about home again.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sit in the corner and watch",
+    "outcomes": [
+     {
+      "text": "I watched everything for two days and then joined in as though I had been there all along.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I watched from the corner for the whole fortnight and they rang my parents about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same",
+    "closeness": 55
+   }
+  },
+  "discard_unkept": true,
+  "once": true
+ },
+ {
+  "id": "tod.potty",
+  "icon": "🚽",
+  "title": "Big kid potty",
+  "text": "Your parents have been talking about \"the big kid potty\" all week.",
+  "conditions": {
+   "age": [
+    2,
+    4
+   ]
+  },
+  "choices": [
+   {
+    "label": "Try it",
+    "outcomes": [
+     {
+      "text": "Success! There was a sticker chart. I got all the stickers.",
+      "weight": 3,
+      "effects": {
+       "happiness": 5,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "There was an incident. We don't talk about the incident.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "I refused on principle.",
+      "weight": 2,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I refused, held out for six days, and then changed my mind entirely on my own terms.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "I held out for a sticker chart and a specific biscuit. I got both. Early lessons in leverage.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I negotiated too long and the moment rather resolved itself on the hallway carpet.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "once": true
+ },
+ {
+  "id": "tod.park",
+  "icon": "🛝",
+  "title": "The big slide",
+  "text": "The big-kid slide at the playground is SO tall.",
+  "conditions": {
+   "age": [
+    2,
+    5
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go down headfirst",
+    "outcomes": [
+     {
+      "text": "Fastest anyone has ever gone. I have a bump to prove it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "health": -2
+      }
+     },
+     {
+      "text": "I went head first, misjudged everything, and landed in the one patch of mud. Photographic evidence exists.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "looks": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go down normal",
+    "outcomes": [
+     {
+      "text": "Wheeee. Again. Again. Again.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I went down normally, once, decided that was enough, and spent the rest of the afternoon watching.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Climb up the slide instead",
+    "outcomes": [
+     {
+      "text": "A bigger kid yelled at me. I won.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "A bigger kid yelled at me, an adult yelled at the bigger kid, and I stood there feeling enormous.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4
+ },
+ {
+  "id": "kid.sleepover.b",
+  "icon": "🛌",
+  "title": "Sleepover",
+  "text": [
+   "{f.first} invited you to a sleepover.",
+   "It's your first sleepover, at {f.first}'s house."
+  ],
+  "conditions": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stay up all night",
+    "outcomes": [
+     {
+      "text": "We stayed up until 2 a.m. telling ghost stories. Worth it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 7,
+       "health": -1
+      },
+      "relationship": {
+       "f": 12
+      }
+     },
+     {
+      "text": "I got scared and called my mom to pick me up at midnight.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "relationship": {
+       "f": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Play pranks",
+    "outcomes": [
+     {
+      "text": "We froze {f.first}'s brother's underwear. Legends.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "f": 8
+      }
+     },
+     {
+      "text": "We got caught. Everyone went to bed at 9.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to sleep early",
+    "outcomes": [
+     {
+      "text": "I fell asleep first. They drew on my face.",
+      "weight": 2,
+      "relationship": {
+       "f": 3
+      },
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I fell asleep first and woke up before everyone, ate all the good cereal and watched cartoons alone. Ideal.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "kid.lemonade.b",
+  "icon": "🍋",
+  "title": "Lemonade stand",
+  "text": "It's hot out. The perfect day for a lemonade stand.",
+  "conditions": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Classic lemonade",
+    "outcomes": [
+     {
+      "text": "I made $18 and drank most of the profits.",
+      "weight": 2,
+      "effects": {
+       "money": 18,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "One customer. It was my dad. He paid in hugs.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Charge $5 a cup",
+    "outcomes": [
+     {
+      "text": "A man in a suit paid $5 and said I'll go far.",
+      "weight": 1,
+      "effects": {
+       "money": 25,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "Zero customers. The market has spoken.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put a secret ingredient in it",
+    "outcomes": [
+     {
+      "text": "The secret ingredient was hot sauce. The reviews were intense.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The secret ingredient was too much sugar. We sold out in an hour and one customer came back for more.",
+      "weight": 1,
+      "effects": {
+       "money": 14,
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "kid.bully",
+  "icon": "😠",
+  "title": "The bully",
+  "text": [
+   "{b.first} has been stealing your lunch every day.",
+   "{b.first}, the biggest kid in class, has decided you're the target this year.",
+   "{b.first} keeps tripping you in the hallway."
+  ],
+  "conditions": {
+   "age": [
+    6,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stand up to them",
+    "outcomes": [
+     {
+      "text": "I told {b.first} to back off, loudly, in front of everyone. It worked.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "popularity": 5
+      }
+     },
+     {
+      "text": "{b.first} gave me a black eye. But now everyone knows I don't back down.",
+      "weight": 1,
+      "effects": {
+       "health": -6,
+       "popularity": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell a teacher",
+    "outcomes": [
+     {
+      "text": "{b.first} got detention for a week and left me alone.",
+      "weight": 2,
+      "effects": {
+       "stress": -4
+      }
+     },
+     {
+      "text": "The teacher said to \"work it out\". Great.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make them laugh",
+    "outcomes": [
+     {
+      "text": "I made a joke about myself before {b.first} could. {b.first} laughed. We're sort of friends now.",
+      "weight": 1,
+      "relationship": {
+       "b": 30
+      },
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It didn't work.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it",
+    "outcomes": [
+     {
+      "text": "I kept my head down. It went on for months.",
+      "weight": 2,
+      "effects": {
+       "happiness": -8,
+       "stress": 8
+      }
+     },
+     {
+      "text": "I kept my head down, and a kid I barely knew sat next to me every day until it stopped.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "b": {
+    "new": "rival",
+    "age": "same",
+    "closeness": 10
+   }
+  },
+  "cooldown": 4,
+  "discard_unkept": false
+ },
+ {
+  "id": "kid.science_fair",
+  "icon": "🌋",
+  "title": "Science fair",
+  "text": [
+   "The science fair is next week.",
+   "Your teacher announced the science fair. Everyone groaned."
+  ],
+  "conditions": {
+   "age": [
+    7,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Build a volcano",
+    "outcomes": [
+     {
+      "text": "Classic. Participation ribbon.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I made it erupt all over the judges. First place for 'enthusiasm'.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try something ambitious",
+    "outcomes": [
+     {
+      "text": "My homemade solar oven cooked an actual egg. First place!",
+      "weight": 1,
+      "effects": {
+       "smarts": 4,
+       "happiness": 7,
+       "school": 5
+      },
+      "counter": {
+       "science_fairs": 1
+      }
+     },
+     {
+      "text": "My robot caught fire. The fire alarm went off. Everyone went home early.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Have a parent do it",
+    "outcomes": [
+     {
+      "text": "My dad built a working hovercraft. The judges knew. I knew. We all knew.",
+      "weight": 2,
+      "effects": {
+       "karma": -2,
+       "school": 2
+      }
+     },
+     {
+      "text": "My dad took over and it collapsed on the table during judging. He apologised to me for a week.",
+      "weight": 1,
+      "effects": {
+       "school": -3,
+       "karma": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "kid.tooth_fairy",
+  "icon": "🦷",
+  "title": "Loose tooth",
+  "text": "Your tooth has been wiggling for a week.",
+  "conditions": {
+   "age": [
+    5,
+    9
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pull it out yourself",
+    "outcomes": [
+     {
+      "text": "I tied it to a door. It worked! The tooth fairy left $5.",
+      "weight": 2,
+      "effects": {
+       "money": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I tied it to a door. The door won, but the tooth stayed.",
+      "weight": 1,
+      "effects": {
+       "health": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for it to fall out",
+    "outcomes": [
+     {
+      "text": "It fell out in my sandwich. Tooth fairy paid extra for the trauma.",
+      "weight": 2,
+      "effects": {
+       "money": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "It fell out during class and I lost it in the carpet. No tooth, no payment, one very long negotiation.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay up to catch the tooth fairy",
+    "outcomes": [
+     {
+      "text": "I saw my mom tiptoe in with a dollar. I pretended to be asleep forever.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I fell asleep at eleven and woke to a dollar. The mystery survived another year, which I now think was the point.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "kid.field_trip",
+  "icon": "🚌",
+  "title": "Field trip",
+  "text": [
+   "Your class is going on a field trip to {trip}.",
+   "Field trip day! The bus is leaving for {trip}."
+  ],
+  "conditions": {
+   "age": [
+    6,
+    13
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stick with the group",
+    "outcomes": [
+     {
+      "text": "I learned more than I expected. The gift shop was the best part.",
+      "weight": 2,
+      "effects": {
+       "smarts": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I stuck with the group, got travel sick on the coach, and remember the journey far better than the museum.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wander off",
+    "outcomes": [
+     {
+      "text": "I found a secret exhibit nobody else saw. Also, the teachers were looking for me for an hour.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I got lost. A security guard walked me back. Humiliating.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sit with your crush on the bus",
+    "outcomes": [
+     {
+      "text": "We shared headphones the whole way. Best day ever.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "They moved seats. I'll never recover.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "kid.pet_fish",
+  "icon": "🐠",
+  "title": "Class goldfish",
+  "text": "It's your turn to take the class goldfish home for the weekend.",
+  "conditions": {
+   "age": [
+    6,
+    10
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take great care of it",
+    "outcomes": [
+     {
+      "text": "Mr. Bubbles returned to class alive and possibly happier.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I took excellent care of it and it died anyway, on a Tuesday, for no reason I was ever given.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Teach it a trick",
+    "outcomes": [
+     {
+      "text": "I'm convinced it learned to swim through a hoop. Nobody believes me.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "It ignored every hoop and swam in the same slow circle for a fortnight. I learned something about expectations.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Forget to feed it",
+    "outcomes": [
+     {
+      "text": "Mr. Bubbles was replaced by a slightly different Mr. Bubbles. My mom handled it.",
+      "weight": 2,
+      "effects": {
+       "karma": -2
+      }
+     },
+     {
+      "text": "Mr. Bubbles survived my neglect entirely. Some things are harder to kill than a seven-year-old assumes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "once": true
+ },
+ {
+  "id": "kid.recess",
+  "icon": "⚽",
+  "title": "Recess",
+  "text": [
+   "It's recess. The whole playground is yours.",
+   "The bell rang for recess."
+  ],
+  "conditions": {
+   "age": [
+    5,
+    11
+   ]
+  },
+  "choices": [
+   {
+    "label": "Play tag",
+    "outcomes": [
+     {
+      "text": "I was never 'it'. Undefeated.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I was 'it' the entire time. My legs hurt.",
+      "weight": 1,
+      "effects": {
+       "health": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Trade cards",
+    "outcomes": [
+     {
+      "text": "I traded a doubles card for a super-rare shiny. Business genius.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "A fifth-grader scammed me out of my best card.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Read under a tree",
+    "outcomes": [
+     {
+      "text": "I finished a whole chapter book.",
+      "weight": 2,
+      "effects": {
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I read under a tree until a ball hit the book out of my hands. I read indoors after that.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start a secret club",
+    "outcomes": [
+     {
+      "text": "We have a password and a treehouse. Adults may not enter.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "popularity": 3
+      }
+     },
+     {
+      "text": "The club lasted nine days and ended in a dispute over the password that has technically never been resolved.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "popularity": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "cooldown": 1
+ },
+ {
+  "id": "kid.broken_window.b",
+  "icon": "🪟",
+  "title": "Crash!",
+  "text": "Your ball just went straight through the neighbor's window.",
+  "conditions": {
+   "age": [
+    6,
+    13
+   ]
+  },
+  "choices": [
+   {
+    "label": "Knock on their door",
+    "outcomes": [
+     {
+      "text": "The neighbor was so impressed I owned up that she gave me cookies. I still had to pay for the glass.",
+      "weight": 2,
+      "effects": {
+       "karma": 5,
+       "money": -20
+      }
+     },
+     {
+      "text": "The neighbor yelled for ten minutes. My parents paid. I paid my parents.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run",
+    "outcomes": [
+     {
+      "text": "Nobody saw. The guilt ate at me for weeks.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The neighbor has cameras. Very awkward dinner that night.",
+      "weight": 1,
+      "effects": {
+       "karma": -5
+      },
+      "relationship": {
+       "p": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame your sibling",
+    "outcomes": [
+     {
+      "text": "It worked. I'm a monster.",
+      "weight": 2,
+      "effects": {
+       "karma": -6
+      },
+      "relationship": {
+       "s": -10
+      }
+     },
+     {
+      "text": "I blamed my sibling and nobody believed me for a second. Both of us were punished, and only one of us deserved it.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   },
+   "s": {
+    "relation": "sibling",
+    "optional": true
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "kid.talent",
+  "icon": "⭐",
+  "title": "A hidden talent",
+  "text": [
+   "Your teacher noticed you're unusually good at {skill}.",
+   "Turns out you have a knack for {skill}."
+  ],
+  "conditions": {
+   "age": [
+    6,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take it seriously",
+    "outcomes": [
+     {
+      "text": "I practiced every day. I'm better than most adults now.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "happiness": 5
+      },
+      "counter": {
+       "talents": 1
+      }
+     },
+     {
+      "text": "I practised every day for two years and then, quite suddenly, could not stand the sight of it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it a hobby",
+    "outcomes": [
+     {
+      "text": "It's just for fun, and that's the point.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Keeping it a hobby meant nobody ever told me to stop, so I never did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I never did anything with it. Sometimes I wonder.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I ignored it, and years later somebody I went to school with got famous doing exactly that thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 5
+ },
+ {
+  "id": "kid.birthday",
+  "icon": "🎂",
+  "title": "Birthday party",
+  "text": [
+   "It's your birthday! Your parents are throwing a party.",
+   "Happy birthday! There's a party, and a suspicious number of balloons."
+  ],
+  "conditions": {
+   "age": [
+    4,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Invite the whole class",
+    "outcomes": [
+     {
+      "text": "Twenty kids, one bouncy castle, zero survivors. Best party ever.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "popularity": 4
+      }
+     },
+     {
+      "text": "Only three kids came. My mom ate a lot of cake that week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just close friends",
+    "outcomes": [
+     {
+      "text": "Pizza, a movie, and my best friends. Perfect.",
+      "weight": 2,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "Two of them cancelled that morning. The three who came made it the best one I had.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a pony",
+    "outcomes": [
+     {
+      "text": "There was no pony. There was a man in a pony costume. Close enough.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "There was, against every expectation, an actual pony. My parents never explained how.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "kid.nightlight",
+  "icon": "👻",
+  "title": "Something under the bed",
+  "text": "You're sure there's something under your bed.",
+  "conditions": {
+   "age": [
+    4,
+    9
+   ]
+  },
+  "choices": [
+   {
+    "label": "Check",
+    "outcomes": [
+     {
+      "text": "Just socks. So many socks.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "It was the dog. The dog was terrified too.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run to your parents' room",
+    "outcomes": [
+     {
+      "text": "I slept between my parents. Everyone was kicked all night.",
+      "weight": 2,
+      "relationship": {
+       "p": 3
+      }
+     },
+     {
+      "text": "I got halfway down the hall, decided I was too old for this, and went back on my own.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide under the covers",
+    "outcomes": [
+     {
+      "text": "I didn't sleep. But nothing got me.",
+      "weight": 2,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I hid under the covers and fell asleep in about four minutes, which rather undermined the whole crisis.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "kid.scouts",
+  "icon": "🏕️",
+  "title": "Scouts",
+  "text": "A scout troop is recruiting at school.",
+  "conditions": {
+   "age": [
+    7,
+    12
+   ]
+  },
+  "choices": [
+   {
+    "label": "Join",
+    "outcomes": [
+     {
+      "text": "I earned eleven badges, including one for knot tying and one for not crying on the campout.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "health": 2,
+       "happiness": 4
+      },
+      "counter": {
+       "scouts": 1
+      }
+     },
+     {
+      "text": "I joined, hated every minute of the camping, and made one friend I still have.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "health": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "No thanks",
+    "outcomes": [
+     {
+      "text": "Uniforms aren't my thing.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I said no, and spent the year listening to everyone else talk about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join, then quit after a month",
+    "outcomes": [
+     {
+      "text": "I joined, hated the shouting, quit cleanly, and nobody made it a thing. I learned I was allowed to leave.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I quit and my parents made it a thing for a very long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "once": true
+ },
+ {
+  "id": "kid.spelling_bee.b",
+  "icon": "🐝",
+  "title": "Spelling bee",
+  "text": "You made it to the final round of the spelling bee. Your word: \"{word}\".",
+  "conditions": {
+   "age": [
+    8,
+    13
+   ]
+  },
+  "choices": [
+   {
+    "label": "Spell it confidently",
+    "outcomes": [
+     {
+      "text": "Correct! I won the spelling bee!",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 8
+      },
+      "milestone": "won the spelling bee",
+      "stat_bonus": {
+       "smarts": 0.8
+      }
+     },
+     {
+      "text": "One letter off. Runner-up.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for it in a sentence",
+    "outcomes": [
+     {
+      "text": "The sentence gave it away. Champion!",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 7
+      }
+     },
+     {
+      "text": "The sentence made it more confusing. I got it wrong.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Guess and sit down fast",
+    "outcomes": [
+     {
+      "text": "I guessed, got it wrong, and was back in my seat inside nine seconds. The relief was enormous.",
+      "weight": 2,
+      "effects": {
+       "stress": -4,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I guessed and it was somehow right, and then I had to keep going, which was the worst outcome available.",
+      "weight": 1,
+      "effects": {
+       "school": 4,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "once": true
+ },
+ {
+  "id": "kid.money_found",
+  "icon": "💵",
+  "title": "Money on the sidewalk",
+  "text": [
+   "You found a $20 bill on the sidewalk.",
+   "There's money on the ground. Nobody's around."
+  ],
+  "conditions": {
+   "age": [
+    6,
+    16
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep it",
+    "outcomes": [
+     {
+      "text": "Candy. So much candy.",
+      "weight": 2,
+      "effects": {
+       "money": 20,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I kept it, spent it on sweets, and felt vaguely wrong about it for about a decade.",
+      "weight": 1,
+      "effects": {
+       "money": 20,
+       "happiness": 2,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Turn it in",
+    "outcomes": [
+     {
+      "text": "Nobody claimed it. The office let me keep it and gave me a certificate.",
+      "weight": 1,
+      "effects": {
+       "money": 20,
+       "karma": 4
+      }
+     },
+     {
+      "text": "Someone claimed it. I got a thank-you and a warm feeling.",
+      "weight": 1,
+      "effects": {
+       "karma": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put it in savings",
+    "outcomes": [
+     {
+      "text": "My future self thanks me.",
+      "weight": 2,
+      "effects": {
+       "money": 20,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I put it in savings and forgot about it entirely until somebody cleared out the account years later.",
+      "weight": 1,
+      "effects": {
+       "money": 20
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 6
+ },
+ {
+  "id": "kid.chores",
+  "icon": "🧹",
+  "title": "Chores",
+  "text": [
+   "Your parents made a chore chart. Your name is on a LOT of it.",
+   "Your parents say it's time you pulled your weight around the house."
+  ],
+  "conditions": {
+   "age": [
+    7,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Do them all",
+    "outcomes": [
+     {
+      "text": "I earned my allowance and my parents' respect.",
+      "weight": 2,
+      "effects": {
+       "money": 40
+      },
+      "relationship": {
+       "p": 8
+      }
+     },
+     {
+      "text": "I did them all, and the following week the list was longer. Nobody warned me that is how it works.",
+      "weight": 1,
+      "effects": {
+       "money": 40,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "I got my allowance doubled for half the chores. Future CEO.",
+      "weight": 1,
+      "effects": {
+       "money": 30,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "Negotiations failed. More chores.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do them badly",
+    "outcomes": [
+     {
+      "text": "I did them so badly they stopped asking. Genius or villain?",
+      "weight": 2,
+      "effects": {
+       "karma": -2
+      },
+      "relationship": {
+       "p": -5
+      }
+     },
+     {
+      "text": "I did them badly once, was made to do them again properly, and learned an extremely boring lesson.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "smarts": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "kid.video_game",
+  "icon": "🎮",
+  "title": "The new game",
+  "text": [
+   "Everyone at school is playing a new game. You don't have it.",
+   "A new console came out. You need it. You NEED it."
+  ],
+  "conditions": {
+   "age": [
+    7,
+    15
+   ]
+  },
+  "choices": [
+   {
+    "label": "Beg your parents",
+    "outcomes": [
+     {
+      "text": "They caved. I haven't seen the sun since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "health": -1
+      }
+     },
+     {
+      "text": "They said no. \"Maybe for your birthday.\"",
+      "weight": 2,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Save up for it",
+    "outcomes": [
+     {
+      "text": "Six months of allowance later, it's mine. It feels earned.",
+      "weight": 2,
+      "effects": {
+       "happiness": 7,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "Six months of saving, and by the time I had it, everyone had moved on to something else.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Play at a friend's house",
+    "outcomes": [
+     {
+      "text": "I basically moved in with my friend.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      },
+      "relationship": {
+       "f": 6
+      }
+     },
+     {
+      "text": "I played at a friend's house until their parents started calling me by name and setting a place at dinner.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "kid.first_phone",
+  "icon": "📱",
+  "title": "Your first phone",
+  "text": "Your parents are finally talking about getting you a phone.",
+  "conditions": {
+   "age": [
+    10,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Promise to be responsible",
+    "outcomes": [
+     {
+      "text": "I got a phone! Screen time rules apply. I broke them on day one.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8
+      },
+      "flags": [
+       "had_phone"
+      ]
+     },
+     {
+      "text": "I promised to be responsible and lost it within five weeks. There was not a second phone for a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "money": -60
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say you don't need one",
+    "outcomes": [
+     {
+      "text": "My parents were so shocked they got me one anyway.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I said I did not need one and genuinely did not, right up until every plan started being made without me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "popularity": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a rubbish one nobody wants",
+    "outcomes": [
+     {
+      "text": "I asked for the cheapest phone in the shop and got it immediately, and it did everything I needed for four years.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "The cheap one broke in a fortnight and I was told that was the lesson.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "once": true
+ },
+ {
+  "id": "kid.camp",
+  "icon": "⛺",
+  "title": "Summer camp",
+  "text": "Your parents signed you up for summer camp. Two whole weeks.",
+  "conditions": {
+   "age": [
+    7,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go all in",
+    "outcomes": [
+     {
+      "text": "Canoeing, campfires, a camp crush and a talent show. Best summer ever.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "health": 2
+      }
+     },
+     {
+      "text": "I got poison ivy on day two. The rest was great.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "health": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Beg to go home",
+    "outcomes": [
+     {
+      "text": "They picked me up on day three. I kind of regret it.",
+      "weight": 2,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I begged to go home, they said finish the week, and by Thursday I did not want to leave.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "health": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make it your camp",
+    "outcomes": [
+     {
+      "text": "By the second week I knew every shortcut, every counsellor's name and where the good snacks were kept.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "popularity": 3
+      }
+     },
+     {
+      "text": "I tried to run the place and a counsellor had a quiet word about it that I still think about.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "kid.snow",
+  "icon": "❄️",
+  "title": "Snow day",
+  "text": "School's canceled. It snowed overnight.",
+  "conditions": {
+   "age": [
+    5,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Build a snowman",
+    "outcomes": [
+     {
+      "text": "I built a snowman taller than my dad.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I built a snowman, went inside for twenty minutes, and came back to find it beheaded. I have suspects.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Snowball fight",
+    "outcomes": [
+     {
+      "text": "I pelted the neighborhood kids. Undefeated.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "I took one to the face. Ice-filled. Rude.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay in bed",
+    "outcomes": [
+     {
+      "text": "The best kind of day off.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "stress": -4
+      }
+     },
+     {
+      "text": "I stayed in bed and missed the only real snow of my entire childhood. It never came like that again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "kid.art_contest",
+  "icon": "🎨",
+  "title": "Art contest",
+  "text": "The town is holding a kids' art contest.",
+  "conditions": {
+   "age": [
+    6,
+    13
+   ]
+  },
+  "choices": [
+   {
+    "label": "Paint something weird",
+    "outcomes": [
+     {
+      "text": "My painting of a sad banana won first prize.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "The judges \"didn't get it\".",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Paint your family",
+    "outcomes": [
+     {
+      "text": "My mom cried. I got an honorable mention.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "m": 8
+      }
+     },
+     {
+      "text": "I painted my family, got one of them badly wrong, and it became a joke that ran for fifteen years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Copy something famous",
+    "outcomes": [
+     {
+      "text": "I copied something famous badly enough that it came out original, and it won a category nobody expected.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "A judge recognised exactly what I had copied and said so, in front of people.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "karma": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "m": {
+    "relation": "mother",
+    "optional": true
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "teen.party_invite",
+  "icon": "🎉",
+  "title": "The party",
+  "text": [
+   "There's a party at {host}'s house this weekend. Their parents are away.",
+   "Everyone is going to a party at an older kid's house on Saturday."
+  ],
+  "conditions": {
+   "age": [
+    14,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "I danced, I laughed, I got home just before curfew.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "popularity": 4
+      }
+     },
+     {
+      "text": "The cops showed up. I jumped a fence and ruined my jeans.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 5
+      }
+     },
+     {
+      "text": "Someone posted a photo of me looking ridiculous. It's my profile picture now.",
+      "weight": 1,
+      "effects": {
+       "popularity": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sneak out to go",
+    "outcomes": [
+     {
+      "text": "Nobody noticed. I'm a ghost.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "My parents were waiting in the kitchen when I climbed back in.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      },
+      "relationship": {
+       "p": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I heard it was wild. I'll go next time.",
+      "weight": 2,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "I stayed home and nothing happened at the party either. Everyone said it was boring, and for once I believed them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "cooldown": 1
+ },
+ {
+  "id": "teen.acne.b",
+  "icon": "😣",
+  "title": "Breakout",
+  "text": [
+   "A giant pimple appeared on your nose the morning of picture day.",
+   "Your face has betrayed you. There's a volcano on your chin."
+  ],
+  "conditions": {
+   "age": [
+    12,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pop it",
+    "outcomes": [
+     {
+      "text": "It made it worse. So much worse.",
+      "weight": 2,
+      "effects": {
+       "looks": -2,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I popped it, it healed clean by the weekend, and I learned nothing that would help me later.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cover it up",
+    "outcomes": [
+     {
+      "text": "Nobody noticed. Probably.",
+      "weight": 2,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I covered it up with something two shades off and that is what people actually noticed.",
+      "weight": 1,
+      "effects": {
+       "looks": -2,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Own it",
+    "outcomes": [
+     {
+      "text": "I named it Kevin and introduced it to everyone. People loved Kevin.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "popularity": 2
+      }
+     },
+     {
+      "text": "I tried to own it and the joke did not land. I went quiet for the rest of the afternoon.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "teen.crush_text",
+  "icon": "💌",
+  "title": "The text",
+  "text": [
+   "{c.first} just texted you out of nowhere: \"hey\"",
+   "You've had a crush on {c.first} for months. They just sat next to you."
+  ],
+  "conditions": {
+   "age": [
+    13,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Play it cool",
+    "outcomes": [
+     {
+      "text": "We talked for three hours. I didn't sleep.",
+      "weight": 2,
+      "relationship": {
+       "c": 15
+      },
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I played it so cool they think I don't like them.",
+      "weight": 1,
+      "relationship": {
+       "c": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them how you feel",
+    "outcomes": [
+     {
+      "text": "They feel the same. We're dating!",
+      "weight": 1,
+      "new_partner": "c",
+      "keep_role": "c",
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "They said they \"don't see me that way\". I'm moving to Antarctica.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Panic and send a meme",
+    "outcomes": [
+     {
+      "text": "The meme landed. We've been sending memes daily ever since.",
+      "weight": 2,
+      "relationship": {
+       "c": 10
+      },
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The meme did not land. They replied with a single full stop and I thought about it for two years.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "c": {
+    "new": "crush",
+    "age": "same",
+    "closeness": 40
+   }
+  },
+  "cooldown": 2,
+  "discard_unkept": true
+ },
+ {
+  "id": "teen.job_first",
+  "icon": "🍔",
+  "title": "First job",
+  "text": "The burger place down the street is hiring teens.",
+  "conditions": {
+   "age": [
+    14,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Apply",
+    "outcomes": [
+     {
+      "text": "I got the job! My uniform smells like fries forever.",
+      "weight": 2,
+      "effects": {
+       "money": 400,
+       "happiness": 3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "They hired someone's cousin instead.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enjoy being young",
+    "outcomes": [
+     {
+      "text": "There's time to work later.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I enjoyed being young, and watched everyone with a job get their own money and their own plans.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Apply somewhere better",
+    "outcomes": [
+     {
+      "text": "I held out for something I actually wanted and got it two months later for more money.",
+      "weight": 2,
+      "effects": {
+       "money": 400,
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I held out all summer and got nothing, and the burger place had already filled up.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "teen.permit",
+  "icon": "🚗",
+  "title": "Learner's permit",
+  "text": "You're finally old enough to learn to drive.",
+  "conditions": {
+   "age": [
+    15,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Practice with a parent",
+    "outcomes": [
+     {
+      "text": "My parent gripped the dashboard the whole time. I'm improving.",
+      "weight": 1,
+      "relationship": {
+       "p": 4
+      },
+      "effects": {
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I backed into the mailbox. It's gone.",
+      "weight": 1,
+      "relationship": {
+       "p": -4
+      },
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take lessons",
+    "outcomes": [
+     {
+      "text": "My instructor was calm and patient. I'm ready for the test.",
+      "weight": 2,
+      "effects": {
+       "money": -300,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "My instructor was a nervous man who gasped at roundabouts. I passed anyway, mostly out of spite.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 4,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Not yet",
+    "outcomes": [
+     {
+      "text": "I'll learn later. The bus is fine.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "Not learning cost me two jobs before I worked out that it was costing me jobs.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "teen.exam",
+  "icon": "📝",
+  "title": "Finals week",
+  "text": [
+   "Finals are next week. You haven't studied.",
+   "A huge exam is coming. Your whole grade depends on it."
+  ],
+  "conditions": {
+   "age": [
+    13,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cram all night",
+    "outcomes": [
+     {
+      "text": "Coffee, flashcards, panic. I aced it.",
+      "weight": 1,
+      "effects": {
+       "school": 10,
+       "stress": 8,
+       "health": -2
+      }
+     },
+     {
+      "text": "I fell asleep during the exam.",
+      "weight": 1,
+      "effects": {
+       "school": -6,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Study group",
+    "outcomes": [
+     {
+      "text": "We quizzed each other for hours. Everyone passed.",
+      "weight": 2,
+      "effects": {
+       "school": 7,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The study group turned into three hours of talking and forty minutes of panic at the end.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "happiness": 4,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wing it",
+    "outcomes": [
+     {
+      "text": "I winged it. It went about as well as you'd think.",
+      "weight": 1,
+      "effects": {
+       "school": -5
+      }
+     },
+     {
+      "text": "I winged it and somehow got a B. The universe is chaos.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "cooldown": 1
+ },
+ {
+  "id": "teen.style",
+  "icon": "👕",
+  "title": "New look",
+  "text": [
+   "You want to reinvent yourself before the new school year.",
+   "You're sick of your look. Time for something new."
+  ],
+  "conditions": {
+   "age": [
+    13,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go edgy",
+    "outcomes": [
+     {
+      "text": "Black everything. People look at me differently now.",
+      "weight": 2,
+      "effects": {
+       "looks": 2,
+       "popularity": 2
+      }
+     },
+     {
+      "text": "Black everything. My mother asked, gently, whether I was alright, and I was, and I could not explain it.",
+      "weight": 1,
+      "effects": {
+       "looks": 1,
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go preppy",
+    "outcomes": [
+     {
+      "text": "Collared shirts and a new attitude. Teachers love me.",
+      "weight": 2,
+      "effects": {
+       "school": 2,
+       "looks": 1
+      }
+     },
+     {
+      "text": "Collared shirts, and the people I actually liked started treating me like somebody else.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "popularity": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go athletic",
+    "outcomes": [
+     {
+      "text": "Hoodies and sneakers. Comfort is a lifestyle.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "Hoodies and trainers, and I disappeared into the background so completely that it took a year to climb back out.",
+      "weight": 1,
+      "effects": {
+       "popularity": -2,
+       "stress": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay yourself",
+    "outcomes": [
+     {
+      "text": "I'm fine as I am.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I stayed myself, which was harder that year than any of the alternatives, and worth it later.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "teen.band",
+  "icon": "🎸",
+  "title": "Start a band",
+  "text": "{f.first} wants to start a band in the garage.",
+  "conditions": {
+   "age": [
+    13,
+    19
+   ]
+  },
+  "choices": [
+   {
+    "label": "Grab an instrument",
+    "outcomes": [
+     {
+      "text": "We call ourselves \"Unpaid Parking Tickets\". We have three songs. One is good.",
+      "weight": 2,
+      "effects": {
+       "happiness": 7
+      },
+      "relationship": {
+       "f": 10
+      },
+      "counter": {
+       "music": 1
+      }
+     },
+     {
+      "text": "We played one gig at a bowling alley. Four people clapped.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "f": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be the manager",
+    "outcomes": [
+     {
+      "text": "I booked our first show at a coffee shop. I'm basically a mogul.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I booked the show, four people came, and two of them were related to the drummer.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "Garages are cold.",
+      "weight": 2,
+      "relationship": {
+       "f": -3
+      }
+     },
+     {
+      "text": "I passed, and they got good. I watched from the audience with a complicated feeling.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "teen.caught",
+  "icon": "🚬",
+  "title": "Caught",
+  "text": [
+   "Your parents found something in your room they did not like.",
+   "Your parents found out you skipped school last week."
+  ],
+  "conditions": {
+   "age": [
+    13,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lie",
+    "outcomes": [
+     {
+      "text": "They bought it. I feel terrible.",
+      "weight": 1,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "They did not buy it. Grounded for a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      },
+      "relationship": {
+       "p": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the truth",
+    "outcomes": [
+     {
+      "text": "They were disappointed, but they appreciated the honesty.",
+      "weight": 2,
+      "relationship": {
+       "p": 5
+      },
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I told the truth and it went far worse than lying would have. I have still not decided if it was right.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame a friend",
+    "outcomes": [
+     {
+      "text": "They made me stop hanging out with that friend. Oops.",
+      "weight": 2,
+      "effects": {
+       "karma": -5
+      }
+     },
+     {
+      "text": "I blamed a friend and they found out within a week. That friendship never really came back.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "teen.volunteer_abroad",
+  "icon": "🌍",
+  "title": "A trip abroad",
+  "text": "Your school is organizing a trip abroad. It costs $2,000.",
+  "conditions": {
+   "age": [
+    14,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "I came back speaking a little of a new language and missing a place I'd never heard of.",
+      "weight": 2,
+      "effects": {
+       "money": -2000,
+       "smarts": 4,
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I went, got homesick in the second week, and spent a fortnight being no use to anybody. I am still glad I went.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "smarts": 2,
+       "happiness": 2
+      }
+     }
+    ],
+    "requires": {
+     "money": 2000
+    }
+   },
+   {
+    "label": "Ask your parents to pay",
+    "outcomes": [
+     {
+      "text": "They paid. I owe them forever.",
+      "weight": 1,
+      "relationship": {
+       "p": 4
+      },
+      "effects": {
+       "smarts": 3,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "\"Money doesn't grow on trees.\" I stayed home.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "Maybe next year.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I skipped it, and heard about it from the ones who went for the next three years.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "teen.viral_school",
+  "icon": "📹",
+  "title": "Caught on camera",
+  "text": "Someone filmed you doing something stupid in the cafeteria.",
+  "conditions": {
+   "age": [
+    13,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lean into it",
+    "outcomes": [
+     {
+      "text": "I became a school legend.",
+      "weight": 2,
+      "effects": {
+       "popularity": 8,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I leaned into it, and the joke outlived the moment by about eight months. I could not put it down.",
+      "weight": 1,
+      "effects": {
+       "popularity": 3,
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Beg them to delete it",
+    "outcomes": [
+     {
+      "text": "They deleted it. It's already everywhere.",
+      "weight": 2,
+      "effects": {
+       "happiness": -5
+      }
+     },
+     {
+      "text": "They deleted it, and because they deleted it, everyone assumed it was worse than it was.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "popularity": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Film something better",
+    "outcomes": [
+     {
+      "text": "My response video got more views than the original.",
+      "weight": 2,
+      "effects": {
+       "popularity": 6,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "My response got twelve views. The original kept going.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "teen.homecoming",
+  "icon": "🏈",
+  "title": "Homecoming",
+  "text": [
+   "It's homecoming week. The whole school is buzzing.",
+   "The homecoming game is Friday."
+  ],
+  "conditions": {
+   "age": [
+    14,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Paint your face and go",
+    "outcomes": [
+     {
+      "text": "We won in the last second. I lost my voice.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "popularity": 3
+      }
+     },
+     {
+      "text": "We lost by 40. Still fun.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to the dance instead",
+    "outcomes": [
+     {
+      "text": "I slow-danced with someone and my heart exploded.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I went to the dance, stood near the wall for two hours, and left before the last song.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "Homecoming is overrated. Probably.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I stayed home and three people texted asking where I was. That was better than going.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "popularity": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 1
+ },
+ {
+  "id": "teen.college_visit",
+  "icon": "🏛️",
+  "title": "College visit",
+  "text": "Your parents want to take you to visit a college.",
+  "conditions": {
+   "age": [
+    16,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Visit a top university",
+    "outcomes": [
+     {
+      "text": "I fell in love with the campus. Now I have to get in.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I visited, felt completely out of place, and understood something useful about what I actually wanted.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Visit a party school",
+    "outcomes": [
+     {
+      "text": "The tour guide showed us the 'best frat'. Mom was not amused.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The tour guide was earnest and clever and completely changed what I thought that place was.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "school": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't go to college",
+    "outcomes": [
+     {
+      "text": "My parents took it better than I expected.",
+      "weight": 2,
+      "relationship": {
+       "p": -3
+      }
+     },
+     {
+      "text": "My parents took it badly and we did not talk properly for most of a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "adult.jury",
+  "icon": "⚖️",
+  "title": "Jury duty",
+  "text": [
+   "A letter arrived: you've been summoned for jury duty.",
+   "You've been called for jury duty. Again."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    75
+   ]
+  },
+  "choices": [
+   {
+    "label": "Serve",
+    "outcomes": [
+     {
+      "text": "The trial was about a stolen goat. I'll never forget it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The trial lasted six weeks. I know too much about tax fraud now.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try to get out of it",
+    "outcomes": [
+     {
+      "text": "I said I'm biased against everyone. They let me go.",
+      "weight": 1,
+      "effects": {
+       "karma": -2
+      }
+     },
+     {
+      "text": "The judge saw right through it. I served anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Serve, and end up foreman",
+    "outcomes": [
+     {
+      "text": "They made me foreman. Twelve people, four days, one decision I still turn over.",
+      "weight": 2,
+      "effects": {
+       "smarts": 3,
+       "stress": 8,
+       "karma": 3
+      }
+     },
+     {
+      "text": "They made me foreman and we could not agree at all. It collapsed, and it was nobody's fault and felt like mine.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 6
+ },
+ {
+  "id": "adult.dmv",
+  "icon": "🏢",
+  "title": "The DMV",
+  "text": "You have to renew your ID. The line is out the door.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Wait patiently",
+    "outcomes": [
+     {
+      "text": "Four hours. I aged a year. The photo is horrendous.",
+      "weight": 2,
+      "effects": {
+       "stress": 5
+      }
+     },
+     {
+      "text": "Four hours, and when I got to the front they told me I had brought the wrong form.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make friends in line",
+    "outcomes": [
+     {
+      "text": "I met a fascinating stranger who used to be a trapeze artist.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I tried to make conversation and they put headphones on, slowly, while looking at me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Complain loudly",
+    "outcomes": [
+     {
+      "text": "Security escorted me out. I still need my ID.",
+      "weight": 2,
+      "effects": {
+       "stress": 8
+      }
+     },
+     {
+      "text": "I complained loudly, and the entire queue quietly agreed with me. Something was actually fixed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 5
+ },
+ {
+  "id": "adult.flat_tire",
+  "icon": "🛞",
+  "title": "Flat tire",
+  "text": [
+   "You got a flat tire on the highway.",
+   "Your car shudders and pulls to the right. Flat tire."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    85
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Change it yourself",
+    "outcomes": [
+     {
+      "text": "I changed it in twenty minutes. I feel like an action hero.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I don't know how to change a tire. I do now, after three hours.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call roadside help",
+    "outcomes": [
+     {
+      "text": "They came in an hour. $120.",
+      "weight": 2,
+      "effects": {
+       "money": -120
+      }
+     },
+     {
+      "text": "Roadside took four hours and arrived after I had already worked out how to do it myself.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "stress": 6,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call a friend",
+    "outcomes": [
+     {
+      "text": "{f.first} came to the rescue with snacks.",
+      "weight": 2,
+      "relationship": {
+       "f": 8
+      }
+     },
+     {
+      "text": "{f.first} came, could not help either, and we sat on the verge talking until the van came.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "adult.wrong_number",
+  "icon": "📞",
+  "title": "Wrong number",
+  "text": [
+   "You got a text from a wrong number. It's someone confessing their love.",
+   "A stranger keeps texting you thinking you're their sister."
+  ],
+  "conditions": {
+   "age": [
+    16,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Play along",
+    "outcomes": [
+     {
+      "text": "We texted for weeks before I confessed. Now we're pen pals.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I played along for two messages before it stopped being funny and started being sad.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them",
+    "outcomes": [
+     {
+      "text": "They were mortified. We laughed about it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I told them, and they were looking for somebody who had died. I did not know what to say.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Block them",
+    "outcomes": [
+     {
+      "text": "Blocked.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I blocked them, and spent an oddly long time afterwards wondering who they had been trying to reach.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 6
+ },
+ {
+  "id": "adult.gym_membership",
+  "icon": "💪",
+  "title": "New year, new you",
+  "text": [
+   "It's January. Everyone is joining a gym.",
+   "You made a New Year's resolution to get in shape."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Actually go",
+    "outcomes": [
+     {
+      "text": "I went three times a week all year. I'm a different person.",
+      "weight": 1,
+      "effects": {
+       "health": 6,
+       "looks": 3,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I went twice in January. The membership still charges me.",
+      "weight": 2,
+      "effects": {
+       "money": -400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy the gear, skip the gym",
+    "outcomes": [
+     {
+      "text": "I look great in the outfits.",
+      "weight": 2,
+      "effects": {
+       "money": -150,
+       "looks": 1
+      }
+     },
+     {
+      "text": "I bought the gear, wore it once, and it sat in a drawer as a monthly reminder for a year.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Resolution: no resolutions",
+    "outcomes": [
+     {
+      "text": "Honesty is healthy.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I made no resolutions, and then quietly started walking every evening without telling anyone.",
+      "weight": 1,
+      "effects": {
+       "health": 4,
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "adult.roommate",
+  "icon": "🧦",
+  "title": "The roommate",
+  "text": [
+   "Your roommate keeps eating your food.",
+   "Your roommate has a new partner who basically lives with you now."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    35
+   ],
+   "housing": [
+    "apartment"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Leave a passive-aggressive note",
+    "outcomes": [
+     {
+      "text": "The note started a war. The war is ongoing.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "They apologized and bought me groceries.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Talk to them",
+    "outcomes": [
+     {
+      "text": "We worked it out like adults.",
+      "weight": 2,
+      "effects": {
+       "stress": -3
+      }
+     },
+     {
+      "text": "We talked, they agreed with everything, and then nothing changed at all.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Label everything",
+    "outcomes": [
+     {
+      "text": "I labeled every item in the fridge. They ate the labels.",
+      "weight": 2,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "I labelled everything, they found it hilarious, and it became the running joke of the flat.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "adult.date_disaster",
+  "icon": "🍝",
+  "title": "Date disaster",
+  "text": [
+   "Your date spent the whole night talking about their ex.",
+   "Your date showed up two hours late and brought their mom."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Leave politely",
+    "outcomes": [
+     {
+      "text": "I faked an emergency. A classic for a reason.",
+      "weight": 2,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I faked an emergency and ran into them three weeks later, in a very small shop.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stick it out",
+    "outcomes": [
+     {
+      "text": "It was so bad it became my best story.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I stuck it out and somewhere around the second hour they relaxed and became a different person entirely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Set them up with a friend",
+    "outcomes": [
+     {
+      "text": "They hit it off. I'm a matchmaker now.",
+      "weight": 2,
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "I set them up with a friend and it went badly, and somehow I was blamed by both of them.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "adult.wedding_guest",
+  "icon": "💒",
+  "title": "Wedding invite",
+  "text": [
+   "{f.first} is getting married and wants you there.",
+   "You've been invited to {f.first}'s wedding."
+  ],
+  "conditions": {
+   "age": [
+    20,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and dance all night",
+    "outcomes": [
+     {
+      "text": "I caught the bouquet. Everyone looked at me.",
+      "weight": 1,
+      "relationship": {
+       "f": 10
+      },
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "I gave a speech. People cried. Good crying.",
+      "weight": 1,
+      "relationship": {
+       "f": 15
+      },
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I danced too hard and pulled a hamstring.",
+      "weight": 1,
+      "relationship": {
+       "f": 8
+      },
+      "effects": {
+       "health": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a gift instead",
+    "outcomes": [
+     {
+      "text": "I sent something nice from the registry.",
+      "weight": 2,
+      "relationship": {
+       "f": 2
+      },
+      "effects": {
+       "money": -120
+      }
+     },
+     {
+      "text": "I sent a gift instead and heard afterwards that my absence had been noticed and counted.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "RSVP no",
+    "outcomes": [
+     {
+      "text": "{f.first} understood. Mostly.",
+      "weight": 2,
+      "relationship": {
+       "f": -8
+      }
+     },
+     {
+      "text": "{f.first} said it was fine and did not invite me to anything else for a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "adult.stranger_help",
+  "icon": "🙋",
+  "title": "A stranger in need",
+  "text": [
+   "An elderly man is struggling with heavy grocery bags.",
+   "A woman's car won't start in the parking lot. It's raining.",
+   "A lost kid is crying at the mall."
+  ],
+  "conditions": {
+   "age": [
+    14,
+    85
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help",
+    "outcomes": [
+     {
+      "text": "They thanked me like I saved their life. Maybe I did, a little.",
+      "weight": 2,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It turned out to be a hidden-camera TV show. I won $500 for being a decent person.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "money": 500,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk past",
+    "outcomes": [
+     {
+      "text": "I told myself someone else would help.",
+      "weight": 2,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "I walked past, and somebody else stopped almost immediately. It did not make me feel better.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help, and walk him home",
+    "outcomes": [
+     {
+      "text": "I carried them the whole way and we talked the entire time. I went back the following week.",
+      "weight": 2,
+      "effects": {
+       "karma": 6,
+       "happiness": 7
+      }
+     },
+     {
+      "text": "I walked him home and he did not want the company, and said so plainly at the door.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "cooldown": 2
+ },
+ {
+  "id": "adult.celebrity_sighting",
+  "icon": "🌟",
+  "title": "Is that...?",
+  "text": [
+   "You're pretty sure that's {celeb} at the next table.",
+   "{celeb} just walked into the coffee shop."
+  ],
+  "conditions": {
+   "age": [
+    12,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask for a selfie",
+    "outcomes": [
+     {
+      "text": "{celeb} was lovely. The selfie is my phone background now.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "{celeb}'s bodyguard shoved me into a plant.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Play it cool",
+    "outcomes": [
+     {
+      "text": "We made eye contact. {celeb} nodded at me. I will tell my grandchildren.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I played it cool and it was not them. It was somebody who looked a great deal like them.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pitch them your idea",
+    "outcomes": [
+     {
+      "text": "{celeb} took my number. Nothing happened. But what if?",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "{celeb} said my idea was 'actually brilliant' and posted about it. Followers flooded in.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "happiness": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 3,
+  "cooldown": 3
+ },
+ {
+  "id": "adult.concert_cameo",
+  "icon": "🎤",
+  "title": "Front row",
+  "text": "{celeb_pop} is playing a surprise show in {city} tonight.",
+  "conditions": {
+   "age": [
+    14,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get tickets at any cost",
+    "outcomes": [
+     {
+      "text": "I got pulled on stage to sing a chorus with {celeb_pop}. I'll never be the same.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "happiness": 15,
+       "fame": 1
+      }
+     },
+     {
+      "text": "Nosebleed seats, but the best night of my year.",
+      "weight": 2,
+      "effects": {
+       "money": -300,
+       "happiness": 9
+      }
+     }
+    ]
+   },
+   {
+    "label": "Watch the livestream",
+    "outcomes": [
+     {
+      "text": "I watched from my couch in pajamas. Still cried.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The livestream buffered through the only part I wanted to see.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Queue on the day for returns",
+    "outcomes": [
+     {
+      "text": "I queued five hours for returns and got a single ticket in the third row.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "money": -90,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I queued five hours and they released nothing, and I heard the opening number from the pavement.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "cooldown": 4
+ },
+ {
+  "id": "adult.found_wallet.b",
+  "icon": "👛",
+  "title": "A fat wallet",
+  "text": [
+   "You found a wallet with $600 in it and an ID.",
+   "There's a wallet on the train seat. It's stuffed with cash."
+  ],
+  "conditions": {
+   "age": [
+    12,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Return it",
+    "outcomes": [
+     {
+      "text": "The owner insisted I keep $100 as a reward.",
+      "weight": 1,
+      "effects": {
+       "money": 100,
+       "karma": 8
+      }
+     },
+     {
+      "text": "The owner was a local news anchor. I was on TV that night.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the cash, mail back the ID",
+    "outcomes": [
+     {
+      "text": "Half honest.",
+      "weight": 2,
+      "effects": {
+       "money": 600,
+       "karma": -4
+      }
+     },
+     {
+      "text": "I kept the cash and posted the wallet back, and they tracked me down to thank me. I have rarely felt worse.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "karma": -4,
+       "happiness": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep everything",
+    "outcomes": [
+     {
+      "text": "I'm $600 richer and a little worse inside.",
+      "weight": 2,
+      "effects": {
+       "money": 600,
+       "karma": -8
+      }
+     },
+     {
+      "text": "I kept everything, and a week later the local paper ran an appeal with their photograph in it.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "karma": -8,
+       "stress": 8,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 6
+ },
+ {
+  "id": "adult.neighbor_feud",
+  "icon": "🌳",
+  "title": "The tree",
+  "text": [
+   "Your neighbor says your tree is ruining their gutters.",
+   "Your neighbor's dog keeps using your lawn as a bathroom."
+  ],
+  "conditions": {
+   "age": [
+    22,
+    90
+   ],
+   "housing": [
+    "house"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Compromise",
+    "outcomes": [
+     {
+      "text": "We split the cost of a trim. Peace.",
+      "weight": 2,
+      "effects": {
+       "money": -150,
+       "stress": -2
+      }
+     },
+     {
+      "text": "We split the cost, the work was done badly, and now we are arguing about the invoice instead.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Escalate",
+    "outcomes": [
+     {
+      "text": "It went to the homeowners' association. It's still going.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      }
+     },
+     {
+      "text": "I won. The neighbor glares at me every morning.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bake them something",
+    "outcomes": [
+     {
+      "text": "Cookies solved it. Cookies solve most things.",
+      "weight": 2,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I baked them something and they returned the plate empty with a note that started three years of actual friendship.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 5
+ },
+ {
+  "id": "adult.scam_call",
+  "icon": "☎️",
+  "title": "An urgent call",
+  "text": [
+   "\"This is the tax office. You owe $3,000 and must pay in gift cards.\"",
+   "A caller says your bank account has been compromised and asks for your PIN."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Hang up",
+    "outcomes": [
+     {
+      "text": "Nice try.",
+      "weight": 2,
+      "effects": {
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I hung up, and they called back eleven times that day from different numbers.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Mess with them",
+    "outcomes": [
+     {
+      "text": "I kept the scammer on the phone for 40 minutes talking about my cat.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I messed with them and they got personal, fast, and used my name. I stopped finding it funny.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do what they say",
+    "outcomes": [
+     {
+      "text": "I lost $3,000. I feel so stupid.",
+      "weight": 2,
+      "effects": {
+       "money": -3000,
+       "happiness": -8
+      }
+     },
+     {
+      "text": "I did what they said, realised halfway through, and got the bank to stop it with minutes to spare.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "stress": 14,
+       "smarts": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 4
+ },
+ {
+  "id": "adult.hobby",
+  "icon": "🧶",
+  "title": "A new hobby",
+  "text": [
+   "You need a hobby. Your friends say you work too much.",
+   "You have free weekends for the first time in ages."
+  ],
+  "conditions": {
+   "age": [
+    20,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pottery",
+    "outcomes": [
+     {
+      "text": "My first bowl looks like a hat. I love it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5,
+       "stress": -4
+      }
+     },
+     {
+      "text": "The pottery class was full of people who already knew each other. I went twice.",
+      "weight": 1,
+      "effects": {
+       "money": -90,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rock climbing",
+    "outcomes": [
+     {
+      "text": "I made it to the top of the wall. My forearms are gone.",
+      "weight": 2,
+      "effects": {
+       "health": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I got four metres up the wall, froze completely, and had to be talked down by a teenager.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Birdwatching",
+    "outcomes": [
+     {
+      "text": "I saw a rare warbler. I told everyone. Nobody cared. I cared.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "stress": -5
+      }
+     },
+     {
+      "text": "I took up birdwatching and found the quietest and most opinionated group of people I have ever met.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cooking classes",
+    "outcomes": [
+     {
+      "text": "I can make fresh pasta now. My dates are impressed.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4,
+       "looks": 1
+      }
+     },
+     {
+      "text": "I burned the first three things I made and set off the smoke alarm twice in one evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Chess",
+    "outcomes": [
+     {
+      "text": "I'm addicted. I play online at 3 a.m.",
+      "weight": 2,
+      "effects": {
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I learned enough chess to understand exactly how badly I was losing, which was somehow worse.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 4
+ },
+ {
+  "id": "adult.reunion",
+  "icon": "🎓",
+  "title": "Class reunion",
+  "text": "Your high school is having a {n}-year reunion.",
+  "conditions": {
+   "age": [
+    28,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and show off",
+    "outcomes": [
+     {
+      "text": "Everyone asked what I do now. I had good answers.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "My old bully is a millionaire now. Great.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go and reconnect",
+    "outcomes": [
+     {
+      "text": "I reconnected with {f.first}. We talk every week now.",
+      "weight": 2,
+      "relation_change": {
+       "f": "friend"
+      },
+      "keep_role": "f",
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I went and discovered that I had nothing in common with any of them, which was oddly freeing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "Some doors should stay closed.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I skipped it and found out afterwards that somebody had been asking about me all night.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same",
+    "closeness": 45
+   }
+  },
+  "cooldown": 10,
+  "discard_unkept": true
+ },
+ {
+  "id": "adult.promotion_party",
+  "icon": "🥂",
+  "title": "Office party",
+  "text": [
+   "It's the office holiday party. There's an open bar.",
+   "Your work is throwing a party. Attendance is 'optional'."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Network",
+    "outcomes": [
+     {
+      "text": "I spent the night talking to the right people.",
+      "weight": 2,
+      "effects": {
+       "job_perf": 5
+      }
+     },
+     {
+      "text": "I networked all night and found out the following week that none of them had any influence at all.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hit the open bar",
+    "outcomes": [
+     {
+      "text": "I did karaoke. Badly. With the CEO.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "job_perf": -3
+      }
+     },
+     {
+      "text": "I told my boss what I really think. It went... surprisingly well?",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go home early",
+    "outcomes": [
+     {
+      "text": "I made an appearance and slipped out. Pro move.",
+      "weight": 2,
+      "effects": {
+       "stress": -3
+      }
+     },
+     {
+      "text": "I slipped out early and it was noticed, and it came up months later in a conversation about commitment.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "adult.layoff_rumor",
+  "icon": "📉",
+  "title": "Layoff rumors",
+  "text": "Word around the office is that layoffs are coming.",
+  "conditions": {
+   "age": [
+    20,
+    65
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Work extra hard",
+    "outcomes": [
+     {
+      "text": "I survived the cuts. Half my team didn't.",
+      "weight": 2,
+      "effects": {
+       "job_perf": 6,
+       "stress": 8
+      }
+     },
+     {
+      "text": "I worked myself into the ground and was cut anyway, in the second round, by someone who used the word regrettable.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": 16,
+       "happiness": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Update your résumé",
+    "outcomes": [
+     {
+      "text": "I lined up interviews, just in case.",
+      "weight": 2,
+      "effects": {
+       "smarts": 1,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I updated my CV and got an offer so much better than the job I had that the rumour became irrelevant.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 8,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It was just a rumor.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "It wasn't just a rumor.",
+      "weight": 1,
+      "fired": true,
+      "effects": {
+       "happiness": -10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 4
+ },
+ {
+  "id": "adult.money_friend",
+  "icon": "💸",
+  "title": "Can you spot me?",
+  "text": [
+   "{f.first} asks to borrow $500 until payday.",
+   "{f.first} is behind on rent and asks if you can help."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "min_money": 500
+  },
+  "choices": [
+   {
+    "label": "Lend it",
+    "outcomes": [
+     {
+      "text": "{f.first} paid me back in a week, with a thank-you card.",
+      "weight": 2,
+      "effects": {},
+      "relationship": {
+       "f": 8
+      }
+     },
+     {
+      "text": "{f.first} has 'forgotten' about it for a year.",
+      "weight": 1,
+      "effects": {
+       "money": -500
+      },
+      "relationship": {
+       "f": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it, no strings",
+    "outcomes": [
+     {
+      "text": "I told {f.first} not to worry about paying it back.",
+      "weight": 2,
+      "effects": {
+       "money": -500,
+       "karma": 4
+      },
+      "relationship": {
+       "f": 15
+      }
+     },
+     {
+      "text": "I gave it with no strings, and {f.first} paid back every penny eighteen months later without being asked.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "karma": 4,
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no",
+    "outcomes": [
+     {
+      "text": "{f.first} said it was fine. It wasn't fine.",
+      "weight": 2,
+      "relationship": {
+       "f": -10
+      }
+     },
+     {
+      "text": "I said no, and {f.first} got it sorted another way and never mentioned it again. We were fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "adult.home_repair",
+  "icon": "🔧",
+  "title": "Something broke",
+  "text": [
+   "The water heater exploded.",
+   "The roof is leaking into the living room.",
+   "The fridge died, with all the food in it."
+  ],
+  "conditions": {
+   "age": [
+    22,
+    95
+   ],
+   "housing": [
+    "house"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call a professional",
+    "outcomes": [
+     {
+      "text": "Fixed, for a painful $1,800.",
+      "weight": 2,
+      "effects": {
+       "money": -1800,
+       "stress": 2
+      }
+     },
+     {
+      "text": "The professional found something else behind the wall, and the painful bill became a frightening one.",
+      "weight": 1,
+      "effects": {
+       "money": -4200,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fix it yourself",
+    "outcomes": [
+     {
+      "text": "I watched six videos and fixed it. I'm a god.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I made it much worse. The professional was very judgmental.",
+      "weight": 1,
+      "effects": {
+       "money": -2600,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Live without hot water for a while",
+    "outcomes": [
+     {
+      "text": "I went without for six weeks, saved the money, and got extremely efficient at boiling a kettle.",
+      "weight": 2,
+      "effects": {
+       "money": 200,
+       "happiness": -4,
+       "health": -2
+      }
+     },
+     {
+      "text": "Six weeks became five months and something else broke because of it.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "health": -5,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "adult.lucky_day",
+  "icon": "🍀",
+  "title": "Lucky day",
+  "text": [
+   "Everything is going your way today.",
+   "You woke up feeling lucky."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Buy a lottery ticket",
+    "outcomes": [
+     {
+      "text": "I won $250 on a scratch card.",
+      "weight": 1,
+      "effects": {
+       "money": 250,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Not that lucky.",
+      "weight": 3,
+      "effects": {
+       "money": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a raise",
+    "outcomes": [
+     {
+      "text": "It worked!",
+      "weight": 1,
+      "effects": {
+       "money": 2000,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "It did not work.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just enjoy it",
+    "outcomes": [
+     {
+      "text": "Green lights all the way home. Perfect day.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The luck held right up until the last set of lights, where somebody reversed into me at walking pace.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "adult.food_poison",
+  "icon": "🤢",
+  "title": "Bad sushi",
+  "text": [
+   "The gas station sushi was a mistake.",
+   "Something you ate last night is fighting back."
+  ],
+  "conditions": {
+   "age": [
+    16,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ride it out",
+    "outcomes": [
+     {
+      "text": "Two days of regret.",
+      "weight": 2,
+      "effects": {
+       "health": -5,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I rode it out and it turned out not to be food poisoning at all, which I discovered in a hospital.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "money": -400,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to urgent care",
+    "outcomes": [
+     {
+      "text": "They gave me fluids and a disappointed look.",
+      "weight": 2,
+      "effects": {
+       "health": -2,
+       "money": -150
+      }
+     },
+     {
+      "text": "Urgent care took one look, kept me four hours, and found something unrelated that needed treating.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "money": -150,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame the restaurant, loudly",
+    "outcomes": [
+     {
+      "text": "I complained, and they refunded everything and closed for a deep clean. Somebody had to say it.",
+      "weight": 2,
+      "effects": {
+       "money": 90,
+       "karma": 3,
+       "health": -4
+      }
+     },
+     {
+      "text": "I complained and it turned out to have been the thing I cooked at home the night before.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "health": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 4
+ },
+ {
+  "id": "adult.adopt_stray",
+  "icon": "🐈",
+  "title": "A stray",
+  "text": [
+   "A stray cat has been sleeping on your doorstep.",
+   "A scruffy dog followed you home."
+  ],
+  "conditions": {
+   "age": [
+    10,
+    90
+   ],
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Take it in",
+    "outcomes": [
+     {
+      "text": "{pet.first} is family now.",
+      "weight": 2,
+      "relation_change": {
+       "pet": "pet"
+      },
+      "keep_role": "pet",
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "{pet.first} came in, destroyed a sofa, and cost more in the first year than I earn in a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -1400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it to a shelter",
+    "outcomes": [
+     {
+      "text": "The shelter found it a great home.",
+      "weight": 2,
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "I took it to the shelter and thought about it every day for a month, and then went back for it.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 5,
+       "money": -200
+      }
+     }
+    ]
+   },
+   {
+    "label": "Shoo it away",
+    "outcomes": [
+     {
+      "text": "It came back the next day. And the next.",
+      "weight": 2,
+      "effects": {
+       "karma": -2
+      }
+     },
+     {
+      "text": "I shooed it away and it did not come back, and the not coming back was worse than the coming back.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "pet": {
+    "new": "pet",
+    "species": "cat",
+    "age": [
+     1,
+     5
+    ],
+    "closeness": 60
+   }
+  },
+  "discard_unkept": true,
+  "cooldown": 8
+ },
+ {
+  "id": "adult.marathon",
+  "icon": "🏃",
+  "title": "The marathon",
+  "text": "{f.first} signed you both up for a marathon. Without asking.",
+  "conditions": {
+   "age": [
+    20,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Train for it",
+    "outcomes": [
+     {
+      "text": "I finished! Four hours and twelve minutes, and I cried at the finish line.",
+      "weight": 1,
+      "effects": {
+       "health": 8,
+       "happiness": 10
+      },
+      "relationship": {
+       "f": 10
+      },
+      "milestone": "ran a marathon"
+     },
+     {
+      "text": "I made it to mile 18 before my knees gave out.",
+      "weight": 1,
+      "effects": {
+       "health": 3
+      },
+      "scar": "bad_knee"
+     }
+    ]
+   },
+   {
+    "label": "Back out",
+    "outcomes": [
+     {
+      "text": "{f.first} ran it alone and hasn't let me forget it.",
+      "weight": 2,
+      "relationship": {
+       "f": -5
+      }
+     },
+     {
+      "text": "I backed out, and {f.first} backed out too, and we went for breakfast instead and called it a draw.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do it without training",
+    "outcomes": [
+     {
+      "text": "I finished it on nothing but spite, in a time that embarrassed nobody but me.",
+      "weight": 2,
+      "effects": {
+       "health": -6,
+       "happiness": 9,
+       "stress": 5
+      }
+     },
+     {
+      "text": "I stopped at eighteen miles and got in the van, and {f.first} has been very kind about it ever since, which is worse.",
+      "weight": 1,
+      "effects": {
+       "health": -8,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "adult.inheritance_small",
+  "icon": "📦",
+  "title": "A box in the attic",
+  "text": "You're clearing out an old attic and find a box of someone's things.",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Look through it",
+    "outcomes": [
+     {
+      "text": "Old letters, a war medal and a photo of someone who looks exactly like me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "Rare baseball cards. They're worth $4,000!",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "happiness": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw it out",
+    "outcomes": [
+     {
+      "text": "Space is space.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I threw it out and found out later what it had been, and what it would have been worth to somebody.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Track down who it belonged to",
+    "outcomes": [
+     {
+      "text": "It took months, and I found a daughter who had not known the box existed. She cried on the phone.",
+      "weight": 2,
+      "effects": {
+       "karma": 8,
+       "happiness": 9
+      }
+     },
+     {
+      "text": "I traced it to a family who did not want it and were slightly annoyed to be contacted.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 10
+ },
+ {
+  "id": "adult.parking_ticket",
+  "icon": "🅿️",
+  "title": "Parking ticket",
+  "text": [
+   "There's a ticket on your windshield.",
+   "You parked for five minutes. The ticket says otherwise."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "has_car": true
+  },
+  "choices": [
+   {
+    "label": "Pay it",
+    "outcomes": [
+     {
+      "text": "$80. The price of convenience.",
+      "weight": 2,
+      "effects": {
+       "money": -80
+      }
+     },
+     {
+      "text": "I paid it, and then found the sign had been obscured the whole time. The appeal took longer than the money was worth.",
+      "weight": 1,
+      "effects": {
+       "money": -80,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fight it in court",
+    "outcomes": [
+     {
+      "text": "The judge threw it out! Justice.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The judge doubled it.",
+      "weight": 1,
+      "effects": {
+       "money": -160,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It became $400. Then a boot on my car.",
+      "weight": 2,
+      "effects": {
+       "money": -400,
+       "stress": 6
+      }
+     },
+     {
+      "text": "I ignored it, and it turned out to have been issued to the wrong plate. It quietly went away.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "adult.surprise_party",
+  "icon": "🎉",
+  "title": "Surprise!",
+  "text": "Your friends threw you a surprise party.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "chance": 0.5
+  },
+  "choices": [
+   {
+    "label": "Act surprised",
+    "outcomes": [
+     {
+      "text": "I actually was surprised. And touched.",
+      "weight": 2,
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "I acted surprised badly enough that three people asked afterwards whether I had known.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Admit you knew",
+    "outcomes": [
+     {
+      "text": "{f.first} let it slip weeks ago. We all laughed.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8
+      },
+      "relationship": {
+       "f": 4
+      }
+     },
+     {
+      "text": "I admitted I knew and it landed flat. {f.first} had worked on it for a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cry",
+    "outcomes": [
+     {
+      "text": "I cried in front of everybody and it turned out to be the thing they all remember about that night.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I cried, could not stop, and had to sit in the kitchen for twenty minutes while the party waited.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 6
+ },
+ {
+  "id": "adult.book_club",
+  "icon": "📚",
+  "title": "Book club",
+  "text": "{f.first} invited you to a book club.",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Read the book",
+    "outcomes": [
+     {
+      "text": "I was the only one who read it. The wine was good.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "happiness": 3
+      },
+      "relationship": {
+       "f": 5
+      }
+     },
+     {
+      "text": "I read the book, had genuine thoughts about it, and nobody wanted to discuss it for more than four minutes.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend you read it",
+    "outcomes": [
+     {
+      "text": "I bluffed my way through. Nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "Someone asked about the ending. I panicked.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Read a different book and talk about that",
+    "outcomes": [
+     {
+      "text": "I read something else entirely and made a case for it, and the club changed its next pick.",
+      "weight": 2,
+      "effects": {
+       "smarts": 3,
+       "happiness": 5,
+       "popularity": 2
+      }
+     },
+     {
+      "text": "Nobody wanted to hear about a book they had not read, and I spent the evening fairly quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "fam.parent_call",
+  "icon": "📞",
+  "title": "Mom's calling",
+  "text": [
+   "{m.first} is calling for the third time this week.",
+   "{m.first} wants to video chat. She's figured out the camera."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pick up and chat",
+    "outcomes": [
+     {
+      "text": "An hour about her neighbor's hip surgery. I love her.",
+      "weight": 2,
+      "relationship": {
+       "m": 8
+      },
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I picked up, and she told me something about her health that she had been sitting on for weeks.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Text back later",
+    "outcomes": [
+     {
+      "text": "\"Busy, call you later.\" I didn't.",
+      "weight": 2,
+      "relationship": {
+       "m": -4
+      }
+     },
+     {
+      "text": "I texted back later, and later became a fortnight, and she called my sibling instead to ask if I was alright.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call her back and actually visit",
+    "outcomes": [
+     {
+      "text": "I drove over that weekend. She had made too much food, the way she always does when she has been worried.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "stress": -4
+      }
+     },
+     {
+      "text": "I went, and we ran out of things to say after about forty minutes, and both pretended not to notice.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "m": {
+    "relation": "mother"
+   }
+  },
+  "cooldown": 2
+ },
+ {
+  "id": "fam.dad_advice",
+  "icon": "🔧",
+  "title": "Dad's advice",
+  "text": "{d.first} wants to teach you how to {task}.",
+  "conditions": {
+   "age": [
+    12,
+    40
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let him teach you",
+    "outcomes": [
+     {
+      "text": "It took three hours and one argument, but I learned it. He was proud.",
+      "weight": 2,
+      "relationship": {
+       "d": 10
+      },
+      "effects": {
+       "smarts": 2
+      }
+     },
+     {
+      "text": "He tried to teach me, got frustrated, and finished it himself while I stood there holding the torch.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look it up online instead",
+    "outcomes": [
+     {
+      "text": "He was a little hurt.",
+      "weight": 2,
+      "relationship": {
+       "d": -4
+      }
+     },
+     {
+      "text": "I looked it up, did it in twenty minutes, and he asked me to show him how.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask him to teach your kid instead",
+    "outcomes": [
+     {
+      "text": "He taught them, badly and slowly and with enormous patience, and they have not forgotten a minute of it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 9,
+       "karma": 3
+      }
+     },
+     {
+      "text": "He got frustrated with them the same way he used to with me, and I had to step in.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "d": {
+    "relation": "father"
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "fam.sibling_secret",
+  "icon": "🤫",
+  "title": "A sibling's secret",
+  "text": [
+   "{s.first} tells you a secret and makes you swear not to tell.",
+   "You overheard {s.first} on the phone. It was a big secret."
+  ],
+  "conditions": {
+   "age": [
+    10,
+    60
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep it",
+    "outcomes": [
+     {
+      "text": "I took it to the grave. Well, not yet.",
+      "weight": 2,
+      "relationship": {
+       "s": 10
+      },
+      "effects": {
+       "karma": 2
+      }
+     },
+     {
+      "text": "I kept it, and it came out anyway from somewhere else, and {s.first} assumed it was me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell your parents",
+    "outcomes": [
+     {
+      "text": "{s.first} found out it was me. We didn't speak for months.",
+      "weight": 2,
+      "relationship": {
+       "s": -25
+      }
+     },
+     {
+      "text": "I told our parents, and it turned out to be the reason {s.first} finally got help.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it as leverage",
+    "outcomes": [
+     {
+      "text": "{s.first} did my chores for a year.",
+      "weight": 2,
+      "relationship": {
+       "s": -10
+      },
+      "effects": {
+       "karma": -4
+      }
+     },
+     {
+      "text": "I used it as leverage once and {s.first} called the bluff immediately, loudly, at a family dinner.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "s": {
+    "relation": "sibling"
+   }
+  },
+  "cooldown": 5
+ },
+ {
+  "id": "fam.sibling_rivalry",
+  "icon": "🏆",
+  "title": "The favorite child",
+  "text": [
+   "Your parents keep comparing you to {s.first}.",
+   "{s.first} got another award. The family can't stop talking about it."
+  ],
+  "conditions": {
+   "age": [
+    8,
+    40
+   ]
+  },
+  "choices": [
+   {
+    "label": "Compete harder",
+    "outcomes": [
+     {
+      "text": "I doubled down on everything. We're both exhausted.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "stress": 6
+      },
+      "relationship": {
+       "s": -6
+      }
+     },
+     {
+      "text": "I doubled down, won whatever it was we were competing over, and found it meant nothing at all.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Congratulate them",
+    "outcomes": [
+     {
+      "text": "{s.first} hugged me. We're good.",
+      "weight": 2,
+      "relationship": {
+       "s": 10
+      }
+     },
+     {
+      "text": "I congratulated them and meant it, and it was the first honest conversation we had had in years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Talk to your parents",
+    "outcomes": [
+     {
+      "text": "They didn't realize. They apologized.",
+      "weight": 2,
+      "relationship": {
+       "p": 6
+      }
+     },
+     {
+      "text": "I talked to our parents and they took {s.first}'s side without hesitating, which answered a question I had never asked.",
+      "weight": 1,
+      "effects": {
+       "happiness": -7,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "s": {
+    "relation": "sibling"
+   },
+   "p": {
+    "relation_any": [
+     "mother",
+     "father"
+    ]
+   }
+  },
+  "cooldown": 5
+ },
+ {
+  "id": "fam.kid_drawing",
+  "icon": "🖍️",
+  "title": "A gift from your kid",
+  "text": [
+   "{k.first} made you a drawing. You think it's you. You have seven legs.",
+   "{k.first} made you breakfast in bed. It's mostly cereal and chaos."
+  ],
+  "conditions": {
+   "age": [
+    22,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Treasure it",
+    "outcomes": [
+     {
+      "text": "It's on the fridge. It'll stay there forever.",
+      "weight": 2,
+      "relationship": {
+       "k": 12
+      },
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "It went on the fridge, and fell down behind it, and I found it eleven years later while moving.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask what it is",
+    "outcomes": [
+     {
+      "text": "\"It's you, Mom. Obviously.\" Of course.",
+      "weight": 2,
+      "relationship": {
+       "k": 6
+      },
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I asked what it was and got it wrong twice before understanding, and {k.first} was patient with me about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Draw one back",
+    "outcomes": [
+     {
+      "text": "I drew them back, just as badly, and it started something we kept doing for years.",
+      "weight": 2,
+      "effects": {
+       "happiness": 9
+      }
+     },
+     {
+      "text": "Mine was apparently not good enough and I received detailed notes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "k": {
+    "relation": "child",
+    "max_age": 10
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "fam.kid_trouble",
+  "icon": "🏫",
+  "title": "A call from school",
+  "text": [
+   "{k.first}'s school called. There's been an incident.",
+   "The principal wants to see you about {k.first}."
+  ],
+  "conditions": {
+   "age": [
+    25,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take {k.first}'s side",
+    "outcomes": [
+     {
+      "text": "It turned out {k.first} was defending a friend. I was proud.",
+      "weight": 1,
+      "relationship": {
+       "k": 12
+      }
+     },
+     {
+      "text": "It turned out {k.first} really did it. Awkward.",
+      "weight": 1,
+      "relationship": {
+       "k": 4
+      },
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Punish them",
+    "outcomes": [
+     {
+      "text": "Grounded. {k.first} is furious, but it won't happen again.",
+      "weight": 2,
+      "relationship": {
+       "k": -8
+      }
+     },
+     {
+      "text": "I grounded them, and it turned out they had been covering for somebody else the whole time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Have a real talk",
+    "outcomes": [
+     {
+      "text": "{k.first} opened up about what's been going on. I'm glad I listened.",
+      "weight": 2,
+      "relationship": {
+       "k": 10
+      },
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "I sat down for a real talk and got nothing at all. Sometimes that is the whole conversation.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "k": {
+    "relation": "child",
+    "min_age": 6,
+    "max_age": 17
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "fam.kid_first_steps",
+  "icon": "👣",
+  "title": "First steps",
+  "text": "{k.first} is holding onto the coffee table and wobbling.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Grab your phone",
+    "outcomes": [
+     {
+      "text": "I filmed {k.first}'s first steps. I've watched it a hundred times.",
+      "weight": 2,
+      "relationship": {
+       "k": 10
+      },
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "I grabbed the phone and missed it entirely, and spent the evening being told about it by everyone who saw.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put the phone down and catch them",
+    "outcomes": [
+     {
+      "text": "I put the phone down and caught them, and nobody has a video of it, and I can still see it perfectly.",
+      "weight": 2,
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "I put the phone down and they sat straight back down and did not try again for a fortnight.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call everyone in to watch",
+    "outcomes": [
+     {
+      "text": "I shouted for the whole house and they did it again, twice, to an audience. They have always liked an audience.",
+      "weight": 2,
+      "effects": {
+       "happiness": 11
+      }
+     },
+     {
+      "text": "Everyone came running, and the attention was too much, and they sat down and would not try again all evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "k": {
+    "relation": "child",
+    "max_age": 1
+   }
+  },
+  "cooldown": 1
+ },
+ {
+  "id": "fam.kid_teen_mood",
+  "icon": "🚪",
+  "title": "The door slam",
+  "text": [
+   "{k.first} slammed their door and yelled \"You don't understand!\"",
+   "{k.first} hasn't said more than three words to you all month."
+  ],
+  "conditions": {
+   "age": [
+    28,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Knock and wait",
+    "outcomes": [
+     {
+      "text": "Twenty minutes later, {k.first} opened the door and talked for an hour.",
+      "weight": 2,
+      "relationship": {
+       "k": 12
+      }
+     },
+     {
+      "text": "I knocked and waited, and waited, and eventually went to bed without the door opening.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give them space",
+    "outcomes": [
+     {
+      "text": "They came around eventually.",
+      "weight": 2,
+      "relationship": {
+       "k": 3
+      }
+     },
+     {
+      "text": "I gave them space, and space turned into three weeks, and then I had to go in anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take away their phone",
+    "outcomes": [
+     {
+      "text": "Now they really hate me. But they did their homework.",
+      "weight": 2,
+      "relationship": {
+       "k": -10
+      }
+     },
+     {
+      "text": "I took the phone, and the silence in the house afterwards lasted considerably longer than the punishment.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "k": {
+    "relation": "child",
+    "min_age": 13,
+    "max_age": 17
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "fam.grandkid_visit",
+  "icon": "👵",
+  "title": "The grandkids are coming",
+  "text": [
+   "{g.first} is coming to stay for a week.",
+   "Your grandchild {g.first} wants to spend the summer with you."
+  ],
+  "conditions": {
+   "age": [
+    45,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Spoil them rotten",
+    "outcomes": [
+     {
+      "text": "Ice cream for breakfast. Don't tell their parents.",
+      "weight": 2,
+      "relationship": {
+       "g": 15
+      },
+      "effects": {
+       "happiness": 10,
+       "money": -200
+      }
+     },
+     {
+      "text": "I spoiled them rotten and their parents had a quiet word with me about it afterwards.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -200,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Teach them something",
+    "outcomes": [
+     {
+      "text": "I taught {g.first} to fish. They caught a boot.",
+      "weight": 2,
+      "relationship": {
+       "g": 12
+      },
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I tried to teach {g.first} to fish and they were bored within nine minutes, so we got chips instead and that was better.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say you're too tired",
+    "outcomes": [
+     {
+      "text": "Maybe next year.",
+      "weight": 2,
+      "relationship": {
+       "g": -6
+      }
+     },
+     {
+      "text": "I said I was too tired, and I was, and I thought about it for the rest of the week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "g": {
+    "relation": "grandchild"
+   }
+  },
+  "cooldown": 2
+ },
+ {
+  "id": "fam.anniversary_forgot",
+  "icon": "🗓️",
+  "title": "What's today?",
+  "text": "Your partner is giving you a look. You're pretty sure today is important.",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Pretend you remembered",
+    "outcomes": [
+     {
+      "text": "I stalled for time and ordered flowers from the bathroom. Nailed it.",
+      "weight": 1,
+      "relationship": {
+       "p": 4
+      }
+     },
+     {
+      "text": "\"What did you get me?\" \"...It's a surprise.\" It was not.",
+      "weight": 1,
+      "relationship": {
+       "p": -12
+      }
+     }
+    ]
+   },
+   {
+    "label": "Admit you forgot",
+    "outcomes": [
+     {
+      "text": "They were hurt, but they appreciated the honesty. I owe them a big dinner.",
+      "weight": 2,
+      "relationship": {
+       "p": -5
+      }
+     },
+     {
+      "text": "I admitted I forgot, and it turned out they had forgotten too, and we went out that night anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Improvise something enormous",
+    "outcomes": [
+     {
+      "text": "I put together something ridiculous in four hours and it worked far better than anything planned would have.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "money": -200
+      }
+     },
+     {
+      "text": "I improvised, and the seams showed, and we both knew, and neither of us said it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "money": -200
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation": "partner"
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "fam.partner_job",
+  "icon": "💼",
+  "title": "Your partner's big chance",
+  "text": "{p.first} got a dream job offer in another city.",
+  "conditions": {
+   "age": [
+    22,
+    70
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Move together",
+    "outcomes": [
+     {
+      "text": "We packed up and moved. It was hard. It was worth it.",
+      "weight": 1,
+      "relationship": {
+       "p": 18
+      },
+      "effects": {
+       "stress": 8
+      }
+     },
+     {
+      "text": "We moved. I miss home more than I expected.",
+      "weight": 1,
+      "relationship": {
+       "p": 10
+      },
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try long distance",
+    "outcomes": [
+     {
+      "text": "We made it work with a lot of video calls.",
+      "weight": 1,
+      "relationship": {
+       "p": 4
+      }
+     },
+     {
+      "text": "Long distance didn't work.",
+      "weight": 1,
+      "relationship": {
+       "p": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to stay",
+    "outcomes": [
+     {
+      "text": "{p.first} stayed. I'm not sure they've forgiven me.",
+      "weight": 2,
+      "relationship": {
+       "p": -10
+      }
+     },
+     {
+      "text": "I asked {p.first} to stay and they went anyway, and were right to.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation": "partner"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "fam.partner_snore",
+  "icon": "😴",
+  "title": "The snoring",
+  "text": "{p.first}'s snoring has reached jet-engine levels.",
+  "conditions": {
+   "age": [
+    25,
+    95
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Buy earplugs",
+    "outcomes": [
+     {
+      "text": "Peace at last.",
+      "weight": 2,
+      "effects": {
+       "stress": -3
+      }
+     },
+     {
+      "text": "The earplugs worked so well I slept through the smoke alarm, which started a different conversation entirely.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Record it and play it back",
+    "outcomes": [
+     {
+      "text": "{p.first} didn't believe me until I played it. They got it checked out.",
+      "weight": 1,
+      "relationship": {
+       "p": 2
+      }
+     },
+     {
+      "text": "{p.first} did not find it funny.",
+      "weight": 1,
+      "relationship": {
+       "p": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sleep on the couch",
+    "outcomes": [
+     {
+      "text": "The couch is my home now.",
+      "weight": 2,
+      "effects": {
+       "health": -1
+      }
+     },
+     {
+      "text": "I slept on the couch for a week, and {p.first} quietly booked a sleep clinic appointment without telling me.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation": "partner"
+   }
+  },
+  "cooldown": 5
+ },
+ {
+  "id": "fam.in_laws",
+  "icon": "🍗",
+  "title": "Meeting the in-laws",
+  "text": "{p.first}'s family wants you over for dinner.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Bring a nice gift",
+    "outcomes": [
+     {
+      "text": "They loved me. {p.first}'s mom sent me home with leftovers.",
+      "weight": 2,
+      "relationship": {
+       "p": 8
+      },
+      "effects": {
+       "money": -60
+      }
+     },
+     {
+      "text": "I brought a nice gift and it was the wrong thing entirely, in a way nobody would explain to me.",
+      "weight": 1,
+      "effects": {
+       "money": -60,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be yourself",
+    "outcomes": [
+     {
+      "text": "{p.first}'s dad and I bonded over fishing.",
+      "weight": 1,
+      "relationship": {
+       "p": 6
+      }
+     },
+     {
+      "text": "I told the wrong joke to the wrong uncle.",
+      "weight": 1,
+      "relationship": {
+       "p": -6
+      },
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make an excuse",
+    "outcomes": [
+     {
+      "text": "{p.first} was hurt.",
+      "weight": 2,
+      "relationship": {
+       "p": -10
+      }
+     },
+     {
+      "text": "I made an excuse, and so did {p.first}, and we spent the day together instead and felt slightly guilty and very happy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "p": {
+    "relation": "partner"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "fam.friend_breakup",
+  "icon": "💔",
+  "title": "A friend in need",
+  "text": "{f.first} just got dumped and is at your door, crying.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ice cream and a movie",
+    "outcomes": [
+     {
+      "text": "We ate a whole tub and watched sad movies. {f.first} feels better.",
+      "weight": 2,
+      "relationship": {
+       "f": 15
+      },
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "We ate a whole tub and {f.first} spent the evening defending them, which was harder to sit through than crying.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take them out",
+    "outcomes": [
+     {
+      "text": "We went out dancing. {f.first} forgot all about it for a night.",
+      "weight": 2,
+      "relationship": {
+       "f": 12
+      },
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "We went out, ran into the ex within an hour, and the night ended early and badly.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "I'm busy",
+    "outcomes": [
+     {
+      "text": "{f.first} won't forget that.",
+      "weight": 2,
+      "relationship": {
+       "f": -15
+      }
+     },
+     {
+      "text": "I said I was busy, and {f.first} said of course, no problem, and did not ask me for anything again for years.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 3
+ },
+ {
+  "id": "fam.pet_sick",
+  "icon": "🩺",
+  "title": "A sick pet",
+  "text": "{pet.first} isn't eating and hasn't left the bed all day.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Rush to the vet",
+    "outcomes": [
+     {
+      "text": "It was something they ate. {pet.first} is fine now. $400.",
+      "weight": 2,
+      "effects": {
+       "money": -400,
+       "happiness": 3
+      },
+      "relationship": {
+       "pet": 10
+      }
+     },
+     {
+      "text": "The vet caught something early. Surgery, then a full recovery.",
+      "weight": 1,
+      "effects": {
+       "money": -2500
+      },
+      "relationship": {
+       "pet": 15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait and see",
+    "outcomes": [
+     {
+      "text": "{pet.first} bounced back the next day.",
+      "weight": 1,
+      "effects": {}
+     },
+     {
+      "text": "It got worse.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "money": -800
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sit with them all night",
+    "outcomes": [
+     {
+      "text": "I sat on the floor with them until four in the morning, and by breakfast they were eating again.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "stress": 6
+      }
+     },
+     {
+      "text": "I sat with them all night and we went to the vet at dawn, and it was already too late to be simple.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "happiness": -8,
+       "stress": 10
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "pet": {
+    "relation": "pet"
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "fam.pet_trick",
+  "icon": "🐶",
+  "title": "A new trick",
+  "text": "{pet.first} has learned to open the fridge.",
+  "conditions": {
+   "age": [
+    6,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Film it",
+    "outcomes": [
+     {
+      "text": "{pet.first} went viral. 400,000 views.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "fame": 1
+      }
+     },
+     {
+      "text": "I filmed it forty times and {pet.first} never did it again, not once, not ever.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Childproof the fridge",
+    "outcomes": [
+     {
+      "text": "{pet.first} figured out the lock too.",
+      "weight": 2,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I childproofed the fridge and {pet.first} moved on to the bin, which was considerably worse.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them have it",
+    "outcomes": [
+     {
+      "text": "I gave up, moved the good food up a shelf, and accepted that we share the kitchen now.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "stress": -3
+      }
+     },
+     {
+      "text": "Letting them have it cost me an entire joint of meat and a conversation with a vet about portions.",
+      "weight": 1,
+      "effects": {
+       "money": -180,
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "pet": {
+    "relation": "pet"
+   }
+  },
+  "cooldown": 6
+ },
+ {
+  "id": "elder.tech.b",
+  "icon": "📱",
+  "title": "New phone, who dis",
+  "text": "Your grandkids set up your new smartphone. You have 47 notifications.",
+  "conditions": {
+   "age": [
+    60,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Learn it properly",
+    "outcomes": [
+     {
+      "text": "I can video call now. I call everyone. All the time.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I learned it properly, and then they changed the whole thing in an update and I had to learn it again.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it as a paperweight",
+    "outcomes": [
+     {
+      "text": "It's a very expensive paperweight.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "It sat unused for a year until a grandchild set it all up for me in about four minutes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join social media",
+    "outcomes": [
+     {
+      "text": "I post photos of my lunch. My grandkids are mortified.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I joined social media and found three people I had not spoken to since school. Two were worth finding.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 6
+ },
+ {
+  "id": "elder.bingo",
+  "icon": "🎱",
+  "title": "Bingo night",
+  "text": "It's bingo night at the community center.",
+  "conditions": {
+   "age": [
+    60,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Play to win",
+    "outcomes": [
+     {
+      "text": "BINGO! $50 and a lot of jealous looks.",
+      "weight": 1,
+      "effects": {
+       "money": 50,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "Margaret won again. She cheats. I can't prove it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just socialize",
+    "outcomes": [
+     {
+      "text": "I made a new friend: a retired pilot named Harold.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I went to socialise and spent the evening being talked at by somebody with very firm views about parking.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run the numbers yourself",
+    "outcomes": [
+     {
+      "text": "I volunteered to call the numbers and discovered a talent for it. I have done it every week since.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "popularity": 4
+      }
+     },
+     {
+      "text": "I called the numbers, got two wrong, and was quietly not asked again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 2
+ },
+ {
+  "id": "elder.memoir",
+  "icon": "✍️",
+  "title": "Write it down",
+  "text": "Your family keeps asking you to write down your life story.",
+  "conditions": {
+   "age": [
+    65,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Write it",
+    "outcomes": [
+     {
+      "text": "It took a year. My family cried reading it.",
+      "weight": 2,
+      "effects": {
+       "happiness": 8,
+       "smarts": 2
+      },
+      "counter": {
+       "memoirs": 1
+      }
+     },
+     {
+      "text": "I wrote it, and stopped two-thirds through at a part I could not put into words, and never finished it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -2,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them in person",
+    "outcomes": [
+     {
+      "text": "I told stories at dinner every Sunday. They recorded them.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I told the stories at dinner and was gently corrected on three of them by someone who was there.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Record it instead",
+    "outcomes": [
+     {
+      "text": "I talked into a recorder for eleven hours over a year. They had it transcribed. It is better than writing would have been.",
+      "weight": 2,
+      "effects": {
+       "happiness": 9,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I recorded hours of it and never listened back, and I am not sure anyone else has either.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "once": true
+ },
+ {
+  "id": "elder.garden",
+  "icon": "🍅",
+  "title": "Prize tomatoes",
+  "text": "The county fair has a tomato contest. Your tomatoes are enormous.",
+  "conditions": {
+   "age": [
+    55,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Enter",
+    "outcomes": [
+     {
+      "text": "Blue ribbon! My tomato was the size of a bowling ball.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "Second to a man who I'm sure uses chemicals.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make sauce",
+    "outcomes": [
+     {
+      "text": "I made a hundred jars of sauce. The whole street is fed.",
+      "weight": 2,
+      "effects": {
+       "happiness": 5,
+       "karma": 3
+      }
+     },
+     {
+      "text": "I made a hundred jars and gave them all away, and spent the winter with no sauce and no regrets.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give them all away",
+    "outcomes": [
+     {
+      "text": "I left boxes on doorsteps down the whole street, unlabelled. Somebody worked out it was me by August.",
+      "weight": 2,
+      "effects": {
+       "karma": 6,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I gave them all away and then had to buy tomatoes, which felt like a design flaw in my plan.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "money": -30
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "elder.scam",
+  "icon": "💌",
+  "title": "A charming stranger",
+  "text": "Someone online says they love you and needs $5,000 for a plane ticket to meet you.",
+  "conditions": {
+   "age": [
+    55,
+    100
+   ]
+  },
+  "choices": [
+   {
+    "label": "Send it",
+    "outcomes": [
+     {
+      "text": "They never came. The account disappeared.",
+      "weight": 2,
+      "effects": {
+       "money": -5000,
+       "happiness": -10
+      }
+     },
+     {
+      "text": "I sent it, and my bank flagged it before it cleared and rang me. I got most of it back and none of the dignity.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "happiness": -8,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask your family",
+    "outcomes": [
+     {
+      "text": "My grandkid showed me it was a scam. I'm glad I asked.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I asked my family and they were kind about it, and then talked about me in the kitchen in a way I could hear.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Report them",
+    "outcomes": [
+     {
+      "text": "The police said I'm the fifth person this month.",
+      "weight": 2,
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "I reported them and nothing came of it, and they called again the following month using my first name.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 6
+ },
+ {
+  "id": "elder.fall.b",
+  "icon": "🦯",
+  "title": "A fall",
+  "text": "You slipped on the ice outside your house.",
+  "conditions": {
+   "age": [
+    65,
+    100
+   ],
+   "chance": 0.6
+  },
+  "choices": [
+   {
+    "label": "Get up slowly",
+    "outcomes": [
+     {
+      "text": "Just bruises. I'm buying better boots.",
+      "weight": 2,
+      "effects": {
+       "health": -4
+      }
+     },
+     {
+      "text": "I got up slowly and everything held, and I did not tell anybody, which is its own kind of decision.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call for help",
+    "outcomes": [
+     {
+      "text": "A neighbor helped me up and drove me to the doctor. A cracked wrist.",
+      "weight": 2,
+      "effects": {
+       "health": -8,
+       "money": -500
+      }
+     },
+     {
+      "text": "A neighbour helped me up and it was nothing at all, and now they check on me every Sunday.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay down and take stock first",
+    "outcomes": [
+     {
+      "text": "I lay there a full minute, checked everything properly, and got up once I knew what I was dealing with.",
+      "weight": 2,
+      "effects": {
+       "health": -1,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I stayed down, the cold got into me, and the cold turned out to be the real problem.",
+      "weight": 1,
+      "effects": {
+       "health": -9,
+       "money": -300
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 4
+ },
+ {
+  "id": "place.local_festival",
+  "icon": "🎪",
+  "title": "Festival in {city}",
+  "text": [
+   "{city} is holding its big annual festival this weekend.",
+   "The whole of {city} is out for the summer festival."
+  ],
+  "conditions": {
+   "age": [
+    4,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go all day",
+    "outcomes": [
+     {
+      "text": "Rides, fried food and fireworks. {city} knows how to party.",
+      "weight": 2,
+      "effects": {
+       "happiness": 7,
+       "money": -40
+      }
+     },
+     {
+      "text": "I went for the whole day, and the rain came at two, and we stayed anyway and it became the good one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "money": -40,
+       "health": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Volunteer",
+    "outcomes": [
+     {
+      "text": "I ran the ring toss booth. Kids loved me.",
+      "weight": 2,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I volunteered on the ring toss and was left alone on the stall for six hours with no break.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "stress": 8,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Avoid the crowds",
+    "outcomes": [
+     {
+      "text": "A quiet weekend at home.",
+      "weight": 2,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "I stayed home, and the fireworks were loud enough that I watched them from the step anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "money.side_hustle",
+  "icon": "💡",
+  "title": "Side hustle",
+  "text": [
+   "A friend says you could make good money on the side.",
+   "You've got a skill people would pay for."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Sell crafts online",
+    "outcomes": [
+     {
+      "text": "My shop made $1,200 this year.",
+      "weight": 1,
+      "effects": {
+       "money": 1200,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I sold one item. To my mom.",
+      "weight": 1,
+      "effects": {
+       "money": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive for a ride app",
+    "outcomes": [
+     {
+      "text": "I met a lot of interesting people. Made $3,000.",
+      "weight": 2,
+      "effects": {
+       "money": 3000,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I drove for a ride app and made less than I spent on fuel, insurance and a new clutch.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tutor kids",
+    "outcomes": [
+     {
+      "text": "I made $1,800 and a kid finally understands algebra.",
+      "weight": 2,
+      "effects": {
+       "money": 1800,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I tutored and the kid's parents stopped paying after the third month. I kept teaching for another two.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "karma": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "money.bill_shock",
+  "icon": "🧾",
+  "title": "The bill",
+  "text": [
+   "The electricity bill arrived. It's twice what it should be.",
+   "Your phone bill says you used 40 gigabytes of roaming. You didn't leave town."
+  ],
+  "conditions": {
+   "age": [
+    18,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call and complain",
+    "outcomes": [
+     {
+      "text": "Forty minutes on hold, then they fixed it.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "They wouldn't budge.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just pay it",
+    "outcomes": [
+     {
+      "text": "Fine.",
+      "weight": 2,
+      "effects": {
+       "money": -200
+      }
+     },
+     {
+      "text": "I paid it, and then found the error, and getting it back took nine weeks and four phone calls.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "stress": 7,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Work out where it went",
+    "outcomes": [
+     {
+      "text": "I read the meter myself for a fortnight and found a heater nobody had switched off since winter.",
+      "weight": 2,
+      "effects": {
+       "money": -40,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I read the meter for a fortnight and it was simply correct, which was worse.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 3
+ },
+ {
+  "id": "money.invest_tip",
+  "icon": "📈",
+  "title": "A hot tip",
+  "text": "{f.first} swears a stock is about to go through the roof.",
+  "conditions": {
+   "age": [
+    20,
+    80
+   ],
+   "min_money": 2000
+  },
+  "choices": [
+   {
+    "label": "Put in $2,000",
+    "outcomes": [
+     {
+      "text": "It tripled! $6,000!",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "It dropped 80%.",
+      "weight": 2,
+      "effects": {
+       "money": -1600,
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "I'll never know.",
+      "weight": 2,
+      "effects": {}
+     },
+     {
+      "text": "I passed, and watched it climb for a fortnight, and then watched it collapse entirely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put in what you can lose",
+    "outcomes": [
+     {
+      "text": "I put in a small amount I could stand to lose, and it did well, and I took the profit and stopped.",
+      "weight": 2,
+      "effects": {
+       "money": 900,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "I put in what I could lose, and lost it, and that was exactly the deal I had made with myself.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "smarts": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "roles": {
+   "f": {
+    "relation_any": [
+     "friend",
+     "best_friend"
+    ]
+   }
+  },
+  "cooldown": 4
+ },
+ {
+  "id": "cameo.collab",
+  "icon": "🤳",
+  "title": "A DM from a celebrity",
+  "text": "{celeb_influencer} just sent you a DM about collaborating.",
+  "conditions": {
+   "age": [
+    15,
+    60
+   ],
+   "min_fame": 15
+  },
+  "choices": [
+   {
+    "label": "Say yes",
+    "outcomes": [
+     {
+      "text": "We shot a video together. My followers doubled.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "It was a scam account pretending to be {celeb_influencer}.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask what's actually in it for you",
+    "outcomes": [
+     {
+      "text": "I asked for terms and got them, in writing, and it paid properly.",
+      "weight": 2,
+      "effects": {
+       "money": 4000,
+       "fame": 3,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I asked for terms and they stopped replying within the hour.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I ignored it, and a month later found out it had been genuine, and worth a great deal.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6
+      }
+     },
+     {
+      "text": "I ignored it, and it turned out to be a scam account that took four other people for thousands.",
+      "weight": 2,
+      "effects": {
+       "smarts": 3,
+       "happiness": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 5
+ },
+ {
+  "id": "cameo.chef",
+  "icon": "👨‍🍳",
+  "title": "TV kitchen",
+  "text": "{celeb_chef} is holding open auditions for a cooking show in {city}.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Audition",
+    "outcomes": [
+     {
+      "text": "{celeb_chef} called my risotto \"a crime\" on live TV. I became a meme.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "{celeb_chef} said it was the best dish of the day! I made the final round.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "happiness": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Watch at home",
+    "outcomes": [
+     {
+      "text": "I yelled at the TV the whole time.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I watched at home and fell asleep before the result, and had it spoiled for me at work.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Audition with your grandmother's recipe",
+    "outcomes": [
+     {
+      "text": "I cooked the one dish I have made a thousand times. They asked for the recipe on camera.",
+      "weight": 2,
+      "effects": {
+       "happiness": 10,
+       "fame": 2
+      }
+     },
+     {
+      "text": "I cooked it under lights, with a clock, and it came out nothing like it does at home.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "cooldown": 8
+ },
+ {
+  "id": "cameo.athlete",
+  "icon": "⚽",
+  "title": "Stadium moment",
+  "text": "At a game, {celeb_athlete} kicks the ball into the stands, right at you.",
+  "conditions": {
+   "age": [
+    6,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Catch it",
+    "outcomes": [
+     {
+      "text": "I caught it! {celeb_athlete} signed it after the game.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "It hit me in the face. The jumbotron replayed it four times.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "health": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it to the kid behind you",
+    "outcomes": [
+     {
+      "text": "I turned and handed it to a child who had been screaming for it, and the whole section stood up.",
+      "weight": 2,
+      "effects": {
+       "karma": 8,
+       "happiness": 9,
+       "fame": 1
+      }
+     },
+     {
+      "text": "I handed it back and their parent took it off them immediately to sell. I watched it happen.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sell it",
+    "outcomes": [
+     {
+      "text": "I sold it that week for more than I earn in a fortnight, and have not regretted it once.",
+      "weight": 2,
+      "effects": {
+       "money": 2600,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I sold it, and the buyer turned out to be the child I took it from in the first place.",
+      "weight": 1,
+      "effects": {
+       "money": 900,
+       "karma": -4,
+       "happiness": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "cooldown": 8
+ },
+ {
+  "id": "cameo.author",
+  "icon": "📖",
+  "title": "Book signing",
+  "text": "{celeb_author} is signing books at the local bookstore.",
+  "conditions": {
+   "age": [
+    12,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get a copy signed",
+    "outcomes": [
+     {
+      "text": "{celeb_author} wrote a long message in mine. I'll keep it forever.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "{celeb_author} signed it without looking up, spelled my name wrong, and moved on to the next person.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for writing advice",
+    "outcomes": [
+     {
+      "text": "\"Write every day, even when it's bad.\" I started that night.",
+      "weight": 2,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I asked for advice and they gave me a considered, specific answer about my own work that I have not stopped thinking about.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give them your own manuscript",
+    "outcomes": [
+     {
+      "text": "They took it, and eleven months later an email arrived with three paragraphs of notes and one introduction.",
+      "weight": 1,
+      "effects": {
+       "happiness": 14,
+       "smarts": 3
+      }
+     },
+     {
+      "text": "They took it politely and I watched it go into a bag that was already full of other people's.",
+      "weight": 2,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "cooldown": 8
+ },
+ {
+  "id": "cameo.tech",
+  "icon": "🚀",
+  "title": "The billionaire",
+  "text": "{celeb_tech} is giving a talk in {city} and taking questions.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask a tough question",
+    "outcomes": [
+     {
+      "text": "{celeb_tech} dodged it, but the clip of my question went viral.",
+      "weight": 2,
+      "effects": {
+       "fame": 2,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I asked a tough question and my voice went completely. The clip that went round was of that.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pitch your startup idea",
+    "outcomes": [
+     {
+      "text": "{celeb_tech} laughed and said, \"Email me.\" I did. No reply.",
+      "weight": 2,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "{celeb_tech}'s team actually emailed me back.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing and listen",
+    "outcomes": [
+     {
+      "text": "I said nothing, listened to the whole thing, and left with one idea that changed what I did next.",
+      "weight": 2,
+      "effects": {
+       "smarts": 4,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I said nothing, and afterwards realised everyone who asked something got twenty minutes with them in the lobby.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 2,
+  "cooldown": 8
+ }
+]

@@ -1,0 +1,610 @@
+{
+ "driver": {
+  "needed": 8,
+  "bank": [
+   {
+    "q": "You approach a red octagonal sign. What must you do?",
+    "a": [
+     "Come to a complete stop, then proceed when it is safe",
+     "Slow down and continue if the way looks clear",
+     "Stop only if another vehicle is approaching",
+     "Sound your horn and proceed"
+    ],
+    "correct": 0,
+    "why": "A stop sign requires a full stop every time, whether or not anyone else is there.",
+    "sign": {
+     "shape": "octagon",
+     "fill": "#c0392b",
+     "border": "#ffffff",
+     "text": "STOP",
+     "text_color": "#ffffff"
+    }
+   },
+   {
+    "q": "What does a downward-pointing triangle with a red border mean?",
+    "a": [
+     "Give way to traffic on the road you are joining",
+     "Road closed ahead",
+     "No overtaking",
+     "End of speed limit"
+    ],
+    "correct": 0,
+    "why": "An inverted triangle is Yield / Give Way: slow down, and stop if needed, to let others pass first.",
+    "sign": {
+     "shape": "triangle_down",
+     "fill": "#ffffff",
+     "border": "#c0392b",
+     "text": "",
+     "text_color": "#c0392b"
+    }
+   },
+   {
+    "q": "A solid white circle with a horizontal white bar on red means:",
+    "a": [
+     "No entry for vehicles",
+     "Parking permitted",
+     "One-way street ahead",
+     "Roundabout ahead"
+    ],
+    "correct": 0,
+    "why": "A red disc with a white bar is No Entry. Entering against it means driving into oncoming traffic.",
+    "sign": {
+     "shape": "circle",
+     "fill": "#c0392b",
+     "border": "#ffffff",
+     "text": "—",
+     "text_color": "#ffffff"
+    }
+   },
+   {
+    "q": "You are driving and an emergency vehicle approaches with lights and siren. You should:",
+    "a": [
+     "Pull over to the side where safe and stop until it passes",
+     "Speed up to stay ahead of it",
+     "Brake hard immediately wherever you are",
+     "Continue at the same speed"
+    ],
+    "correct": 0,
+    "why": "Move out of its path safely and stop. Stopping abruptly in a live lane can cause a collision."
+   },
+   {
+    "q": "What is the main purpose of a vehicle's headrest?",
+    "a": [
+     "To reduce neck injury in a rear-end collision",
+     "To make long journeys more comfortable",
+     "To block sun glare",
+     "To hold the seatbelt in place"
+    ],
+    "correct": 0,
+    "why": "Head restraints limit how far the head snaps back in an impact, reducing whiplash."
+   },
+   {
+    "q": "In wet conditions, your stopping distance compared with dry roads is:",
+    "a": [
+     "Roughly doubled",
+     "About the same",
+     "Roughly halved",
+     "Only longer above 100 km/h"
+    ],
+    "correct": 0,
+    "why": "Wet roads roughly double stopping distance, so following gaps must grow to match."
+   },
+   {
+    "q": "What does a flashing amber or yellow traffic light mean?",
+    "a": [
+     "Proceed with caution",
+     "Stop as if at a stop sign",
+     "The light is broken; ignore it",
+     "Prepare to reverse"
+    ],
+    "correct": 0,
+    "why": "Flashing amber means slow down and proceed carefully. A flashing red is the one that means stop."
+   },
+   {
+    "q": "Before changing lanes you should:",
+    "a": [
+     "Check mirrors, signal, then check the blind spot before moving",
+     "Signal and move immediately",
+     "Move first, then signal",
+     "Check only the rear-view mirror"
+    ],
+    "correct": 0,
+    "why": "Mirror, signal, blind spot, then move. Mirrors alone leave a vehicle-sized gap unchecked."
+   },
+   {
+    "q": "When are you permitted to use a mobile phone in your hand while driving?",
+    "a": [
+     "Never while the vehicle is in motion",
+     "At speeds under 30 km/h",
+     "At traffic lights",
+     "When using speakerphone"
+    ],
+    "correct": 0,
+    "why": "Handheld phone use while driving is prohibited in the overwhelming majority of countries."
+   },
+   {
+    "q": "Approaching a roundabout, you generally give way to:",
+    "a": [
+     "Traffic already on the roundabout",
+     "Traffic entering behind you",
+     "Nobody; roundabouts are uncontrolled",
+     "The largest vehicle"
+    ],
+    "correct": 0,
+    "why": "Traffic already circulating has priority. Which side that traffic comes from depends on the country."
+   }
+  ],
+  "note": "Road rules are the most general knowledge here, so the test is the longest."
+ },
+ "motorcycle": {
+  "needed": 6,
+  "bank": [
+   {
+    "q": "What is the most protective item of motorcycle clothing?",
+    "a": [
+     "A correctly fitted, certified helmet",
+     "Reflective gloves",
+     "Leather boots",
+     "A high-visibility vest"
+    ],
+    "correct": 0,
+    "why": "Head injury is the leading cause of motorcycle deaths. A fitted, certified helmet matters most."
+   },
+   {
+    "q": "'Counter-steering' at speed means:",
+    "a": [
+     "Pressing the bar on the side you want to turn toward",
+     "Turning the bars away from the corner and leaning back",
+     "Braking with the rear only",
+     "Shifting down before every turn"
+    ],
+    "correct": 0,
+    "why": "Above walking pace you push the bar on the side you want to go, which leans the bike into the turn."
+   },
+   {
+    "q": "Most of a motorcycle's braking power comes from:",
+    "a": [
+     "The front brake",
+     "The rear brake",
+     "Engine braking",
+     "The clutch"
+    ],
+    "correct": 0,
+    "why": "Weight shifts forward under braking, so the front wheel does the majority of the work."
+   },
+   {
+    "q": "Why should a rider avoid the centre of an older lane?",
+    "a": [
+     "Oil and fluid build up there and reduce grip",
+     "It is illegal to ride there",
+     "It is the fastest-wearing part of the tyre",
+     "Drains are always placed there"
+    ],
+    "correct": 0,
+    "why": "Dropped oil collects along the centre strip, which becomes slick especially in first rain."
+   },
+   {
+    "q": "In a car driver's blind spot, the safest action is to:",
+    "a": [
+     "Change position so you are visible or move clearly past",
+     "Sound the horn continuously",
+     "Sit still and hold your lane",
+     "Move closer to their bumper"
+    ],
+    "correct": 0,
+    "why": "Do not linger where you cannot be seen. Alter your position or pass through decisively."
+   },
+   {
+    "q": "Riding in heavy rain, you should:",
+    "a": [
+     "Increase following distance and brake more gently",
+     "Brake harder to compensate",
+     "Ride in the centre of the lane",
+     "Follow closely to stay out of spray"
+    ],
+    "correct": 0,
+    "why": "Grip is reduced, so lengthen your gap and use smoother inputs."
+   },
+   {
+    "q": "A motorcycle's tyres are most vulnerable when:",
+    "a": [
+     "Cold, at the very start of a ride",
+     "At the end of a long motorway run",
+     "During gentle town riding",
+     "Fully warmed on a dry day"
+    ],
+    "correct": 0,
+    "why": "Cold tyres offer noticeably less grip. The first few kilometres deserve restraint."
+   }
+  ],
+  "note": "Assumes you already hold or understand basic road rules."
+ },
+ "boating": {
+  "needed": 5,
+  "bank": [
+   {
+    "q": "A vessel showing a red light on its left side and a green light on its right is:",
+    "a": [
+     "Being viewed from ahead or from its port side",
+     "Anchored",
+     "Aground",
+     "Under tow"
+    ],
+    "correct": 0,
+    "why": "Port is red, starboard is green. Seeing both means you are looking at its bow."
+   },
+   {
+    "q": "Who is responsible for the wake a boat creates?",
+    "a": [
+     "The operator of the boat that made it",
+     "Nobody; wakes are unavoidable",
+     "The marina",
+     "The larger vessel involved"
+    ],
+    "correct": 0,
+    "why": "Operators are responsible for damage or injury caused by their own wake."
+   },
+   {
+    "q": "The single most important piece of safety equipment on a small boat is:",
+    "a": [
+     "A properly fitted life jacket for every person aboard",
+     "A flare gun",
+     "An anchor",
+     "A marine radio"
+    ],
+    "correct": 0,
+    "why": "Most drowning victims in small-boat incidents were not wearing a life jacket."
+   },
+   {
+    "q": "Before departing, a float plan should be left with someone ashore because:",
+    "a": [
+     "It tells rescuers where to look and when to worry",
+     "It is required to launch",
+     "It reduces mooring fees",
+     "It logs fuel use for tax"
+    ],
+    "correct": 0,
+    "why": "If you do not return, a float plan turns an open-ended search into a targeted one."
+   },
+   {
+    "q": "Two power-driven vessels approaching head-on should:",
+    "a": [
+     "Each alter course to starboard and pass port to port",
+     "Each alter to port",
+     "Hold course and sound one blast",
+     "Stop engines"
+    ],
+    "correct": 0,
+    "why": "Head-on, both turn to starboard and pass left side to left side."
+   },
+   {
+    "q": "Carbon monoxide aboard a boat is most dangerous:",
+    "a": [
+     "Near the stern and swim platform while the engine runs",
+     "Only in enclosed cabins at night",
+     "When refuelling",
+     "At anchor with the engine off"
+    ],
+    "correct": 0,
+    "why": "Exhaust can pool around the stern. Swimmers and passengers there have been poisoned."
+   }
+  ],
+  "note": "Navigation lights, right of way and what to do before you leave the dock."
+ },
+ "firearms": {
+  "needed": 5,
+  "bank": [
+   {
+    "q": "The first rule of firearm safety is:",
+    "a": [
+     "Treat every firearm as if it is loaded",
+     "Unload before storage",
+     "Always use hearing protection",
+     "Only shoot at approved ranges"
+    ],
+    "correct": 0,
+    "why": "Every other rule follows from assuming it is loaded, every time, without exception."
+   },
+   {
+    "q": "Where should the muzzle point at all times?",
+    "a": [
+     "In a safe direction, never at anything you are unwilling to destroy",
+     "At the ground only",
+     "At the target only",
+     "Upward at all times"
+    ],
+    "correct": 0,
+    "why": "Muzzle discipline is what makes an accidental discharge survivable."
+   },
+   {
+    "q": "Your finger belongs:",
+    "a": [
+     "Off the trigger and along the frame until you intend to fire",
+     "On the trigger whenever the firearm is held",
+     "Inside the guard when aiming only",
+     "Wherever is comfortable"
+    ],
+    "correct": 0,
+    "why": "Most negligent discharges come from a finger inside the trigger guard too early."
+   },
+   {
+    "q": "Before firing you must:",
+    "a": [
+     "Identify your target and what lies beyond it",
+     "Check the wind",
+     "Confirm the range is empty",
+     "Chamber two rounds"
+    ],
+    "correct": 0,
+    "why": "Bullets travel past and through targets. You are responsible for where they stop."
+   },
+   {
+    "q": "Firearms and ammunition should generally be stored:",
+    "a": [
+     "Separately, secured, and inaccessible to children",
+     "Loaded and together for quick access",
+     "In a bedside drawer",
+     "Anywhere dry"
+    ],
+    "correct": 0,
+    "why": "Secure, separate storage is the standard almost everywhere, and is what keeps households safe."
+   },
+   {
+    "q": "If a round fails to fire, you should:",
+    "a": [
+     "Keep it pointed safely downrange and wait before handling",
+     "Open the action immediately",
+     "Strike the primer again at once",
+     "Shake the firearm"
+    ],
+    "correct": 0,
+    "why": "A hangfire can go off seconds later. Keep it pointed safely and wait before opening the action."
+   }
+  ],
+  "note": "Safety rules only. Every question here has one defensible answer."
+ },
+ "hunting": {
+  "needed": 5,
+  "bank": [
+   {
+    "q": "The main purpose of hunting seasons and bag limits is:",
+    "a": [
+     "To keep wildlife populations sustainable",
+     "To raise revenue",
+     "To reduce ammunition use",
+     "To spread hunters evenly"
+    ],
+    "correct": 0,
+    "why": "Regulated seasons and limits are a conservation tool, designed to keep populations viable."
+   },
+   {
+    "q": "Wearing blaze orange or fluorescent clothing is required in many places because:",
+    "a": [
+     "Most game animals cannot see it, but other hunters can",
+     "It repels insects",
+     "It is warmer",
+     "It is traditional"
+    ],
+    "correct": 0,
+    "why": "Deer are dichromats and do not register blaze orange the way humans do, so it protects without spooking game."
+   },
+   {
+    "q": "The safest way to cross a fence with a firearm alone is:",
+    "a": [
+     "Unload it, place it through the fence, then cross",
+     "Carry it over your shoulder",
+     "Hand it to a dog",
+     "Keep it loaded but on safe"
+    ],
+    "correct": 0,
+    "why": "Unload first. Crossing obstacles while carrying a loaded firearm is a classic cause of injury."
+   },
+   {
+    "q": "An ethical shot is one that:",
+    "a": [
+     "Is within your range and likely to be quick and clean",
+     "Is at the largest animal visible",
+     "Maximises the distance achieved",
+     "Is taken at any opportunity"
+    ],
+    "correct": 0,
+    "why": "Hunting ethics centre on a quick, certain kill and not wounding an animal you cannot recover."
+   },
+   {
+    "q": "Before hunting on land you do not own, you must:",
+    "a": [
+     "Obtain the landowner's permission",
+     "Notify the police",
+     "Post a public notice",
+     "Nothing, if the land is unfenced"
+    ],
+    "correct": 0,
+    "why": "Hunting without permission is trespass nearly everywhere, fenced or not."
+   },
+   {
+    "q": "Identifying your target before shooting matters most because:",
+    "a": [
+     "Movement or colour alone has caused hunters to shoot people",
+     "It improves accuracy",
+     "It is required for tagging",
+     "It saves ammunition"
+    ],
+    "correct": 0,
+    "why": "Shooting at sound or movement is how hunters kill other hunters. Positive identification is absolute."
+   }
+  ],
+  "note": "Conservation law and safe identification."
+ },
+ "fishing": {
+  "needed": 3,
+  "bank": [
+   {
+    "q": "Catch limits and size limits exist mainly to:",
+    "a": [
+     "Let fish breed before they are taken, keeping stocks alive",
+     "Make fishing harder",
+     "Protect commercial fleets",
+     "Simplify licensing"
+    ],
+    "correct": 0,
+    "why": "Size limits usually allow fish to spawn at least once before they can be legally kept."
+   },
+   {
+    "q": "If you intend to release a fish, you should:",
+    "a": [
+     "Keep it wet, handle it minimally and support its body",
+     "Hold it by the gills",
+     "Keep it out of water to recover",
+     "Squeeze it to remove the hook"
+    ],
+    "correct": 0,
+    "why": "Gills are delicate and easily fatal to damage. Wet hands, minimal air time, support the body."
+   },
+   {
+    "q": "Invasive species spread between waters mainly by:",
+    "a": [
+     "Unwashed boats, gear and live bait moved between lakes",
+     "Wind",
+     "Birds only",
+     "Rainfall"
+    ],
+    "correct": 0,
+    "why": "Cleaning and drying gear between waters is the main defence against transferring invasives."
+   },
+   {
+    "q": "Monofilament line left on a bank is dangerous because:",
+    "a": [
+     "It entangles birds and wildlife and lasts for decades",
+     "It is flammable",
+     "It attracts predators",
+     "It dissolves into toxins quickly"
+    ],
+    "correct": 0,
+    "why": "Discarded line persists for a very long time and routinely entangles wildlife."
+   }
+  ],
+  "note": "Short test. The knowledge is narrow and mostly about not wrecking the water."
+ },
+ "pilot": {
+  "needed": 4,
+  "bank": [
+   {
+    "q": "The four forces acting on an aircraft in flight are:",
+    "a": [
+     "Lift, weight, thrust and drag",
+     "Lift, gravity, torque and yaw",
+     "Thrust, pitch, roll and yaw",
+     "Lift, drag, camber and chord"
+    ],
+    "correct": 0,
+    "why": "Lift opposes weight; thrust opposes drag. Steady flight is those pairs in balance."
+   },
+   {
+    "q": "An aircraft stalls when:",
+    "a": [
+     "The wing exceeds its critical angle of attack",
+     "The engine stops",
+     "Airspeed falls below a fixed number in all conditions",
+     "The propeller ices over"
+    ],
+    "correct": 0,
+    "why": "A stall is about angle of attack, not speed. A wing can stall at any airspeed and any attitude."
+   },
+   {
+    "q": "Before every flight a pilot must:",
+    "a": [
+     "Complete a preflight inspection of the aircraft",
+     "File a flight plan in all cases",
+     "Contact the nearest tower",
+     "Run the engine for ten minutes"
+    ],
+    "correct": 0,
+    "why": "The preflight walkaround is a non-negotiable check of airframe, controls, fuel and oil."
+   },
+   {
+    "q": "'See and avoid' means:",
+    "a": [
+     "Pilots are responsible for visually watching for other traffic",
+     "Radar handles separation entirely",
+     "Only applies at night",
+     "Only applies near airports"
+    ],
+    "correct": 0,
+    "why": "In visual conditions the responsibility to spot and avoid traffic rests with the pilot."
+   },
+   {
+    "q": "Flying into deteriorating weather without an instrument rating is dangerous because:",
+    "a": [
+     "Losing visual reference can cause spatial disorientation within minutes",
+     "The engine cools too fast",
+     "Radios stop working",
+     "Fuel burns faster"
+    ],
+    "correct": 0,
+    "why": "Continued VFR into instrument conditions is one of the most consistently fatal decisions in aviation."
+   }
+  ],
+  "note": "Specialist knowledge, so fewer questions - but you must get them all."
+ },
+ "scuba": {
+  "needed": 4,
+  "bank": [
+   {
+    "q": "The most important rule in scuba diving is:",
+    "a": [
+     "Never hold your breath while ascending",
+     "Always dive with a knife",
+     "Never dive below 20 metres",
+     "Always ascend faster than your bubbles"
+    ],
+    "correct": 0,
+    "why": "Air in the lungs expands on ascent. Holding your breath can rupture lung tissue."
+   },
+   {
+    "q": "Decompression sickness is caused by:",
+    "a": [
+     "Dissolved nitrogen forming bubbles when you ascend too fast",
+     "Breathing too much oxygen",
+     "Cold water on the skin",
+     "Low salinity"
+    ],
+    "correct": 0,
+    "why": "Nitrogen absorbed under pressure must be released slowly, which is why ascent rate is controlled."
+   },
+   {
+    "q": "A safety stop is normally made at:",
+    "a": [
+     "About 5 metres for three minutes",
+     "The surface for one minute",
+     "30 metres for five minutes",
+     "The deepest point of the dive"
+    ],
+    "correct": 0,
+    "why": "A three-minute stop around five metres gives dissolved gas extra time to come out safely."
+   },
+   {
+    "q": "You should always dive:",
+    "a": [
+     "With a buddy and an agreed plan",
+     "Alone to avoid confusion",
+     "After a heavy meal",
+     "Immediately before flying"
+    ],
+    "correct": 0,
+    "why": "The buddy system exists because underwater problems escalate quickly without a second person."
+   },
+   {
+    "q": "Flying too soon after diving is dangerous because:",
+    "a": [
+     "Cabin pressure is lower, which can trigger decompression sickness",
+     "Ears cannot equalise on aircraft",
+     "Oxygen levels are too high",
+     "Humidity damages equipment"
+    ],
+    "correct": 0,
+    "why": "Ascending to altitude repeats the pressure drop. Surface intervals before flying are essential."
+   }
+  ],
+  "note": "Specialist knowledge, so fewer questions - but you must get them all."
+ }
+}

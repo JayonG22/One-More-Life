@@ -1,0 +1,62 @@
+[
+ {
+  "name": "Charmer",
+  "icon": "😏",
+  "desc": "Talks their way into (and out of) anything."
+ },
+ {
+  "name": "Hothead",
+  "icon": "😡",
+  "desc": "Quick to anger. Fights are more likely."
+ },
+ {
+  "name": "Bookworm",
+  "icon": "📚",
+  "desc": "Learns faster. Smarts gains ×1.5."
+ },
+ {
+  "name": "Gambler",
+  "icon": "🎲",
+  "desc": "Luckier at the tables, but can't resist them."
+ },
+ {
+  "name": "Loyal",
+  "icon": "🤝",
+  "desc": "Friends and family stick around."
+ },
+ {
+  "name": "Athletic",
+  "icon": "🏃",
+  "desc": "Health gains ×1.3. Faster getaways."
+ },
+ {
+  "name": "Lazy",
+  "icon": "🛋️",
+  "desc": "Hates effort. School and work suffer."
+ },
+ {
+  "name": "Kind",
+  "icon": "💛",
+  "desc": "Unlocks compassionate choices."
+ },
+ {
+  "name": "Ambitious",
+  "icon": "🚀",
+  "desc": "Climbs the career ladder faster."
+ },
+ {
+  "name": "Anxious",
+  "icon": "😰",
+  "desc": "Stress builds faster."
+ },
+ {
+  "name": "Funny",
+  "icon": "😂",
+  "desc": "Unlocks jokes. People like you more."
+ },
+ {
+  "name": "Rebel",
+  "icon": "🤘",
+  "desc": "Rules are suggestions."
+ }
+]
