@@ -17,7 +17,7 @@ func ok(cond: bool, msg: String) -> void:
 
 func _ready() -> void:
 	seed(1515)
-	for s in ["depth", "phrases", "fixtures", "tenancy", "transit", "keeping", "events", "panels"]:
+	for s in ["depth", "variants", "phrases", "fixtures", "tenancy", "transit", "keeping", "events", "panels"]:
 		sections += 1
 		call("_" + s)
 		completed.append(s)
@@ -61,6 +61,10 @@ func _phrases() -> void:
 	GameState.player["money"] = 900000
 	ok(Phrases.expand("{~poor=counting coins|rich=tipping|paying}") == "tipping", "the rich reading did not win")
 	ok(Phrases.era_word("phone") != "", "no era vocabulary")
+	var nested := Phrases.expand("Met {~outside {fx.shop}|on {fx.street}} today.")
+	ok(nested.find("{fx.") != -1 and nested.find("{~") == -1 and nested.ends_with("today."), "a token nested inside an option broke: %s" % nested)
+	var two := Phrases.expand("{~a|b} and {~c|d}")
+	ok(two.find("{") == -1 and two.find(" and ") != -1, "two alternatives in one line did not both resolve: %s" % two)
 	print("  phrases: 3 readings of one line, stable within a life")
 
 
@@ -295,3 +299,25 @@ func _panels() -> void:
 	ok(ran >= 12, "only %d panel actions ran" % ran)
 	EventEngine.pending.clear()
 	print("  panels: %d actions ran without error" % ran)
+
+
+## Rewritten openings have to resolve to clean text in every life, for every event.
+func _variants() -> void:
+	var checked := 0
+	var leftovers := 0
+	for e in ContentDB.events:
+		var texts: Array = e["text"] if e["text"] is Array else [e["text"]]
+		for t in texts:
+			if str(t).find("{~") == -1:
+				continue
+			for i in range(6):
+				GameState.new_life({"gender": "male" if i % 2 == 0 else "female", "country": "us"})
+				GameState.player["phrase_seed"] = randi()
+				var out := EventEngine.tokens(str(t), {})
+				checked += 1
+				if out.find("{~") != -1 or out.find("|") != -1 or out.find("{fx.") != -1 or out.find("{era.") != -1:
+					leftovers += 1
+					push_error("V15 unresolved text in %s: %s" % [e["id"], out])
+	ok(leftovers == 0, "%d variant readings were left with raw braces" % leftovers)
+	ok(checked >= 200, "only %d variant readings were checked" % checked)
+	print("  variants: %d readings resolved cleanly" % checked)

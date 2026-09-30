@@ -21,7 +21,7 @@ var year_override := 0   # tests set this to read the world as it was in another
 
 
 func _ready() -> void:
-	_re.compile("\\{~([^{}]*)\\}")
+	pass
 
 
 func seed_of_life() -> int:
@@ -78,23 +78,66 @@ func decade() -> int:
 func expand(text: String) -> String:
 	if text.find("{~") == -1:
 		return text
-	var out := text
+	var out := ""
+	var i := 0
+	var n := text.length()
 	var guard := 0
-	for m in _re.search_all(text):
-		var whole := m.get_string(0)
-		out = out.replace(whole, _pick(m.get_string(1), text + whole))
-		guard += 1
-		if guard > 64:
+	while i < n:
+		var start := text.find("{~", i)
+		if start == -1 or guard > 64:
+			out += text.substr(i)
 			break
+		out += text.substr(i, start - i)
+		# walk to the matching close brace, so tokens can nest inside an option
+		var depth := 0
+		var j := start
+		var end := -1
+		while j < n:
+			var ch := text[j]
+			if ch == "{":
+				depth += 1
+			elif ch == "}":
+				depth -= 1
+				if depth == 0:
+					end = j
+					break
+			j += 1
+		if end == -1:
+			out += text.substr(start)
+			break
+		var body := text.substr(start + 2, end - start - 2)
+		out += expand(_pick(body, text + str(start)))
+		guard += 1
+		i = end + 1
 	return out
 
 
+## Split on `|` only at the top level, so an option may contain braces.
+func _split_top(body: String) -> Array:
+	var parts: Array = []
+	var depth := 0
+	var cur := ""
+	for ch in body:
+		if ch == "{":
+			depth += 1
+		elif ch == "}":
+			depth -= 1
+		if ch == "|" and depth == 0:
+			parts.append(cur)
+			cur = ""
+		else:
+			cur += ch
+	parts.append(cur)
+	return parts
+
+
 func _pick(body: String, salt: String) -> String:
-	var opts := body.split("|")
+	var opts := _split_top(body)
 	var matched: Array = []
 	var plain: Array = []
-	for o in opts:
-		var eq := o.find("=")
+	for o0 in opts:
+		var o: String = str(o0)
+		var eq: int = o.find("=")
 		if eq > 0 and eq < 24 and o.substr(0, eq).find(" ") == -1:
 			if holds(o.substr(0, eq)):
 				matched.append(o.substr(eq + 1))
