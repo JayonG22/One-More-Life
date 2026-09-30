@@ -1,0 +1,62 @@
+adult.found_wallet :: Keep the cash :: The owner had posted a flyer on every lamp post on the street. I saw it on the way home and could not unsee it. :: money=300,karma=-10,happiness=-4
+adult.found_wallet :: Keep the cash :: Three hundred dollars covered the brake job I had been putting off. I have decided this counts as the universe's idea. :: money=300,karma=-6,stress=-4
+adult.found_wallet :: Leave it :: I handed it to a shop assistant. A week later a card arrived from the owner, and a twenty. :: karma=5,happiness=3,money=20
+adult.found_wallet :: Leave it :: I walked on, then turned back, then walked on again. I still think about which of those was the real me. :: stress=3,karma=-1
+adult.noisy_neighbor :: Complain to the landlord :: The landlord did nothing for two months, then raised everyone's rent for "noise-related administration." :: money=-60,stress=5,happiness=-3
+adult.noisy_neighbor :: Complain to the landlord :: It turned out {nb.first} was a night-shift nurse practising the only hour they had free. I felt terrible and brought over soup. :: karma=4,happiness=2 :: relationship={"nb":10}
+adult.noisy_neighbor :: Blast your own music :: {nb.first} knocked on my door at midnight, and we ended up arguing about who had the worst taste. We agreed on a schedule. :: happiness=3,stress=-2 :: relationship={"nb":8}
+adult.noisy_neighbor :: Blast your own music :: The police came for both of us. Mine was the louder noise, so mine was the warning. :: karma=-2,stress=8,money=-100 :: relationship={"nb":-25}
+adult.noisy_neighbor :: Buy earplugs :: The earplugs worked until a smoke alarm went off and I slept through it. The building evacuated without me. :: stress=8,happiness=-3,money=-15,health=-2
+adult.noisy_neighbor :: Buy earplugs :: I got used to silence so much that I started to look forward to bed. Best fifteen dollars all year. :: happiness=5,stress=-4,money=-15
+adult.car_trouble :: Pay a mechanic ($800) :: The mechanic found the real problem and charged me double for the next one. The car drives beautifully now. :: money=-1400,stress=4,happiness=2
+adult.car_trouble :: Pay a mechanic ($800) :: It turned out to be a loose hose. The mechanic charged for ten minutes and pocketed the lesson. :: money=-150,happiness=4,karma=2
+adult.car_trouble :: Call a friend for help :: The friend arrived, looked at the engine, and said a word I will not repeat. We called the tow truck together anyway. :: money=-200,happiness=1,stress=2
+adult.car_trouble :: Call a friend for help :: Nobody picked up. I sat in the car for two hours and learned how many people I can actually call. :: happiness=-6,stress=5
+adult.jury_duty :: Serve :: I was dismissed after eight hours of waiting. I read an entire novel and was paid twelve dollars. :: smarts=2,happiness=1,money=12
+adult.jury_duty :: Serve :: The case was a tragedy and the verdict was not easy. I went home and sat in the car for a long time. :: stress=10,karma=4,happiness=-5
+adult.jury_duty :: Ignore the summons :: Nothing happened. Not a letter, not a call. I keep waiting for it. :: stress=3
+adult.jury_duty :: Ignore the summons :: An officer appeared at my door about it. Embarrassing in front of the neighbors. :: money=-200,karma=-3,stress=6,heat=2
+adult.email_scam :: Send the fee :: The fee bought me a second email asking for a larger fee, and I sent that one too before I understood. :: money=-2200,happiness=-8,stress=8
+adult.email_scam :: Send the fee :: My bank caught the transfer and froze it. I got my money back and a stern phone call from a stranger named Gary. :: money=0,stress=4,happiness=-1
+adult.email_scam :: Delete it :: It came back with a different sender name and a better font. I deleted that one too. :: smarts=1,stress=1
+adult.email_scam :: Delete it :: I showed it to my mother so she would not fall for the same thing. She had already replied. :: stress=5,karma=2,happiness=-1
+adult.email_scam :: Scam the scammer :: The scammer wrote back with genuine emotion and I felt strangely responsible for his feelings. :: happiness=1,karma=-1,stress=2
+adult.email_scam :: Scam the scammer :: Mid-conversation I slipped and gave away my real phone number. I now get calls in three languages. :: stress=6,happiness=-4
+adult.food_truck_pitch :: Pass :: Eight months later I drove past a line round the block at their truck. I bought a taco and did not look at anyone. :: happiness=-2,stress=2,money=-12
+adult.food_truck_pitch :: Pass :: The truck folded within the year. {friend.first} lost everything and never blamed me. I am still glad I passed. :: karma=1,happiness=1
+adult.wedding_invite :: Go and bring a gift ($150) :: I sat at the singles table between a man who sold boats and a woman who would not stop crying. It was still a good night. :: money=-150,happiness=3,karma=2
+adult.wedding_invite :: Go and bring a gift ($150) :: I got there to find my ex was also a guest and on the dance floor with a plus-one. :: money=-150,happiness=-5,stress=6
+adult.wedding_invite :: Skip it :: My absence was discussed at length. I was told afterwards that it was noted. :: karma=-2,stress=3
+adult.wedding_invite :: Skip it :: I spent the night on the sofa with a pizza and felt no guilt, which surprised me. :: happiness=4,stress=-3
+adult.wedding_invite :: Object during the ceremony :: Nobody had an objection to my objection and it turned out to be a joke the couple had planned. Everyone laughed. :: happiness=8,karma=1
+adult.wedding_invite :: Object during the ceremony :: The groom's mother has sworn a vendetta that I expect to be lifelong. :: karma=-8,stress=8,happiness=-2
+adult.midlife :: Buy a sports car :: The car spent more time in the garage than on the road, because I was afraid of scratching it. :: happiness=-2,money=-95000,stress=4
+adult.midlife :: Buy a sports car :: A stranger at a petrol station admired it and I felt a flicker of something I had not felt in years. :: happiness=12,money=-95000,looks=1
+adult.midlife :: Learn the guitar :: Six months in I could play exactly one song, which I performed at every gathering until asked to stop. :: happiness=8,smarts=1
+adult.midlife :: Learn the guitar :: My fingers hurt and my teacher is nineteen. I quit after three weeks and the guitar became a very expensive coat hook. :: happiness=-3,money=-180
+adult.midlife :: Get a tattoo :: It healed beautifully, and now I cannot stop looking at it in the mirror. :: happiness=8,looks=1
+adult.midlife :: Get a tattoo :: The artist misspelled a word. I have decided to call it character. :: happiness=-5,looks=-2,money=-200
+adult.midlife :: Talk to a therapist :: The first three sessions were mostly about my mother. I kept going. :: stress=-6,happiness=2,money=-300
+adult.midlife :: Talk to a therapist :: The therapist asked one question I could not answer, and I thought about it for a week. :: stress=4,happiness=-2,smarts=1
+adult.stray_dog :: Adopt the dog :: The dog was not house-trained, not leash-trained, and not remotely sorry. I love it completely. :: happiness=6,stress=5,money=-300
+adult.stray_dog :: Adopt the dog :: The vet found a microchip. The dog had a family who had been looking for it for a month. I handed it back. :: happiness=-4,karma=8
+adult.stray_dog :: Take it to a shelter :: {dog.first} was still there when I visited a week later. I took it home after all. :: happiness=8,karma=3
+adult.stray_dog :: Take it to a shelter :: The shelter was overcrowded, and the staff member would not meet my eye. I have not asked since. :: happiness=-4,karma=1
+adult.stray_dog :: Shoo it away :: The dog followed me for four blocks and I kept pretending not to see it. :: happiness=-3,karma=-2,stress=3
+adult.stray_dog :: Shoo it away :: A neighbor took it in within the hour. Good for them; I felt small. :: karma=-1,happiness=-2
+adult.good_samaritan :: Help carry them :: Halfway up the steps I realised I had the wrong bag. I had been carrying a stranger's shopping up to a stranger's flat. :: happiness=2,karma=2,stress=1
+adult.good_samaritan :: Help carry them :: It took twenty minutes and a lot of stairs, and she told me about her late husband all the way up. I think she needed that more than the bags. :: karma=8,happiness=5
+adult.good_samaritan :: Keep walking :: I heard later that someone else stopped. I felt relief and also that I'd failed a small test. :: karma=-2,happiness=-2
+adult.good_samaritan :: Keep walking :: I was late anyway. Nobody noticed I had hurried. :: stress=2
+adult.stuck_car :: Drive past :: I checked the mirror. Someone behind me had stopped and was pushing the car alone. I kept driving and hated myself for four miles. :: karma=-4,happiness=-4,stress=3
+adult.stuck_car :: Drive past :: I got to work on time and my boss mentioned it in front of everyone. It seemed a fair trade at the time. :: job_perf=2,karma=-2
+adult.cheating_resurfaces :: Own up to it :: My new manager asked me to step down from a mentoring role. It was fair. I accepted. :: karma=5,happiness=-4,job_perf=-5
+adult.cheating_resurfaces :: Own up to it :: An old friend from that class wrote to say they'd been carrying the same secret. We both felt lighter. :: karma=6,happiness=6
+adult.cheating_resurfaces :: Make a joke of it :: The joke didn't land with the people it was meant for. A quiet week followed. :: happiness=-3,stress=5,job_perf=-2
+adult.cheating_resurfaces :: Make a joke of it :: It went viral in a small way. A podcast invited me on. The topic was my shame, but the fee was real. :: happiness=3,fame=2,money=300
+adult.neighbor_bbq :: Bring potato salad :: The potato salad had been left in the sun for an hour. The party became a story everyone tells. :: happiness=-4,health=-4,karma=-1
+adult.neighbor_bbq :: Bring potato salad :: Someone asked for the recipe and I felt a disproportionate rush of pride. :: happiness=7,karma=1
+adult.neighbor_bbq :: Bring nothing :: Nobody said anything, and I noticed everybody noticing. :: happiness=-2,stress=3,karma=-1
+adult.neighbor_bbq :: Bring nothing :: I got talking to a woman at the grill about her garden, and it was the best conversation I'd had in months. :: happiness=6,karma=1
+adult.neighbor_bbq :: Decline :: I heard the laughter through the wall until eleven and felt, for the first time, that I lived next to a community I wasn't part of. :: happiness=-5,stress=2
+adult.neighbor_bbq :: Decline :: A quiet evening with a book. Perfect. Nobody minded. :: happiness=4,stress=-4

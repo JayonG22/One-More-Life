@@ -24,6 +24,30 @@
       "relationship": {
        "par": 20
       }
+     },
+     {
+      "text": "{par.first} refused at first, then cried, then insisted on paying me back in tiny envelopes of cash I never spent.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "karma": 7,
+       "happiness": 3
+      },
+      "relationship": {
+       "par": 22
+      }
+     },
+     {
+      "text": "I emptied my savings. A month later I needed it myself, and could not say why I hadn't asked for help.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "karma": 6,
+       "stress": 8
+      },
+      "relationship": {
+       "par": 15
+      }
      }
     ],
     "requires": {
@@ -43,6 +67,30 @@
       "relationship": {
        "par": 10
       }
+     },
+     {
+      "text": "The other half was still owed, and {par.first} never asked. I paid it six months later and pretended I hadn't noticed.",
+      "weight": 1,
+      "effects": {
+       "money": -5000,
+       "karma": 4,
+       "stress": 3
+      },
+      "relationship": {
+       "par": 14
+      }
+     },
+     {
+      "text": "Half wasn't enough and {par.first} was quietly ashamed. A hospital letter arrived a month after.",
+      "weight": 1,
+      "effects": {
+       "money": -2500,
+       "stress": 6,
+       "karma": 1
+      },
+      "relationship": {
+       "par": 2
+      }
      }
     ],
     "requires": {
@@ -57,6 +105,30 @@
       "weight": 1,
       "relationship": {
        "par": -10
+      }
+     },
+     {
+      "text": "I couldn't sleep that night. I sent $500 anonymously the next week through the hospital.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "stress": 4,
+       "karma": 2
+      },
+      "relationship": {
+       "par": 2
+      }
+     },
+     {
+      "text": "{par.first} sold something precious to cover it. I learned about it from a cousin.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -6,
+       "karma": -2
+      },
+      "relationship": {
+       "par": -18
       }
      }
     ]
@@ -102,6 +174,28 @@
         4
        ]
       }
+     },
+     {
+      "text": "{sib.first} vanished for eight months. Every time I asked I got a promise and a joke.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "stress": 5
+      },
+      "relationship": {
+       "sib": -12
+      }
+     },
+     {
+      "text": "{sib.first} paid me back early, with a card and a bonus. It was the best money I've ever lent.",
+      "weight": 1,
+      "effects": {
+       "money": -1500,
+       "happiness": 4
+      },
+      "relationship": {
+       "sib": 16
+      }
      }
     ],
     "requires": {
@@ -116,6 +210,26 @@
       "weight": 1,
       "relationship": {
        "sib": -10
+      }
+     },
+     {
+      "text": "{sib.first} found the money elsewhere and never mentioned it again, and that silence became a distance.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "relationship": {
+       "sib": -18
+      }
+     },
+     {
+      "text": "{sib.first} turned out not to need it. They laughed and said \"I was testing you.\" I didn't find it funny.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "relationship": {
+       "sib": -4
       }
      }
     ]
@@ -194,6 +308,30 @@
       "relationship": {
        "gp": 12
       }
+     },
+     {
+      "text": "{gp.first} told me a story they had never told anyone, about a person they loved before they met my grandparent.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 2,
+       "karma": 2
+      },
+      "relationship": {
+       "gp": 18
+      }
+     },
+     {
+      "text": "The story went on for three hours. I checked my phone twice and hated myself for it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "smarts": 1,
+       "karma": 1
+      },
+      "relationship": {
+       "gp": 8
+      }
      }
     ]
    },
@@ -205,6 +343,29 @@
       "weight": 1,
       "relationship": {
        "gp": -6
+      }
+     },
+     {
+      "text": "{gp.first} passed away the next winter. I still remember the story I didn't stay for.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "karma": -2,
+       "stress": 4
+      },
+      "relationship": {
+       "gp": -2
+      }
+     },
+     {
+      "text": "{gp.first} said \"another time,\" and another time came, and I listened that time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 2
+      },
+      "relationship": {
+       "gp": 8
       }
      }
     ]
@@ -241,6 +402,29 @@
       "effects": {
        "karma": 2
       }
+     },
+     {
+      "text": "{kid.first} said nothing for an hour. Then everything. It was the worst and best conversation we'd ever had.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": 3,
+       "happiness": 2
+      },
+      "relationship": {
+       "kid": 16
+      }
+     },
+     {
+      "text": "{kid.first} lied to my face about what happened and I knew it. We'll revisit this.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -2
+      },
+      "relationship": {
+       "kid": 2
+      }
      }
     ]
    },
@@ -252,6 +436,29 @@
       "weight": 1,
       "relationship": {
        "kid": -10
+      }
+     },
+     {
+      "text": "{kid.first} sulked for a month and then thanked me years later. Parenting is a long game.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": 1
+      },
+      "relationship": {
+       "kid": -4
+      }
+     },
+     {
+      "text": "The punishment was unfair. I found out three weeks later and apologised. {kid.first} didn't say a word.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4,
+       "karma": 1
+      },
+      "relationship": {
+       "kid": -14
       }
      }
     ]
@@ -267,6 +474,29 @@
       },
       "effects": {
        "karma": -1
+      }
+     },
+     {
+      "text": "The other kid's parent overheard me. I am no longer invited to certain gatherings.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "happiness": 2,
+       "stress": 4
+      },
+      "relationship": {
+       "kid": 4
+      }
+     },
+     {
+      "text": "{kid.first} lost, cried, and told me I was the only one who asked what happened instead of how it made me look.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 3
+      },
+      "relationship": {
+       "kid": 10
       }
      }
     ]
@@ -347,6 +577,29 @@
       "relationship": {
        "sp": 14
       }
+     },
+     {
+      "text": "The restaurant double-booked us. {sp.first} laughed it off and we ate takeaway on the kerb. Best anniversary yet.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "happiness": 8
+      },
+      "relationship": {
+       "sp": 18
+      }
+     },
+     {
+      "text": "{sp.first} had a migraine. The dinner was wasted and so was the evening.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": -3,
+       "stress": 4
+      },
+      "relationship": {
+       "sp": -2
+      }
      }
     ],
     "requires": {
@@ -365,6 +618,28 @@
       "relationship": {
        "sp": 10
       }
+     },
+     {
+      "text": "{sp.first} read it aloud in the car. We drove around the block three times to finish it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 1
+      },
+      "relationship": {
+       "sp": 18
+      }
+     },
+     {
+      "text": "The letter was sincere but clumsy, and {sp.first} smiled politely. A good idea in theory.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      },
+      "relationship": {
+       "sp": 3
+      }
      }
     ]
    },
@@ -379,6 +654,28 @@
       },
       "effects": {
        "stress": 4
+      }
+     },
+     {
+      "text": "I remembered at 11 p.m. with a bunch of petrol-station flowers. {sp.first} accepted them with the look of a person keeping score.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      },
+      "relationship": {
+       "sp": -8
+      }
+     },
+     {
+      "text": "It turned out {sp.first} had forgotten too. We laughed, and then we both felt something complicated.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      },
+      "relationship": {
+       "sp": 4
       }
      }
     ]
@@ -447,6 +744,27 @@
       "relationship": {
        "them": 6
       }
+     },
+     {
+      "text": "The gift came with a note that made me cry on the bus.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 1
+      },
+      "relationship": {
+       "them": 10
+      }
+     },
+     {
+      "text": "It was a duplicate of something I already own. I didn't say a word and kept both.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "relationship": {
+       "them": 3
+      }
      }
     ]
    }
@@ -486,6 +804,30 @@
       "relationship": {
        "them": 4
       }
+     },
+     {
+      "text": "The $1,000 covered the month. {them.first} never mentioned it again and neither did I, but I remember.",
+      "weight": 1,
+      "effects": {
+       "money": 1000,
+       "happiness": 5,
+       "stress": -6
+      },
+      "relationship": {
+       "them": 8
+      }
+     },
+     {
+      "text": "Accepting left me owing something I couldn't name. {them.first} brought it up a year later.",
+      "weight": 1,
+      "effects": {
+       "money": 1000,
+       "stress": 5,
+       "happiness": 1
+      },
+      "relationship": {
+       "them": -4
+      }
      }
     ]
    },
@@ -500,6 +842,30 @@
       },
       "effects": {
        "karma": 2
+      }
+     },
+     {
+      "text": "I got through the month by skipping meals, and I didn't tell {them.first}.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "health": -2,
+       "happiness": -3
+      },
+      "relationship": {
+       "them": 2
+      }
+     },
+     {
+      "text": "{them.first} sent groceries instead. I couldn't refuse a bag of food.",
+      "weight": 1,
+      "effects": {
+       "money": 40,
+       "happiness": 4,
+       "stress": -2
+      },
+      "relationship": {
+       "them": 8
       }
      }
     ]
@@ -550,6 +916,33 @@
      {
       "text": "I told {them.first} I'm happy on my own.",
       "weight": 1
+     },
+     {
+      "text": "The friend turned out to be wonderful, according to {them.first}. A year later I ran into them at a wedding.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 1
+      }
+     },
+     {
+      "text": "{them.first} kept trying for another year. I finally said yes, out of fatigue. It was awful.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4
+      },
+      "relationship": {
+       "them": -2
+      }
+     },
+     {
+      "text": "I was happy alone. {them.first} was hurt, but respected it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      }
      }
     ]
    }
@@ -613,6 +1006,26 @@
        "karma": 4,
        "stress": 2
       }
+     },
+     {
+      "text": "The rumor stuck to me for a year. The friends I kept were the ones who didn't ask.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 6,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "{them.first} confessed, months later, in a bar, with tears. I forgave them and never told anyone.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4
+      },
+      "relationship": {
+       "them": 12
+      }
      }
     ]
    },
@@ -627,6 +1040,30 @@
       },
       "relationship": {
        "them": -20
+      }
+     },
+     {
+      "text": "{them.first} heard about it within the hour and retaliated with receipts. I've never been so embarrassed.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 10,
+       "happiness": -5
+      },
+      "relationship": {
+       "them": -30
+      }
+     },
+     {
+      "text": "It worked. {them.first} moved cities. I have not slept properly since.",
+      "weight": 1,
+      "effects": {
+       "karma": -10,
+       "happiness": -2,
+       "stress": 6
+      },
+      "relationship": {
+       "them": -40
       }
      }
     ]
@@ -687,6 +1124,24 @@
        "money": -200,
        "stress": 3
       }
+     },
+     {
+      "text": "A month later {them.first} returned the money with a note that said only \"sorry.\" I kept the note.",
+      "weight": 1,
+      "effects": {
+       "money": 200,
+       "karma": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "It kept happening. I learned that letting it go was not the same as it stopping.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "stress": 8,
+       "happiness": -4
+      }
      }
     ]
    },
@@ -701,6 +1156,30 @@
       },
       "relationship": {
        "them": -40
+      }
+     },
+     {
+      "text": "It turned out I'd misplaced the cash. {them.first} was furious and I was mortified.",
+      "weight": 1,
+      "effects": {
+       "money": 200,
+       "karma": -4,
+       "stress": 8
+      },
+      "relationship": {
+       "them": -30
+      }
+     },
+     {
+      "text": "The police found evidence. {them.first} confessed and is in treatment. Family dinners are quiet.",
+      "weight": 1,
+      "effects": {
+       "money": -100,
+       "stress": 6,
+       "karma": 1
+      },
+      "relationship": {
+       "them": -20
       }
      }
     ]
@@ -764,6 +1243,24 @@
        "money": -3000,
        "stress": -2
       }
+     },
+     {
+      "text": "{them.first} accepted and then sent a message that read \"no hard feelings.\" I'm not sure I believe it.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": -3,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The settlement came with an NDA I didn't read carefully. I can never talk about it.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": 3,
+       "karma": -1
+      }
      }
     ]
    },
@@ -776,6 +1273,24 @@
       "effects": {
        "money": -8000,
        "happiness": -6
+      }
+     },
+     {
+      "text": "The default judgement cost me more than the lawsuit asked, plus fees. A lawyer told me I'd been naive.",
+      "weight": 1,
+      "effects": {
+       "money": -9500,
+       "stress": 10,
+       "happiness": -8
+      }
+     },
+     {
+      "text": "The case was dismissed because {them.first} missed a deadline. I felt lucky and ashamed.",
+      "weight": 1,
+      "effects": {
+       "money": 0,
+       "stress": 3,
+       "happiness": 2
       }
      }
     ]
@@ -807,6 +1322,29 @@
       "effects": {
        "karma": 2
       }
+     },
+     {
+      "text": "My apology was accepted, then used against me three weeks later. Lesson learned.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 4
+      },
+      "relationship": {
+       "them": 4
+      }
+     },
+     {
+      "text": "{them.first} apologised right back. We couldn't remember what the fight was about.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -3,
+       "karma": 2
+      },
+      "relationship": {
+       "them": 16
+      }
      }
     ]
    },
@@ -822,6 +1360,29 @@
       "effects": {
        "stress": 5
       }
+     },
+     {
+      "text": "The argument got loud enough that the neighbours knocked. We apologised to them, not each other.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4
+      },
+      "relationship": {
+       "them": -16
+      }
+     },
+     {
+      "text": "We argued ourselves into the real issue underneath, and solved it. The fight was the best thing that happened.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 3,
+       "smarts": 1
+      },
+      "relationship": {
+       "them": 6
+      }
      }
     ]
    },
@@ -833,6 +1394,28 @@
       "weight": 1,
       "effects": {
        "stress": 2
+      }
+     },
+     {
+      "text": "{them.first} followed me, and we finished it on the pavement. Worse than staying.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      },
+      "relationship": {
+       "them": -6
+      }
+     },
+     {
+      "text": "A cool head made it a non-event. By evening we were laughing.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2
+      },
+      "relationship": {
+       "them": 4
       }
      }
     ]
@@ -908,6 +1491,24 @@
       "weight": 1,
       "effects": {
        "stress": 4
+      }
+     },
+     {
+      "text": "It was a surprise party. I felt terrible for doubting them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": -1,
+       "stress": -4
+      }
+     },
+     {
+      "text": "It was not a surprise party. I found out a month later, and I remember deciding to trust.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "stress": 10,
+       "karma": -1
       }
      }
     ]

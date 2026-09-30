@@ -1,0 +1,34 @@
+school.lunch_money_thief :: Hand it over :: A teacher noticed me eating a stolen apple from the cafeteria. She slipped me a lunch voucher without a word. :: happiness=2,karma=1
+school.lunch_money_thief :: Hand it over :: It went on until the end of term. I learned to bring lunch from home. :: happiness=-4,stress=4,smarts=1
+school.lunch_money_thief :: Tell a teacher :: The teacher did nothing, and {rival.first} found out I'd told. The next week was worse. :: happiness=-8,stress=8,karma=1
+school.lunch_money_thief :: Tell a teacher :: {rival.first}'s parents were called. {rival.first} apologised with a stiff face and never looked at me again. :: happiness=4,karma=3
+school.lunch_money_thief :: Offer to split it :: {rival.first} took all of it anyway and laughed. I didn't see the point in arguing. :: happiness=-4,karma=1
+school.lunch_money_thief :: Offer to split it :: {rival.first} said nobody had ever offered before. We ended up sharing the lunch. :: happiness=6,karma=5
+school.science_fair :: Skip it :: My friends presented a volcano and won. I heard about it in the corridor. :: school=-2,happiness=-4
+school.science_fair :: Skip it :: I spent the week doing something unrelated and unexpectedly loved it. :: happiness=3,school=-3
+school.cheat_offer :: Refuse :: I got a C. The classmate got an A and was caught a week later. :: karma=4,school=-1,happiness=-2
+school.cheat_offer :: Refuse :: Halfway through the test I regretted it. I pushed through and got a B. :: karma=5,school=3,stress=4,smarts=1
+school.cheat_offer :: Report it :: The teacher shrugged. {classmate.first} and I spent the next month in silence. :: karma=2,happiness=-4 :: relationship={"classmate":-12}
+school.cheat_offer :: Report it :: The whole class got zero on the test. Nobody thanked me. :: karma=3,school=-4,happiness=-6 :: relationship={"classmate":-40}
+school.talent_show :: Magic trick :: The trick worked perfectly and the school nicknamed me "Houdini" for the rest of term. :: happiness=8,popularity=3
+school.talent_show :: Magic trick :: I forgot the password to my own trick in front of four hundred people. I blamed the lighting. :: happiness=-5,popularity=-2
+school.talent_show :: Don't sign up :: The act that won was terrible. I sat there thinking "I could have done better". :: happiness=-2
+school.talent_show :: Don't sign up :: I helped backstage and learned that I like the people who make things happen more than the people on the stage. :: happiness=4,smarts=1
+school.teacher_mentor :: Accept :: The lessons turned out to be half gossip and half life advice. I learned more from the gossip. :: smarts=3,school=5,happiness=3 :: relationship={"teacher":20}
+school.teacher_mentor :: Accept :: I burned out by spring and the teacher gently suggested I rest. I hadn't realised how much I'd been pushing. :: smarts=3,school=4,stress=10 :: relationship={"teacher":15}
+school.teacher_mentor :: Politely decline :: The offer was given to someone else, who went on to win a scholarship. I thought about it. :: happiness=-3,school=-1
+school.teacher_mentor :: Politely decline :: I passed because I needed time to be a child. I think that was right. :: happiness=3,stress=-3
+school.teacher_mentor :: Ask for a better grade instead :: The teacher said "earn it", and I found out I could. :: school=3,smarts=1,stress=3 :: relationship={"teacher":-4}
+school.teacher_mentor :: Ask for a better grade instead :: Word got around. I became known as a grade-grubber for the year. :: school=-2,popularity=-3,happiness=-3 :: relationship={"teacher":-20}
+school.debate_team :: Ask for more details :: Debate turned out to be a room of people far more confident than me. I loved it. :: smarts=3,school=4,happiness=4
+school.debate_team :: Ask for more details :: I lost my first three rounds badly. By round four I'd learned how to lose well. :: smarts=2,school=2,stress=4
+school.debate_team :: Decline politely :: Next year never came. The team folded and I never knew what I'd missed. :: happiness=-2
+school.debate_team :: Decline politely :: I made a friend in the library instead, and we're still in touch. :: happiness=3,smarts=1
+school.debate_team :: Ignore it :: The teacher noticed and mentioned it. I felt rude and apologised. :: karma=1,school=-2,stress=3
+school.debate_team :: Ignore it :: The offer was forgotten by everyone but me. I still think about it occasionally. :: stress=2
+school.bully_again :: Make a joke :: The joke was funnier than I'd expected. Even {bully.first} smirked. :: happiness=8,popularity=3 :: relationship={"bully":10}
+school.bully_again :: Make a joke :: Nobody laughed. {bully.first} shoved me again. :: happiness=-6,stress=5
+school.bully_again :: Walk away :: A classmate followed me and said "that was classy." We've been friends since. :: happiness=2,karma=2
+school.bully_again :: Walk away :: {bully.first} took it as a win and did it again the next day. :: happiness=-6,stress=6
+school.bully_again :: Tell the principal :: The principal shrugged it off. {bully.first} grew more careful, and more cruel. :: stress=6,happiness=-4 :: relationship={"bully":-20}
+school.bully_again :: Tell the principal :: {bully.first}'s parents were brought in, and I never saw {bully.first} near me again. The silence felt good. :: karma=4,happiness=4,stress=-4 :: relationship={"bully":-20}

@@ -136,6 +136,26 @@
       "relationship": {
        "mom": 3
       }
+     },
+     {
+      "text": "{mom.first} held firm and looked away, and I wailed. The candy was never mentioned again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "relationship": {
+       "mom": -2
+      }
+     },
+     {
+      "text": "{mom.first} caved, and I learned the power of the stare. I use it still.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "relationship": {
+       "mom": 1
+      }
      }
     ]
    }
@@ -173,6 +193,27 @@
       "flags": [
        "mr_buttons"
       ]
+     },
+     {
+      "text": "{mom.first} asked Mr. Buttons about his job. He works at a bank, apparently.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "relationship": {
+       "mom": 5
+      }
+     },
+     {
+      "text": "{mom.first} smiled politely and later took me to see a counsellor. Mr. Buttons didn't like that.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      },
+      "relationship": {
+       "mom": -2
+      }
      }
     ]
    },
@@ -184,6 +225,24 @@
       "weight": 1,
       "effects": {
        "happiness": -2
+      }
+     },
+     {
+      "text": "Mr. Buttons sent a postcard. I wrote it myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I cried for a day, and {mom.first} held me the entire time without saying a word.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": -2
+      },
+      "relationship": {
+       "mom": 8
       }
      }
     ]
@@ -386,6 +445,28 @@
        "kid": 25
       },
       "keep_role": "kid"
+     },
+     {
+      "text": "{kid.first} turned out to be a spy. Well, not really, but we played spy for years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 3
+      },
+      "relationship": {
+       "kid": 30
+      }
+     },
+     {
+      "text": "{kid.first} shook my hand shyly and we said nothing for ten minutes. It was wonderful.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 4
+      },
+      "relationship": {
+       "kid": 18
+      }
      }
     ]
    },
@@ -395,6 +476,21 @@
      {
       "text": "I stuck with my usual group.",
       "weight": 1
+     },
+     {
+      "text": "{kid.first} ate alone for a week, then found another table. I saw them laughing and felt a small pang.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I found out later {kid.first} had been a fellow gamer. A missed friend.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": -1
+      }
      }
     ]
    },
@@ -415,6 +511,29 @@
        "kid": -30
       },
       "keep_role": "kid"
+     },
+     {
+      "text": "A teacher saw it. The lecture was longer than I can bear to describe.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "happiness": -4,
+       "stress": 6
+      },
+      "relationship": {
+       "kid": -20
+      }
+     },
+     {
+      "text": "{kid.first} laughed along, which ruined the fun. I felt strangely embarrassed.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "happiness": -1
+      },
+      "relationship": {
+       "kid": 8
+      }
      }
     ]
    }
@@ -471,6 +590,24 @@
       "weight": 1,
       "effects": {
        "happiness": -1
+      }
+     },
+     {
+      "text": "I looked at other kids biking by and felt small. Next summer I learned in a day.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "The training wheels went back on. I was very relieved and {dad.first} didn't say a word about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "relationship": {
+       "dad": 6
       }
      }
     ]

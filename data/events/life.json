@@ -43,6 +43,22 @@
       "relation_change": {
        "old": "friend"
       }
+     },
+     {
+      "text": "Most of the class had changed so much I barely recognised them. I spent the evening at the bar, talking to the one person who hadn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "Someone asked what I'd done with my life and I gave the wrong answer. I drove home in silence.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 6
+      }
      }
     ]
    },
@@ -52,6 +68,22 @@
      {
       "text": "Some chapters stay closed.",
       "weight": 1
+     },
+     {
+      "text": "A friend sent me photos, and I was weirdly jealous. There was a story I'll never know.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 1
+      }
+     },
+     {
+      "text": "I spent the weekend in a cabin, which I consider a better use of twenty years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -5
+      }
      }
     ]
    }
@@ -110,6 +142,32 @@
       "effects": {
        "karma": 3
       }
+     },
+     {
+      "text": "The dog was saved, but the fire spread to two houses. The neighbours thanked me for the call.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "stress": 6
+      }
+     },
+     {
+      "text": "The fire station was four minutes away. The house was lost, the dog and family weren't. I sat on the kerb afterwards.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": -2,
+       "stress": 8
+      }
+     },
+     {
+      "text": "I called and then ran in. I shouldn't have. A fireman dragged me out and scolded me gently.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "health": -6,
+       "stress": 10
+      }
      }
     ]
    }
@@ -137,6 +195,23 @@
        "karma": 6,
        "happiness": 4
       }
+     },
+     {
+      "text": "It took forty minutes and a sticker, but we found them. The mother insisted on giving me her number.",
+      "weight": 1,
+      "effects": {
+       "karma": 7,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The kid wouldn't let go of my hand, and a security guard looked at me with suspicion. I was mortified.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "stress": 5,
+       "happiness": 1
+      }
      }
     ]
    },
@@ -148,6 +223,22 @@
       "weight": 1,
       "effects": {
        "karma": 2
+      }
+     },
+     {
+      "text": "Security lost track of the child for an agonising five minutes. I watched from a distance.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "stress": 8
+      }
+     },
+     {
+      "text": "The kid was returned to their parents in under ten minutes. I felt like part of a system that works.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
       }
      }
     ]
@@ -196,6 +287,23 @@
      {
       "text": "Next year, for sure.",
       "weight": 1
+     },
+     {
+      "text": "I meant it. The year passed and I had found a new reason to put it off.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "I booked it then and there, and it was the best fall of my life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "health": -2,
+       "stress": -4
+      }
      }
     ]
    }
@@ -258,6 +366,28 @@
       "effects": {
        "karma": 4
       }
+     },
+     {
+      "text": "They were cold and I was left holding an olive branch. We parted awkwardly.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "karma": 2
+      },
+      "relationship": {
+       "rv": -5
+      }
+     },
+     {
+      "text": "We talked for two hours, then exchanged numbers. A year later they were at my wedding.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 6
+      },
+      "relationship": {
+       "rv": 55
+      }
      }
     ]
    },
@@ -267,6 +397,24 @@
      {
       "text": "I hid behind a menu.",
       "weight": 1
+     },
+     {
+      "text": "They saw me. They pretended too. We never spoke of it.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "They came straight over anyway, and I had to rise to the occasion. It went better than I deserved.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 2
+      },
+      "relationship": {
+       "rv": 12
+      }
      }
     ]
    },
@@ -278,6 +426,23 @@
       "weight": 1,
       "relationship": {
        "rv": -10
+      }
+     },
+     {
+      "text": "My gloating backfired when they turned out to be doing much better than I'd assumed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6,
+       "karma": -2
+      }
+     },
+     {
+      "text": "They were dazzled, and I went home feeling hollow.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": -3
       }
      }
     ]
@@ -313,6 +478,28 @@
       "effects": {
        "happiness": 5
       }
+     },
+     {
+      "text": "I'd written it on a napkin and lost the napkin. I improvised and it was better.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 2
+      },
+      "relationship": {
+       "par": 18
+      }
+     },
+     {
+      "text": "I choked up halfway through. {par.first} stood and finished it with me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 1
+      },
+      "relationship": {
+       "par": 22
+      }
      }
     ]
    },
@@ -331,6 +518,28 @@
       "trait_bonus": {
        "Funny": 2
       }
+     },
+     {
+      "text": "A joke about {par.first}'s cooking landed badly. A relative left.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": -2,
+       "stress": 4
+      },
+      "relationship": {
+       "par": -4
+      }
+     },
+     {
+      "text": "I told a story from my childhood that nobody knew. {par.first} wept laughing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "relationship": {
+       "par": 16
+      }
      }
     ]
    },
@@ -342,6 +551,28 @@
       "weight": 1,
       "relationship": {
        "par": -15
+      }
+     },
+     {
+      "text": "I sent a card. It arrived three weeks late. {par.first} put it on the mantel anyway.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "stress": 3
+      },
+      "relationship": {
+       "par": -6
+      }
+     },
+     {
+      "text": "Work ran over. {par.first} said \"I understand\", in a way that I didn't.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      },
+      "relationship": {
+       "par": -12
       }
      }
     ]
@@ -408,6 +639,28 @@
       "relationship": {
        "kid": 3
       }
+     },
+     {
+      "text": "{kid.first} didn't take it, made every mistake I'd warned about, and did well anyway. I am both proud and annoyed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      },
+      "relationship": {
+       "kid": 6
+      }
+     },
+     {
+      "text": "The advice saved {kid.first} from signing a bad lease. They called to thank me and I pretended I hadn't been worried.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 2
+      },
+      "relationship": {
+       "kid": 12
+      }
      }
     ]
    },
@@ -419,6 +672,29 @@
       "weight": 1,
       "relationship": {
        "kid": -10
+      }
+     },
+     {
+      "text": "{kid.first} found the money elsewhere and the business took off. I wasn't in the story.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 3
+      },
+      "relationship": {
+       "kid": -14
+      }
+     },
+     {
+      "text": "The business folded in six months. I was quietly relieved and guilty about it.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "stress": 2,
+       "happiness": -1
+      },
+      "relationship": {
+       "kid": -6
       }
      }
     ]
@@ -506,6 +782,23 @@
       "weight": 1,
       "effects": {
        "stress": 4
+      }
+     },
+     {
+      "text": "It was nothing. I felt foolish for having worried and irresponsible for having skipped.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "health": 0
+      }
+     },
+     {
+      "text": "It wasn't nothing. By the time I went back, the options were narrower.",
+      "weight": 1,
+      "effects": {
+       "health": -10,
+       "stress": 12,
+       "happiness": -8
       }
      }
     ]
@@ -605,6 +898,29 @@
       "relationship": {
        "fr": 15
       }
+     },
+     {
+      "text": "Halfway up the third flight, the piano got stuck. We were there for three hours and one of us wept.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "happiness": 4,
+       "stress": 5
+      },
+      "relationship": {
+       "fr": 20
+      }
+     },
+     {
+      "text": "The piano turned out to be out of tune. We moved it anyway, then drank a beer on its lid.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": 6
+      },
+      "relationship": {
+       "fr": 14
+      }
      }
     ]
    },
@@ -616,6 +932,27 @@
       "weight": 1,
       "relationship": {
        "fr": -10
+      }
+     },
+     {
+      "text": "The dentist's receptionist called to ask about my missed appointment. I hadn't made one. {fr.first} heard.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 4
+      },
+      "relationship": {
+       "fr": -16
+      }
+     },
+     {
+      "text": "{fr.first} hired movers instead. We both pretended nothing happened, and did it well.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "relationship": {
+       "fr": -3
       }
      }
     ]

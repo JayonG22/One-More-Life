@@ -39,6 +39,24 @@
        "money": -400,
        "stress": 3
       }
+     },
+     {
+      "text": "The officer smiled, tore up the ticket, and said \"that's the best excuse this week.\" I drove home sheepishly.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "karma": -1,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The argument got me a second ticket for something I didn't know I'd done.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 8,
+       "heat": 2
+      }
      }
     ]
    },
@@ -91,6 +109,24 @@
        "karma": 6,
        "stress": 4
       }
+     },
+     {
+      "text": "The driver's family glared at me across the courtroom. I slept badly for a month.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 8,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "The driver was convicted. I got a call from the victim, who thanked me in tears.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "stress": 2,
+       "happiness": 6
+      }
      }
     ]
    },
@@ -102,6 +138,23 @@
       "weight": 1,
       "effects": {
        "karma": -4
+      }
+     },
+     {
+      "text": "The victim's family saw my name on the witness list. A month later I was sent a letter that said only \"coward.\"",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 6,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "Nothing happened. I think about it at night.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "stress": 3
       }
      }
     ]
@@ -134,6 +187,26 @@
       },
       "relationship": {
        "nb": 10
+      }
+     },
+     {
+      "text": "My neighbour hadn't even measured. The surveyor said the fence was fine. I'd moved it for nothing.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "stress": 6,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "We ended up sharing a bench at the new boundary. It became our spot.",
+      "weight": 1,
+      "effects": {
+       "money": -2000,
+       "happiness": 4
+      },
+      "relationship": {
+       "nb": 16
       }
      }
     ]
@@ -216,6 +289,32 @@
       "effects": {
        "karma": 10
       }
+     },
+     {
+      "text": "The defendant was convicted. I received a threat in the mail, and the police sat outside my home for a week.",
+      "weight": 1,
+      "effects": {
+       "karma": 10,
+       "stress": 12,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "The stranger turned out to be an undercover investigator. I had passed their test.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I reported it and was dismissed from the jury. I never learned the verdict.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 3,
+       "happiness": -1
+      }
      }
     ]
    }
@@ -260,6 +359,23 @@
      {
       "text": "I left it alone.",
       "weight": 1
+     },
+     {
+      "text": "A background check found the record two years later. The job offer evaporated.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -6,
+       "money": -3000
+      }
+     },
+     {
+      "text": "The record never came up again. I sometimes wonder if I was right.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "happiness": 1
+      }
      }
     ]
    }

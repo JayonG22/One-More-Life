@@ -42,6 +42,22 @@
      {
       "text": "I passed. Probably smart.",
       "weight": 1
+     },
+     {
+      "text": "The stock doubled in a month. I told myself it was luck and did not look at the chart again for a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The stock cratered. My coworker stopped bringing it up, and I never mentioned it either.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 1
+      }
      }
     ]
    }
@@ -89,6 +105,21 @@
      {
       "text": "I nodded until {fr.first} changed the subject.",
       "weight": 1
+     },
+     {
+      "text": "{fr.first} sent me a link to the coin every day for a week. I muted the thread.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "A year later FrogCash was worth nothing. {fr.first} asked me not to bring it up. I didn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "karma": 2
+      }
      }
     ]
    }
@@ -127,6 +158,25 @@
        "money": 20000,
        "karma": -3
       }
+     },
+     {
+      "text": "The lawyers took a third. I won anyway and lost two cousins.",
+      "weight": 1,
+      "effects": {
+       "money": 9000,
+       "karma": -4,
+       "stress": 10
+      }
+     },
+     {
+      "text": "A handwritten note turned up in a drawer, changing the split. The family feud ended in tears.",
+      "weight": 1,
+      "effects": {
+       "money": 35000,
+       "karma": -2,
+       "stress": 6,
+       "happiness": -2
+      }
      }
     ]
    },
@@ -139,6 +189,23 @@
       "effects": {
        "karma": 6,
        "happiness": 2
+      }
+     },
+     {
+      "text": "A cousin later pressed a cheque into my hand without a word. We never spoke about it.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "money": 8000,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Nobody thanked me. I stayed quiet and wondered what I'd proved.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": -4
       }
      }
     ]
@@ -176,6 +243,24 @@
       "effects": {
        "money": -2000,
        "stress": -2
+      }
+     },
+     {
+      "text": "The accountant found a mistake in my favour and I got a refund. I've since become loyal to accountants.",
+      "weight": 1,
+      "effects": {
+       "money": 1200,
+       "stress": -4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The audit found an old error. I paid the difference plus a penalty and sat through a long lecture.",
+      "weight": 1,
+      "effects": {
+       "money": -5500,
+       "stress": 8,
+       "happiness": -4
       }
      }
     ],
@@ -255,6 +340,36 @@
       "relation_change": {
        "ten": "former_tenant"
       }
+     },
+     {
+      "text": "{ten.first} left the flat in a worse state than I'd found it. I spent the deposit on the repairs.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "money": -2500,
+       "stress": 8
+      }
+     },
+     {
+      "text": "A neighbour offered to rent it the next week at a better rate. I felt awful and relieved.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "money": 1200,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "Halfway through I changed my mind. {ten.first} stayed. They paid me back within two months.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "money": -1200,
+       "happiness": 3
+      },
+      "relationship": {
+       "ten": 15
+      }
      }
     ]
    }
@@ -287,6 +402,23 @@
       "weight": 1,
       "effects": {
        "money": -6000
+      }
+     },
+     {
+      "text": "The plumber found a second leak I hadn't noticed. The bill went up. The building now runs like new.",
+      "weight": 1,
+      "effects": {
+       "money": -8500,
+       "stress": 5
+      }
+     },
+     {
+      "text": "Insurance covered half of it after a long argument. I'd never have won without the paperwork.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": 3,
+       "smarts": 1
       }
      }
     ]
@@ -340,6 +472,27 @@
        "karma": 3,
        "money": -1200
       }
+     },
+     {
+      "text": "{ten.first} stayed fifteen years and refused every rent increase I offered. A rare thing.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "money": -1200,
+       "happiness": 3
+      },
+      "relationship": {
+       "ten": 22
+      }
+     },
+     {
+      "text": "{ten.first} tried to decline and I insisted. A week later they left a pie at my door.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "money": -1200,
+       "happiness": 4
+      }
      }
     ]
    },
@@ -351,6 +504,24 @@
       "weight": 1,
       "relationship": {
        "ten": 5
+      }
+     },
+     {
+      "text": "The garden became the talk of the building. The next tenant asked for the same.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": 2
+      },
+      "relationship": {
+       "ten": 8
+      }
+     },
+     {
+      "text": "{ten.first} moved out six months later for a job in another city. I think about that garden.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
       }
      }
     ]
@@ -411,6 +582,21 @@
      {
       "text": "I watched it on TV instead.",
       "weight": 1
+     },
+     {
+      "text": "My neighbour's ugly vase turned out to be worth $40,000. I can't stop thinking about mine.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "I found out later they'd appraised my neighbour's vase at $8. I felt vindicated for no reason.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
      }
     ]
    }
@@ -443,6 +629,25 @@
        "fame": 8,
        "happiness": 12
       }
+     },
+     {
+      "text": "A guest broke into the wine cellar and a helicopter was dented. The bill came to a quarter million.",
+      "weight": 1,
+      "effects": {
+       "money": -380000,
+       "fame": 8,
+       "happiness": 6,
+       "stress": 6
+      }
+     },
+     {
+      "text": "A famous person proposed on the beach. It went viral. My island is now known as \"the proposal island\".",
+      "weight": 1,
+      "effects": {
+       "money": -250000,
+       "fame": 10,
+       "happiness": 14
+      }
      }
     ]
    },
@@ -455,6 +660,24 @@
       "effects": {
        "happiness": 10,
        "stress": -10
+      }
+     },
+     {
+      "text": "A cousin I'd never met turned out to be a brilliant cook. We became close.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "stress": -12
+      },
+      "relationship": {}
+     },
+     {
+      "text": "The uninvited sent jealous texts all week. I didn't reply.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -4,
+       "fame": -2
       }
      }
     ]
@@ -553,6 +776,23 @@
      {
       "text": "I chose to trust {pt.first}.",
       "weight": 1
+     },
+     {
+      "text": "{pt.first} later confessed they'd asked because they were worried about their own debts. We paid them off together.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 2
+      }
+     },
+     {
+      "text": "Two years later {pt.first} left with a lot of my money. I was told I had been too trusting.",
+      "weight": 1,
+      "effects": {
+       "money": -30000,
+       "happiness": -12,
+       "stress": 10
+      }
      }
     ]
    }

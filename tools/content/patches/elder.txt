@@ -1,0 +1,16 @@
+elder.hobby :: Gardening :: A squirrel cleaned out the tomatoes overnight. I bought a cage and declared war. :: happiness=2,stress=3
+elder.hobby :: Gardening :: I grew roses that took a prize at the county fair. I've never been so proud. :: happiness=9,health=2,fame=1
+elder.hobby :: Painting :: A neighbour bought one of my paintings for ten dollars. It is the first money I've ever earned from art. :: happiness=8,money=10,smarts=1
+elder.hobby :: Painting :: My hands shake more than I expected. The paintings look abstract now, and people call that a style. :: happiness=3
+elder.hobby :: Join a bowling league :: I tore a muscle in week two. I bowled the rest of the season sitting down. :: happiness=3,health=-2
+elder.hobby :: Join a bowling league :: We won the league in our final game, and the trophy sits on my mantel. :: happiness=10,health=1
+elder.hobby :: Write your memoirs :: Halfway through I realised how much I'd forgotten. I phoned an old friend to fill in the gaps, and it became a weekly call. :: happiness=7,smarts=2
+elder.hobby :: Write your memoirs :: I finished the book and printed ten copies. Each of my children received one. One of them cried. :: happiness=9,smarts=1
+elder.scam_call :: Send the money :: The bank called me an hour later and got most of it back. I trembled for the rest of the day. :: money=-200,happiness=-3,stress=8
+elder.scam_call :: Send the money :: They called back the next day for more. I sent it, too. My family found out after. :: money=-7000,happiness=-14,stress=10
+elder.scam_call :: Hang up :: I phoned my grandchild to check. They were perfectly fine and thought the story hilarious. :: happiness=4,stress=-2 :: relationship={}
+elder.scam_call :: Hang up :: I hung up but my hands shook for an hour. The call had sounded so real. :: stress=6,happiness=-2
+elder.scam_call :: Keep them talking for an hour :: They called again the next day. By the third call I'd named them all. :: happiness=8
+elder.scam_call :: Keep them talking for an hour :: I accidentally gave them my date of birth. My bank was not amused. :: stress=8,happiness=-4,money=-150
+elder.fall :: Walk it off :: Walking it off wasn't enough. A week later I was in the emergency room with a cracked rib. :: health=-12,stress=8,money=-800
+elder.fall :: Walk it off :: I was fine, but my daughter insisted on installing handrails. I complained and then used them daily. :: health=-2,happiness=2 :: relationship={}

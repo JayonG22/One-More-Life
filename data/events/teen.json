@@ -74,6 +74,29 @@
      {
       "text": "I kept my feelings to myself.",
       "weight": 1
+     },
+     {
+      "text": "{crush.first} moved away at the end of the year. I never said a word.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 3
+      }
+     },
+     {
+      "text": "Years later {crush.first} told a friend they'd liked me too. There is no bigger what-if.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     },
+     {
+      "text": "I wrote {crush.first} three letters and burned them all. It felt like a proper ceremony.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 1
+      }
      }
     ]
    }
@@ -155,6 +178,23 @@
       "weight": 1,
       "relationship": {
        "friend": -5
+      }
+     },
+     {
+      "text": "My friends told stories about that party for months. I couldn't join the laughter.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "popularity": -2
+      }
+     },
+     {
+      "text": "The party was busted by the police at midnight. My phone was full of messages the next morning.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "popularity": 1,
+       "stress": -2
       }
      }
     ]
@@ -276,6 +316,22 @@
       "effects": {
        "happiness": -2
       }
+     },
+     {
+      "text": "One of them jumped and broke an ankle. I didn't feel like a chicken after that.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "karma": 1
+      }
+     },
+     {
+      "text": "They left me on the pier and went swimming. I sat alone watching the sun go down and felt something complicated.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
      }
     ]
    },
@@ -288,6 +344,23 @@
       "effects": {
        "happiness": 6,
        "karma": -1
+      }
+     },
+     {
+      "text": "The water was colder than expected and the dare-er swore revenge. They got it a week later with a bucket.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": -2
+      }
+     },
+     {
+      "text": "The dare-er hit a rock. Nobody laughed. We called an ambulance.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "karma": -4,
+       "stress": 12
       }
      }
     ],
@@ -321,6 +394,29 @@
       "relationship": {
        "sib": -12
       }
+     },
+     {
+      "text": "{sib.first} cried. I felt terrible by evening and never apologised.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3,
+       "karma": -2
+      },
+      "relationship": {
+       "sib": -16
+      }
+     },
+     {
+      "text": "We made up after a long silence, and the hoodie became a joke between us.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 2
+      },
+      "relationship": {
+       "sib": -2
+      }
      }
     ]
    },
@@ -337,6 +433,28 @@
       "relationship": {
        "sib": 12
       }
+     },
+     {
+      "text": "The new hoodie was the wrong colour, and I wore it anyway.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
+      },
+      "relationship": {
+       "sib": 10
+      }
+     },
+     {
+      "text": "The paint stain became a pattern. I wore the hoodie for years.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 4
+      },
+      "relationship": {
+       "sib": 14
+      }
      }
     ]
    },
@@ -352,6 +470,28 @@
       },
       "relationship": {
        "sib": -8
+      }
+     },
+     {
+      "text": "{sib.first} found the headphones on the roof and never forgave me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "karma": -3
+      },
+      "relationship": {
+       "sib": -20
+      }
+     },
+     {
+      "text": "{sib.first} retaliated with a prank that left me laughing despite myself. A truce was signed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": -1
+      },
+      "relationship": {
+       "sib": 8
       }
      }
     ]
@@ -407,6 +547,23 @@
       "effects": {
        "happiness": -2
       }
+     },
+     {
+      "text": "The poster said no, and then reposted it with commentary. I changed schools the next year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8,
+       "popularity": -4
+      }
+     },
+     {
+      "text": "It came down within the hour. Nobody mentioned it again. I kept thinking it would return.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      }
      }
     ]
    },
@@ -419,6 +576,22 @@
       "effects": {
        "happiness": -3,
        "stress": -2
+      }
+     },
+     {
+      "text": "My friends brought me snacks and a video of a dog falling off a couch, which had eclipsed mine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -4
+      }
+     },
+     {
+      "text": "Someone made a compilation. I became a minor legend at school. I'm not sure whether I hated it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "popularity": 4
       }
      }
     ]
@@ -472,6 +645,24 @@
        "happiness": 3,
        "stress": 2
       }
+     },
+     {
+      "text": "I got promoted to cone-maker by August. I'm good at it.",
+      "weight": 1,
+      "effects": {
+       "money": 1400,
+       "happiness": 4,
+       "skill": 2
+      }
+     },
+     {
+      "text": "I dropped a full tub of ice cream on a health inspector's shoe. I was fired on the spot.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "happiness": -3,
+       "stress": 6
+      }
      }
     ]
    },
@@ -483,6 +674,22 @@
       "weight": 1,
       "effects": {
        "happiness": 4
+      }
+     },
+     {
+      "text": "The summer was wonderful until the final week when I realised I'd have nothing to show for it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "A chance encounter at the lake became my best friend. The summer was never wasted.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 1
       }
      }
     ]

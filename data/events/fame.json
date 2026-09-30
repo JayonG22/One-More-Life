@@ -47,6 +47,25 @@
       "trait_bonus": {
        "Hothead": 2
       }
+     },
+     {
+      "text": "The coffee landed on a photographer's very expensive lens. I was sued and was photographed apologising.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "money": -22000,
+       "karma": -5,
+       "stress": 8
+      }
+     },
+     {
+      "text": "One of them laughed and said \"nice arm.\" The clip was a meme for a week. I was flattered.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "happiness": 3,
+       "karma": -2
+      }
      }
     ]
    },
@@ -56,6 +75,23 @@
      {
       "text": "I made it out unseen.",
       "weight": 1
+     },
+     {
+      "text": "They'd anticipated it. A photograph of me in my pyjamas ran with a headline about my \"secret life\".",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "happiness": -4,
+       "stress": 5
+      }
+     },
+     {
+      "text": "I took a bus to a park and sat on a bench for two hours. It was the best day I'd had all year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -8
+      }
      }
     ]
    }
@@ -110,6 +146,26 @@
       "trait_bonus": {
        "Rebel": 2
       }
+     },
+     {
+      "text": "It cost me a sponsor and won me a cult. The cult's merchandise sells well.",
+      "weight": 1,
+      "effects": {
+       "fame": 6,
+       "money": 12000,
+       "karma": -6,
+       "stress": 8
+      }
+     },
+     {
+      "text": "It backfired. My agent said the word \"unrepresentable.\"",
+      "weight": 1,
+      "effects": {
+       "fame": -6,
+       "money": -20000,
+       "karma": -4,
+       "stress": 10
+      }
      }
     ]
    },
@@ -122,6 +178,24 @@
       "effects": {
        "fame": -4,
        "stress": -6
+      }
+     },
+     {
+      "text": "A month offline and a short statement did it. People forgot. I'd like to say I'd learned something.",
+      "weight": 1,
+      "effects": {
+       "fame": -3,
+       "stress": -8,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "Silence was read as an admission. A documentary came out about my \"fall\".",
+      "weight": 1,
+      "effects": {
+       "fame": -8,
+       "happiness": -5,
+       "stress": 6
       }
      }
     ]
@@ -175,6 +249,24 @@
        "fame": 3,
        "money": 5000
       }
+     },
+     {
+      "text": "The host kept steering the interview toward my ex. I was off-script and it showed.",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "money": 1500,
+       "stress": 6
+      }
+     },
+     {
+      "text": "I said something unplanned and funny. The clip trended and the show booked me again.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "money": 8000,
+       "happiness": 5
+      }
      }
     ]
    },
@@ -184,6 +276,22 @@
      {
       "text": "I passed.",
       "weight": 1
+     },
+     {
+      "text": "The slot went to a rival. Their interview made me look cowardly by comparison.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "A quiet evening in. I felt free.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -3
+      }
      }
     ]
    }
@@ -214,6 +322,25 @@
        "money": -40000,
        "stress": -6
       }
+     },
+     {
+      "text": "The bodyguard turned out to be the best friend I've made in years. The stalker never came near.",
+      "weight": 1,
+      "effects": {
+       "money": -40000,
+       "stress": -8,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The bodyguard sold a story to a tabloid a year later. I felt the cost more than the fee.",
+      "weight": 1,
+      "effects": {
+       "money": -40000,
+       "stress": 6,
+       "happiness": -5,
+       "fame": -1
+      }
      }
     ]
    },
@@ -227,6 +354,25 @@
        "stress": -4,
        "money": -3000
       }
+     },
+     {
+      "text": "The stalker violated the order within a week. I'd been made to feel safe when I wasn't.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": 10,
+       "happiness": -4,
+       "heat": 0
+      }
+     },
+     {
+      "text": "The order worked. A year later I received a letter of apology from a treatment centre.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "money": -3000,
+       "karma": 3
+      }
      }
     ]
    },
@@ -239,6 +385,24 @@
       "effects": {
        "stress": 12,
        "happiness": -6
+      }
+     },
+     {
+      "text": "It stopped the day I moved house. I was never sure it was over.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "happiness": -5,
+       "money": -8000
+      }
+     },
+     {
+      "text": "A neighbour intervened before something terrible happened. I owe them a debt I can't repay.",
+      "weight": 1,
+      "effects": {
+       "stress": 14,
+       "happiness": -6,
+       "karma": 2
       }
      }
     ]
@@ -271,6 +435,26 @@
        "fame": 3,
        "happiness": 6
       }
+     },
+     {
+      "text": "The gala raised more than expected, and a hospital ward now carries my name.",
+      "weight": 1,
+      "effects": {
+       "money": -50000,
+       "karma": 12,
+       "fame": 5,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "A guest later revealed the charity's accounting was flawed. My money vanished into overhead.",
+      "weight": 1,
+      "effects": {
+       "money": -50000,
+       "karma": 4,
+       "stress": 8,
+       "happiness": -4
+      }
      }
     ],
     "requires": {
@@ -286,6 +470,24 @@
       "effects": {
        "fame": 2
       }
+     },
+     {
+      "text": "A guest mentioned my absence from the donor list in a newspaper column. I paid the next morning.",
+      "weight": 1,
+      "effects": {
+       "fame": -1,
+       "karma": -2,
+       "money": -10000,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The evening went wonderfully. Nobody cared who gave what.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "happiness": 5
+      }
      }
     ]
    },
@@ -295,6 +497,22 @@
      {
       "text": "I skipped the gala.",
       "weight": 1
+     },
+     {
+      "text": "Somebody else hosted it and became the face of a cause. I wish it had been me.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I spent the evening with my family, and for once no one took a photograph.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -4
+      }
      }
     ]
    }
@@ -324,6 +542,24 @@
        "fame": 4,
        "stress": 5
       }
+     },
+     {
+      "text": "My reply was quoted by a newspaper I respect, and not approvingly.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "karma": -3,
+       "stress": 8
+      }
+     },
+     {
+      "text": "The feud made us both money. We finally hugged it out at an awards show and the clip went viral.",
+      "weight": 1,
+      "effects": {
+       "fame": 6,
+       "money": 10000,
+       "happiness": 4
+      }
      }
     ]
    },
@@ -336,6 +572,24 @@
       "effects": {
        "fame": 3,
        "karma": 3
+      }
+     },
+     {
+      "text": "They sent a snarky reply and the internet turned on them. I hadn't planned that.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "karma": 1,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The flowers were returned unopened. I was mocked for trying.",
+      "weight": 1,
+      "effects": {
+       "fame": -1,
+       "happiness": -3,
+       "karma": 2
       }
      }
     ]
@@ -367,6 +621,26 @@
        "fame": 5,
        "karma": -3
       }
+     },
+     {
+      "text": "A lawsuit from someone I'd named delayed publication. The settlement ate a fifth of my advance.",
+      "weight": 1,
+      "effects": {
+       "money": 280000,
+       "fame": 3,
+       "karma": -5,
+       "stress": 8
+      }
+     },
+     {
+      "text": "The book was a sensation. A chapter about my mother made her stop speaking to me.",
+      "weight": 1,
+      "effects": {
+       "money": 400000,
+       "fame": 6,
+       "karma": -6,
+       "happiness": -6
+      }
      }
     ]
    },
@@ -380,6 +654,25 @@
        "money": 150000,
        "fame": 3
       }
+     },
+     {
+      "text": "Reviewers called it \"polite to a fault\". It sold modestly and lasted a long time.",
+      "weight": 1,
+      "effects": {
+       "money": 80000,
+       "fame": 2,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The book won a prize I hadn't expected. The committee praised my restraint.",
+      "weight": 1,
+      "effects": {
+       "money": 200000,
+       "fame": 6,
+       "happiness": 6,
+       "karma": 3
+      }
      }
     ]
    },
@@ -389,6 +682,22 @@
      {
       "text": "My story isn't finished.",
       "weight": 1
+     },
+     {
+      "text": "Another celebrity published a memoir with my name in it. I had no rebuttal.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "happiness": -4,
+       "karma": 0
+      }
+     },
+     {
+      "text": "I never wrote it. I sometimes think about what would have been in it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
      }
     ]
    }
@@ -420,6 +729,26 @@
        "stress": -8,
        "fame": 1
       }
+     },
+     {
+      "text": "The brand's rival offered me a worse deal afterwards, which I took. I'm no longer sure which brand I represent.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "fame": 2,
+       "money": 3000,
+       "karma": -2
+      }
+     },
+     {
+      "text": "Food poisoning on day two and I posted that too. It was my highest-engagement post ever.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "fame": 3,
+       "happiness": 2,
+       "stress": 4
+      }
      }
     ]
    },
@@ -431,6 +760,24 @@
       "weight": 1,
       "effects": {
        "happiness": 8
+      }
+     },
+     {
+      "text": "The brand apologised, then sent a second offer. They liked the authenticity.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "fame": 1,
+       "money": 4000
+      }
+     },
+     {
+      "text": "The brand blacklisted me. It cost me two future deals.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "fame": -2,
+       "money": -6000
       }
      }
     ]

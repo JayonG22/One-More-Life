@@ -25,6 +25,28 @@
       "effects": {
        "happiness": 3
       }
+     },
+     {
+      "text": "{cm.first} took all the snacks and gave me nothing. I learned a lesson that cost six dollars.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 4
+      },
+      "relationship": {
+       "cm": -10
+      }
+     },
+     {
+      "text": "{cm.first} taught me how to play chess on a cardboard board. We played for years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 2
+      },
+      "relationship": {
+       "cm": 40
+      }
      }
     ]
    },
@@ -64,6 +86,28 @@
      {
       "text": "I kept my head down.",
       "weight": 1
+     },
+     {
+      "text": "{cm.first} took the lack of interest as disrespect. The silence between us got heavier each month.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4
+      },
+      "relationship": {
+       "cm": -18
+      }
+     },
+     {
+      "text": "{cm.first} turned out to be shy as well. We coexisted peacefully for a year.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2
+      },
+      "relationship": {
+       "cm": 10
+      }
      }
     ]
    }
@@ -123,6 +167,22 @@
      {
       "text": "I stayed out of it.",
       "weight": 1
+     },
+     {
+      "text": "I was locked in for three days. Someone else was hurt. I thought about it afterwards.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "The riot passed without me. Some inmates called me a coward and others envied me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": 0
+      }
      }
     ]
    },
@@ -134,6 +194,23 @@
       "weight": 1,
       "effects": {
        "karma": 5
+      }
+     },
+     {
+      "text": "An inmate I'd never met saw me help. From then on I needed to watch my back.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 12,
+       "health": -3
+      }
+     },
+     {
+      "text": "The guard later slipped me an extra ration. Small mercies.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
       }
      }
     ]
@@ -165,6 +242,26 @@
       "relationship": {
        "vis": 12
       }
+     },
+     {
+      "text": "The visit was brief and awkward. On the way out, {vis.first} turned and waved. I held onto that for months.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "relationship": {
+       "vis": 10
+      }
+     },
+     {
+      "text": "{vis.first} brought a photograph of the family. The guards let me keep it. I've kept it in my pocket ever since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "relationship": {
+       "vis": 14
+      }
      }
     ]
    },
@@ -176,6 +273,28 @@
       "weight": 1,
       "relationship": {
        "vis": -15
+      }
+     },
+     {
+      "text": "{vis.first} came anyway, and stood outside the gate for hours. They left a note.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 6
+      },
+      "relationship": {
+       "vis": -8
+      }
+     },
+     {
+      "text": "{vis.first} never returned. I've regretted it every day since.",
+      "weight": 1,
+      "effects": {
+       "happiness": -12,
+       "stress": 8
+      },
+      "relationship": {
+       "vis": -30
       }
      }
     ]

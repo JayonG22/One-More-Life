@@ -68,6 +68,24 @@
       "effects": {
        "stress": 4
       }
+     },
+     {
+      "text": "{cw.first} got the promotion on the back of my idea. I've never forgiven that.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -2,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "My boss quietly told me they knew the idea was mine. That mattered more than the meeting.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "job_perf": 2,
+       "happiness": 2
+      }
      }
     ]
    },
@@ -129,6 +147,27 @@
       "relationship": {
        "boss": 8
       }
+     },
+     {
+      "text": "I spent the weekend alone with a spreadsheet, the boss never mentioned it, and the project failed anyway.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "stress": 8,
+       "happiness": -6
+      }
+     },
+     {
+      "text": "The weekend work saved the quarter. A bonus arrived in my next paycheck.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10,
+       "money": 1500,
+       "stress": 5
+      },
+      "relationship": {
+       "boss": 10
+      }
      }
     ]
    },
@@ -143,6 +182,27 @@
       },
       "relationship": {
        "boss": -6
+      }
+     },
+     {
+      "text": "{boss.first} asked someone else, who turned out to be thrilled, and got the credit.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -6,
+       "stress": 4,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "{boss.first} respected the boundary. \"Good for you,\" they said, and meant it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "happiness": 5,
+       "stress": -4
+      },
+      "relationship": {
+       "boss": 6
       }
      }
     ]
@@ -222,6 +282,22 @@
      {
       "text": "I kept things professional.",
       "weight": 1
+     },
+     {
+      "text": "{cw.first} moved to a different department within the month. I'll never know.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 1
+      }
+     },
+     {
+      "text": "We became the best desk neighbours in the office, which was better than a relationship.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "job_perf": 2
+      }
      }
     ]
    }
@@ -283,6 +359,26 @@
       "effects": {
        "stress": 3
       }
+     },
+     {
+      "text": "A week later {rival.first} pulled me aside: \"I'm sorry about the lunch money.\" I wasn't ready for it.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "karma": 3,
+       "happiness": 3
+      },
+      "set_boss": "rival"
+     },
+     {
+      "text": "{rival.first} gave me the worst assignments for a year. I never asked why.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -3,
+       "happiness": -3
+      },
+      "set_boss": "rival"
      }
     ]
    },
@@ -296,6 +392,25 @@
       "effects": {
        "happiness": 2
       }
+     },
+     {
+      "text": "I spent three months looking for work and was bitter about it. I'd do it again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "money": -4000,
+       "stress": 6
+      },
+      "quit_job": true
+     },
+     {
+      "text": "Someone at the company called me a week later with a better offer. The story got out.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": 2000
+      },
+      "quit_job": true
      }
     ]
    },
@@ -313,6 +428,26 @@
       "trait_bonus": {
        "Ambitious": 2
       }
+     },
+     {
+      "text": "I burned out in March and {rival.first} promoted someone else.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 14,
+       "happiness": -6
+      },
+      "set_boss": "rival"
+     },
+     {
+      "text": "{rival.first} eventually admitted my results spoke for themselves. I got the promotion they'd been holding.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 14,
+       "stress": 8,
+       "happiness": 4
+      },
+      "set_boss": "rival"
      }
     ]
    }
@@ -354,6 +489,26 @@
        "happiness": 2,
        "stress": 6
       }
+     },
+     {
+      "text": "The new city was lonely for a year, then gradually wasn't. The promotion was worth it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "money": 5000,
+       "happiness": -2,
+       "stress": 8
+      }
+     },
+     {
+      "text": "Three weeks after I arrived, the department was restructured. I kept the title and lost the team.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "money": 3000,
+       "stress": 10,
+       "happiness": -5
+      }
      }
     ]
    },
@@ -363,6 +518,23 @@
      {
       "text": "I stayed. Home is home.",
       "weight": 1
+     },
+     {
+      "text": "My replacement thrived. I looked at LinkedIn too often that year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The company shut that office the next year and I was glad I'd stayed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2,
+       "job_perf": 2
+      }
      }
     ]
    }
@@ -411,6 +583,23 @@
       "weight": 1,
       "effects": {
        "stress": 3
+      }
+     },
+     {
+      "text": "Half the office had the same idea. I got an interview and a wonderful counteroffer.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "job_perf": 2,
+       "money": 3000
+      }
+     },
+     {
+      "text": "The layoffs never came. The next week I felt foolish sitting in an interview in my lunch break.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -2
       }
      }
     ]
@@ -491,6 +680,24 @@
        "job_perf": 4,
        "stress": 3
       }
+     },
+     {
+      "text": "They demanded the manager. The manager took my side. I was a little moved.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "stress": 2,
+       "karma": 1
+      }
+     },
+     {
+      "text": "The customer left a bad review anyway. I read it at lunch and cried into a sandwich.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "stress": 6,
+       "happiness": -3
+      }
      }
     ]
    },
@@ -507,6 +714,25 @@
       "trait_bonus": {
        "Hothead": 2
       }
+     },
+     {
+      "text": "The customer filmed it and uploaded it. I was not wearing my best face.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -10,
+       "happiness": -4,
+       "stress": 8,
+       "fame": 1
+      }
+     },
+     {
+      "text": "My manager quietly said she'd wanted to do the same for years. I kept my job.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "happiness": 4,
+       "stress": -2
+      }
      }
     ]
    },
@@ -522,6 +748,24 @@
       },
       "trait_bonus": {
        "Kind": 2
+      }
+     },
+     {
+      "text": "They asked for my name, and a week later I found a glowing review online.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "karma": 3,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It didn't work. They got worse. Kindness is not a universal remedy.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 0,
+       "stress": 6,
+       "happiness": -2
       }
      }
     ]

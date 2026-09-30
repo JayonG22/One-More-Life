@@ -1,0 +1,26 @@
+work.coworker_credit :: Let it go :: {cw.first} got the promotion on the back of my idea. I've never forgiven that. :: stress=6,job_perf=-2,happiness=-4
+work.coworker_credit :: Let it go :: My boss quietly told me they knew the idea was mine. That mattered more than the meeting. :: stress=-2,job_perf=2,happiness=2
+work.weekend :: Say yes :: I spent the weekend alone with a spreadsheet, the boss never mentioned it, and the project failed anyway. :: job_perf=2,stress=8,happiness=-6
+work.weekend :: Say yes :: The weekend work saved the quarter. A bonus arrived in my next paycheck. :: job_perf=10,money=1500,stress=5 :: relationship={"boss":10}
+work.weekend :: Say no :: {boss.first} asked someone else, who turned out to be thrilled, and got the credit. :: job_perf=-6,stress=4,happiness=-2
+work.weekend :: Say no :: {boss.first} respected the boundary. "Good for you," they said, and meant it. :: job_perf=1,happiness=5,stress=-4 :: relationship={"boss":6}
+work.office_romance :: Keep it professional :: {cw.first} moved to a different department within the month. I'll never know. :: happiness=-2,stress=1
+work.office_romance :: Keep it professional :: We became the best desk neighbours in the office, which was better than a relationship. :: happiness=4,job_perf=2
+work.rival_is_boss :: Pretend you don't remember :: A week later {rival.first} pulled me aside: "I'm sorry about the lunch money." I wasn't ready for it. :: stress=-2,karma=3,happiness=3 :: set_boss="rival"
+work.rival_is_boss :: Pretend you don't remember :: {rival.first} gave me the worst assignments for a year. I never asked why. :: stress=8,job_perf=-3,happiness=-3 :: set_boss="rival"
+work.rival_is_boss :: Quit on the spot :: I spent three months looking for work and was bitter about it. I'd do it again. :: happiness=-3,money=-4000,stress=6 :: quit_job=true
+work.rival_is_boss :: Quit on the spot :: Someone at the company called me a week later with a better offer. The story got out. :: happiness=6,money=2000 :: quit_job=true
+work.rival_is_boss :: Work twice as hard to outshine them :: I burned out in March and {rival.first} promoted someone else. :: job_perf=6,stress=14,happiness=-6 :: set_boss="rival"
+work.rival_is_boss :: Work twice as hard to outshine them :: {rival.first} eventually admitted my results spoke for themselves. I got the promotion they'd been holding. :: job_perf=14,stress=8,happiness=4 :: set_boss="rival"
+work.relocation :: Accept :: The new city was lonely for a year, then gradually wasn't. The promotion was worth it. :: job_perf=8,money=5000,happiness=-2,stress=8
+work.relocation :: Accept :: Three weeks after I arrived, the department was restructured. I kept the title and lost the team. :: job_perf=4,money=3000,stress=10,happiness=-5
+work.relocation :: Decline :: My replacement thrived. I looked at LinkedIn too often that year. :: happiness=-4,stress=3
+work.relocation :: Decline :: The company shut that office the next year and I was glad I'd stayed. :: happiness=3,stress=-2,job_perf=2
+work.layoffs :: Start job hunting :: Half the office had the same idea. I got an interview and a wonderful counteroffer. :: stress=-2,job_perf=2,money=3000
+work.layoffs :: Start job hunting :: The layoffs never came. The next week I felt foolish sitting in an interview in my lunch break. :: stress=5,job_perf=-2
+work.bad_customer :: Stay calm :: They demanded the manager. The manager took my side. I was a little moved. :: job_perf=5,stress=2,karma=1
+work.bad_customer :: Stay calm :: The customer left a bad review anyway. I read it at lunch and cried into a sandwich. :: job_perf=-2,stress=6,happiness=-3
+work.bad_customer :: Yell back :: The customer filmed it and uploaded it. I was not wearing my best face. :: job_perf=-10,happiness=-4,stress=8,fame=1
+work.bad_customer :: Yell back :: My manager quietly said she'd wanted to do the same for years. I kept my job. :: job_perf=-2,happiness=4,stress=-2
+work.bad_customer :: Kill them with kindness :: They asked for my name, and a week later I found a glowing review online. :: job_perf=5,karma=3,happiness=4
+work.bad_customer :: Kill them with kindness :: It didn't work. They got worse. Kindness is not a universal remedy. :: job_perf=0,stress=6,happiness=-2

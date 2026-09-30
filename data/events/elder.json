@@ -21,6 +21,23 @@
        "happiness": 6,
        "health": 2
       }
+     },
+     {
+      "text": "A squirrel cleaned out the tomatoes overnight. I bought a cage and declared war.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I grew roses that took a prize at the county fair. I've never been so proud.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "health": 2,
+       "fame": 1
+      }
      }
     ]
    },
@@ -32,6 +49,22 @@
       "weight": 1,
       "effects": {
        "happiness": 6
+      }
+     },
+     {
+      "text": "A neighbour bought one of my paintings for ten dollars. It is the first money I've ever earned from art.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": 10,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "My hands shake more than I expected. The paintings look abstract now, and people call that a style.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
       }
      }
     ]
@@ -46,6 +79,22 @@
        "happiness": 7,
        "health": 1
       }
+     },
+     {
+      "text": "I tore a muscle in week two. I bowled the rest of the season sitting down.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "health": -2
+      }
+     },
+     {
+      "text": "We won the league in our final game, and the trophy sits on my mantel.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "health": 1
+      }
      }
     ]
    },
@@ -58,6 +107,22 @@
       "effects": {
        "happiness": 5,
        "smarts": 2
+      }
+     },
+     {
+      "text": "Halfway through I realised how much I'd forgotten. I phoned an old friend to fill in the gaps, and it became a weekly call.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "I finished the book and printed ten copies. Each of my children received one. One of them cried.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "smarts": 1
       }
      }
     ]
@@ -87,6 +152,24 @@
        "money": -3000,
        "happiness": -8
       }
+     },
+     {
+      "text": "The bank called me an hour later and got most of it back. I trembled for the rest of the day.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": -3,
+       "stress": 8
+      }
+     },
+     {
+      "text": "They called back the next day for more. I sent it, too. My family found out after.",
+      "weight": 1,
+      "effects": {
+       "money": -7000,
+       "happiness": -14,
+       "stress": 10
+      }
      }
     ],
     "requires": {
@@ -99,6 +182,23 @@
      {
       "text": "I hung up. Nice try.",
       "weight": 1
+     },
+     {
+      "text": "I phoned my grandchild to check. They were perfectly fine and thought the story hilarious.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      },
+      "relationship": {}
+     },
+     {
+      "text": "I hung up but my hands shook for an hour. The call had sounded so real.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      }
      }
     ]
    },
@@ -110,6 +210,22 @@
       "weight": 1,
       "effects": {
        "happiness": 5
+      }
+     },
+     {
+      "text": "They called again the next day. By the third call I'd named them all.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      }
+     },
+     {
+      "text": "I accidentally gave them my date of birth. My bank was not amused.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4,
+       "money": -150
       }
      }
     ]
@@ -187,6 +303,24 @@
       "effects": {
        "health": -6
       }
+     },
+     {
+      "text": "Walking it off wasn't enough. A week later I was in the emergency room with a cracked rib.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "stress": 8,
+       "money": -800
+      }
+     },
+     {
+      "text": "I was fine, but my daughter insisted on installing handrails. I complained and then used them daily.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": 2
+      },
+      "relationship": {}
      }
     ]
    }

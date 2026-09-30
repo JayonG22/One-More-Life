@@ -1,0 +1,107 @@
+actor.typecast :: Lean into it :: The grumpy neighbor got a spin-off, and I got a contract that will not let me play anyone else for years. :: fame=5,money=40000,happiness=-4
+actor.method :: Politely refuse :: The director replaced me with someone who did not refuse. The film won an award I would have liked. :: fame=-2,happiness=-5,skill=1
+actor.costar_romance :: Keep it professional :: A year later I found out they'd been waiting for a signal. I still think about it. :: happiness=-3,stress=2
+actor.costar_romance :: Keep it professional :: The working relationship flourished. We became the best screen pair of the decade. :: fame=3,skill=3
+actor.sequel_offer :: Only if the script is good :: They said the script was "in development", which meant nothing. I waited a year and then walked. :: stress=5,happiness=-4
+actor.sequel_offer :: Pass :: The sequel bombed without me. I pretended not to check the numbers every morning. :: happiness=3,karma=1,fame=-1
+actor.award_nom :: Stay humble :: I won. My speech ran long and I forgot to thank my agent. :: fame=8,happiness=8,money=30000
+actor.award_nom :: Stay humble :: I lost to a newcomer. I clapped so hard my hands hurt. :: fame=1,happiness=-4,stress=3
+actor.fan_encounter :: Take a selfie with them :: The fan's friends arrived. Forty minutes and a hundred selfies later I never did finish the shopping. :: fame=2,stress=3,happiness=1
+actor.fan_encounter :: Take a selfie with them :: They told me my film got them through their worst year. I went home and cried in the car. :: karma=5,happiness=8
+actor.fan_encounter :: Pretend you're someone else :: The fan began to cry harder and apologised to me. I felt like a villain in a grocery aisle. :: karma=-3,happiness=-3
+actor.stunt :: Wait for the double :: The double recovered and the stunt went perfectly. The producers sent me a fruit basket by way of apology. :: happiness=2,job_perf=1
+actor.stunt :: Wait for the double :: The production lost its window and I heard my name next to the word "difficult". :: stress=6,fame=-2
+actor.child_star :: Keep acting :: A role I took at twelve turned out to be the defining one. I have never been allowed to grow out of it. :: fame=6,money=25000,happiness=-6
+actor.child_star :: Keep acting :: I burned out at fourteen and my grades collapsed, but my show was renewed. :: school=-12,stress=10,money=12000
+actor.child_star :: Ask for a normal childhood :: My parents agreed but the studio didn't, and there was a court date I was too young to understand. :: stress=6,happiness=2,money=-2000
+music.writers_block :: Go on a road trip for inspiration :: The car broke down in a town with one bar. I wrote the best song of my life on a napkin there. :: skill=6,money=-1400,happiness=7,fame=1
+music.writers_block :: Go on a road trip for inspiration :: Two weeks of driving, nothing new on paper, and a lot of time to think about why I do this. :: money=-900,stress=-4,happiness=2
+music.writers_block :: Collaborate with a stranger online :: The stranger stole the hook and released it first. The internet sided with them. :: fame=-2,karma=-1,stress=6
+music.writers_block :: Collaborate with a stranger online :: We never met but we wrote a song that became a minor hit in a country I've never visited. :: skill=5,fame=3,money=4000
+music.writers_block :: Force it :: Forcing it produced one good line buried in twelve bad ones. Maybe that is how it always works. :: skill=2,stress=3
+music.bandmate_quit :: Let them go :: The solo record was terrible. They asked to come back and I was gracious about it, secretly delighted. :: karma=3,happiness=3
+music.bandmate_quit :: Let them go :: They went solo and became bigger than us. I went to the premiere and meant every word of my congratulations, mostly. :: happiness=-3,karma=4,fame=-1
+music.bandmate_quit :: Kick them out first :: It turned out the band was better without them. I have never admitted that to anyone. :: skill=3,karma=-2
+music.bandmate_quit :: Kick them out first :: The band fell apart in a month. Nobody could decide who'd been right. :: fame=-4,stress=8,karma=-4
+music.viral_song :: Stay mysterious :: The mystery lasted a week. Then a fan found a blurry photo and the moment passed. :: fame=1,happiness=-2
+music.viral_song :: Stay mysterious :: I declined every interview and the silence fed the legend. A streaming deal landed on my desk. :: fame=6,money=25000
+music.festival :: Decline :: The festival sold out without me and the headline act was my old rival. :: happiness=-4,fame=-1
+music.festival :: Decline :: A quiet summer writing songs. The next album came out of it. :: skill=4,stress=-6,happiness=3
+music.reunion :: Some things should stay in the past :: The other three went ahead without me. Their tour was a disaster and I felt horrible for feeling vindicated. :: karma=-2,happiness=1
+music.reunion :: Some things should stay in the past :: Years later I saw a photo of the reunion, and everyone looked so happy that I wondered what I'd protected. :: happiness=-5,stress=2
+music.stage_fright :: Cancel the show :: The cancellation got more press than the show would have. A song was written about it. :: fame=2,stress=-2,money=-5000
+music.stage_fright :: Cancel the show :: The promoter sued and I paid for the pleasure of staying home. :: money=-12000,stress=6,happiness=-4
+music.label_contract :: Sign it :: The label released my next album as a fragrance tie-in. I've never heard a worse thing in my life, and it sold out. :: money=50000,happiness=-6,fame=3
+music.label_contract :: Sign it :: A decade later someone used my masters in an ad I found offensive and I had no right to object. :: happiness=-8,money=20000,karma=-2
+music.groupie :: Invite them backstage :: They brought a friend who filmed everything. It was a nightmare of a week. :: fame=-1,stress=8,happiness=-3
+music.groupie :: Invite them backstage :: They became the unofficial archivist of my career, which was kind of wonderful. :: happiness=6,fame=2,karma=2
+music.groupie :: Get security involved :: The fan started waiting outside my building instead. I changed my phone number. :: stress=8,happiness=-4,heat=1
+music.groupie :: Get security involved :: They never showed up again and I sometimes wonder if they were all right. :: karma=-1,stress=-2
+sport.rival_player :: Fire back on social media :: The league fined us both. The jerseys with our names on sold twice as fast. :: fame=4,money=-3000,happiness=2
+sport.rival_player :: Fire back on social media :: I said something I can't take back and the sponsor called the next morning. :: fame=-3,money=-20000,karma=-3,stress=8
+sport.rival_player :: Ignore it :: My next game against them was the best I'd ever played. I said nothing; the stat line said it all. :: fame=4,happiness=6,skill=2
+sport.rival_player :: Ignore it :: The comment kept showing up in highlights until I finally broke and answered. :: stress=6,karma=-1
+sport.doping :: Refuse :: A rival was caught using the same product a season later. I slept very well that night. :: karma=6,happiness=6,fame=2
+sport.doping :: Refuse :: I recovered slower and lost my starting spot. I'm still proud that I didn't cave. :: karma=5,skill=-2,happiness=-2
+sport.trade :: Accept gracefully :: The new city did not like me, and the feeling was mutual. I counted the days to free agency. :: happiness=-5,stress=5
+sport.trade :: Accept gracefully :: My old team made the finals that year and my replacement was a nobody. It stung. :: happiness=-3,fame=-1
+sport.kid_fan :: Go and spend the whole day :: One child asked me to come back and I did, every Thursday, for years. :: karma=10,happiness=8,fame=3
+sport.kid_fan :: Go and spend the whole day :: It was harder than any game. I sat in the car afterwards for ten minutes. :: karma=6,stress=6,happiness=2
+sport.kid_fan :: Send a signed jersey instead :: A nurse posted a photo of the jersey with a note: "we'd have preferred you." It went around. :: karma=-2,fame=-1,happiness=-3
+sport.kid_fan :: Send a signed jersey instead :: The jersey sold for charity at an auction for a fortune. The hospital put my name on a wall. :: karma=5,fame=2,happiness=4
+sport.coach_offer :: Accept :: Coaching teenagers turned out to be the hardest job I've ever had, and I was bad at it for a year. :: stress=8,happiness=3,money=60000
+sport.coach_offer :: Accept :: My first recruit made the pros. I cried in the tunnel. :: happiness=12,karma=3,money=60000
+sport.coach_offer :: Enjoy retirement :: Six months of golf and I was desperate for a whistle in my hand. :: happiness=-5,stress=4
+sport.coach_offer :: Enjoy retirement :: They gave the job to someone I'd trained, who was good, and proud of me for it. :: karma=2,happiness=2
+politics.debate :: Attack your opponent :: The attack backfired when they responded with a dignity I couldn't match. The polls tightened. :: approval=-5,karma=-2,stress=6
+politics.debate :: Attack your opponent :: A line I'd thrown away became the clip everyone shared. I won the night. :: approval=9,fame=4,karma=-3
+politics.bribe_scandal :: Apologize publicly :: The apology was praised for its honesty and I survived the news cycle with an unexpected boost. :: approval=4,karma=5,stress=4
+politics.bribe_scandal :: Apologize publicly :: An investigation followed. I resigned my committee seats and lost two friends. :: approval=-25,karma=2,stress=12,happiness=-6
+politics.bribe_scandal :: Blame your staff :: The staffer talked. The interview aired during dinner. :: approval=-20,karma=-10,heat=8
+politics.bribe_scandal :: Blame your staff :: It worked. The staffer took a job in another state and no one asked questions. I asked myself a few. :: approval=-2,karma=-6,stress=4
+politics.crisis :: Show up with sandbags :: A photo went wrong: I dropped a bag on a photographer's foot. The story is still told. :: approval=3,fame=2,happiness=2
+politics.crisis :: Show up with sandbags :: I worked until dawn beside volunteers I'd never met. People still talk about it. :: approval=14,karma=6,health=-2
+politics.crisis :: Coordinate from the office :: The response worked and lives were saved. Nobody knew it had been me. :: approval=3,karma=3,stress=5
+politics.crisis :: Coordinate from the office :: A delay in the supply chain cost us a day. I got the blame. :: approval=-8,stress=8
+politics.crisis :: Go on vacation :: A local paper had a photo of me with a cocktail. I've never been more famous or less popular. :: approval=-30,fame=8,karma=-5
+politics.lobbyist :: Go :: I met a person on the trip who became a true friend. The headlines mentioned the lobbyist. :: happiness=6,approval=-3,karma=-2
+politics.lobbyist :: Go :: The trip was a setup and an investigator had photographs. I'm still explaining them. :: approval=-14,stress=10,heat=5
+politics.lobbyist :: Decline and disclose it :: The lobbyist's firm went quiet. So did my campaign's largest donor. :: approval=2,money=-10000,karma=3
+politics.lobbyist :: Decline and disclose it :: My disclosure became a talking point for my rival's ethics reform bill. They took the credit. :: approval=-2,karma=4,stress=4
+politics.opponent_dirt :: Bury it :: The dirt leaked anyway, from someone else. I was praised for not using it but it didn't help the race. :: karma=6,approval=3
+politics.opponent_dirt :: Bury it :: My opponent won by a point. I think about that point often. :: karma=6,approval=-4,stress=5,happiness=-3
+politics.town_hall :: Listen and promise to act :: I kept the promise and the voter became my most loyal supporter. :: approval=8,karma=4
+politics.town_hall :: Listen and promise to act :: The promise cost me two weeks of meetings and a committee fight. I'd do it again. :: stress=6,approval=3,karma=3
+mafia.loyalty_test :: Hold it :: The package was full of letters. Just letters. I never found out whose. :: respect=4,stress=3
+mafia.loyalty_test :: Hold it :: Someone broke into my flat looking for it. I had hidden it better than they'd imagined. :: respect=12,stress=8,heat=3
+mafia.loyalty_test :: Look inside :: Inside was cash and a note that read: "Good. Now you know." That was the test. I passed it. :: respect=10,stress=6
+mafia.loyalty_test :: Look inside :: Whatever it was, I never saw the boss again. I heard he took a long trip. :: respect=-8,stress=12,heat=4
+mafia.loyalty_test :: Refuse :: The boss nodded and gave the job to someone else. No consequence. That's the scary part. :: respect=-6,stress=6
+mafia.loyalty_test :: Refuse :: My refusal was respected, unexpectedly. The boss said he preferred men who know where their line is. :: respect=5,karma=3
+mafia.sitdown :: Keep the peace :: Both sides claimed victory and I spent the drive home knowing a bill would come due. :: respect=3,stress=5
+mafia.sitdown :: Keep the peace :: The peace held for a year. Then it didn't, and I was blamed for not having done better. :: respect=-4,stress=8,skill=1
+mafia.informant :: Tell the boss :: {cm.first} was innocent. I found out later. I don't talk about it. :: respect=8,karma=-15,stress=12,happiness=-8
+mafia.informant :: Tell the boss :: The boss had his own suspicions and used my name to remove a rival. I'm now in his debt. :: respect=12,karma=-8,heat=4
+mafia.informant :: Do nothing :: {cm.first} was arrested the following week. Everyone looked at me. :: respect=-10,stress=12,heat=6
+mafia.informant :: Do nothing :: Nothing happened. {cm.first} was never the informant. I felt foolish and relieved. :: stress=-3,karma=2
+mafia.funeral :: Pay respects openly :: A photo of me at the graveside surfaced in an indictment a year later. :: respect=3,heat=14,stress=8
+mafia.funeral :: Pay respects openly :: The widow took my hand and said my name. Loyalty is remembered in this world. :: respect=9,karma=3
+mafia.funeral :: Send flowers :: Sending flowers was noted as cowardice by a few and good judgement by others. :: respect=-2,heat=-2
+mafia.promotion_offer :: Do whatever it takes :: The job went wrong in a way I'd never seen, and I spent three weeks as a ghost. :: respect=8,karma=-15,heat=14,stress=14
+mafia.promotion_offer :: Do whatever it takes :: I earned my stripes and a chair at the table. There are no more doors behind me. :: respect=18,karma=-18,heat=8
+mafia.promotion_offer :: Hesitate :: Nobody mentioned it again, which is how I knew the offer was gone for good. :: respect=-8,stress=5
+mafia.promotion_offer :: Hesitate :: The boss said "Take your time," and gave me a week. That week I learned what I was. :: respect=2,stress=10,karma=3
+hustle.mark_cop :: Shut it down and walk :: I walked away, and later saw the man arrest someone else at the same corner. I got lucky. :: cred=3,stress=4
+hustle.mark_cop :: Shut it down and walk :: The "cop" was just a nosy teacher. I lost a good customer. :: cred=-2,stress=2
+hustle.rival_crew :: Offer a truce :: The truce lasted until the rainy season, then they took my spot. :: cred=-3,stress=5
+hustle.rival_crew :: Offer a truce :: Half the block, half the trouble, and a new friend who remembers every price. :: cred=5,happiness=3
+hustle.rival_crew :: Move to a new spot :: My new spot was the best corner I've had in years. The tourists love it. :: cred=3,money=300
+hustle.rival_crew :: Move to a new spot :: A local told me the spot was taken, in words I'll remember. I moved again. :: cred=-3,stress=4
+hustle.big_score :: Let it go :: Two blocks later he was robbed by someone less careful. I heard the shout and kept walking. :: karma=1,stress=2
+hustle.big_score :: Let it go :: The market was quiet all afternoon. Sometimes the best score is the one you skip. :: happiness=1
+hustle.go_straight :: Take it :: The program was hard, and my old crew mocked me. I finished the first month anyway. :: karma=6,stress=5,happiness=2,smarts=2
+hustle.go_straight :: Take it :: Halfway through I got an offer for a score too good to pass up. I stayed in the classroom. I'm not sure why. :: karma=10,stress=8,cred=-3
+hustle.go_straight :: Not yet :: A year later the same social worker visited. Fewer options, same offer. I said yes. :: karma=3,happiness=-2
+hustle.go_straight :: Not yet :: I got arrested the following week. The social worker was in the courtroom. She said nothing; it hurt more. :: heat=6,happiness=-6,karma=-2
+politics.town_hall :: Argue back :: The voter turned out to be a retired teacher with the facts, and I lost in front of a room. :: approval=-10,stress=8,happiness=-4
+politics.town_hall :: Argue back :: The argument was so honest that the room applauded us both. The voter joined my campaign. :: approval=6,fame=3,happiness=3

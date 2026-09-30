@@ -1,0 +1,12 @@
+prison.cellmate :: Offer to share your snacks :: {cm.first} took all the snacks and gave me nothing. I learned a lesson that cost six dollars. :: happiness=-3,stress=4 :: relationship={"cm":-10}
+prison.cellmate :: Offer to share your snacks :: {cm.first} taught me how to play chess on a cardboard board. We played for years. :: happiness=5,smarts=2 :: relationship={"cm":40}
+prison.cellmate :: Keep to yourself :: {cm.first} took the lack of interest as disrespect. The silence between us got heavier each month. :: stress=8,happiness=-4 :: relationship={"cm":-18}
+prison.cellmate :: Keep to yourself :: {cm.first} turned out to be shy as well. We coexisted peacefully for a year. :: stress=-2,happiness=2 :: relationship={"cm":10}
+prison.riot :: Hide in your cell :: I was locked in for three days. Someone else was hurt. I thought about it afterwards. :: stress=10,happiness=-4
+prison.riot :: Hide in your cell :: The riot passed without me. Some inmates called me a coward and others envied me. :: stress=4,karma=0
+prison.riot :: Help a guard :: An inmate I'd never met saw me help. From then on I needed to watch my back. :: karma=6,stress=12,health=-3
+prison.riot :: Help a guard :: The guard later slipped me an extra ration. Small mercies. :: karma=4,happiness=3
+prison.visit :: Thank them for coming :: The visit was brief and awkward. On the way out, {vis.first} turned and waved. I held onto that for months. :: happiness=6 :: relationship={"vis":10}
+prison.visit :: Thank them for coming :: {vis.first} brought a photograph of the family. The guards let me keep it. I've kept it in my pocket ever since. :: happiness=10 :: relationship={"vis":14}
+prison.visit :: Tell them not to come again :: {vis.first} came anyway, and stood outside the gate for hours. They left a note. :: happiness=-8,stress=6 :: relationship={"vis":-8}
+prison.visit :: Tell them not to come again :: {vis.first} never returned. I've regretted it every day since. :: happiness=-12,stress=8 :: relationship={"vis":-30}

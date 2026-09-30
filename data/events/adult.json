@@ -43,6 +43,24 @@
        "money": 300,
        "karma": -8
       }
+     },
+     {
+      "text": "The owner had posted a flyer on every lamp post on the street. I saw it on the way home and could not unsee it.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "karma": -10,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "Three hundred dollars covered the brake job I had been putting off. I have decided this counts as the universe's idea.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "karma": -6,
+       "stress": -4
+      }
      }
     ]
    },
@@ -52,6 +70,23 @@
      {
       "text": "I walked on. Not my problem.",
       "weight": 1
+     },
+     {
+      "text": "I handed it to a shop assistant. A week later a card arrived from the owner, and a twenty.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 3,
+       "money": 20
+      }
+     },
+     {
+      "text": "I walked on, then turned back, then walked on again. I still think about which of those was the real me.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": -1
+      }
      }
     ]
    }
@@ -113,6 +148,26 @@
       "relationship": {
        "nb": -15
       }
+     },
+     {
+      "text": "The landlord did nothing for two months, then raised everyone's rent for \"noise-related administration.\"",
+      "weight": 1,
+      "effects": {
+       "money": -60,
+       "stress": 5,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "It turned out {nb.first} was a night-shift nurse practising the only hour they had free. I felt terrible and brought over soup.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 2
+      },
+      "relationship": {
+       "nb": 10
+      }
      }
     ]
    },
@@ -132,6 +187,29 @@
       "trait_bonus": {
        "Hothead": 2
       }
+     },
+     {
+      "text": "{nb.first} knocked on my door at midnight, and we ended up arguing about who had the worst taste. We agreed on a schedule.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2
+      },
+      "relationship": {
+       "nb": 8
+      }
+     },
+     {
+      "text": "The police came for both of us. Mine was the louder noise, so mine was the warning.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 8,
+       "money": -100
+      },
+      "relationship": {
+       "nb": -25
+      }
      }
     ]
    },
@@ -142,6 +220,25 @@
       "text": "I bought earplugs and slept like a baby.",
       "weight": 1,
       "effects": {
+       "money": -15
+      }
+     },
+     {
+      "text": "The earplugs worked until a smoke alarm went off and I slept through it. The building evacuated without me.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -3,
+       "money": -15,
+       "health": -2
+      }
+     },
+     {
+      "text": "I got used to silence so much that I started to look forward to bed. Best fifteen dollars all year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -4,
        "money": -15
       }
      }
@@ -176,6 +273,24 @@
       "weight": 1,
       "effects": {
        "money": -800
+      }
+     },
+     {
+      "text": "The mechanic found the real problem and charged me double for the next one. The car drives beautifully now.",
+      "weight": 1,
+      "effects": {
+       "money": -1400,
+       "stress": 4,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "It turned out to be a loose hose. The mechanic charged for ten minutes and pocketed the lesson.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "happiness": 4,
+       "karma": 2
       }
      }
     ],
@@ -216,6 +331,23 @@
       "effects": {
        "happiness": 2
       }
+     },
+     {
+      "text": "The friend arrived, looked at the engine, and said a word I will not repeat. We called the tow truck together anyway.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": 1,
+       "stress": 2
+      }
+     },
+     {
+      "text": "Nobody picked up. I sat in the car for two hours and learned how many people I can actually call.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 5
+      }
      }
     ]
    }
@@ -243,6 +375,24 @@
        "karma": 3,
        "stress": 3,
        "smarts": 1
+      }
+     },
+     {
+      "text": "I was dismissed after eight hours of waiting. I read an entire novel and was paid twelve dollars.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 1,
+       "money": 12
+      }
+     },
+     {
+      "text": "The case was a tragedy and the verdict was not easy. I went home and sat in the car for a long time.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "karma": 4,
+       "happiness": -5
       }
      }
     ]
@@ -276,6 +426,23 @@
        "money": -500,
        "karma": -2
       }
+     },
+     {
+      "text": "Nothing happened. Not a letter, not a call. I keep waiting for it.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "An officer appeared at my door about it. Embarrassing in front of the neighbors.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "karma": -3,
+       "stress": 6,
+       "heat": 2
+      }
      }
     ]
    }
@@ -304,6 +471,24 @@
        "money": -500,
        "happiness": -4
       }
+     },
+     {
+      "text": "The fee bought me a second email asking for a larger fee, and I sent that one too before I understood.",
+      "weight": 1,
+      "effects": {
+       "money": -2200,
+       "happiness": -8,
+       "stress": 8
+      }
+     },
+     {
+      "text": "My bank caught the transfer and froze it. I got my money back and a stern phone call from a stranger named Gary.",
+      "weight": 1,
+      "effects": {
+       "money": 0,
+       "stress": 4,
+       "happiness": -1
+      }
      }
     ],
     "requires": {
@@ -316,6 +501,23 @@
      {
       "text": "Nice try, internet.",
       "weight": 1
+     },
+     {
+      "text": "It came back with a different sender name and a better font. I deleted that one too.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": 1
+      }
+     },
+     {
+      "text": "I showed it to my mother so she would not fall for the same thing. She had already replied.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": 2,
+       "happiness": -1
+      }
      }
     ]
    },
@@ -327,6 +529,23 @@
       "weight": 1,
       "effects": {
        "happiness": 5
+      }
+     },
+     {
+      "text": "The scammer wrote back with genuine emotion and I felt strangely responsible for his feelings.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "karma": -1,
+       "stress": 2
+      }
+     },
+     {
+      "text": "Mid-conversation I slipped and gave away my real phone number. I now get calls in three languages.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -4
       }
      }
     ],
@@ -414,6 +633,23 @@
       "relationship": {
        "friend": -4
       }
+     },
+     {
+      "text": "Eight months later I drove past a line round the block at their truck. I bought a taco and did not look at anyone.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2,
+       "money": -12
+      }
+     },
+     {
+      "text": "The truck folded within the year. {friend.first} lost everything and never blamed me. I am still glad I passed.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": 1
+      }
      }
     ]
    }
@@ -453,6 +689,24 @@
       "relationship": {
        "friend": 12
       }
+     },
+     {
+      "text": "I sat at the singles table between a man who sold boats and a woman who would not stop crying. It was still a good night.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "happiness": 3,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I got there to find my ex was also a guest and on the dance floor with a plus-one.",
+      "weight": 1,
+      "effects": {
+       "money": -150,
+       "happiness": -5,
+       "stress": 6
+      }
      }
     ]
    },
@@ -464,6 +718,22 @@
       "weight": 1,
       "relationship": {
        "friend": -8
+      }
+     },
+     {
+      "text": "My absence was discussed at length. I was told afterwards that it was noted.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I spent the night on the sofa with a pizza and felt no guilt, which surprised me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -3
       }
      }
     ]
@@ -480,6 +750,23 @@
       },
       "relationship": {
        "friend": -60
+      }
+     },
+     {
+      "text": "Nobody had an objection to my objection and it turned out to be a joke the couple had planned. Everyone laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 1
+      }
+     },
+     {
+      "text": "The groom's mother has sworn a vendetta that I expect to be lifelong.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 8,
+       "happiness": -2
       }
      }
     ],
@@ -520,6 +807,24 @@
        "happiness": 10,
        "money": -95000
       }
+     },
+     {
+      "text": "The car spent more time in the garage than on the road, because I was afraid of scratching it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "money": -95000,
+       "stress": 4
+      }
+     },
+     {
+      "text": "A stranger at a petrol station admired it and I felt a flicker of something I had not felt in years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "money": -95000,
+       "looks": 1
+      }
      }
     ],
     "requires": {
@@ -538,6 +843,22 @@
       "counter": {
        "music": 1
       }
+     },
+     {
+      "text": "Six months in I could play exactly one song, which I performed at every gathering until asked to stop.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "My fingers hurt and my teacher is nineteen. I quit after three weeks and the guitar became a very expensive coat hook.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "money": -180
+      }
      }
     ]
    },
@@ -551,6 +872,23 @@
        "happiness": 4,
        "looks": -1
       }
+     },
+     {
+      "text": "It healed beautifully, and now I cannot stop looking at it in the mirror.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "looks": 1
+      }
+     },
+     {
+      "text": "The artist misspelled a word. I have decided to call it character.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "looks": -2,
+       "money": -200
+      }
      }
     ]
    },
@@ -563,6 +901,24 @@
       "effects": {
        "stress": -12,
        "happiness": 6
+      }
+     },
+     {
+      "text": "The first three sessions were mostly about my mother. I kept going.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "happiness": 2,
+       "money": -300
+      }
+     },
+     {
+      "text": "The therapist asked one question I could not answer, and I thought about it for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2,
+       "smarts": 1
       }
      }
     ]
@@ -592,6 +948,23 @@
        "happiness": 10
       },
       "keep_role": "dog"
+     },
+     {
+      "text": "The dog was not house-trained, not leash-trained, and not remotely sorry. I love it completely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 5,
+       "money": -300
+      }
+     },
+     {
+      "text": "The vet found a microchip. The dog had a family who had been looking for it for a month. I handed it back.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": 8
+      }
      }
     ]
    },
@@ -604,6 +977,22 @@
       "effects": {
        "karma": 4
       }
+     },
+     {
+      "text": "{dog.first} was still there when I visited a week later. I took it home after all.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The shelter was overcrowded, and the staff member would not meet my eye. I have not asked since.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": 1
+      }
      }
     ]
    },
@@ -615,6 +1004,23 @@
       "weight": 1,
       "effects": {
        "karma": -3
+      }
+     },
+     {
+      "text": "The dog followed me for four blocks and I kept pretending not to see it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "karma": -2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "A neighbor took it in within the hour. Good for them; I felt small.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "happiness": -2
       }
      }
     ]
@@ -655,6 +1061,23 @@
        "karma": 6,
        "happiness": 4
       }
+     },
+     {
+      "text": "Halfway up the steps I realised I had the wrong bag. I had been carrying a stranger's shopping up to a stranger's flat.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 2,
+       "stress": 1
+      }
+     },
+     {
+      "text": "It took twenty minutes and a lot of stairs, and she told me about her late husband all the way up. I think she needed that more than the bags.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": 5
+      }
      }
     ]
    },
@@ -666,6 +1089,21 @@
       "weight": 1,
       "effects": {
        "karma": -3
+      }
+     },
+     {
+      "text": "I heard later that someone else stopped. I felt relief and also that I'd failed a small test.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I was late anyway. Nobody noticed I had hurried.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
       }
      }
     ]
@@ -713,6 +1151,23 @@
       "text": "I drove past.",
       "weight": 1,
       "effects": {
+       "karma": -2
+      }
+     },
+     {
+      "text": "I checked the mirror. Someone behind me had stopped and was pushing the car alone. I kept driving and hated myself for four miles.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "happiness": -4,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I got to work on time and my boss mentioned it in front of everyone. It seemed a fair trade at the time.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
        "karma": -2
       }
      }
@@ -824,6 +1279,23 @@
       "unflags": [
        "cheated_test"
       ]
+     },
+     {
+      "text": "My new manager asked me to step down from a mentoring role. It was fair. I accepted.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": -4,
+       "job_perf": -5
+      }
+     },
+     {
+      "text": "An old friend from that class wrote to say they'd been carrying the same secret. We both felt lighter.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 6
+      }
      }
     ]
    },
@@ -855,6 +1327,24 @@
       "weight": 1,
       "effects": {
        "happiness": 4
+      }
+     },
+     {
+      "text": "The joke didn't land with the people it was meant for. A quiet week followed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 5,
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "It went viral in a small way. A podcast invited me on. The topic was my shame, but the fee was real.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "fame": 2,
+       "money": 300
       }
      }
     ],
@@ -927,6 +1417,23 @@
        "nb": 20
       },
       "keep_role": "nb"
+     },
+     {
+      "text": "The potato salad had been left in the sun for an hour. The party became a story everyone tells.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "health": -4,
+       "karma": -1
+      }
+     },
+     {
+      "text": "Someone asked for the recipe and I felt a disproportionate rush of pride.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 1
+      }
      }
     ]
    },
@@ -939,6 +1446,23 @@
       "effects": {
        "happiness": 2
       }
+     },
+     {
+      "text": "Nobody said anything, and I noticed everybody noticing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3,
+       "karma": -1
+      }
+     },
+     {
+      "text": "I got talking to a woman at the grill about her garden, and it was the best conversation I'd had in months.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 1
+      }
      }
     ]
    },
@@ -948,6 +1472,22 @@
      {
       "text": "I stayed in.",
       "weight": 1
+     },
+     {
+      "text": "I heard the laughter through the wall until eleven and felt, for the first time, that I lived next to a community I wasn't part of.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 2
+      }
+     },
+     {
+      "text": "A quiet evening with a book. Perfect. Nobody minded.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -4
+      }
      }
     ]
    }

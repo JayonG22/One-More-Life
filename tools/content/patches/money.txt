@@ -1,0 +1,27 @@
+money.hot_tip :: Pass :: The stock doubled in a month. I told myself it was luck and did not look at the chart again for a year. :: happiness=-5,stress=3
+money.hot_tip :: Pass :: The stock cratered. My coworker stopped bringing it up, and I never mentioned it either. :: happiness=2,karma=1
+money.crypto_friend :: Politely nod :: {fr.first} sent me a link to the coin every day for a week. I muted the thread. :: stress=2
+money.crypto_friend :: Politely nod :: A year later FrogCash was worth nothing. {fr.first} asked me not to bring it up. I didn't. :: happiness=1,karma=2
+money.inheritance_dispute :: Fight for your share :: The lawyers took a third. I won anyway and lost two cousins. :: money=9000,karma=-4,stress=10
+money.inheritance_dispute :: Fight for your share :: A handwritten note turned up in a drawer, changing the split. The family feud ended in tears. :: money=35000,karma=-2,stress=6,happiness=-2
+money.inheritance_dispute :: Let the others have it :: A cousin later pressed a cheque into my hand without a word. We never spoke about it. :: karma=6,money=8000,happiness=4
+money.inheritance_dispute :: Let the others have it :: Nobody thanked me. I stayed quiet and wondered what I'd proved. :: karma=3,happiness=-4
+money.tax_audit :: Hire an accountant ($2,000) :: The accountant found a mistake in my favour and I got a refund. I've since become loyal to accountants. :: money=1200,stress=-4,happiness=3
+money.tax_audit :: Hire an accountant ($2,000) :: The audit found an old error. I paid the difference plus a penalty and sat through a long lecture. :: money=-5500,stress=8,happiness=-4
+money.tenant_late :: Start eviction :: {ten.first} left the flat in a worse state than I'd found it. I spent the deposit on the repairs. :: karma=-5,money=-2500,stress=8
+money.tenant_late :: Start eviction :: A neighbour offered to rent it the next week at a better rate. I felt awful and relieved. :: karma=-4,money=1200,happiness=-2
+money.tenant_late :: Start eviction :: Halfway through I changed my mind. {ten.first} stayed. They paid me back within two months. :: karma=6,money=-1200,happiness=3 :: relationship={"ten":15}
+money.tenant_damage :: Fix it properly ($6,000) :: The plumber found a second leak I hadn't noticed. The bill went up. The building now runs like new. :: money=-8500,stress=5
+money.tenant_damage :: Fix it properly ($6,000) :: Insurance covered half of it after a long argument. I'd never have won without the paperwork. :: money=-3000,stress=3,smarts=1
+money.great_tenant :: Knock $100 off the rent :: {ten.first} stayed fifteen years and refused every rent increase I offered. A rare thing. :: karma=4,money=-1200,happiness=3 :: relationship={"ten":22}
+money.great_tenant :: Knock $100 off the rent :: {ten.first} tried to decline and I insisted. A week later they left a pie at my door. :: karma=4,money=-1200,happiness=4
+money.great_tenant :: Say thanks :: The garden became the talk of the building. The next tenant asked for the same. :: karma=1,happiness=2 :: relationship={"ten":8}
+money.great_tenant :: Say thanks :: {ten.first} moved out six months later for a job in another city. I think about that garden. :: happiness=-2
+money.appraisal :: Stay home :: My neighbour's ugly vase turned out to be worth $40,000. I can't stop thinking about mine. :: happiness=-3,stress=2
+money.appraisal :: Stay home :: I found out later they'd appraised my neighbour's vase at $8. I felt vindicated for no reason. :: happiness=2
+money.island_party :: Throw the party of the decade :: A guest broke into the wine cellar and a helicopter was dented. The bill came to a quarter million. :: money=-380000,fame=8,happiness=6,stress=6
+money.island_party :: Throw the party of the decade :: A famous person proposed on the beach. It went viral. My island is now known as "the proposal island". :: money=-250000,fame=10,happiness=14
+money.island_party :: Keep it family-only :: A cousin I'd never met turned out to be a brilliant cook. We became close. :: happiness=12,stress=-12 :: relationship={}
+money.island_party :: Keep it family-only :: The uninvited sent jealous texts all week. I didn't reply. :: happiness=6,stress=-4,fame=-2
+money.gold_digger :: Trust them :: {pt.first} later confessed they'd asked because they were worried about their own debts. We paid them off together. :: happiness=6,karma=2
+money.gold_digger :: Trust them :: Two years later {pt.first} left with a lot of my money. I was told I had been too trusting. :: money=-30000,happiness=-12,stress=10

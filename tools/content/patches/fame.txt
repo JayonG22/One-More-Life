@@ -1,0 +1,38 @@
+fame.paparazzi :: Throw your coffee at them :: The coffee landed on a photographer's very expensive lens. I was sued and was photographed apologising. :: fame=3,money=-22000,karma=-5,stress=8
+fame.paparazzi :: Throw your coffee at them :: One of them laughed and said "nice arm." The clip was a meme for a week. I was flattered. :: fame=5,happiness=3,karma=-2
+fame.paparazzi :: Sneak out the back :: They'd anticipated it. A photograph of me in my pyjamas ran with a headline about my "secret life". :: fame=1,happiness=-4,stress=5
+fame.paparazzi :: Sneak out the back :: I took a bus to a park and sat on a bench for two hours. It was the best day I'd had all year. :: happiness=8,stress=-8
+fame.cancel :: Double down :: It cost me a sponsor and won me a cult. The cult's merchandise sells well. :: fame=6,money=12000,karma=-6,stress=8
+fame.cancel :: Double down :: It backfired. My agent said the word "unrepresentable." :: fame=-6,money=-20000,karma=-4,stress=10
+fame.cancel :: Log off for a while :: A month offline and a short statement did it. People forgot. I'd like to say I'd learned something. :: fame=-3,stress=-8,happiness=3
+fame.cancel :: Log off for a while :: Silence was read as an admission. A documentary came out about my "fall". :: fame=-8,happiness=-5,stress=6
+fame.talk_show :: Promote your work :: The host kept steering the interview toward my ex. I was off-script and it showed. :: fame=1,money=1500,stress=6
+fame.talk_show :: Promote your work :: I said something unplanned and funny. The clip trended and the show booked me again. :: fame=5,money=8000,happiness=5
+fame.talk_show :: Decline :: The slot went to a rival. Their interview made me look cowardly by comparison. :: fame=-2,happiness=-2
+fame.talk_show :: Decline :: A quiet evening in. I felt free. :: happiness=3,stress=-3
+fame.stalker :: Hire security :: The bodyguard turned out to be the best friend I've made in years. The stalker never came near. :: money=-40000,stress=-8,happiness=4
+fame.stalker :: Hire security :: The bodyguard sold a story to a tabloid a year later. I felt the cost more than the fee. :: money=-40000,stress=6,happiness=-5,fame=-1
+fame.stalker :: Get a restraining order :: The stalker violated the order within a week. I'd been made to feel safe when I wasn't. :: money=-3000,stress=10,happiness=-4,heat=0
+fame.stalker :: Get a restraining order :: The order worked. A year later I received a letter of apology from a treatment centre. :: stress=-6,money=-3000,karma=3
+fame.stalker :: Ignore it :: It stopped the day I moved house. I was never sure it was over. :: stress=10,happiness=-5,money=-8000
+fame.stalker :: Ignore it :: A neighbour intervened before something terrible happened. I owe them a debt I can't repay. :: stress=14,happiness=-6,karma=2
+fame.charity_gala :: Host and donate $50,000 :: The gala raised more than expected, and a hospital ward now carries my name. :: money=-50000,karma=12,fame=5,happiness=8
+fame.charity_gala :: Host and donate $50,000 :: A guest later revealed the charity's accounting was flawed. My money vanished into overhead. :: money=-50000,karma=4,stress=8,happiness=-4
+fame.charity_gala :: Host only :: A guest mentioned my absence from the donor list in a newspaper column. I paid the next morning. :: fame=-1,karma=-2,money=-10000,stress=4
+fame.charity_gala :: Host only :: The evening went wonderfully. Nobody cared who gave what. :: fame=3,happiness=5
+fame.charity_gala :: Skip it :: Somebody else hosted it and became the face of a cause. I wish it had been me. :: fame=-2,happiness=-3
+fame.charity_gala :: Skip it :: I spent the evening with my family, and for once no one took a photograph. :: happiness=6,stress=-4
+fame.celeb_feud :: Clap back :: My reply was quoted by a newspaper I respect, and not approvingly. :: fame=2,karma=-3,stress=8
+fame.celeb_feud :: Clap back :: The feud made us both money. We finally hugged it out at an awards show and the clip went viral. :: fame=6,money=10000,happiness=4
+fame.celeb_feud :: Kill them with kindness :: They sent a snarky reply and the internet turned on them. I hadn't planned that. :: fame=4,karma=1,happiness=3
+fame.celeb_feud :: Kill them with kindness :: The flowers were returned unopened. I was mocked for trying. :: fame=-1,happiness=-3,karma=2
+fame.memoir :: Tell all :: A lawsuit from someone I'd named delayed publication. The settlement ate a fifth of my advance. :: money=280000,fame=3,karma=-5,stress=8
+fame.memoir :: Tell all :: The book was a sensation. A chapter about my mother made her stop speaking to me. :: money=400000,fame=6,karma=-6,happiness=-6
+fame.memoir :: Keep it classy :: Reviewers called it "polite to a fault". It sold modestly and lasted a long time. :: money=80000,fame=2,karma=3
+fame.memoir :: Keep it classy :: The book won a prize I hadn't expected. The committee praised my restraint. :: money=200000,fame=6,happiness=6,karma=3
+fame.memoir :: Decline :: Another celebrity published a memoir with my name in it. I had no rebuttal. :: fame=-2,happiness=-4,karma=0
+fame.memoir :: Decline :: I never wrote it. I sometimes think about what would have been in it. :: happiness=2
+fame.influencer_trip :: Go and post everything :: The brand's rival offered me a worse deal afterwards, which I took. I'm no longer sure which brand I represent. :: happiness=8,fame=2,money=3000,karma=-2
+fame.influencer_trip :: Go and post everything :: Food poisoning on day two and I posted that too. It was my highest-engagement post ever. :: health=-4,fame=3,happiness=2,stress=4
+fame.influencer_trip :: Go but barely post :: The brand apologised, then sent a second offer. They liked the authenticity. :: happiness=6,fame=1,money=4000
+fame.influencer_trip :: Go but barely post :: The brand blacklisted me. It cost me two future deals. :: happiness=8,fame=-2,money=-6000

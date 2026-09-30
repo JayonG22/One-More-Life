@@ -1,0 +1,55 @@
+family.parent_bills :: Pay all of it :: {par.first} refused at first, then cried, then insisted on paying me back in tiny envelopes of cash I never spent. :: money=-5000,karma=7,happiness=3 :: relationship={"par":22}
+family.parent_bills :: Pay all of it :: I emptied my savings. A month later I needed it myself, and could not say why I hadn't asked for help. :: money=-5000,karma=6,stress=8 :: relationship={"par":15}
+family.parent_bills :: Pay half :: The other half was still owed, and {par.first} never asked. I paid it six months later and pretended I hadn't noticed. :: money=-5000,karma=4,stress=3 :: relationship={"par":14}
+family.parent_bills :: Pay half :: Half wasn't enough and {par.first} was quietly ashamed. A hospital letter arrived a month after. :: money=-2500,stress=6,karma=1 :: relationship={"par":2}
+family.parent_bills :: Say you can't :: I couldn't sleep that night. I sent $500 anonymously the next week through the hospital. :: money=-500,stress=4,karma=2 :: relationship={"par":2}
+family.parent_bills :: Say you can't :: {par.first} sold something precious to cover it. I learned about it from a cousin. :: stress=8,happiness=-6,karma=-2 :: relationship={"par":-18}
+family.sibling_loan :: Lend it :: {sib.first} vanished for eight months. Every time I asked I got a promise and a joke. :: money=-2000,stress=5 :: relationship={"sib":-12}
+family.sibling_loan :: Lend it :: {sib.first} paid me back early, with a card and a bonus. It was the best money I've ever lent. :: money=-1500,happiness=4 :: relationship={"sib":16}
+family.sibling_loan :: Refuse :: {sib.first} found the money elsewhere and never mentioned it again, and that silence became a distance. :: stress=3 :: relationship={"sib":-18}
+family.sibling_loan :: Refuse :: {sib.first} turned out not to need it. They laughed and said "I was testing you." I didn't find it funny. :: stress=4 :: relationship={"sib":-4}
+family.grandparent_stories :: Listen :: {gp.first} told me a story they had never told anyone, about a person they loved before they met my grandparent. :: happiness=2,smarts=2,karma=2 :: relationship={"gp":18}
+family.grandparent_stories :: Listen :: The story went on for three hours. I checked my phone twice and hated myself for it. :: happiness=-1,smarts=1,karma=1 :: relationship={"gp":8}
+family.grandparent_stories :: Make an excuse :: {gp.first} passed away the next winter. I still remember the story I didn't stay for. :: happiness=-6,karma=-2,stress=4 :: relationship={"gp":-2}
+family.grandparent_stories :: Make an excuse :: {gp.first} said "another time," and another time came, and I listened that time. :: happiness=2,karma=2 :: relationship={"gp":8}
+family.kid_trouble :: Talk it through :: {kid.first} said nothing for an hour. Then everything. It was the worst and best conversation we'd ever had. :: stress=6,karma=3,happiness=2 :: relationship={"kid":16}
+family.kid_trouble :: Talk it through :: {kid.first} lied to my face about what happened and I knew it. We'll revisit this. :: stress=5,happiness=-2 :: relationship={"kid":2}
+family.kid_trouble :: Ground them :: {kid.first} sulked for a month and then thanked me years later. Parenting is a long game. :: stress=3,karma=1 :: relationship={"kid":-4}
+family.kid_trouble :: Ground them :: The punishment was unfair. I found out three weeks later and apologised. {kid.first} didn't say a word. :: stress=8,happiness=-4,karma=1 :: relationship={"kid":-14}
+family.kid_trouble :: Ask who won :: The other kid's parent overheard me. I am no longer invited to certain gatherings. :: karma=-3,happiness=2,stress=4 :: relationship={"kid":4}
+family.kid_trouble :: Ask who won :: {kid.first} lost, cried, and told me I was the only one who asked what happened instead of how it made me look. :: karma=2,happiness=3 :: relationship={"kid":10}
+family.anniversary :: Plan a surprise dinner ($200) :: The restaurant double-booked us. {sp.first} laughed it off and we ate takeaway on the kerb. Best anniversary yet. :: money=-120,happiness=8 :: relationship={"sp":18}
+family.anniversary :: Plan a surprise dinner ($200) :: {sp.first} had a migraine. The dinner was wasted and so was the evening. :: money=-200,happiness=-3,stress=4 :: relationship={"sp":-2}
+family.anniversary :: Write a heartfelt letter :: {sp.first} read it aloud in the car. We drove around the block three times to finish it. :: happiness=7,karma=1 :: relationship={"sp":18}
+family.anniversary :: Write a heartfelt letter :: The letter was sincere but clumsy, and {sp.first} smiled politely. A good idea in theory. :: happiness=1,stress=2 :: relationship={"sp":3}
+family.anniversary :: Forget it :: I remembered at 11 p.m. with a bunch of petrol-station flowers. {sp.first} accepted them with the look of a person keeping score. :: stress=6,happiness=-2 :: relationship={"sp":-8}
+family.anniversary :: Forget it :: It turned out {sp.first} had forgotten too. We laughed, and then we both felt something complicated. :: happiness=3,stress=1 :: relationship={"sp":4}
+agency.gift :: Thank them warmly :: The gift came with a note that made me cry on the bus. :: happiness=8,karma=1 :: relationship={"them":10}
+agency.gift :: Thank them warmly :: It was a duplicate of something I already own. I didn't say a word and kept both. :: happiness=2 :: relationship={"them":3}
+agency.money_help :: Accept gratefully :: The $1,000 covered the month. {them.first} never mentioned it again and neither did I, but I remember. :: money=1000,happiness=5,stress=-6 :: relationship={"them":8}
+agency.money_help :: Accept gratefully :: Accepting left me owing something I couldn't name. {them.first} brought it up a year later. :: money=1000,stress=5,happiness=1 :: relationship={"them":-4}
+agency.money_help :: Politely refuse :: I got through the month by skipping meals, and I didn't tell {them.first}. :: stress=8,health=-2,happiness=-3 :: relationship={"them":2}
+agency.money_help :: Politely refuse :: {them.first} sent groceries instead. I couldn't refuse a bag of food. :: money=40,happiness=4,stress=-2 :: relationship={"them":8}
+agency.setup :: Decline :: The friend turned out to be wonderful, according to {them.first}. A year later I ran into them at a wedding. :: happiness=-1,stress=1
+agency.setup :: Decline :: {them.first} kept trying for another year. I finally said yes, out of fatigue. It was awful. :: happiness=-4,stress=4 :: relationship={"them":-2}
+agency.setup :: Decline :: I was happy alone. {them.first} was hurt, but respected it. :: happiness=3,stress=-2
+agency.rumor :: Rise above it :: The rumor stuck to me for a year. The friends I kept were the ones who didn't ask. :: karma=3,stress=6,happiness=-3
+agency.rumor :: Rise above it :: {them.first} confessed, months later, in a bar, with tears. I forgave them and never told anyone. :: karma=6,happiness=4 :: relationship={"them":12}
+agency.rumor :: Spread worse rumors about them :: {them.first} heard about it within the hour and retaliated with receipts. I've never been so embarrassed. :: karma=-8,stress=10,happiness=-5 :: relationship={"them":-30}
+agency.rumor :: Spread worse rumors about them :: It worked. {them.first} moved cities. I have not slept properly since. :: karma=-10,happiness=-2,stress=6 :: relationship={"them":-40}
+agency.stole :: Let it slide :: A month later {them.first} returned the money with a note that said only "sorry." I kept the note. :: money=200,karma=3,happiness=3
+agency.stole :: Let it slide :: It kept happening. I learned that letting it go was not the same as it stopping. :: money=-500,stress=8,happiness=-4
+agency.stole :: Call the police :: It turned out I'd misplaced the cash. {them.first} was furious and I was mortified. :: money=200,karma=-4,stress=8 :: relationship={"them":-30}
+agency.stole :: Call the police :: The police found evidence. {them.first} confessed and is in treatment. Family dinners are quiet. :: money=-100,stress=6,karma=1 :: relationship={"them":-20}
+agency.lawsuit :: Settle for $3,000 :: {them.first} accepted and then sent a message that read "no hard feelings." I'm not sure I believe it. :: money=-3000,stress=-3,happiness=1
+agency.lawsuit :: Settle for $3,000 :: The settlement came with an NDA I didn't read carefully. I can never talk about it. :: money=-3000,stress=3,karma=-1
+agency.lawsuit :: Ignore it :: The default judgement cost me more than the lawsuit asked, plus fees. A lawyer told me I'd been naive. :: money=-9500,stress=10,happiness=-8
+agency.lawsuit :: Ignore it :: The case was dismissed because {them.first} missed a deadline. I felt lucky and ashamed. :: money=0,stress=3,happiness=2
+agency.argue :: Apologize anyway :: My apology was accepted, then used against me three weeks later. Lesson learned. :: karma=2,stress=4 :: relationship={"them":4}
+agency.argue :: Apologize anyway :: {them.first} apologised right back. We couldn't remember what the fight was about. :: happiness=5,stress=-3,karma=2 :: relationship={"them":16}
+agency.argue :: Argue back :: The argument got loud enough that the neighbours knocked. We apologised to them, not each other. :: stress=8,happiness=-4 :: relationship={"them":-16}
+agency.argue :: Argue back :: We argued ourselves into the real issue underneath, and solved it. The fight was the best thing that happened. :: stress=-2,happiness=3,smarts=1 :: relationship={"them":6}
+agency.argue :: Walk away :: {them.first} followed me, and we finished it on the pavement. Worse than staying. :: stress=6,happiness=-3 :: relationship={"them":-6}
+agency.argue :: Walk away :: A cool head made it a non-event. By evening we were laughing. :: stress=-2,happiness=2 :: relationship={"them":4}
+agency.partner_cheat :: Let it go :: It was a surprise party. I felt terrible for doubting them. :: happiness=6,karma=-1,stress=-4
+agency.partner_cheat :: Let it go :: It was not a surprise party. I found out a month later, and I remember deciding to trust. :: happiness=-10,stress=10,karma=-1

@@ -64,6 +64,15 @@
        "skill": -2,
        "stress": 4
       }
+     },
+     {
+      "text": "The commander was already awake, staring at the same gauge. We fixed it together and never spoke of the delay.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "stress": 3,
+       "karma": 1
+      }
      }
     ]
    }
@@ -117,6 +126,24 @@
        "skill": 4,
        "happiness": 8
       }
+     },
+     {
+      "text": "The sim showed a flaw in my suit checklist that nobody had caught. Mission control thanked me in public.",
+      "weight": 1,
+      "effects": {
+       "skill": 6,
+       "happiness": 6,
+       "fame": 1
+      }
+     },
+     {
+      "text": "The delay cost us a launch window. The mission was rescheduled and my name was in every meeting.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "stress": 8,
+       "happiness": -3
+      }
      }
     ]
    }
@@ -167,6 +194,22 @@
       "weight": 1,
       "relationship": {
        "c": 10
+      }
+     },
+     {
+      "text": "A month after landing, {c.first} wrote me a letter. I kept it unopened for a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "The mission succeeded in part because nothing else was on our minds. We didn't talk afterward.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "happiness": -3
       }
      }
     ]
@@ -233,6 +276,25 @@
        "karma": 2,
        "skill": 2
       }
+     },
+     {
+      "text": "{f.first} made it on their own the following year. They never mentioned my recommendation and neither did I.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The stranger washed out in training. {f.first} would have passed. I'll carry that.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 6
+      },
+      "relationship": {
+       "f": -10
+      }
      }
     ]
    }
@@ -294,6 +356,23 @@
       "effects": {
        "karma": 5
       }
+     },
+     {
+      "text": "The collector raised his price each time I declined, which made it harder. I still said no.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The agency noticed. It cost me a promotion, but I couldn't have lived with the alternative.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "skill": -2,
+       "stress": 6
+      }
      }
     ]
    }
@@ -325,6 +404,25 @@
       },
       "effects": {
        "happiness": 8
+      }
+     },
+     {
+      "text": "{m.first} wept so hard that the cameras picked it up. It became the image of the launch.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "fame": 2
+      },
+      "relationship": {
+       "m": 18
+      }
+     },
+     {
+      "text": "I couldn't see {m.first} from the gantry. I waved at a crowd and hoped.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
       }
      }
     ]
@@ -388,6 +486,25 @@
        "money": 250000,
        "fame": 5
       }
+     },
+     {
+      "text": "The ghostwriter got a detail wrong, and a retired colonel wrote to the publisher. The second printing has a correction.",
+      "weight": 1,
+      "effects": {
+       "money": 250000,
+       "fame": 3,
+       "stress": 4
+      }
+     },
+     {
+      "text": "We argued for months. The finished book was less heroic and more honest, and I like it better.",
+      "weight": 1,
+      "effects": {
+       "money": 90000,
+       "fame": 4,
+       "karma": 3,
+       "smarts": 2
+      }
      }
     ]
    }
@@ -439,6 +556,23 @@
       "effects": {
        "happiness": 6
       }
+     },
+     {
+      "text": "The new agency paid less and treated me like a person. I stayed for six years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": -5000
+      }
+     },
+     {
+      "text": "Word got around that I was difficult. The new agency dropped me after two shoots.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 8,
+       "fame": -2
+      }
      }
     ]
    },
@@ -451,6 +585,24 @@
       "effects": {
        "health": 6,
        "money": -2000
+      }
+     },
+     {
+      "text": "The coach became a close friend. The agency eventually admitted I looked better.",
+      "weight": 1,
+      "effects": {
+       "health": 8,
+       "happiness": 5,
+       "looks": 1
+      }
+     },
+     {
+      "text": "Progress was slow and the fall shows went by without me. The spring ones didn't.",
+      "weight": 1,
+      "effects": {
+       "health": 6,
+       "money": -3000,
+       "fame": -1
       }
      }
     ]
@@ -481,6 +633,24 @@
        "karma": 5,
        "happiness": 3,
        "skill": -1
+      }
+     },
+     {
+      "text": "The photographer's agency blacklisted me for a year. So did his friends. I slept well.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "money": -12000,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "My agency backed me and he was dropped by two brands. It was in the trade press for a week.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "fame": 2,
+       "happiness": 4
       }
      }
     ]
@@ -515,6 +685,24 @@
       "effects": {
        "happiness": -8,
        "money": 5000
+      }
+     },
+     {
+      "text": "Months later the photographer was exposed in a long report. I was quoted as \"no comment\" and lay awake that night.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "karma": -2,
+       "stress": 6
+      }
+     },
+     {
+      "text": "The photos were the best of my career. I hate that.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "money": 5000,
+       "happiness": -4
       }
      }
     ]
@@ -568,6 +756,24 @@
        "smarts": 2
       },
       "empire": "biz_buzz"
+     },
+     {
+      "text": "The label took two years to break even, and I nearly lost my home. But it was mine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 12,
+       "money": -20000
+      }
+     },
+     {
+      "text": "A department store picked up my first line. The fast-fashion giant copied it a season later.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "money": 15000,
+       "stress": 6
+      }
      }
     ]
    }
@@ -597,6 +803,24 @@
        "fame": 5,
        "skill": 4
       }
+     },
+     {
+      "text": "The coffee smell followed me down the catwalk. A critic called it \"a metaphor I'm still unpacking.\"",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "skill": 2,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I tripped halfway. Nobody forgot.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "happiness": -5,
+       "stress": 6
+      }
      }
     ]
    },
@@ -613,6 +837,27 @@
       "relationship": {
        "r": -30
       }
+     },
+     {
+      "text": "{r.first} got hurt. I never meant for that. I sent flowers anonymously.",
+      "weight": 1,
+      "effects": {
+       "karma": -10,
+       "happiness": -5,
+       "stress": 8
+      },
+      "relationship": {
+       "r": -40
+      }
+     },
+     {
+      "text": "It worked. {r.first} vanished from the circuit. The win tasted like pennies.",
+      "weight": 1,
+      "effects": {
+       "karma": -7,
+       "happiness": 2,
+       "fame": 1
+      }
      }
     ]
    },
@@ -624,6 +869,25 @@
       "weight": 1,
       "relationship": {
        "r": -20
+      }
+     },
+     {
+      "text": "The designer laughed and said it happens to everyone. I lost a day of goodwill.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "{r.first} was replaced by a newcomer, who turned out to be better than both of us.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "fame": -1
+      },
+      "relationship": {
+       "r": -10
       }
      }
     ]
@@ -666,6 +930,28 @@
       "effects": {
        "happiness": 6
       }
+     },
+     {
+      "text": "{f.first} outshone me at the first casting and got the job I wanted. We haven't spoken since.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "karma": 2
+      },
+      "relationship": {
+       "f": -25
+      }
+     },
+     {
+      "text": "{f.first} hated the industry within a month but thanked me for trying it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "karma": 3
+      },
+      "relationship": {
+       "f": 8
+      }
      }
     ]
    },
@@ -677,6 +963,18 @@
       "weight": 1,
       "effects": {
        "karma": -4
+      }
+     },
+     {
+      "text": "{f.first} found out from the scout. Their silence was louder than any argument.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "happiness": -6,
+       "stress": 6
+      },
+      "relationship": {
+       "f": -30
       }
      }
     ]
@@ -720,6 +1018,24 @@
       "flags": [
        "model_to_actor"
       ]
+     },
+     {
+      "text": "The acting classes were humbling. The camera loves me, but the script has other ideas.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "A small role in an indie film led to a bigger one. The industry has room for me.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "money": 15000,
+       "happiness": 6
+      }
      }
     ]
    },
@@ -733,6 +1049,25 @@
        "money": 20000,
        "smarts": 3
       }
+     },
+     {
+      "text": "The first model I signed became the face of a campaign and credited me in an interview.",
+      "weight": 1,
+      "effects": {
+       "money": 40000,
+       "happiness": 8,
+       "fame": 2
+      }
+     },
+     {
+      "text": "Booking meant a different kind of cruelty: telling nineteen-year-olds they weren't quite right. I hated it.",
+      "weight": 1,
+      "effects": {
+       "money": 20000,
+       "happiness": -5,
+       "karma": -2,
+       "smarts": 2
+      }
      }
     ]
    },
@@ -745,6 +1080,24 @@
       "effects": {
        "stress": 6,
        "money": 8000
+      }
+     },
+     {
+      "text": "A tabloid ran my age on the front page. I kept working through the week.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": 6000,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "A heritage brand hired me to play a \"timeless\" woman. The campaign ran for years.",
+      "weight": 1,
+      "effects": {
+       "money": 30000,
+       "fame": 4,
+       "happiness": 6
       }
      }
     ]
@@ -797,6 +1150,24 @@
        "money": -15000,
        "fame": -1
       }
+     },
+     {
+      "text": "I missed weight and my opponent refused the bout. The fine was the smaller loss.",
+      "weight": 1,
+      "effects": {
+       "money": -15000,
+       "fame": -3,
+       "stress": 8
+      }
+     },
+     {
+      "text": "The extra four pounds made the difference and I won by knockout. The fine felt cheap.",
+      "weight": 1,
+      "effects": {
+       "money": -15000,
+       "fame": 3,
+       "happiness": 5
+      }
      }
     ]
    }
@@ -848,6 +1219,24 @@
        "karma": 3,
        "happiness": 5
       }
+     },
+     {
+      "text": "My mother watched it live and called me in tears. It was the best call of my career.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 9,
+       "fame": 2
+      }
+     },
+     {
+      "text": "I forgot my sister's name. She posted about it. We argued for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "fame": 1,
+       "stress": 4
+      }
      }
     ]
    }
@@ -896,6 +1285,24 @@
       "effects": {
        "karma": 3
       }
+     },
+     {
+      "text": "Someone filmed me walking away. The clip was shared with a caption I wouldn't repeat.",
+      "weight": 1,
+      "effects": {
+       "fame": -1,
+       "happiness": -3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The man apologised the next morning at my gym and asked for a lesson.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4,
+       "fame": 1
+      }
      }
     ]
    },
@@ -908,6 +1315,22 @@
       "effects": {
        "happiness": 5,
        "fame": 1
+      }
+     },
+     {
+      "text": "He came in cocky and went out with a broken nose. He also signed up for membership.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": 600,
+       "fame": 1
+      }
+     },
+     {
+      "text": "He never showed. I heard later he lied about the whole thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
       }
      }
     ]
@@ -941,6 +1364,24 @@
        "happiness": 4
       },
       "milestone": "retired from fighting"
+     },
+     {
+      "text": "Retirement was harder than I expected. I woke up every day with nothing to train for.",
+      "weight": 1,
+      "effects": {
+       "health": 4,
+       "happiness": -4,
+       "stress": 5
+      }
+     },
+     {
+      "text": "I retired and set up a clinic for old fighters. The neurologist became my partner.",
+      "weight": 1,
+      "effects": {
+       "health": 6,
+       "karma": 8,
+       "happiness": 8
+      }
      }
     ]
    },
@@ -953,6 +1394,24 @@
       "effects": {
        "health": -8,
        "smarts": -3
+      }
+     },
+     {
+      "text": "The next fight was my best. The one after that I can't remember at all.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "health": -10,
+       "smarts": -4
+      }
+     },
+     {
+      "text": "I lost the belt and my memory of how. I smile when people tell me about it.",
+      "weight": 1,
+      "effects": {
+       "health": -12,
+       "happiness": -5,
+       "smarts": -4
       }
      }
     ]
@@ -1002,6 +1461,23 @@
      {
       "text": "I kept my old coach. {f.first} understood.",
       "weight": 1
+     },
+     {
+      "text": "My coach stopped coaching a month later. {f.first} had already moved on to another fighter.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "My coach spotted a flaw in my opponent that {f.first} would never have seen. I won.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "happiness": 5,
+       "skill": 2
+      }
      }
     ]
    }
@@ -1045,6 +1521,25 @@
        "fame": 2
       },
       "milestone": "lent their name to a gym chain"
+     },
+     {
+      "text": "The business partner overextended and the chain folded. My name was still on the door.",
+      "weight": 1,
+      "effects": {
+       "money": -40000,
+       "fame": -2,
+       "happiness": -7,
+       "stress": 10
+      }
+     },
+     {
+      "text": "The gym chain grew faster than I could keep up. I became a spokesperson and a happy millionaire.",
+      "weight": 1,
+      "effects": {
+       "money": 120000,
+       "fame": 4,
+       "happiness": 7
+      }
      }
     ]
    },
@@ -1056,6 +1551,24 @@
       "weight": 1,
       "effects": {
        "skill": 3
+      }
+     },
+     {
+      "text": "The investor signed someone else. A year later I lost my title and wondered.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "happiness": -4,
+       "money": -5000
+      }
+     },
+     {
+      "text": "I won the belt that year. I opened a gym later with no partners and no debts.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "fame": 3,
+       "happiness": 5
       }
      }
     ]
@@ -1085,6 +1598,24 @@
       "weight": 1,
       "effects": {
        "skill": 4
+      }
+     },
+     {
+      "text": "The rewrite took until 3 a.m. and the actor and I became friends for life.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "happiness": 5,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The actor's rewrite was worse. We filmed it anyway and I regret it.",
+      "weight": 1,
+      "effects": {
+       "skill": -2,
+       "stress": 8,
+       "happiness": -3
       }
      }
     ]
@@ -1118,6 +1649,24 @@
       "weight": 1,
       "effects": {
        "fame": 4
+      }
+     },
+     {
+      "text": "The actor saw the reel, didn't find it funny, and sued. I lost a week to lawyers.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "money": -12000,
+       "stress": 8
+      }
+     },
+     {
+      "text": "The studio loved the reel. The actor, to my relief, did too.",
+      "weight": 1,
+      "effects": {
+       "fame": 5,
+       "happiness": 4,
+       "karma": -1
       }
      }
     ]
@@ -1168,6 +1717,34 @@
       "effects": {
        "money": 80000,
        "happiness": -4
+      }
+     },
+     {
+      "text": "Audiences loved it and critics called it \"a betrayal\". I've never decided if they were wrong.",
+      "weight": 1,
+      "effects": {
+       "money": 80000,
+       "happiness": -2,
+       "fame": 2
+      }
+     },
+     {
+      "text": "The happy ending tested poorly, to the studio's surprise. They blamed me.",
+      "weight": 1,
+      "effects": {
+       "money": 20000,
+       "happiness": -6,
+       "fame": -3,
+       "stress": 6
+      }
+     },
+     {
+      "text": "A quiet scene I added to the ending became the one everybody remembers.",
+      "weight": 1,
+      "effects": {
+       "money": 80000,
+       "fame": 4,
+       "skill": 3
       }
      }
     ]
@@ -1221,6 +1798,28 @@
       "weight": 1,
       "relationship": {
        "k": 10
+      }
+     },
+     {
+      "text": "{k.first} froze on camera. We shot forty takes. The final cut used the first one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      },
+      "relationship": {
+       "k": 8
+      }
+     },
+     {
+      "text": "{k.first} was so good that a casting director asked for their number.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "fame": 2
+      },
+      "relationship": {
+       "k": 14
       }
      }
     ]
@@ -1284,6 +1883,23 @@
       "effects": {
        "skill": 3
       }
+     },
+     {
+      "text": "The film won a prize at the festival in my absence. The prize was accepted by someone in my seat.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "fame": 3,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "The script I wrote that week became my best. I wouldn't trade it.",
+      "weight": 1,
+      "effects": {
+       "skill": 5,
+       "happiness": 4
+      }
      }
     ]
    }
@@ -1313,6 +1929,24 @@
        "money": -50000,
        "karma": 6
       }
+     },
+     {
+      "text": "The stunt performer recovered and thanked me in person. The safety rules I wrote became an industry standard.",
+      "weight": 1,
+      "effects": {
+       "money": -50000,
+       "karma": 8,
+       "fame": 2
+      }
+     },
+     {
+      "text": "The insurance didn't cover it, and the studio walked. I sold my car and my reputation held.",
+      "weight": 1,
+      "effects": {
+       "money": -90000,
+       "karma": 6,
+       "stress": 10
+      }
      }
     ]
    },
@@ -1325,6 +1959,16 @@
       "effects": {
        "karma": -8,
        "skill": -2
+      }
+     },
+     {
+      "text": "The coordinator sued for wrongful termination and won. So did the union.",
+      "weight": 1,
+      "effects": {
+       "money": -60000,
+       "karma": -6,
+       "fame": -4,
+       "stress": 10
       }
      }
     ]
@@ -1340,6 +1984,15 @@
       },
       "relationship": {
        "lw": 5
+      }
+     },
+     {
+      "text": "The lawyer advised me to say nothing. I said nothing, for as long as I could.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": -2,
+       "money": -8000
       }
      }
     ],
@@ -1383,6 +2036,15 @@
       "effects": {
        "happiness": 6
       }
+     },
+     {
+      "text": "The studio nearly bankrupted me in year one. By year three it was a name in the industry.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "money": -150000,
+       "happiness": 2
+      }
      }
     ]
    },
@@ -1394,6 +2056,24 @@
       "weight": 1,
       "effects": {
        "money": 2000000
+      }
+     },
+     {
+      "text": "The studio controlled every cut. I made three films I'm not proud of, and I'm wealthy.",
+      "weight": 1,
+      "effects": {
+       "money": 2000000,
+       "happiness": -8,
+       "skill": -2
+      }
+     },
+     {
+      "text": "The deal made my next film possible, and the film won. I called it a good trade.",
+      "weight": 1,
+      "effects": {
+       "money": 2000000,
+       "fame": 5,
+       "happiness": 6
       }
      }
     ]
@@ -1425,6 +2105,23 @@
        "skill": 6,
        "money": 20000
       }
+     },
+     {
+      "text": "They turned, but only for a month. Then I found their name on a list that wasn't mine.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "money": 10000,
+       "stress": 8
+      }
+     },
+     {
+      "text": "I never found out who they really worked for. That bothers me more than it should.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "stress": 6
+      }
      }
     ]
    },
@@ -1436,6 +2133,23 @@
       "weight": 1,
       "effects": {
        "stress": 4
+      }
+     },
+     {
+      "text": "I later learned it was a test from HQ. I passed.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "stress": -2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The stranger was a real threat and I was followed for three blocks. I lost them in a market.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "skill": 1
       }
      }
     ]
@@ -1449,6 +2163,15 @@
       "effects": {
        "skill": -6,
        "stress": 14
+      }
+     },
+     {
+      "text": "HQ gave me a second chance and a babysitter. I am not allowed to forget it.",
+      "weight": 1,
+      "effects": {
+       "skill": -3,
+       "stress": 10,
+       "happiness": -4
       }
      }
     ]
@@ -1500,6 +2223,38 @@
       "effects": {
        "skill": -8,
        "stress": 10
+      }
+     },
+     {
+      "text": "{f.first} kept the secret for forty years and never once brought it up. That was the gift.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 3,
+       "stress": 4
+      }
+     },
+     {
+      "text": "{f.first} left and told nobody. I stopped hearing from them.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8,
+       "skill": -3
+      },
+      "relationship": {
+       "f": -30
+      }
+     },
+     {
+      "text": "HQ never found out. {f.first} looked at me for a long time and asked if I was okay.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -3
+      },
+      "relationship": {
+       "f": 10
       }
      }
     ]
@@ -1579,6 +2334,26 @@
        "karma": -4,
        "heat": 10
       }
+     },
+     {
+      "text": "{c.first} was innocent. The real mole left the next week. I should have looked harder.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "heat": 6,
+       "stress": 8
+      }
+     },
+     {
+      "text": "{c.first} turned themselves in and cleared their name. They never forgave my doubt.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 6
+      },
+      "relationship": {
+       "c": -15
+      }
      }
     ]
    }
@@ -1641,6 +2416,24 @@
       "effects": {
        "heat": -50,
        "happiness": -5
+      }
+     },
+     {
+      "text": "I built a new life in a coastal town. After a year a stranger recognised me in a pharmacy.",
+      "weight": 1,
+      "effects": {
+       "heat": -30,
+       "happiness": -2,
+       "stress": 8
+      }
+     },
+     {
+      "text": "Nothing followed me, which was somehow worse. I spent a year waiting for a knock.",
+      "weight": 1,
+      "effects": {
+       "heat": -50,
+       "happiness": -8,
+       "stress": 6
       }
      }
     ]
@@ -1712,6 +2505,23 @@
        "happiness": -10
       },
       "emigrate": "uk"
+     },
+     {
+      "text": "I got out. A cousin told me the men were still waiting at my door six months later.",
+      "weight": 1,
+      "effects": {
+       "heat": -40,
+       "happiness": -8,
+       "stress": 8
+      }
+     },
+     {
+      "text": "My flight was delayed and I spent six hours looking at every face in the terminal. Nobody came.",
+      "weight": 1,
+      "effects": {
+       "heat": -20,
+       "stress": 10
+      }
      }
     ]
    }
@@ -1744,6 +2554,24 @@
        "happiness": 10
       },
       "milestone": "retired from the intelligence service"
+     },
+     {
+      "text": "The garden died in the first frost. I have bought another.",
+      "weight": 1,
+      "effects": {
+       "money": 150000,
+       "happiness": 6,
+       "stress": -6
+      }
+     },
+     {
+      "text": "Two weeks in, a former colleague called to say I was needed again. I said no, and the phone kept ringing.",
+      "weight": 1,
+      "effects": {
+       "money": 150000,
+       "happiness": 4,
+       "stress": 6
+      }
      }
     ]
    },
@@ -1756,6 +2584,24 @@
       "effects": {
        "skill": 3,
        "stress": 6
+      }
+     },
+     {
+      "text": "The last mission was easier than it should have been. That frightened me more.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "stress": 8,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I retired after that. A medal in a drawer and no one to tell.",
+      "weight": 1,
+      "effects": {
+       "money": 90000,
+       "happiness": 6,
+       "skill": 2
       }
      }
     ]

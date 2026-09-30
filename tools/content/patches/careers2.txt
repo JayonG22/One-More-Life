@@ -1,0 +1,92 @@
+astro.anomaly :: Wake the commander :: The commander was already awake, staring at the same gauge. We fixed it together and never spoke of the delay. :: skill=2,stress=3,karma=1
+astro.spacewalk :: Ask for a sim run first :: The sim showed a flaw in my suit checklist that nobody had caught. Mission control thanked me in public. :: skill=6,happiness=6,fame=1
+astro.spacewalk :: Ask for a sim run first :: The delay cost us a launch window. The mission was rescheduled and my name was in every meeting. :: skill=2,stress=8,happiness=-3
+astro.zero_g_romance :: Keep it professional :: A month after landing, {c.first} wrote me a letter. I kept it unopened for a year. :: happiness=-2,stress=2
+astro.zero_g_romance :: Keep it professional :: The mission succeeded in part because nothing else was on our minds. We didn't talk afterward. :: skill=3,happiness=-3
+astro.recruit_friend :: Recommend the best candidate :: {f.first} made it on their own the following year. They never mentioned my recommendation and neither did I. :: karma=4,happiness=3
+astro.recruit_friend :: Recommend the best candidate :: The stranger washed out in training. {f.first} would have passed. I'll carry that. :: karma=-2,stress=6 :: relationship={"f":-10}
+astro.meteorite :: Return it :: The collector raised his price each time I declined, which made it harder. I still said no. :: karma=6,happiness=2
+astro.meteorite :: Return it :: The agency noticed. It cost me a promotion, but I couldn't have lived with the alternative. :: karma=8,skill=-2,stress=6
+astro.family_launch :: Wave to {m.first} from the gantry :: {m.first} wept so hard that the cameras picked it up. It became the image of the launch. :: happiness=10,fame=2 :: relationship={"m":18}
+astro.family_launch :: Wave to {m.first} from the gantry :: I couldn't see {m.first} from the gantry. I waved at a crowd and hoped. :: happiness=2,stress=3
+astro.memoir :: Use a ghostwriter :: The ghostwriter got a detail wrong, and a retired colonel wrote to the publisher. The second printing has a correction. :: money=250000,fame=3,stress=4
+astro.memoir :: Use a ghostwriter :: We argued for months. The finished book was less heroic and more honest, and I like it better. :: money=90000,fame=4,karma=3,smarts=2
+model.diet :: Change agencies :: The new agency paid less and treated me like a person. I stayed for six years. :: happiness=8,money=-5000
+model.diet :: Change agencies :: Word got around that I was difficult. The new agency dropped me after two shoots. :: happiness=-5,stress=8,fame=-2
+model.diet :: Train sensibly with a coach :: The coach became a close friend. The agency eventually admitted I looked better. :: health=8,happiness=5,looks=1
+model.diet :: Train sensibly with a coach :: Progress was slow and the fall shows went by without me. The spring ones didn't. :: health=6,money=-3000,fame=-1
+model.photographer :: Walk off the set :: The photographer's agency blacklisted me for a year. So did his friends. I slept well. :: karma=6,money=-12000,happiness=1
+model.photographer :: Walk off the set :: My agency backed me and he was dropped by two brands. It was in the trade press for a week. :: karma=8,fame=2,happiness=4
+model.photographer :: Finish the shoot :: Months later the photographer was exposed in a long report. I was quoted as "no comment" and lay awake that night. :: happiness=-6,karma=-2,stress=6
+model.photographer :: Finish the shoot :: The photos were the best of my career. I hate that. :: fame=4,money=5000,happiness=-4
+model.brand_collab :: Start your own label instead :: The label took two years to break even, and I nearly lost my home. But it was mine. :: happiness=4,stress=12,money=-20000
+model.brand_collab :: Start your own label instead :: A department store picked up my first line. The fast-fashion giant copied it a season later. :: fame=3,money=15000,stress=6
+model.rival :: Walk anyway :: The coffee smell followed me down the catwalk. A critic called it "a metaphor I'm still unpacking." :: fame=3,skill=2,happiness=1
+model.rival :: Walk anyway :: I tripped halfway. Nobody forgot. :: fame=-2,happiness=-5,stress=6
+model.rival :: Get even :: {r.first} got hurt. I never meant for that. I sent flowers anonymously. :: karma=-10,happiness=-5,stress=8 :: relationship={"r":-40}
+model.rival :: Get even :: It worked. {r.first} vanished from the circuit. The win tasted like pennies. :: karma=-7,happiness=2,fame=1
+model.rival :: Tell the designer :: The designer laughed and said it happens to everyone. I lost a day of goodwill. :: stress=4,happiness=-2
+model.rival :: Tell the designer :: {r.first} was replaced by a newcomer, who turned out to be better than both of us. :: karma=-2,fame=-1 :: relationship={"r":-10}
+model.scouted_friend :: Bring {f.first} in :: {f.first} outshone me at the first casting and got the job I wanted. We haven't spoken since. :: happiness=-8,karma=2 :: relationship={"f":-25}
+model.scouted_friend :: Bring {f.first} in :: {f.first} hated the industry within a month but thanked me for trying it. :: happiness=1,karma=3 :: relationship={"f":8}
+model.scouted_friend :: Say {f.first} isn't interested :: {f.first} found out from the scout. Their silence was louder than any argument. :: karma=-6,happiness=-6,stress=6 :: relationship={"f":-30}
+model.aging :: Pivot to acting :: The acting classes were humbling. The camera loves me, but the script has other ideas. :: smarts=3,happiness=2,stress=4
+model.aging :: Pivot to acting :: A small role in an indie film led to a bigger one. The industry has room for me. :: fame=4,money=15000,happiness=6
+model.aging :: Become a top booker :: The first model I signed became the face of a campaign and credited me in an interview. :: money=40000,happiness=8,fame=2
+model.aging :: Become a top booker :: Booking meant a different kind of cruelty: telling nineteen-year-olds they weren't quite right. I hated it. :: money=20000,happiness=-5,karma=-2,smarts=2
+model.aging :: Keep hustling :: A tabloid ran my age on the front page. I kept working through the week. :: stress=8,money=6000,happiness=-4
+model.aging :: Keep hustling :: A heritage brand hired me to play a "timeless" woman. The campaign ran for years. :: money=30000,fame=4,happiness=6
+fighter.weight_cut :: Miss weight and pay the fine :: I missed weight and my opponent refused the bout. The fine was the smaller loss. :: money=-15000,fame=-3,stress=8
+fighter.weight_cut :: Miss weight and pay the fine :: The extra four pounds made the difference and I won by knockout. The fine felt cheap. :: money=-15000,fame=3,happiness=5
+fighter.callout :: Thank your family :: My mother watched it live and called me in tears. It was the best call of my career. :: karma=4,happiness=9,fame=2
+fighter.callout :: Thank your family :: I forgot my sister's name. She posted about it. We argued for a week. :: happiness=-4,fame=1,stress=4
+fighter.street :: Walk away :: Someone filmed me walking away. The clip was shared with a caption I wouldn't repeat. :: fame=-1,happiness=-3,stress=3
+fighter.street :: Walk away :: The man apologised the next morning at my gym and asked for a lesson. :: karma=5,happiness=4,fame=1
+fighter.street :: Sign him to a sparring session :: He came in cocky and went out with a broken nose. He also signed up for membership. :: happiness=4,money=600,fame=1
+fighter.street :: Sign him to a sparring session :: He never showed. I heard later he lied about the whole thing. :: happiness=1
+fighter.cte :: Retire on top :: Retirement was harder than I expected. I woke up every day with nothing to train for. :: health=4,happiness=-4,stress=5
+fighter.cte :: Retire on top :: I retired and set up a clinic for old fighters. The neurologist became my partner. :: health=6,karma=8,happiness=8
+fighter.cte :: Keep fighting :: The next fight was my best. The one after that I can't remember at all. :: fame=4,health=-10,smarts=-4
+fighter.cte :: Keep fighting :: I lost the belt and my memory of how. I smile when people tell me about it. :: health=-12,happiness=-5,smarts=-4
+fighter.cornerman :: Stick with your coach :: My coach stopped coaching a month later. {f.first} had already moved on to another fighter. :: happiness=-3,stress=3
+fighter.cornerman :: Stick with your coach :: My coach spotted a flaw in my opponent that {f.first} would never have seen. I won. :: fame=3,happiness=5,skill=2
+fighter.gym_offer :: Go into business :: The business partner overextended and the chain folded. My name was still on the door. :: money=-40000,fame=-2,happiness=-7,stress=10
+fighter.gym_offer :: Go into business :: The gym chain grew faster than I could keep up. I became a spokesperson and a happy millionaire. :: money=120000,fame=4,happiness=7
+fighter.gym_offer :: Stay focused on fighting :: The investor signed someone else. A year later I lost my title and wondered. :: skill=2,happiness=-4,money=-5000
+fighter.gym_offer :: Stay focused on fighting :: I won the belt that year. I opened a gym later with no partners and no debts. :: skill=4,fame=3,happiness=5
+director.diva :: Rewrite the scene together :: The rewrite took until 3 a.m. and the actor and I became friends for life. :: skill=3,happiness=5,stress=4
+director.diva :: Rewrite the scene together :: The actor's rewrite was worse. We filmed it anyway and I regret it. :: skill=-2,stress=8,happiness=-3
+director.diva :: Film the tantrum for the blooper reel :: The actor saw the reel, didn't find it funny, and sued. I lost a week to lawyers. :: fame=2,money=-12000,stress=8
+director.diva :: Film the tantrum for the blooper reel :: The studio loved the reel. The actor, to my relief, did too. :: fame=5,happiness=4,karma=-1
+director.studio_notes :: Give them the happy ending :: Audiences loved it and critics called it "a betrayal". I've never decided if they were wrong. :: money=80000,happiness=-2,fame=2
+director.studio_notes :: Give them the happy ending :: The happy ending tested poorly, to the studio's surprise. They blamed me. :: money=20000,happiness=-6,fame=-3,stress=6
+director.studio_notes :: Give them the happy ending :: A quiet scene I added to the ending became the one everybody remembers. :: money=80000,fame=4,skill=3
+director.cast_family :: Offer a cameo instead :: {k.first} froze on camera. We shot forty takes. The final cut used the first one. :: happiness=2,stress=3 :: relationship={"k":8}
+director.cast_family :: Offer a cameo instead :: {k.first} was so good that a casting director asked for their number. :: happiness=5,fame=2 :: relationship={"k":14}
+director.festival :: Stay home and work :: The film won a prize at the festival in my absence. The prize was accepted by someone in my seat. :: skill=2,fame=3,happiness=-3
+director.festival :: Stay home and work :: The script I wrote that week became my best. I wouldn't trade it. :: skill=5,happiness=4
+director.stunt_accident :: Take responsibility :: The stunt performer recovered and thanked me in person. The safety rules I wrote became an industry standard. :: money=-50000,karma=8,fame=2
+director.stunt_accident :: Take responsibility :: The insurance didn't cover it, and the studio walked. I sold my car and my reputation held. :: money=-90000,karma=6,stress=10
+director.stunt_accident :: Blame the stunt coordinator :: The coordinator sued for wrongful termination and won. So did the union. :: money=-60000,karma=-6,fame=-4,stress=10
+director.stunt_accident :: Call a lawyer :: The lawyer advised me to say nothing. I said nothing, for as long as I could. :: stress=5,karma=-2,money=-8000
+director.studio_deal :: Found your own film studio :: The studio nearly bankrupted me in year one. By year three it was a name in the industry. :: stress=12,money=-150000,happiness=2
+director.studio_deal :: Take the overall deal :: The studio controlled every cut. I made three films I'm not proud of, and I'm wealthy. :: money=2000000,happiness=-8,skill=-2
+director.studio_deal :: Take the overall deal :: The deal made my next film possible, and the film won. I called it a good trade. :: money=2000000,fame=5,happiness=6
+agent.honeytrap :: Play along and turn them :: They turned, but only for a month. Then I found their name on a list that wasn't mine. :: skill=4,money=10000,stress=8
+agent.honeytrap :: Play along and turn them :: I never found out who they really worked for. That bothers me more than it should. :: skill=3,stress=6
+agent.honeytrap :: Leave immediately :: I later learned it was a test from HQ. I passed. :: skill=3,stress=-2,happiness=2
+agent.honeytrap :: Leave immediately :: The stranger was a real threat and I was followed for three blocks. I lost them in a market. :: stress=10,skill=1
+agent.honeytrap :: Fall for it :: HQ gave me a second chance and a babysitter. I am not allowed to forget it. :: skill=-3,stress=10,happiness=-4
+agent.cover_blown :: Tell {f.first} the truth :: {f.first} kept the secret for forty years and never once brought it up. That was the gift. :: happiness=5,karma=3,stress=4
+agent.cover_blown :: Tell {f.first} the truth :: {f.first} left and told nobody. I stopped hearing from them. :: happiness=-8,stress=8,skill=-3 :: relationship={"f":-30}
+agent.cover_blown :: Tell {f.first} the truth :: HQ never found out. {f.first} looked at me for a long time and asked if I was okay. :: happiness=4,stress=-3 :: relationship={"f":10}
+agent.mole :: Warn {c.first} :: {c.first} was innocent. The real mole left the next week. I should have looked harder. :: karma=-2,heat=6,stress=8
+agent.mole :: Warn {c.first} :: {c.first} turned themselves in and cleared their name. They never forgave my doubt. :: karma=2,stress=6 :: relationship={"c":-15}
+agent.burn_notice :: Go off the grid :: I built a new life in a coastal town. After a year a stranger recognised me in a pharmacy. :: heat=-30,happiness=-2,stress=8
+agent.burn_notice :: Go off the grid :: Nothing followed me, which was somehow worse. I spent a year waiting for a knock. :: heat=-50,happiness=-8,stress=6
+agent.retirement :: Retire from the service :: The garden died in the first frost. I have bought another. :: money=150000,happiness=6,stress=-6
+agent.retirement :: Retire from the service :: Two weeks in, a former colleague called to say I was needed again. I said no, and the phone kept ringing. :: money=150000,happiness=4,stress=6
+agent.retirement :: One last mission :: The last mission was easier than it should have been. That frightened me more. :: skill=2,stress=8,happiness=-2
+agent.retirement :: One last mission :: I retired after that. A medal in a drawer and no one to tell. :: money=90000,happiness=6,skill=2
+agent.revenge :: Flee the country :: I got out. A cousin told me the men were still waiting at my door six months later. :: heat=-40,happiness=-8,stress=8
+agent.revenge :: Flee the country :: My flight was delayed and I spent six hours looking at every face in the terminal. Nobody came. :: heat=-20,stress=10

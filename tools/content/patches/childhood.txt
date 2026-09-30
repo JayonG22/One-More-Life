@@ -1,0 +1,14 @@
+baby.tantrum :: Stare into her soul :: {mom.first} held firm and looked away, and I wailed. The candy was never mentioned again. :: happiness=-3 :: relationship={"mom":-2}
+baby.tantrum :: Stare into her soul :: {mom.first} caved, and I learned the power of the stare. I use it still. :: happiness=5 :: relationship={"mom":1}
+child.imaginary_friend :: Introduce him to Mom :: {mom.first} asked Mr. Buttons about his job. He works at a bank, apparently. :: happiness=5 :: relationship={"mom":5}
+child.imaginary_friend :: Introduce him to Mom :: {mom.first} smiled politely and later took me to see a counsellor. Mr. Buttons didn't like that. :: happiness=-3,stress=3 :: relationship={"mom":-2}
+child.imaginary_friend :: Say he moved away :: Mr. Buttons sent a postcard. I wrote it myself. :: happiness=1
+child.imaginary_friend :: Say he moved away :: I cried for a day, and {mom.first} held me the entire time without saying a word. :: happiness=-4,stress=-2 :: relationship={"mom":8}
+child.new_kid :: Invite them to sit with you :: {kid.first} turned out to be a spy. Well, not really, but we played spy for years. :: happiness=7,karma=3 :: relationship={"kid":30}
+child.new_kid :: Invite them to sit with you :: {kid.first} shook my hand shyly and we said nothing for ten minutes. It was wonderful. :: happiness=3,karma=4 :: relationship={"kid":18}
+child.new_kid :: Ignore them :: {kid.first} ate alone for a week, then found another table. I saw them laughing and felt a small pang. :: happiness=-1
+child.new_kid :: Ignore them :: I found out later {kid.first} had been a fellow gamer. A missed friend. :: happiness=-2,karma=-1
+child.new_kid :: Make fun of them :: A teacher saw it. The lecture was longer than I can bear to describe. :: karma=-6,happiness=-4,stress=6 :: relationship={"kid":-20}
+child.new_kid :: Make fun of them :: {kid.first} laughed along, which ruined the fun. I felt strangely embarrassed. :: karma=-2,happiness=-1 :: relationship={"kid":8}
+child.bike :: Ask for training wheels back :: I looked at other kids biking by and felt small. Next summer I learned in a day. :: happiness=-3,stress=2
+child.bike :: Ask for training wheels back :: The training wheels went back on. I was very relieved and {dad.first} didn't say a word about it. :: happiness=2 :: relationship={"dad":6}

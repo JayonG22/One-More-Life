@@ -31,6 +31,23 @@
         24
        ]
       }
+     },
+     {
+      "text": "A teacher noticed me eating a stolen apple from the cafeteria. She slipped me a lunch voucher without a word.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 1
+      }
+     },
+     {
+      "text": "It went on until the end of term. I learned to bring lunch from home.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4,
+       "smarts": 1
+      }
      }
     ]
    },
@@ -99,6 +116,23 @@
         24
        ]
       }
+     },
+     {
+      "text": "The teacher did nothing, and {rival.first} found out I'd told. The next week was worse.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8,
+       "karma": 1
+      }
+     },
+     {
+      "text": "{rival.first}'s parents were called. {rival.first} apologised with a stiff face and never looked at me again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 3
+      }
      }
     ]
    },
@@ -121,6 +155,22 @@
       "flags": [
        "rival_turned_friend"
       ]
+     },
+     {
+      "text": "{rival.first} took all of it anyway and laughed. I didn't see the point in arguing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": 1
+      }
+     },
+     {
+      "text": "{rival.first} said nobody had ever offered before. We ended up sharing the lunch.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 5
+      }
      }
     ],
     "requires": {
@@ -205,6 +255,22 @@
       "effects": {
        "school": -3
       }
+     },
+     {
+      "text": "My friends presented a volcano and won. I heard about it in the corridor.",
+      "weight": 1,
+      "effects": {
+       "school": -2,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "I spent the week doing something unrelated and unexpectedly loved it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "school": -3
+      }
      }
     ]
    }
@@ -269,6 +335,25 @@
        "karma": 3,
        "school": 2
       }
+     },
+     {
+      "text": "I got a C. The classmate got an A and was caught a week later.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "school": -1,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "Halfway through the test I regretted it. I pushed through and got a B.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "school": 3,
+       "stress": 4,
+       "smarts": 1
+      }
      }
     ]
    },
@@ -288,6 +373,29 @@
        "classmate": -30
       },
       "keep_role": "classmate"
+     },
+     {
+      "text": "The teacher shrugged. {classmate.first} and I spent the next month in silence.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": -4
+      },
+      "relationship": {
+       "classmate": -12
+      }
+     },
+     {
+      "text": "The whole class got zero on the test. Nobody thanked me.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "school": -4,
+       "happiness": -6
+      },
+      "relationship": {
+       "classmate": -40
+      }
      }
     ]
    }
@@ -367,6 +475,22 @@
       "effects": {
        "happiness": 5
       }
+     },
+     {
+      "text": "The trick worked perfectly and the school nicknamed me \"Houdini\" for the rest of term.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "popularity": 3
+      }
+     },
+     {
+      "text": "I forgot the password to my own trick in front of four hundred people. I blamed the lighting.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "popularity": -2
+      }
      }
     ]
    },
@@ -376,6 +500,21 @@
      {
       "text": "I watched from the audience.",
       "weight": 1
+     },
+     {
+      "text": "The act that won was terrible. I sat there thinking \"I could have done better\".",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I helped backstage and learned that I like the people who make things happen more than the people on the stage.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
      }
     ]
    }
@@ -420,6 +559,30 @@
         14
        ]
       }
+     },
+     {
+      "text": "The lessons turned out to be half gossip and half life advice. I learned more from the gossip.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "school": 5,
+       "happiness": 3
+      },
+      "relationship": {
+       "teacher": 20
+      }
+     },
+     {
+      "text": "I burned out by spring and the teacher gently suggested I rest. I hadn't realised how much I'd been pushing.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "school": 4,
+       "stress": 10
+      },
+      "relationship": {
+       "teacher": 15
+      }
      }
     ]
    },
@@ -429,6 +592,22 @@
      {
       "text": "I thanked {teacher.first} but said no.",
       "weight": 1
+     },
+     {
+      "text": "The offer was given to someone else, who went on to win a scholarship. I thought about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "school": -1
+      }
+     },
+     {
+      "text": "I passed because I needed time to be a child. I think that was right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -3
+      }
      }
     ]
    },
@@ -443,6 +622,30 @@
       },
       "relationship": {
        "teacher": -15
+      }
+     },
+     {
+      "text": "The teacher said \"earn it\", and I found out I could.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "smarts": 1,
+       "stress": 3
+      },
+      "relationship": {
+       "teacher": -4
+      }
+     },
+     {
+      "text": "Word got around. I became known as a grade-grubber for the year.",
+      "weight": 1,
+      "effects": {
+       "school": -2,
+       "popularity": -3,
+       "happiness": -3
+      },
+      "relationship": {
+       "teacher": -20
       }
      }
     ]
@@ -513,6 +716,24 @@
       "flags": [
        "debate_team"
       ]
+     },
+     {
+      "text": "Debate turned out to be a room of people far more confident than me. I loved it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "school": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I lost my first three rounds badly. By round four I'd learned how to lose well.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "school": 2,
+       "stress": 4
+      }
      }
     ]
    },
@@ -522,6 +743,21 @@
      {
       "text": "I told my teacher I'd think about it next year.",
       "weight": 1
+     },
+     {
+      "text": "Next year never came. The team folded and I never knew what I'd missed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I made a friend in the library instead, and we're still in touch.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
      }
     ]
    },
@@ -533,6 +769,22 @@
       "weight": 1,
       "effects": {
        "school": -1
+      }
+     },
+     {
+      "text": "The teacher noticed and mentioned it. I felt rude and apologised.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "school": -2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The offer was forgotten by everyone but me. I still think about it occasionally.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
       }
      }
     ]
@@ -631,6 +883,25 @@
        "happiness": 6
       },
       "keep_role": "bully"
+     },
+     {
+      "text": "The joke was funnier than I'd expected. Even {bully.first} smirked.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "popularity": 3
+      },
+      "relationship": {
+       "bully": 10
+      }
+     },
+     {
+      "text": "Nobody laughed. {bully.first} shoved me again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 5
+      }
      }
     ],
     "requires": {
@@ -646,6 +917,22 @@
       "effects": {
        "happiness": -4
       }
+     },
+     {
+      "text": "A classmate followed me and said \"that was classy.\" We've been friends since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 2
+      }
+     },
+     {
+      "text": "{bully.first} took it as a win and did it again the next day.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
      }
     ]
    },
@@ -660,6 +947,29 @@
        "happiness": 2
       },
       "keep_role": "bully",
+      "relationship": {
+       "bully": -20
+      }
+     },
+     {
+      "text": "The principal shrugged it off. {bully.first} grew more careful, and more cruel.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -4
+      },
+      "relationship": {
+       "bully": -20
+      }
+     },
+     {
+      "text": "{bully.first}'s parents were brought in, and I never saw {bully.first} near me again. The silence felt good.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4,
+       "stress": -4
+      },
       "relationship": {
        "bully": -20
       }

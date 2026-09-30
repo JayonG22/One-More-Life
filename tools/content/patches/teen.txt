@@ -1,0 +1,23 @@
+teen.first_crush :: Keep it secret :: {crush.first} moved away at the end of the year. I never said a word. :: happiness=-6,stress=3
+teen.first_crush :: Keep it secret :: Years later {crush.first} told a friend they'd liked me too. There is no bigger what-if. :: happiness=-4
+teen.first_crush :: Keep it secret :: I wrote {crush.first} three letters and burned them all. It felt like a proper ceremony. :: happiness=2,smarts=1
+teen.party :: Stay home :: My friends told stories about that party for months. I couldn't join the laughter. :: happiness=-4,popularity=-2
+teen.party :: Stay home :: The party was busted by the police at midnight. My phone was full of messages the next morning. :: happiness=3,popularity=1,stress=-2
+teen.dare :: Refuse :: One of them jumped and broke an ankle. I didn't feel like a chicken after that. :: happiness=1,karma=1
+teen.dare :: Refuse :: They left me on the pier and went swimming. I sat alone watching the sun go down and felt something complicated. :: happiness=-3,stress=2
+teen.dare :: Push the dare-er in instead :: The water was colder than expected and the dare-er swore revenge. They got it a week later with a bucket. :: happiness=3,karma=-2
+teen.dare :: Push the dare-er in instead :: The dare-er hit a rock. Nobody laughed. We called an ambulance. :: happiness=-10,karma=-4,stress=12
+teen.sibling_hoodie :: Yell at them :: {sib.first} cried. I felt terrible by evening and never apologised. :: stress=6,happiness=-3,karma=-2 :: relationship={"sib":-16}
+teen.sibling_hoodie :: Yell at them :: We made up after a long silence, and the hoodie became a joke between us. :: stress=2,happiness=2 :: relationship={"sib":-2}
+teen.sibling_hoodie :: Forgive them :: The new hoodie was the wrong colour, and I wore it anyway. :: karma=4,happiness=3 :: relationship={"sib":10}
+teen.sibling_hoodie :: Forgive them :: The paint stain became a pattern. I wore the hoodie for years. :: karma=3,happiness=4 :: relationship={"sib":14}
+teen.sibling_hoodie :: Get revenge :: {sib.first} found the headphones on the roof and never forgave me. :: happiness=-1,karma=-3 :: relationship={"sib":-20}
+teen.sibling_hoodie :: Get revenge :: {sib.first} retaliated with a prank that left me laughing despite myself. A truce was signed. :: happiness=6,karma=-1 :: relationship={"sib":8}
+teen.viral_video :: Ask for it to be taken down :: The poster said no, and then reposted it with commentary. I changed schools the next year. :: happiness=-8,stress=8,popularity=-4
+teen.viral_video :: Ask for it to be taken down :: It came down within the hour. Nobody mentioned it again. I kept thinking it would return. :: happiness=2,stress=3
+teen.viral_video :: Hide in your room for a week :: My friends brought me snacks and a video of a dog falling off a couch, which had eclipsed mine. :: happiness=3,stress=-4
+teen.viral_video :: Hide in your room for a week :: Someone made a compilation. I became a minor legend at school. I'm not sure whether I hated it. :: happiness=-2,popularity=4
+teen.summer_job_offer :: Take it :: I got promoted to cone-maker by August. I'm good at it. :: money=1400,happiness=4,skill=2
+teen.summer_job_offer :: Take it :: I dropped a full tub of ice cream on a health inspector's shoe. I was fired on the spot. :: money=300,happiness=-3,stress=6
+teen.summer_job_offer :: Enjoy your summer :: The summer was wonderful until the final week when I realised I'd have nothing to show for it. :: happiness=3,stress=2
+teen.summer_job_offer :: Enjoy your summer :: A chance encounter at the lake became my best friend. The summer was never wasted. :: happiness=8,karma=1

@@ -1,0 +1,13 @@
+law.speeding :: Argue :: The officer smiled, tore up the ticket, and said "that's the best excuse this week." I drove home sheepishly. :: stress=-2,karma=-1,happiness=3
+law.speeding :: Argue :: The argument got me a second ticket for something I didn't know I'd done. :: money=-900,stress=8,heat=2
+law.witness :: Testify :: The driver's family glared at me across the courtroom. I slept badly for a month. :: karma=6,stress=8,happiness=-3
+law.witness :: Testify :: The driver was convicted. I got a call from the victim, who thanked me in tears. :: karma=10,stress=2,happiness=6
+law.witness :: Say you didn't see anything :: The victim's family saw my name on the witness list. A month later I was sent a letter that said only "coward." :: karma=-6,stress=6,happiness=-4
+law.witness :: Say you didn't see anything :: Nothing happened. I think about it at night. :: karma=-4,stress=3
+law.neighbor_suit :: Move the fence :: My neighbour hadn't even measured. The surveyor said the fence was fine. I'd moved it for nothing. :: money=-2000,stress=6,happiness=-3
+law.neighbor_suit :: Move the fence :: We ended up sharing a bench at the new boundary. It became our spot. :: money=-2000,happiness=4 :: relationship={"nb":16}
+law.jury_bribe :: Report it :: The defendant was convicted. I received a threat in the mail, and the police sat outside my home for a week. :: karma=10,stress=12,happiness=-3
+law.jury_bribe :: Report it :: The stranger turned out to be an undercover investigator. I had passed their test. :: karma=8,happiness=4
+law.jury_bribe :: Report it :: I reported it and was dismissed from the jury. I never learned the verdict. :: karma=6,stress=3,happiness=-1
+law.expunge :: Not worth it :: A background check found the record two years later. The job offer evaporated. :: stress=8,happiness=-6,money=-3000
+law.expunge :: Not worth it :: The record never came up again. I sometimes wonder if I was right. :: stress=-1,happiness=1

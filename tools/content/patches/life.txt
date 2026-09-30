@@ -1,0 +1,35 @@
+life.class_reunion :: Go and reconnect :: Most of the class had changed so much I barely recognised them. I spent the evening at the bar, talking to the one person who hadn't. :: happiness=3,stress=2
+life.class_reunion :: Go and reconnect :: Someone asked what I'd done with my life and I gave the wrong answer. I drove home in silence. :: happiness=-5,stress=6
+life.class_reunion :: Skip it :: A friend sent me photos, and I was weirdly jealous. There was a story I'll never know. :: happiness=-3,stress=1
+life.class_reunion :: Skip it :: I spent the weekend in a cabin, which I consider a better use of twenty years. :: happiness=4,stress=-5
+life.volunteer_fire :: Call 911 :: The dog was saved, but the fire spread to two houses. The neighbours thanked me for the call. :: karma=4,stress=6
+life.volunteer_fire :: Call 911 :: The fire station was four minutes away. The house was lost, the dog and family weren't. I sat on the kerb afterwards. :: karma=6,happiness=-2,stress=8
+life.volunteer_fire :: Call 911 :: I called and then ran in. I shouldn't have. A fireman dragged me out and scolded me gently. :: karma=10,health=-6,stress=10
+life.lost_kid :: Help them find their parents :: It took forty minutes and a sticker, but we found them. The mother insisted on giving me her number. :: karma=7,happiness=5
+life.lost_kid :: Help them find their parents :: The kid wouldn't let go of my hand, and a security guard looked at me with suspicion. I was mortified. :: karma=5,stress=5,happiness=1
+life.lost_kid :: Tell security :: Security lost track of the child for an agonising five minutes. I watched from a distance. :: karma=1,stress=8
+life.lost_kid :: Tell security :: The kid was returned to their parents in under ten minutes. I felt like part of a system that works. :: karma=3,happiness=2
+life.bucket_list :: Maybe next year :: I meant it. The year passed and I had found a new reason to put it off. :: happiness=-3,stress=2
+life.bucket_list :: Maybe next year :: I booked it then and there, and it was the best fall of my life. :: happiness=12,health=-2,stress=-4
+life.old_rival_reunion :: Bury the hatchet :: They were cold and I was left holding an olive branch. We parted awkwardly. :: happiness=-3,karma=2 :: relationship={"rv":-5}
+life.old_rival_reunion :: Bury the hatchet :: We talked for two hours, then exchanged numbers. A year later they were at my wedding. :: karma=6,happiness=6 :: relationship={"rv":55}
+life.old_rival_reunion :: Pretend you didn't see them :: They saw me. They pretended too. We never spoke of it. :: stress=2
+life.old_rival_reunion :: Pretend you didn't see them :: They came straight over anyway, and I had to rise to the occasion. It went better than I deserved. :: karma=2,happiness=2 :: relationship={"rv":12}
+life.old_rival_reunion :: Gloat about your life :: My gloating backfired when they turned out to be doing much better than I'd assumed. :: happiness=-6,stress=6,karma=-2
+life.old_rival_reunion :: Gloat about your life :: They were dazzled, and I went home feeling hollow. :: happiness=-2,karma=-3
+life.parent_retire :: Give a heartfelt toast :: I'd written it on a napkin and lost the napkin. I improvised and it was better. :: happiness=7,karma=2 :: relationship={"par":18}
+life.parent_retire :: Give a heartfelt toast :: I choked up halfway through. {par.first} stood and finished it with me. :: happiness=8,karma=1 :: relationship={"par":22}
+life.parent_retire :: Roast them :: A joke about {par.first}'s cooking landed badly. A relative left. :: happiness=-2,karma=-2,stress=4 :: relationship={"par":-4}
+life.parent_retire :: Roast them :: I told a story from my childhood that nobody knew. {par.first} wept laughing. :: happiness=8 :: relationship={"par":16}
+life.parent_retire :: Skip it :: I sent a card. It arrived three weeks late. {par.first} put it on the mantel anyway. :: karma=-1,stress=3 :: relationship={"par":-6}
+life.parent_retire :: Skip it :: Work ran over. {par.first} said "I understand", in a way that I didn't. :: stress=6,happiness=-3 :: relationship={"par":-12}
+life.adult_kid_money :: Give advice instead :: {kid.first} didn't take it, made every mistake I'd warned about, and did well anyway. I am both proud and annoyed. :: happiness=3,stress=2 :: relationship={"kid":6}
+life.adult_kid_money :: Give advice instead :: The advice saved {kid.first} from signing a bad lease. They called to thank me and I pretended I hadn't been worried. :: happiness=6,karma=2 :: relationship={"kid":12}
+life.adult_kid_money :: Say no :: {kid.first} found the money elsewhere and the business took off. I wasn't in the story. :: happiness=-4,stress=3 :: relationship={"kid":-14}
+life.adult_kid_money :: Say no :: The business folded in six months. I was quietly relieved and guilty about it. :: karma=-1,stress=2,happiness=-1 :: relationship={"kid":-6}
+life.health_scare :: Skip them :: It was nothing. I felt foolish for having worried and irresponsible for having skipped. :: stress=-4,health=0
+life.health_scare :: Skip them :: It wasn't nothing. By the time I went back, the options were narrower. :: health=-10,stress=12,happiness=-8
+life.moving_friend :: Help :: Halfway up the third flight, the piano got stuck. We were there for three hours and one of us wept. :: health=-3,happiness=4,stress=5 :: relationship={"fr":20}
+life.moving_friend :: Help :: The piano turned out to be out of tune. We moved it anyway, then drank a beer on its lid. :: health=-2,happiness=6 :: relationship={"fr":14}
+life.moving_friend :: Suddenly remember a dentist appointment :: The dentist's receptionist called to ask about my missed appointment. I hadn't made one. {fr.first} heard. :: karma=-2,stress=4 :: relationship={"fr":-16}
+life.moving_friend :: Suddenly remember a dentist appointment :: {fr.first} hired movers instead. We both pretended nothing happened, and did it well. :: happiness=1 :: relationship={"fr":-3}
