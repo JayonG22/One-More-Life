@@ -1671,6 +1671,9 @@ func _panel_assets() -> void:
 	var age: int = p["age"]
 	_add(U.row("🏠", "Houses", GameState.HOUSING[p["housing"]]["name"] + " · buy, sell, rent", func(): _open_panel(_panel_housing), age >= 18))
 	_add(U.row("🛠️", "Home Life", "Condition, renovations, neighbors, HOA and house stories", func(): MP.open("exp:home"), age >= 18 and p["housing"] == "house"))
+	_add(U.row("🔑", "Your tenancy", "Landlord, deposit, repairs, flatmates and bills", func(): MP.open("real:home"), age >= 18 and Tenancy.renting()))
+	_add(U.row("🧭", "Getting about", "Your commute, insurance and what the car is costing you", func(): MP.open("real:go"), age >= 12 and (Transit.commuting() or Transit.has_car())))
+	_add(U.row("💌", "Keeping up", "Invitations, lapsed friends, what you eat, your phone", func(): MP.open("real:keep"), age >= 14))
 	_add(U.row("🚗", "Vehicles", (GameState.CARS[p["car"]]["name"] if p["car"] != "" else "No car") + " · buy or sell", func(): _open_panel(_panel_vehicles), age >= 16))
 	_add(U.row("🏦", "Savings & Investments", "Savings %s · portfolio %s" % [GameState.fmt_money(int(p["savings"])), GameState.fmt_money(Finance.investments_value())], func(): _open_panel(_panel_investments), age >= 16))
 	_add(U.row("🏢", "Property", "%d owned · rentals and tenants" % p["properties"].size(), func(): _open_panel(_panel_property), age >= 18))

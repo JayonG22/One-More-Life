@@ -22,6 +22,7 @@ func _module(key: String):
 		"exp": return Expansion
 		"threads": return LifeThreads
 		"amb": return Ambition
+		"real": return Real
 	return null
 
 

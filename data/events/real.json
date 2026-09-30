@@ -1,0 +1,2376 @@
+[
+ {
+  "id": "real.rent_rise",
+  "icon": "📈",
+  "title": "The letter about the rent",
+  "text": "A letter from {~the agency|your landlord|the letting office} says the rent is going up. {~It calls this 'an adjustment in line with the market'.|The word 'unfortunately' appears twice.|It arrived on a Friday, which felt deliberate.}",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "real": [
+    "renting"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pay it and say nothing",
+    "outcomes": [
+     {
+      "text": "I paid. There was a week of grumbling and then it was just the rent.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 3
+      },
+      "real": {
+       "rent_pct": 6
+      }
+     },
+     {
+      "text": "The new rent ate the gap I had been saving for. I stopped buying lunch out.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "stress": 6,
+       "happiness": -3
+      },
+      "real": {
+       "rent_pct": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "I showed {~the damp|the ageing boiler|three cheaper listings} and they came down to half of what they'd asked.",
+      "weight": 2,
+      "effects": {
+       "happiness": 3
+      },
+      "real": {
+       "rent_pct": 2
+      }
+     },
+     {
+      "text": "They said the increase was non-negotiable. I felt like I had asked for something rude.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "real": {
+       "rent_pct": 7
+      }
+     },
+     {
+      "text": "They said no, then mentioned that the owner was 'considering options'. Nothing good follows that sentence.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "real": {
+       "rent_pct": 5,
+       "forced_move": false
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start looking elsewhere",
+    "outcomes": [
+     {
+      "text": "I spent three weekends at viewings. One flat smelled of cabbage and had a bath in the kitchen.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "real": {
+       "forced_move": true
+      }
+     },
+     {
+      "text": "I found something cheaper and smaller, and moved before the increase took effect.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "happiness": 2,
+       "stress": 4
+      },
+      "real": {
+       "forced_move": true
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.damp_patch",
+  "icon": "🍄",
+  "title": "A patch on the wall",
+  "text": "There is a dark patch spreading {~behind the wardrobe|in the corner of the bedroom|above the window} and the air has started to smell of wet {~wool|cardboard|earth}.",
+  "conditions": {
+   "age": [
+    18,
+    85
+   ],
+   "real": [
+    "renting",
+    "damp"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Photograph it and write to the landlord",
+    "outcomes": [
+     {
+      "text": "A man came and sprayed something on it. It came back within the month, but I had a paper trail.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "real": {
+       "damp": -25
+      }
+     },
+     {
+      "text": "The landlord's reply said it was condensation and suggested I open a window. I opened a window.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "real": {
+       "damp": -5
+      }
+     },
+     {
+      "text": "They sent a proper builder. It took a week and the flat smelt of paint, but the wall is finally dry.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -3
+      },
+      "real": {
+       "damp": -50
+      }
+     }
+    ]
+   },
+   {
+    "label": "Scrub it myself",
+    "outcomes": [
+     {
+      "text": "I spent a Sunday with bleach and a mask. It helped, and I coughed for two days.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 1
+      },
+      "real": {
+       "damp": -20
+      }
+     },
+     {
+      "text": "The patch returned a week later and the bleach smell stayed a month.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 3
+      },
+      "real": {
+       "damp": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I hung a picture over it. The picture started to curl.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 2
+      },
+      "real": {
+       "damp": 12
+      }
+     },
+     {
+      "text": "I developed a cough that took a doctor three appointments to link to the wall.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 5,
+       "money": -150
+      },
+      "real": {
+       "damp": 15
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.boiler_dead",
+  "icon": "🥶",
+  "title": "No hot water",
+  "text": "The boiler {~gave a long groan and died|started clicking and then stopped|went out in the middle of a shower} and the flat is cold enough to see your breath in.",
+  "conditions": {
+   "age": [
+    18,
+    85
+   ],
+   "real": [
+    "renting",
+    "boiler_old"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call the landlord",
+    "outcomes": [
+     {
+      "text": "{~An engineer came the next day|The landlord sent someone within the week}. The new boiler is enormous and quiet.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2
+      },
+      "real": {
+       "boiler_age": -20
+      }
+     },
+     {
+      "text": "Six weeks of cold showers and emails. Eventually a man came with a part the size of a biscuit.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 6,
+       "happiness": -3
+      },
+      "real": {
+       "boiler_age": -20
+      }
+     },
+     {
+      "text": "The landlord told me to 'call the manufacturer'. The manufacturer told me to call the landlord.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay for the repair myself",
+    "outcomes": [
+     {
+      "text": "The engineer was kind and the bill wasn't. I got the money back out of the next rent after an argument.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 3
+      },
+      "real": {
+       "boiler_age": -20
+      }
+     },
+     {
+      "text": "I paid and never saw the money again. The landlord said 'noted'.",
+      "weight": 1,
+      "effects": {
+       "money": -850,
+       "stress": 5
+      },
+      "real": {
+       "boiler_age": -20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay with a friend until it's sorted",
+    "outcomes": [
+     {
+      "text": "A week on someone's sofa reminded me who my friends were. They wouldn't take a penny.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -1
+      },
+      "real": {
+       "boiler_age": -20
+      }
+     },
+     {
+      "text": "The week on a sofa became a month, and we both started to count the days.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.landlord_visit",
+  "icon": "🧐",
+  "title": "An inspection",
+  "text": "{~Your landlord|The agency} has given you forty-eight hours' notice of an inspection. The flat has not been tidy since {~March|the spring|you moved in}.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "real": [
+    "renting"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Clean everything",
+    "outcomes": [
+     {
+      "text": "The place passed. The landlord ran a finger along a shelf and looked almost disappointed.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I found two things I'd lost months ago and a third I'd hoped was gone for good.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tidy only what shows",
+    "outcomes": [
+     {
+      "text": "It was enough. I was told the place 'was well kept', which is the nicest thing anyone has said about it.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "They opened a cupboard. The cupboard did not behave.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse access",
+    "outcomes": [
+     {
+      "text": "Legally, I was right. The landlord's face did not agree, and the repairs I'd asked for stopped being urgent.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "real": {
+       "rent_pct": 2
+      }
+     },
+     {
+      "text": "They backed down with an email the length of a legal threat. I kept the flat; I lost some goodwill.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.deposit_dispute",
+  "icon": "🧾",
+  "title": "The deposit",
+  "text": "{~The landlord is deducting|The agency says it will be keeping} a large part of your deposit for 'wear beyond fair use': a scuff, a carpet, and something called 'professional cleaning'.",
+  "conditions": {
+   "age": [
+    20,
+    80
+   ],
+   "real": [
+    "renting",
+    "landlord:grasping"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Dispute it with photographs",
+    "outcomes": [
+     {
+      "text": "I'd photographed everything on move-in day. The scheme ruled in my favour and I got most of it back.",
+      "weight": 2,
+      "effects": {
+       "happiness": 6,
+       "smarts": 1
+      },
+      "real": {
+       "deposit_loss": 10
+      }
+     },
+     {
+      "text": "It took four months and a form for every wall. I won half.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": 1
+      },
+      "real": {
+       "deposit_loss": 50
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept it",
+    "outcomes": [
+     {
+      "text": "I was tired. I let them have it and moved on.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "real": {
+       "deposit_loss": 60
+      }
+     },
+     {
+      "text": "I accepted and then found a stain on the paperwork I hadn't noticed. Too late.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 3
+      },
+      "real": {
+       "deposit_loss": 80
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to small claims",
+    "outcomes": [
+     {
+      "text": "The judge barely looked at the landlord's folder. I won, and my mother framed the letter.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 3,
+       "stress": 4
+      },
+      "real": {
+       "deposit_loss": 0
+      }
+     },
+     {
+      "text": "The landlord didn't turn up and the case was adjourned twice. It still ended in my favour, eventually.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": 4,
+       "money": -100
+      },
+      "real": {
+       "deposit_loss": 10
+      }
+     },
+     {
+      "text": "I lost on a technicality involving a missing signature. I have never read a lease so carefully.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -5,
+       "money": -200
+      },
+      "real": {
+       "deposit_loss": 80
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.flatmate_rent",
+  "icon": "🧑‍🤝‍🧑",
+  "title": "The flatmate is late with the rent",
+  "text": "{~Your flatmate|The person you share with} is short again this month and has a very good reason, which is different from last month's.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "real": [
+    "renting",
+    "flatmate"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cover it this time",
+    "outcomes": [
+     {
+      "text": "They paid me back in instalments and a lasagne. I have mixed feelings about the lasagne.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "stress": 3
+      }
+     },
+     {
+      "text": "They never mentioned it again. Neither did I, out loud.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "stress": 4,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sit them down",
+    "outcomes": [
+     {
+      "text": "We made a schedule and a rule, and the next three months went better than the last three.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2,
+       "karma": 1
+      }
+     },
+     {
+      "text": "It turned into an argument about the dishes, and then about everything, and then about nothing.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the landlord",
+    "outcomes": [
+     {
+      "text": "The landlord sorted it out with a letter. Our flat has been silent since, like a library with grievances.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
+      },
+      "real": {
+       "flatmate_leaves": true
+      }
+     },
+     {
+      "text": "The flatmate moved out that weekend, leaving the fridge full of mystery leftovers.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": -1
+      },
+      "real": {
+       "flatmate_leaves": true
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.flatmate_party",
+  "icon": "🥳",
+  "title": "They have people round",
+  "text": "It's {~a Tuesday|midnight|a work night} and your flatmate's {~friends have arrived|birthday has begun|'quiet evening' has become a DJ set}.",
+  "conditions": {
+   "age": [
+    18,
+    50
+   ],
+   "real": [
+    "renting",
+    "flatmate"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Join in",
+    "outcomes": [
+     {
+      "text": "I met someone I'd never have spoken to otherwise. We exchanged numbers. The hangover was memorable.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": -1,
+       "stress": -2
+      }
+     },
+     {
+      "text": "At 3 a.m. I was the one sitting on the stairs explaining my life to a stranger called Doug.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to bed and put earplugs in",
+    "outcomes": [
+     {
+      "text": "It worked until the smoke alarm. I slept through the music and woke up to the fire brigade.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "The earplugs held. I woke up fresh, and the kitchen looked like a crime scene.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them to turn it down",
+    "outcomes": [
+     {
+      "text": "They did, graciously, and thanked me for being direct.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": -1
+      }
+     },
+     {
+      "text": "They turned it up, slightly. We didn't speak for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "The neighbours called the landlord and I got the letter.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      },
+      "real": {
+       "rent_pct": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.lease_renewal",
+  "icon": "📄",
+  "title": "The lease is up",
+  "text": "The lease on {~the flat|your place} runs out next month and {~the agency|your landlord} would like to know what you intend to do.",
+  "conditions": {
+   "age": [
+    19,
+    75
+   ],
+   "real": [
+    "renting"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Sign for another year",
+    "outcomes": [
+     {
+      "text": "A year's security, at a price. I hung the pictures I'd been putting off.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "real": {
+       "rent_pct": 4
+      }
+     },
+     {
+      "text": "They wanted a higher rent and a clause about pets I didn't read until later.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "real": {
+       "rent_pct": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go month-to-month",
+    "outcomes": [
+     {
+      "text": "It costs a little more and I keep my options open. I never quite relax.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "real": {
+       "rent_pct": 9
+      }
+     },
+     {
+      "text": "They said yes, and then sold the building three months later.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      },
+      "real": {
+       "forced_move": true
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk away and find somewhere new",
+    "outcomes": [
+     {
+      "text": "I found a flat with a view of a car park and a landlord who replies to messages. I'll take it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -1800,
+       "stress": 4
+      },
+      "real": {
+       "forced_move": true
+      }
+     },
+     {
+      "text": "I searched for weeks and nearly ended up on a sofa. The place I found smells of someone else's dinners.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -1800,
+       "happiness": -2
+      },
+      "real": {
+       "forced_move": true
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.locked_out",
+  "icon": "🔑",
+  "title": "Locked out",
+  "text": "It's {~eleven at night|raining|the coldest night of the year} and your keys are on the kitchen table, on the other side of a door.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ],
+   "real": [
+    "renting"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call a locksmith",
+    "outcomes": [
+     {
+      "text": "A man arrived in twelve minutes and opened the door in four. The bill was more than my shoes.",
+      "weight": 1,
+      "effects": {
+       "money": -280,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The locksmith was a scam. He charged three times the quote and left the door broken.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "stress": 7,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wake the neighbour with the spare",
+    "outcomes": [
+     {
+      "text": "They'd been asleep for an hour and still made me tea. I owe them a bottle of wine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 2
+      }
+     },
+     {
+      "text": "They weren't in. I sat on the stairs for three hours until a flatmate came home.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Climb in through a window",
+    "outcomes": [
+     {
+      "text": "I got in without a scratch, and was enormously pleased with myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I got in with a split lip and a bruised pride. The neighbour filmed it.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": -2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The police were called by someone who thought I was a burglar. Explaining myself took an hour.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": -1,
+       "heat": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.first_flat",
+  "icon": "🥡",
+  "title": "The first place that was yours",
+  "text": "{~Your first flat|The first place with your name on the lease} has a mattress, one chair and a window that opens onto {~a brick wall|a neighbour's washing|a wonderful slice of sky}.",
+  "conditions": {
+   "age": [
+    18,
+    26
+   ],
+   "real": [
+    "renting"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Spend a weekend making it home",
+    "outcomes": [
+     {
+      "text": "I painted one wall a colour I'd never choose again. I slept like a child that night.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": -180
+      }
+     },
+     {
+      "text": "I found a plant, a lamp and a chair at a charity shop. The room started to have an opinion.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -120,
+       "stress": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw a housewarming",
+    "outcomes": [
+     {
+      "text": "Everyone stood in the kitchen, as everyone does. It was the best night of my year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "money": -150
+      }
+     },
+     {
+      "text": "Only two people came, and we ate all the crisps. It was oddly perfect.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -80
+      }
+     }
+    ]
+   },
+   {
+    "label": "Live out of boxes for months",
+    "outcomes": [
+     {
+      "text": "The boxes became furniture. It was a long time before it felt like mine.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "I got used to it, and then I stopped noticing I hadn't unpacked at all.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 5,
+  "cooldown": 12
+ },
+ {
+  "id": "real.first_crash",
+  "icon": "💥",
+  "title": "The first crash",
+  "text": "{~You were reversing|You took a corner too fast|The road was wet and the car in front stopped suddenly}. There's a crunch, then a silence, then someone getting out of the other car.",
+  "conditions": {
+   "age": [
+    17,
+    26
+   ],
+   "real": [
+    "drives",
+    "young_driver"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Admit fault and exchange details",
+    "outcomes": [
+     {
+      "text": "They were decent about it. The insurer was less decent, and the premium jumped.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": 3
+      },
+      "real": {
+       "crash": "minor"
+      }
+     },
+     {
+      "text": "The other driver turned out to be a neighbour's uncle. We've waved to each other ever since.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": 3
+      },
+      "real": {
+       "crash": "minor"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Argue it was their fault",
+    "outcomes": [
+     {
+      "text": "They had dashcam footage. I've never felt so small in a car park.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "karma": -4,
+       "happiness": -3
+      },
+      "real": {
+       "crash": "moderate"
+      }
+     },
+     {
+      "text": "It went to the insurers, who split the blame, and my premium rose anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": -1
+      },
+      "real": {
+       "crash": "minor"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive away",
+    "outcomes": [
+     {
+      "text": "I got four streets before I started shaking. Someone had taken my number plate.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "karma": -8,
+       "heat": 4
+      },
+      "real": {
+       "crash": "moderate",
+       "fine": 800
+      }
+     },
+     {
+      "text": "I was caught on a doorbell camera, and two days later a police officer was sitting in the kitchen with my mother.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "karma": -8,
+       "heat": 6
+      },
+      "real": {
+       "crash": "moderate",
+       "fine": 1200
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.parking_ticket",
+  "icon": "🅿️",
+  "title": "A ticket under the wiper",
+  "text": "There's a yellow envelope under the windscreen wiper of your car. {~You were there for eleven minutes.|The sign was behind a tree.|You were sure that bay was free.}",
+  "conditions": {
+   "age": [
+    17,
+    85
+   ],
+   "real": [
+    "drives"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pay it",
+    "outcomes": [
+     {
+      "text": "It was quicker than the alternative. I've since become very good at reading signs.",
+      "weight": 1,
+      "effects": {
+       "money": -60,
+       "stress": 1
+      }
+     },
+     {
+      "text": "I paid the discounted rate and swore at an envelope.",
+      "weight": 1,
+      "effects": {
+       "money": -40,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Appeal it",
+    "outcomes": [
+     {
+      "text": "The appeal was upheld. The warden had measured the wrong bay. I felt a disproportionate joy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The appeal was rejected after six weeks, and the fine doubled.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It turned into a court letter. I paid it with the extra fee and my tail between my legs.",
+      "weight": 1,
+      "effects": {
+       "money": -220,
+       "stress": 5,
+       "karma": -1
+      }
+     },
+     {
+      "text": "Nothing happened for a year, then a bailiff's letter arrived and I couldn't pretend any more.",
+      "weight": 1,
+      "effects": {
+       "money": -380,
+       "stress": 8,
+       "karma": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.commute_breakdown",
+  "icon": "⏱️",
+  "title": "The long way in",
+  "text": "{~The journey takes over an hour|The commute has crept up again|You do the sums and lose a full working day every week}, each way, and you've started to hate {~the bridge|the ring road|the platform|the stop}.",
+  "conditions": {
+   "age": [
+    20,
+    65
+   ],
+   "real": [
+    "long_commute"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Move closer to work",
+    "outcomes": [
+     {
+      "text": "I found a place ten minutes away. It cost more, and every morning felt like a gift.",
+      "weight": 1,
+      "effects": {
+       "money": -2500,
+       "happiness": 6,
+       "stress": -6
+      },
+      "real": {
+       "forced_move": true
+      }
+     },
+     {
+      "text": "The flat was tiny and the noise was terrible, but I got back ten hours a week.",
+      "weight": 1,
+      "effects": {
+       "money": -1800,
+       "happiness": 3,
+       "stress": -3
+      },
+      "real": {
+       "forced_move": true
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use the time properly",
+    "outcomes": [
+     {
+      "text": "I started listening to books on the journey. A year later I'd read sixty.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I started learning a language. My accent on the platform was the talk of the carriage.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask about working from home",
+    "outcomes": [
+     {
+      "text": "After a pilot, they agreed to two days a week. It changed everything.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -5,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "They said the job needed 'presence'. The look on my face was noted.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "They refused, and I started looking at other jobs.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.bike_stolen",
+  "icon": "🚲",
+  "title": "The empty lock",
+  "text": "You come out to the rack and find {~a cut lock|the lock, neatly snapped|nothing but a front wheel} where your bike was.",
+  "conditions": {
+   "age": [
+    12,
+    70
+   ],
+   "real": [
+    "commute:bike"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Report it",
+    "outcomes": [
+     {
+      "text": "The police gave me a crime number and an apologetic smile. I got nothing else from them.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "A week later a patrol found it in a skip. It needed a new chain and a bit of grace.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -40
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy a new bike",
+    "outcomes": [
+     {
+      "text": "The new one was better, and heavier, and I named it after my grandmother.",
+      "weight": 1,
+      "effects": {
+       "money": -380,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The new one was stolen within the year too. I've learned about locks.",
+      "weight": 1,
+      "effects": {
+       "money": -380,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Switch to the bus",
+    "outcomes": [
+     {
+      "text": "I hate to admit I like it. Forty minutes of reading a book.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "health": -1
+      }
+     },
+     {
+      "text": "The bus turned out to be late every morning, and I missed the ride.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "health": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.train_cancelled",
+  "icon": "🚆",
+  "title": "Cancelled",
+  "text": "The board says {~CANCELLED|DELAYED|SIGNAL FAILURE}. The platform fills with people sighing in unison.",
+  "conditions": {
+   "age": [
+    14,
+    70
+   ],
+   "real": [
+    "commute:train"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Wait it out",
+    "outcomes": [
+     {
+      "text": "Forty minutes later we crammed on. I stood with my face against someone's rucksack, reflecting.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "It came, it was empty, and I got a seat. A small miracle.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Find another way",
+    "outcomes": [
+     {
+      "text": "I got a taxi with three strangers. We split the fare and became briefly close.",
+      "weight": 1,
+      "effects": {
+       "money": -30,
+       "happiness": 2,
+       "stress": 1
+      }
+     },
+     {
+      "text": "I walked the whole way and arrived an hour late, cold and strangely proud.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go home and say you'll work from home",
+    "outcomes": [
+     {
+      "text": "My boss said 'sure', in a tone that I thought about all day.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "I got more done at the kitchen table than I'd done all week, and nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "job_perf": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.bus_stranger",
+  "icon": "🚌",
+  "title": "The stranger on the bus",
+  "text": "{~Someone sits beside you|Someone across the aisle catches your eye} and says, unprompted, {~'You look like you've had a day.'|'Is this seat taken?'|'That book is terrible, by the way.'}",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ],
+   "real": [
+    "commute:bus"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Talk back",
+    "outcomes": [
+     {
+      "text": "We talked for four stops. I never saw them again, and think about them most weeks.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "We swapped numbers. They became a friend, of the kind you only have on certain days of the week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Nod and put headphones on",
+    "outcomes": [
+     {
+      "text": "Sometimes the best conversation is the one you don't have. I got home rested.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "I regretted it by my stop. There was something in their face I should have answered.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Move seats",
+    "outcomes": [
+     {
+      "text": "The next seat was worse, and next to someone eating curry.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "It was awkward but fine.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.insurance_renewal",
+  "icon": "📑",
+  "title": "The renewal quote",
+  "text": "Your car insurance renewal has arrived and {~the number has changed|it's gone up again|the cheapest quote this year came from a company you've never heard of}.",
+  "conditions": {
+   "age": [
+    18,
+    85
+   ],
+   "real": [
+    "insured"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Shop around",
+    "outcomes": [
+     {
+      "text": "After forty minutes on comparison sites I saved enough to buy a very good dinner.",
+      "weight": 1,
+      "effects": {
+       "money": 180,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I found a cheaper deal, then found out why: the excess was enormous.",
+      "weight": 1,
+      "effects": {
+       "money": 80,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay put and pay it",
+    "outcomes": [
+     {
+      "text": "I paid it. Loyalty is an expensive habit.",
+      "weight": 1,
+      "effects": {
+       "money": -120,
+       "stress": 1
+      }
+     },
+     {
+      "text": "I paid it and kept my no-claims bonus. A small comfort.",
+      "weight": 1,
+      "effects": {
+       "stress": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drop to third party cover",
+    "outcomes": [
+     {
+      "text": "It saved money, and I spent the year holding my breath.",
+      "weight": 1,
+      "effects": {
+       "money": 400,
+       "stress": 3
+      },
+      "real": {
+       "cover": "third"
+      }
+     },
+     {
+      "text": "I dropped to basic cover, and a stone put a crack in my windscreen the next week.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "stress": 4
+      },
+      "real": {
+       "cover": "third"
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.speed_camera",
+  "icon": "📸",
+  "title": "The flash",
+  "text": "{~A flash in the mirror|A grey box on a pole|A letter in a brown envelope} tells you that you were {~going a little faster than the sign suggested|doing 42 in a 30|thinking about something else}.",
+  "conditions": {
+   "age": [
+    17,
+    85
+   ],
+   "real": [
+    "drives"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the points",
+    "outcomes": [
+     {
+      "text": "I paid the fine and did the speed awareness course. The man running it was more entertaining than I'd feared.",
+      "weight": 1,
+      "effects": {
+       "money": -100,
+       "smarts": 1
+      },
+      "real": {
+       "premium_pct": 20
+      }
+     },
+     {
+      "text": "I paid it and went on a course, learning that my road has a habit of catching people.",
+      "weight": 1,
+      "effects": {
+       "money": -100,
+       "stress": 1
+      },
+      "real": {
+       "premium_pct": 20
+      }
+     }
+    ]
+   },
+   {
+    "label": "Contest it",
+    "outcomes": [
+     {
+      "text": "A technicality saved me. The camera hadn't been calibrated.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I went to court. The magistrate was not amused and the fine doubled.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 5,
+       "heat": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend someone else was driving",
+    "outcomes": [
+     {
+      "text": "It blew up in my face, and my cousin has stopped returning my calls.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 8,
+       "money": -500,
+       "heat": 3
+      },
+      "real": {
+       "premium_pct": 40
+      }
+     },
+     {
+      "text": "It worked, and I spent the next year jumpy every time a letter arrived.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "stress": 5
+      },
+      "real": {
+       "premium_pct": 0
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.lost_touch",
+  "icon": "📵",
+  "title": "Someone you meant to call",
+  "text": "You realise it has been {~four years|longer than you'd like to say|since before the last move} since you talked to an old friend, and neither of you did anything to cause it.",
+  "conditions": {
+   "age": [
+    20,
+    85
+   ],
+   "real": [
+    "lapsed_friend"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call them today",
+    "outcomes": [
+     {
+      "text": "They picked up on the second ring and said 'I was just thinking about you.' I don't know whether it was true.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": -2
+      }
+     },
+     {
+      "text": "It was awkward for about three minutes and then it wasn't. We made a plan for the summer.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The number had changed. I found them on social media. They were warm but distant.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write a long message",
+    "outcomes": [
+     {
+      "text": "I spent an hour writing it and ten seconds sending it. The reply came next morning: 'God, yes.'",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "No reply came. I've decided it's the silence of someone who is busy, rather than someone who isn't interested.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it lie",
+    "outcomes": [
+     {
+      "text": "Some friendships are for a season. I thought about them on a bench once, and then I stopped.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "Two years later I heard they had moved abroad. I felt the loss more than I'd expected.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.group_chat",
+  "icon": "💬",
+  "title": "The group chat",
+  "text": "The group chat {~has 312 unread messages|went off at 2 a.m.|has turned into an argument about something none of you can now remember}.",
+  "conditions": {
+   "age": [
+    14,
+    70
+   ],
+   "real": [
+    "tech:2"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Read it all",
+    "outcomes": [
+     {
+      "text": "There was a real argument in there, with real feelings. I replied with something kind, for once.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "Forty minutes of memes and one heartfelt message from someone who's struggling. I rang them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Mute it",
+    "outcomes": [
+     {
+      "text": "Ah, peace. A week later I'd missed a birthday and a flat-warming.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "The silence was wonderful. Nobody noticed. I'm not sure what that says.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave the group",
+    "outcomes": [
+     {
+      "text": "Two people messaged to ask if I was okay. I wasn't sure how to answer.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "happiness": -1
+      }
+     },
+     {
+      "text": "Nobody said anything and it stung, though I'd done it myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.funeral_words",
+  "icon": "🕯️",
+  "title": "Asked to say a few words",
+  "text": "The family of {~someone you knew|an old friend|a person who mattered to you} has asked whether you would speak at the funeral. {~They say you were the one who knew them best.|You said yes before you'd thought about it.}",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ],
+   "flags": [
+    "lost_close_person"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Write something careful",
+    "outcomes": [
+     {
+      "text": "I spent three nights on it. I read it out, and they laughed and cried, in that order.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 6,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The page shook in my hands. I finished, and sat down, and felt something open up in me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 5,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Speak from the heart",
+    "outcomes": [
+     {
+      "text": "It was messy and real. Someone told me afterwards it was the best eulogy they'd heard.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 4,
+       "karma": 3
+      }
+     },
+     {
+      "text": "I got three sentences in and couldn't go on. Someone took my hand and finished the story.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 6,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "Someone else spoke, well, and I sat at the back thinking about what I would have said.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I sent a letter for someone to read. It was kind, and it wasn't the same.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 10
+ },
+ {
+  "id": "real.cooking_night",
+  "icon": "🍳",
+  "title": "Dinner from scratch",
+  "text": "You {~try a recipe you've been meaning to|decide to cook for the week|invite people over and promise a proper meal}, and the kitchen fills with smells.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ],
+   "real": [
+    "diet:cook"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Follow the recipe exactly",
+    "outcomes": [
+     {
+      "text": "It came out tasting like the picture. I want that in writing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "health": 1
+      }
+     },
+     {
+      "text": "It came out tasting like a photograph of the dish, and everyone was polite.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Improvise",
+    "outcomes": [
+     {
+      "text": "A handful of something I found in the cupboard turned out to be the secret. Everyone asked for the recipe.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The smoke alarm sang. We ordered pizza, and it was the best night of the month.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give up and order in",
+    "outcomes": [
+     {
+      "text": "A delivery at nine. No regrets and a little guilt.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "money": -25
+      }
+     },
+     {
+      "text": "The delivery was wrong, cold and late, and I ate toast.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "money": -25
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.takeaway_bill",
+  "icon": "🥡",
+  "title": "The takeaway bill",
+  "text": "You look at the bank statement and there is a column of delivery apps that looks like {~a phone number|a list of small betrayals|someone else's life}.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "real": [
+    "diet:takeaway"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Start cooking",
+    "outcomes": [
+     {
+      "text": "I bought a pan and an ambition. It wasn't good at first, and then it was.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "money": 400,
+       "happiness": 2
+      },
+      "real": {
+       "diet": "mixed"
+      }
+     },
+     {
+      "text": "I ate beans on toast for a fortnight and felt pure.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "money": 300,
+       "stress": 1
+      },
+      "real": {
+       "diet": "cook"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on",
+    "outcomes": [
+     {
+      "text": "I told myself it was self-care. My waistband didn't agree.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "happiness": 2,
+       "money": -400
+      }
+     },
+     {
+      "text": "A friend stared at me across a pile of cartons. I changed the subject.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "happiness": 1,
+       "money": -300
+      }
+     }
+    ]
+   },
+   {
+    "label": "Set a budget",
+    "outcomes": [
+     {
+      "text": "I set an allowance and a rule. The rule lasted three weeks. The allowance lasted two.",
+      "weight": 1,
+      "effects": {
+       "money": 200,
+       "stress": 1
+      }
+     },
+     {
+      "text": "It worked, for once. I was amazed at how small the budget really was.",
+      "weight": 1,
+      "effects": {
+       "money": 500,
+       "happiness": 2,
+       "smarts": 1
+      },
+      "real": {
+       "diet": "mixed"
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.old_photos",
+  "icon": "📷",
+  "title": "A box of photographs",
+  "text": "You find {~a shoebox|an album|a drawer of envelopes} of old photographs, the kind that {~smell of the chemist|have a thumbprint on the corner}.",
+  "conditions": {
+   "age": [
+    25,
+    90
+   ],
+   "real": [
+    "pretech:3"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Spend the evening going through them",
+    "outcomes": [
+     {
+      "text": "There was one of you laughing that you had no memory of. I kept it on the fridge.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -2
+      }
+     },
+     {
+      "text": "I found someone I had forgotten I loved. I put the photo down and stared at the wall for a while.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Scan them and send copies",
+    "outcomes": [
+     {
+      "text": "Three people cried, two argued about who was in the photograph. It was the best gift I've given.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 2
+      }
+     },
+     {
+      "text": "It took a month, and nobody replied. I kept going, and I'm glad I did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put the box back",
+    "outcomes": [
+     {
+      "text": "Some things are better in the dark. Not all, but some.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I meant to come back to them. I haven't.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.internet_outage",
+  "icon": "📡",
+  "title": "No connection",
+  "text": "The {~internet|wifi|line} has been down for {~two days|most of a week|long enough to notice}, and you've discovered how much of your life lives on it.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ],
+   "real": [
+    "tech:2"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ring the provider",
+    "outcomes": [
+     {
+      "text": "After an hour on hold, a man named Darren talked me through turning it off and on again. It worked.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "They promised an engineer between 8 and 6. He came at 5:55 and fixed it in a minute.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it as an excuse to unplug",
+    "outcomes": [
+     {
+      "text": "I read a book, took a walk and called my mother. It was the best weekend in a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -5
+      }
+     },
+     {
+      "text": "By day two I was twitching. By day three I'd found a hobby.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go to the library or a cafe",
+    "outcomes": [
+     {
+      "text": "I worked in a cafe for three days, and had a conversation with the barista that I still remember.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -25
+      }
+     },
+     {
+      "text": "Every seat was taken by someone on the same mission. We nodded like survivors.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1,
+       "money": -20
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "real.family_table",
+  "icon": "🍽️",
+  "title": "The family meal",
+  "text": "It's {~a holiday|Sunday|someone's birthday}, and the family are at the table. {~Nobody has sat down yet|The argument has already started|Someone has brought up politics}.",
+  "conditions": {
+   "age": [
+    14,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep the peace",
+    "outcomes": [
+     {
+      "text": "I changed the subject three times and got away with a good dinner.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     },
+     {
+      "text": "I kept the peace, but bit my tongue until it bled.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say what you actually think",
+    "outcomes": [
+     {
+      "text": "Silence fell. Then someone said 'he's right,' and the night turned around.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 1,
+       "stress": 2
+      }
+     },
+     {
+      "text": "It ended with a slammed door and a cold plate of pudding in my lap.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help in the kitchen",
+    "outcomes": [
+     {
+      "text": "The best conversation of the night was by the sink, over the dishes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -2
+      }
+     },
+     {
+      "text": "I dropped a dish and everyone looked at me. It was a happy accident, in the end.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 4,
+  "cooldown": 5
+ }
+]

@@ -63,6 +63,7 @@ func age_up() -> void:
 	Law.yearly()
 	Wanted.yearly()
 	Decline.yearly()
+	Real.yearly()
 	_yearly_finances()
 	_yearly_prison()
 	var cause := _death_check()
@@ -297,6 +298,7 @@ func _npc_died(id: String) -> void:
 	if n["relation"] in ["mother", "father", "child", "partner", "sibling", "grandparent", "pet", "best_friend"]:
 		GameState.add_log("My %s %s passed away at %d." % [rel, n["first"], int(n["age"])])
 		GameState.apply_effects({"happiness": hit, "stress": 5})
+	Keeping.on_death(id)
 	if n["relation"] in ["mother", "father", "partner", "child"]:
 		GameState.add_milestone(p["age"], "lost %s %s, %s" % [GameState.pron(p["gender"], "his"), rel, n["first"]])
 	if n["relation"] in ["mother", "father", "child", "partner", "sibling", "grandparent", "pet", "best_friend"] and close >= 35:
@@ -457,7 +459,7 @@ func _yearly_finances() -> void:
 		match p["housing"]:
 			"parents": expenses += int(2500 * cost)
 			"dorm": expenses += int(6000 * cost)
-			"apartment": expenses += int((11000 + GameState.HOUSING["apartment"]["rent"]) * cost)
+			"apartment": expenses += int((11000 + Tenancy.annual_rent()) * cost)
 			"house": expenses += int(11000 * cost)
 		if int(p["mortgage"]) > 0:
 			var pay := mini(int(p["mortgage"]), int(p["mortgage_payment"]))
@@ -468,6 +470,7 @@ func _yearly_finances() -> void:
 				GameState.add_milestone(age, "paid off the house")
 		if p["car"] != "":
 			expenses += int(GameState.CARS[p["car"]]["upkeep"] * cost)
+		expenses += int(Real.extra_costs() * cost)
 		for cid in GameState.npcs_with("child"):
 			if int(GameState.npcs[cid]["age"]) < 18:
 				expenses += int(7000 * cost)
@@ -735,6 +738,12 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 		return false
 	if cond.has("has_children") and bool(cond["has_children"]) != (not GameState.npcs_with("child").is_empty()):
 		return false
+	for rt in cond.get("real", []):
+		if not Real.tag(str(rt)):
+			return false
+	for rt2 in cond.get("not_real", []):
+		if Real.tag(str(rt2)):
+			return false
 	if cond.has("has_car") and bool(cond["has_car"]) != (p["car"] != ""):
 		return false
 	if cond.has("housing") and not Array(cond["housing"]).has(p["housing"]):
@@ -1155,6 +1164,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		var pl: Dictionary = o["play"].duplicate(true)
 		pl["roles"] = roles.duplicate()
 		Minigames.play(pl["id"], pl.get("params", {}), Callable(Careers, "resolve_play").bind(pl))
+	if o.has("real"):
+		Real.apply(o["real"])
 	if o.has("empire"):
 		Empires.outcome(o["empire"])
 	if o.has("become"):
@@ -1277,12 +1288,17 @@ func tokens(text: String, roles: Dictionary) -> String:
 	if text.find("{") == -1:
 		return text
 	var p := GameState.player
-	var out := text
+	var out := Phrases.expand(text)
+	text = out
 	for m in _token_re.search_all(text):
 		var who := m.get_string(1)
 		var field := m.get_string(2)
 		var val := ""
-		if who == "me":
+		if who == "fx":
+			val = Fixtures.employer() if field == "work" else Fixtures.named(field)
+		elif who == "era":
+			val = Phrases.era_word(field)
+		elif who == "me":
 			val = _field(p, field, "")
 		elif roles.has(who) and GameState.npcs.has(roles[who]):
 			val = _field(GameState.npcs[roles[who]], field, roles[who])
