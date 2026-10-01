@@ -23,6 +23,7 @@ func _ready() -> void:
 	_reentry()
 	_workforce()
 	_reasoned_rejections()
+	_transport()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -247,3 +248,29 @@ func _reasoned_rejections() -> void:
 			rejects += 1
 	ok(reasons.size() >= 2, "rejection reasons never vary (%s)" % str(reasons.keys()))
 	print("  rejections: %d long shots found, reasons seen: %s" % [rejects, str(reasons.keys())])
+
+
+func _transport() -> void:
+	GameState.new_life({"first": "Test", "last": "Walker", "gender": "male", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+	GameState.player["age"] = 20
+	GameState.player["car"] = ""
+	var walk := Transit.reach("trip")
+	if str(walk["mode"]) == "walk":
+		ok(float(walk["mult"]) < 0.4, "a long trip on foot is not slim (%s)" % str(walk))
+	ok(str(walk["hint"]) != "", "no hint for a long trip")
+	GameState.player["car"] = "sedan" if GameState.CARS.has("sedan") else GameState.CARS.keys()[0]
+	var drive := Transit.reach("trip")
+	ok(float(drive["mult"]) > 1.0 and str(drive["mode"]) == "drive", "a car does not help a long trip")
+	var def: Dictionary = ContentDB.events_by_id["jn.sick_relative"]
+	var good_walk := 0
+	var good_car := 0
+	GameState.player["car"] = ""
+	for i in 400:
+		if bool(EventEngine._pick_outcome(def["choices"][0]["outcomes"], "trip").get("good", false)):
+			good_walk += 1
+	GameState.player["car"] = GameState.CARS.keys()[0]
+	for i in 400:
+		if bool(EventEngine._pick_outcome(def["choices"][0]["outcomes"], "trip").get("good", false)):
+			good_car += 1
+	ok(good_car > good_walk * 2, "the car did not improve the odds (walk %d, car %d)" % [good_walk, good_car])
+	print("  transport: the good outcome came %d/400 on foot and %d/400 by car" % [good_walk, good_car])

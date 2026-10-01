@@ -2489,6 +2489,9 @@ func _show_decision(inst: Dictionary) -> void:
 			label = "%s   [%s]" % [label, st["reason"]]
 		elif not st["enabled"]:
 			label = "%s   (%s)" % [label, st["reason"]]
+		var hint_txt := str(st.get("hint", ""))
+		if hint_txt != "":
+			label = "%s\n%s" % [label, hint_txt]
 		var idx := i
 		var is_twist: bool = bool(def.get("twist", false))
 		var press := func(): _choose(inst, idx)
@@ -2638,60 +2641,10 @@ func _show_family_tree() -> void:
 	var sc := ScrollContainer.new()
 	sc.custom_minimum_size = Vector2(0, 640)
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
-	var v := U.vb(18)
-	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	sc.add_child(v)
+	var tree := FamilyTreeView.new()
+	tree.setup()
+	sc.add_child(tree)
 	overlay_box.add_child(sc)
-	var p := GameState.player
-	var tiers := [
-		["Grandparents", GameState.npcs_with("grandparent", false)],
-		["Parents, aunts & uncles", GameState.npcs_with("mother", false) + GameState.npcs_with("father", false) + GameState.npcs_with("auntuncle", false)],
-		["You, siblings & partner", ["__me"] + GameState.npcs_with("sibling", false) + (GameState.npcs_with("partner", false))],
-		["Children", GameState.npcs_with("child", false)],
-	]
-	for tier in tiers:
-		if tier[1].is_empty():
-			continue
-		var l := U.section(tier[0])
-		v.add_child(l)
-		var fl := HFlowContainer.new()
-		fl.alignment = FlowContainer.ALIGNMENT_CENTER
-		fl.add_theme_constant_override("h_separation", U.sp(14))
-		fl.add_theme_constant_override("v_separation", U.sp(14))
-		for id in tier[1]:
-			var cv := U.card("Inset")
-			cv.custom_minimum_size = Vector2(150, 0)
-			var vv := U.vb(2)
-			cv.add_child(vv)
-			var face := ""
-			var name1 := ""
-			var rel := ""
-			var age := 0
-			var alive := true
-			if id == "__me":
-				face = U.face(p["gender"], int(p["age"]), int(p["face"])) if p["alive"] else "😇"
-				name1 = "%s %s" % [p["first"], p["last"]]
-				rel = "You"
-				age = p["age"]
-				alive = p["alive"]
-				cv.theme_type_variation = "Chip"
-			else:
-				var n := GameState.npc(id)
-				face = U.npc_face(n)
-				name1 = GameState.full_name(id)
-				rel = GameState.relation_label(id)
-				age = n["age"]
-				alive = n["alive"]
-			var fl2 := U.lbl(face, "Emoji", 40)
-			fl2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-			vv.add_child(fl2)
-			for txt in [[name1, "Bold", 15], [rel + ("" if alive else " (Deceased)"), "Dim", 13], ["Age %d" % age, "Dim", 13]]:
-				var tl := U.lbl(txt[0], txt[1], txt[2])
-				tl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-				tl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-				vv.add_child(tl)
-			fl.add_child(cv)
-		v.add_child(fl)
 
 
 # ================================================================= DEATH / LEGACY
@@ -2949,37 +2902,35 @@ func _fill_graveyard() -> void:
 	t.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	head.add_child(t)
 	v.add_child(head)
+	if SaveManager.graveyard.is_empty():
+		v.add_child(U.lbl("Nobody rests here yet. Every life you finish gets a stone, drawn from the life it marks.", "Dim", 20, true))
+		return
 	var sc := ScrollContainer.new()
 	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	var fl := HFlowContainer.new()
-	fl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	fl.add_theme_constant_override("h_separation", U.sp(16))
-	fl.add_theme_constant_override("v_separation", U.sp(16))
-	sc.add_child(fl)
-	v.add_child(sc)
-	if SaveManager.graveyard.is_empty():
-		v.add_child(U.lbl("Nobody rests here yet.", "Dim", 20))
-		return
+	var gv := GraveyardView.new()
+	gv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var list := SaveManager.graveyard.duplicate()
-	list.reverse()
-	for e in list:
-		var card := U.card()
-		card.custom_minimum_size = Vector2(400, 0)
-		var cv := U.vb(6)
-		card.add_child(cv)
-		var r: Dictionary = e.get("ribbon", {})
-		cv.add_child(U.lbl("🪦  " + str(e["name"]) + ("  " + str(e.get("badge", "")) if e.get("badge", "") != "" else ""), "Heading"))
-		if e.get("modified", false):
-			cv.add_child(U.lbl("🧪 Modified life", "Dim", 14))
-		cv.add_child(U.lbl("%d – %d  ·  Age %d  ·  Gen %d" % [int(e["born"]), int(e["died"]), int(e["age"]), int(e.get("generation", 1))], "Dim", 16))
-		var is_case: bool = e.has("mode") and (e["mode"] as Dictionary).has("role")
-		cv.add_child(U.lbl(("Outcome: %s" if is_case else "Died of %s") % e["cause"], "", 16))
-		cv.add_child(U.lbl("%s %s" % [r.get("icon", ""), r.get("name", "")], "Bold", 18))
-		var story: String = e.get("story", "")
-		var nm: String = e["name"]
-		cv.add_child(U.btn("Read life story", func(): _show_info("📜", nm, story, {}), "Row"))
-		fl.add_child(card)
+	var sx := float(get_viewport_rect().size.x) - 80.0
+	gv.setup(list, maxf(sx, 800.0))
+	gv.opened.connect(func(e: Dictionary): _show_grave(e))
+	sc.add_child(gv)
+	v.add_child(sc)
+
+
+func _show_grave(e: Dictionary) -> void:
+	var r: Dictionary = e.get("ribbon", {})
+	var is_case: bool = e.has("mode") and (e["mode"] as Dictionary).has("role")
+	var body := _big_popup(760, "🪦", str(e["name"]), "%d – %d  ·  Age %d  ·  Gen %d" % [int(e["born"]), int(e["died"]), int(e["age"]), int(e.get("generation", 1))])
+	if e.get("modified", false):
+		body.add_child(U.lbl("🧪 Modified life", "Dim", 14))
+	body.add_child(U.lbl(("Outcome: %s" if is_case else "Died of %s") % e["cause"], "", 18, true))
+	body.add_child(U.lbl("%s %s" % [r.get("icon", ""), r.get("name", "")], "Bold", 20))
+	var sc := ScrollContainer.new()
+	sc.custom_minimum_size = Vector2(0, 360)
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	sc.add_child(U.lbl(str(e.get("story", "")), "", 17, true))
+	body.add_child(sc)
 
 
 # ================================================================= TIER 2 PANELS

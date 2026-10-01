@@ -197,6 +197,7 @@ func new_life(opts: Dictionary) -> void:
 	Goals.on_new_life()
 	if not opts.get("keep_family", false) or Lives.separate():
 		Legacy.on_new_life()
+		Goals.apply_mantel()
 	changed.emit()
 
 

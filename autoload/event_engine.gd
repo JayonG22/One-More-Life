@@ -1024,13 +1024,16 @@ func choice_state(choice: Dictionary, roles: Dictionary = {}) -> Dictionary:
 			return {"visible": false, "enabled": false, "reason": ""}
 	if req.has("has_car") and p["car"] == "":
 		return {"visible": true, "enabled": false, "reason": "Needs a car"}
-	return {"visible": true, "enabled": true, "reason": req.get("trait", "")}
+	var hint := ""
+	if choice.has("travel"):
+		hint = str(Transit.reach(str(choice["travel"]))["hint"])
+	return {"visible": true, "enabled": true, "reason": req.get("trait", ""), "hint": hint}
 
 
 func resolve(inst: Dictionary, index: int) -> Dictionary:
 	var def: Dictionary = inst["def"]
 	var choice: Dictionary = def["choices"][index]
-	var outcome := _pick_outcome(choice.get("outcomes", [{"text": ""}]))
+	var outcome := _pick_outcome(choice.get("outcomes", [{"text": ""}]), str(choice.get("travel", "")))
 	var roles: Dictionary = inst.get("roles", {})
 	var fr := Friction.apply(choice, outcome, def)
 	var res := _apply_outcome(outcome, roles, def, fr)
@@ -1048,10 +1051,13 @@ func resolve(inst: Dictionary, index: int) -> Dictionary:
 	return res
 
 
-func _pick_outcome(outcomes: Array) -> Dictionary:
+func _pick_outcome(outcomes: Array, travel: String = "") -> Dictionary:
 	var weighted: Array = []
+	var reach_m := float(Transit.reach(travel)["mult"]) if travel != "" else 1.0
 	for o in outcomes:
 		var w := float(o.get("weight", 1.0))
+		if o.has("good") and travel != "":
+			w *= reach_m if bool(o["good"]) else 1.0 / reach_m
 		for t in o.get("trait_bonus", {}).keys():
 			if GameState.has_trait(t):
 				w *= float(o["trait_bonus"][t])

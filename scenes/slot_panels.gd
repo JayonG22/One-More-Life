@@ -175,7 +175,7 @@ func show_heirloom(reveal: Dictionary = {}) -> void:
 	var total := 0
 	for t in Goals.HEIR_TIERS:
 		total += (t[4] as Array).size()
-	var v: VBoxContainer = m._big_popup(1300, "🎁", "Daily Heirloom", "%d of %d heirlooms discovered  ·  one a day, no streaks to lose" % [col.size(), total])
+	var v: VBoxContainer = m._big_popup(1300, "🎁", "The Attic", "%d of %d heirlooms discovered  ·  one a day, no streaks to lose" % [col.size(), total])
 	var top := U.hb(20)
 	v.add_child(top)
 	var box := U.card("Inset")
@@ -251,36 +251,98 @@ func show_heirloom(reveal: Dictionary = {}) -> void:
 	var pend: Array = Meta.meta["goals"].get("heir_stash", [])
 	if not pend.is_empty():
 		odds.add_child(U.lbl("📜 %d heirloom%s held in trust for your next life." % [pend.size(), "" if pend.size() == 1 else "s"], "", 15, true))
-	v.add_child(U.section("Collection"))
+	# the mantelpiece: up to a few heirlooms on display, each blessing every future life
+	v.add_child(U.section("The mantelpiece  ·  %d of %d places" % [Goals.mantel().size(), Goals.mantel_slots()]))
+	var mantel_row := HBoxContainer.new()
+	mantel_row.add_theme_constant_override("separation", U.sp(12))
+	v.add_child(mantel_row)
+	for i in range(Goals.mantel_slots()):
+		var slot := PanelContainer.new()
+		var sbx := StyleBoxFlat.new()
+		sbx.bg_color = Color("#24180f")
+		sbx.border_color = Color("#8a6a3d")
+		sbx.set_border_width_all(2)
+		sbx.set_corner_radius_all(12)
+		slot.add_theme_stylebox_override("panel", sbx)
+		slot.custom_minimum_size = Vector2(0, 112)
+		slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var sv := U.vb(2)
+		sv.alignment = BoxContainer.ALIGNMENT_CENTER
+		slot.add_child(sv)
+		if i < Goals.mantel().size():
+			var nm: String = Goals.mantel()[i]
+			var h: Dictionary = col.get(nm, {})
+			var perk := Goals.heir_perk(nm, str(h.get("tier", "common")))
+			var ic2 := U.lbl(str(h.get("icon", "🏺")), "Emoji", 40)
+			ic2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			sv.add_child(ic2)
+			var n2 := U.lbl(nm, "Bold", 13, true)
+			n2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			sv.add_child(n2)
+			var pl := U.lbl("+%d %s at birth" % [perk["amt"], perk["stat"]], "Dim", 12)
+			pl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			sv.add_child(pl)
+		else:
+			var em := U.lbl("empty", "Dim", 14)
+			em.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			sv.add_child(em)
+		mantel_row.add_child(slot)
+	var done_tiers: Array = Goals.completed_tiers()
+	if not done_tiers.is_empty():
+		v.add_child(U.lbl("🏆 Sets complete: %s (+2 happiness at birth each)" % ", ".join(done_tiers), "", 14, true))
+	v.add_child(U.section("The attic  ·  click an heirloom you own to put it on the mantelpiece"))
 	var sc := ScrollContainer.new()
 	sc.custom_minimum_size = Vector2(0, 300)
 	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	v.add_child(sc)
 	var grid := GridContainer.new()
-	grid.columns = 7
+	grid.columns = 6
 	grid.add_theme_constant_override("h_separation", U.sp(10))
 	grid.add_theme_constant_override("v_separation", U.sp(10))
 	sc.add_child(grid)
 	for t in Goals.HEIR_TIERS:
 		for it in t[4]:
 			var have: Dictionary = col.get(it[1], {})
-			var tile := U.card("Inset")
-			tile.custom_minimum_size = Vector2(166, 124)
+			var owned := not have.is_empty()
+			var tcol: Color = t[3]
+			var tile := PanelContainer.new()
+			var sb := StyleBoxFlat.new()
+			sb.bg_color = Color(tcol.r * 0.18, tcol.g * 0.18, tcol.b * 0.18, 1.0) if owned else Color("#161a24")
+			sb.border_color = tcol if owned else Color("#2c3242")
+			sb.set_border_width_all(3 if str(t[0]) in ["epic", "legendary"] and owned else 2)
+			sb.set_corner_radius_all(12)
+			if owned and str(t[0]) in ["rare", "epic", "legendary"]:
+				sb.shadow_color = Color(tcol.r, tcol.g, tcol.b, 0.35)
+				sb.shadow_size = 10
+			tile.add_theme_stylebox_override("panel", sb)
+			tile.custom_minimum_size = Vector2(182, 150)
 			var tv := U.vb(2)
 			tv.alignment = BoxContainer.ALIGNMENT_CENTER
 			tile.add_child(tv)
-			var ic := U.lbl(it[0] if not have.is_empty() else "❔", "Emoji", 40)
+			var ic := U.lbl(it[0] if owned else "❔", "Emoji", 42)
 			ic.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-			if have.is_empty():
-				ic.modulate = Color(1, 1, 1, 0.35)
+			if not owned:
+				ic.modulate = Color(1, 1, 1, 0.3)
 			tv.add_child(ic)
-			var nl := U.lbl(it[1] if not have.is_empty() else "???", "", 13, true)
+			var nl := U.lbl(it[1] if owned else "???", "Bold", 13, true)
 			nl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			tv.add_child(nl)
-			var cl := U.lbl(("×%d" % int(have["count"])) if not have.is_empty() else str(t[1]), "Bold", 13)
+			var cl := U.lbl((("×%d" % int(have["count"])) + ("  ·  on display" if Goals.mantel().has(it[1]) else "")) if owned else str(t[1]), "Bold", 12)
 			cl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-			cl.add_theme_color_override("font_color", t[3])
+			cl.add_theme_color_override("font_color", tcol)
 			tv.add_child(cl)
+			if owned:
+				var perk2 := Goals.heir_perk(str(it[1]), str(t[0]))
+				tile.tooltip_text = "%s\n\n%s\n\nOn the mantelpiece: +%d %s at the start of every life." % [it[1], Goals.heir_lore(str(it[1])), perk2["amt"], perk2["stat"]]
+				var bt := Button.new()
+				bt.flat = true
+				bt.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+				bt.tooltip_text = tile.tooltip_text
+				var nm2: String = it[1]
+				bt.pressed.connect(func():
+					Goals.toggle_mantel(nm2)
+					show_heirloom())
+				tile.add_child(bt)
 			grid.add_child(tile)
 
 

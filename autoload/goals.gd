@@ -645,6 +645,106 @@ func claim_daily() -> Dictionary:
 	return {"item": item, "tier": tier, "count": count, "delivered": delivered}
 
 
+## ---------------------------------------------------------------- the attic
+##
+## An heirloom is not only a thing you were given: it is a story and, once it is
+## on the mantelpiece, a small blessing on every life that comes after.
+
+const HEIR_LORE := {
+	"Brass pocket watch": "It stopped at 4:10 on a day nobody will explain. Winding it is a family habit.",
+	"Silver spoon set": "Never used. Always polished. Someone swore it had been to a coronation.",
+	"Old brass compass": "The needle points a few degrees wrong, and the family has always gone that way anyway.",
+	"Hand-stitched quilt": "Forty years of dresses and curtains, sewn into one blanket that has never been cold.",
+	"First-pressing vinyl": "The scratches are on the best song. Everyone agrees that is how it should sound.",
+	"Grandpa's coin jar": "Mostly pennies. Once, a gold sovereign. Nobody has ever checked the rest.",
+	"Pearl necklace": "Worn at three weddings and one funeral, and it looked right at all four.",
+	"Antique mantel clock": "It chimes thirteen at midnight. The clockmaker said that was impossible.",
+	"First-edition novel": "A name is pencilled inside the cover: a stranger who lent it and never asked for it back.",
+	"Jade figurine": "Cold in summer, warm in winter. People hold it when they have to decide something.",
+	"Vintage camera": "There is still a roll inside. Nobody has had the nerve to develop it.",
+	"Porcelain vase": "It has survived two house moves and one dog. It will outlast the next three.",
+	"Antique violin": "It plays one tune beautifully, whoever holds it. The tune is not one anyone knows.",
+	"Ceremonial sword": "Never drawn in anger. Drawn once at a wedding, to cut a cake, by an uncle who regretted it.",
+	"Sapphire brooch": "Passed to the daughter who asked the fewest questions, which is how this family decides.",
+	"Jeweled egg": "It opens, if you know where. Inside is a note that says 'not yet'.",
+	"Diamond tiara": "Worn once, by someone who was told she looked like a queen and answered, 'I'd rather be a person.'",
+	"Old master sketch": "A study of a hand. The hand has six fingers, and the family insists that is on purpose.",
+	"Fossilized dinosaur egg": "It's heavier than it looks, like most of the family's decisions.",
+	"Iron meteorite": "It fell on a roof in the night and the roof never leaked again.",
+	"Royal scepter": "A very old thing that the family has agreed never to mention in front of visitors.",
+	"A long-lost masterpiece": "It hung in the hall for sixty years behind a calendar.",
+	"Pirate treasure chest": "Locked. The key was lost on the beach where the chest was found. The family is fine with this.",
+	"An emperor's signed letter": "It asks for a small favour. The favour was granted. The family has been paying for it since.",
+}
+const HEIR_STATS := ["happiness", "smarts", "looks", "health"]
+const HEIR_AMT := {"common": 1, "uncommon": 2, "rare": 3, "epic": 4, "legendary": 6}
+
+
+func heir_lore(name: String) -> String:
+	for k in HEIR_LORE.keys():
+		if name.to_lower().find(str(k).to_lower()) != -1:
+			return str(HEIR_LORE[k])
+	return "Nobody remembers who it belonged to first. That is how you know it is old."
+
+
+func heir_perk(name: String, tier: String) -> Dictionary:
+	var stat: String = HEIR_STATS[abs(hash(name)) % HEIR_STATS.size()]
+	return {"stat": stat, "amt": int(HEIR_AMT.get(tier, 1))}
+
+
+func mantel() -> Array:
+	var g := _g()
+	if not g.has("mantel"):
+		g["mantel"] = []
+	return g["mantel"]
+
+
+func mantel_slots() -> int:
+	return 3 + (1 if heirloom_collection().size() >= 12 else 0) + (1 if heirloom_collection().size() >= 20 else 0)
+
+
+func toggle_mantel(name: String) -> void:
+	var m := mantel()
+	if m.has(name):
+		m.erase(name)
+	elif m.size() < mantel_slots() and heirloom_collection().has(name):
+		m.append(name)
+	Meta.save()
+
+
+## Set bonuses: a whole tier found.
+func completed_tiers() -> Array:
+	var out: Array = []
+	var col := heirloom_collection()
+	for t in HEIR_TIERS:
+		var all := true
+		for it in t[4]:
+			if not col.has(it[1]):
+				all = false
+		if all:
+			out.append(t[0])
+	return out
+
+
+## Applied once at the start of a life: the mantelpiece and the finished sets.
+func apply_mantel() -> void:
+	if not GameState.has_life():
+		return
+	var col := heirloom_collection()
+	var bits: Array = []
+	for name in mantel():
+		if not col.has(name):
+			continue
+		var perk := heir_perk(str(name), str(col[name].get("tier", "common")))
+		GameState.apply_effects({perk["stat"]: perk["amt"]})
+		bits.append("%s (+%d %s)" % [name, perk["amt"], perk["stat"]])
+	for t in completed_tiers():
+		GameState.apply_effects({"happiness": 2})
+		bits.append("%s set complete (+2 happiness)" % str(t))
+	if not bits.is_empty():
+		GameState.add_log("On the family mantelpiece: %s." % ", ".join(bits))
+
+
 func deliver_stash() -> void:
 	var g := _g()
 	var stash: Array = g.get("heir_stash", [])

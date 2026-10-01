@@ -66,6 +66,42 @@ func available(mode: String) -> bool:
 	return false
 
 
+## How you would actually get somewhere beyond the neighbourhood: the best way open to you.
+func reach_mode() -> String:
+	if has_car() and int(_p().get("age", 0)) >= 16:
+		return "drive"
+	if available("train"):
+		return "train"
+	if available("bus"):
+		return "bus"
+	if Shop.has_any(["bike"]):
+		return "bike"
+	return "walk"
+
+
+## How far a trip is (near · far · trip) against how you would get there. Returns the
+## multiplier on the good outcomes and a line that tells the player why.
+func reach(dist: String) -> Dictionary:
+	var mode := reach_mode()
+	var table := {
+		"near": {"walk": 1.0, "bike": 1.05, "bus": 1.0, "train": 1.0, "drive": 1.05},
+		"far": {"walk": 0.4, "bike": 0.8, "bus": 0.9, "train": 1.05, "drive": 1.2},
+		"trip": {"walk": 0.12, "bike": 0.25, "bus": 0.7, "train": 1.0, "drive": 1.25},
+	}
+	var m: float = float(table.get(dist, table["near"]).get(mode, 1.0))
+	var ic: String = str(MODES.get(mode, MODES["walk"])["icon"])
+	var hint := ""
+	if dist == "near":
+		return {"mult": m, "mode": mode, "hint": ""}
+	match mode:
+		"walk": hint = "%s On foot this is a long way: slim odds. A bike, a pass or a car would help." % ic
+		"bike": hint = "%s By bike it is doable but tiring." % ic if dist == "far" else "%s By bike it is too far to rely on." % ic
+		"bus": hint = "%s The bus gets you there, slowly." % ic
+		"train": hint = "%s The train gets you there on time." % ic
+		"drive": hint = "%s You can drive it: good odds." % ic
+	return {"mult": m, "mode": mode, "hint": hint}
+
+
 func _remote_job() -> bool:
 	if not GameState.has_job():
 		return false

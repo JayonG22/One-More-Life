@@ -1,0 +1,1086 @@
+[
+ {
+  "id": "jn.concert",
+  "icon": "🎤",
+  "title": "The concert",
+  "text": "The band you have loved since school are playing, but the venue is on the other side of the region. Tickets are still on sale.",
+  "conditions": {
+   "age": [
+    15,
+    55
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go, whatever it takes",
+    "outcomes": [
+     {
+      "text": "I got there with minutes to spare, pushed to the front and sang every word. I will remember it when I am old.",
+      "weight": 1,
+      "effects": {
+       "happiness": 14,
+       "stress": -6
+      },
+      "good": true
+     },
+     {
+      "text": "I missed the first half and arrived hoarse, sweaty and furious, and caught the last three songs.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 6,
+       "money": -60
+      },
+      "good": false
+     },
+     {
+      "text": "I never made it. I stood on a platform at eleven at night looking at a departure board that had no more trains on it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8,
+       "money": -60
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Go with friends and share a lift",
+    "outcomes": [
+     {
+      "text": "Four of us in one car, the radio loud. It was half the night, and the best half.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "money": -40
+      },
+      "good": true
+     },
+     {
+      "text": "The car overheated an hour out. We watched the encore on someone's phone in a lay-by.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "money": -40
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Skip it and watch the stream",
+    "outcomes": [
+     {
+      "text": "The stream was fine. It was not the same, but I was in bed by eleven.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The stream kept buffering. I gave up and read a book.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.interview_far",
+  "icon": "💼",
+  "title": "The interview in another city",
+  "text": "A company two hours away has asked you to interview in person, tomorrow at nine. It is the job you have been waiting for.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get there early",
+    "outcomes": [
+     {
+      "text": "I arrived with time to find the building and breathe. They could see I had prepared. They made an offer on the spot.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "stress": -4
+      },
+      "good": true
+     },
+     {
+      "text": "I arrived on time and tired. It went decently. They said they would be in touch.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The journey went wrong and I arrived flustered. It showed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 8
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Ask for a video call instead",
+    "outcomes": [
+     {
+      "text": "They agreed. It went fine, and they said so. A video call is a video call, though.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "They said in-person mattered for this role. I lost the day, and the post.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "I stayed in my job. I thought about it on the train I was not on.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I turned it down. A year later someone I know got the role.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.sick_relative",
+  "icon": "🏥",
+  "title": "She is in hospital",
+  "text": "A relative who raised you has been taken to hospital in her home town, six hours away. The nurse says she is asking for you.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go now",
+    "outcomes": [
+     {
+      "text": "I got there before visiting hours ended. She held my hand and said my name. I did not leave until she slept.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 4,
+       "karma": 6
+      },
+      "good": true
+     },
+     {
+      "text": "I got there too late for the conversation. I sat by the bed while she slept, and that was all, and that was something.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 6,
+       "karma": 3
+      },
+      "good": false
+     },
+     {
+      "text": "By the time I arrived she had gone. I stood in a corridor with a plastic bag of her things.",
+      "weight": 1,
+      "effects": {
+       "happiness": -14,
+       "stress": 10
+      },
+      "good": false
+     }
+    ],
+    "travel": "trip"
+   },
+   {
+    "label": "Go at the weekend",
+    "outcomes": [
+     {
+      "text": "She was still there at the weekend, better, embarrassed to have caused a fuss. We laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 3
+      },
+      "good": true
+     },
+     {
+      "text": "The weekend was too late.",
+      "weight": 1,
+      "effects": {
+       "happiness": -12,
+       "stress": 8
+      },
+      "good": false
+     }
+    ],
+    "travel": "trip"
+   },
+   {
+    "label": "Phone, and send flowers",
+    "outcomes": [
+     {
+      "text": "She said she understood. I did not believe that she did.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": -2
+      }
+     },
+     {
+      "text": "The call went to voicemail. The flowers got there. I did not.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "karma": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 20
+ },
+ {
+  "id": "jn.wedding_away",
+  "icon": "💒",
+  "title": "A wedding far away",
+  "text": "An old friend is getting married in a town you would have to cross the country to reach. Your name is on the list.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Make the journey",
+    "outcomes": [
+     {
+      "text": "I danced until the shoes came off. The speeches made me cry. It was worth every mile.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "stress": -4,
+       "money": -140
+      },
+      "good": true
+     },
+     {
+      "text": "I got in just as the cake was cut, grey with travel, and was hugged anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 5,
+       "money": -140
+      },
+      "good": false
+     },
+     {
+      "text": "I missed it. The train was cancelled, then the replacement bus. I watched the photographs the next morning.",
+      "weight": 1,
+      "effects": {
+       "happiness": -7,
+       "stress": 6,
+       "money": -80
+      },
+      "good": false
+     }
+    ],
+    "travel": "trip"
+   },
+   {
+    "label": "Send a generous gift",
+    "outcomes": [
+     {
+      "text": "They sent a thank-you card with a lovely photograph. I framed it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "money": -100
+      }
+     },
+     {
+      "text": "The gift arrived. The card said they missed me. I felt it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0,
+       "money": -100
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send apologies",
+    "outcomes": [
+     {
+      "text": "They understood. We would catch up later, we said, as one does.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "It was the sort of thing that is forgotten. Mostly.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.market_run",
+  "icon": "🛒",
+  "title": "The farmers' market",
+  "text": "There is a large market across town this weekend: good food, odd furniture, and a stall that sells the one thing you have been looking for.",
+  "conditions": {
+   "age": [
+    14,
+    85
+   ]
+  },
+  "choices": [
+   {
+    "label": "Make a day of it",
+    "outcomes": [
+     {
+      "text": "I filled a bag with bargains and stopped for a coffee I did not need. It was the best Saturday I had had in months.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -4,
+       "money": -40
+      },
+      "good": true
+     },
+     {
+      "text": "By the time I got there the best stalls were packing up. I came home with half a bag and a sunburn.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "money": -20
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Send a friend with a list",
+    "outcomes": [
+     {
+      "text": "They came back with most of it and some things I had not asked for. Fair enough.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -30
+      }
+     },
+     {
+      "text": "They forgot half. The other half was the wrong brand.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "money": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Order it online",
+    "outcomes": [
+     {
+      "text": "It came on Tuesday. It was fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "money": -45
+      }
+     },
+     {
+      "text": "It came on Thursday, dented.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "money": -45
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.college_open",
+  "icon": "🎓",
+  "title": "Open day",
+  "text": "A university you have been thinking about is holding an open day on the far side of the county. There are talks, a tour and a chance to ask the questions you have not dared to ask.",
+  "conditions": {
+   "age": [
+    15,
+    24
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and see for yourself",
+    "outcomes": [
+     {
+      "text": "I walked the campus, asked a lecturer a clumsy question and left knowing something I could not have known at home.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "smarts": 2
+      },
+      "good": true
+     },
+     {
+      "text": "I got there for the last tour. It was enough to give me a feeling.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      },
+      "good": false
+     },
+     {
+      "text": "I never made it. The last bus had left before I had worked out where to catch it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 4
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Go with a parent who has a car",
+    "outcomes": [
+     {
+      "text": "It was the only time we talked properly all year. I picked up a prospectus and a plan.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "smarts": 2
+      },
+      "good": true
+     },
+     {
+      "text": "We got lost twice and argued about it. We arrived late, but we arrived.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Read the website",
+    "outcomes": [
+     {
+      "text": "The website was glossy and told me nothing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "The website was good. I made a list of questions I would never ask.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "once": true
+ },
+ {
+  "id": "jn.emergency_ride",
+  "icon": "🚨",
+  "title": "A call at night",
+  "text": "A close friend rings at midnight from the other side of the city. They have been stranded, shaken and can't say why. They ask whether you can come.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and get them",
+    "outcomes": [
+     {
+      "text": "I got there in time. They did not say much, but I did not need them to. We sat in the car until dawn.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 3,
+       "karma": 8
+      },
+      "good": true
+     },
+     {
+      "text": "I arrived an hour later than I wanted. They had found their own way. They hugged me anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 4,
+       "karma": 3
+      },
+      "good": false
+     },
+     {
+      "text": "There were no buses and no taxis. I set off on foot, and by the time I got there they had left. I will always wonder.",
+      "weight": 1,
+      "effects": {
+       "happiness": -7,
+       "stress": 8,
+       "karma": -1
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Talk them through it on the phone",
+    "outcomes": [
+     {
+      "text": "Two hours on the phone. They made it home. It was enough.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 4,
+       "karma": 4
+      }
+     },
+     {
+      "text": "The line dropped three times. I never knew if they were safe until the morning.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call someone nearer to them",
+    "outcomes": [
+     {
+      "text": "A mutual friend lived round the corner. They were there in ten minutes. I felt relieved and useless.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 3,
+       "karma": 3
+      }
+     },
+     {
+      "text": "Nobody picked up. I had put the problem in a queue.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.rescue_far",
+  "icon": "🐕",
+  "title": "The lost dog report",
+  "text": "A friend has posted that their dog has been found, tired and muddy, at a farm twenty miles away. The farmer will hold it until tonight.",
+  "conditions": {
+   "age": [
+    14,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Fetch the dog",
+    "outcomes": [
+     {
+      "text": "I collected a filthy, delighted dog and drove it home to its people. I was a hero for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "karma": 8
+      },
+      "good": true
+     },
+     {
+      "text": "I got there as the farmer was shutting up. He handed it over, grumbling. We made it home at midnight.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 5
+      },
+      "good": false
+     },
+     {
+      "text": "I never got there. By the time I had found a way, the farmer's phone was off. The dog was fine, in the end, but not because of me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "karma": -1
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Send a message offering a lift to someone else",
+    "outcomes": [
+     {
+      "text": "A neighbour went. The dog was home before supper.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 3
+      }
+     },
+     {
+      "text": "It took them a day to organise. The dog was fine and so was the farmer.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it to the owners",
+    "outcomes": [
+     {
+      "text": "They sorted it out. I did not hear about it until later.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     },
+     {
+      "text": "They got it back. Without me. I was not needed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.reunion",
+  "icon": "🎉",
+  "title": "The reunion",
+  "text": "Twenty years since school, and a message from someone you had half forgotten says the reunion is at the old place, a long way from where you live now.",
+  "conditions": {
+   "age": [
+    32,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "People I thought I had outgrown turned out to be good company. One of them offered me a job lead I could not have found at home.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "money": -90
+      },
+      "good": true
+     },
+     {
+      "text": "I arrived as the last speech was ending. I found the three people who had stayed behind for me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -90
+      },
+      "good": false
+     },
+     {
+      "text": "I never got there. The journey fell apart, and I told myself it was for the best.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "money": -50
+      },
+      "good": false
+     }
+    ],
+    "travel": "trip"
+   },
+   {
+    "label": "Send a message and a photo",
+    "outcomes": [
+     {
+      "text": "They all replied. It was sweeter than I had thought.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "A few people said they would catch up. We did not.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I ignored it. I wonder who went.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I forgot it by the evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "once": true
+ },
+ {
+  "id": "jn.flat_viewing",
+  "icon": "🏠",
+  "title": "A flat in another town",
+  "text": "There is a flat for rent in a town forty minutes away, cheap, bright and snapping up applications. The agent says viewings are today only.",
+  "conditions": {
+   "age": [
+    18,
+    50
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and view it",
+    "outcomes": [
+     {
+      "text": "I walked in, loved it and put down the deposit that afternoon. It changed my life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "stress": -3,
+       "money": -300
+      },
+      "good": true
+     },
+     {
+      "text": "By the time I arrived, it had gone. I saw the SOLD sign for a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Ask someone to view it for you",
+    "outcomes": [
+     {
+      "text": "A friend went. They said it was fine. It was fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "They took photographs. It looked smaller in real life.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep looking nearer",
+    "outcomes": [
+     {
+      "text": "The nearer flats were more expensive and less bright. I took one anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "money": -80
+      }
+     },
+     {
+      "text": "It took months. I found something decent in the end.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 15
+ },
+ {
+  "id": "jn.festival",
+  "icon": "🎪",
+  "title": "The festival",
+  "text": "A festival of music, food and tents is happening in a field a long way out of town, and half your friends are going.",
+  "conditions": {
+   "age": [
+    16,
+    45
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "Three days of mud and sunsets and strangers sharing sausages. I came back a different shape.",
+      "weight": 1,
+      "effects": {
+       "happiness": 14,
+       "stress": -8,
+       "money": -150
+      },
+      "good": true
+     },
+     {
+      "text": "I got there late, carried a tent for three miles and slept badly. I enjoyed all of it, eventually.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 3,
+       "money": -150
+      },
+      "good": false
+     },
+     {
+      "text": "I never found the right field. I spent two days in a town twenty miles away and came home early.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 5,
+       "money": -100
+      },
+      "good": false
+     }
+    ],
+    "travel": "trip"
+   },
+   {
+    "label": "Go for a day",
+    "outcomes": [
+     {
+      "text": "A single bright day, an excellent band and a lift home. Perfect.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": -60
+      },
+      "good": true
+     },
+     {
+      "text": "The day ticket was sold out by the time I arrived.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "money": -20
+      },
+      "good": false
+     }
+    ],
+    "travel": "far"
+   },
+   {
+    "label": "Stay home",
+    "outcomes": [
+     {
+      "text": "I watched their photographs and felt fine about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     },
+     {
+      "text": "I had a quiet weekend. It was exactly what I needed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "jn.funeral_far",
+  "icon": "⚰️",
+  "title": "A funeral abroad",
+  "text": "Someone close to the family has died, and the funeral is a long journey away. There will be the whole extended family and a lot of things that have not been said.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "I stood with the family. Strangers told me stories I had never heard. I came home with a lighter and heavier heart.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 4,
+       "karma": 6
+      },
+      "good": true
+     },
+     {
+      "text": "I got there for the burial, only just, and wept in a car park.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 7,
+       "karma": 3
+      },
+      "good": false
+     },
+     {
+      "text": "I did not make it. I watched it over a bad connection, alone in my kitchen.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "stress": 8,
+       "karma": -2
+      },
+      "good": false
+     }
+    ],
+    "travel": "trip"
+   },
+   {
+    "label": "Send flowers and a letter",
+    "outcomes": [
+     {
+      "text": "Someone read my letter aloud. I was told it helped.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "karma": 1
+      }
+     },
+     {
+      "text": "They were kind about it. I still wish I had gone.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold a small service at home",
+    "outcomes": [
+     {
+      "text": "A candle, a photograph, and two friends who knew them. It was right.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "karma": 3
+      }
+     },
+     {
+      "text": "I held a quiet moment on my own, and then I made tea.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 25
+ }
+]
