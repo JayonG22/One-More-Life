@@ -82,7 +82,7 @@ func _add_invite(kind: String, id: String, far: bool) -> void:
 	var d: Dictionary = INVITE_KINDS[kind]
 	var travel := Actions._cost(randi_range(300, 1400)) if far else 0
 	s["invites"].append({"kind": kind, "who": id, "far": far, "travel": travel, "made": int(_p().get("age", 0))})
-	GameState.add_log("%s invited me to a %s%s." % [GameState.npcs[id]["first"], str(d["name"]).to_lower(), " — a long way away" if far else ""])
+	GameState.add_trivia("%s invited me to a %s%s." % [GameState.npcs[id]["first"], str(d["name"]).to_lower(), " — a long way away" if far else ""])
 
 
 ## A person who mattered has died. The funeral is an invitation nobody sends.

@@ -150,6 +150,40 @@ func standing(l: Dictionary) -> Dictionary:
 	return {"chance": chance, "q": q, "lines": lines, "comp": comp}
 
 
+## A plain-language reading of where you stand for one opening, and what is holding you back.
+func fit_label(chance: float) -> String:
+	if chance >= 0.55: return "Strong fit"
+	if chance >= 0.38: return "Possible"
+	if chance >= 0.24: return "Long shot"
+	return "Unlikely"
+
+
+## The biggest thing counting against you, as a sentence an employer would actually say.
+func main_obstacle(l: Dictionary) -> Dictionary:
+	var st_ := standing(l)
+	var jd := ContentDB.job(str(l["job"]))
+	var worst := 0.0
+	var key := ""
+	for ln in st_["lines"]:
+		if float(ln[1]) < worst:
+			worst = float(ln[1])
+			key = str(ln[0])
+	if key.begins_with("Experience"):
+		var field := str(jd.get("field", "this field")).to_lower()
+		return {"key": "exp", "short": "short on experience", "text": "They wanted %d years in %s and you have %d." % [int(l["exp"]), field, experience(str(jd.get("field", "")))], "tip": "Take a junior or part-time role in the field to build the years."}
+	if key.begins_with("A gap"):
+		return {"key": "gap", "short": "a gap on your CV", "text": "The gap on your CV worried them. Nobody could explain it to their satisfaction.", "tip": "Work, study or volunteer, so the next CV has no hole in it."}
+	if key == "Your record":
+		return {"key": "record", "short": "your record", "text": "The background check turned up your record, and that was the end of it.", "tip": "Clear your record, or look for employers who hire people with one."}
+	if key == "Smarts":
+		return {"key": "skills", "short": "thin skills", "text": "Your application did not show the skills they were after. Another candidate's did.", "tip": "Study, take a course, or build the skills somewhere cheaper first."}
+	if int(l["apps"]) >= 120:
+		return {"key": "crowd", "short": "huge competition", "text": "They had %d applicants for one post. Yours was fine; it was not the best." % int(l["apps"]), "tip": "Apply to smaller employers, or get a reference from the field."}
+	if int(l["apps"]) >= 50:
+		return {"key": "crowd", "short": "stiff competition", "text": "%d people applied. A candidate with direct experience got it." % int(l["apps"]), "tip": "A reference or a few more years in the field would move you up the pile."}
+	return {"key": "luck", "short": "", "text": "It went to an internal candidate. The role had been theirs since before it was posted.", "tip": "Some doors were never open. Keep applying."}
+
+
 func apply(id: String) -> void:
 	var l := find(id)
 	if l.is_empty():
@@ -166,8 +200,10 @@ func apply(id: String) -> void:
 		return
 	s["applied"][id] = true
 	var st_ := standing(l)
-	# screening: most applications never reach a human
-	if randf() > clampf(float(st_["chance"]) * 1.7, 0.12, 0.95):
+	# screening: the CV is read against the post. A noise term stands for the reader's mood,
+	# but a weak fit is a rejection, and the reason given is the real one.
+	var read := float(st_["chance"]) + randf_range(-0.07, 0.07)
+	if read < 0.27:
 		_rejected(l, true)
 		return
 	_interview(l, float(st_["chance"]))
@@ -181,11 +217,14 @@ func _interview(l: Dictionary, chance: float) -> void:
 	if GameState.has_trait("Anxious"): base -= 0.06
 	if Shop.has_any(["suit", "designer"]): base += 0.07
 	var choices: Array = []
+	var bar := 0.50 + randf_range(-0.07, 0.07)       # what this interviewer needs to hear
 	for a in q["answers"]:
 		var c := clampf(base + float(a.get("score", 0.0)), 0.05, 0.95)
+		var good := c >= bar
+		var why_not := "I answered “%s”, and I could see it was not what they were hoping for." % str(a["text"]).substr(0, 70)
 		var ch := {"label": a["text"], "outcomes": [
-			{"weight": c, "text": "They asked me to come back the next day. I had the feeling it was going well.", "market": {"offer": str(l["id"])}},
-			{"weight": 1.0 - c, "text": "The interview ended a few minutes early. I knew what that meant.", "market": {"reject": str(l["id"])}},
+			{"weight": 0.96 if good else 0.04, "text": "They asked me to come back the next day. I had the feeling it was going well.", "market": {"offer": str(l["id"])}},
+			{"weight": 0.04 if good else 0.96, "text": "The interview ended a few minutes early. " + why_not, "market": {"reject": str(l["id"]), "why": why_not}},
 		]}
 		if a.has("trait"):
 			ch["requires"] = {"trait": a["trait"]}
@@ -199,7 +238,7 @@ func outcome(ops: Dictionary) -> void:
 	if ops.has("reject"):
 		var l := find(str(ops["reject"]))
 		if not l.is_empty():
-			_rejected(l, false)
+			_rejected(l, false, str(ops.get("why", "")))
 	if ops.has("negotiate"):
 		var nid := str(ops["negotiate"])
 		var nl := find(nid)
@@ -229,14 +268,22 @@ func _negotiated(id: String, score: float, detail: Dictionary) -> void:
 	hire(id, bump)
 
 
-func _rejected(l: Dictionary, at_screening: bool) -> void:
+func _rejected(l: Dictionary, at_screening: bool, why: String = "") -> void:
 	var s := st()
 	s["rejections"] = int(s["rejections"]) + 1
 	s["interview_xp"] = minf(float(s["interview_xp"]) + 0.02, 0.15)
-	var msg: String = REJECTIONS[randi() % REJECTIONS.size()]
 	var jd := ContentDB.job(str(l["job"]))
-	GameState.add_log("%s turned me down for %s. %s" % [str(l["company"]), str(jd["ranks"][0]).to_lower(), msg])
-	EventEngine.push_info("📭", "Not this time", "%s — %s\n\n%s\n\nEvery no teaches you something. Next time will go a little better." % [str(jd["ranks"][0]), str(l["company"]), msg], {"happiness": -3, "stress": 2})
+	var ob := main_obstacle(l)
+	var reason := why if why != "" else str(ob["text"])
+	var stage := "Your CV was read, and that was as far as it went." if at_screening else "You got as far as the interview."
+	var tip: String = str(ob["tip"]) if why == "" else "Think about what that question was really asking, and practise the answer."
+	GameState.add_log("%s turned me down for %s. %s" % [str(l["company"]), str(jd["ranks"][0]).to_lower(), reason])
+	if not s.has("history"):
+		s["history"] = []
+	s["history"].push_front({"age": int(_p().get("age", 0)), "co": str(l["company"]), "role": str(jd["ranks"][0]), "result": "turned down", "why": reason})
+	if s["history"].size() > 14:
+		s["history"].resize(14)
+	EventEngine.push_info("📭", "Not this time", "%s — %s\n\n%s\n\n%s\n\n💡 %s" % [str(jd["ranks"][0]), str(l["company"]), stage, reason, tip], {"happiness": -3, "stress": 2})
 	GameState.apply_effects({"happiness": -3, "stress": 2})
 
 

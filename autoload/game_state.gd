@@ -628,6 +628,18 @@ func add_log(text: String) -> void:
 	log_added.emit(int(player.get("age", 0)), text)
 
 
+## Other people's news. A year keeps the two most interesting; the rest never mind.
+func add_trivia(text: String) -> void:
+	var n := int(player.get("trivia_year", 0))
+	if int(player.get("trivia_age", -1)) != int(player.get("age", 0)):
+		n = 0
+		player["trivia_age"] = int(player.get("age", 0))
+	if n >= 2:
+		return
+	player["trivia_year"] = n + 1
+	add_log(text)
+
+
 func add_milestone(age: int, text: String) -> void:
 	milestones.append({"age": age, "text": text})
 

@@ -21,6 +21,8 @@ func _ready() -> void:
 	_seeded()
 	_recall_check()
 	_reentry()
+	_workforce()
+	_reasoned_rejections()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -181,3 +183,67 @@ func _reentry() -> void:
 		ok(o in ["served", "paroled", "returned"], "odd outcome '%s'" % o)
 	ok(stayed >= 3 and back >= 3, "re-entry is lopsided: %d stayed, %d returned" % [stayed, back])
 	print("  reentry: %d stayed out, %d went back" % [stayed, back])
+
+
+func _workforce() -> void:
+	var promoted := 0
+	var demoted := 0
+	var fired := 0
+	var warned := 0
+	for i in 40:
+		GameState.new_life({"first": "Test", "last": "Worker", "gender": "female", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+		GameState.player["age"] = 30
+		Actions.hire("teacher" if ContentDB.job("teacher").size() > 0 else str(ContentDB.jobs[0]["id"]))
+		if not GameState.has_job():
+			continue
+		var j: Dictionary = GameState.player["job"]
+		j["years_in_rank"] = 3
+		j["perf"] = [90.0, 85.0, 30.0, 10.0][i % 4]
+		var before_rank := int(j["rank"])
+		var w := Workplace.w()
+		w["health"] = 0.9
+		var pending_before := EventEngine.pending.size()
+		Workforce.review()
+		if not GameState.has_job():
+			fired += 1
+			ok(EventEngine.pending.size() > pending_before, "a firing came without an explanation popup")
+			ok(float(GameState.player.get("benefit", {}).get("amt", 0)) >= 0.0, "benefit malformed")
+			continue
+		j = GameState.player["job"]
+		if int(j["rank"]) > before_rank:
+			promoted += 1
+		if int(j.get("warned", 0)) == 1:
+			warned += 1
+			# a second bad review demotes or fires
+			j["perf"] = 30.0
+			j["rank"] = maxi(1, int(j["rank"]))
+			Workforce.review()
+			if not GameState.has_job():
+				fired += 1
+			else:
+				if GameState.get_counter("demotions") > 0:
+					demoted += 1
+	ok(promoted >= 3, "no one was promoted on merit (%d)" % promoted)
+	ok(warned >= 3, "no one was warned (%d)" % warned)
+	ok(fired >= 3, "no one was fired (%d)" % fired)
+	print("  workforce: %d promoted, %d warned, %d fired, %d demoted after a second warning" % [promoted, warned, fired, demoted])
+
+
+func _reasoned_rejections() -> void:
+	GameState.new_life({"first": "Test", "last": "Applicant", "gender": "male", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+	GameState.player["age"] = 22
+	var rejects := 0
+	var reasons := {}
+	for i in 60:
+		var list := Market.openings("full")
+		if list.is_empty():
+			continue
+		var l: Dictionary = list[i % list.size()]
+		var ob := Market.main_obstacle(l)
+		ok(str(ob["text"]) != "" and str(ob["tip"]) != "", "an obstacle came without a reason or a tip")
+		reasons[str(ob["key"])] = true
+		var q := float(Market.standing(l)["chance"])
+		if q < 0.27:
+			rejects += 1
+	ok(reasons.size() >= 2, "rejection reasons never vary (%s)" % str(reasons.keys()))
+	print("  rejections: %d long shots found, reasons seen: %s" % [rejects, str(reasons.keys())])

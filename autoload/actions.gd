@@ -1463,6 +1463,7 @@ func lose_job(reason: String) -> void:
 		return
 	var j: Dictionary = p["job"]
 	p["job_history"].append(j["title"])
+	Workforce.on_leave(reason, int(j.get("salary", 0)), int(j.get("years", 0)))
 	var title: String = j["title"]
 	for id in [j.get("boss", "")] + Array(j.get("coworkers", [])):
 		if GameState.npcs.has(id) and GameState.npcs[id]["relation"] in ["boss", "coworker"]:

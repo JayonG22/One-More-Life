@@ -154,11 +154,11 @@ func _announce(a: String, b: String, kind: String) -> void:
 	var lb := GameState.relation_label(b).to_lower()
 	match kind:
 		"close":
-			GameState.add_log("My %s %s and my %s %s have got very close." % [la, an, lb, bn])
+			GameState.add_trivia("My %s %s and my %s %s have got very close." % [la, an, lb, bn])
 		"friends":
-			GameState.add_log("My %s %s and my %s %s have started spending time together." % [la, an, lb, bn])
+			GameState.add_trivia("My %s %s and my %s %s have started spending time together." % [la, an, lb, bn])
 		"rivals":
-			GameState.add_log("My %s %s and my %s %s have taken against each other." % [la, an, lb, bn])
+			GameState.add_trivia("My %s %s and my %s %s have taken against each other." % [la, an, lb, bn])
 			GameState.change_stat("stress", 3.0)
 		"together":
 			_together(a, b)
@@ -175,7 +175,7 @@ func _together(a: String, b: String) -> void:
 	var bn := GameState.full_name(b)
 	var awkward := str(na["relation"]) in ["ex", "best_friend"] or str(nb["relation"]) in ["ex", "best_friend"]
 	if not awkward:
-		GameState.add_log("My %s %s and my %s %s are together. Nobody saw that coming except apparently everybody." % [
+		GameState.add_trivia("My %s %s and my %s %s are together. Nobody saw that coming except apparently everybody." % [
 			GameState.relation_label(a).to_lower(), an, GameState.relation_label(b).to_lower(), bn])
 		GameState.apply_effects({"happiness": 3})
 		return
@@ -226,28 +226,28 @@ func _drift() -> void:
 			"friends":
 				if r < 0.10:
 					lk["kind"] = "close"
-					GameState.add_log("%s and %s are properly close now." % [GameState.full_name(a), GameState.full_name(b)])
+					GameState.add_trivia("%s and %s are properly close now." % [GameState.full_name(a), GameState.full_name(b)])
 				elif r < 0.10 + float(vol) * 0.0016:
 					lk["kind"] = "fell_out"
-					GameState.add_log("%s and %s have fallen out over something neither will explain." % [GameState.full_name(a), GameState.full_name(b)])
+					GameState.add_trivia("%s and %s have fallen out over something neither will explain." % [GameState.full_name(a), GameState.full_name(b)])
 			"close":
 				if r < float(vol) * 0.0012:
 					lk["kind"] = "fell_out"
-					GameState.add_log("%s and %s are not speaking. It is serious." % [GameState.full_name(a), GameState.full_name(b)])
+					GameState.add_trivia("%s and %s are not speaking. It is serious." % [GameState.full_name(a), GameState.full_name(b)])
 					GameState.change_stat("stress", 4.0)
 			"rivals":
 				if r < 0.07:
 					lk["kind"] = "friends"
-					GameState.add_log("%s and %s have somehow become friends. I will never understand it." % [GameState.full_name(a), GameState.full_name(b)])
+					GameState.add_trivia("%s and %s have somehow become friends. I will never understand it." % [GameState.full_name(a), GameState.full_name(b)])
 			"fell_out":
 				if r < 0.12 and years >= 2:
 					lk["kind"] = "friends"
-					GameState.add_log("%s and %s have patched it up." % [GameState.full_name(a), GameState.full_name(b)])
+					GameState.add_trivia("%s and %s have patched it up." % [GameState.full_name(a), GameState.full_name(b)])
 			"together":
 				if r < 0.05 + float(vol) * 0.0010:
 					lk["kind"] = "fell_out"
 					Origins.part(a)
-					GameState.add_log("%s and %s have split up, and now I have to pick which one to see at Christmas." % [GameState.full_name(a), GameState.full_name(b)])
+					GameState.add_trivia("%s and %s have split up, and now I have to pick which one to see at Christmas." % [GameState.full_name(a), GameState.full_name(b)])
 					GameState.change_stat("stress", 5.0)
 		i -= 1
 
@@ -282,7 +282,7 @@ func neutral_beat() -> bool:
 		return false
 	var id: String = pool[randi() % pool.size()]
 	var n: Dictionary = GameState.npcs[id]
-	GameState.add_log("My %s %s %s" % [GameState.relation_label(id).to_lower(),
+	GameState.add_trivia("My %s %s %s" % [GameState.relation_label(id).to_lower(),
 		str(n["first"]), NEUTRAL[randi() % NEUTRAL.size()]])
 	# It is small, but it moves something, which is the difference between a
 	# person and a line of flavour text.

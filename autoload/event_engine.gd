@@ -55,6 +55,7 @@ func age_up() -> void:
 	Places.yearly()
 	Bonds.yearly()
 	Companions.yearly()
+	Workforce.yearly()
 	Romance.yearly()
 	NpcWorld.yearly()
 	Daily.yearly()
@@ -82,6 +83,7 @@ func age_up() -> void:
 	Meta.check_challenge()
 	Goals.bump("years")
 	Goals.check()
+	Director.curate()
 	GameState.emit_changed()
 	year_done.emit()
 	SaveManager.save_game()
@@ -456,20 +458,7 @@ func _yearly_job() -> void:
 		perf -= 4
 	j["perf"] = clampf(perf, 0.0, 100.0)
 	GameState.change_stat("stress", float(jd.get("stress", 4)) * 0.6)
-	j["salary"] = int(int(j["salary"]) * 1.02)
-	var ranks: Array = jd.get("ranks", [j["title"]])
-	if float(j["perf"]) >= 72 and int(j["years_in_rank"]) >= 2 and int(j["rank"]) < ranks.size() - 1 and randf() < 0.55:
-		j["rank"] = int(j["rank"]) + 1
-		j["title"] = ranks[j["rank"]]
-		j["salary"] = int(int(j["salary"]) * 1.3)
-		j["years_in_rank"] = 0
-		GameState.add_log("I was promoted to %s!" % j["title"])
-		GameState.counter("promotions")
-		GameState.apply_effects({"happiness": 8})
-		if int(j["rank"]) == ranks.size() - 1:
-			GameState.add_milestone(p["age"], "rose to %s" % j["title"])
-	elif float(j["perf"]) < 15 and randf() < 0.6:
-		Actions.lose_job("fired")
+	Workforce.review()
 
 
 func _yearly_finances() -> void:
@@ -661,12 +650,7 @@ func _due_followups() -> void:
 
 
 func _random_events() -> void:
-	var age: int = GameState.player["age"]
-	var count := 0
-	if age <= 2:
-		count = 1 if randf() < 0.6 else 0
-	else:
-		count = [1, 1, 2, 2, 2, 3][randi() % 6]
+	var count := Director.random_count()
 	var pool: Array = []
 	var recent: Dictionary = Meta.meta.get("recent", {})
 	var life_no := Goals.stat_total("lives")
@@ -678,6 +662,7 @@ func _random_events() -> void:
 			if recent.has(def["id"]):
 				var ago := life_no - int(recent[def["id"]])
 				w *= [0.25, 0.25, 0.45, 0.7][clampi(ago, 0, 3)] if ago < 4 else 1.0
+			w = Director.weight(def, w)
 			pool.append({"def": def, "w": w})
 	var picked := 0
 	var guard := 0
@@ -1004,6 +989,7 @@ func _enqueue(def0: Dictionary, preset: Dictionary) -> bool:
 	var created: Array = roles.get("__created", [])
 	roles.erase("__created")
 	GameState.event_history[def["id"]] = GameState.player["age"]
+	Director.note(def)
 	if not Meta.meta.has("recent"):
 		Meta.meta["recent"] = {}
 	Meta.meta["recent"][def["id"]] = Goals.stat_total("lives")
@@ -1410,8 +1396,8 @@ func _field(d: Dictionary, field: String, id: String) -> String:
 
 # ---------------------------------------------------------------- popups from actions
 
-func push_info(icon: String, title: String, text: String, changes: Dictionary = {}) -> void:
-	pending.push_front({"info": true, "icon": icon, "title": title, "text": text, "changes": changes})
+func push_info(icon: String, title: String, text: String, changes: Dictionary = {}, critical: bool = false) -> void:
+	pending.push_front({"info": true, "icon": icon, "title": title, "text": text, "changes": changes, "critical": critical})
 	event_queued.emit()
 
 

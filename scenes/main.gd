@@ -1912,15 +1912,33 @@ func _panel_relationships() -> void:
 	var groups := [
 		["Family", ["mother", "father", "stepparent", "grandparent", "sibling", "stepsibling", "child", "stepchild", "grandchild"]],
 		["Extended family", ["auntuncle", "cousin", "niece_nephew"]],
-		["Romantic", ["partner"]],
+		["Romantic", ["partner", "lover"]],
 		["Friends", ["best_friend", "friend"]],
+		["Work and school", ["mentor", "teacher", "boss", "coworker", "classmate"]],
 		["Pets", ["pet"]],
-		["Others", ["mentor", "teacher", "boss", "coworker", "classmate", "crush", "neighbor", "cellmate", "rival", "enemy", "ex", "former_coworker", "former_friend", "lover"]],
+		["Others", ["crush", "neighbor", "cellmate", "rival", "enemy"]],
 	]
+	# the people who matter and are slipping away come first
+	var drifting: Array = []
+	for id in GameState.npcs.keys():
+		var dn: Dictionary = GameState.npcs[id]
+		if Bonds.is_past(dn) or str(dn.get("species", "human")) != "human":
+			continue
+		if str(dn["relation"]) in ["mother", "father", "partner", "best_friend", "child", "sibling", "friend", "grandparent"] and int(dn["closeness"]) < 35:
+			drifting.append(id)
+	drifting.sort_custom(func(a, b): return int(GameState.npcs[a]["closeness"]) < int(GameState.npcs[b]["closeness"]))
+	if not drifting.is_empty():
+		_add(U.section("⚠️ Needs attention"))
+		for did in drifting.slice(0, 4):
+			_add(_person_row(did))
+	var past_n := 0
 	for grp in groups:
 		var ids: Array = []
 		for rel in grp[1]:
 			for id in GameState.npcs_with(rel, false):
+				if Bonds.is_past(GameState.npcs[id]):
+					past_n += 1
+					continue
 				ids.append(id)
 		if grp[0] == "Romantic" and ids.is_empty():
 			_add(U.section("Romantic"))
@@ -1928,10 +1946,49 @@ func _panel_relationships() -> void:
 			continue
 		if ids.is_empty():
 			continue
-		_add(U.section(grp[0]))
-		ids.sort_custom(func(a, b): return int(GameState.npcs[a]["alive"]) > int(GameState.npcs[b]["alive"]))
+		ids.sort_custom(func(a, b): return int(GameState.npcs[a]["closeness"]) > int(GameState.npcs[b]["closeness"]))
+		_add(U.section("%s · %d" % [grp[0], ids.size()]))
 		for id in ids:
 			_add(_person_row(id))
+	for id2 in GameState.npcs.keys():
+		if Bonds.PAST_RELATIONS.has(str(GameState.npcs[id2]["relation"])) and Bonds.is_past(GameState.npcs[id2]):
+			past_n += 1
+	_add(U.row("🗂️", "Past relationships · %d" % past_n, "Exes, old friends, people who have passed on", func(): _open_panel(func(): _panel_past_relationships()), past_n > 0, true))
+
+
+func _panel_past_relationships() -> void:
+	_panel_header("🗂️", "Past relationships")
+	var buckets := {"Passed away": [], "Exes": [], "Friendships that ended": [], "Former colleagues": [], "Drifted apart": [], "Gone from your life": []}
+	for id in GameState.npcs.keys():
+		var n: Dictionary = GameState.npcs[id]
+		if not Bonds.is_past(n):
+			continue
+		var lab := Bonds.past_label(n)
+		var key := "Drifted apart"
+		if lab.begins_with("Passed"):
+			key = "Passed away"
+		elif lab == "Ex":
+			key = "Exes"
+		elif lab == "Friendship ended":
+			key = "Friendships that ended"
+		elif lab in ["Former colleague", "Former tenant"]:
+			key = "Former colleagues"
+		elif lab == "Gone from your life":
+			key = "Gone from your life"
+		buckets[key].append(id)
+	var any := false
+	for k in buckets.keys():
+		var ids: Array = buckets[k]
+		if ids.is_empty():
+			continue
+		any = true
+		_add(U.section("%s · %d" % [k, ids.size()]))
+		for id2 in ids:
+			var n2: Dictionary = GameState.npcs[id2]
+			var nid: String = id2
+			_add(U.row(U.npc_face(n2), "%s (%s)" % [GameState.full_name(id2), GameState.relation_label(id2)], Bonds.past_label(n2), func(): _open_panel(func(): _panel_person(nid)), true, true))
+	if not any:
+		_add(U.lbl("Nobody yet. The people who leave your life, and the ones who die, will be kept here instead of crowding the main list.", "Dim", 16, true))
 
 
 func _person_row(id: String) -> Button:
@@ -2198,6 +2255,12 @@ func _panel_jobs(kind: String) -> void:
 	var titles := {"part": "Part-Time Jobs", "full": "Full-Time Jobs", "military": "Military"}
 	_panel_header({"part": "🍔", "full": "💼", "military": "🎖️"}[kind], titles[kind])
 	_add(U.lbl("Real openings, with real competition. Applying uses 1 time point: a screening, then an interview, then an offer you can negotiate.", "Dim", 15, true))
+	var hist: Array = Market.st().get("history", [])
+	if not hist.is_empty():
+		var hl: Array = []
+		for h in hist.slice(0, 4):
+			hl.append("Age %d · %s (%s): %s" % [int(h["age"]), str(h["co"]), str(h["role"]), str(h["why"])])
+		_add(U.lbl("Recent applications\n" + "\n".join(hl), "Dim", 14, true))
 	var list := Market.openings(kind)
 	if list.is_empty():
 		_add(U.lbl("No openings right now. Check again next year.", "Dim", 16))
@@ -2209,7 +2272,10 @@ func _panel_jobs(kind: String) -> void:
 		if why != "":
 			sub = "🔒 Requires: " + why
 		else:
-			sub += " · odds ~%d%%" % int(round(float(stand["chance"]) * 100.0))
+			var ob: Dictionary = Market.main_obstacle(l)
+			sub += " · %s" % Market.fit_label(float(stand["chance"]))
+			if float(stand["chance"]) < 0.5 and str(ob["short"]) != "":
+				sub += " (%s)" % str(ob["short"])
 		var applied: bool = Market.st()["applied"].has(str(l["id"]))
 		if applied:
 			sub = "✓ Applied · " + sub

@@ -39,6 +39,37 @@ func _p() -> Dictionary:
 	return GameState.player
 
 
+const PAST_RELATIONS := ["ex", "former_coworker", "former_friend", "former_tenant"]
+
+
+## A relationship that has ended or faded: out of the main list, kept in "Past relationships".
+func is_past(n: Dictionary) -> bool:
+	if not bool(n.get("alive", true)):
+		return true
+	if bool(n.get("rehomed", false)):
+		return true
+	var rel := str(n.get("relation", ""))
+	if PAST_RELATIONS.has(rel):
+		return true
+	if rel in ["friend", "classmate", "neighbor", "coworker", "crush", "rival", "enemy"] and int(n.get("closeness", 50)) <= 4 and int(n.get("faded_years", 0)) >= 2:
+		return true
+	return false
+
+
+## Why it is past, for the Past relationships panel.
+func past_label(n: Dictionary) -> String:
+	if not bool(n.get("alive", true)):
+		return "Passed away at %d" % int(n.get("age", 0))
+	if bool(n.get("rehomed", false)):
+		return "Gone from your life"
+	match str(n.get("relation", "")):
+		"ex": return "Ex"
+		"former_coworker": return "Former colleague"
+		"former_friend": return "Friendship ended"
+		"former_tenant": return "Former tenant"
+	return "Drifted apart"
+
+
 func ensure(id: String) -> Dictionary:
 	var n := GameState.npc(id)
 	if n.is_empty():
@@ -1521,6 +1552,8 @@ func yearly() -> void:
 		if not (rel in FAMILY or rel in FRIENDS or rel == "partner"):
 			continue
 		ensure(id)
+		if rel in ["friend", "classmate", "neighbor", "coworker", "crush"]:
+			n["faded_years"] = (int(n.get("faded_years", 0)) + 1) if int(n.get("closeness", 50)) <= 4 else 0
 		if lives_with_ex(n):
 			GameState.change_closeness(id, -2)
 		if rel in ["child", "stepchild"] and int(n["age"]) >= 6 and int(n["age"]) <= 18:
@@ -1664,7 +1697,7 @@ func _npc_life(id: String, n: Dictionary) -> bool:
 			if rel in FAMILY and int(n["closeness"]) >= 40 and int(p["age"]) >= 18 and randf() < 0.5:
 				_ask_help(id, n, line)
 				return true
-		GameState.add_log("%s %s." % [who, line])
+		GameState.add_trivia("%s %s." % [who, line])
 		return true
 	if age >= 18 and rel in ["sibling", "cousin", "friend", "best_friend"] and randf() < 0.01:
 		var c: Dictionary = ContentDB.countries[randi() % ContentDB.countries.size()]

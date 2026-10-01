@@ -125,6 +125,7 @@ func yearly() -> void:
 		h -= 0.08
 	if World.active("boom"):
 		h += 0.05
+	h += Workforce.climate(str(j.get("field", ""))) * 0.5
 	ww["health"] = clampf(h, 0.0, 1.0)
 	if float(ww["health"]) < 0.3 and randf() < (0.22 if not bool(ww["union"]) else 0.12):
 		_redundancy()

@@ -18,7 +18,7 @@ func _ready() -> void:
 				for i in [0, 3, 5, 7]: g._scratch(i)
 			"g_wheel": g._spin()
 			"g_plinko": g._drop()
-		var wait := {"g_slots": 1.2, "g_roulette": 2.0, "g_horses": 4.0, "g_rocket": 2.5, "g_plinko": 0.5, "g_wheel": 1.5}.get(id, 0.6)
+		var wait: float = {"g_slots": 1.2, "g_roulette": 2.0, "g_horses": 4.0, "g_rocket": 2.5, "g_plinko": 0.5, "g_wheel": 1.5}.get(id, 0.6)
 		await get_tree().create_timer(wait).timeout
 		await get_tree().process_frame
 		get_viewport().get_texture().get_image().save_png("/tmp/gshots/%s.png" % id)
