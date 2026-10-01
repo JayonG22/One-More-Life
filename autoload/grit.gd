@@ -323,7 +323,16 @@ func _collectors() -> void:
 			GameState.counter("repossessions")
 			GameState.add_log("The repo man came and took %s." % seized)
 			GameState.apply_effects({"happiness": -8, "stress": 8})
-	if owed >= Actions._cost(40000) and yrs >= 2 and int(p.get("bankrupt_until", -1)) < int(p["age"]):
+	# A second filing is not available for eight years after the first (as in real
+	# law); in the meantime the lender will only negotiate a settlement.
+	var last_filed := int(p.get("bankrupt_filed", -99))
+	if owed >= Actions._cost(40000) and yrs >= 2 and int(p.get("bankrupt_until", -1)) < int(p["age"]) and int(p["age"]) - last_filed < 8:
+		if yrs >= 3:
+			EventEngine.push_decision({"id": "_settlement", "icon": "🤝", "title": "A settlement offer", "text": "You can't file again so soon. A collections lawyer offers to settle %s for half." % GameState.fmt_money(owed), "choices": [
+				{"label": "Take the settlement", "outcomes": [{"text": "I settled for half. The calls stopped, and my credit took another hit.", "effects": {"stress": -6, "happiness": -3}, "grit": "settle"}]},
+				{"label": "Keep fighting it", "outcomes": [{"text": "I'll find the money. Somehow.", "effects": {"stress": 8}}]},
+			]})
+	elif owed >= Actions._cost(40000) and yrs >= 2 and int(p.get("bankrupt_until", -1)) < int(p["age"]):
 		EventEngine.push_decision({"id": "_bankruptcy", "icon": "📉", "title": "Drowning in debt", "text": "You owe %s and the letters are getting angrier. A lawyer says you could declare bankruptcy." % GameState.fmt_money(owed), "choices": [
 			{"label": "Declare bankruptcy", "outcomes": [{"text": "I declared bankruptcy. The debt is gone, and so is my credit for a long time.", "effects": {"stress": -10, "happiness": -6}, "grit": "bankruptcy"}]},
 			{"label": "Keep fighting it", "outcomes": [{"text": "I'll dig myself out. Somehow.", "effects": {"stress": 10}}]},
@@ -338,6 +347,7 @@ func bankruptcy() -> void:
 		Empires._close_business()
 	p["credit"] = 330
 	p["bankrupt_until"] = int(p["age"]) + 7
+	p["bankrupt_filed"] = int(p["age"])
 	p["debt_years"] = 0
 	GameState.counter("bankruptcies")
 	GameState.add_milestone(p["age"], "declared bankruptcy")
@@ -551,6 +561,12 @@ func outcome(o: Dictionary, roles: Dictionary) -> String:
 				grudge(roles[r], int(o["grudge"][r]))
 	if o.has("grudge_clear") and roles.has(o["grudge_clear"]) and GameState.npcs.has(roles[o["grudge_clear"]]):
 		GameState.npcs[roles[o["grudge_clear"]]]["grudge"] = 0
+	if o.get("grit", "") == "settle":
+		var pp := GameState.player
+		pp["money"] = int(pp["money"]) / 2
+		pp["debt_years"] = 0
+		change_credit(-40)
+		GameState.counter("settlements")
 	if o.get("grit", "") == "bankruptcy":
 		bankruptcy()
 	if o.has("lose_money_pct") and int(p["money"]) > 0:

@@ -19,6 +19,7 @@ func _ready() -> void:
 	_share()
 	_legacy()
 	_seeded()
+	_recall_check()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -131,3 +132,24 @@ func _seeded() -> void:
 		ok(e.has("seeded") and int(e["seeded"]["score"]) >= 400, "death not scored (%s)" % m)
 		ok(preload("res://scenes/share_card.gd").share_text(e).find(str(e["seeded"]["key"])) != -1, "share text lacks the seeded day (%s)" % m)
 	print("  seeded: specs deterministic, all four modes start and score")
+
+
+func _recall_check() -> void:
+	GameState.new_life({"first": "Test", "last": "Person", "gender": "male", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+	GameState.player["age"] = 30
+	var ids := GameState.npcs_with("mother", true)
+	ok(not ids.is_empty(), "no mother to remember with")
+	var id: String = ids[0]
+	Bonds.remember(id, "Paid back a kindness from years ago.", false)
+	GameState.npcs[id]["memory"][0]["age"] = 20
+	var seen := 0
+	for i in 400:
+
+		Bonds._recall()
+		if GameState.npcs[id]["memory"][0].get("told", false):
+			seen += 1
+			break
+	ok(seen == 1, "an old memory never came back up")
+	var before: int = GameState.npcs[id]["memory"].size()
+	ok(before >= 1, "memory lost")
+	print("  recall: an old memory is brought back up exactly once")

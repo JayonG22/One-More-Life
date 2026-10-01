@@ -1169,6 +1169,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 			elif band == "snag" and d > 0:
 				d = maxi(1, int(d * 0.6))
 			GameState.change_closeness(roles[role], d)
+			if absi(d) >= 15 and str(o.get("text", "")).length() > 12:
+				Bonds.remember(roles[role], tokens(str(o["text"]), roles).substr(0, 140), d > 0, true)
 	for f in o.get("flags", []):
 		GameState.set_flag(f)
 	for f in o.get("unflags", []):

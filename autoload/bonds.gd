@@ -52,12 +52,12 @@ func ensure(id: String) -> Dictionary:
 	return n
 
 
-func remember(id: String, text: String, good: bool) -> void:
+func remember(id: String, text: String, good: bool, own: bool = false) -> void:
 	var n := ensure(id)
 	if n.is_empty():
 		return
 	var mem: Array = n.get("memory", [])
-	mem.push_front({"age": int(_p()["age"]), "text": text, "good": good})
+	mem.push_front({"age": int(_p()["age"]), "text": text, "good": good, "own": own})
 	if mem.size() > 8:
 		mem.resize(8)
 	n["memory"] = mem
@@ -1519,6 +1519,48 @@ func yearly() -> void:
 			told += 1
 	_parents_marriage()
 	_holiday()
+	_recall()
+
+
+## Someone brings up something you did, or something they did, from years ago.
+## Memories used to be written and never read; this is where they come back.
+func _recall() -> void:
+	var p := _p()
+	if int(p["age"]) < 14 or randf() > 0.16:
+		return
+	var pool: Array = []
+	for id in GameState.npcs.keys():
+		var n: Dictionary = GameState.npcs[id]
+		if not n["alive"] or n.get("species", "human") != "human" or int(n.get("age", 0)) < 8:
+			continue
+		for m in n.get("memory", []):
+			if not m.get("told", false) and int(p["age"]) - int(m["age"]) >= 3:
+				pool.append([id, m])
+	if pool.is_empty():
+		return
+	var pick: Array = pool[randi() % pool.size()]
+	var id: String = pick[0]
+	var m: Dictionary = pick[1]
+	m["told"] = true
+	var n: Dictionary = GameState.npcs[id]
+	var nm: String = n["first"]
+	var what := str(m["text"]).trim_suffix(".")
+	what = what.substr(0, 1).to_lower() + what.substr(1)
+	var yrs := int(p["age"]) - int(m["age"])
+	if m.get("own", false):
+		what = "“%s”" % str(m["text"])
+	if m["good"]:
+		EventEngine.push_decision({"id": "_recall_good", "icon": "💭", "title": "%s remembers" % nm, "text": "%d years on, %s still talks about it: %s." % [yrs, nm, what if m.get("own", false) else "%s %s" % [nm, what]], "choices": [
+			{"label": "Say it meant a lot to you too", "outcomes": [{"text": "%s and I sat a while, remembering. It was nice to be reminded." % nm, "effects": {"happiness": 4}, "relationship": {"them": 8}}, {"text": "We laughed about it. %s remembered it better than I did." % nm, "effects": {"happiness": 3}, "relationship": {"them": 5}}]},
+			{"label": "Do something to match it", "outcomes": [{"text": "I made a point of doing something for %s. It landed." % nm, "effects": {"happiness": 3, "money": -Actions._cost(80)}, "relationship": {"them": 12}}, {"text": "I tried to do something for %s; it was awkward but it was meant." % nm, "effects": {"happiness": 1}, "relationship": {"them": 6}}]},
+			{"label": "Let it pass", "outcomes": [{"text": "I smiled and changed the subject. %s noticed." % nm, "effects": {}, "relationship": {"them": -2}}, {"text": "I let it pass. Some things are better left in the past.", "effects": {"stress": -1}, "relationship": {"them": 0}}]},
+		]}, {"them": id})
+	else:
+		EventEngine.push_decision({"id": "_recall_bad", "icon": "💭", "title": "%s hasn't forgotten" % nm, "text": "%d years on, it comes up again over dinner. %s hasn't forgotten: %s." % [yrs, nm, what if m.get("own", false) else "%s %s" % [nm, what]], "choices": [
+			{"label": "Take it seriously and apologise", "outcomes": [{"text": "I said sorry properly this time. %s listened." % nm, "effects": {"stress": 3, "karma": 3}, "relationship": {"them": 9}}, {"text": "I apologised. It didn't fix it, but %s nodded." % nm, "effects": {"stress": 4}, "relationship": {"them": 4}}]},
+			{"label": "Say it was a long time ago", "outcomes": [{"text": "%s didn't push it. The silence was louder than the argument would have been." % nm, "effects": {"stress": 4}, "relationship": {"them": -3}}, {"text": "We both pretended it was funny. It wasn't, quite.", "effects": {}, "relationship": {"them": 1}}]},
+			{"label": "Argue your side", "outcomes": [{"text": "It turned into a proper row. %s left early." % nm, "effects": {"stress": 8, "happiness": -4}, "relationship": {"them": -10}}, {"text": "I put my case. %s heard it, to my surprise, and conceded a point." % nm, "effects": {"stress": 3}, "relationship": {"them": 3}}]},
+		]}, {"them": id})
 
 
 func _kid_school(id: String, n: Dictionary) -> void:
