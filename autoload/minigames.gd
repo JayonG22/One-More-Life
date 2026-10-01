@@ -44,6 +44,10 @@ const DEFS := {
 		"how": "Hold Space (or the button) to reel. Keep the line tension in the green.\nToo tight and the line snaps; too slack and the fish gets away."},
 	"evidence": {"name": "Evidence Board", "icon": "🧩", "script": "res://scenes/minigames/mg_evidence.gd",
 		"how": "Read each clue and choose the strongest defensible inference with 1–3. Weak links cost time and case credibility; the goal is a coherent theory, not a forced one."},
+	"haggle": {"name": "Negotiation", "icon": "🤝", "script": "res://scenes/minigames/mg_haggle.gd",
+		"how": "They open at 100. Somewhere above that is the most they will really pay, and you can't see it.\nSet your ask with ← → (1) and ↑ ↓ (5), then press Enter. Their reply tells you how much room is left. You have three rounds: ask too little and they accept at once; ask too much and they walk."},
+	"road": {"name": "Road Test", "icon": "🚦", "script": "res://scenes/minigames/mg_road.gd",
+		"how": "A short route in three lanes. Change lane with ← → (A / D); hold Space to brake.\nAvoid cones, wait for pedestrians, stop at red lights. Four faults fail the test. There is no clock."},
 	"surgery": {"name": "Operating Room", "icon": "🔪", "script": "res://scenes/minigames/mg_surgery.gd",
 		"how": "Keep oxygen, pressure and bleeding stable while completing the prompted procedure steps. Use keys 1–4 for the instruments; wrong choices can destabilize the patient."},
 }

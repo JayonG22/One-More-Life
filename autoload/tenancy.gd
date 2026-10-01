@@ -249,12 +249,9 @@ func act(key: String, arg) -> void:
 		"negotiate":
 			if Actions._out_of_time():
 				return
-			var chance := 0.22 + GameState.stat("smarts") / 250.0 + (0.2 if str(t["kind"]) == "kind" else 0.0) - (0.15 if str(t["kind"]) == "grasping" else 0.0)
-			if randf() < chance:
-				t["rent"] = int(round(float(t["rent"]) * randf_range(0.90, 0.95) / 50.0)) * 50
-				Actions._done("🤝", "Negotiation", "I pointed at the damp and the comparable listings, and %s came down." % str(t["landlord"]), {"happiness": 4})
-			else:
-				Actions._done("🤝", "Negotiation", "%s was polite and immovable. I felt I had used up some goodwill." % str(t["landlord"]), {"stress": 3})
+			var skill := GameState.stat("smarts") * 0.5 + 25.0 + (15.0 if str(t["kind"]) == "kind" else 0.0) - (10.0 if str(t["kind"]) == "grasping" else 0.0)
+			Minigames.play("haggle", {"subject": "the rent", "skill": skill, "difficulty": 1.0 + (0.2 if str(t["kind"]) == "grasping" else 0.0)},
+				func(score: float, detail: Dictionary) -> void: _rent_haggle_done(score, detail))
 		"flatmate":
 			if mates().size() >= 2 or Actions._out_of_time():
 				return
@@ -285,6 +282,24 @@ func act(key: String, arg) -> void:
 
 
 # ------------------------------------------------------------------ conditions and outcomes
+
+func _rent_haggle_done(score: float, detail: Dictionary) -> void:
+	var t := st()
+	if not bool(t.get("active", false)):
+		return
+	if bool(detail.get("walked", false)) and not detail.get("auto", false):
+		t["notice_risk"] = true
+		Actions._done("🤝", "Negotiation", "I asked for too much and %s ended the conversation. I felt I had used up some goodwill." % str(t["landlord"]), {"stress": 4})
+		return
+	var pct := 2.0 + 9.0 * clampf(score, 0.0, 1.0)
+	if detail.get("auto", false):
+		pct = 0.0 if randf() < 0.55 else randf_range(3.0, 8.0)
+	if pct < 1.0:
+		Actions._done("🤝", "Negotiation", "%s was polite and immovable." % str(t["landlord"]), {"stress": 3})
+		return
+	t["rent"] = int(round(float(t["rent"]) * (1.0 - pct / 100.0) / 50.0)) * 50
+	Actions._done("🤝", "Negotiation", "I made my case and %s came down by %d%%." % [str(t["landlord"]), int(round(pct))], {"happiness": 4})
+
 
 func tag(t: String) -> bool:
 	var s := st()

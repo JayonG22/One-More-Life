@@ -200,11 +200,33 @@ func outcome(ops: Dictionary) -> void:
 		var l := find(str(ops["reject"]))
 		if not l.is_empty():
 			_rejected(l, false)
+	if ops.has("negotiate"):
+		var nid := str(ops["negotiate"])
+		var nl := find(nid)
+		Minigames.play("haggle", {"subject": "your salary", "skill": GameState.stat("smarts") * 0.5 + (15.0 if GameState.has_trait("Charmer") else 0.0) + 25.0, "difficulty": 1.0},
+			func(score: float, detail: Dictionary) -> void: _negotiated(nid, score, detail))
 	if ops.has("hire"):
 		hire(str(ops["hire"]), float(ops.get("bump", 0.0)))
 	if ops.has("withdrawn"):
 		GameState.add_log("The offer was withdrawn. I had pushed too hard, or they had found someone cheaper.")
 		GameState.apply_effects({"happiness": -5, "stress": 4})
+
+
+## The haggle is over. A good one earns a real raise; walking out loses the job
+## about half the time, and the other half they hold the first offer.
+func _negotiated(id: String, score: float, detail: Dictionary) -> void:
+	var walked: bool = bool(detail.get("walked", false))
+	if walked and not detail.get("auto", false):
+		if randf() < 0.5:
+			outcome({"withdrawn": true})
+		else:
+			GameState.add_log("I pushed too far, and they held at the first offer. I took it.")
+			hire(id, 0.0)
+		return
+	var bump := 0.02 + 0.12 * clampf(score, 0.0, 1.0)
+	if detail.get("auto", false):
+		bump = 0.0 if randf() < 0.45 else randf_range(0.04, 0.10)
+	hire(id, bump)
 
 
 func _rejected(l: Dictionary, at_screening: bool) -> void:
@@ -234,9 +256,7 @@ func offer(id: String) -> void:
 		{"label": "Accept", "outcomes": [
 			{"weight": 1.0, "text": "I signed. It was real.", "market": {"hire": id}}]},
 		{"label": "Negotiate the salary", "outcomes": [
-			{"weight": hit, "text": "They came up by a little, and I pretended not to be pleased.", "market": {"hire": id, "bump": randf_range(0.05, 0.12)}},
-			{"weight": (1.0 - hit) * 0.75, "text": "They said the first offer was their best, and it was. I accepted.", "market": {"hire": id}},
-			{"weight": (1.0 - hit) * 0.25, "text": "They thanked me for my time. The offer had been withdrawn.", "market": {"withdrawn": true}}]},
+			{"weight": 1.0, "text": "I sat down across the table and we began.", "market": {"negotiate": id}}]},
 		{"label": "Decline", "outcomes": [
 			{"weight": 0.6, "text": "I thanked them and said no. It felt strange to have a choice.", "effects": {"stress": -1}},
 			{"weight": 0.4, "text": "I said no, and spent the evening wondering whether I'd been mad.", "effects": {"stress": 3}}]},

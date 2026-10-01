@@ -20,6 +20,7 @@ func _ready() -> void:
 	_endings()
 	_death()
 	_events()
+	_minigames()
 	print("V17 ARCS TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -180,3 +181,42 @@ func _events() -> void:
 	Arcs.apply({"oxygen": -400})
 	ok(int(Lives.life()["oxygen"]) == 0, "a gauge went below 0")
 	print("  events: %d chapter choices resolved" % played)
+
+
+## The two new minigames are registered, playable headless, and wired in.
+func _minigames() -> void:
+	ok(Minigames.DEFS.has("haggle") and Minigames.DEFS.has("road"), "the new minigames are not registered")
+	for id in ["haggle", "road"]:
+		ok(FileAccess.file_exists(str(Minigames.DEFS[id]["script"])), "%s has no script" % id)
+		ok(str(Minigames.DEFS[id]["how"]).length() > 80, "%s has no instructions" % id)
+	# headless, a salary negotiation resolves and hires
+	GameState.new_life({"gender": "female", "country": "us"})
+	GameState.player["age"] = 28
+	GameState.player["stats"]["smarts"] = 70.0
+	var list := Market.openings("full")
+	var target: Dictionary = {}
+	for l in list:
+		if str(l["locked"]) == "":
+			target = l
+			break
+	ok(not target.is_empty(), "no opening to negotiate for")
+	Market.outcome({"negotiate": str(target["id"])})
+	ok(GameState.has_job(), "a negotiated offer did not end in a job")
+	EventEngine.pending.clear()
+	# rent negotiation changes the rent or says no, and never throws
+	GameState.new_life({"gender": "male", "country": "us"})
+	GameState.player["age"] = 24
+	GameState.player["housing"] = "apartment"
+	GameState.player["money"] = 30000
+	Tenancy.sync()
+	var rents := {}
+	for i in range(30):
+		GameState.player["time_left"] = 12
+		Tenancy.st()["rent"] = 20000
+		Tenancy.act("negotiate", null)
+		rents[int(Tenancy.st()["rent"])] = true
+		EventEngine.pending.clear()
+	ok(rents.size() >= 2, "rent negotiation never had more than one outcome")
+	# the road test is part of getting a driving licence
+	ok(Law.has_method("_road_done"), "the driving licence has no road test")
+	print("  minigames: haggle and road registered and wired in")

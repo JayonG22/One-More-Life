@@ -24,10 +24,25 @@ func _next() -> void:
 		cur.queue_free()
 		cur = null
 	if ids.is_empty():
+		var lost: Array = []
 		for k in results.keys():
 			print("%-12s %s" % [k, str(results[k])])
+			var best := 0.0
+			for r in results[k]:
+				if str(r) == "TIMEOUT":
+					continue
+				best = maxf(best, float(str(r).get_slice("{", 0)))
+			if best < 0.6:
+				lost.append(k)
+		# every minigame must be winnable by a competent player: the best of the runs clears 0.6
+		var missing: Array = []
+		for k2 in Minigames.DEFS.keys():
+			if not results.has(k2):
+				missing.append(k2)
+		if OS.get_environment("MG_ONLY") == "":
+			print("MG GATE %s  (%d games, unwinnable: %s, no bot: %s)" % ["PASS" if lost.is_empty() and missing.is_empty() else "FAIL", results.size(), str(lost), str(missing)])
 		print("SMART DONE")
-		get_tree().quit()
+		get_tree().quit(1 if (not lost.is_empty() or not missing.is_empty()) and OS.get_environment("MG_ONLY") == "" else 0)
 		return
 	cur_id = ids.pop_front()
 	if OS.get_environment("MG_ONLY") != "" and cur_id != OS.get_environment("MG_ONLY"):
@@ -137,6 +152,58 @@ func _process(delta: float) -> void:
 			elif g.state == "counter" and cool <= 0:
 				cool = 0.2
 				g._strike()
+		"evidence":
+			if cool <= 0:
+				cool = 0.3
+				for i in range(3):
+					if bool(g.buttons[i].get_meta("correct", false)) and not g.buttons[i].disabled:
+						g._choose(i)
+						break
+		"surgery":
+			if cool <= 0 and g.step_i < g.STEPS.size():
+				cool = 0.8
+				g._tool(int(g.STEPS[g.step_i][2]))
+		"haggle":
+			if cool <= 0 and not g.closed:
+				cool = 0.3
+				# bisect the room: the cue after each counter says how much is left
+				var lo := int(g.offer)
+				var hi := int(g.HIGH)
+				if g.steps.is_empty():
+					g.ask = lo + 16
+				elif "limit" in str(g.last_cue) or "nearly" in str(g.last_cue):
+					g.ask = lo + 1
+				elif "little left" in str(g.last_cue):
+					g.ask = lo + 5
+				else:
+					g.ask = lo + 12
+				g._make_ask()
+		"road":
+			var lane_free := true
+			var brake := false
+			for h in g.hazards:
+				var ahead: float = float(h["y"]) - g.dist
+				if h["cleared"] or ahead < -30.0:
+					continue
+				if h["kind"] == "cone" and ahead < 230.0 and int(h["lane"]) == g.lane:
+					lane_free = false
+				if (h["kind"] == "ped" or h["kind"] == "light") and ahead < 330.0 and ahead > -10.0 and g.clock < float(h["ped_until"]) + 0.15:
+					brake = true
+			g.braking = brake
+			if not lane_free and cool <= 0:
+				cool = 0.2
+				var want: int = (g.lane + 1) % 3
+				for cand in [g.lane - 1, g.lane + 1]:
+					if cand >= 0 and cand < 3:
+						var clear := true
+						for h2 in g.hazards:
+							var a2: float = float(h2["y"]) - g.dist
+							if h2["kind"] == "cone" and int(h2["lane"]) == cand and a2 < 330.0 and a2 > -30.0:
+								clear = false
+						if clear:
+							want = cand
+							break
+				g._move(want - g.lane)
 		"onset":
 			if cool <= 0:
 				cool = 0.14

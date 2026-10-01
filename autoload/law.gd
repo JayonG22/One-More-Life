@@ -122,6 +122,11 @@ func _quiz_done(score: float, detail: Dictionary, id: String) -> void:
 	if detail.get("auto", false):
 		var diff := float(l["difficulty"]) + (0.25 if id == "firearms" and str(Places.law("guns")) == "strict" else 0.0)
 		passed = randf() < clampf(1.0 - diff + (GameState.stat("smarts") - 50.0) / 200.0, 0.05, 0.95)
+	if passed and id == "driver" and not detail.get("auto", false):
+		# the theory is only half of it
+		Minigames.play("road", {"skill": GameState.stat("smarts") * 0.4 + 35.0, "difficulty": 1.0},
+			func(sc: float, d: Dictionary) -> void: _road_done(sc, d))
+		return
 	if passed:
 		_grant_license(id)
 		return
@@ -134,6 +139,18 @@ func _quiz_done(score: float, detail: Dictionary, id: String) -> void:
 	body += "\n\nThe fee is gone, but I can sit it again."
 	GameState.add_log("I failed the theory test for my %s." % l["name"].to_lower())
 	EventEngine.push_info(l["icon"], "Failed", body, GameState.apply_effects({"happiness": -3}))
+
+
+func _road_done(score: float, detail: Dictionary) -> void:
+	var passed: bool = detail.get("passed", score >= 0.4)
+	if detail.get("auto", false):
+		passed = randf() < clampf(0.45 + (GameState.stat("smarts") - 50.0) / 200.0, 0.1, 0.9)
+	if passed:
+		_grant_license("driver")
+		return
+	var why := str(detail.get("why", "too many faults"))
+	GameState.add_log("I passed the theory but failed the road test: %s." % why)
+	EventEngine.push_info("🚦", "Failed the road test", "The examiner wrote something down and didn't look at me. The fault was: %s.\n\nThe theory pass stands for now, but the fee is spent. I can sit it again." % why, GameState.apply_effects({"happiness": -4, "stress": 3}))
 
 
 func _lawyer_cost(tier: int) -> int:
