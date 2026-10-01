@@ -129,6 +129,31 @@ func _show(name_key: String) -> void:
 			_tab_press(0)
 		else:
 			_render_top_panel()
+		_maybe_tutorial()
+
+
+const TUTORIALS := {
+	"human": ["🧭", "How a life works", "Each year you get a few points of Time. Spend them on the tabs (work, people, body, money), then press Age Up.\n\nEvents will stop you with choices. There are no right answers, only consequences, some of which arrive years later.\n\nThe Road tab shows your chapters and the endings you could reach."],
+	"pet": ["🐾", "How a pet's life works", "You can't make people do anything. You can change how they feel about you.\n\nSpend your Time on care, play, learning and the wider world, then Age Up. Bond is the number that matters most.\n\nThe pack tab appears once you have packmates or are old enough for a litter."],
+	"prisoner": ["⛓️", "How a sentence works", "Respect, heat, conduct and support are the four numbers you live by.\n\nKeep your head down for the parole board, or build a plan for the wall. Everything you do is read by someone.\n\nThe Road tab shows your chapters. After the gate there are three more years to get through."],
+	"guard": ["🗝️", "How the keys work", "Control, integrity and merit are what the job runs on. Everything on the wing is noticed by someone.\n\nThe keys offer favours; every favour is a debt. Internal Affairs keeps count.\n\nThe Road tab shows your chapters."],
+}
+
+
+func _maybe_tutorial() -> void:
+	if OS.get_environment("OML_USER_DIR") != "" or not GameState.has_life() or int(GameState.player.get("age", 1)) > 1 or popup_open:
+		return
+	var k := "human"
+	if Lives.separate():
+		k = Lives.kind() if Lives.kind() in TUTORIALS else "human"
+	var seen: Dictionary = Meta.meta.get("tutorials", {})
+	if seen.has(k):
+		return
+	seen[k] = true
+	Meta.meta["tutorials"] = seen
+	Meta.save()
+	var t: Array = TUTORIALS[k]
+	_show_info(t[0], t[1], t[2], {})
 
 
 func _current_screen() -> String:
