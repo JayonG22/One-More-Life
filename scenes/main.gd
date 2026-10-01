@@ -394,6 +394,73 @@ func _start_pet() -> void:
 	_show("game")
 
 
+# ================================================================= ENDINGS SEEN
+
+func _endings_sub() -> String:
+	var cat := Meta.endings_catalog()
+	var n := 0
+	for e in cat:
+		if e["seen"]:
+			n += 1
+	return "%d of %d found" % [n, cat.size()]
+
+
+func _show_endings() -> void:
+	var body := _big_popup(900, "🧭", "Endings seen", _endings_sub() + ". Some are hidden until you reach them.")
+	var sc := ScrollContainer.new()
+	sc.custom_minimum_size = Vector2(0, 520)
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	var col := U.vb(8)
+	col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sc.add_child(col)
+	body.add_child(sc)
+	var road := ""
+	for e in Meta.endings_catalog():
+		if str(e["road"]) != road:
+			road = str(e["road"])
+			col.add_child(U.section("%s  %s" % [e["icon"], road]))
+		var row := U.hb(10)
+		row.add_child(U.lbl("✅" if e["seen"] else "❔", "Emoji", 22))
+		var tv := U.vb(0)
+		tv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		if e["seen"]:
+			tv.add_child(U.lbl("%s  (×%d)" % [e["title"], e["n"]], "Bold", 18))
+			tv.add_child(U.lbl("“%s”  — %s" % [e["epitaph"], e["who"]], "Dim", 14, true))
+		else:
+			tv.add_child(U.lbl("Not yet found", "Dim", 18))
+		row.add_child(tv)
+		col.add_child(row)
+
+
+# ================================================================= SHARING
+
+## Draws the finished life as one image, saves it, and puts the text on the clipboard.
+func _share_life(entry: Dictionary) -> void:
+	var card: Control = preload("res://scenes/share_card.gd").build(entry)
+	var vp := SubViewport.new()
+	vp.size = Vector2i(1080, 620)
+	vp.transparent_bg = false
+	vp.render_target_update_mode = SubViewport.UPDATE_ONCE
+	vp.add_child(card)
+	add_child(vp)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	var img := vp.get_texture().get_image()
+	var dir := (OS.get_environment("OML_USER_DIR") if OS.get_environment("OML_USER_DIR") != "" else "user:/") + "/shares"
+	DirAccess.make_dir_recursive_absolute(dir)
+	var nm := str(entry.get("name", "life")).to_lower().replace(" ", "_")
+	var path := "%s/%s_%d.png" % [dir, nm, int(Time.get_unix_time_from_system())]
+	var err := img.save_png(path)
+	vp.queue_free()
+	DisplayServer.clipboard_set(preload("res://scenes/share_card.gd").share_text(entry))
+	var real := ProjectSettings.globalize_path(path)
+	_toast("📸", "Saved" if err == OK else "Couldn't save the picture", ("Picture: %s\nThe text is on your clipboard." % real) if err == OK else "The text is on your clipboard.", ThemeManager.c("good") if err == OK else ThemeManager.c("warn"))
+	last_share = real
+
+
+var last_share := ""
+
+
 # ================================================================= PRISON LIFE
 
 var pz := {}
@@ -1633,6 +1700,7 @@ func _panel_more_pet() -> void:
 	_add(U.row("🎁", "Daily Heirloom", "Ready to open!" if Goals.daily_available() else "Next in " + Goals.fmt_left(Goals.seconds_left("daily")), func(): SP.show_heirloom()))
 	_add(U.row("🎯", "Missions", ("%d ready to claim! · " % ready if ready > 0 else "") + "Daily, weekly and monthly goals", _show_missions))
 	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
+	_add(U.row("🧭", "Endings seen", _endings_sub(), _show_endings))
 	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
 	_add(U.row("⚙️", "Settings", "Sound, effects, motion, display", func(): _open_panel(_panel_settings)))
@@ -2165,6 +2233,7 @@ func _panel_more() -> void:
 	_add(U.row("🎁", "Daily Heirloom", "Ready to open!" if Goals.daily_available() else "Next in " + Goals.fmt_left(Goals.seconds_left("daily")), func(): SP.show_heirloom()))
 	_add(U.row("🎯", "Missions", ("%d ready to claim! · " % ready if ready > 0 else "") + "Daily, weekly and monthly goals", _show_missions))
 	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
+	_add(U.row("🧭", "Endings seen", _endings_sub(), _show_endings))
 	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
 	_add(U.row("🌳", "Family Tree", "Your bloodline at a glance", _show_family_tree))
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
@@ -2624,6 +2693,11 @@ func _fill_death(entry: Dictionary) -> void:
 		rb.custom_minimum_size = Vector2(0, 56)
 		rb.tooltip_text = "Crawl out as a Revenant. Unfinished business awaits."
 		lv.add_child(rb)
+	var shb := U.btn("📸  Share this life", func(): _share_life(entry), "Row")
+	shb.custom_minimum_size = Vector2(0, 46)
+	shb.name = "ShareBtn"
+	shb.tooltip_text = "Save a picture of this life and copy its summary to your clipboard"
+	lv.add_child(shb)
 	var nb := U.btn("Start New Life", func(): _open_new_life(), "Primary")
 	nb.custom_minimum_size = Vector2(0, 52)
 	lv.add_child(nb)

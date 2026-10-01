@@ -42,8 +42,30 @@ func record_death(entry: Dictionary) -> void:
 	var rn: String = entry.get("ribbon", {}).get("name", "")
 	if rn != "":
 		meta[key][rn] = int(meta[key].get(rn, 0)) + 1
+	var end: Dictionary = entry.get("ending", {})
+	if not end.is_empty():
+		if not meta.has("endings"):
+			meta["endings"] = {}
+		var ek := str(end.get("id", ""))
+		var rec: Dictionary = meta["endings"].get(ek, {"n": 0, "name": str(entry.get("name", "")), "age": int(entry.get("age", 0))})
+		rec["n"] = int(rec.get("n", 0)) + 1
+		rec["name"] = str(entry.get("name", ""))
+		rec["age"] = int(entry.get("age", 0))
+		meta["endings"][ek] = rec
 	check_challenge(true)
 	save()
+
+
+## Every ending in the game, with whether this player has found it.
+func endings_catalog() -> Array:
+	var out: Array = []
+	var seen: Dictionary = meta.get("endings", {})
+	for path in Arcs.ARCS.keys():
+		var a: Dictionary = Arcs.ARCS[path]
+		for e in a["endings"]:
+			var id := str(e["id"])
+			out.append({"path": path, "icon": str(a["icon"]), "road": str(a["title"]), "id": id, "title": str(e["title"]), "epitaph": str(e["epitaph"]), "seen": seen.has(id), "n": int(seen.get(id, {}).get("n", 0)), "who": str(seen.get(id, {}).get("name", ""))})
+	return out
 
 
 func challenge(id: String) -> Dictionary:
