@@ -163,6 +163,23 @@ func _process(delta: float) -> void:
 			if cool <= 0 and g.step_i < g.STEPS.size():
 				cool = 0.8
 				g._tool(int(g.STEPS[g.step_i][2]))
+		"pr_parole":
+			if cool <= 0 and not g.locked and g.round_i <= g.ROUNDS:
+				cool = 0.25
+				g._answer(g.TONES.find(g.cue_tone))
+		"pr_shakedown":
+			if cool <= 0 and not g.done:
+				cool = 0.1
+				for k in range(g.items.size()):
+					if g.items[k]["tell"] and not g.picked.has(k):
+						g._toggle(k)
+						break
+				if g.picked.size() >= g.NEED:
+					g._seize()
+		"pr_standoff":
+			if cool <= 0 and not g.locked and not g.done:
+				cool = 0.1
+				g._move(["listen", "reason", "offer"].find(g.need))
 		"pet_pounce":
 			if g.state == "up" and cool <= 0:
 				cool = 0.15

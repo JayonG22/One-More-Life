@@ -13,10 +13,12 @@ const TYPES := {
 	"colonist": {"name": "Space Colonist", "icon": "🪐", "desc": "Live on Mars where oxygen, rations, settlers and colony decisions matter every year."},
 	"traveler": {"name": "Time Traveler", "icon": "⌛", "desc": "Begin in 1850, 1920 or 1970. Jobs, technology, prices and events move with history."},
 	"pet": {"name": "Pets Life", "icon": "🐾", "desc": "Live as a dog, cat, rabbit, parrot or horse. A separate mode: no jobs, no money, only your people."},
+	"prisoner": {"name": "Prisoner", "icon": "⛓️", "desc": "Serve a sentence. Standing, gangs, parole, an appeal, a plan, and the people outside who go on without you."},
+	"guard": {"name": "Guard", "icon": "🗝️", "desc": "Work the walls. Rank, keys, temptation, and what you do when it kicks off."},
 }
 
 ## Modes that run their own year and their own events instead of the human ones.
-const SEPARATE := ["pet"]
+const SEPARATE := ["pet", "prisoner", "guard"]
 signal transformed(kind: String)
 
 const KINDS := ["royal_speech", "feed", "patrol", "heist", "nemesis", "brew", "revenge"]
@@ -47,6 +49,14 @@ func is_type(t: String) -> bool:
 
 func separate() -> bool:
 	return SEPARATE.has(kind())
+
+
+## The autoload that runs the current separate mode, or null.
+func mode():
+	match kind():
+		"pet": return Pets
+		"prisoner", "guard": return Prison
+	return null
 
 
 func handles(k: String) -> bool:
@@ -87,6 +97,7 @@ func title() -> String:
 		"super": return str(l.get("alias", "Masked Hero"))
 		"pirate", "colonist", "traveler": return Expansion.life_title()
 		"pet": return Pets.title()
+		"prisoner", "guard": return Prison.title()
 	return ""
 
 
@@ -116,6 +127,8 @@ func apply_start(opts: Dictionary) -> void:
 			GameState.counter("life_" + path)
 		"pet":
 			Pets.setup(opts)
+		"prisoner", "guard":
+			Prison.setup(opts)
 
 
 func become(t: String, opts: Dictionary = {}) -> void:
@@ -213,6 +226,11 @@ func yearly() -> void:
 		Pets.yearly()
 		Arcs.yearly()
 		return
+	if kind() == "prisoner" or kind() == "guard":
+		Prison.yearly()
+		if GameState.is_alive():
+			Arcs.yearly()
+		return
 	Undeath.yearly()
 	Destiny.yearly()
 	var p := GameState.player
@@ -263,6 +281,8 @@ func death_check() -> String:
 			return Expansion.life_death_check()
 		"pet":
 			return Pets.death_check()
+		"prisoner", "guard":
+			return Prison.death_check()
 	return "__natural"
 
 
@@ -1318,6 +1338,8 @@ func status_lines() -> Array:
 			out.append_array(Expansion.life_status())
 		"pet":
 			out.append_array(Pets.status_lines())
+		"prisoner", "guard":
+			out.append_array(Prison.status_lines())
 	if Arcs.has_arc():
 		var al: Array = Arcs.status_line()
 		if not al.is_empty():

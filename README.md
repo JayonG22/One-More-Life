@@ -1,8 +1,18 @@
-# ONE MORE LIFE — v1.0.0
+# ONE MORE LIFE — v1.2.0
 
 A life simulator in the spirit of BitLife, built in Godot 4.4, where every choice echoes. Everything is unlocked. No ads, no store, no passes.
 
+> **v1.2.0 — three game modes.** The title screen opens on **Choose your game mode**: **Human Life** (the classic), **Pets Life** (live as a dog, cat, rabbit, parrot or horse — v1.1) and **Prison Life** (serve a sentence, or work the walls as a guard — v1.2). Each is its own game with its own year, events, screens and endings. See `CHANGELOG-v1.1.0.md` and `CHANGELOG-v1.2.0.md`.
+>
 > **v1.0.0.** The baseline game is finished: 760 events and 2,231 choices (none with a single outcome, none with fewer than three options), a real job market and workplace, a care pathway, renting, commuting and keeping up, six life paths with chapters and endings, 22 minigames that a bot has proven winnable, keyboard play, and builds for Windows, macOS and Linux. See `CHANGELOG-v1.0.0.md`. What's next is in `ROADMAP.md`.
+
+## Game modes
+
+| Mode | What you are | Ends |
+| --- | --- | --- |
+| **Human Life** | A person, from birth. Jobs, money, family, nine life paths. | Death, or a path's ending |
+| **Pets Life** (v1.1) | A dog, cat, rabbit, parrot or horse, in one of seven beginnings. A household seen from the floor. | A good life, a hero, a champion, a stray king, lost, an old animal in the sun. Then *another life in the same house.* |
+| **Prison Life** (v1.2) | A prisoner (seven stories) or a guard (six). Gangs, parole, an appeal, a jailbreak and its manhunt; a rank ladder, the keys, Internal Affairs. | Paroled · Exonerated · A Ghost · Served it all · Warden · Whistleblower · and eight more |
 
 ## Open and play
 
@@ -17,7 +27,7 @@ The window opens at 1600×900. The layout is designed natively for 1920×1080 an
 | Key | Action |
 | --- | --- |
 | Space | Age up (or press the selected button, in keyboard mode) |
-| 1–6 | Activities, People, Work, Assets, your Life Path (when you have one), More |
+| 1–6 | The six tabs along the bottom of the screen (in Human Life: Activities, People, Work, Assets, your Life Path, More; each mode has its own six) |
 | Tab / arrow keys | Turn on keyboard navigation and move between things |
 | Enter / Space | Select |
 | Esc / Backspace | Back in the right-hand menu |

@@ -10,7 +10,7 @@ const TIER_STARS := {"bronze": 5, "silver": 10, "gold": 20, "platinum": 40}
 const TIER_COLORS := {"bronze": Color("#c98a4b"), "silver": Color("#b8c2cc"), "gold": Color("#f2c94c"), "platinum": Color("#9be7ff")}
 const CATEGORIES := [["life", "🌱", "Life"], ["family", "👪", "Family & Love"], ["wealth", "💰", "Wealth"], ["career", "💼", "Career"],
 	["fame", "⭐", "Fame"], ["crime", "🦹", "Crime"], ["empires", "🏢", "Empires"], ["outdoors", "🌲", "Outdoors"],
-	["minigames", "🎮", "Minigames"], ["grit", "🩸", "Grit"], ["legacy", "🏛️", "Legacy"], ["paths", "🌙", "Other Lives"], ["pets", "🐾", "Pets Life"], ["secret", "❔", "Secret"]]
+	["minigames", "🎮", "Minigames"], ["grit", "🩸", "Grit"], ["legacy", "🏛️", "Legacy"], ["paths", "🌙", "Other Lives"], ["pets", "🐾", "Pets Life"], ["prison", "⛓️", "Prison Life"], ["secret", "❔", "Secret"]]
 const PERIODS := {"daily": {"count": 3, "stars": 5, "bonus": 5, "name": "Daily"}, "weekly": {"count": 5, "stars": 15, "bonus": 20, "name": "Weekly"}, "monthly": {"count": 8, "stars": 50, "bonus": 75, "name": "Monthly"}}
 
 const TITLES := {
@@ -123,6 +123,7 @@ func facts() -> Dictionary:
 	f["married"] = p["partner_status"] == "married" or GameState.has_flag("married_once") or GameState.get_counter("marriages") > 0
 	f["widowed"] = GameState.has_flag("widowed")
 	f["species_lived"] = Dictionary(Meta.meta.get("pets_species", {})).size()
+	f["roles_lived"] = Dictionary(Meta.meta.get("prison_roles", {})).size()
 	f["generation"] = int(p["generation"])
 	f["prison_total"] = int(p["prison_total"])
 	f["record"] = p["record"].size()
@@ -265,7 +266,8 @@ func check(at_death: bool = false) -> void:
 				continue
 			# a separate mode is judged only by its own achievements, and the
 			# human game never is
-			if str(a.get("mode", "")) != mode:
+			var am = a.get("mode", "")
+			if not ((am is Array and Array(am).has(mode)) or (not (am is Array) and str(am) == mode)):
 				continue
 			if _meets(a, f, at_death):
 				g["ach"][a["id"]] = {"when": Time.get_unix_time_from_system(), "who": "%s %s" % [GameState.player["first"], GameState.player["last"]]}

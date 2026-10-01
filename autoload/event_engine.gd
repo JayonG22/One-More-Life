@@ -94,6 +94,8 @@ func _age_up_separate() -> void:
 	pending.clear()
 	GameState.begin_year()
 	Lives.yearly()
+	if not GameState.is_alive():
+		return
 	var cause := _death_check()
 	if cause != "":
 		kill(cause)
@@ -603,9 +605,9 @@ func _death_check() -> String:
 	return ""
 
 
-func kill(cause: String) -> void:
+func kill(cause: String, force: bool = false) -> void:
 	var p := GameState.player
-	if Grit.has_boon("second_wind") and not GameState.has_flag("second_wind_used") and int(p["age"]) < 100:
+	if not force and Grit.has_boon("second_wind") and not GameState.has_flag("second_wind_used") and int(p["age"]) < 100:
 		GameState.set_flag("second_wind_used")
 		p["stats"]["health"] = maxf(25.0, GameState.stat("health"))
 		GameState.add_log("I should have died of %s. Somehow, I didn't." % cause)
@@ -777,6 +779,12 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 			return false
 	for pt2 in cond.get("not_pet", []):
 		if Pets.tag(str(pt2)):
+			return false
+	for prt in cond.get("pr", []):
+		if not Prison.tag(str(prt)):
+			return false
+	for prt2 in cond.get("not_pr", []):
+		if Prison.tag(str(prt2)):
 			return false
 	if cond.has("has_car") and bool(cond["has_car"]) != (p["car"] != ""):
 		return false
@@ -1206,6 +1214,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Arcs.apply(o["arc"])
 	if o.has("pet"):
 		Pets.apply(o["pet"])
+	if o.has("pr"):
+		Prison.apply(o["pr"])
 	if o.has("empire"):
 		Empires.outcome(o["empire"])
 	if o.has("become"):

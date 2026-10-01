@@ -15,8 +15,8 @@ save/load, and generate meaningfully different life stories.
 | **v0.15** | **Everything From Real Life** | **shipped** — see `CHANGELOG-v0.15.0.md` |
 | **v0.16** | **Work and Body** | **shipped** — see `CHANGELOG-v0.16.0.md` |
 | **v1.0** | **One More Life** | **shipped** — see `CHANGELOG-v1.0.0.md` |
-| v1.1 | Pets Life | next — separate mode, designed below |
-| v1.2 | Prison Life | after that — separate mode, designed below |
+| **v1.1** | **Pets Life** | **shipped** — see `CHANGELOG-v1.1.0.md` |
+| **v1.2** | **Prison Life** | **shipped** — see `CHANGELOG-v1.2.0.md` |
 | v1.3+ | Whatever is next | the architecture takes new modes cleanly |
 
 ### The 1.0 release gates, and what met them
@@ -52,7 +52,13 @@ its own systems, its own content file, its own arc of chapters and endings, its
 own gate. A mode is a *life kind*: it lives in `Lives`, ages in `Real`, and
 writes its own ending into the same legacy and tombstone as everyone else.
 
-### v1.1 — Pets Life  (live as the animal)
+### v1.1 — Pets Life  (live as the animal) — SHIPPED
+
+> The design below is the brief. What actually shipped, and what was held back, is
+> in `CHANGELOG-v1.1.0.md`. Not built from this brief: a multi-pet pack hierarchy
+> within a household, breeding with puppies as the next life (the next life is
+> *another animal in the same house* instead), seasons, and guide / police / search
+> roles beyond the calling system.
 
 You are a dog, a cat, a rabbit, a parrot, a horse. The humans are the cast; their
 lives happen above your head and you only ever see the part that reaches the floor.
@@ -85,7 +91,12 @@ agility. All keyboard-playable, all with a bot, all inside the existing gate.
 **Endings.** Best Friend; Hero; Show Champion; Stray King; Lost; Old Dog in the
 Sun; Last Walk. The puppy you leave behind is the next life.
 
-### v1.2 — Prison Life  (prisoner or guard)
+### v1.2 — Prison Life  (prisoner or guard) — SHIPPED
+
+> The brief below. See `CHANGELOG-v1.2.0.md` for what shipped. Not built from this
+> brief: a separate inmate-job economy beyond the commissary, a literal trustee
+> status, a "re-entry" phase after release (the story closes at the gate, with an
+> epilogue), and executions or the death penalty (by decision).
 
 A mode with two doors into the same building. The institution is the same; what
 it means from each side is not.

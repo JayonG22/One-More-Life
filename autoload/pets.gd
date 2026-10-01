@@ -1192,6 +1192,47 @@ func side_labels() -> Dictionary:
 	return SIDE_LABELS
 
 
+func tabs() -> Array:
+	return [["🐾", "Do", "pet:home"], ["🏠", "People", "pet:house"], ["🏅", "Calling", "pet:calling"], ["🌳", "World", "pet:wild"], ["🛤️", "Road", "real:arc"], ["⋯", "More", "more"]]
+
+
+func quick() -> Array:
+	return [["🥣", "Care", "pet:care"], ["🎾", "Play", "pet:play"]]
+
+
+func balance_label() -> String:
+	return "Belly"
+
+
+func money_text() -> String:
+	return "%d%%" % int(float(L().get("hunger", 50)))
+
+
+## -1 bad, 0 fine, 1 a warning
+func money_state() -> int:
+	var h := float(L().get("hunger", 50))
+	return -1 if h < 25.0 else (1 if h > 88.0 else 0)
+
+
+func tracks() -> Array:
+	var l := L()
+	var out: Array = []
+	for tr in [["💞", "Bond", "bond"], ["📍", "Territory", "territory"], ["🎓", "Obedience", "obedience"], ["👃", "Instinct", "instinct"], ["🏡", "Belonging", "belonging"]]:
+		out.append([tr[0], tr[1], float(l.get(str(tr[2]), 0))])
+	return out
+
+
+func extra_text() -> String:
+	var extra := ""
+	var arc: Array = Arcs.status_line()
+	if not arc.is_empty():
+		extra += str(arc[0]) + "\n"
+	var tl: Array = L().get("tricks", [])
+	if not tl.is_empty():
+		extra += "🎓 " + ", ".join(tl.slice(0, 4)) + ("…" if tl.size() > 4 else "") + "\n"
+	return extra.strip_edges()
+
+
 func header_occ() -> String:
 	var l := L()
 	return "%s %s · %s" % [str(sp()["icon"]), title().capitalize(), stage_name()]
@@ -1256,7 +1297,9 @@ func continue_info() -> Dictionary:
 ## The pet's life, as the death screen and the graveyard want to describe it.
 func entry_extra() -> Dictionary:
 	var l := L()
-	return {"species": species(), "icon": str(sp()["icon"]), "breed": str(l.get("breed", "")), "origin": str(ORIGINS[str(l["origin"])]["name"]),
+	var owner_txt := owner_name("")
+	var card: Array = [["Kind", "%s · %s" % [str(l.get("breed", "")), species().capitalize()]], ["Started", str(ORIGINS[str(l["origin"])]["name"])], ["Calling", str(ROLES[str(l.get("role", "companion"))]["name"])], ["Loved by", ((owner_txt + " " + str(_p().get("last", ""))).strip_edges()) if owner_txt != "" else "No one in particular"]]
+	return {"card": card, "title": "Death / Legacy", "species": species(), "icon": str(sp()["icon"]), "breed": str(l.get("breed", "")), "origin": str(ORIGINS[str(l["origin"])]["name"]),
 		"bond": int(l.get("bond", 0)), "tricks": Array(l.get("tricks", [])).size(), "role": str(ROLES[str(l.get("role", "companion"))]["name"]),
 		"heroics": int(l.get("heroics", 0)), "titles": int(l.get("titles", 0)), "friends": int(l.get("friends_made", 0)),
 		"owner": owner_name(""), "house": str(_p().get("last", ""))}

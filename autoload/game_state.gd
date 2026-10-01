@@ -328,8 +328,8 @@ func relation_label(id: String) -> String:
 func _relation_base(id: String) -> String:
 	var n := npc(id)
 	var g: String = n.get("gender", "male")
-	if Pets.active():
-		var pn := Pets.relation_name(str(n.get("relation", "")), g)
+	if Lives.separate():
+		var pn: String = Lives.mode().relation_name(str(n.get("relation", "")), g)
 		if pn != "":
 			return pn
 	var extra := Bonds.relation_name(str(n.get("relation", "")), g)
@@ -430,6 +430,8 @@ func year_now() -> int:
 func net_worth() -> int:
 	if Pets.active():
 		return 0
+	if Prison.active():
+		return int(player["money"])
 	var w: int = int(player["money"]) - int(player["loan"]) - int(player["mortgage"]) - Lending.total_owed()
 	w += int(player["house_value"])
 	if player["car"] != "":
@@ -441,8 +443,8 @@ func net_worth() -> int:
 
 
 func occupation_label() -> String:
-	if Pets.active():
-		return Pets.header_occ()
+	if Lives.separate():
+		return Lives.mode().header_occ()
 	if in_prison():
 		return "Inmate"
 	if not player.get("career", {}).is_empty():
@@ -463,6 +465,8 @@ func occupation_label() -> String:
 func life_stage() -> String:
 	if Pets.active():
 		return Pets.stage_name()
+	if Prison.active():
+		return Prison.rank_name()
 	var a: int = player["age"]
 	if a < 5: return "Infant"
 	if a < 13: return "Child"
@@ -697,8 +701,8 @@ func fmt_money_compare(v: int) -> String:
 # ---------------------------------------------------------------- death & legacy
 
 func compute_ribbon() -> Dictionary:
-	if Pets.active():
-		return Pets.ribbon()
+	if Lives.separate():
+		return Lives.mode().ribbon()
 	var p := player
 	var age: int = p["age"]
 	var lf: Dictionary = p.get("life", {})
@@ -821,8 +825,8 @@ func compute_ribbon() -> Dictionary:
 
 
 func build_story() -> String:
-	if Pets.active():
-		return Pets.story()
+	if Lives.separate():
+		return Lives.mode().story()
 	var p := player
 	var he := pron(p["gender"], "he").capitalize()
 	var lines: Array = []
@@ -854,7 +858,8 @@ func first_of_any(relation: String) -> String:
 func finalize_death(cause: String) -> Dictionary:
 	player["alive"] = false
 	player["cause"] = cause
-	add_log("I died of %s at age %d." % [cause, int(player["age"])])
+	if not (Prison.active() and str(Prison.L().get("outcome", "")) != ""):
+		add_log("I died of %s at age %d." % [cause, int(player["age"])])
 	player["ribbon"] = compute_ribbon()
 	var entry := {
 		"name": "%s %s" % [player["first"], player["last"]],
@@ -874,9 +879,12 @@ func finalize_death(cause: String) -> Dictionary:
 		"difficulty": player.get("difficulty", "real"),
 		"consequences": Grit.consequences(),
 	}
-	if Pets.active():
-		entry["pet"] = Pets.entry_extra()
-		entry["net_worth"] = 0
+	if Lives.separate():
+		var ex: Dictionary = Lives.mode().entry_extra()
+		entry["mode"] = ex
+		if Pets.active():
+			entry["pet"] = ex
+			entry["net_worth"] = 0
 	var ending := Arcs.ending_entry()
 	if not ending.is_empty():
 		entry["ending"] = ending
@@ -889,6 +897,8 @@ func finalize_death(cause: String) -> Dictionary:
 func last_occupation() -> String:
 	if Pets.active():
 		return str(Pets.ROLES[str(Pets.L().get("role", "companion"))]["name"])
+	if Prison.active():
+		return Prison.rank_name()
 	if has_job():
 		return player["job"]["title"]
 	if player["retired"] and not player["job_history"].is_empty():

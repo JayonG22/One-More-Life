@@ -41,7 +41,7 @@ func _life(path: String) -> void:
 
 
 func _structure() -> void:
-	ok(Arcs.ARCS.size() == 7, "expected seven arcs, found %d" % Arcs.ARCS.size())
+	ok(Arcs.ARCS.size() == 9, "expected nine arcs, found %d" % Arcs.ARCS.size())
 	for path in Arcs.ARCS.keys():
 		var a: Dictionary = Arcs.ARCS[path]
 		ok(a["chapters"].size() == 5, "%s has %d chapters" % [path, a["chapters"].size()])
@@ -66,7 +66,7 @@ func _structure() -> void:
 ## The needs of each chapter must be things a life of that path really has.
 func _progress() -> void:
 	for path in Arcs.ARCS.keys():
-		if path == "pet":
+		if path in ["pet", "prisoner", "guard"]:
 			continue
 		_life(path)
 		var l := Lives.life()
@@ -163,7 +163,7 @@ func _events() -> void:
 	# play every chapter event, every choice, on a life of its path
 	var played := 0
 	for path in Arcs.ARCS.keys():
-		if path == "pet":
+		if path in ["pet", "prisoner", "guard"]:
 			continue
 		for n in range(1, 6):
 			var def: Dictionary = ContentDB.events_by_id["arc.%s.%d" % [path, n]]

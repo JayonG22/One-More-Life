@@ -12,7 +12,7 @@ config_version=5
 
 config/name="One More Life"
 config/description="A life simulator where every choice echoes."
-config/version="1.1.0"
+config/version="1.2.0"
 config/icon="res://icon.png"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
@@ -74,6 +74,7 @@ Body="*res://autoload/body.gd"
 Arcs="*res://autoload/arcs.gd"
 Real="*res://autoload/real.gd"
 Pets="*res://autoload/pets.gd"
+Prison="*res://autoload/prison.gd"
 Fixtures="*res://autoload/fixtures.gd"
 SaveManager="*res://autoload/save_manager.gd"
 

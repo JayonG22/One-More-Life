@@ -1040,6 +1040,9 @@ func resolve_play(score: float, detail: Dictionary, pl: Dictionary) -> void:
 	if Lives.handles(kind):
 		Lives.resolve(kind, score, detail, pl)
 		return
+	if Prison.handles(kind):
+		Prison.resolve(kind, score, detail, pl)
+		return
 	match kind:
 		"actor_audition":
 			if c.is_empty():

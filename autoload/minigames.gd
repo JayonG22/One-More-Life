@@ -58,6 +58,12 @@ const DEFS := {
 		"how": "Ten obstacles slide toward you. Jump hurdles with ↑ / W / Space; duck through tunnels with ↓ / S.\nPress while the obstacle is inside the green box. The label on each obstacle says which key."},
 	"pet_herd": {"name": "Herding", "icon": "🐑", "script": "res://scenes/minigames/mg_pet_herd.gd",
 		"how": "Move with the arrow keys or WASD. Sheep step away from you, so stand on the side of a sheep away from the pen and let it walk in.\nGet all five penned before time runs out."},
+	"pr_parole": {"name": "The Parole Board", "icon": "⚖️", "script": "res://scenes/minigames/mg_pr_parole.gd",
+		"how": "Five questions. Each is listened to for one thing: that you own what you did, that you've used the time, or that you know where you'll sleep on the first night. The board's face shows which.\nAnswer with 1 (own it), 2 (evidence) or 3 (plan). Match what they're waiting for."},
+	"pr_shakedown": {"name": "Cell Search", "icon": "🔦", "script": "res://scenes/minigames/mg_pr_shakedown.gd",
+		"how": "Twelve things in a cell; three are not what they seem, and the descriptions give them away (a glued seam, a weight that's wrong).\nMark three with the mouse or keys 1–9, then press Enter to seize. Wrong items cost you."},
+	"pr_standoff": {"name": "Talk Him Down", "icon": "🗣️", "script": "res://scenes/minigames/mg_pr_standoff.gd",
+		"how": "He says one thing each turn, and it tells you what he needs: to be listened to (1), given a reason (2) or offered something (3). Threatening (4) almost never works.\nBring agitation down and trust up in eight turns."},
 	"surgery": {"name": "Operating Room", "icon": "🔪", "script": "res://scenes/minigames/mg_surgery.gd",
 		"how": "Keep oxygen, pressure and bleeding stable while completing the prompted procedure steps. Use keys 1–4 for the instruments; wrong choices can destabilize the patient."},
 }

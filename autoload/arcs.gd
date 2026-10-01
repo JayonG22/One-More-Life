@@ -118,6 +118,45 @@ const ARCS := {
 			{"id": "pet_good", "title": "A Good Life", "need": [], "epitaph": "Short, as they all are, and good.", "text": "A life is the length it is. This one was full of walks, in the sense that matters, and of someone's hand on a warm head."},
 		],
 	},
+	"prisoner": {
+		"title": "Time", "icon": "⛓️",
+		"chapters": [
+			{"id": "fish", "title": "Fresh fish", "blurb": "Survive your first year inside.", "need": [["served", ">=", 1]]},
+			{"id": "side", "title": "Whose side?", "blurb": "Find protection: join a gang, or reach respect 40 on your own.", "need_any": [["gang_rank", ">=", 1], ["respect", ">=", 40]]},
+			{"id": "hope", "title": "Something to hope for", "blurb": "Finish a programme, start a plan, or build an appeal.", "need_any": [["programs_n", ">=", 1], ["escape", ">=", 1], ["appeal", ">=", 30]]},
+			{"id": "walls", "title": "The test of the walls", "blurb": "Live through a riot, an attack or the hole.", "need_any": [["riots", ">=", 1], ["attacks", ">=", 1], ["solitary_years", ">=", 1]]},
+			{"id": "door", "title": "The door", "blurb": "Get as near the outside as it gets: a hearing, a plan that is ready, or an appeal nearly won.", "need_any": [["hearings", ">=", 1], ["escape", ">=", 4], ["appeal", ">=", 70]]},
+		],
+		"endings": [
+			{"id": "pr_exonerated", "title": "Exonerated", "need": [["exonerated", "==", true]], "epitaph": "The truth took years. It arrived.", "text": "The court said it plainly, in front of people who had said the opposite. There was a sum of money and a handshake and a long, dull argument about what an apology is. They went home to a town that had changed its roads."},
+			{"id": "pr_ghost", "title": "A Ghost", "need": [["escaped", "==", true]], "epitaph": "Out, and never found.", "text": "A different name in a different town, a window onto a field, and a habit, kept for the rest of their life, of sitting where they could see the door. The file stayed open. Nobody was ever sent."},
+			{"id": "pr_fallen", "title": "The Other Side of the Door", "need": [["ex_guard", "==", true]], "epitaph": "Knew the building from both sides.", "text": "They knew every lock by sound and every officer by name. So did everyone else. It was a long sentence in a building that remembered exactly who they had been, and what the badge had meant."},
+			{"id": "pr_paroled", "title": "Paroled", "need": [["outcome", "==", "paroled"]], "epitaph": "A board believed them.", "text": "The envelope was read aloud twice. There were conditions and a curfew and an officer to report to. They kept every one, and never went back."},
+			{"id": "pr_served", "title": "Every Day of It", "need": [["outcome", "==", "served"]], "epitaph": "Nobody gave them anything.", "text": "The gate opened at 7.40 on a Tuesday, with a clear plastic bag and a travel warrant. Nobody had given them anything. They walked to the bus stop without looking back, and then, at the corner, they did."},
+			{"id": "pr_legend", "title": "Old Head", "need": [["respect", ">=", 85]], "epitaph": "The block is quieter without them.", "text": "Three wings knew the name and one of them was named for it. When it was over there was a silence on the landing, which, by the standards of the building, was a eulogy."},
+			{"id": "pr_died", "title": "Never Out", "need": [], "epitaph": "The building kept them.", "text": "A number on a form and a name in a chaplain's notebook. A letter went to the address on file. The cell was cleaned, and by the end of the month it had someone else in it."},
+		],
+	},
+	"guard": {
+		"title": "The Keys", "icon": "🗝️",
+		"chapters": [
+			{"id": "probation", "title": "Probation", "blurb": "Complete your first year on the staff.", "need": [["served", ">=", 1]]},
+			{"id": "incident", "title": "The first incident", "blurb": "Handle a real incident on the wing.", "need": [["incidents", ">=", 1]]},
+			{"id": "kind", "title": "What kind of officer", "blurb": "Show what you are: take a favour, earn a commendation, use force you cannot justify, or tell.", "need_any": [["corruption", ">=", 1], ["commend", ">=", 1], ["force_bad", ">=", 1], ["whistle", "==", true]]},
+			{"id": "stripes", "title": "Stripes", "blurb": "Become a Sergeant.", "need": [["rank", ">=", 3]]},
+			{"id": "long_shift", "title": "The long shift", "blurb": "Reach Captain, or give the service fifteen years.", "need_any": [["rank", ">=", 5], ["served", ">=", 15]]},
+		],
+		"endings": [
+			{"id": "gd_warden", "title": "Warden", "need": [["outcome", "==", "warden"]], "epitaph": "Ran the building. It ran them.", "text": "The office was bigger than it looked from outside, and quieter. They signed the last order and gave the keys, one at a time, to the officer who was ready."},
+			{"id": "gd_whistle", "title": "Whistleblower", "need": [["whistle", "==", true]], "epitaph": "Told, and paid for it.", "text": "It cost them the union, the pension and the table in the canteen. Eleven years later a government inquiry used the word 'vindicated', and a young officer, who had never heard the story, wrote them a letter."},
+			{"id": "gd_kingpin", "title": "The Man With the Keys", "need": [["corruption", ">=", 5]], "epitaph": "Nothing came in without a price.", "text": "A bungalow, a boat, and a habit of looking at the horizon. There was never a charge. The wing, however, kept an exact record, and told the story for years."},
+			{"id": "gd_hero", "title": "Hero of the Wing", "need": [["commend", ">=", 3]], "epitaph": "Was there when it counted.", "text": "Three commendations, one of them framed. Men who had been in their custody came to the funeral and stood at the back with their hats in their hands."},
+			{"id": "gd_fired", "title": "Dismissed", "need": [["outcome", "==", "fired"]], "epitaph": "A box and an escort to the car park.", "text": "A cardboard box, a lanyard and a walk past people who found the floor interesting. They stood by the car for a long time, with the door open, and no idea at all of where to go."},
+			{"id": "gd_burned", "title": "Burned Out", "need": [["trauma", ">=", 80]], "epitaph": "Did the time on the other side.", "text": "They stopped sleeping, and then stopped noticing they didn't. The service sent a letter. A friend sent a better one. It was, in the end, the second that got answered."},
+			{"id": "gd_retired", "title": "Thirty Years", "need": [["outcome", "==", "retired"]], "epitaph": "A clock, a pension, a habit of facing the door.", "text": "A cake, a card signed by people who did not mean it equally, a clock. The keys went into a drawer. For the rest of their life they sat with their back to the wall in every restaurant."},
+			{"id": "gd_duty", "title": "In the Line of Duty", "need": [], "epitaph": "Their name is on the wall in the hall.", "text": "The flag was lowered. The wing was quiet for a full minute, which has never happened before or since. There is a plaque in the corridor, and officers touch it on the way past."},
+		],
+	},
 	"super": {
 		"title": "The Mask", "icon": "🦸",
 		"chapters": [
@@ -175,6 +214,7 @@ func _val(field: String):
 		"has_nemesis": return str(l.get("nemesis", "")) != ""
 		"overthrown": return bool(l.get("overthrown", false)) or GameState.has_flag("overthrown")
 		"tricks_n": return Array(l.get("tricks", [])).size()
+		"programs_n": return Array(l.get("programs", [])).size() if kind() == "prisoner" else 0
 		"senior": return Pets.is_senior() if kind() == "pet" else false
 		"lost": return bool(l.get("lost", false))
 	return l.get(field, 0)

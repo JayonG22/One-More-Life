@@ -1305,45 +1305,6 @@
   ]
  },
  {
-  "id": "prison_1",
-  "cat": "crime",
-  "tier": "bronze",
-  "icon": "⛓️",
-  "name": "Doing Time",
-  "desc": "Spend 1 year(s) in prison.",
-  "req": {
-   "prison_total": 1
-  }
- },
- {
-  "id": "prison_2",
-  "cat": "crime",
-  "tier": "silver",
-  "icon": "⛓️",
-  "name": "Hardened",
-  "desc": "Spend 10 year(s) in prison.",
-  "req": {
-   "prison_total": 10
-  },
-  "needs": [
-   "prison_1"
-  ]
- },
- {
-  "id": "prison_3",
-  "cat": "crime",
-  "tier": "gold",
-  "icon": "⛓️",
-  "name": "Lifer",
-  "desc": "Spend 25 year(s) in prison.",
-  "req": {
-   "prison_total": 25
-  },
-  "needs": [
-   "prison_2"
-  ]
- },
- {
   "id": "most_wanted",
   "cat": "crime",
   "tier": "gold",
@@ -4560,6 +4521,647 @@
   },
   "mode": "pet",
   "v": 19,
+  "hidden": true
+ },
+ {
+  "id": "prison_first",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "⛓️",
+  "name": "A Number, Not a Name",
+  "desc": "Begin a sentence.",
+  "req": {
+   "life_prisoner": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_y1",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "📅",
+  "name": "Fresh Fish No More",
+  "desc": "Serve a full year inside.",
+  "req": {
+   "prison_years": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_y5",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🗓️",
+  "name": "Five Inside",
+  "desc": "Serve five years in one sentence.",
+  "req": {
+   "prison_years": 5
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "needs": [
+   "prison_y1"
+  ]
+ },
+ {
+  "id": "prison_y10",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "⏳",
+  "name": "A Decade Inside",
+  "desc": "Serve ten years in one sentence.",
+  "req": {
+   "prison_years": 10
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "needs": [
+   "prison_y5"
+  ]
+ },
+ {
+  "id": "prison_y20",
+  "cat": "prison",
+  "tier": "platinum",
+  "icon": "🕰️",
+  "name": "Two Decades",
+  "desc": "Serve twenty years in one sentence.",
+  "req": {
+   "prison_years": 20
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "needs": [
+   "prison_y10"
+  ]
+ },
+ {
+  "id": "prison_gang",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🔗",
+  "name": "Colours",
+  "desc": "Join a gang.",
+  "req": {
+   "pr_joined": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_snitch",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🐀",
+  "name": "A Name for a Favour",
+  "desc": "Inform on someone.",
+  "req": {
+   "pr_snitch": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_hole",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🕳️",
+  "name": "The Hole",
+  "desc": "Spend a year in segregation.",
+  "req": {
+   "pr_solitary": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_hole3",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🧱",
+  "name": "A Regular in the Hole",
+  "desc": "Be in segregation three times in one sentence.",
+  "req": {
+   "pr_solitary": 3
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "needs": [
+   "prison_hole"
+  ]
+ },
+ {
+  "id": "prison_programs",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🎓",
+  "name": "Model Prisoner",
+  "desc": "Complete three programmes.",
+  "req": {
+   "pr_programs": 3
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_hearing",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "⚖️",
+  "name": "Before the Board",
+  "desc": "Face a parole hearing.",
+  "req": {
+   "pr_hearings": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_riot",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🔥",
+  "name": "In the Riot",
+  "desc": "Live through a riot as an inmate.",
+  "req": {
+   "pr_riots": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_attacked",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🩹",
+  "name": "Scars",
+  "desc": "Be attacked inside.",
+  "req": {
+   "pr_attacks": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_intel",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🕵️",
+  "name": "Knows Things",
+  "desc": "Gather eight pieces of intel.",
+  "req": {
+   "pr_intel": 8
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_break",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🚪",
+  "name": "The Night",
+  "desc": "Attempt a break.",
+  "req": {
+   "pr_breaks": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_out",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "🌫️",
+  "name": "Over the Wall",
+  "desc": "Get out of the building.",
+  "req": {
+   "pr_escapes": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "needs": [
+   "prison_break"
+  ]
+ },
+ {
+  "id": "prison_back",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🚓",
+  "name": "Brought Back",
+  "desc": "Be recaptured after a break.",
+  "req": {
+   "pr_recaptured": 1
+  },
+  "mode": "prisoner",
+  "v": 20
+ },
+ {
+  "id": "prison_end_exonerated",
+  "cat": "prison",
+  "tier": "platinum",
+  "icon": "⚖️",
+  "name": "Exonerated",
+  "desc": "Clear your name.",
+  "req": {
+   "ending_pr_exonerated": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_end_ghost",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "🌫️",
+  "name": "A Ghost",
+  "desc": "Escape and never be found.",
+  "req": {
+   "ending_pr_ghost": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_end_fallen",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "🔒",
+  "name": "The Other Side of the Door",
+  "desc": "End your days in the building you guarded.",
+  "req": {
+   "ending_pr_fallen": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_end_paroled",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🪪",
+  "name": "Paroled",
+  "desc": "Be believed by the board.",
+  "req": {
+   "ending_pr_paroled": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_end_served",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "📅",
+  "name": "Every Day of It",
+  "desc": "Serve a sentence in full.",
+  "req": {
+   "ending_pr_served": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_end_legend",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "👑",
+  "name": "Old Head",
+  "desc": "Die inside with the building's respect.",
+  "req": {
+   "ending_pr_legend": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_end_died",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🕯️",
+  "name": "Never Out",
+  "desc": "Die inside.",
+  "req": {
+   "ending_pr_died": 1
+  },
+  "mode": "prisoner",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_first",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🗝️",
+  "name": "Keys",
+  "desc": "Join the staff.",
+  "req": {
+   "life_guard": 1
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_y5",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "📅",
+  "name": "Five on the Wing",
+  "desc": "Serve five years on the staff.",
+  "req": {
+   "prison_years": 5
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_y15",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "⏳",
+  "name": "Fifteen Years",
+  "desc": "Serve fifteen years on the staff.",
+  "req": {
+   "prison_years": 15
+  },
+  "mode": "guard",
+  "v": 20,
+  "needs": [
+   "prison_g_y5"
+  ]
+ },
+ {
+  "id": "prison_g_y30",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "⏰",
+  "name": "Thirty Years",
+  "desc": "Serve thirty years on the staff.",
+  "req": {
+   "prison_years": 30
+  },
+  "mode": "guard",
+  "v": 20,
+  "needs": [
+   "prison_g_y15"
+  ]
+ },
+ {
+  "id": "prison_g_promo",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "📈",
+  "name": "Up the Ladder",
+  "desc": "Be promoted three times.",
+  "req": {
+   "gd_promotions": 3
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_commend",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🎖️",
+  "name": "Decorated",
+  "desc": "Earn three commendations.",
+  "req": {
+   "gd_commend": 3
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_saved",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "🕊️",
+  "name": "A Life Saved",
+  "desc": "Save a life on the job.",
+  "req": {
+   "gd_saved": 1
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_incidents",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🚨",
+  "name": "Seen It All",
+  "desc": "Handle five incidents.",
+  "req": {
+   "gd_incidents": 5
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_nose",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "🔦",
+  "name": "Good Nose",
+  "desc": "Find contraband three times.",
+  "req": {
+   "gd_contraband": 3
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_crossed",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "💷",
+  "name": "Crossed the Line",
+  "desc": "Take money for a favour.",
+  "req": {
+   "gd_corrupt": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true
+ },
+ {
+  "id": "prison_g_whistle",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "📣",
+  "name": "Blew the Whistle",
+  "desc": "Tell.",
+  "req": {
+   "gd_whistle": 1
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_inquiry",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🕵️",
+  "name": "Under Investigation",
+  "desc": "Be investigated by Internal Affairs.",
+  "req": {
+   "gd_investigations": 1
+  },
+  "mode": "guard",
+  "v": 20
+ },
+ {
+  "id": "prison_g_end_warden",
+  "cat": "prison",
+  "tier": "platinum",
+  "icon": "🗝️",
+  "name": "Warden",
+  "desc": "Retire as Warden.",
+  "req": {
+   "ending_gd_warden": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_whistle",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "📣",
+  "name": "Whistleblower",
+  "desc": "End your career as the one who told.",
+  "req": {
+   "ending_gd_whistle": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_kingpin",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "💰",
+  "name": "The Man With the Keys",
+  "desc": "Take money for years and never be caught.",
+  "req": {
+   "ending_gd_kingpin": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_hero",
+  "cat": "prison",
+  "tier": "gold",
+  "icon": "🎖️",
+  "name": "Hero of the Wing",
+  "desc": "End your career a hero.",
+  "req": {
+   "ending_gd_hero": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_fired",
+  "cat": "prison",
+  "tier": "bronze",
+  "icon": "📦",
+  "name": "Dismissed",
+  "desc": "Lose the job.",
+  "req": {
+   "ending_gd_fired": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_burned",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🔥",
+  "name": "Burned Out",
+  "desc": "Leave the service broken.",
+  "req": {
+   "ending_gd_burned": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_retired",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "⏰",
+  "name": "Retired",
+  "desc": "Retire with a pension.",
+  "req": {
+   "ending_gd_retired": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_g_end_duty",
+  "cat": "prison",
+  "tier": "silver",
+  "icon": "🕯️",
+  "name": "In the Line of Duty",
+  "desc": "Die on the staff.",
+  "req": {
+   "ending_gd_duty": 1
+  },
+  "mode": "guard",
+  "v": 20,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "prison_both",
+  "cat": "prison",
+  "tier": "platinum",
+  "icon": "🚪",
+  "name": "Both Sides of the Door",
+  "desc": "Live a life as a prisoner and as a guard.",
+  "req": {
+   "roles_lived": 2
+  },
+  "mode": [
+   "prisoner",
+   "guard"
+  ],
+  "v": 20,
   "hidden": true
  }
 ]

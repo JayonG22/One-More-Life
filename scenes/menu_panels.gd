@@ -24,6 +24,7 @@ func _module(key: String):
 		"amb": return Ambition
 		"real": return Real
 		"pet": return Pets
+		"pr": return Prison
 	return null
 
 

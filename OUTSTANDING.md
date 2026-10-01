@@ -39,7 +39,7 @@ Last reconciled against the code: v1.0.0.
 
 ## Next
 
-- **v1.1 Pets Life** and **v1.2 Prison Life** — designed in `ROADMAP.md`.
+- **v1.3+** — see `ROADMAP.md`. Pets Life (v1.1) and Prison Life (v1.2) have shipped.
 
 ---
 
