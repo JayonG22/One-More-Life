@@ -4,11 +4,11 @@ Everything asked for that is **not yet done**, kept in the repo so nothing gets
 lost between versions. Each line says what it is and where it stands. When a
 thing ships, it moves to that version's changelog and comes off this list.
 
-Last reconciled against the code: v1.0.0.
+Last reconciled against the code: v0.17.0.
 
 ---
 
-## Closed in v0.15, v0.16 and v1.0
+## Closed in v0.15, v0.16 and v0.17
 
 - **Content debt** — 284 one-outcome choices → 0; 84 events with fewer than three
   choices → 0; follow-up coverage 7.1% → 25.0%
@@ -39,7 +39,7 @@ Last reconciled against the code: v1.0.0.
 
 ## Next
 
-- **v1.4+** — see `ROADMAP.md`. Pets Life (v1.1), Prison Life (v1.2) and the v1.3 improvements have shipped. Hospital Life was considered and dropped by decision.
+- **v0.21+** — see `ROADMAP.md`. Pets Life (v0.18), Prison Life (v0.19) and the v0.20 improvements have shipped. Hospital Life was considered and dropped by decision.
 
 ---
 

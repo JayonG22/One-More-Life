@@ -1,4 +1,4 @@
-# ONE MORE LIFE — v1.4.0: A Calmer Year, A Fuller World
+# ONE MORE LIFE — v0.21.0: A Calmer Year, A Fuller World
 
 ## The year no longer floods
 - **Event Director.** A year now has a budget of popups (2 in an ordinary year, 3 at milestone ages, 1 for a small child; "calm" and "busy" shift it). Critical news always gets through; the rest are ranked, and what does not fit is folded into the log, put back for next year, or never happens. Measured over 500 simulated years: from 3.2 popups a year (peak 8) to 1.7 (peak 4).
@@ -29,7 +29,7 @@
 - The **Family Tree** is drawn as a tree. The **Graveyard** is a night cemetery with a stone per life. The Daily Heirloom is **The Attic**: rarity frames, lore, and a mantelpiece that blesses future lives.
 - A pinned strip shows your job, school and business at all times; Work is nested (At work · Find work · Business). The Become-a cards no longer break.
 
-## Also from v1.3
+## Also from v0.20
 - Share card, endings log, legacy between lives, daily/weekly lives, prison "outside" phase, pet packs and litters, first-life tutorial.
 
 ## Checked, and not

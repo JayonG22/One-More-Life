@@ -1,4 +1,4 @@
-# ONE MORE LIFE — v1.1.0: Pets Life
+# ONE MORE LIFE — v0.18.0: Pets Life
 
 A new **game mode**, chosen on the title screen beside Human Life — not a life
 path you stumble into, and not a skin over the human game. You are the animal.
@@ -13,7 +13,7 @@ whole pet life through the real screen).
 
 The title screen opens on a **Choose your game mode** block, above the ordinary
 menu and drawn differently from it: three cards — **Human Life**, **Pets Life**,
-**Prison Life** (Prison arrives in v1.2 and says so). Each mode is its own game
+**Prison Life** (Prison arrives in v0.19 and says so). Each mode is its own game
 with its own year, its own events, its own screens and its own ending.
 
 ## Pets Life

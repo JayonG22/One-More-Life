@@ -1,6 +1,6 @@
 extends Node
 
-## v1.1 gate — Pets Life is a separate mode with its own year, people and ending.
+## v0.18 gate — Pets Life is a separate mode with its own year, people and ending.
 
 var failures: Array = []
 var checks := 0

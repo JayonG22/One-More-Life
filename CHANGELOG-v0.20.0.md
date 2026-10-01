@@ -1,4 +1,4 @@
-# ONE MORE LIFE — v1.3.0: Share, Legacy, Seeded Lives, The Outside
+# ONE MORE LIFE — v0.20.0: Share, Legacy, Seeded Lives, The Outside
 
 An improvement release across all three modes. No new mode (a Hospital Life was
 proposed and dropped by decision: Pets and Prison stay the two standalone extras).

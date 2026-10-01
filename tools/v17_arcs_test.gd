@@ -1,6 +1,6 @@
 extends Node
 
-## v1.0 gate — the six life paths have a road and an end.
+## v0.17 gate — the six life paths have a road and an end.
 
 var failures: Array = []
 var checks := 0

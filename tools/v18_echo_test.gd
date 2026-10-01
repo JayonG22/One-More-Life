@@ -1,6 +1,6 @@
 extends Node
 
-## v1.0 gate — the new systems are not islands. Each check changes something in
+## v0.17 gate — the new systems are not islands. Each check changes something in
 ## one system and proves it moved something in another.
 
 var failures: Array = []

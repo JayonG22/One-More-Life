@@ -132,4 +132,4 @@ Beyond that, unchanged from `OUTSTANDING.md`: depth for the six life paths that
 have entry routes but not the treatment vampire and undead got; job *positions*
 with yearly listings; activities that are still buttons; a hospital that cannot
 always help; more minigames; per-country licence law variants; menu
-categorisation. Prison Life and Pets Life remain v1.1 and v1.2.
+categorisation. Prison Life and Pets Life remain v0.18 and v1.2.

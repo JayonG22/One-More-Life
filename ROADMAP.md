@@ -2,7 +2,7 @@
 
 ## Where it stands
 
-**1.0 is the finished baseline game, not a convenient version number.** The rule
+**1.0 is reserved for the finished game: the day there is nothing left to fix, add, improve or change.** Until then the version stays 0.x and the count keeps going (the releases once numbered 1.0–1.4 are now 0.17–0.21). The rule
 it was measured against: a system does not count as complete because its menu
 opens. It must create consequences, connect to other systems, survive
 save/load, and generate meaningfully different life stories.
@@ -14,11 +14,11 @@ save/load, and generate meaningfully different life stories.
 | v0.9–v0.14 | A Living World → Where You Started | shipped |
 | **v0.15** | **Everything From Real Life** | **shipped** — see `CHANGELOG-v0.15.0.md` |
 | **v0.16** | **Work and Body** | **shipped** — see `CHANGELOG-v0.16.0.md` |
-| **v1.0** | **One More Life** | **shipped** — see `CHANGELOG-v1.0.0.md` |
-| **v1.1** | **Pets Life** | **shipped** — see `CHANGELOG-v1.1.0.md` |
-| **v1.2** | **Prison Life** | **shipped** — see `CHANGELOG-v1.2.0.md` |
-| **v1.3** | **Share, Legacy, Seeded Lives, The Outside** | **shipped** — see `CHANGELOG-v1.3.0.md` |
-| v1.4+ | Whatever is next | the architecture takes new modes cleanly |
+| **v0.17** | **One More Life** | **shipped** — see `CHANGELOG-v0.17.0.md` |
+| **v0.18** | **Pets Life** | **shipped** — see `CHANGELOG-v0.18.0.md` |
+| **v0.19** | **Prison Life** | **shipped** — see `CHANGELOG-v0.19.0.md` |
+| **v0.20** | **Share, Legacy, Seeded Lives, The Outside** | **shipped** — see `CHANGELOG-v0.20.0.md` |
+| v0.21+ | Whatever is next | the architecture takes new modes cleanly |
 
 ### The 1.0 release gates, and what met them
 
@@ -48,15 +48,15 @@ save/load, and generate meaningfully different life stories.
 ## After 1.0
 
 New modes are built on a finished game, not alongside an unfinished one. Each
-gets what vampire and undead got in v0.11, and what the six paths got in v1.0:
+gets what vampire and undead got in v0.11, and what the six paths got in v0.17:
 its own systems, its own content file, its own arc of chapters and endings, its
 own gate. A mode is a *life kind*: it lives in `Lives`, ages in `Real`, and
 writes its own ending into the same legacy and tombstone as everyone else.
 
-### v1.1 — Pets Life  (live as the animal) — SHIPPED
+### v0.18 — Pets Life  (live as the animal) — SHIPPED
 
 > The design below is the brief. What actually shipped, and what was held back, is
-> in `CHANGELOG-v1.1.0.md`. Not built from this brief: a multi-pet pack hierarchy
+> in `CHANGELOG-v0.18.0.md`. Not built from this brief: a multi-pet pack hierarchy
 > within a household, breeding with puppies as the next life (the next life is
 > *another animal in the same house* instead), seasons, and guide / police / search
 > roles beyond the calling system.
@@ -92,9 +92,9 @@ agility. All keyboard-playable, all with a bot, all inside the existing gate.
 **Endings.** Best Friend; Hero; Show Champion; Stray King; Lost; Old Dog in the
 Sun; Last Walk. The puppy you leave behind is the next life.
 
-### v1.2 — Prison Life  (prisoner or guard) — SHIPPED
+### v0.19 — Prison Life  (prisoner or guard) — SHIPPED
 
-> The brief below. See `CHANGELOG-v1.2.0.md` for what shipped. Not built from this
+> The brief below. See `CHANGELOG-v0.19.0.md` for what shipped. Not built from this
 > brief: a separate inmate-job economy beyond the commissary, a literal trustee
 > status, a "re-entry" phase after release (the story closes at the gate, with an
 > epilogue), and executions or the death penalty (by decision).

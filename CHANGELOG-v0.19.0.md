@@ -1,6 +1,6 @@
-# ONE MORE LIFE — v1.2.0: Prison Life
+# ONE MORE LIFE — v0.19.0: Prison Life
 
-The second new **game mode**. Pets Life (v1.1) was the first; this one is chosen the
+The second new **game mode**. Pets Life (v0.18) was the first; this one is chosen the
 same way — from the **Choose your game mode** block at the top of the title screen,
 third card, in red. Prisoner or guard: two doors into one building.
 

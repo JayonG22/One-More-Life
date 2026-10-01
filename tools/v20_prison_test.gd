@@ -1,6 +1,6 @@
 extends Node
 
-## v1.2 gate — Prison Life: two roles, one building, its own events and endings.
+## v0.19 gate — Prison Life: two roles, one building, its own events and endings.
 
 var failures: Array = []
 var checks := 0

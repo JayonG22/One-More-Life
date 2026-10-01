@@ -88,4 +88,4 @@ outcomes per choice.
 Ordinary adults now pay for the things they always paid for in real life. In the
 80-life simulation, bankruptcies per run rose roughly 13% against v0.14 (177 →
 200). That is within the run-to-run noise band of the simulation but in the
-direction one would expect, and it is on the v1.0 economy list.
+direction one would expect, and it is on the v0.17 economy list.

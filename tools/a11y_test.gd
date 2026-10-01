@@ -1,6 +1,6 @@
 extends Node
 
-## v1.0 accessibility gate: keyboard play, labels, contrast, text size, motion.
+## v0.17 accessibility gate: keyboard play, labels, contrast, text size, motion.
 
 var failures: Array = []
 var checks := 0

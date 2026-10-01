@@ -1,4 +1,4 @@
-# ONE MORE LIFE — v1.0.0
+# ONE MORE LIFE — v0.17.0
 
 The baseline game is finished. This note says what that means and, as importantly,
 what was and was not checked.
@@ -116,4 +116,4 @@ version info (set with `rcedit` under Wine in the build environment).
 
 ## What comes next
 
-**v1.1 Pets Life** and **v1.2 Prison Life**, designed in `ROADMAP.md`.
+**v0.18 Pets Life** and **v0.19 Prison Life**, designed in `ROADMAP.md`.

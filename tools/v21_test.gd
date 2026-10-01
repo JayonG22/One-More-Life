@@ -1,6 +1,6 @@
 extends Node
 
-## v1.3 gate — sharing, legacy, challenges and the other additions.
+## v0.20 gate — sharing, legacy, challenges and the other additions.
 
 var failures: Array = []
 var checks := 0
