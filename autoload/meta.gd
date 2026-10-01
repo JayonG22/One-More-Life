@@ -12,7 +12,7 @@ const MODIFIERS := {
 var meta: Dictionary = {}
 var challenges: Array = []
 
-const META_PATH := "user://meta.json"
+var META_PATH: String = (OS.get_environment("OML_USER_DIR") if OS.get_environment("OML_USER_DIR") != "" else "user:/") + "/meta.json"
 
 
 func _ready() -> void:

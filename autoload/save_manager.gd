@@ -4,11 +4,14 @@ extends Node
 ## and settings.
 
 const SLOTS := 12
-const DIR := "user://saves"
-const INDEX_PATH := "user://saves/index.json"
-const LEGACY_PATH := "user://save_current.json"
-const GRAVE_PATH := "user://graveyard.json"
-const SETTINGS_PATH := "user://settings.json"
+## Tests set OML_USER_DIR so they write to a throwaway folder instead of using
+## up the player's save slots.
+var ROOT: String = OS.get_environment("OML_USER_DIR") if OS.get_environment("OML_USER_DIR") != "" else "user:/"
+var DIR: String = ROOT + "/saves"
+var INDEX_PATH: String = ROOT + "/saves/index.json"
+var LEGACY_PATH: String = ROOT + "/save_current.json"
+var GRAVE_PATH: String = ROOT + "/graveyard.json"
+var SETTINGS_PATH: String = ROOT + "/settings.json"
 
 var graveyard: Array = []
 var current_slot := -1
