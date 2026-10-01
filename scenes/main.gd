@@ -1588,7 +1588,7 @@ func _panel_occupation() -> void:
 		_add(U.row("💪", "Work harder", "Performance up, stress up", _act(Actions.work_harder), not j.get("worked_hard", false), false))
 		_add(U.row("💰", "Ask for a raise", "Depends on your performance", _act(Actions.ask_raise), true, false))
 		_add(U.row("🧭", "Professional Life", "Projects, mentors, rivals and career-specific systems", func(): MP.open("amb:work")))
-		_add(U.row("🏢", "Your workplace", "Boss, colleagues, the union, and ways out", func(): MP.open("real:work")))
+		_add(U.row("@office", "Your workplace", "Boss, colleagues, the union, and ways out", func(): MP.open("real:work")))
 		if j["field"] == "Military":
 			_add(U.row("💣", "Deploy", "Minigame · clear a path through a minefield", _act(Actions.deploy), GameState.can_interact("job", "deploy"), false))
 		if Shop.has_tag("suit") and not j.get("suited", false):
@@ -1607,7 +1607,7 @@ func _panel_occupation() -> void:
 		school_sub = "School starts at 5"
 	_add(U.row("🎓", "Education", school_sub, func(): _open_panel(_panel_education), age >= 5))
 	if not GameState.has_job() and age >= 18:
-		_add(U.row("🏢", "Career moves", "Freelancing, retraining, and what your CV says", func(): MP.open("real:work")))
+		_add(U.row("@signpost", "Career moves", "Freelancing, retraining, and what your CV says", func(): MP.open("real:work")))
 	_add(U.row("🍔", "Part-Time Jobs", "Find a part-time job" if age >= 13 else "Age 13+", func(): _open_panel(func(): _panel_jobs("part")), age >= 13))
 	_add(U.row("💼", "Full-Time Jobs", "Find a full-time job" if age >= 18 else "Age 18+", func(): _open_panel(func(): _panel_jobs("full")), age >= 18))
 	_add(U.row("🎖️", "Military", "Enlist and climb the ranks" if age >= 18 else "Age 18+", func(): _open_panel(func(): _panel_jobs("military")), age >= 18))
@@ -1728,9 +1728,9 @@ func _panel_assets() -> void:
 	var age: int = p["age"]
 	_add(U.row("🏠", "Houses", GameState.HOUSING[p["housing"]]["name"] + " · buy, sell, rent", func(): _open_panel(_panel_housing), age >= 18))
 	_add(U.row("🛠️", "Home Life", "Condition, renovations, neighbors, HOA and house stories", func(): MP.open("exp:home"), age >= 18 and p["housing"] == "house"))
-	_add(U.row("🔑", "Your tenancy", "Landlord, deposit, repairs, flatmates and bills", func(): MP.open("real:home"), age >= 18 and Tenancy.renting()))
-	_add(U.row("🧭", "Getting about", "Your commute, insurance and what the car is costing you", func(): MP.open("real:go"), age >= 12 and (Transit.commuting() or Transit.has_car())))
-	_add(U.row("💌", "Keeping up", "Invitations, lapsed friends, what you eat, your phone", func(): MP.open("real:keep"), age >= 14))
+	_add(U.row("@key", "Your tenancy", "Landlord, deposit, repairs, flatmates and bills", func(): MP.open("real:home"), age >= 18 and Tenancy.renting()))
+	_add(U.row("@compass", "Getting about", "Your commute, insurance and what the car is costing you", func(): MP.open("real:go"), age >= 12 and (Transit.commuting() or Transit.has_car())))
+	_add(U.row("@envelope", "Keeping up", "Invitations, lapsed friends, what you eat, your phone", func(): MP.open("real:keep"), age >= 14))
 	_add(U.row("🚗", "Vehicles", (GameState.CARS[p["car"]]["name"] if p["car"] != "" else "No car") + " · buy or sell", func(): _open_panel(_panel_vehicles), age >= 16))
 	_add(U.row("🏦", "Savings & Investments", "Savings %s · portfolio %s" % [GameState.fmt_money(int(p["savings"])), GameState.fmt_money(Finance.investments_value())], func(): _open_panel(_panel_investments), age >= 16))
 	_add(U.row("🏢", "Property", "%d owned · rentals and tenants" % p["properties"].size(), func(): _open_panel(_panel_property), age >= 18))

@@ -26,6 +26,10 @@ const KINDS := [
 	# objects
 	"ring", "crown", "diamond", "briefcase", "coins", "trophy", "mask",
 	"book", "flask", "cards", "gavel", "star", "heart", "skull",
+	# everyday life (v0.15 and v0.16)
+	"key", "compass", "envelope", "bus", "train", "phone", "pill", "tooth",
+	"eye", "ear", "handshake", "anchor", "hourglass", "scroll", "dome", "hat",
+	"signpost", "road", "calendar", "pulse",
 ]
 
 var kind := "house"
@@ -385,6 +389,124 @@ func _draw() -> void:
 			_rect(14, 27, 12, 6, light)
 			for i in range(3):
 				_rect(15.0 + float(i) * 4.0, 27, 2, 6, dark)
+		# ---------------- everyday life
+		"key":
+			draw_arc(_p(14, 17), _s(7), 0, TAU, 28, accent, _s(3.2))
+			_line(20, 21, 33, 34, accent, 3.2)
+			_line(27, 28, 31, 24, accent, 3.0)
+			_line(31, 32, 35, 28, accent, 3.0)
+		"compass":
+			draw_arc(_p(20, 20), _s(14), 0, TAU, 36, body, _s(3.0))
+			_poly([[20, 8], [24, 20], [16, 20]], accent)
+			_poly([[20, 32], [24, 20], [16, 20]], light)
+			_circle(20, 20, 2, dark)
+		"envelope":
+			_rect(6, 11, 28, 20, body)
+			_poly([[6, 11], [34, 11], [20, 23]], light)
+			_line(6, 31, 17, 21, dark, 1.0)
+			_line(34, 31, 23, 21, dark, 1.0)
+		"bus":
+			_rect(6, 10, 28, 20, body)
+			_rect(8, 13, 7, 7, glass)
+			_rect(17, 13, 7, 7, glass)
+			_rect(26, 13, 6, 7, glass)
+			_rect(6, 24, 28, 2, accent)
+			_circle(13, 31, 3, dark)
+			_circle(27, 31, 3, dark)
+		"train":
+			_poly([[9, 8], [31, 8], [34, 28], [6, 28]], body)
+			_rect(11, 12, 18, 8, glass)
+			_circle(14, 24, 1.6, accent)
+			_circle(26, 24, 1.6, accent)
+			_line(10, 33, 6, 37, dark, 1.6)
+			_line(30, 33, 34, 37, dark, 1.6)
+			_line(8, 31, 32, 31, dark, 1.2)
+		"phone":
+			_rect(12, 5, 16, 30, body)
+			_rect(14, 9, 12, 19, glass)
+			_circle(20, 31, 1.6, dark)
+		"pill":
+			draw_set_transform(_p(20, 20), -0.7, Vector2.ONE)
+			draw_rect(Rect2(Vector2(-_s(12), -_s(5.5)), Vector2(_s(12), _s(11))), accent)
+			draw_rect(Rect2(Vector2(0, -_s(5.5)), Vector2(_s(12), _s(11))), light)
+			draw_circle(Vector2(-_s(12), 0), _s(5.5), accent)
+			draw_circle(Vector2(_s(12), 0), _s(5.5), light)
+			draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		"tooth":
+			_circle(15, 15, 6, light)
+			_circle(25, 15, 6, light)
+			_rect(9, 15, 22, 8, light)
+			_poly([[10, 22], [20, 22], [18, 35], [14, 35]], light)
+			_poly([[20, 22], [30, 22], [26, 35], [22, 35]], light)
+			draw_arc(_p(20, 14), _s(5), 0.3, PI - 0.3, 10, dark, _s(1.2))
+		"eye":
+			_poly([[4, 20], [12, 12], [20, 10], [28, 12], [36, 20], [28, 28], [20, 30], [12, 28]], light)
+			_circle(20, 20, 7, body)
+			_circle(20, 20, 3.4, dark)
+			_circle(22, 18, 1.2, light)
+		"ear":
+			_poly([[6, 15], [13, 15], [21, 8], [21, 32], [13, 25], [6, 25]], body)
+			draw_arc(_p(22, 20), _s(6), -PI * 0.35, PI * 0.35, 10, accent, _s(2.4))
+			draw_arc(_p(22, 20), _s(11), -PI * 0.35, PI * 0.35, 12, accent, _s(2.4))
+			draw_arc(_p(22, 20), _s(16), -PI * 0.3, PI * 0.3, 14, accent, _s(2.4))
+		"handshake":
+			_rect(3, 13, 7, 14, dark)
+			_rect(30, 13, 7, 14, dark)
+			_poly([[10, 15], [22, 14], [28, 19], [22, 26], [10, 26]], body)
+			_poly([[30, 15], [19, 16], [14, 21], [20, 28], [30, 26]], light)
+			for i in range(3):
+				_line(20.0 + float(i) * 2.6, 22.0 + float(i) * 1.6, 23.0 + float(i) * 2.6, 19.0 + float(i) * 1.6, dark, 0.9)
+		"anchor":
+			_circle(20, 9, 3.2, accent)
+			_line(20, 12, 20, 32, accent, 3.0)
+			_line(12, 17, 28, 17, accent, 3.0)
+			draw_arc(_p(20, 25), _s(11), 0.15, PI - 0.15, 20, accent, _s(3.0))
+			_poly([[7, 27], [12, 22], [14, 28]], accent)
+			_poly([[33, 27], [28, 22], [26, 28]], accent)
+		"hourglass":
+			_rect(9, 6, 22, 3, dark)
+			_rect(9, 31, 22, 3, dark)
+			_poly([[11, 9], [29, 9], [20, 20]], glass)
+			_poly([[20, 20], [29, 31], [11, 31]], glass)
+			_poly([[14, 12], [26, 12], [20, 19]], accent)
+			_poly([[20, 24], [27, 31], [13, 31]], accent)
+		"scroll":
+			_rect(9, 9, 22, 22, light)
+			draw_arc(_p(9, 12), _s(3), PI * 0.5, PI * 1.5, 10, body, _s(2.6))
+			draw_arc(_p(31, 28), _s(3), -PI * 0.5, PI * 0.5, 10, body, _s(2.6))
+			for i in range(4):
+				_line(13, 14.0 + float(i) * 4.4, 27, 14.0 + float(i) * 4.4, dark, 1.0)
+		"dome":
+			draw_arc(_p(20, 28), _s(15), PI, TAU, 28, body, _s(4.0))
+			_poly([[5, 28], [35, 28], [35, 33], [5, 33]], dark)
+			_rect(17, 22, 6, 6, glass)
+			_circle(20, 14, 1.6, accent)
+		"hat":
+			_poly([[20, 4], [27, 22], [13, 22]], body)
+			_rect(5, 22, 30, 4, dark)
+			_rect(14, 17, 12, 3, accent)
+		"signpost":
+			_rect(19, 6, 3, 30, dark)
+			_poly([[8, 9], [28, 9], [33, 14], [28, 19], [8, 19]], body)
+			_poly([[12, 23], [32, 23], [32, 31], [12, 31], [7, 27]], light)
+		"road":
+			_poly([[14, 6], [26, 6], [36, 36], [4, 36]], dark)
+			for i in range(4):
+				_rect(19, 8.0 + float(i) * 7.5, 2, 4.2, accent)
+		"calendar":
+			_rect(7, 9, 26, 24, light)
+			_rect(7, 9, 26, 7, body)
+			_rect(12, 6, 3, 6, dark)
+			_rect(25, 6, 3, 6, dark)
+			for r in range(2):
+				for c in range(4):
+					_rect(10.0 + float(c) * 5.8, 19.0 + float(r) * 6.4, 3.8, 4, dark if (r + c) % 3 else accent)
+		"pulse":
+			_line(4, 22, 12, 22, body, 2.4)
+			_line(12, 22, 16, 10, accent, 2.4)
+			_line(16, 10, 22, 32, accent, 2.4)
+			_line(22, 32, 26, 22, accent, 2.4)
+			_line(26, 22, 36, 22, body, 2.4)
 		_:
 			# Unknown kind: a plain plate rather than nothing, so a typo is visible.
 			_rect(8, 8, 24, 24, body)

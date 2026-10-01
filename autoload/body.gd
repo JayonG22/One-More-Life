@@ -114,10 +114,10 @@ func menu() -> Dictionary:
 	info.append("Wear on the body: %d/100 — %s" % [int(w), "kind to yourself" if w < 35.0 else ("ordinary" if w < 60.0 else "paying for it")])
 	info.append("These move slowly. They are the sum of years, not of any one of them.")
 	var r: Dictionary = _p().get("routines", {})
-	rows.append({"icon": "🏋️", "name": "Gym routine: %s" % ("ON" if r.get("gym", false) else "off"), "sub": "Movement +6 a year", "act": "real:routine", "arg": "gym", "on": int(_p()["age"]) >= 12})
-	rows.append({"icon": "🚶", "name": "Daily walks: %s" % ("ON" if r.get("walk", false) else "off"), "sub": "Movement +3 a year", "act": "real:routine", "arg": "walk", "on": int(_p()["age"]) >= 6})
-	rows.append({"icon": "🧘", "name": "Meditation: %s" % ("ON" if r.get("meditate", false) else "off"), "sub": "Sleep and stress", "act": "real:routine", "arg": "meditate", "on": int(_p()["age"]) >= 8})
-	rows.append({"icon": "🛌", "name": "Take a proper break", "sub": "2 time · a week of early nights", "act": "real:rest", "arg": null, "on": true})
+	rows.append({"icon": "@gym", "name": "Gym routine: %s" % ("ON" if r.get("gym", false) else "off"), "sub": "Movement +6 a year", "act": "real:routine", "arg": "gym", "on": int(_p()["age"]) >= 12})
+	rows.append({"icon": "@road", "name": "Daily walks: %s" % ("ON" if r.get("walk", false) else "off"), "sub": "Movement +3 a year", "act": "real:routine", "arg": "walk", "on": int(_p()["age"]) >= 6})
+	rows.append({"icon": "@heart", "name": "Meditation: %s" % ("ON" if r.get("meditate", false) else "off"), "sub": "Sleep and stress", "act": "real:routine", "arg": "meditate", "on": int(_p()["age"]) >= 8})
+	rows.append({"icon": "@hourglass", "name": "Take a proper break", "sub": "2 time · a week of early nights", "act": "real:rest", "arg": null, "on": true})
 	return {"icon": "🫀", "title": "Your body over time", "rows": rows, "info": info}
 
 

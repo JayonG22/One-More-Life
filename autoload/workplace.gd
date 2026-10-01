@@ -179,11 +179,11 @@ func menu() -> Dictionary:
 			var n: Dictionary = GameState.npcs[id]
 			var r: Dictionary = ROLES.get(str(n.get("work_role", "friend")), ROLES["friend"])
 			info.append("%s %s — %s. %s" % [n["first"], n["last"], str(r["name"]), str(r["desc"])])
-		rows.append({"icon": "🤝", "name": "Join the union" if not bool(ww["union"]) else "Leave the union", "sub": "About 1% of pay. Better raises and a cushion", "act": "real:union", "arg": null, "on": true})
-		rows.append({"icon": "☕", "name": "Take a colleague to lunch", "sub": "Costs a little and 1 time", "act": "real:lunch", "arg": null, "on": not crew().is_empty()})
-		rows.append({"icon": "🎯", "name": "Play the politics", "sub": "Be seen. It can backfire", "act": "real:politics", "arg": null, "on": true})
-		rows.append({"icon": "✉️", "name": "Resign, properly", "sub": "Leave on good terms and keep a reference", "act": "real:resign", "arg": null, "on": true})
-		rows.append({"icon": "📚", "name": "Retrain in another field", "sub": "%s · 2 time · a new field" % GameState.fmt_money(Actions._cost(4500)), "act": "real:retrain", "arg": null, "on": int(p["age"]) >= 22})
+		rows.append({"icon": "@handshake", "name": "Join the union" if not bool(ww["union"]) else "Leave the union", "sub": "About 1% of pay. Better raises and a cushion", "act": "real:union", "arg": null, "on": true})
+		rows.append({"icon": "@heart", "name": "Take a colleague to lunch", "sub": "Costs a little and 1 time", "act": "real:lunch", "arg": null, "on": not crew().is_empty()})
+		rows.append({"icon": "@star", "name": "Play the politics", "sub": "Be seen. It can backfire", "act": "real:politics", "arg": null, "on": true})
+		rows.append({"icon": "@envelope", "name": "Resign, properly", "sub": "Leave on good terms and keep a reference", "act": "real:resign", "arg": null, "on": true})
+		rows.append({"icon": "@book", "name": "Retrain in another field", "sub": "%s · 2 time · a new field" % GameState.fmt_money(Actions._cost(4500)), "act": "real:retrain", "arg": null, "on": int(p["age"]) >= 22})
 	else:
 		var fl: Dictionary = p.get("freelance", {})
 		if fl.is_empty():
@@ -193,7 +193,7 @@ func menu() -> Dictionary:
 			info.append("Freelancing in %s  ·  %d clients  ·  rate %s" % [str(fl["field"]), int(fl["clients"]), GameState.fmt_money(int(fl["rate"]))])
 			rows.append({"icon": "📣", "name": "Pitch for new clients", "sub": "1 time · more clients, sometimes bigger ones", "act": "real:pitch", "arg": null, "on": true})
 			rows.append({"icon": "🧾", "name": "Wind it down", "sub": "Stop freelancing", "act": "real:stop_freelance", "arg": null, "on": true})
-		rows.append({"icon": "📚", "name": "Retrain in another field", "sub": "%s · 2 time" % GameState.fmt_money(Actions._cost(4500)), "act": "real:retrain", "arg": null, "on": int(p["age"]) >= 22})
+		rows.append({"icon": "@book", "name": "Retrain in another field", "sub": "%s · 2 time" % GameState.fmt_money(Actions._cost(4500)), "act": "real:retrain", "arg": null, "on": int(p["age"]) >= 22})
 	return {"icon": "🏢", "title": "Workplace & career moves", "rows": rows, "info": info}
 
 

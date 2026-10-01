@@ -315,8 +315,8 @@ func menu() -> Dictionary:
 	if has_car():
 		for c in ["none", "third", "full"]:
 			var cur_c: bool = str(s["cover"]) == c
-			rows.append(_row(str(COVER[c]["icon"]), "%s%s" % [str(COVER[c]["name"]), "  ✓" if cur_c else ""], "Third party covers the other driver; comprehensive covers you too" if c != "none" else "Saves money until the day it doesn't", "cover", c, not cur_c))
-		rows.append(_row("🔧", "Service the car", "%s · far fewer breakdowns this year" % GameState.fmt_money(Actions._cost(450)), "service", null, not bool(s.get("serviced", false))))
+			rows.append(_row("@scroll", "%s%s" % [str(COVER[c]["name"]), "  ✓" if cur_c else ""], "Third party covers the other driver; comprehensive covers you too" if c != "none" else "Saves money until the day it doesn't", "cover", c, not cur_c))
+		rows.append(_row("@hatchback", "Service the car", "%s · far fewer breakdowns this year" % GameState.fmt_money(Actions._cost(450)), "service", null, not bool(s.get("serviced", false))))
 	return {"icon": "🧭", "title": "Getting about", "rows": rows, "info": info}
 
 

@@ -219,13 +219,13 @@ func menu() -> Dictionary:
 	info.append("Landlord %s — %s. %s" % [str(t["landlord"]), str(kd["name"]), str(kd["desc"])])
 	info.append("Rent %s a year (%s a month)%s  ·  deposit held %s" % [GameState.fmt_money(annual_rent()), GameState.fmt_money(annual_rent() / 12), " shared with %d" % mates().size() if not mates().is_empty() else "", GameState.fmt_money(int(t["deposit"]))])
 	info.append("Boiler %d years old  ·  damp %d%%  ·  bills %s a year%s" % [int(t["boiler_age"]), int(t["damp"]), GameState.fmt_money(utilities()), "  ·  insulated" if bool(t.get("insulated", false)) else ""])
-	rows.append(_row("🛠️", "Ask for repairs", "Damp and the boiler. Chance depends on the landlord", "repairs"))
-	rows.append(_row("🤝", "Negotiate the rent", "Bring evidence. A reasonable landlord may listen", "negotiate"))
+	rows.append(_row("@hourglass", "Ask for repairs", "Damp and the boiler. Chance depends on the landlord", "repairs"))
+	rows.append(_row("@handshake", "Negotiate the rent", "Bring evidence. A reasonable landlord may listen", "negotiate"))
 	rows.append(_row("🧑‍🤝‍🧑", "Find a flatmate", "Halves the rent, and doubles the ways it can go wrong", "flatmate", null, mates().size() < 2))
 	rows.append(_row("🧥", "Draught-proof and insulate", "%s · lower bills, less damp" % GameState.fmt_money(Actions._cost(1200)), "insulate", null, not bool(t.get("insulated", false))))
-	rows.append(_row("📄", "Contents insurance", "%s a year · covers break-ins and fires" % GameState.fmt_money(Actions._cost(300)), "insure", null, not bool(t.get("insured", false))))
-	rows.append(_row("📦", "Move to a smaller, cheaper place", "About a quarter off the rent; you feel it", "move", "small"))
-	rows.append(_row("📦", "Move somewhere nicer", "About a third more; you also feel that", "move", "nice"))
+	rows.append(_row("@scroll", "Contents insurance", "%s a year · covers break-ins and fires" % GameState.fmt_money(Actions._cost(300)), "insure", null, not bool(t.get("insured", false))))
+	rows.append(_row("@flat_small", "Move to a smaller, cheaper place", "About a quarter off the rent; you feel it", "move", "small"))
+	rows.append(_row("@house", "Move somewhere nicer", "About a third more; you also feel that", "move", "nice"))
 	return {"icon": "🔑", "title": "Your tenancy", "rows": rows, "info": info}
 
 

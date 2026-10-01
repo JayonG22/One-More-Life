@@ -346,22 +346,22 @@ func menu() -> Dictionary:
 	if str(s.get("misdx", "")) != "":
 		info.append("Something about your diagnosis doesn't feel right.")
 	info.append("Eyes %d%%  ·  teeth %d%%  ·  hearing %d%%" % [int(vision()), int(s["teeth"]), int(s["hearing"])])
-	rows.append(_row("🩺", "See your GP", "%s · describe a symptom, ask for a referral" % GameState.fmt_money(fee("gp")), "gp"))
-	rows.append(_row("⚡", "Pay to see a specialist privately", "%s · skips the waiting list" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]))), "skip", null, not s["referral"].is_empty()))
-	rows.append(_row("🗣️", "Get a second opinion", "%s · when something doesn't add up" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]) / 2 + 200)), "second", null, str(s.get("misdx", "")) != "" or not med["conditions"].is_empty()))
+	rows.append(_row("@pulse", "See your GP", "%s · describe a symptom, ask for a referral" % GameState.fmt_money(fee("gp")), "gp"))
+	rows.append(_row("@hospital", "Pay to see a specialist privately", "%s · skips the waiting list" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]))), "skip", null, not s["referral"].is_empty()))
+	rows.append(_row("@handshake", "Get a second opinion", "%s · when something doesn't add up" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]) / 2 + 200)), "second", null, str(s.get("misdx", "")) != "" or not med["conditions"].is_empty()))
 	for id in med["conditions"].keys():
 		var d: Dictionary = Expansion.CONDITIONS.get(id, {"name": id, "chronic": false})
 		if bool(d.get("chronic", false)):
 			var on: bool = bool(s["meds"].get(id, false))
-			rows.append(_row("💊", "%s — medication %s" % [str(d["name"]).capitalize(), "ON" if on else "off"], "Tap to %s. Skipping it has a price that arrives late" % ("stop" if on else "start"), "meds", id))
-	rows.append(_row("🤸", "Physiotherapy", "%s · speeds up an injury's recovery" % GameState.fmt_money(Actions._cost(120) if system() != "free" else 0), "physio", null, not med["injuries"].is_empty()))
-	rows.append(_row("👁️", "Eye test", "Find out how your eyes are really doing", "eyes"))
+			rows.append(_row("@pill", "%s — medication %s" % [str(d["name"]).capitalize(), "ON" if on else "off"], "Tap to %s. Skipping it has a price that arrives late" % ("stop" if on else "start"), "meds", id))
+	rows.append(_row("@gym", "Physiotherapy", "%s · speeds up an injury's recovery" % GameState.fmt_money(Actions._cost(120) if system() != "free" else 0), "physio", null, not med["injuries"].is_empty()))
+	rows.append(_row("@eye", "Eye test", "Find out how your eyes are really doing", "eyes"))
 	for k in ["glasses", "contacts", "laser"]:
-		rows.append(_row("👓", {"glasses": "Get glasses", "contacts": "Get contact lenses", "laser": "Laser surgery"}[k], "Helps now%s" % (" and keeps helping" if k == "laser" else ""), "aid", k, str(s["aid"]) != k))
-	rows.append(_row("🦷", "Dentist", "A check-up, and a scolding if you've earned it", "dentist"))
-	rows.append(_row("🦷", "Crown or major dental work", "For teeth that have had enough", "crown", null, float(s["teeth"]) <= 55.0))
-	rows.append(_row("🦷", "Dentures", "When there isn't much left to save", "dentures", null, float(s["teeth"]) <= 25.0 and int(_p()["age"]) >= 45 and not bool(s["dentures"])))
-	rows.append(_row("👂", "Hearing aid", "For when 'pardon' has become a habit", "hearing", null, float(s["hearing"]) <= 70.0 and not bool(s["hearing_aid"])))
+		rows.append(_row("@eye", {"glasses": "Get glasses", "contacts": "Get contact lenses", "laser": "Laser surgery"}[k], "Helps now%s" % (" and keeps helping" if k == "laser" else ""), "aid", k, str(s["aid"]) != k))
+	rows.append(_row("@tooth", "Dentist", "A check-up, and a scolding if you've earned it", "dentist"))
+	rows.append(_row("@tooth", "Crown or major dental work", "For teeth that have had enough", "crown", null, float(s["teeth"]) <= 55.0))
+	rows.append(_row("@tooth", "Dentures", "When there isn't much left to save", "dentures", null, float(s["teeth"]) <= 25.0 and int(_p()["age"]) >= 45 and not bool(s["dentures"])))
+	rows.append(_row("@ear", "Hearing aid", "For when 'pardon' has become a habit", "hearing", null, float(s["hearing"]) <= 70.0 and not bool(s["hearing_aid"])))
 	return {"icon": "🏥", "title": "Getting care", "rows": rows, "info": info}
 
 

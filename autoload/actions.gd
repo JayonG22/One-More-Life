@@ -64,8 +64,8 @@ const ACTIVITY_GROUPS := [
 	]},
 	{"id": "health", "name": "Health & Looks", "icon": "🏥", "sub": "Doctors, salon, surgery, therapy", "items": [
 		{"id": "doctors", "name": "Doctors", "icon": "🩺", "min": 0, "sub": "GP, ER, psychiatrist, eyes, back…", "menu": "daily:doctor"},
-		{"id": "care_pathway", "name": "Getting care", "icon": "🏥", "min": 6, "sub": "GP, referrals, waiting lists, medication, eyes and teeth", "menu": "real:care"},
-		{"id": "body_years", "name": "Your body over time", "icon": "🫀", "min": 6, "sub": "Movement, sleep, diet and what the years add up to", "menu": "real:body"},
+		{"id": "care_pathway", "name": "Getting care", "icon": "@hospital", "min": 6, "sub": "GP, referrals, waiting lists, medication, eyes and teeth", "menu": "real:care"},
+		{"id": "body_years", "name": "Your body over time", "icon": "@pulse", "min": 6, "sub": "Movement, sleep, diet and what the years add up to", "menu": "real:body"},
 		{"id": "medical_record", "name": "Medical record", "icon": "🫀", "min": 0, "sub": "Symptoms, diagnoses, injuries and chronic care", "menu": "exp:medical"},
 		{"id": "mental_health", "name": "Mental health", "icon": "🧠", "min": 10, "sub": "Therapy, support, psychiatry and recovery", "menu": "exp:mental"},
 		{"id": "salon", "name": "Salon & Spa", "icon": "💇", "min": 10, "sub": "Hair, nails, tattoos, massages", "menu": "daily:salon"},
