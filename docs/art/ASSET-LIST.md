@@ -1,3 +1,7 @@
+> Design reference, not a list of delivered custom artwork. Counts reflect
+> the original inventory and may need reconciliation with the current build.
+> See the [art index](README.md).
+
 # Art and icon list — what needs design
 
 Everything the game currently shows with a stock emoji, plus the few things drawn in code. A full machine-readable list of every emoji with where it is used is in `ASSET-EMOJI-INVENTORY.csv` (808 distinct emoji, sorted by how often they appear).
