@@ -611,6 +611,26 @@
       }
      }
     ]
+   },
+   {
+    "label": "Ask {dad.first} to let go slowly",
+    "outcomes": [
+     {
+      "text": "{dad.first} let go little by little. I wobbled, then sailed. It was the greatest moment of the week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "{dad.first} let go slowly and I knew it. I looked back and crashed into a hedge.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "health": -1
+      }
+     }
+    ]
    }
   ],
   "roles": {

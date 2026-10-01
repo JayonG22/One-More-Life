@@ -31,16 +31,20 @@ func _ready() -> void:
 ## The release rule: no choice with a single deterministic outcome.
 func _depth() -> void:
 	var thin := 0
+	var short := 0
 	var events := 0
 	var choices := 0
 	for e in ContentDB.events:
 		events += 1
+		if e.has("choices") and (e["choices"] as Array).size() > 0 and (e["choices"] as Array).size() < 3:
+			short += 1
 		for c in e.get("choices", []):
 			choices += 1
 			var outs: Array = c.get("outcomes", [])
 			if outs.size() < 2 and not (outs.size() == 1 and (outs[0] as Dictionary).has("play")):
 				thin += 1
 	ok(thin == 0, "%d choices still have a single outcome" % thin)
+	ok(short == 0, "%d events still have fewer than three choices" % short)
 	ok(events >= 633, "only %d events are loaded — a file is missing from EVENT_FILES" % events)
 	print("  depth: %d events, %d choices, %d thin" % [events, choices, thin])
 

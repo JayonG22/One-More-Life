@@ -323,6 +323,28 @@
       "relationship": {}
      }
     ]
+   },
+   {
+    "label": "Call a family member",
+    "outcomes": [
+     {
+      "text": "My daughter was there in twenty minutes. She cried, then fussed, then got a doctor.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "happiness": 2,
+       "stress": -2
+      }
+     },
+     {
+      "text": "I called, and nobody answered. I found myself alone on the stairs with time to think.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
    }
   ]
  },

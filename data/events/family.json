@@ -233,6 +233,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Offer smaller help and ask what it's for",
+    "outcomes": [
+     {
+      "text": "It was a car repair and a deposit. I paid directly. {sib.first} was embarrassed and grateful.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "happiness": 2,
+       "karma": 2
+      }
+     },
+     {
+      "text": "{sib.first} didn't want to say. I decided the answer was bad and gave less.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 3
+      }
+     }
+    ]
    }
   ],
   "roles": {
@@ -366,6 +388,28 @@
       },
       "relationship": {
        "gp": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Record them on your phone",
+    "outcomes": [
+     {
+      "text": "I recorded two hours. It's the most valuable file I own.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "smarts": 1,
+       "karma": 2
+      }
+     },
+     {
+      "text": "The recording failed. I remember the first twenty minutes better than if it had worked.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
       }
      }
     ]
@@ -767,6 +811,47 @@
       }
      }
     ]
+   },
+   {
+    "label": "Give something back",
+    "outcomes": [
+     {
+      "text": "I wrapped something I'd been meaning to give them. The gift exchange was awkward, then wonderful.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "money": -40
+      }
+     },
+     {
+      "text": "The gift I gave back was a bad guess, and we both laughed about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Feel suspicious and ask what they want",
+    "outcomes": [
+     {
+      "text": "They wanted nothing, and were wounded by the question.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "karma": -2
+      }
+     },
+     {
+      "text": "They wanted a small favour. I'd have given it anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
    }
   ]
  },
@@ -869,6 +954,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Accept half and say thank you properly",
+    "outcomes": [
+     {
+      "text": "I took $500 and a card, and felt neither indebted nor proud.",
+      "weight": 1,
+      "effects": {
+       "money": 500,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I took half. They sent the other half anyway the next week.",
+      "weight": 1,
+      "effects": {
+       "money": 1000,
+       "happiness": 4,
+       "stress": -1
+      }
+     }
+    ]
    }
   ]
  },
@@ -942,6 +1049,26 @@
       "effects": {
        "happiness": 3,
        "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Agree to meet as friends first",
+    "outcomes": [
+     {
+      "text": "We got on as friends. It never became anything else, and that's often the best thing a set-up can be.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "We got on better than I expected. We're still together.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "looks": 1
       }
      }
     ]

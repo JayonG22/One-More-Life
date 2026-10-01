@@ -298,6 +298,26 @@
       }
      }
     ]
+   },
+   {
+    "label": "Ask them to write instead",
+    "outcomes": [
+     {
+      "text": "Letters came every week. I kept every one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The letters were short and stopped after a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      }
+     }
+    ]
    }
   ],
   "roles": {

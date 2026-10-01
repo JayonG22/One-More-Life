@@ -1107,6 +1107,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Call someone to help them",
+    "outcomes": [
+     {
+      "text": "A building manager appeared within minutes, and the neighbour was settled with tea. I felt I'd done the right thing and not the heroic one.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "Nobody answered, and I ended up carrying the bags anyway, annoyed at the whole system.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "stress": 3
+      }
+     }
+    ]
    }
   ]
  },
@@ -1169,6 +1190,28 @@
       "effects": {
        "job_perf": 2,
        "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call a tow truck for them",
+    "outcomes": [
+     {
+      "text": "The tow truck arrived in twenty minutes and the driver cried with relief.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "money": -60,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The dispatcher put me on hold for so long that the snowplough got there first.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "stress": 3
       }
      }
     ]

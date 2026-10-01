@@ -300,6 +300,26 @@
       }
      }
     ]
+   },
+   {
+    "label": "Become friends first, and see",
+    "outcomes": [
+     {
+      "text": "We had lunch for months. By autumn it was clear it would only ever be lunch, and that was fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "We had lunch for months. At a leaving party it turned into something else.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": 2
+      }
+     }
+    ]
    }
   ],
   "roles": {
@@ -534,6 +554,28 @@
        "happiness": 3,
        "stress": -2,
        "job_perf": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate a trial period",
+    "outcomes": [
+     {
+      "text": "They agreed to six months. At the end I knew whether I could live there.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "stress": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "They said 'all or nothing', and I said 'nothing'.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -1
       }
      }
     ]

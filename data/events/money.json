@@ -60,6 +60,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Put in $200 as an experiment",
+    "outcomes": [
+     {
+      "text": "The stock did well, and I felt both clever and disappointed that I hadn't put in more.",
+      "weight": 1,
+      "effects": {
+       "money": 400,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The stock did nothing. The $200 was a polite tax on curiosity.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "stress": 1
+      }
+     }
+    ]
    }
   ]
  },
@@ -119,6 +140,27 @@
       "effects": {
        "happiness": 1,
        "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Read about it properly before deciding",
+    "outcomes": [
+     {
+      "text": "I read three articles and a forum, and concluded it was a frog. I didn't invest.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -1
+      }
+     },
+     {
+      "text": "I read about it and almost invested. A week later it collapsed, and I was quietly relieved.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 3
       }
      }
     ]
@@ -209,6 +251,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Propose mediation",
+    "outcomes": [
+     {
+      "text": "A mediator got the family to the table. Nobody was happy and everyone was civil.",
+      "weight": 1,
+      "effects": {
+       "money": 3000,
+       "karma": 3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "Mediation failed. The family split into two camps by Christmas.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "stress": 8
+      }
+     }
+    ]
    }
   ],
   "roles": {
@@ -287,6 +351,27 @@
       "effects": {
        "money": -8000,
        "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a friend who knows to look it over",
+    "outcomes": [
+     {
+      "text": "A friend looked at the books for an evening, found two errors and charged me dinner.",
+      "weight": 1,
+      "effects": {
+       "money": -80,
+       "stress": -3
+      }
+     },
+     {
+      "text": "My friend found five errors, one of them large. We fixed it together.",
+      "weight": 1,
+      "effects": {
+       "money": -1200,
+       "stress": 2
       }
      }
     ]
@@ -372,6 +457,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Offer a payment plan",
+    "outcomes": [
+     {
+      "text": "A written plan, a smaller weekly sum, and a surprisingly trusting tenant. They paid it all.",
+      "weight": 1,
+      "effects": {
+       "money": 300,
+       "karma": 4
+      }
+     },
+     {
+      "text": "The plan worked for two months, then collapsed. We tried a smaller one.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 4
+      }
+     }
+    ]
    }
   ],
   "roles": {
@@ -439,6 +545,27 @@
       "effects": {
        "money": -9000,
        "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get three quotes",
+    "outcomes": [
+     {
+      "text": "The three quotes ranged from $3,000 to $9,000. I took the middle one, and the job was fine.",
+      "weight": 1,
+      "effects": {
+       "money": -4800,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The cheapest quote turned out to be a scam. I paid twice.",
+      "weight": 1,
+      "effects": {
+       "money": -6500,
+       "stress": 6
       }
      }
     ]
@@ -525,6 +652,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Offer a long lease at a fixed rent",
+    "outcomes": [
+     {
+      "text": "A five-year lease at a stable rent made us both happy. We shake hands at Christmas.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "money": -600,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "They declined, preferring flexibility. I admired them for it.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
    }
   ],
   "roles": {
@@ -596,6 +744,26 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send photos in by post",
+    "outcomes": [
+     {
+      "text": "The appraiser wrote back with a polite 'worthless, but charming'. I kept it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The appraiser wrote back asking for the real thing, and a chat.",
+      "weight": 1,
+      "effects": {
+       "money": 2000,
+       "happiness": 4
       }
      }
     ]
@@ -681,6 +849,30 @@
       }
      }
     ]
+   },
+   {
+    "label": "Host a smaller party for charity",
+    "outcomes": [
+     {
+      "text": "A few dozen people on the beach, with a good cause. We raised a fortune.",
+      "weight": 1,
+      "effects": {
+       "money": -80000,
+       "karma": 8,
+       "fame": 3,
+       "happiness": 8
+      }
+     },
+     {
+      "text": "The guests were wonderful and the fundraising was dull.",
+      "weight": 1,
+      "effects": {
+       "money": -60000,
+       "karma": 4,
+       "happiness": 3
+      }
+     }
+    ]
    }
   ],
   "weight": 5
@@ -730,6 +922,28 @@
       "weight": 1,
       "effects": {
        "happiness": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join, with a clear agreement in writing",
+    "outcomes": [
+     {
+      "text": "The pool won $300. We split it fairly, and the agreement turned out to matter.",
+      "weight": 1,
+      "effects": {
+       "money": 150,
+       "karma": 2,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The pool won nothing. The agreement stayed in a drawer.",
+      "weight": 1,
+      "effects": {
+       "money": -20,
+       "happiness": 1
       }
      }
     ]
@@ -792,6 +1006,27 @@
        "money": -30000,
        "happiness": -12,
        "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Mention it lightly and watch their reaction",
+    "outcomes": [
+     {
+      "text": "Their reaction was a thoughtful pause, and a change of subject. It told me more than their words.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "They laughed it off and I laughed with them. I haven't forgotten the pause.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 2
       }
      }
     ]

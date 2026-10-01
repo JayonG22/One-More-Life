@@ -170,6 +170,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Shout for the neighbours and get the hose",
+    "outcomes": [
+     {
+      "text": "Four of us made a bucket chain. The fire brigade found it half out. We were thanked and wet.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "health": -1,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The hose was too short and the fire too big. I helped from the street.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 6
+      }
+     }
+    ]
    }
   ]
  },
@@ -242,6 +264,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Stay with them until someone arrives",
+    "outcomes": [
+     {
+      "text": "I held a small, sticky hand for twenty minutes. The parent arrived in a panic and the child, who'd been calm, burst into tears.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Nobody arrived for an hour. I became the child's favourite person and felt oddly responsible.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "stress": 4
+      }
+     }
+    ]
    }
   ]
  },
@@ -303,6 +346,29 @@
        "happiness": 12,
        "health": -2,
        "stress": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Book it for a specific date with a friend",
+    "outcomes": [
+     {
+      "text": "We jumped on a Saturday in June. It was the most terrifying thing I've done.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12,
+       "health": -1,
+       "money": -250
+      }
+     },
+     {
+      "text": "We booked it and the weather turned. We rebooked. And rebooked.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2,
+       "money": -80
       }
      }
     ]
@@ -802,6 +868,26 @@
       }
      }
     ]
+   },
+   {
+    "label": "Ask about the risks of each test first",
+    "outcomes": [
+     {
+      "text": "The doctor was candid. I did the two that mattered and skipped the rest.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "health": 2
+      }
+     },
+     {
+      "text": "The doctor was candid, and the candour frightened me more than the tests would have.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
    }
   ]
  },
@@ -953,6 +1039,27 @@
       },
       "relationship": {
        "fr": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer to help with boxes, not the piano",
+    "outcomes": [
+     {
+      "text": "Boxes I could do. The piano was moved by professionals. {fr.first} was relieved I'd turned up at all.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "health": 0
+      }
+     },
+     {
+      "text": "The professionals dropped the piano on the stairs. I'm told it's still out of tune.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
       }
      }
     ]

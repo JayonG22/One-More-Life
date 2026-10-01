@@ -271,6 +271,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Take a lesson in the morning, then the test",
+    "outcomes": [
+     {
+      "text": "A last-minute lesson steadied my nerves. I passed with two minor faults.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -60
+      }
+     },
+     {
+      "text": "A last-minute lesson made me over-think everything. I failed on a roundabout.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 4,
+       "money": -60
+      }
+     }
+    ]
    }
   ],
   "once": true
@@ -690,6 +712,28 @@
       "effects": {
        "happiness": 8,
        "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do a few days a week",
+    "outcomes": [
+     {
+      "text": "A few days, a smaller pay packet and a summer that was both busy and free.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "A few days turned into every day, because the shop was short-staffed.",
+      "weight": 1,
+      "effects": {
+       "money": 1000,
+       "happiness": -1,
+       "stress": 2
       }
      }
     ]

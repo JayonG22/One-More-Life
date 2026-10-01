@@ -593,6 +593,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Ignore it and post something unrelated",
+    "outcomes": [
+     {
+      "text": "A picture of my dog broke the internet. The feud faded because nobody could look away from the dog.",
+      "weight": 1,
+      "effects": {
+       "fame": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "They kept going and I kept ignoring. It became a long, boring subplot.",
+      "weight": 1,
+      "effects": {
+       "fame": -1,
+       "stress": 3
+      }
+     }
+    ]
    }
   ],
   "weight": 6
@@ -778,6 +799,29 @@
        "happiness": 8,
        "fame": -2,
        "money": -6000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Counter-offer: a shorter trip with a charity day",
+    "outcomes": [
+     {
+      "text": "The brand agreed, the charity benefited, and the trip was lovely. It felt like a good use of a good life.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 7,
+       "fame": 2
+      }
+     },
+     {
+      "text": "The brand declined. The charity day happened anyway, on my own money.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "money": -3000,
+       "happiness": 3
       }
      }
     ]

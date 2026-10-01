@@ -158,6 +158,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Give a statement but ask for protection",
+    "outcomes": [
+     {
+      "text": "I got a protection officer for a month. The trial was easier to face with someone beside me.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The protection never showed up. The statement helped, but the nights were long.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "stress": 8
+      }
+     }
+    ]
    }
   ]
  },
@@ -233,6 +254,28 @@
       },
       "relationship": {
        "nb": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a surveyor to settle it",
+    "outcomes": [
+     {
+      "text": "The surveyor's report split the difference. We both grumbled and shook hands.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "stress": -2,
+       "karma": 1
+      }
+     },
+     {
+      "text": "The surveyor sided with me, and my neighbour appealed. The fence became a feud.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 6
       }
      }
     ]
@@ -317,6 +360,29 @@
       }
      }
     ]
+   },
+   {
+    "label": "Pretend to accept, then tell the police",
+    "outcomes": [
+     {
+      "text": "I was wired for a week. The stranger was arrested. It was thrilling, terrifying and entirely worth it.",
+      "weight": 1,
+      "effects": {
+       "karma": 12,
+       "stress": 10,
+       "fame": 1
+      }
+     },
+     {
+      "text": "The police thought I'd been a participant for a day, and asked unpleasant questions.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "stress": 12,
+       "heat": 2
+      }
+     }
+    ]
    }
   ]
  },
@@ -375,6 +441,28 @@
       "effects": {
        "stress": -1,
        "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Apply, and move to a new town regardless",
+    "outcomes": [
+     {
+      "text": "The application went through slowly. By then I had a new life and a clean sheet.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 5,
+       "money": -500
+      }
+     },
+     {
+      "text": "The application was rejected, but I moved anyway and nobody asked.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
       }
      }
     ]

@@ -146,6 +146,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Ask for a veteran to accompany you",
+    "outcomes": [
+     {
+      "text": "A veteran came with me and talked me through every move. I'll never forget the voice.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The veteran was ill, and I spent three days waiting for a replacement who barely spoke.",
+      "weight": 1,
+      "effects": {
+       "skill": 1,
+       "stress": 6
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -210,6 +231,27 @@
       "effects": {
        "skill": 3,
        "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Talk about it openly with the commander",
+    "outcomes": [
+     {
+      "text": "The commander was relaxed about it, and asked only for discretion. We were both embarrassed and relieved.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The commander said no, politely, and added a note to my file.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "skill": -1
       }
      }
     ]
@@ -297,6 +339,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Write both recommendations",
+    "outcomes": [
+     {
+      "text": "I wrote both honestly. The agency took the stronger candidate and thanked me for the clarity.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I wrote both and the agency chose neither, citing 'concerns about balance'.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": 1
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -375,6 +438,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Donate it anonymously to a museum",
+    "outcomes": [
+     {
+      "text": "It went on display in a small museum with a plaque 'donor wishes to remain unknown.' I visit it sometimes.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The museum authenticated it and traced it to a mission. There was an inquiry, and I was not anonymous for long.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 8,
+       "skill": -3
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -423,6 +508,70 @@
       "effects": {
        "happiness": 2,
        "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Record a message for them to watch afterwards",
+    "outcomes": [
+     {
+      "text": "I recorded two minutes in a spacesuit. My mother has watched it more times than she'd admit.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      }
+     },
+     {
+      "text": "The message was cut by the agency for 'technical reasons'. I felt oddly crushed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look for them and mouth a thank-you",
+    "outcomes": [
+     {
+      "text": "I found them in the crowd. My father held up a sign that said 'WE SEE YOU'. I did not cry until the gantry door closed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I couldn't find them in the crowd. I thanked the whole stand instead, and the camera caught it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "fame": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep your focus on the checklist",
+    "outcomes": [
+     {
+      "text": "The launch went flawlessly and I never looked once. My mother said she understood. She didn't, entirely.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I kept my focus. A minor valve fault was caught because of it.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "stress": 3,
+       "happiness": 1
       }
      }
     ]
@@ -504,6 +653,29 @@
        "fame": 4,
        "karma": 3,
        "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Co-write with a journalist",
+    "outcomes": [
+     {
+      "text": "It took a year of long interviews. The book was richer than either of us would have written alone.",
+      "weight": 1,
+      "effects": {
+       "money": 150000,
+       "fame": 4,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "The journalist and I fell out over a chapter. The book came out anyway, with two differing prefaces.",
+      "weight": 1,
+      "effects": {
+       "money": 100000,
+       "fame": 3,
+       "stress": 6
       }
      }
     ]
@@ -776,6 +948,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Negotiate a smaller, higher-quality range",
+    "outcomes": [
+     {
+      "text": "They agreed to a capsule collection with my input. It sold out in a weekend.",
+      "weight": 1,
+      "effects": {
+       "money": 40000,
+       "fame": 4,
+       "skill": 2
+      }
+     },
+     {
+      "text": "They said no, and signed someone else the same day.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      }
+     }
+    ]
    }
   ],
   "weight": 6
@@ -978,6 +1172,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Introduce them but stay out of it",
+    "outcomes": [
+     {
+      "text": "I made the introduction and left the room. They got a good offer. We're closer than before.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I made the introduction and they got a better offer than mine. Friendship survived, with a long silence in the middle.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -1170,6 +1386,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Cut weight gradually, and carry the risk",
+    "outcomes": [
+     {
+      "text": "Three more hours of careful dieting. I made weight with ounces to spare and felt fine.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "skill": 2
+      }
+     },
+     {
+      "text": "Gradual wasn't enough. I missed by half a pound and the commission gave me an hour.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "health": -2
+      }
+     }
+    ]
    }
   ],
   "weight": 6
@@ -1236,6 +1473,27 @@
        "happiness": -4,
        "fame": 1,
        "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay quiet and let the performance speak",
+    "outcomes": [
+     {
+      "text": "The silence was more powerful than any speech. The champion's camp called the next morning.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The silence made me look dull. The promoter was annoyed.",
+      "weight": 1,
+      "effects": {
+       "fame": -1,
+       "happiness": -2
       }
      }
     ]
@@ -1415,6 +1673,27 @@
       }
      }
     ]
+   },
+   {
+    "label": "Get a second opinion first",
+    "outcomes": [
+     {
+      "text": "The second neurologist agreed with the first, more gently. I took the advice more seriously for being given it twice.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "health": 2
+      }
+     },
+     {
+      "text": "The second neurologist gave a more hopeful read. I wanted to believe it.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "health": -1
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -1477,6 +1756,27 @@
        "fame": 3,
        "happiness": 5,
        "skill": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use both of them",
+    "outcomes": [
+     {
+      "text": "I used both. They disagreed constantly, and I won because of the argument.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "Having both was chaos. I lost the first round trying to listen to two voices.",
+      "weight": 1,
+      "effects": {
+       "skill": -1,
+       "stress": 4
       }
      }
     ]
@@ -1569,6 +1869,28 @@
        "skill": 4,
        "fame": 3,
        "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a smaller stake, keep control",
+    "outcomes": [
+     {
+      "text": "A small gym with my name over the door and a team I picked. It was modest and happy.",
+      "weight": 1,
+      "effects": {
+       "money": 15000,
+       "happiness": 5,
+       "fame": 1
+      }
+     },
+     {
+      "text": "The investor insisted on a bigger stake. We parted on awkward terms.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
       }
      }
     ]
@@ -1748,6 +2070,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Shoot both endings",
+    "outcomes": [
+     {
+      "text": "I shot both. The studio chose the happy one, then a festival chose mine. The director's cut was legendary.",
+      "weight": 1,
+      "effects": {
+       "skill": 4,
+       "fame": 3,
+       "money": 30000
+      }
+     },
+     {
+      "text": "I shot both. The studio chose the happy one and buried mine.",
+      "weight": 1,
+      "effects": {
+       "money": 60000,
+       "happiness": -3
+      }
+     }
+    ]
    }
   ],
   "weight": 6
@@ -1820,6 +2164,26 @@
       },
       "relationship": {
        "k": 14
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hire them as an assistant on set",
+    "outcomes": [
+     {
+      "text": "They loved it. They fetched coffee and watched the entire shoot, and a career began.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "They hated the early starts and left after a week. We laughed about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
       }
      }
     ]
@@ -1899,6 +2263,27 @@
       "effects": {
        "skill": 5,
        "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a short video message",
+    "outcomes": [
+     {
+      "text": "The video was warmly received and widely shared. I got to work that night.",
+      "weight": 1,
+      "effects": {
+       "fame": 3,
+       "skill": 2
+      }
+     },
+     {
+      "text": "The video message froze on a bad frame and became a meme for a week.",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "happiness": -2
       }
      }
     ]
@@ -2074,6 +2459,27 @@
        "money": 2000000,
        "fame": 5,
        "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a producing deal and keep your company",
+    "outcomes": [
+     {
+      "text": "A middle path: they financed three films, and I kept the company. It was a compromise that worked.",
+      "weight": 1,
+      "effects": {
+       "money": 300000,
+       "skill": 3,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "They declined the middle path and offered the bigger deal again.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
       }
      }
     ]
@@ -2258,6 +2664,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Say it was a surprise party, and plan one",
+    "outcomes": [
+     {
+      "text": "I really planned one. It was lovely. And the cover held, for the moment.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 3,
+       "money": -300
+      }
+     },
+     {
+      "text": "The excuse was believed, but I had to plan a party I couldn't afford.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "money": -600
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -2437,6 +2865,28 @@
       }
      }
     ]
+   },
+   {
+    "label": "Contact an old friend inside the service",
+    "outcomes": [
+     {
+      "text": "A friend I trusted passed me a file. It cleared part of my name.",
+      "weight": 1,
+      "effects": {
+       "skill": 3,
+       "stress": 6,
+       "karma": 1
+      }
+     },
+     {
+      "text": "The friend was watched, and I'd made it worse for both of us.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "karma": -3
+      }
+     }
+    ]
    }
   ],
   "weight": 6,
@@ -2602,6 +3052,28 @@
        "money": 90000,
        "happiness": 6,
        "skill": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a desk role",
+    "outcomes": [
+     {
+      "text": "A desk role with a window and a pension. I told myself it was a compromise and found I enjoyed it.",
+      "weight": 1,
+      "effects": {
+       "money": 60000,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "The desk role was dull enough to be dangerous. I started looking for excitement elsewhere.",
+      "weight": 1,
+      "effects": {
+       "money": 60000,
+       "happiness": -3,
+       "stress": 3
       }
      }
     ]
