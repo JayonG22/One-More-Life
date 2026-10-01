@@ -1110,6 +1110,8 @@ A(5, "🌇", "The long evening",
 
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gen_pets_b.py')).read())
 
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gen_pets_c.py')).read())
+
 # ======================================================================== write
 for (fid, years, sources) in FOLLOW:
     for e in EV:

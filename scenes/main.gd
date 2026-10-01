@@ -3032,6 +3032,7 @@ func _on_died(_entry: Dictionary) -> void:
 
 func _show_death() -> void:
 	Fx.play("death")
+	Fx.voice("v_sigh", 0.8)
 	VFX.death_fade(fx_layer)
 	VFX.burst(fx_layer, "grief", 10)
 	_show("death")
@@ -3928,7 +3929,7 @@ func _settings_rows(redraw: Callable) -> Array:
 		redraw.call(), true, false))
 	out.append(U.lbl("Keyboard: Tab or the arrow keys move between things, Enter or Space selects, Esc goes back. Space ages up when nothing is selected. 1–6 open the main menus; in a pop-up, 1–9 pick a choice.", "Dim", 14, true))
 	out.append(U.section("Effects and comfort"))
-	for opt in [["effects", "✨", "Visual effects", "Particles, bursts and floating numbers", true], ["flashes", "⚡", "Screen flashes", "Bright full-screen flashes on big moments", true], ["shake", "📳", "Screen shake", "Shake on crashes, explosions and disasters", true], ["reduced_motion", "🐢", "Reduced motion", "Fewer animations and transitions", false], ["high_contrast", "🔳", "High contrast", "Brighter secondary text and heavier outlines", false], ["minigames", "🎮", "Career minigames", "Play them yourself. OFF lets your skill decide", true], ["life_theme", "🧛", "Life Path themes", "Switch look and sound when you become a vampire, witch, royal and so on", true], ["celeb_theme", "⭐", "Celebrity theme when famous", "Switch to the Celebrity look at 88+ fame", true]]:
+	for opt in [["effects", "✨", "Visual effects", "Particles, bursts and floating numbers", true], ["voices", "🗣️", "Voice sounds", "Cheers, gasps and sighs on big moments", true], ["flashes", "⚡", "Screen flashes", "Bright full-screen flashes on big moments", true], ["shake", "📳", "Screen shake", "Shake on crashes, explosions and disasters", true], ["reduced_motion", "🐢", "Reduced motion", "Fewer animations and transitions", false], ["high_contrast", "🔳", "High contrast", "Brighter secondary text and heavier outlines", false], ["minigames", "🎮", "Career minigames", "Play them yourself. OFF lets your skill decide", true], ["life_theme", "🧛", "Life Path themes", "Switch look and sound when you become a vampire, witch, royal and so on", true], ["celeb_theme", "⭐", "Celebrity theme when famous", "Switch to the Celebrity look at 88+ fame", true]]:
 		var key: String = opt[0]
 		var dflt: bool = opt[4]
 		var on: bool = s.get(key, dflt)
@@ -3940,6 +3941,12 @@ func _settings_rows(redraw: Callable) -> Array:
 			if key == "high_contrast":
 				ThemeManager.set_contrast(GameState.settings.get("high_contrast", false))
 			redraw.call(), true, false))
+	var dens: String = str(s.get("event_density", "normal"))
+	out.append(U.row("🎲", "Event pace: " + dens.capitalize(), "Calm, Normal or Busy. How many decisions a year may reach you", func():
+		var order: Array = ["calm", "normal", "busy"]
+		GameState.settings["event_density"] = order[(order.find(dens) + 1) % 3]
+		SaveManager.save_settings()
+		redraw.call(), true, false))
 	out.append(U.row("🎨", "Theme: " + ThemeManager.LABELS[ThemeManager.current], "Tap to switch", func(): _set_theme(ThemeManager.next_theme()), true, false))
 	return out
 
@@ -4092,27 +4099,75 @@ func _toast(icon: String, head: String, body: String, col: Color) -> void:
 ## mission reminder. Now it takes the screen for a moment: the card lands, the
 ## colour of its tier washes over everything, and the higher tiers get a real
 ## fanfare and a shower. Bronze stays modest, because most of them are bronze.
+var ach_queue: Array = []
+var ach_busy := false
+
+
+## Achievements arrive one at a time. Each gets the stage to itself, with its own sound,
+## a voice and a look that grows with the tier; the next one waits its turn.
 func _toast_ach(a: Dictionary) -> void:
+	ach_queue.append(a)
+	if not ach_busy:
+		_pump_ach()
+
+
+func _pump_ach() -> void:
+	if ach_queue.is_empty():
+		ach_busy = false
+		return
+	ach_busy = true
+	var a: Dictionary = ach_queue.pop_front()
 	var tier: String = a.get("tier", "bronze")
 	var col: Color = Goals.TIER_COLORS[tier]
 	var stars: int = int(Goals.TIER_STARS[tier])
 	var big := tier in ["gold", "platinum", "legendary", "diamond"]
-	_ach_card(a, tier, col, stars, big)
-	if big:
-		Moments.fire("achievement", 1.0)
-		if fx_layer != null and is_instance_valid(fx_layer):
-			VFX.burst(fx_layer, "sparks", 18)
-	else:
-		Moments.fire("achievement", 0.55)
+	var hurry := 0.55 if ach_queue.size() >= 3 else 1.0
+	var hold: float = {"bronze": 2.6, "silver": 3.2, "gold": 4.0, "platinum": 4.8, "legendary": 5.4, "diamond": 5.4}.get(tier, 3.0) * hurry
+	_ach_card(a, tier, col, stars, big, hold)
+	match tier:
+		"bronze":
+			Fx.play("ach_bronze")
+			Fx.voice("v_yay", 0.7)
+			Moments.fire("achievement", 0.55)
+		"silver":
+			Fx.play("ach_silver")
+			Fx.voice("v_yay", 1.0)
+			Moments.fire("achievement", 0.7)
+		"gold":
+			Fx.play("ach_gold")
+			Fx.voice("v_woo", 1.0)
+			Moments.fire("achievement", 1.0)
+		_:
+			Fx.play("ach_epic")
+			Fx.voice("v_cheer", 1.0)
+			Moments.fire("achievement", 1.0)
+	if fx_layer != null and is_instance_valid(fx_layer):
+		match tier:
+			"silver": VFX.burst(fx_layer, "sparks", 10)
+			"gold":
+				VFX.burst(fx_layer, "sparks", 24)
+			"platinum", "legendary", "diamond":
+				VFX.burst(fx_layer, "sparks", 40)
+				VFX.burst(fx_layer, "confetti", 30)
+				VFX.shake(shake_root, 5.0, 0.35)
+	var wait := get_tree().create_timer(hold + 0.55)
+	wait.timeout.connect(_pump_ach)
 
 
-func _ach_card(a: Dictionary, tier: String, col: Color, stars: int, big: bool) -> void:
+func _ach_card(a: Dictionary, tier: String, col: Color, stars: int, big: bool, hold: float = 3.2) -> void:
 	if fx_layer == null or not is_instance_valid(fx_layer):
 		return
+	var win := get_viewport_rect().size
+	# light rays behind the card, for the tiers that earn them
+	if tier in ["gold", "platinum", "legendary", "diamond"]:
+		var rays := AchBurst.new()
+		rays.size = win
+		rays.setup(col, hold, 18 if tier != "gold" else 12)
+		fx_layer.add_child(rays)
 	var card := PanelContainer.new()
 	card.theme_type_variation = "EventFrame"
 	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var v := U.vb(6)
+	var v := U.vb(8)
 	card.add_child(v)
 	var top := U.lbl("🏆  ACHIEVEMENT UNLOCKED", "Bold", 15)
 	top.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -4122,42 +4177,47 @@ func _ach_card(a: Dictionary, tier: String, col: Color, stars: int, big: bool) -
 	rule.color = Color(col, 0.6)
 	rule.custom_minimum_size = Vector2(0, 2)
 	v.add_child(rule)
-	var h := U.hb(14)
-	var ic := U.lbl(str(a["icon"]), "Emoji", 58)
+	var h := U.hb(16)
+	var ic := U.lbl(str(a["icon"]), "Emoji", 72 if big else 58)
 	h.add_child(ic)
-	var tv := U.vb(2)
-	var nm := U.lbl(str(a["name"]), "Title", 24)
-	nm.custom_minimum_size = Vector2(340, 0)
+	var tv := U.vb(3)
+	var nm := U.lbl(str(a["name"]), "Title", 28 if big else 24)
+	nm.custom_minimum_size = Vector2(360, 0)
 	nm.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	tv.add_child(nm)
 	if str(a.get("desc", "")) != "":
 		var ds := U.lbl(str(a["desc"]), "Dim", 15, true)
-		ds.custom_minimum_size = Vector2(340, 0)
+		ds.custom_minimum_size = Vector2(360, 0)
 		tv.add_child(ds)
-	tv.add_child(U.lbl("%s  ·  +%d ⭐" % [tier.capitalize(), stars], "Bold", 15))
+	var tl := U.lbl("%s  ·  +%d ⭐" % [tier.capitalize(), stars], "Bold", 16)
+	tl.add_theme_color_override("font_color", col)
+	tv.add_child(tl)
 	h.add_child(tv)
 	v.add_child(h)
-	card.custom_minimum_size = Vector2(560 if big else 500, 0)
+	card.custom_minimum_size = Vector2(600 if big else 520, 0)
 	U._ignore_all(card)
 	fx_layer.add_child(card)
-	var slot := toasts_live
-	toasts_live += 1
-	var win := get_viewport_rect().size
-	card.position = Vector2(win.x / 2.0 - (280.0 if big else 250.0), -140.0)
-	card.pivot_offset = Vector2(280.0 if big else 250.0, 60.0)
-	card.scale = Vector2(0.82, 0.82)
+	var w2: float = 300.0 if big else 260.0
+	card.position = Vector2(win.x / 2.0 - w2, -160.0)
+	card.pivot_offset = Vector2(w2, 70.0)
+	card.scale = Vector2(0.7, 0.7)
+	var rest := win.y * (0.26 if big else 0.12)
 	var tw := card.create_tween().set_parallel(true)
-	var rest := (win.y * 0.28 if big else 20.0 + slot * 92.0)
-	tw.tween_property(card, "position:y", rest, 0.42).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tw.tween_property(card, "scale", Vector2.ONE, 0.42).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tw.tween_property(card, "position:y", rest, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tw.tween_property(card, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	# the icon pops in a beat later
+	ic.pivot_offset = Vector2(36, 36)
+	ic.scale = Vector2.ZERO
+	var ti := ic.create_tween()
+	ti.tween_interval(0.25)
+	ti.tween_property(ic, "scale", Vector2(1.25, 1.25), 0.22).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	ti.tween_property(ic, "scale", Vector2.ONE, 0.14)
 	var out := card.create_tween()
-	out.tween_interval(4.6 if big else 3.2)
+	out.tween_interval(hold)
 	out.tween_property(card, "modulate:a", 0.0, 0.4)
-	out.tween_callback(func():
-		toasts_live = maxi(0, toasts_live - 1)
-		card.queue_free())
+	out.tween_callback(card.queue_free)
 	if big:
-		VFX.flash(fx_layer, col, 0.26, 0.7)
+		VFX.flash(fx_layer, col, 0.3, 0.8)
 
 
 func _toast_mission(info: Dictionary) -> void:

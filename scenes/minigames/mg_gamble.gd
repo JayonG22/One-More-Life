@@ -62,10 +62,12 @@ func settle(won: int, text: String) -> void:
 	var net := won - bet - extra_stake
 	if won > 0 and won >= (bet + extra_stake) * 5:
 		Fx.play("cash")
+		Fx.voice("v_cheer")
 		confetti(46)
 		flash_text("BIG WIN  %s" % GameState.fmt_money(won), col("gold"), Vector2(W / 2.0, 200), 54)
 	elif won > bet + extra_stake:
 		Fx.play("coin")
+		Fx.voice("v_woo", 0.6)
 		confetti(18)
 		flash_text("+%s" % GameState.fmt_money(net), col("good"), Vector2(W / 2.0, 220), 44)
 	elif won > 0:
@@ -73,6 +75,7 @@ func settle(won: int, text: String) -> void:
 		flash_text("Paid %s" % GameState.fmt_money(won), col("dim"), Vector2(W / 2.0, 220), 36)
 	else:
 		Fx.play("bad", 0.05)
+		Fx.voice("v_ugh", 0.7)
 		shake(6.0)
 		flash_text("Nothing", col("bad"), Vector2(W / 2.0, 220), 40)
 	if win_l:

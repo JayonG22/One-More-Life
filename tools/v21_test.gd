@@ -27,6 +27,7 @@ func _ready() -> void:
 	_companions_and_director()
 	_items_and_avatar()
 	_mode_audio()
+	_voices()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -402,3 +403,10 @@ func _mode_audio() -> void:
 	ok(Fx.mode_key == "prison", "the sound mode did not switch")
 	Fx.set_mode("")
 	print("  mode audio: Pets, Prison and the guard each have their own music and sound")
+
+
+func _voices() -> void:
+	for id in ["v_yay", "v_woo", "v_ooh", "v_oh", "v_ugh", "v_gasp", "v_sigh", "v_laugh", "v_hmm", "v_aww", "v_ouch", "v_cheer"]:
+		var st: AudioStreamWAV = Fx._voice(id)
+		ok(st != null and st.data.size() > 2000, "voice %s did not synthesize" % id)
+	print("  voices: all 12 human-like sounds synthesize")

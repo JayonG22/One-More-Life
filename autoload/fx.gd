@@ -205,6 +205,8 @@ func _render(notes: Array, total: float, rate: int = RATE, pad: bool = false) ->
 
 
 func _build(id: String) -> AudioStreamWAV:
+	if id.begins_with("v_"):
+		return _voice(id)
 	var fl: Dictionary = THEME_FLAVOR.get(_key(), THEME_FLAVOR["dark"])
 	var p: float = fl["pitch"]
 	var w: String = fl["wave"]
@@ -254,6 +256,14 @@ func _build(id: String) -> AudioStreamWAV:
 			return _render([[55.0, 0.0, 0.9, 0.34, "sine", 0.8], [110.0 * p, 0.0, 0.7, 0.18, "saw", 0.7], [233.0 * p, 0.12, 0.5, 0.12, w, 1.06], [247.0 * p, 0.12, 0.5, 0.12, w, 0.95], [0.0, 0.0, 0.25, 0.1, "noise"]], 1.0)
 		"achieve":
 			return _render([[1319.0 * p, 0.0, 0.08, 0.16 * br, "sine"], [1568.0 * p, 0.06, 0.08, 0.16 * br, "sine"], [2093.0 * p, 0.12, 0.3, 0.18 * br, "bell"], [1047.0 * p, 0.0, 0.4, 0.08 * br, "tri"]], 0.45)
+		"ach_bronze":
+			return _render([[1175.0 * p, 0.0, 0.08, 0.15 * br, "sine"], [1568.0 * p, 0.07, 0.2, 0.15 * br, "bell"], [784.0 * p, 0.0, 0.3, 0.07, "tri"]], 0.4)
+		"ach_silver":
+			return _render([[1047.0 * p, 0.0, 0.08, 0.16 * br, "sine"], [1319.0 * p, 0.07, 0.08, 0.16 * br, "sine"], [1568.0 * p, 0.14, 0.3, 0.17 * br, "bell"], [2093.0 * p, 0.14, 0.4, 0.07 * br, "bell"], [523.0 * p, 0.0, 0.45, 0.08, "tri"]], 0.6)
+		"ach_gold":
+			return _render([[523.0 * p, 0.0, 0.1, 0.2 * br, "tri"], [659.0 * p, 0.09, 0.1, 0.2 * br, "tri"], [784.0 * p, 0.18, 0.1, 0.2 * br, "tri"], [1047.0 * p, 0.28, 0.55, 0.22 * br, "tri"], [2093.0 * p, 0.34, 0.5, 0.07 * br, "bell"], [3136.0 * p, 0.44, 0.45, 0.05 * br, "bell"], [262.0 * p, 0.28, 0.6, 0.12, "sine"]], 1.0)
+		"ach_epic":
+			return _render([[392.0, 0.0, 0.12, 0.2, "tri"], [523.0, 0.1, 0.12, 0.2, "tri"], [659.0, 0.2, 0.12, 0.2, "tri"], [784.0, 0.3, 0.12, 0.2, "tri"], [1047.0, 0.4, 0.2, 0.22, "tri"], [1319.0, 0.52, 0.8, 0.24, "tri"], [2637.0, 0.56, 0.7, 0.08, "bell"], [3136.0, 0.66, 0.7, 0.07, "bell"], [3951.0, 0.76, 0.6, 0.05, "bell"], [196.0, 0.4, 1.0, 0.16, "sine"], [0.0, 0.5, 0.4, 0.04, "noise"]], 1.5)
 		"heirloom":
 			return _render([[988.0 * p, 0.0, 0.3, 0.16, "bell"], [1319.0 * p, 0.1, 0.45, 0.14, "bell"]], 0.6)
 		"legendary":
@@ -284,6 +294,17 @@ func play(id: String, pitch_var: float = 0.03) -> void:
 	if not _enabled:
 		return
 	var key := id + "_" + _key()
+	if id.begins_with("v_"):
+		key = id + "_" + str(randi() % 3)      # three takes of each voice
+		var fs := _voice_file(id)
+		if fs != null:
+			var pl0 := _players[_next_player]
+			_next_player = (_next_player + 1) % _players.size()
+			pl0.stream = fs
+			pl0.pitch_scale = 1.0 + randf_range(-pitch_var, pitch_var)
+			pl0.volume_db = 0.0
+			pl0.play()
+			return
 	if id == "bubble":
 		key += str(randi() % 4)
 	if not _cache.has(key):
@@ -314,10 +335,130 @@ func play_for_changes(changes: Dictionary) -> void:
 		sum += -v if k == "stress" else v
 	if sum > 6:
 		play("good")
+		voice("v_ooh" if randf() < 0.5 else "v_laugh", 0.22)
 	elif sum < -6:
 		play("bad")
+		voice("v_ugh" if randf() < 0.5 else "v_oh", 0.22)
 	else:
 		play("tap")
+
+
+# ---------------------------------------------------------------- voices
+##
+## Human-sounding reactions, made the way speech synthesisers make vowels: a buzzing
+## source shaped by three resonances (formants), a little breath, a little vibrato.
+## Nothing here is a recording and nothing is copied from another game. If a file with
+## the right name exists in res://audio/voices/ (yay.ogg, woo.wav and so on), it is
+## used in place of the synthesis, so real recordings can be dropped in.
+
+const VOWELS := {
+	"ee": [270.0, 2290.0, 3010.0], "ay": [550.0, 1770.0, 2490.0], "ah": [730.0, 1090.0, 2440.0],
+	"oo": [300.0, 870.0, 2240.0], "oh": [500.0, 1000.0, 2400.0], "uh": [640.0, 1190.0, 2390.0],
+	"aw": [600.0, 900.0, 2500.0], "mm": [250.0, 1000.0, 2300.0], "eh": [530.0, 1840.0, 2480.0], "ow": [680.0, 1000.0, 2400.0],
+}
+## segments: [seconds, f0 start, f0 end, vowel from, vowel to, loudness, breath, vibrato]
+const VOICES := {
+	"v_yay": [[0.10, 260.0, 300.0, "ee", "ee", 0.7, 0.05, 0.0], [0.30, 300.0, 380.0, "ay", "ay", 1.0, 0.05, 0.02]],
+	"v_woo": [[0.45, 190.0, 330.0, "oo", "oo", 1.0, 0.06, 0.03], [0.15, 330.0, 290.0, "oo", "oo", 0.6, 0.06, 0.04]],
+	"v_ooh": [[0.40, 280.0, 250.0, "oo", "aw", 0.9, 0.08, 0.03]],
+	"v_oh": [[0.28, 240.0, 170.0, "oh", "oh", 0.9, 0.05, 0.0]],
+	"v_ugh": [[0.30, 140.0, 100.0, "uh", "uh", 0.9, 0.25, 0.0]],
+	"v_gasp": [[0.34, 0.0, 0.0, "ah", "oh", 0.9, 1.0, 0.0]],
+	"v_sigh": [[0.85, 210.0, 130.0, "ah", "uh", 0.7, 0.55, 0.01]],
+	"v_laugh": [[0.12, 250.0, 235.0, "ah", "ah", 0.8, 0.5, 0.0], [0.05, 0.0, 0.0, "ah", "ah", 0.0, 0.0, 0.0], [0.12, 245.0, 225.0, "ah", "ah", 0.8, 0.5, 0.0], [0.05, 0.0, 0.0, "ah", "ah", 0.0, 0.0, 0.0], [0.12, 240.0, 215.0, "ah", "ah", 0.75, 0.5, 0.0], [0.05, 0.0, 0.0, "ah", "ah", 0.0, 0.0, 0.0], [0.16, 235.0, 200.0, "ah", "ah", 0.7, 0.5, 0.0]],
+	"v_hmm": [[0.50, 165.0, 185.0, "mm", "mm", 0.8, 0.02, 0.03]],
+	"v_aww": [[0.70, 300.0, 240.0, "aw", "aw", 0.85, 0.06, 0.05]],
+	"v_ouch": [[0.28, 300.0, 210.0, "ow", "oo", 1.0, 0.04, 0.0]],
+	"v_cheer": [[0.60, 200.0, 300.0, "oo", "oo", 1.0, 0.12, 0.03], [0.30, 300.0, 270.0, "ay", "ay", 0.8, 0.12, 0.03]],
+}
+
+
+func _voice(id: String) -> AudioStreamWAV:
+	var segs: Array = VOICES.get(id, VOICES["v_oh"])
+	var scale := 1.0
+	# a lower and a higher speaker, so it is not always the same person
+	if randf() < 0.5:
+		scale = randf_range(0.62, 0.78)
+	else:
+		scale = randf_range(0.95, 1.12)
+	var total := 0.0
+	for sg in segs:
+		total += float(sg[0])
+	var rate := RATE
+	var n := int(total * rate) + int(rate * 0.12)
+	var out := PackedFloat32Array()
+	out.resize(n)
+	var pos := 0
+	var phase := 0.0
+	var y1 := [0.0, 0.0, 0.0]
+	var y2 := [0.0, 0.0, 0.0]
+	var bw := [90.0, 110.0, 170.0]
+	var lp := 0.0
+	for sg in segs:
+		var cnt := int(float(sg[0]) * rate)
+		var va: Array = VOWELS[sg[3]]
+		var vb: Array = VOWELS[sg[4]]
+		for i in range(cnt):
+			if pos + i >= n:
+				break
+			var t := float(i) / float(maxi(1, cnt))
+			var f0: float = lerpf(float(sg[1]), float(sg[2]), t) * scale
+			var vib := 1.0 + float(sg[7]) * sin(TAU * 5.5 * float(pos + i) / rate)
+			phase += (f0 * vib) / rate
+			var src := 0.0
+			if f0 > 1.0:
+				var ph := fmod(phase, 1.0)
+				src = pow(1.0 - ph, 3.0) * 2.0 - 0.5
+			var breath := randf_range(-1.0, 1.0) * float(sg[6])
+			var x := src * (1.0 - float(sg[6]) * 0.5) + breath * 0.6
+			# three resonators in parallel
+			var mix := 0.0
+			for k in range(3):
+				var fc: float = lerpf(float(va[k]), float(vb[k]), t)
+				var r := exp(-PI * float(bw[k]) / rate)
+				var a1 := 2.0 * r * cos(TAU * fc / rate)
+				var a2 := -r * r
+				var y: float = (1.0 - r) * x + a1 * float(y1[k]) + a2 * float(y2[k])
+				y2[k] = y1[k]
+				y1[k] = y
+				mix += y * [1.0, 0.6, 0.3][k]
+			# lip radiation: a little high-pass tilt
+			var hp := mix - lp
+			lp += (mix - lp) * 0.6
+			var env := minf(1.0, t / 0.12) * minf(1.0, (1.0 - t) / 0.2)
+			out[pos + i] += hp * 3.2 * float(sg[5]) * env
+		pos += cnt
+	var data := PackedByteArray()
+	data.resize(n * 2)
+	for i in range(n):
+		var v: float = out[i]
+		v = v / (1.0 + absf(v) * 0.5)
+		var sv := int(clampf(v, -1.0, 1.0) * 26000.0)
+		data[i * 2] = sv & 0xFF
+		data[i * 2 + 1] = (sv >> 8) & 0xFF
+	var st := AudioStreamWAV.new()
+	st.format = AudioStreamWAV.FORMAT_16_BITS
+	st.mix_rate = rate
+	st.stereo = false
+	st.data = data
+	return st
+
+
+## A real recording dropped into res://audio/voices/ wins over the synthesis.
+func _voice_file(id: String) -> AudioStream:
+	var base := "res://audio/voices/%s" % id.trim_prefix("v_")
+	for ext in ["ogg", "wav", "mp3"]:
+		if ResourceLoader.exists("%s.%s" % [base, ext]):
+			return load("%s.%s" % [base, ext])
+	return null
+
+
+func voice(id: String, chance: float = 1.0) -> void:
+	if not _enabled or randf() > chance:
+		return
+	if not bool(GameState.settings.get("voices", true)):
+		return
+	play(id, 0.06)
 
 
 # ---------------------------------------------------------------- music
