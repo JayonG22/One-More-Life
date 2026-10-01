@@ -250,10 +250,14 @@ static func section(text: String) -> Label:
 
 
 static func face(gender: String, age: int, idx: int) -> String:
+	var tones := ["", "🏻", "🏽", "🏾", "🏿"]
+	return face_tone(gender, age, tones[clampi(idx, 0, tones.size() - 1)])
+
+
+## The age-and-gender emoji with a skin-tone modifier already chosen.
+static func face_tone(gender: String, age: int, t: String) -> String:
 	if age < 3:
 		return "👶"
-	var tones := ["", "🏻", "🏽", "🏾", "🏿"]
-	var t: String = tones[clampi(idx, 0, tones.size() - 1)]
 	if age < 13:
 		match gender:
 			"male": return "👦" + t

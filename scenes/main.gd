@@ -900,7 +900,7 @@ func _build_new_life() -> Control:
 ## The avatar editor: a preview, a row per part, and the option to buy what you do not own.
 func _open_avatar_editor(start: Dictionary, gender: String, age: int, on_save: Callable) -> void:
 	var av := start.duplicate()
-	var body := _big_popup(1000, "🪞", "Appearance", "Parts marked with a star price are sold in the Star Shop.")
+	var body := _big_popup(1000, "🪞", "Appearance", "Your usual face follows your age and gender. Change any part to go your own way; parts with a star price are sold in the Star Shop.")
 	var row := U.hb(24)
 	body.add_child(row)
 	var prev := AvatarView.new()
@@ -933,7 +933,7 @@ func _open_avatar_editor(start: Dictionary, gender: String, age: int, on_save: C
 		var buy := U.btn("", func(): pass, "Row")
 		var upd := func():
 			var i: int = int(av[key])
-			val.text = Avatar.name_of(key, i) if kind == "style" else "#%d" % (i + 1)
+			val.text = ("%s %s" % [Avatar.glyph_of(key, i), Avatar.name_of(key, i)]).strip_edges() if kind == "style" else "#%d" % (i + 1)
 			sw.visible = kind == "color"
 			if kind == "color":
 				sw.color = Avatar.color_of(key, i)
@@ -4387,7 +4387,7 @@ func _use_star_item(id: String) -> void:
 
 
 func _star_avatar(box: VBoxContainer) -> void:
-	box.add_child(U.lbl("Hats, wild hair, glasses and clothes for your avatar. Each part is yours in every save once bought; wear it from Appearance, or right here.", "Dim", 14, true))
+	box.add_child(U.lbl("Hats, hair, eyewear and extras to lay over your portrait. Each part is yours in every save once bought; wear it from Appearance, or right here.", "Dim", 14, true))
 	var cur := Avatar.current()
 	var gender := str(GameState.player.get("gender", "male")) if GameState.has_life() else "male"
 	var age := 28
@@ -4416,7 +4416,7 @@ func _star_avatar(box: VBoxContainer) -> void:
 			pv.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 			pv.setup(look, age, gender)
 			cv.add_child(pv)
-			var nl2 := U.lbl(Avatar.name_of(key, i) if str(cat[3]) == "style" else "Colour %d" % (i + 1), "Bold", 13)
+			var nl2 := U.lbl(("%s %s" % [Avatar.glyph_of(key, i), Avatar.name_of(key, i)]).strip_edges(), "Bold", 13)
 			nl2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			cv.add_child(nl2)
 			var owned := Avatar.is_owned(key, i)

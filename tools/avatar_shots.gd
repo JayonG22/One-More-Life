@@ -15,11 +15,11 @@ func _ready() -> void:
 	for i in range(30):
 		var gender: String = ["male", "female", "nonbinary"][i % 3]
 		var a := Avatar.random(gender)
-		if i >= 22:   # show premium parts too
-			a["hat"] = [3, 4, 2, 1, 5, 3, 4, 2][i - 22]
-			a["glasses"] = [3, 4, 2, 1, 3, 4, 2, 1][i - 22]
-			a["hair"] = [5, 10, 13, 9, 12, 6, 8, 3][i - 22]
-			a["hair_col"] = [8, 9, 10, 11, 5, 0, 3, 7][i - 22]
+		if i >= 14:   # show the optional parts too
+			a["hat"] = (i * 3) % 8
+			a["glasses"] = i % 4
+			a["hair"] = i % 6
+			a["extra"] = (i * 5) % 8
 		var v := AvatarView.new()
 		v.custom_minimum_size = Vector2(140, 168)
 		grid.add_child(v)

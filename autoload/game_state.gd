@@ -1005,11 +1005,9 @@ func continue_as(child_id: String) -> void:
 	var oldav: Dictionary = old.get("avatar", {})
 	var kidav := Avatar.random(str(player["gender"]))
 	if not oldav.is_empty():
-		kidav["skin"] = clampi(int(oldav["skin"]) + randi_range(-1, 1), 0, Avatar.SKIN.size() - 1)
-		if randf() < 0.6:
-			kidav["hair_col"] = oldav["hair_col"]
+		kidav["skin"] = clampi(int(oldav.get("skin", 0)) + randi_range(-1, 1), 0, Avatar.SKIN.size() - 1)
 		if randf() < 0.5:
-			kidav["eye_col"] = oldav["eye_col"]
+			kidav["hair"] = int(oldav.get("hair", 0))
 	player["avatar"] = kidav
 	player["stats"]["smarts"] = clampf((stat("smarts") + float(old["stats"]["smarts"])) / 2.0 + randf_range(-10, 10), 5, 100)
 	var parent_rel := "father" if old["gender"] == "male" else "mother"
