@@ -621,6 +621,7 @@ You didn't. Don't waste it." % cause)
 	pending.clear()
 	var entry := GameState.finalize_death(cause)
 	Meta.record_death(entry)
+	Legacy.record(entry)
 	Goals.on_death()
 	GameState.player["legacy"]["unlocks"] = Goals.life_unlocks.duplicate()
 	entry = GameState.player["legacy"]

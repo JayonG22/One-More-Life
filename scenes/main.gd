@@ -394,6 +394,17 @@ func _start_pet() -> void:
 	_show("game")
 
 
+# ================================================================= LEGACY
+
+func _show_legacy() -> void:
+	var body := _big_popup(760, "🕰️", "What past lives left", "Up to two of these find the next life you begin, in any mode. Each is used once.")
+	var lines := Legacy.menu_lines()
+	if lines.is_empty():
+		body.add_child(U.lbl("Nothing yet. A life leaves an echo when it was famous, quarrelsome, loved a pet, did time, or wore the uniform.", "Dim", 16, true))
+	for ln in lines:
+		body.add_child(U.lbl(str(ln), "", 17, true))
+
+
 # ================================================================= ENDINGS SEEN
 
 func _endings_sub() -> String:
@@ -1701,6 +1712,7 @@ func _panel_more_pet() -> void:
 	_add(U.row("🎯", "Missions", ("%d ready to claim! · " % ready if ready > 0 else "") + "Daily, weekly and monthly goals", _show_missions))
 	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
 	_add(U.row("🧭", "Endings seen", _endings_sub(), _show_endings))
+	_add(U.row("🕰️", "What past lives left", "%d echo%s waiting for the next life" % [Legacy.pending().size(), "" if Legacy.pending().size() == 1 else "es"], _show_legacy))
 	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
 	_add(U.row("⚙️", "Settings", "Sound, effects, motion, display", func(): _open_panel(_panel_settings)))
@@ -2234,6 +2246,7 @@ func _panel_more() -> void:
 	_add(U.row("🎯", "Missions", ("%d ready to claim! · " % ready if ready > 0 else "") + "Daily, weekly and monthly goals", _show_missions))
 	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
 	_add(U.row("🧭", "Endings seen", _endings_sub(), _show_endings))
+	_add(U.row("🕰️", "What past lives left", "%d echo%s waiting for the next life" % [Legacy.pending().size(), "" if Legacy.pending().size() == 1 else "es"], _show_legacy))
 	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
 	_add(U.row("🌳", "Family Tree", "Your bloodline at a glance", _show_family_tree))
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))

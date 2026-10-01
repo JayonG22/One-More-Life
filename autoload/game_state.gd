@@ -195,6 +195,8 @@ func new_life(opts: Dictionary) -> void:
 	player["region"] = rid if rid != "" else Places.random_region(country_id)
 	Lives.apply_start(opts)
 	Goals.on_new_life()
+	if not opts.get("keep_family", false) or Lives.separate():
+		Legacy.on_new_life()
 	changed.emit()
 
 
