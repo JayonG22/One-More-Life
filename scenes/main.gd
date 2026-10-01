@@ -1222,12 +1222,60 @@ func _build_game() -> Control:
 ## screen. Before this, fame, a career skill, a rank ladder and a supernatural
 ## meter were all numbers hidden behind a sub-menu, so there was no way to see
 ## you were getting somewhere without going looking.
+## The things that define your day are always on screen, apart from the menus: where you
+## work, where you study, what you run. One line each, with how it is going.
+func _pinned_headlines(box: VBoxContainer) -> void:
+	var p := GameState.player
+	if int(p.get("age", 0)) < 3 or Lives.separate():
+		return
+	var any := false
+	if GameState.has_job():
+		var j: Dictionary = p["job"]
+		var perf := float(j.get("perf", 50.0))
+		var sub := "%s a year · %d year%s here" % [GameState.fmt_money(int(j["salary"])), int(j.get("years", 0)), "" if int(j.get("years", 0)) == 1 else "s"]
+		if int(j.get("warned", 0)) >= 1:
+			sub += " · ⚠️ on a performance plan"
+		elif perf >= 70.0 and int(j.get("years_in_rank", 0)) >= 1:
+			sub += " · 📈 promotion in sight"
+		var co := str(j.get("employer_name", ""))
+		var hb := U.hb(8)
+		hb.add_child(U.bar(perf, ThemeManager.bar_color("happiness", perf), 8, 90))
+		hb.add_child(U.lbl("%d%%" % int(perf), "Bold", 13))
+		box.add_child(U.row("💼", "%s%s" % [str(j["title"]), ("  ·  " + co) if co != "" else ""], sub, func(): _tab_press(2), true, true, hb))
+		any = true
+	var edu: Dictionary = p.get("education", {})
+	if GameState.in_school():
+		var perf2 := float(edu.get("performance", 50.0))
+		var hb2 := U.hb(8)
+		hb2.add_child(U.bar(perf2, ThemeManager.bar_color("smarts", perf2), 8, 90))
+		hb2.add_child(U.lbl("%d%%" % int(perf2), "Bold", 13))
+		var gr := str(edu.get("grade", ""))
+		box.add_child(U.row("🏫", "Elementary School" if str(edu.get("stage", "")) == "primary" else "High School", "Grade %s" % (gr if gr != "" else "—"), func(): _tab_press(2), true, true, hb2))
+		any = true
+	elif GameState.in_university():
+		var u: Dictionary = edu["uni"]
+		var perf3 := float(u.get("performance", 50.0))
+		var hb3 := U.hb(8)
+		hb3.add_child(U.bar(perf3, ThemeManager.bar_color("smarts", perf3), 8, 90))
+		hb3.add_child(U.lbl(EventEngine.grade_letter(perf3), "Bold", 13))
+		box.add_child(U.row("🎓", str(ContentDB.major(u["major"])["name"]), "Year %d of %d" % [int(u["year"]) + 1, int(u["years"])], func(): _tab_press(2), true, true, hb3))
+		any = true
+	var biz: Dictionary = p.get("business", {})
+	if not biz.is_empty():
+		box.add_child(U.row("📈", str(biz["name"]), "Profit last year %s" % GameState.fmt_money(int(biz.get("profit", 0))), func(): _tab_press(2), true, true))
+		any = true
+	if any:
+		var sep := HSeparator.new()
+		box.add_child(sep)
+
+
 func _refresh_tracks() -> void:
 	if not g.has("tracks") or not is_instance_valid(g["tracks"]):
 		return
 	var box: VBoxContainer = g["tracks"]
 	U.clear(box)
 	var p := GameState.player
+	_pinned_headlines(box)
 
 	# --- fame, once there is any
 	var fame := float(p.get("fame", 0.0))
@@ -1249,20 +1297,6 @@ func _refresh_tracks() -> void:
 			box.add_child(U.track("🗳️", "Approval", float(c["approval"]), 100.0,
 				ThemeManager.c("good") if float(c["approval"]) >= 50.0 else ThemeManager.c("bad"),
 				"%d%%" % int(c["approval"])))
-
-	# --- an ordinary job's performance, which decides promotions
-	if GameState.has_job():
-		var j: Dictionary = p["job"]
-		box.add_child(U.track("💼", "Performance", float(j.get("performance", 50.0)), 100.0,
-			ThemeManager.bar_color("happiness", float(j.get("performance", 50.0))),
-			"%d%%" % int(j.get("performance", 50.0))))
-
-	# --- school, while you are in it
-	var edu: Dictionary = p.get("education", {})
-	if str(edu.get("stage", "none")) not in ["none", "done"]:
-		box.add_child(U.track("🎓", "School", float(edu.get("performance", 50.0)), 100.0,
-			ThemeManager.bar_color("smarts", float(edu.get("performance", 50.0))),
-			"%d%%" % int(edu.get("performance", 50.0))))
 
 	# --- whatever the current life path meters
 	if Lives.kind() != "human":
@@ -2156,16 +2190,8 @@ func _panel_occupation() -> void:
 			cv.add_child(U.lbl("Boss: " + GameState.full_name(j["boss"]), "Dim", 15))
 		_add(c)
 		_add(U.row("💪", "Work harder", "Performance up, stress up", _act(Actions.work_harder), not j.get("worked_hard", false), false))
-		_add(U.row("💰", "Ask for a raise", "Depends on your performance", _act(Actions.ask_raise), true, false))
-		_add(U.row("🧭", "Professional Life", "Projects, mentors, rivals and career-specific systems", func(): MP.open("amb:work")))
-		_add(U.row("@office", "Your workplace", "Boss, colleagues, the union, and ways out", func(): MP.open("real:work")))
-		if j["field"] == "Military":
-			_add(U.row("💣", "Deploy", "Minigame · clear a path through a minefield", _act(Actions.deploy), GameState.can_interact("job", "deploy"), false))
-		if Shop.has_tag("suit") and not j.get("suited", false):
-			_add(U.row("👔", "Dress to impress", "Wear the tailored suit this year · performance up", _act(Actions.dress_up), true, false))
-		_add(U.row("🚪", "Quit job", "", _act(Actions.quit_job), true, false))
-		if age >= 60:
-			_add(U.row("🏖️", "Retire", "Collect a pension", _act(Actions.retire), true, false))
+		_add(U.row("💰", "Ask for a raise", "Depends on your performance and how the firm is doing", _act(Actions.ask_raise), true, false))
+		_add(U.row("🗂️", "At work", "Professional life, your workplace, dressing the part, ways out", func(): _open_panel(_panel_at_work)))
 	var school_sub := "Not enrolled"
 	if GameState.in_school():
 		school_sub = ("Elementary School" if p["education"]["stage"] == "primary" else "High School") + " · Grade " + str(p["education"]["grade"] if p["education"]["grade"] != "" else "—")
@@ -2176,21 +2202,62 @@ func _panel_occupation() -> void:
 	elif age < 5:
 		school_sub = "School starts at 5"
 	_add(U.row("🎓", "Education", school_sub, func(): _open_panel(_panel_education), age >= 5))
-	if not GameState.has_job() and age >= 18:
-		_add(U.row("@signpost", "Career moves", "Freelancing, retraining, and what your CV says", func(): MP.open("real:work")))
+	_add(U.row("🔎", "Find work", "Part-time, full-time, the military, freelance, special careers", func(): _open_panel(_panel_find_work), age >= 13))
+	var biz: Dictionary = p["business"]
+	_add(U.row("📈", "Business", ("%s · profit %s last year" % [biz["name"], GameState.fmt_money(int(biz["profit"]))]) if not biz.is_empty() else "Start a company" if age >= 18 else "Age 18+", func(): _open_panel(_panel_business_hub), age >= 18))
+	if not p["career"].is_empty():
+		var cd: Dictionary = Careers.CAREERS[p["career"]["id"]]
+		_add(U.row(cd["icon"], "Your career: " + Careers.title(), "Open your %s career" % cd["name"].to_lower(), func(): _open_panel(_panel_career)))
+	if p["retired"]:
+		_add(U.lbl("Retired · pension %s a year" % GameState.fmt_money(int(p["pension"])), "Dim", 16))
+
+
+func _panel_at_work() -> void:
+	_panel_header("🗂️", "At work")
+	var p := GameState.player
+	if not GameState.has_job():
+		_add(U.lbl("You do not have a job right now.", "Dim", 16))
+		return
+	var j: Dictionary = p["job"]
+	_add(U.row("🧭", "Professional Life", "Projects, mentors, rivals and career-specific systems", func(): MP.open("amb:work")))
+	_add(U.row("@office", "Your workplace", "Boss, colleagues, the union, and ways out", func(): MP.open("real:work")))
+	if j["field"] == "Military":
+		_add(U.row("💣", "Deploy", "Minigame · clear a path through a minefield", _act(Actions.deploy), GameState.can_interact("job", "deploy"), false))
+	if Shop.has_tag("suit") and not j.get("suited", false):
+		_add(U.row("👔", "Dress to impress", "Wear the tailored suit this year · performance up", _act(Actions.dress_up), true, false))
+	_add(U.row("🚪", "Quit job", "", _act(Actions.quit_job), true, false))
+	if int(p["age"]) >= 60:
+		_add(U.row("🏖️", "Retire", "Collect a pension", _act(Actions.retire), true, false))
+
+
+func _panel_find_work() -> void:
+	_panel_header("🔎", "Find work")
+	var p := GameState.player
+	var age: int = p["age"]
 	_add(U.row("🍔", "Part-Time Jobs", "Find a part-time job" if age >= 13 else "Age 13+", func(): _open_panel(func(): _panel_jobs("part")), age >= 13))
 	_add(U.row("💼", "Full-Time Jobs", "Find a full-time job" if age >= 18 else "Age 18+", func(): _open_panel(func(): _panel_jobs("full")), age >= 18))
 	_add(U.row("🎖️", "Military", "Enlist and climb the ranks" if age >= 18 else "Age 18+", func(): _open_panel(func(): _panel_jobs("military")), age >= 18))
 	_add(U.row("🧾", "Freelance", "Pick up a gig for quick cash" if age >= 14 else "Age 14+", _act(Actions.freelance), age >= 14, false))
-	var biz: Dictionary = p["business"]
-	_add(U.row("📈", "Business", ("%s · profit %s last year" % [biz["name"], GameState.fmt_money(int(biz["profit"]))]) if not biz.is_empty() else "Start a company" if age >= 18 else "Age 18+", func(): _open_panel(ep.business), age >= 18))
-	_add(U.row("🏢", "Company Portfolio", "Own multiple companies, acquire rivals and plan succession", func(): MP.open("amb:enterprise"), age >= 18))
-	if not p["career"].is_empty():
-		var cd: Dictionary = Careers.CAREERS[p["career"]["id"]]
-		_add(U.row(cd["icon"], "Your career: " + Careers.title(), "Open your %s career" % cd["name"].to_lower(), func(): _open_panel(_panel_career)))
+	if not GameState.has_job() and age >= 18:
+		_add(U.row("@signpost", "Career moves", "Freelancing, retraining, and what your CV says", func(): MP.open("real:work")))
 	_add(U.row("⭐", "Special Careers", "Actor, musician, athlete, politician, astronaut, model, fighter, director, secret agent, mafia, hustler", func(): _open_panel(_panel_special_hub), age >= 6))
-	if p["retired"]:
-		_add(U.lbl("Retired · pension %s a year" % GameState.fmt_money(int(p["pension"])), "Dim", 16))
+	var hist: Array = Market.st().get("history", [])
+	if not hist.is_empty():
+		_add(U.row("📭", "Recent applications", "%d turned down, with the reasons" % hist.size(), func(): _open_panel(_panel_applications)))
+
+
+func _panel_applications() -> void:
+	_panel_header("📭", "Recent applications")
+	for h in Market.st().get("history", []):
+		_add(U.row("📭", "%s · %s" % [str(h["role"]), str(h["co"])], "Age %d · %s" % [int(h["age"]), str(h["why"])], func(): pass, false, false))
+
+
+func _panel_business_hub() -> void:
+	_panel_header("📈", "Business")
+	var p := GameState.player
+	var biz: Dictionary = p["business"]
+	_add(U.row("📈", "Your company", ("%s · profit %s last year" % [biz["name"], GameState.fmt_money(int(biz["profit"]))]) if not biz.is_empty() else "Start a company", func(): _open_panel(ep.business)))
+	_add(U.row("🏢", "Company Portfolio", "Own multiple companies, acquire rivals and plan succession", func(): MP.open("amb:enterprise")))
 
 
 func _panel_education() -> void:
@@ -3118,11 +3185,11 @@ func _panel_become() -> void:
 		var h := U.hb(12)
 		h.add_child(U.lbl(str(r["icon"]), "Emoji", 34))
 		var tv := U.vb(1)
+		tv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		tv.add_child(U.lbl(str(r["name"]), "Bold", 20))
 		var bl := U.lbl(str(r["blurb"]), "Dim", 15, true)
 		tv.add_child(bl)
 		h.add_child(tv)
-		h.add_child(U.spacer())
 		if bool(r["met"]):
 			var chance := int(round(float(r["odds"]) * 100.0))
 			var cl := U.lbl("%d%%" % chance, "Bold", 22)

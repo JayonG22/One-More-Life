@@ -1287,7 +1287,7 @@ func _pets_yearly() -> void:
 		if float(pp["health"])<28 and randf()<0.15:
 			GameState.add_log("%s has been slowing down. A vet visit would be a good idea."%n["first"])
 		var old_enough := int(n["age"]) >= 11
-		if false and (float(pp["health"])<=0.0 or old_enough):
+		if float(pp["health"])<=0.0:
 			n["alive"]=false
 			GameState.counter("pets_lost")
 			var years := int(n["age"])

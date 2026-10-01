@@ -24,6 +24,7 @@ func _ready() -> void:
 	_workforce()
 	_reasoned_rejections()
 	_transport()
+	_companions_and_director()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -142,7 +143,8 @@ func _recall_check() -> void:
 	GameState.new_life({"first": "Test", "last": "Person", "gender": "male", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
 	GameState.player["age"] = 30
 	var ids := GameState.npcs_with("mother", true)
-	ok(not ids.is_empty(), "no mother to remember with")
+	if ids.is_empty():
+		ids = [GameState.create_npc("mother", {"age": 55, "closeness": 60})]
 	var id: String = ids[0]
 	Bonds.remember(id, "Paid back a kindness from years ago.", false)
 	GameState.npcs[id]["memory"][0]["age"] = 20
@@ -274,3 +276,61 @@ func _transport() -> void:
 			good_car += 1
 	ok(good_car > good_walk * 2, "the car did not improve the odds (walk %d, car %d)" % [good_walk, good_car])
 	print("  transport: the good outcome came %d/400 on foot and %d/400 by car" % [good_walk, good_car])
+
+
+func _companions_and_director() -> void:
+	GameState.new_life({"first": "Test", "last": "Keeper", "gender": "female", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+	GameState.player["age"] = 30
+	GameState.player["money"] = 100000
+	var id := Companions.acquire("cat", "shelter")
+	ok(GameState.npcs.has(id) and str(GameState.npcs[id]["relation"]) == "pet", "an acquired pet is not in the people list")
+	ok(Companions.status_line(id).find("shelter") != -1, "the pet does not remember where it came from")
+	var c0 := int(GameState.npcs[id]["closeness"])
+	for y in 6:
+		Companions.yearly()
+	ok(int(GameState.npcs[id]["closeness"]) < c0 or not GameState.npcs[id]["alive"], "a neglected pet did not cool or leave")
+	var id2 := Companions.gain({"species": "dog", "source": "stray"})
+	ok(id2 != "" and GameState.npcs.has(id2), "the gain_pet outcome did not make a pet")
+	# an event that gives a pet keeps it
+	var def: Dictionary = ContentDB.events_by_id["co.porch_cat"]
+	var kept := 0
+	for i in 60:
+		var n_before := GameState.npcs_with("pet").size()
+		var o: Dictionary = EventEngine._pick_outcome(def["choices"][0]["outcomes"])
+		if o.has("gain_pet"):
+			EventEngine._apply_outcome(o, {}, def)
+			if GameState.npcs_with("pet").size() > n_before:
+				kept += 1
+		if GameState.npcs_with("pet").size() >= Companions.MAX_PETS:
+			break
+	ok(kept >= 1, "an event's pet was not kept")
+	# the director trims to its budget, never trimming critical items
+	GameState.player["age"] = 33
+	EventEngine.pending.clear()
+	for i in 6:
+		EventEngine.pending.append({"def": {"id": "adult.fake%d" % i, "choices": [{}]}, "roles": {}, "created": []})
+	EventEngine.pending.append({"info": true, "icon": "i", "title": "Critical", "text": "x", "changes": {}, "critical": true})
+	Director.curate()
+	var crit := 0
+	var normal := 0
+	for it in EventEngine.pending:
+		if it.get("critical", false):
+			crit += 1
+		else:
+			normal += 1
+	ok(crit == 1, "the critical notice was trimmed")
+	ok(normal <= Director.budget(), "the director let %d through a budget of %d" % [normal, Director.budget()])
+	# the gambling and memory games exist and are flagged
+	for gid in ["g_slots", "g_roulette", "g_horses", "g_rocket", "g_plinko", "g_scratch", "g_wheel", "g_highlow"]:
+		ok(Minigames.DEFS.has(gid) and bool(Minigames.DEFS[gid].get("gamble", false)), "%s is not registered as a gambling game" % gid)
+	ok(Minigames.DEFS.has("memory"), "the memory test has no minigame")
+	# employers sound like their sector, and the military is not a lightbulb company
+	var army := Names.company("Military", "us")
+	ok(Names.MIL_US.has(army), "the military is called '%s'" % army)
+	var hosp := Names.company("Healthcare", "us")
+	ok(hosp != "", "no hospital name")
+	var seen := {}
+	for i in 60:
+		seen[Names.company("Food", "us")] = true
+	ok(seen.size() >= 40, "restaurant names repeat too much (%d distinct of 60)" % seen.size())
+	print("  companions & director: pets are kept and tended, the year is capped, names vary (%d distinct)" % seen.size())

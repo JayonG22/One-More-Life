@@ -1,4 +1,4 @@
-# ONE MORE LIFE — v1.3.0
+# ONE MORE LIFE — v1.4.0
 
 A life simulator in the spirit of BitLife, built in Godot 4.4, where every choice echoes. Everything is unlocked. No ads, no store, no passes.
 

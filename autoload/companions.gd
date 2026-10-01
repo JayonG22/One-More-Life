@@ -166,9 +166,8 @@ func _die(id: String) -> void:
 	n["alive"] = false
 	GameState.counter("pets_lost")
 	var yrs := int(_p().get("age", 0)) - int(n.get("care", {}).get("since", 0))
-	GameState.add_log("%s died. %d years. The house was the wrong kind of quiet afterwards." % [n["first"], maxi(1, yrs)])
+	Ambition._bereave("%s died. %d years. The house was the wrong kind of quiet afterwards." % [n["first"], maxi(1, yrs)])
 	GameState.add_milestone(int(_p().get("age", 0)), "lost %s" % n["first"])
-	GameState.apply_effects({"happiness": -10, "stress": 6})
 	LifeThreads.remember("grief", "Losing %s" % n["first"], "%s was with me for %d years. I still reach for the lead." % [n["first"], maxi(1, yrs)], id, 60, ["pet", "grief"])
 
 
@@ -205,7 +204,8 @@ func status_line(id: String) -> String:
 		return ""
 	var c: Dictionary = n["care"]
 	var bits: Array = []
-	bits.append(str(SOURCES.get(str(c.get("source", "event")), "came into your life")).capitalize() + ", age %d" % int(c.get("since", 0)))
+	var src := str(SOURCES.get(str(c.get("source", "event")), "came into your life"))
+	bits.append(src.substr(0, 1).to_upper() + src.substr(1) + " at %d" % int(c.get("since", 0)))
 	if str(c.get("ill", "")) != "":
 		bits.append("unwell: " + str(c["ill"]))
 	return " · ".join(bits)
