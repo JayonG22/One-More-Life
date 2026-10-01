@@ -263,7 +263,7 @@ func _build_title() -> Control:
 		modes_row.add_child(card)
 	var sep := HSeparator.new()
 	bv.add_child(sep)
-	for item in [["⏯️", "Continue Life", _continue_life, "ContinueBtn"], ["📅", Seeded.label("daily"), func(): _start_seeded("daily"), "DailyBtn"], ["🗓️", Seeded.label("weekly"), func(): _start_seeded("weekly"), "WeeklyBtn"], ["📂", "Your Lives", func(): SP.show_lives(), "LivesBtn"], ["🎁", "Daily Heirloom", func(): SP.show_heirloom(), "HeirBtn"], ["🏆", "Trophy Room", _show_trophies, "TrophyBtn"], ["🎯", "Missions", _show_missions, "MissionBtn"], ["⭐", "Star Shop", _show_star_shop, "StarBtn"], ["⚙️", "Settings", _show_settings_popup, ""], ["🎨", "Theme", _cycle_theme_title, "ThemeBtn"], ["🪦", "Graveyard", func(): _open_graveyard(), ""], ["🚪", "Quit", func(): get_tree().quit(), ""]]:
+	for item in [["⏯️", "Continue Life", _continue_life, "ContinueBtn"], ["📅", Seeded.label("daily"), func(): _start_seeded("daily"), "DailyBtn"], ["🗓️", Seeded.label("weekly"), func(): _start_seeded("weekly"), "WeeklyBtn"], ["📂", "Your Lives", func(): SP.show_lives(), "LivesBtn"], ["🎁", "Daily Heirloom", func(): SP.show_heirloom(), "HeirBtn"], ["🏆", "Trophy Room", _show_trophies, "TrophyBtn"], ["🎯", "Missions", _show_missions, "MissionBtn"], ["⭐", "Star Shop", _show_star_shop, "StarBtn"], ["⚙️", "Settings", _show_settings_popup, ""], ["🎨", "Theme", _cycle_theme_title, "ThemeBtn"], ["🪦", "Graveyard", func(): _open_graveyard(), ""], ["🚪", "Quit", func(): get_tree().quit(), ""]].filter(func(it): return not (OS.has_feature("web") and it[1] == "Quit")):
 		var b := U.icon_btn(item[0], item[1], item[2], "Row", false, 24, 18)
 		b.custom_minimum_size = Vector2(0, 52)
 		if item[3] != "":
@@ -502,10 +502,15 @@ func _share_life(entry: Dictionary) -> void:
 	DirAccess.make_dir_recursive_absolute(dir)
 	var nm := str(entry.get("name", "life")).to_lower().replace(" ", "_")
 	var path := "%s/%s_%d.png" % [dir, nm, int(Time.get_unix_time_from_system())]
-	var err := img.save_png(path)
+	var err := OK
+	if OS.has_feature("web"):
+		JavaScriptBridge.download_buffer(img.save_png_to_buffer(), "%s.png" % nm, "image/png")
+		path = "your downloads folder"
+	else:
+		err = img.save_png(path)
 	vp.queue_free()
 	DisplayServer.clipboard_set(preload("res://scenes/share_card.gd").share_text(entry))
-	var real := ProjectSettings.globalize_path(path)
+	var real := path if OS.has_feature("web") else ProjectSettings.globalize_path(path)
 	_toast("📸", "Saved" if err == OK else "Couldn't save the picture", ("Picture: %s\nThe text is on your clipboard." % real) if err == OK else "The text is on your clipboard.", ThemeManager.c("good") if err == OK else ThemeManager.c("warn"))
 	last_share = real
 

@@ -331,8 +331,20 @@ func _on_theme() -> void:
 		return
 	if _thread != null:
 		_thread.wait_to_finish()
+	if OS.has_feature("web") and not OS.has_feature("threads"):
+		# no threads in the browser build: compose in a single call, once per theme
+		call_deferred("_compose_inline", th)
+		return
 	_thread = Thread.new()
 	_thread.start(_compose.bind(th))
+
+
+func _compose_inline(th: String) -> void:
+	if th != _music_theme:
+		return
+	var st := _compose_loop(th)
+	_music_cache[th] = st
+	_start_music(st)
 
 
 func _compose(th: String) -> void:
