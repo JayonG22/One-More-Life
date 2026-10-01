@@ -1,3 +1,7 @@
+> Historical document. Preserved for context; counts, completion claims and
+> platform instructions are not current release guarantees.
+> Return to the [documentation index](../README.md).
+
 # ONE MORE LIFE — outstanding work register
 
 Everything asked for that is **not yet done**, kept in the repo so nothing gets

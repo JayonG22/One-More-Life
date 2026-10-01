@@ -20,6 +20,9 @@ cd "$HERE"
 chmod +x "$PKG/Game/Linux/OneMoreLife.x86_64"
 # the source, without the editor's cache or the git history
 git -C "$HERE" archive HEAD | tar -x -C "$PKG/Source"
-cp "$HERE/CHANGELOG-v$VER.md" "$PKG/" 2>/dev/null || true
+cp "$HERE/docs/history/CHANGELOG.md" "$PKG/CHANGELOG.md"
+cp "$HERE/CREDITS.md" "$PKG/"
+mkdir -p "$PKG/fonts"
+cp "$HERE"/fonts/LICENSE-*.txt "$PKG/fonts/"
 ls -la "$PKG/Game"/*
 echo "built $PKG"

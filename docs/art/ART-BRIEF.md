@@ -1,3 +1,7 @@
+> Design reference, not a list of delivered custom artwork. Counts reflect
+> the original inventory and may need reconciliation with the current build.
+> See the [art index](README.md).
+
 # ONE MORE LIFE — Art brief (what to make)
 
 Everything the game could use as real art instead of stock emoji, including new variations the game does not have yet. Each row says what it is, how many, and where it shows. "Have" means the game already needs it; "New" means it needs new code to use it (small: a lookup from an id to an image).
