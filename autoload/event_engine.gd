@@ -33,6 +33,9 @@ func pop_next() -> Dictionary:
 func age_up() -> void:
 	if not GameState.is_alive():
 		return
+	if Lives.separate():
+		_age_up_separate()
+		return
 	pending.clear()
 	GameState.begin_year()
 	_run_routines()
@@ -76,6 +79,28 @@ func age_up() -> void:
 	Twists.yearly()
 	_npc_agency()
 	Meta.check_challenge()
+	Goals.bump("years")
+	Goals.check()
+	GameState.emit_changed()
+	year_done.emit()
+	SaveManager.save_game()
+	if not pending.is_empty():
+		event_queued.emit()
+
+
+## Modes that are not a human life (Pets Life, later Prison Life) run only their
+## own pass: none of school, jobs, money or the human systems apply to them.
+func _age_up_separate() -> void:
+	pending.clear()
+	GameState.begin_year()
+	Lives.yearly()
+	var cause := _death_check()
+	if cause != "":
+		kill(cause)
+		if not GameState.is_alive():
+			return
+	_due_followups()
+	_random_events()
 	Goals.bump("years")
 	Goals.check()
 	GameState.emit_changed()
@@ -698,6 +723,9 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 	var p := GameState.player
 	var cond: Dictionary = def.get("conditions", {})
 	var age: int = p["age"]
+	# A separate mode only ever sees the events written for it.
+	if Lives.separate() and not cond.has("life"):
+		return false
 	if not followup:
 		if cond.has("age"):
 			var r: Array = cond["age"]
@@ -743,6 +771,12 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 			return false
 	for rt2 in cond.get("not_real", []):
 		if Real.tag(str(rt2)):
+			return false
+	for pt in cond.get("pet", []):
+		if not Pets.tag(str(pt)):
+			return false
+	for pt2 in cond.get("not_pet", []):
+		if Pets.tag(str(pt2)):
 			return false
 	if cond.has("has_car") and bool(cond["has_car"]) != (p["car"] != ""):
 		return false
@@ -1170,6 +1204,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Market.outcome(o["market"])
 	if o.has("arc"):
 		Arcs.apply(o["arc"])
+	if o.has("pet"):
+		Pets.apply(o["pet"])
 	if o.has("empire"):
 		Empires.outcome(o["empire"])
 	if o.has("become"):
@@ -1348,6 +1384,7 @@ func _field(d: Dictionary, field: String, id: String) -> String:
 		"His": return GameState.pron(g, "his").capitalize()
 		"rel": return GameState.relation_label(id).to_lower() if id != "" else ""
 		"age": return str(d.get("age", ""))
+		"job": return str(d.get("job", ""))
 	return ""
 
 

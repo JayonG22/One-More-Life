@@ -99,6 +99,25 @@ const ARCS := {
 			{"id": "hedge", "title": "A Hedge Witch", "need": [], "epitaph": "Mended what they could.", "text": "A cottage, a garden, and a long list of people who had come to the door with a problem and gone away with something in a jar."},
 		],
 	},
+	"pet": {
+		"title": "A Good Animal", "icon": "🐾",
+		"chapters": [
+			{"id": "trust", "title": "Somebody's", "blurb": "Let one person become yours: bond 40.", "need": [["bond", ">=", 40]]},
+			{"id": "known", "title": "The shape of the place", "blurb": "Learn your territory to 45, and three tricks.", "need": [["territory", ">=", 45], ["tricks_n", ">=", 3]]},
+			{"id": "calling", "title": "What you are for", "blurb": "Choose a calling.", "need": [["role_set", "==", true]]},
+			{"id": "test", "title": "The test", "blurb": "Be brave once, or win something, or survive something.", "need_any": [["heroics", ">=", 1], ["titles", ">=", 1], ["rescues", ">=", 1], ["escapes", ">=", 3]]},
+			{"id": "evening", "title": "The long evening", "blurb": "Grow old and be loved: reach the senior years with a bond over 60.", "need": [["senior", "==", true], ["bond", ">=", 60]]},
+		],
+		"endings": [
+			{"id": "pet_lost", "title": "Never Came Home", "need": [["lost", "==", true]], "epitaph": "Went looking, and kept going.", "text": "There is a poster on a lamp post with a photograph that is slightly too bright. It stayed up for two winters. Somebody left a bowl by the back step for another year, just in case."},
+			{"id": "pet_hero", "title": "A Hero", "need": [["heroics", ">=", 3]], "epitaph": "Did the brave thing, and then had a biscuit.", "text": "The local paper ran a photograph and a headline that had a pun in it. The family framed it. The pet, it is thought, would have wanted the biscuit."},
+			{"id": "pet_champion", "title": "Best in Show", "need": [["titles", ">=", 2]], "epitaph": "Held the ribbon, and the room.", "text": "The rosettes went up on the wall in a long, slightly crooked line, and each of them was dusted every spring for as long as the house had a wall."},
+			{"id": "pet_stray_king", "title": "Lord of the Alley", "need": [["territory", ">=", 80], ["home", "==", "street"]], "epitaph": "Nobody's, and everyone's.", "text": "Three streets, two restaurants and a bakery's back door were arranged around them. When they went, the whole block seemed to hold its breath for a moment, and then a younger one stepped into the doorway."},
+			{"id": "pet_best_friend", "title": "Best Friend", "need": [["bond", ">=", 85], ["belonging", ">=", 70]], "epitaph": "Somebody's whole world.", "text": "The collar still hangs on the hook by the door. Nobody has moved it, and nobody has said they're not going to."},
+			{"id": "pet_sunbeam", "title": "A Long, Warm Life", "need": [["senior", "==", true], ["bond", ">=", 55]], "epitaph": "Old, loved, and exactly where they wanted to be.", "text": "The last years were mostly sun, sleep and being carried up the stairs. It was, everyone agreed, a good way to be old."},
+			{"id": "pet_good", "title": "A Good Life", "need": [], "epitaph": "Short, as they all are, and good.", "text": "A life is the length it is. This one was full of walks, in the sense that matters, and of someone's hand on a warm head."},
+		],
+	},
 	"super": {
 		"title": "The Mask", "icon": "🦸",
 		"chapters": [
@@ -155,6 +174,9 @@ func _val(field: String):
 		"saves_heists": return int(l.get("saves", 0)) + int(l.get("heists", 0))
 		"has_nemesis": return str(l.get("nemesis", "")) != ""
 		"overthrown": return bool(l.get("overthrown", false)) or GameState.has_flag("overthrown")
+		"tricks_n": return Array(l.get("tricks", [])).size()
+		"senior": return Pets.is_senior() if kind() == "pet" else false
+		"lost": return bool(l.get("lost", false))
 	return l.get(field, 0)
 
 

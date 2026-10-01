@@ -23,6 +23,7 @@ func _module(key: String):
 		"threads": return LifeThreads
 		"amb": return Ambition
 		"real": return Real
+		"pet": return Pets
 	return null
 
 

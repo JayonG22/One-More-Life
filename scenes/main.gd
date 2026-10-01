@@ -126,7 +126,7 @@ func _show(name_key: String) -> void:
 		_rebuild_log()
 		_refresh_side()
 		if panel_stack.is_empty():
-			_open_panel(_panel_activities, true)
+			_tab_press(0)
 		else:
 			_render_top_panel()
 
@@ -187,9 +187,46 @@ func _build_title() -> Control:
 	h.add_child(box)
 	var bv := U.vb(10)
 	box.add_child(bv)
-	var newb := U.btn("👶   New Life", func(): _open_new_life(), "Accent")
-	newb.custom_minimum_size = Vector2(0, 64)
-	bv.add_child(newb)
+	# The game modes come first and look different from the menu under them:
+	# they are three separate ways to play, not three items in a list.
+	var modes_h := U.lbl("CHOOSE YOUR GAME MODE", "Bold", 15)
+	modes_h.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	modes_h.add_theme_color_override("font_color", ThemeManager.c("gold"))
+	bv.add_child(modes_h)
+	var modes_row := U.hb(10)
+	bv.add_child(modes_row)
+	for md in [
+		["NewLifeBtn", "🧑", "Human Life", "The classic. Be born, grow up, choose, die.", func(): _open_new_life(), true],
+		["PetsBtn", "🐾", "Pets Life", "Live as a dog, cat, rabbit, parrot or horse.", func(): _open_pet_setup(), true],
+		["PrisonBtn", "⛓️", "Prison Life", "Prisoner or guard. Ranks, gangs, a jailbreak. Arrives in v1.2.", func(): _show_info("⛓️", "Prison Life", "Prison Life is the next game mode: serve a sentence or work the walls as a guard, with ranks, gangs, contraband, parole and a jailbreak.\n\nIt arrives in version 1.2.", {}), false],
+	]:
+		var card := U.btn("", md[5], "Accent" if md[0] == "NewLifeBtn" else "Primary")
+		card.name = md[0]
+		card.custom_minimum_size = Vector2(0, 150)
+		card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		card.tooltip_text = "%s: %s" % [md[2], md[3]]
+		var cv := U.vb(2)
+		cv.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		cv.alignment = BoxContainer.ALIGNMENT_CENTER
+		cv.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var ci := U.lbl(md[1], "Emoji", 44)
+		ci.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		ci.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cv.add_child(ci)
+		var cn := U.lbl(md[2], "Bold", 20)
+		cn.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		cn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cv.add_child(cn)
+		var cd := U.lbl(md[3], "Dim", 12, true)
+		cd.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		cd.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cv.add_child(cd)
+		card.add_child(cv)
+		if not md[4]:
+			card.modulate = Color(1, 1, 1, 0.62)
+		modes_row.add_child(card)
+	var sep := HSeparator.new()
+	bv.add_child(sep)
 	for item in [["⏯️", "Continue Life", _continue_life, "ContinueBtn"], ["📂", "Your Lives", func(): SP.show_lives(), "LivesBtn"], ["🎁", "Daily Heirloom", func(): SP.show_heirloom(), "HeirBtn"], ["🏆", "Trophy Room", _show_trophies, "TrophyBtn"], ["🎯", "Missions", _show_missions, "MissionBtn"], ["⭐", "Star Shop", _show_star_shop, "StarBtn"], ["⚙️", "Settings", _show_settings_popup, ""], ["🎨", "Theme", _cycle_theme_title, "ThemeBtn"], ["🪦", "Graveyard", func(): _open_graveyard(), ""], ["🚪", "Quit", func(): get_tree().quit(), ""]]:
 		var b := U.icon_btn(item[0], item[1], item[2], "Row", false, 24, 18)
 		b.custom_minimum_size = Vector2(0, 52)
@@ -250,6 +287,100 @@ func _continue_life() -> void:
 		else:
 			_show("death")
 			_fill_death(GameState.player.get("legacy", {}))
+
+
+# ================================================================= PETS LIFE
+
+var pn := {}
+
+
+func _open_pet_setup(inherit: Dictionary = {}) -> void:
+	pn = {"species": "dog", "origin": "loving", "gender": "female", "inherit": inherit}
+	pn["name"] = ContentDB.random_pet_name()
+	var v := _open_popup(860)
+	_event_header(v, "🐾", "Pets Life")
+	_event_text(v, "You are the animal now. No money, no job, no calendar of your own: a nose, a belly, a few people and a number of years that is not long enough.")
+	var sprow := HFlowContainer.new()
+	sprow.alignment = FlowContainer.ALIGNMENT_CENTER
+	sprow.add_theme_constant_override("h_separation", U.sp(8))
+	v.add_child(sprow)
+	var sp_btns := {}
+	var odesc := U.lbl("", "Dim", 16, true)
+	odesc.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var sdesc := U.lbl("", "Dim", 15, true)
+	sdesc.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var refresh_desc := func() -> void:
+		var sd: Dictionary = Pets.SPECIES[pn["species"]]
+		sdesc.text = "%s lives about %d–%d years." % [str(sd["name"]), int(sd["life"][0]), int(sd["life"][1])]
+		odesc.text = str(Pets.ORIGINS[pn["origin"]]["desc"])
+		for sk in sp_btns.keys():
+			(sp_btns[sk] as Button).theme_type_variation = "Accent" if sk == pn["species"] else "Row"
+	for sk in Pets.SPECIES.keys():
+		var skk: String = sk
+		var b := U.btn("%s  %s" % [Pets.SPECIES[sk]["icon"], Pets.SPECIES[sk]["name"]], func(): pn["species"] = skk; refresh_desc.call(), "Row")
+		b.custom_minimum_size = Vector2(150, 52)
+		b.focus_mode = UIKit.fm()
+		sp_btns[sk] = b
+		sprow.add_child(b)
+	v.add_child(sdesc)
+	var orow := U.hb(10)
+	orow.alignment = BoxContainer.ALIGNMENT_CENTER
+	v.add_child(orow)
+	orow.add_child(U.lbl("Where it begins", "Dim", 16))
+	var ob := OptionButton.new()
+	ob.focus_mode = UIKit.fm()
+	var okeys: Array = Pets.ORIGINS.keys()
+	for ok in okeys:
+		ob.add_item("%s  %s" % [Pets.ORIGINS[ok]["icon"], Pets.ORIGINS[ok]["name"]])
+	ob.item_selected.connect(func(idx): pn["origin"] = okeys[idx]; refresh_desc.call())
+	orow.add_child(ob)
+	v.add_child(odesc)
+	var nrow := U.hb(10)
+	nrow.alignment = BoxContainer.ALIGNMENT_CENTER
+	v.add_child(nrow)
+	nrow.add_child(U.lbl("Name", "Dim", 16))
+	var le := LineEdit.new()
+	le.text = str(pn["name"])
+	le.custom_minimum_size = Vector2(220, 0)
+	le.focus_mode = UIKit.fm() if UIKit.fm() != Control.FOCUS_NONE else Control.FOCUS_CLICK
+	le.text_changed.connect(func(t): pn["name"] = t)
+	nrow.add_child(le)
+	var dice := U.btn("🎲", func(): pn["name"] = ContentDB.random_pet_name(); le.text = str(pn["name"]), "Row")
+	dice.tooltip_text = "Another name"
+	nrow.add_child(dice)
+	var gb := OptionButton.new()
+	gb.focus_mode = UIKit.fm()
+	gb.add_item("Female")
+	gb.add_item("Male")
+	gb.item_selected.connect(func(idx): pn["gender"] = "female" if idx == 0 else "male")
+	nrow.add_child(gb)
+	var go := U.btn("Be born", func(): _start_pet(), "Accent")
+	go.custom_minimum_size = Vector2(0, 58)
+	go.name = "Choice1"
+	v.add_child(go)
+	var cancel := U.btn("Cancel", _close_popup, "Row")
+	cancel.name = "OkButton"
+	v.add_child(cancel)
+	refresh_desc.call()
+
+
+func _start_pet() -> void:
+	popup_open = false
+	overlay.visible = false
+	var nm := str(pn.get("name", "")).strip_edges()
+	if nm == "":
+		nm = ContentDB.random_pet_name()
+	var opts := {"first": nm, "last": "", "gender": pn["gender"], "country": ContentDB.countries[randi() % ContentDB.countries.size()]["id"], "face": 0,
+		"life_path": "pet", "keep_family": true, "species": pn["species"], "origin": pn["origin"], "inherit": pn.get("inherit", {}),
+		"modifiers": [], "difficulty": "real", "boons": [], "challenge": ""}
+	if not SaveManager.begin_new_life():
+		_show_info("💾", "No free save slot", SaveManager.last_error, {})
+		return
+	GameState.new_life(opts)
+	panel_stack.clear()
+	last_stats.clear()
+	SaveManager.save_game()
+	_show("game")
 
 
 # ================================================================= NEW LIFE
@@ -694,6 +825,7 @@ func _build_game() -> Control:
 	rv.add_child(money)
 	var bal := U.lbl("Bank Balance", "Dim", 13)
 	bal.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	g["bal_lbl"] = bal
 	rv.add_child(bal)
 	hh.add_child(rv)
 	left.add_child(head)
@@ -702,6 +834,7 @@ func _build_game() -> Control:
 	var sv := U.vb(14)
 	stats.add_child(sv)
 	g["bars"] = {}
+	g["bar_lbl"] = {}
 	for k in GameState.STAT_KEYS:
 		var r := U.hb(10)
 		var ic := U.lbl(U.STAT_ICONS[k], "Emoji", 22)
@@ -710,6 +843,7 @@ func _build_game() -> Control:
 		var l := U.lbl(U.STAT_NAMES[k], "", 18)
 		l.custom_minimum_size = Vector2(110, 0)
 		r.add_child(l)
+		g["bar_lbl"][k] = [ic, l]
 		var b := U.bar(50, ThemeManager.c("good"), 24)
 		r.add_child(b)
 		var pct := U.lbl("50%", "Bold", 16)
@@ -771,7 +905,7 @@ func _build_game() -> Control:
 	ageb.add_child(av)
 	var ah := U.hb(20)
 	ah.alignment = BoxContainer.ALIGNMENT_CENTER
-	var qa := U.icon_btn("🎓", "School", func(): _open_panel(_panel_occupation, true), "Row", true, 34, 17)
+	var qa := U.icon_btn("🎓", "School", func(): _quick_press(0), "Row", true, 34, 17)
 	qa.custom_minimum_size = Vector2(150, 96)
 	g["quick_left"] = qa
 	ah.add_child(qa)
@@ -779,7 +913,7 @@ func _build_game() -> Control:
 	age_btn.custom_minimum_size = Vector2(140, 140)
 	g["age_btn"] = age_btn
 	ah.add_child(age_btn)
-	var qb := U.icon_btn("💰", "Assets", func(): _open_panel(_panel_assets, true), "Row", true, 34, 17)
+	var qb := U.icon_btn("💰", "Assets", func(): _quick_press(1), "Row", true, 34, 17)
 	qb.custom_minimum_size = Vector2(150, 96)
 	g["quick_right"] = qb
 	ah.add_child(qb)
@@ -798,14 +932,18 @@ func _build_game() -> Control:
 	var tabs := U.card("TabStrip")
 	var tbh := U.hb(6)
 	tabs.add_child(tbh)
-	for t in [["🏃", "Activities", _panel_activities], ["❤️", "People", _panel_relationships], ["💼", "Work", _panel_occupation], ["💰", "Assets", _panel_assets], ["✨", "Life", LP.life_panel], ["⋯", "More", _panel_more]]:
-		var cb: Callable = t[2]
-		var b := U.icon_btn(t[0], t[1], func(): _open_panel(cb, true), "Tab", true, 30, 15)
+	g["tab_btns"] = []
+	var tab_i := 0
+	for t in _tab_specs():
+		var ti := tab_i
+		var b := U.icon_btn(t[0], t[1], func(): _tab_press(ti), "Tab", true, 30, 15)
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		b.custom_minimum_size = Vector2(0, 76)
-		if t[1] == "Life":
+		if ti == 4:
 			g["life_tab"] = b
+		g["tab_btns"].append(b)
 		tbh.add_child(b)
+		tab_i += 1
 	center.add_child(tabs)
 
 	# ---- right column
@@ -899,10 +1037,68 @@ func _refresh_tracks() -> void:
 			ThemeManager.c("bad"), "%s %s" % [Wanted.display(), Wanted.level_name()]))
 
 
+func _refresh_side_pet() -> void:
+	var p := GameState.player
+	var l := Pets.L()
+	g["portrait"].text = Pets.portrait()
+	g["name"].text = str(p["first"]) + ("  " + str(p["badge"]) if str(p.get("badge", "")) != "" else "")
+	g["occ"].text = Pets.header_occ()
+	g["country"].text = Pets.header_sub()
+	if g.has("life_tab") and is_instance_valid(g["life_tab"]):
+		g["life_tab"].visible = true
+	g["age"].text = "Age %d" % int(p["age"])
+	var hun := float(l.get("hunger", 50))
+	g["money"].text = "%d%%" % int(hun)
+	g["money"].add_theme_color_override("font_color", ThemeManager.c("bad") if hun < 25.0 else (ThemeManager.c("warn") if hun > 88.0 else ThemeManager.c("good")))
+	for k in GameState.STAT_KEYS:
+		var v := GameState.stat(k)
+		var pair: Array = g["bars"][k]
+		var prev := float(last_stats.get(k, v))
+		var diff := int(round(v)) - int(round(prev))
+		VFX.bar_to(pair[0], v, ThemeManager.bar_color(k, v), diff != 0)
+		pair[1].text = "%d%%" % int(round(v))
+		if diff != 0 and abs(diff) >= 1 and not last_stats.is_empty():
+			var good := diff > 0 if k != "stress" else diff < 0
+			VFX.float_number(fx_layer, pair[1], "%s%d" % ["+" if diff > 0 else "", diff], ThemeManager.c("good") if good else ThemeManager.c("bad"))
+		last_stats[k] = v
+	var box: VBoxContainer = g["tracks"]
+	U.clear(box)
+	for tr in [["💞", "Bond", "bond"], ["📍", "Territory", "territory"], ["🎓", "Obedience", "obedience"], ["👃", "Instinct", "instinct"], ["🏡", "Belonging", "belonging"]]:
+		var v2 := float(l.get(str(tr[2]), 0))
+		box.add_child(U.track(str(tr[0]), str(tr[1]), v2, 100.0, ThemeManager.c("accent"), "%d%%" % int(v2)))
+	U.clear(g["traits"])
+	for t in p["traits"]:
+		var info: Array = Pets.TRAIT_INFO.get(str(t), ["•", ""])
+		var chip := U.card("Chip")
+		chip.add_child(U.lbl("%s %s" % [info[0], t], "", 15))
+		chip.tooltip_text = str(info[1])
+		g["traits"].add_child(chip)
+	g["home"].text = Pets.home_text()
+	g["fin"].text = Pets.fin_text()
+	var extra := ""
+	var arc: Array = Arcs.status_line()
+	if not arc.is_empty():
+		extra += str(arc[0]) + "\n"
+	var tl: Array = l.get("tricks", [])
+	if not tl.is_empty():
+		extra += "🎓 " + ", ".join(tl.slice(0, 4)) + ("…" if tl.size() > 4 else "") + "\n"
+	g["extra"].text = extra.strip_edges()
+	var tleft: int = p["time_left"]
+	g["time_lbl"].text = "Time %d/%d" % [tleft, GameState.TIME_PER_YEAR]
+	g["time_bar"].value = 100.0 * tleft / GameState.TIME_PER_YEAR
+	U.set_bar_color(g["time_bar"], ThemeManager.c("good") if tleft > 3 else ThemeManager.c("warn"))
+	g["age_btn"].disabled = not p["alive"]
+	VFX.pulse(g["age_btn"], p["alive"] and not popup_open and int(p["time_left"]) >= GameState.TIME_PER_YEAR - 1)
+
+
 func _refresh_side() -> void:
 	if not GameState.has_life() or g.is_empty() or not is_instance_valid(g.get("name")):
 		return
 	var p := GameState.player
+	_apply_mode_chrome()
+	if Pets.active():
+		_refresh_side_pet()
+		return
 	g["portrait"].text = U.face(p["gender"], int(p["age"]), int(p["face"])) if p["alive"] else "😇"
 	g["name"].text = "%s %s" % [p["first"], p["last"]]
 	g["occ"].text = GameState.occupation_label()
@@ -1235,21 +1431,15 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	match k:
 		KEY_SPACE:
 			_age_up()
-		KEY_1:
-			_open_panel(_panel_activities, true)
-		KEY_2:
-			_open_panel(_panel_relationships, true)
-		KEY_3:
-			_open_panel(_panel_occupation, true)
-		KEY_4:
-			_open_panel(_panel_assets, true)
+		KEY_1, KEY_2, KEY_3, KEY_4:
+			_tab_press(k - KEY_1)
 		KEY_5:
 			if Lives.kind() != "human":
-				_open_panel(LP.life_panel, true)
+				_tab_press(4)
 			else:
-				_open_panel(_panel_more, true)
+				_tab_press(5)
 		KEY_6:
-			_open_panel(_panel_more, true)
+			_tab_press(5)
 		KEY_ESCAPE, KEY_BACKSPACE:
 			_panel_back()
 		_:
@@ -1258,6 +1448,81 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 # ================================================================= RIGHT PANEL
+
+## The six tabs are the same buttons in every mode; what they open is not.
+func _tab_specs() -> Array:
+	if Pets.active():
+		return [
+			["🐾", "Do", func(): MP.show("pet:home")],
+			["🏠", "People", func(): MP.show("pet:house")],
+			["🏅", "Calling", func(): MP.show("pet:calling")],
+			["🌳", "World", func(): MP.show("pet:wild")],
+			["🛤️", "Road", func(): MP.show("real:arc")],
+			["⋯", "More", _panel_more_pet],
+		]
+	return [["🏃", "Activities", _panel_activities], ["❤️", "People", _panel_relationships], ["💼", "Work", _panel_occupation], ["💰", "Assets", _panel_assets], ["✨", "Life", LP.life_panel], ["⋯", "More", _panel_more]]
+
+
+func _tab_press(i: int) -> void:
+	var specs := _tab_specs()
+	if i < 0 or i >= specs.size():
+		return
+	var cb: Callable = specs[i][2]
+	_open_panel(cb, true)
+
+
+func _quick_press(side: int) -> void:
+	if Pets.active():
+		_open_panel(func(): MP.show("pet:care" if side == 0 else "pet:play"), true)
+		return
+	_open_panel(_panel_occupation if side == 0 else _panel_assets, true)
+
+
+func _apply_mode_chrome() -> void:
+	var pet := Pets.active()
+	var specs := _tab_specs()
+	var btns: Array = g.get("tab_btns", [])
+	for i in range(mini(btns.size(), specs.size())):
+		var b: Button = btns[i]
+		if not is_instance_valid(b):
+			continue
+		b.get_meta("icon").text = str(specs[i][0])
+		b.get_meta("label").text = str(specs[i][1])
+	for k in GameState.STAT_KEYS:
+		var pair: Array = g["bar_lbl"][k]
+		pair[0].text = str(Pets.SIDE_LABELS[k][0]) if pet else str(U.STAT_ICONS[k])
+		pair[1].text = str(Pets.SIDE_LABELS[k][1]) if pet else str(U.STAT_NAMES[k])
+	if g.has("bal_lbl") and is_instance_valid(g["bal_lbl"]):
+		g["bal_lbl"].text = "Belly" if pet else "Bank Balance"
+	if g.has("home_icons") and is_instance_valid(g["home_icons"]):
+		g["home_icons"].visible = not pet
+	if pet:
+		var ql: Button = g["quick_left"]
+		ql.get_meta("icon").text = "🥣"
+		ql.get_meta("label").text = "Care"
+		var qr: Button = g["quick_right"]
+		qr.get_meta("icon").text = "🎾"
+		qr.get_meta("label").text = "Play"
+	else:
+		var qr2: Button = g["quick_right"]
+		qr2.get_meta("icon").text = "💰"
+		qr2.get_meta("label").text = "Assets"
+
+
+func _panel_more_pet() -> void:
+	_panel_header("⋯", "More")
+	var ready := Goals.unclaimed_count()
+	_add(U.row("🎁", "Daily Heirloom", "Ready to open!" if Goals.daily_available() else "Next in " + Goals.fmt_left(Goals.seconds_left("daily")), func(): SP.show_heirloom()))
+	_add(U.row("🎯", "Missions", ("%d ready to claim! · " % ready if ready > 0 else "") + "Daily, weekly and monthly goals", _show_missions))
+	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
+	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
+	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
+	_add(U.row("⚙️", "Settings", "Sound, effects, motion, display", func(): _open_panel(_panel_settings)))
+	_add(U.row("🎨", "Theme: " + ThemeManager.LABELS[ThemeManager.current], "Tap to switch", func(): _set_theme(ThemeManager.next_theme()), true, false))
+	_add(U.row("📂", "Your Lives", "Switch to another saved life", func(): SaveManager.save_game(); SP.show_lives()))
+	_add(U.row("💾", "Save & Exit", "Back to the main menu", func(): SaveManager.save_game(); _show("title"), true, false))
+	_add(U.lbl("Keys: Space = a year passes · 1–6 = tabs · Esc = back", "Dim", 14, true))
+
 
 func _open_panel(builder: Callable, reset: bool = false) -> void:
 	if reset:
@@ -2184,7 +2449,7 @@ func _fill_death(entry: Dictionary) -> void:
 	lv.add_child(hdr)
 	var halo := U.card("Halo")
 	halo.custom_minimum_size = Vector2(150, 150)
-	var hf := U.lbl(U.face(entry.get("gender", "male"), int(entry["age"]), int(entry.get("face", 0))), "Emoji", 90)
+	var hf := U.lbl(str(entry["pet"].get("icon", "🐾")) if entry.has("pet") else U.face(entry.get("gender", "male"), int(entry["age"]), int(entry.get("face", 0))), "Emoji", 90)
 	hf.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hf.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	halo.add_child(hf)
@@ -2198,7 +2463,11 @@ func _fill_death(entry: Dictionary) -> void:
 		var mt := U.lbl("🧪 Modified life", "Dim", 15)
 		mt.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lv.add_child(mt)
-	for line in [["Age", str(entry["age"])], ["Born", str(entry["born"])], ["Died", str(entry["died"])], ["Cause of Death", str(entry["cause"]).capitalize()], ["Occupation", str(entry["occupation"])], ["Net Worth", GameState.fmt_money(int(entry["net_worth"]))]]:
+	var card_lines: Array = [["Age", str(entry["age"])], ["Born", str(entry["born"])], ["Died", str(entry["died"])], ["Cause of Death", str(entry["cause"]).capitalize()], ["Occupation", str(entry["occupation"])], ["Net Worth", GameState.fmt_money(int(entry["net_worth"]))]]
+	if entry.has("pet"):
+		var pe: Dictionary = entry["pet"]
+		card_lines = [["Age", str(entry["age"])], ["Born", str(entry["born"])], ["Died", str(entry["died"])], ["Cause of Death", str(entry["cause"]).capitalize()], ["Kind", "%s · %s" % [str(pe.get("breed", "")), str(pe.get("species", "")).capitalize()]], ["Started", str(pe.get("origin", ""))], ["Calling", str(entry.get("occupation", ""))], ["Loved by", str(pe.get("owner", "")) + " " + str(pe.get("house", ""))]]
+	for line in card_lines:
 		var hh := U.hb()
 		hh.add_child(U.lbl(line[0] + ":", "Bold", 17))
 		hh.add_child(U.lbl(line[1], "", 17))
@@ -2218,6 +2487,15 @@ func _fill_death(entry: Dictionary) -> void:
 	cont.disabled = heirs.is_empty()
 	if heirs.is_empty():
 		cont.text = "Continue as Child (no living children)"
+	if entry.has("pet"):
+		var pe0: Dictionary = entry["pet"]
+		cont.text = "🐾  Another life in the same house"
+		cont.disabled = false
+		cont.tooltip_text = "Born again, a different animal, to the house that remembers %s." % str(entry.get("name", "").get_slice(" ", 0))
+		cont.pressed.disconnect(_continue_as_child)
+		cont.pressed.connect(func(): _open_pet_setup(Pets.next_life_opts(entry)["inherit"]))
+		if pe0.is_empty():
+			cont.disabled = true
 	lv.add_child(cont)
 	if GameState.has_life() and not p.get("alive", true) and bool(p.get("life", {}).get("can_rise", false)):
 		var rb := U.btn("🧟  Rise from the Grave", _rise, "Accent")

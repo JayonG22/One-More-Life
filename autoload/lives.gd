@@ -12,7 +12,11 @@ const TYPES := {
 	"pirate": {"name": "Pirate Life", "icon": "🏴‍☠️", "desc": "Command a ship and a named crew. Raids, treasure, bounty and mutiny can rewrite the life."},
 	"colonist": {"name": "Space Colonist", "icon": "🪐", "desc": "Live on Mars where oxygen, rations, settlers and colony decisions matter every year."},
 	"traveler": {"name": "Time Traveler", "icon": "⌛", "desc": "Begin in 1850, 1920 or 1970. Jobs, technology, prices and events move with history."},
+	"pet": {"name": "Pets Life", "icon": "🐾", "desc": "Live as a dog, cat, rabbit, parrot or horse. A separate mode: no jobs, no money, only your people."},
 }
+
+## Modes that run their own year and their own events instead of the human ones.
+const SEPARATE := ["pet"]
 signal transformed(kind: String)
 
 const KINDS := ["royal_speech", "feed", "patrol", "heist", "nemesis", "brew", "revenge"]
@@ -39,6 +43,10 @@ func kind() -> String:
 
 func is_type(t: String) -> bool:
 	return kind() == t
+
+
+func separate() -> bool:
+	return SEPARATE.has(kind())
 
 
 func handles(k: String) -> bool:
@@ -78,6 +86,7 @@ func title() -> String:
 		"witch": return "Witch" if g != "male" else "Warlock"
 		"super": return str(l.get("alias", "Masked Hero"))
 		"pirate", "colonist", "traveler": return Expansion.life_title()
+		"pet": return Pets.title()
 	return ""
 
 
@@ -105,6 +114,8 @@ func apply_start(opts: Dictionary) -> void:
 		"pirate", "colonist", "traveler":
 			Expansion.setup_life(path, opts)
 			GameState.counter("life_" + path)
+		"pet":
+			Pets.setup(opts)
 
 
 func become(t: String, opts: Dictionary = {}) -> void:
@@ -198,6 +209,10 @@ func on_continue(old: Dictionary) -> void:
 # ================================================================ yearly
 
 func yearly() -> void:
+	if kind() == "pet":
+		Pets.yearly()
+		Arcs.yearly()
+		return
 	Undeath.yearly()
 	Destiny.yearly()
 	var p := GameState.player
@@ -246,13 +261,15 @@ func death_check() -> String:
 			return ""
 		"pirate", "colonist", "traveler":
 			return Expansion.life_death_check()
+		"pet":
+			return Pets.death_check()
 	return "__natural"
 
 
 func can_rise() -> bool:
 	var p := GameState.player
 	var l := life()
-	if l.get("risen_before", false) or is_type("vampire") or is_type("revenant"):
+	if l.get("risen_before", false) or is_type("vampire") or is_type("revenant") or separate():
 		return false
 	if l.get("destiny_rise", false):
 		return true
@@ -1299,6 +1316,8 @@ func status_lines() -> Array:
 			out.append(["%d spells cast · %d potions" % [int(l["spells"]), potion_total()], ""])
 		"pirate", "colonist", "traveler":
 			out.append_array(Expansion.life_status())
+		"pet":
+			out.append_array(Pets.status_lines())
 	if Arcs.has_arc():
 		var al: Array = Arcs.status_line()
 		if not al.is_empty():

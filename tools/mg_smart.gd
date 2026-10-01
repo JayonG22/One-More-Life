@@ -163,6 +163,48 @@ func _process(delta: float) -> void:
 			if cool <= 0 and g.step_i < g.STEPS.size():
 				cool = 0.8
 				g._tool(int(g.STEPS[g.step_i][2]))
+		"pet_pounce":
+			if g.state == "up" and cool <= 0:
+				cool = 0.15
+				g._pounce(g.cur)
+		"pet_scent":
+			if cool <= 0:
+				cool = 0.1
+				if g.readings.size() < 3:
+					g._sniff()
+				else:
+					var best := 0
+					for i in range(3):
+						if g._avg(i) > g._avg(best):
+							best = i
+					g._go(best)
+		"pet_sneak":
+			g.creeping = not (g.looking or g.warn)
+		"pet_agility":
+			if cool <= 0:
+				for o in g.obs:
+					if not o["done"] and absf(float(o["x"]) - g.DOG_X) < 30.0:
+						g._act(str(o["kind"]))
+						cool = 0.1
+						break
+		"pet_herd":
+			var tgt = null
+			var bestd := 99999.0
+			for s in g.sheep:
+				if s["penned"]:
+					continue
+				var dd: float = (s["p"] as Vector2).distance_to(g.PEN.get_center())
+				if dd < bestd:
+					bestd = dd
+					tgt = s
+			if tgt != null:
+				var pc: Vector2 = g.PEN.get_center()
+				var sp: Vector2 = tgt["p"]
+				var aim: Vector2 = sp - (pc - sp).normalized() * 90.0
+				aim.x = clampf(aim.x, 30.0, 960.0)
+				aim.y = clampf(aim.y, 110.0, 470.0)
+				var dirv: Vector2 = aim - g.dog
+				g.bot_move = dirv.normalized() if dirv.length() > 6.0 else Vector2.ZERO
 		"haggle":
 			if cool <= 0 and not g.closed:
 				cool = 0.3

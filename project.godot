@@ -73,6 +73,7 @@ Care="*res://autoload/care.gd"
 Body="*res://autoload/body.gd"
 Arcs="*res://autoload/arcs.gd"
 Real="*res://autoload/real.gd"
+Pets="*res://autoload/pets.gd"
 Fixtures="*res://autoload/fixtures.gd"
 SaveManager="*res://autoload/save_manager.gd"
 
