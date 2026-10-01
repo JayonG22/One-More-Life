@@ -29,14 +29,15 @@ func _ready() -> void:
 	await get_tree().create_timer(2.2).timeout
 	ok(cur.panel != null and cur.rounds == 1, "no end-of-round panel after round 1")
 	ok(cur.cash_now() == 350, "cash after a 200 win on a 100 bet from 250 should be 350, was %d" % cur.cash_now())
-	cur._again()
+	cur._again(50)
 	await get_tree().process_frame
 	ok(cur.rounds == 1 and cur.total_won == 200 and cur.total_stake == 100, "the session totals were lost on play-again")
+	ok(cur.bet == 50, "the bet did not change to 50")
 	cur.settle(0, "lost")
 	await get_tree().create_timer(2.2).timeout
-	ok(cur.rounds == 2 and cur.cash_now() == 250, "cash after round 2 should be 250, was %d" % cur.cash_now())
+	ok(cur.rounds == 2 and cur.cash_now() == 300, "cash after round 2 should be 300, was %d" % cur.cash_now())
 	cur.finish(0.5, cur._session_detail("out"))
-	ok(int(got.get("won", -1)) == 200 and int(got.get("extra", -1)) == 100, "the one report to the casino is wrong: %s" % str(got))
+	ok(int(got.get("won", -1)) == 200 and int(got.get("extra", -1)) == 50, "the one report to the casino is wrong: %s" % str(got))
 	# leaving mid-round loses the stake in play
 	got = {}
 	var h2: MinigameGamble = load("res://scenes/minigames/mg_g_slots.gd").new()

@@ -1,17 +1,13 @@
 class_name AvatarView
 extends Control
 
-## The player's portrait: the age-and-gender emoji the game has always used, on a coloured
-## backdrop, with the optional parts (hair, headwear, eyewear, an extra) laid over it.
-## Leave every option on its first setting and you get the plain template.
+## The player's portrait: one real emoji (the age-and-gender face the game has always
+## used, or the look the player picked) on a coloured round backdrop.
 
 var av: Dictionary = {}
 var age := 25
 var gender := "male"
 var _face: Label
-var _hat: Label
-var _eyes: Label
-var _extra: Label
 
 
 func setup(a: Dictionary, years: int, gen: String) -> void:
@@ -19,70 +15,44 @@ func setup(a: Dictionary, years: int, gen: String) -> void:
 	age = years
 	gender = gen
 	_build()
-	_layout()
 	queue_redraw()
 
 
 func _ready() -> void:
 	if custom_minimum_size == Vector2.ZERO:
-		custom_minimum_size = Vector2(120, 144)
+		custom_minimum_size = Vector2(120, 120)
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	_build()
-	resized.connect(_layout)
-
-
-func _mk() -> Label:
-	var l := Label.new()
-	l.theme_type_variation = "Emoji"
-	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(l)
-	return l
+	resized.connect(_fit)
 
 
 func _build() -> void:
 	if _face == null:
-		_face = _mk()
-		_eyes = _mk()
-		_hat = _mk()
-		_extra = _mk()
-	if av.is_empty():
-		return
-	_face.text = Avatar.face_emoji(av, age, gender)
-	var baby := age < 3
-	_hat.text = "" if baby else Avatar.glyph_of("hat", int(av.get("hat", 0)))
-	_eyes.text = "" if baby or age < 3 else Avatar.glyph_of("glasses", int(av.get("glasses", 0)))
-	_extra.text = Avatar.glyph_of("extra", int(av.get("extra", 0)))
+		_face = Label.new()
+		_face.theme_type_variation = "Emoji"
+		_face.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		_face.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		_face.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_face.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		add_child(_face)
+	var t := Avatar.face_emoji(av, age, gender) if not av.is_empty() else UIKit.face(gender, age, 0)
+	_face.text = t if t != "" else UIKit.face(gender, age, 0)
+	_fit()
 
 
-func _place(l: Label, fs: int, cx: float, cy: float, s: float) -> void:
-	l.add_theme_font_size_override("font_size", fs)
-	l.size = Vector2(s, s)
-	l.position = Vector2(cx - s / 2.0, cy - s / 2.0)
-
-
-func _layout() -> void:
+func _fit() -> void:
 	if _face == null:
 		return
-	var s := minf(size.x, size.y * 0.95)
-	var cx := size.x / 2.0
-	var cy := size.y * 0.55
-	_place(_face, int(s * 0.58), cx, cy, s)
-	# a child's face sits a little smaller than an adult's
-	if age < 13:
-		_face.add_theme_font_size_override("font_size", int(s * (0.5 if age >= 3 else 0.46)))
-	_place(_hat, int(s * 0.34), cx, cy - s * 0.30, s * 0.5)
-	_place(_eyes, int(s * 0.27), cx, cy - s * 0.02, s * 0.5)
-	_place(_extra, int(s * 0.27), cx + s * 0.30, cy + s * 0.30, s * 0.4)
+	var d := minf(size.x, size.y)
+	if d <= 1.0:
+		d = minf(custom_minimum_size.x, custom_minimum_size.y)
+	_face.add_theme_font_size_override("font_size", maxi(12, int(d * 0.56)))
+	queue_redraw()
 
 
 func _draw() -> void:
-	if av.is_empty():
-		return
-	var col := Avatar.color_of("bg", int(av.get("bg", 0)))
-	var r := minf(size.x, size.y) * 0.5
-	var c := Vector2(size.x / 2.0, size.y * 0.55)
-	r = minf(r * 0.98, minf(c.y, size.y - c.y) + r * 0.2)
-	draw_circle(c, r, col)
-	draw_arc(c, r, 0.0, TAU, 48, col.lightened(0.35), maxf(2.0, r * 0.04), true)
+	var col := Avatar.color_of("bg", int(av.get("bg", 0))) if not av.is_empty() else Color("#27324a")
+	var d := minf(size.x, size.y)
+	var c := size / 2.0
+	draw_circle(c, d * 0.49, col)
+	draw_arc(c, d * 0.49, 0.0, TAU, 48, col.lightened(0.35), maxf(2.0, d * 0.035), true)

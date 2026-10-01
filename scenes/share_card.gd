@@ -84,8 +84,8 @@ static func build(entry: Dictionary) -> Control:
 	if not av.is_empty() and m.is_empty():
 		var face := AvatarView.new()
 		face.position = Vector2(40, 66)
-		face.custom_minimum_size = Vector2(140, 168)
-		face.size = Vector2(140, 168)
+		face.custom_minimum_size = Vector2(140, 140)
+		face.size = Vector2(140, 140)
 		bg.add_child(face)
 		face.setup(av, int(entry.get("age", 30)), str(entry.get("gender", "male")))
 	else:

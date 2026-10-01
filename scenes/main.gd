@@ -680,11 +680,11 @@ func _build_new_life() -> Control:
 	pr.alignment = BoxContainer.ALIGNMENT_CENTER
 	pr.add_child(U.btn("🎲", func(): _nl_face(1), "Flat"))
 	var port := U.card("Portrait")
-	port.custom_minimum_size = Vector2(150, 180)
+	port.custom_minimum_size = Vector2(150, 150)
 	if not nl.has("avatar"):
 		nl["avatar"] = Avatar.current().duplicate()
 	var pav := AvatarView.new()
-	pav.custom_minimum_size = Vector2(150, 180)
+	pav.custom_minimum_size = Vector2(150, 150)
 	pav.setup(nl["avatar"], 20, str(nl["gender"]))
 	port.add_child(pav)
 	nl["portrait"] = pav
@@ -904,7 +904,7 @@ func _open_avatar_editor(start: Dictionary, gender: String, age: int, on_save: C
 	var row := U.hb(24)
 	body.add_child(row)
 	var prev := AvatarView.new()
-	prev.custom_minimum_size = Vector2(300, 360)
+	prev.custom_minimum_size = Vector2(300, 300)
 	prev.setup(av, age, gender)
 	var pc := U.card("Portrait")
 	pc.add_child(prev)
@@ -1141,7 +1141,7 @@ func _build_game() -> Control:
 	port.add_child(pl)
 	g["portrait"] = pl
 	var avv := AvatarView.new()
-	avv.custom_minimum_size = Vector2(118, 126)
+	avv.custom_minimum_size = Vector2(118, 118)
 	avv.visible = false
 	avv.mouse_filter = Control.MOUSE_FILTER_PASS
 	port.add_child(avv)
@@ -4412,7 +4412,7 @@ func _star_avatar(box: VBoxContainer) -> void:
 			var look := cur.duplicate()
 			look[key] = i
 			var pv := AvatarView.new()
-			pv.custom_minimum_size = Vector2(110, 132)
+			pv.custom_minimum_size = Vector2(110, 110)
 			pv.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 			pv.setup(look, age, gender)
 			cv.add_child(pv)

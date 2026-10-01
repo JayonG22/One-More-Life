@@ -1,6 +1,6 @@
-# v0.23.0
+# v0.24.0
 
-Since v0.22.0: controller support removed, avatars returned to the emoji portrait with optional layers.
+Since v0.23.0: avatars are now one real emoji, picked whole (skin tone, figure, hair, and a Look such as Wizard, Royal, Ninja, Builder). Nothing is layered any more. An older saved look could leave the portrait blank; that is fixed. Casino: change your bet between rounds (½ / same / ×2) and a streak reminder. Before that, since v0.22.0: controller support removed, avatars returned to the emoji portrait with optional layers.
 
 - Achievements arrive one at a time, each with its own stage, a tier-based sound, a voice, and growing effects (rays, sparks, confetti on the top tiers). A long backlog speeds up.
 - Human-like voices (cheer, gasp, sigh, laugh, aww, ouch and more), synthesized in code. Optional drop-in recordings in `audio/voices/`. Setting: Voice sounds.

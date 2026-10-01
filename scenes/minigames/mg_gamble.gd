@@ -20,6 +20,8 @@ var total_stake := 0
 var total_won := 0
 var rounds := 0
 var round_settled := false
+var first_bet := 0
+var streak := 0          # + wins in a row, - losses in a row
 var panel: Control
 signal restarted(next: MinigameGamble)
 
@@ -27,6 +29,7 @@ signal restarted(next: MinigameGamble)
 func setup(p: Dictionary) -> void:
 	super.setup(p)
 	bet = int(p.get("bet", 100))
+	first_bet = int(p.get("first_bet", bet))
 	luck = float(p.get("luck", 1.0))
 	money_now = int(p.get("money", bet * 3))
 
@@ -104,6 +107,10 @@ func settle(won: int, text: String) -> void:
 	total_stake += bet + extra_stake
 	total_won += won
 	rounds += 1
+	if won > bet + extra_stake:
+		streak = maxi(1, streak + 1)
+	elif won < bet + extra_stake:
+		streak = mini(-1, streak - 1)
 	round_settled = true
 	var t := create_tween()
 	t.tween_interval(1.9)
@@ -111,7 +118,7 @@ func settle(won: int, text: String) -> void:
 
 
 func _session_detail(text: String) -> Dictionary:
-	return {"won": total_won, "text": text, "extra": total_stake - bet}
+	return {"won": total_won, "text": text, "extra": total_stake - first_bet}
 
 
 func _round_end(text: String) -> void:
@@ -145,15 +152,35 @@ func _round_end(text: String) -> void:
 	panel.add_child(cl)
 	cl.position = Vector2(0, 248)
 	cl.size = Vector2(W, 30)
+	if streak <= -3 or streak >= 3:
+		var sl := label(("%d losses in a row. It has to turn." if streak < 0 else "%d wins in a row. Don't stop now.") % absi(streak), 16, true, col("warn") if streak < 0 else col("gold"))
+		sl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		panel.add_child(sl)
+		sl.position = Vector2(0, 282)
+		sl.size = Vector2(W, 24)
 	if can_play:
-		var again := button("Play again  ·  bet %s  [Enter]" % GameState.fmt_money(bet), _again, "Primary")
+		var again := button("Play again  ·  bet %s  [Enter]" % GameState.fmt_money(bet), func(): _again(bet), "Primary")
 		panel.add_child(again)
-		again.position = Vector2(W / 2.0 - 250, 310)
+		again.position = Vector2(W / 2.0 - 250, 316)
 		again.size = Vector2(500, 60)
-		var out := button("Cash out  [Esc]", func(): finish(clampf(float(total_won) / (2.0 * float(maxi(1, bet))), 0.0, 1.0), _session_detail(text)), "Row")
+		var half := maxi(10, int(bet / 2.0))
+		var dbl := bet * 2
+		var bx := 0
+		if half < bet:
+			var hb := button("½  %s" % GameState.fmt_money(half), func(): _again(half), "Row")
+			panel.add_child(hb)
+			hb.position = Vector2(W / 2.0 - 250, 384)
+			hb.size = Vector2(160, 46)
+			bx += 1
+		if dbl <= cash_now():
+			var db := button("×2  %s" % GameState.fmt_money(dbl), func(): _again(dbl), "Row")
+			panel.add_child(db)
+			db.position = Vector2(W / 2.0 - 250 + 170, 384)
+			db.size = Vector2(160, 46)
+		var out := button("Cash out  [Esc]", func(): finish(clampf(float(total_won) / (2.0 * float(maxi(1, bet))), 0.0, 1.0), _session_detail(text)), "Accent")
 		panel.add_child(out)
-		out.position = Vector2(W / 2.0 - 250, 384)
-		out.size = Vector2(500, 52)
+		out.position = Vector2(W / 2.0 - 250 + 340, 384)
+		out.size = Vector2(160, 46)
 		again.grab_focus()
 	else:
 		var quit := button("Give up  [Enter]", func(): finish(0.0, _session_detail(text)), "Primary")
@@ -169,11 +196,15 @@ func _round_end(text: String) -> void:
 	panel.set_meta("text", text)
 
 
-func _again() -> void:
+func _again(next_bet: int = 0) -> void:
 	if done or get_parent() == null:
 		return
 	var n: MinigameGamble = get_script().new()
-	n.setup(params)
+	var np := params.duplicate()
+	np["bet"] = next_bet if next_bet > 0 else bet
+	np["first_bet"] = first_bet
+	n.setup(np)
+	n.streak = streak
 	n.total_stake = total_stake
 	n.total_won = total_won
 	n.rounds = rounds

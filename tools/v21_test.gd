@@ -381,9 +381,13 @@ func _items_and_avatar() -> void:
 	ok(SaveManager.graveyard.size() == graves - 1, "the undone death still has a grave")
 	# the avatar: free parts are owned, premium ones are not until bought
 	Meta.meta["goals"]["avatar_owned"] = {}
-	ok(Avatar.is_owned("hair", 2) and not Avatar.is_owned("hat", 3), "ownership of avatar parts is wrong")
-	ok(Avatar.buy("hat", 3), "could not buy the crown with 500 stars")
-	ok(Avatar.is_owned("hat", 3), "the crown is not owned after buying it")
+	ok(Avatar.is_owned("hair", 2) and not Avatar.is_owned("style", 8), "ownership of avatar parts is wrong")
+	ok(Avatar.buy("style", 8), "could not buy the Royal look with 500 stars")
+	ok(Avatar.is_owned("style", 8), "the Royal look is not owned after buying it")
+	# a look saved by an older version (other categories, out-of-range values) still shows a face
+	var stale := {"skin": 8, "hair": 13, "hair_col": 4, "hat": 5, "beard": 2, "top": 3}
+	for ag in [1, 10, 30, 70]:
+		ok(Avatar.face_emoji(stale, ag, "female") != "", "an old saved look showed no face at age %d" % ag)
 	var rnd := Avatar.random("female")
 	for cat in Avatar.CATEGORIES:
 		ok(Avatar.is_owned(cat[0], int(rnd[cat[0]])), "a random avatar wears a part it does not own (%s)" % cat[0])
