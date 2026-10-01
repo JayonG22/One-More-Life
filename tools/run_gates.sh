@@ -42,10 +42,12 @@ run v0.14 v14_system_test 'failures=0' 'FAIL:'
 run v0.15 v15_system_test 'failures=0' 'FAIL:'
 run v0.16 v16_system_test 'failures=0' 'FAIL:'
 run arcs  v17_arcs_test   'failures=0' 'FAIL:'
+run echo2 v18_echo_test   'failures=0' 'FAIL:'
 run migrate migrate_test  'MIGRATION OK' 'MIGRATION FAIL'
 run sim   sim_test        'SIM DONE' 'SCRIPT ERROR'
 run crawl menu_crawl      'CRAWL DONE' 'SCRIPT ERROR'
 run layout layout_audit   'problems=0' 'SCRIPT ERROR'
+run perf  perf_test        'PERF TEST' 'FAIL:'
 run a11y  a11y_test       'failures=0' 'FAIL:' screen
 run minigames mg_smart    'MG GATE PASS' 'MG GATE FAIL|SCRIPT ERROR' screen
 run input mg_input_probe  'MG INPUT PROBE PASS' 'FAIL' screen
