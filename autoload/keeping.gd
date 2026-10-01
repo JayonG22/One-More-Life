@@ -183,7 +183,7 @@ func menu() -> Dictionary:
 		var cost := Actions._cost(int(d["gift"])) + int(iv["travel"])
 		var sub := "%s%s · %d time" % [GameState.fmt_money(cost), " (travel included)" if int(iv["travel"]) > 0 else "", int(d["time"])]
 		rows.append(_row(str(d["icon"]), "Go to %s's %s" % [who, str(d["name"]).to_lower()], sub, "attend", i))
-		rows.append(_row("💌", "Send regards instead", "A card, a gift or flowers — %s" % GameState.fmt_money(Actions._cost(int(d["gift"]) / 2)), "send", i))
+		rows.append(_row("💌", "Send regards to %s" % who, "A card or flowers · %s" % GameState.fmt_money(Actions._cost(int(d["gift"]) / 2)), "send", i))
 	if not lapsed_friends().is_empty():
 		rows.append(_row("📞", "Call someone you've lost touch with", "%d friendship%s have gone quiet" % [lapsed_friends().size(), "" if lapsed_friends().size() == 1 else "s"], "reach"))
 	rows.append(_row("📱", "Phone & internet: %s" % str(PLANS[str(s["plan"])]["name"]), "%s a year" % GameState.fmt_money(phone_cost()), "plan", null, true))

@@ -97,10 +97,22 @@ func _make_font(path: String, weight: int) -> Font:
 	return sys
 
 
+var high_contrast := false
+
+
+func set_contrast(on: bool) -> void:
+	high_contrast = on
+	apply(current)
+
+
 func c(key: String) -> Color:
 	var v = PALETTES[current].get(key, "ff00ff")
 	if v is String:
-		return Color("#" + v)
+		var col := Color("#" + v)
+		if high_contrast and key == "dim":
+			# secondary text is the first thing to fail a contrast check
+			return col.lerp(Color("#" + str(PALETTES[current].get("text", "ffffff"))), 0.6)
+		return col
 	return Color.MAGENTA
 
 
@@ -160,7 +172,7 @@ func _button_set(t: Theme, type: String, bg: Color, fg: Color, radius: int, bord
 
 func build() -> Theme:
 	var t := Theme.new()
-	var bw: int = PALETTES[current].get("border_w", 1)
+	var bw: int = PALETTES[current].get("border_w", 1) + (1 if high_contrast else 0)
 	t.default_font = font_regular
 	t.default_font_size = 18
 

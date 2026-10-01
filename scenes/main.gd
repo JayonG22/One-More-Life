@@ -54,6 +54,7 @@ func _ready() -> void:
 	MP = preload("res://scenes/menu_panels.gd").new(self)
 	_apply_display()
 	get_viewport().size_changed.connect(_mg_fit)
+	get_viewport().size_changed.connect(_fit_layout)
 	Minigames.requested.connect(_on_minigame)
 	Goals.unlocked.connect(_toast_ach)
 	Goals.mission_done.connect(_toast_mission)
@@ -345,7 +346,7 @@ func _build_new_life() -> Control:
 
 	right.add_child(U.lbl("Birthplace", "Dim"))
 	var ob := OptionButton.new()
-	ob.focus_mode = Control.FOCUS_NONE
+	ob.focus_mode = UIKit.fm()
 	var i := 0
 	for ctry in ContentDB.countries:
 		ob.add_item("%s  %s" % [ctry.get("flag", ""), ctry["name"]])
@@ -359,7 +360,7 @@ func _build_new_life() -> Control:
 	right.add_child(ob)
 	right.add_child(U.lbl("City", "Dim"))
 	var rob := OptionButton.new()
-	rob.focus_mode = Control.FOCUS_NONE
+	rob.focus_mode = UIKit.fm()
 	nl["region_ob"] = rob
 	var rdesc := U.lbl("", "Dim", 14, true)
 	nl["region_desc"] = rdesc
@@ -374,7 +375,7 @@ func _build_new_life() -> Control:
 	right.add_child(U.lbl("Traits", "Dim"))
 	for tk in ["t1", "t2"]:
 		var tob := OptionButton.new()
-		tob.focus_mode = Control.FOCUS_NONE
+		tob.focus_mode = UIKit.fm()
 		var j := 0
 		for t in ContentDB.traits:
 			tob.add_item("%s  %s — %s" % [t["icon"], t["name"], t["desc"]])
@@ -399,7 +400,7 @@ func _build_new_life() -> Control:
 	pr2.add_child(mcol)
 	mcol.add_child(U.lbl("Starting Stats", "Dim"))
 	var sob := OptionButton.new()
-	sob.focus_mode = Control.FOCUS_NONE
+	sob.focus_mode = UIKit.fm()
 	var modes := [["standard", "🟢  Standard"], ["custom", "🎚️  Custom stats"], ["random", "🎲  Random everything"]]
 	for mi in range(modes.size()):
 		sob.add_item(modes[mi][1])
@@ -420,7 +421,7 @@ func _build_new_life() -> Control:
 		s.max_value = 100
 		s.value = nl["stats"][sk]
 		s.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		s.focus_mode = Control.FOCUS_NONE
+		s.focus_mode = UIKit.fm()
 		var vl := U.lbl(str(int(s.value)), "Dim")
 		vl.custom_minimum_size = Vector2(40, 0)
 		var skey: String = sk
@@ -447,7 +448,7 @@ func _build_new_life() -> Control:
 		var mb := Button.new()
 		mb.theme_type_variation = "Toggle"
 		mb.toggle_mode = true
-		mb.focus_mode = Control.FOCUS_NONE
+		mb.focus_mode = UIKit.fm()
 		mb.text = "%s %s" % [md["icon"], md["name"]]
 		mb.tooltip_text = md["desc"]
 		mb.button_pressed = nl["mods"].has(mk)
@@ -459,7 +460,7 @@ func _build_new_life() -> Control:
 	extra.add_child(chbox)
 	chbox.add_child(U.lbl("Challenge (optional)", "Dim"))
 	var cob := OptionButton.new()
-	cob.focus_mode = Control.FOCUS_NONE
+	cob.focus_mode = UIKit.fm()
 	cob.add_item("None")
 	for ch in Meta.challenges:
 		var done := "✓ " if Meta.meta["challenges_done"].has(ch["id"]) else ""
@@ -476,7 +477,7 @@ func _build_new_life() -> Control:
 	chbox.add_child(cdesc)
 	chbox.add_child(U.lbl("Difficulty", "Dim"))
 	var dob := OptionButton.new()
-	dob.focus_mode = Control.FOCUS_NONE
+	dob.focus_mode = UIKit.fm()
 	var dkeys: Array = Grit.DIFFICULTY.keys()
 	if not nl.has("difficulty"):
 		nl["difficulty"] = "real"
@@ -508,7 +509,7 @@ func _build_new_life() -> Control:
 		var bb := Button.new()
 		bb.theme_type_variation = "Toggle"
 		bb.toggle_mode = true
-		bb.focus_mode = Control.FOCUS_NONE
+		bb.focus_mode = UIKit.fm()
 		bb.text = "%s %s" % [bd["icon"], bd["name"]]
 		bb.tooltip_text = bd["desc"]
 		bb.button_pressed = nl["boons"].has(bk)
@@ -651,6 +652,7 @@ func _build_game() -> Control:
 	# ---- left column
 	var left := U.vb(16)
 	left.custom_minimum_size = Vector2(470, 0)
+	g["left_col"] = left
 	h.add_child(left)
 	var head := U.card()
 	var hh := U.hb(16)
@@ -779,6 +781,7 @@ func _build_game() -> Control:
 	ah.add_child(age_btn)
 	var qb := U.icon_btn("💰", "Assets", func(): _open_panel(_panel_assets, true), "Row", true, 34, 17)
 	qb.custom_minimum_size = Vector2(150, 96)
+	g["quick_right"] = qb
 	ah.add_child(qb)
 	av.add_child(ah)
 	var th := U.hb(10)
@@ -808,6 +811,7 @@ func _build_game() -> Control:
 	# ---- right column
 	var right := U.card()
 	right.custom_minimum_size = Vector2(540, 0)
+	g["right_col"] = right
 	var rvb := U.vb(14)
 	right.add_child(rvb)
 	var rh := U.hb(10)
@@ -1163,6 +1167,48 @@ func _age_up() -> void:
 	_pump()
 
 
+## Tab or an arrow key turns keyboard navigation on; a mouse click turns it off.
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and UIKit.kb_mode:
+		_set_kb_mode(false)
+	elif event is InputEventKey and event.pressed and not event.echo and not UIKit.kb_mode:
+		var k: int = event.keycode
+		if k == KEY_TAB or k == KEY_UP or k == KEY_DOWN or k == KEY_LEFT or k == KEY_RIGHT:
+			if _current_screen() == "game" and not mg_open:
+				_set_kb_mode(true)
+				get_viewport().set_input_as_handled()
+
+
+func _set_kb_mode(on: bool) -> void:
+	UIKit.kb_mode = on
+	_apply_focus_mode(self, UIKit.fm())
+	if on:
+		_kb_focus_first()
+	else:
+		var fo := get_viewport().gui_get_focus_owner()
+		if fo != null:
+			fo.release_focus()
+
+
+func _apply_focus_mode(n: Node, mode: int) -> void:
+	if n is BaseButton or n is Slider:
+		(n as Control).focus_mode = mode
+	for ch in n.get_children():
+		_apply_focus_mode(ch, mode)
+
+
+## Put keyboard focus on the first thing in the open panel that can take it.
+func _kb_focus_first() -> void:
+	if not UIKit.kb_mode:
+		return
+	var root: Node = g["panel"] if g.has("panel") else self
+	for b in root.find_children("*", "BaseButton", true, false):
+		var bb := b as BaseButton
+		if bb.is_visible_in_tree() and not bb.disabled:
+			bb.grab_focus()
+			return
+
+
 func _unhandled_key_input(event: InputEvent) -> void:
 	if not (event is InputEventKey) or not event.pressed or event.echo:
 		return
@@ -1234,6 +1280,8 @@ func _render_top_panel() -> void:
 	var builder: Callable = panel_stack[-1]
 	builder.call()
 	g["panel_scroll"].scroll_vertical = 0
+	if UIKit.kb_mode:
+		_kb_focus_first.call_deferred()
 
 
 func _panel_header(icon: String, title: String) -> void:
@@ -1644,18 +1692,16 @@ func _panel_jobs(kind: String) -> void:
 		var jd := ContentDB.job(str(l["job"]))
 		var why := str(l["locked"])
 		var stand := Market.standing(l)
-		var sub := "%s · %s a year · %d applicants%s" % [str(l["company"]), GameState.fmt_money(int(l["salary"])), int(l["apps"]), " · remote" if bool(l["remote"]) else ""]
-		if int(l["exp"]) > 0:
-			sub += " · wants %d yr%s" % [int(l["exp"]), "" if int(l["exp"]) == 1 else "s"]
+		var sub := "%s a year · %d applicants%s" % [GameState.fmt_money(int(l["salary"])), int(l["apps"]), " · remote" if bool(l["remote"]) else ""]
 		if why != "":
 			sub = "🔒 Requires: " + why
 		else:
-			sub += "  ·  your odds: about %d%%" % int(round(float(stand["chance"]) * 100.0))
+			sub += " · odds ~%d%%" % int(round(float(stand["chance"]) * 100.0))
 		var applied: bool = Market.st()["applied"].has(str(l["id"]))
 		if applied:
-			sub = "✓ Applied  ·  " + sub
+			sub = "✓ Applied · " + sub
 		var l_id: String = str(l["id"])
-		_add(U.row(str(jd.get("icon", "💼" if kind != "military" else "🎖️")), str(jd["ranks"][0]), sub, _act(func(): Market.apply(l_id)), why == "" and not applied))
+		_add(U.row(str(jd.get("icon", "💼" if kind != "military" else "🎖️")), "%s · %s" % [str(jd["ranks"][0]), str(l["company"])], sub, _act(func(): Market.apply(l_id)), why == "" and not applied))
 
 
 # ---- assets
@@ -2829,7 +2875,7 @@ func _god_slider(label: String, value: float, lo: float, hi: float, cb: Callable
 	s.max_value = hi
 	s.value = value
 	s.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	s.focus_mode = Control.FOCUS_NONE
+	s.focus_mode = UIKit.fm()
 	var vl := U.lbl(str(int(value)), "Bold", 16)
 	vl.custom_minimum_size = Vector2(44, 0)
 	s.value_changed.connect(func(val): vl.text = str(int(val)); cb.call(val); _god_mark(); _refresh_side())
@@ -2939,8 +2985,9 @@ func _settings_rows(redraw: Callable) -> Array:
 		SaveManager.save_settings()
 		_apply_display()
 		redraw.call(), true, false))
+	out.append(U.lbl("Keyboard: Tab or the arrow keys move between things, Enter or Space selects, Esc goes back. Space ages up when nothing is selected. 1–6 open the main menus; in a pop-up, 1–9 pick a choice.", "Dim", 14, true))
 	out.append(U.section("Effects and comfort"))
-	for opt in [["effects", "✨", "Visual effects", "Particles, bursts and floating numbers", true], ["flashes", "⚡", "Screen flashes", "Bright full-screen flashes on big moments", true], ["shake", "📳", "Screen shake", "Shake on crashes, explosions and disasters", true], ["reduced_motion", "🐢", "Reduced motion", "Fewer animations and transitions", false], ["minigames", "🎮", "Career minigames", "Play them yourself. OFF lets your skill decide", true], ["life_theme", "🧛", "Life Path themes", "Switch look and sound when you become a vampire, witch, royal and so on", true], ["celeb_theme", "⭐", "Celebrity theme when famous", "Switch to the Celebrity look at 88+ fame", true]]:
+	for opt in [["effects", "✨", "Visual effects", "Particles, bursts and floating numbers", true], ["flashes", "⚡", "Screen flashes", "Bright full-screen flashes on big moments", true], ["shake", "📳", "Screen shake", "Shake on crashes, explosions and disasters", true], ["reduced_motion", "🐢", "Reduced motion", "Fewer animations and transitions", false], ["high_contrast", "🔳", "High contrast", "Brighter secondary text and heavier outlines", false], ["minigames", "🎮", "Career minigames", "Play them yourself. OFF lets your skill decide", true], ["life_theme", "🧛", "Life Path themes", "Switch look and sound when you become a vampire, witch, royal and so on", true], ["celeb_theme", "⭐", "Celebrity theme when famous", "Switch to the Celebrity look at 88+ fame", true]]:
 		var key: String = opt[0]
 		var dflt: bool = opt[4]
 		var on: bool = s.get(key, dflt)
@@ -2949,14 +2996,38 @@ func _settings_rows(redraw: Callable) -> Array:
 			SaveManager.save_settings()
 			if key == "life_theme" or key == "celeb_theme":
 				_sync_life_theme()
+			if key == "high_contrast":
+				ThemeManager.set_contrast(GameState.settings.get("high_contrast", false))
 			redraw.call(), true, false))
 	out.append(U.row("🎨", "Theme: " + ThemeManager.LABELS[ThemeManager.current], "Tap to switch", func(): _set_theme(ThemeManager.next_theme()), true, false))
 	return out
 
 
+## The three-column game screen needs about 1630 logical pixels. A larger
+## interface size shrinks the logical screen, so below that width the columns
+## give up some of their minimum width instead of running off the edge.
+func _fit_layout() -> void:
+	if not g.has("left_col") or not is_instance_valid(g["left_col"]):
+		return
+	var w := get_viewport().get_visible_rect().size.x
+	var compact := w < 1680.0
+	var tight := w < 1380.0
+	(g["left_col"] as Control).custom_minimum_size.x = (310.0 if tight else 350.0) if compact else 470.0
+	(g["right_col"] as Control).custom_minimum_size.x = (380.0 if tight else 410.0) if compact else 540.0
+	var q := 96.0 if not compact else (86.0 if tight else 100.0)
+	for k in ["quick_left", "quick_right"]:
+		if g.has(k) and is_instance_valid(g[k]):
+			(g[k] as Control).custom_minimum_size.x = 150.0 if not compact else q
+	if g.has("age_btn") and is_instance_valid(g["age_btn"]):
+		(g["age_btn"] as Control).custom_minimum_size = Vector2(140.0 if not compact else (104.0 if tight else 116.0), 140.0)
+
+
 func _apply_display() -> void:
 	var s := GameState.settings
+	if ThemeManager.high_contrast != bool(s.get("high_contrast", false)):
+		ThemeManager.set_contrast(bool(s.get("high_contrast", false)))
 	get_tree().root.content_scale_factor = float(s.get("ui_scale", 1.0))
+	_fit_layout.call_deferred()
 	if DisplayServer.get_name() == "headless":
 		return
 	var w := get_window()
@@ -2982,7 +3053,7 @@ func _god_slider_plain(label: String, value: float, cb: Callable) -> HBoxContain
 	sl.max_value = 100
 	sl.value = value
 	sl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	sl.focus_mode = Control.FOCUS_NONE
+	sl.focus_mode = UIKit.fm()
 	sl.value_changed.connect(func(val): cb.call(val))
 	h.add_child(sl)
 	return h
@@ -3167,7 +3238,7 @@ func _show_trophies() -> void:
 		b.theme_type_variation = "Toggle"
 		b.toggle_mode = true
 		b.button_group = grp
-		b.focus_mode = Control.FOCUS_NONE
+		b.focus_mode = UIKit.fm()
 		b.text = "%s %s  %d/%d" % [cdef[1], cdef[2], cnt[0], cnt[1]]
 		b.button_pressed = cdef[0] == trophy_cat
 		var ck: String = cdef[0]

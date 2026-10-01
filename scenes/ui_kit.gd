@@ -1,6 +1,17 @@
 class_name UIKit
 extends RefCounted
 
+## Keyboard mode: buttons only take focus once the player starts using Tab or
+## the arrow keys, and give it back on the first mouse click. Otherwise a click
+## would leave a button focused and the next Space would press it again instead
+## of ageing up.
+static var kb_mode := false
+
+
+static func fm() -> int:
+	return Control.FOCUS_ALL if kb_mode else Control.FOCUS_NONE
+
+
 const STAT_ICONS := {"happiness": "😊", "health": "❤️", "smarts": "🧠", "looks": "✨", "stress": "☁️"}
 const STAT_NAMES := {"happiness": "Happiness", "health": "Health", "smarts": "Smarts", "looks": "Looks", "stress": "Stress"}
 
@@ -24,7 +35,8 @@ static func btn(text: String, cb: Callable, variation: String = "", sound: Strin
 	b.text = text
 	if variation != "":
 		b.theme_type_variation = variation
-	b.focus_mode = Control.FOCUS_NONE
+	b.focus_mode = UIKit.fm()
+	b.tooltip_text = text
 	b.pressed.connect(func(): UIKit._click(b, sound))
 	b.pressed.connect(cb)
 	return b
@@ -33,7 +45,7 @@ static func btn(text: String, cb: Callable, variation: String = "", sound: Strin
 static func icon_btn(icon: String, text: String, cb: Callable, variation: String = "Row", vertical: bool = true, icon_size: int = 28, text_size: int = 16, sound: String = "tap") -> Button:
 	var b := Button.new()
 	b.theme_type_variation = variation
-	b.focus_mode = Control.FOCUS_NONE
+	b.focus_mode = UIKit.fm()
 	var box: BoxContainer = VBoxContainer.new() if vertical else HBoxContainer.new()
 	box.add_theme_constant_override("separation", sp(4) if vertical else sp(12))
 	box.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -53,6 +65,7 @@ static func icon_btn(icon: String, text: String, cb: Callable, variation: String
 	b.add_child(m)
 	b.set_meta("icon", il)
 	b.set_meta("label", tl)
+	b.tooltip_text = text
 	_ignore_all(b)
 	b.pressed.connect(func(): UIKit._click(b, sound))
 	b.pressed.connect(cb)
@@ -179,7 +192,8 @@ static func _ignore_all(n: Node) -> void:
 static func row(icon: String, title: String, sub: String, cb: Callable, enabled: bool = true, chevron: bool = true, extra: Control = null) -> Button:
 	var b := Button.new()
 	b.theme_type_variation = "Row"
-	b.focus_mode = Control.FOCUS_NONE
+	b.focus_mode = UIKit.fm()
+	b.tooltip_text = title if sub == "" else "%s. %s" % [title, sub]
 	b.custom_minimum_size = Vector2(0, 74 if sub != "" or extra != null else 58)
 	b.disabled = not enabled
 	var m := MarginContainer.new()
