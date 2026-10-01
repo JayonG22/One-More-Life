@@ -51,6 +51,8 @@ func life_panel() -> void:
 		if not fam.is_empty():
 			m._add(U.section("Line of succession"))
 			m._add(U.lbl("\n".join(fam), "", 15, true))
+	if Arcs.has_arc():
+		m._add(U.row("🛤️", "Your road", "Chapters, and how this life would end if it ended today", func(): m.MP.open("real:arc")))
 	m._add(U.section("Actions"))
 	for a in Lives.actions():
 		var aid: String = a["id"]

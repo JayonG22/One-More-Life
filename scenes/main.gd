@@ -2248,6 +2248,10 @@ func _fill_death(entry: Dictionary) -> void:
 	var story := U.lbl(entry.get("story", ""), "", 18, true)
 	story.add_theme_constant_override("line_spacing", 6)
 	sbox.add_child(story)
+	var end: Dictionary = entry.get("ending", {})
+	if not end.is_empty():
+		sbox.add_child(U.section("How it ended: %s" % str(end.get("title", ""))))
+		sbox.add_child(U.lbl("%d of 5 chapters walked." % int(end.get("chapters", 0)), "Dim", 15))
 	var cons: Array = entry.get("consequences", [])
 	if not cons.is_empty():
 		sbox.add_child(U.section("What caught up with you"))

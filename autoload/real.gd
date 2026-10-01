@@ -31,6 +31,7 @@ func menu(key: String) -> Dictionary:
 		"work": return Workplace.menu()
 		"care": return Care.menu()
 		"body": return Body.menu()
+		"arc": return Arcs.menu()
 	return {"icon": "🏠", "title": "Everyday life", "rows": []}
 
 
@@ -51,7 +52,7 @@ func act(key: String, arg) -> void:
 
 
 func tag(t: String) -> bool:
-	return Tenancy.tag(t) or Transit.tag(t) or Keeping.tag(t) or Market.tag(t) or Workplace.tag(t) or Care.tag(t) or Body.tag(t)
+	return Tenancy.tag(t) or Transit.tag(t) or Keeping.tag(t) or Market.tag(t) or Workplace.tag(t) or Care.tag(t) or Body.tag(t) or Arcs.tag(t)
 
 
 func apply(ops: Dictionary) -> void:
@@ -73,8 +74,8 @@ const KNOWN := ["renting", "flatmate", "no_flatmate", "damp", "boiler_old", "ins
 	"recently_rejected", "has_reference", "cv_gap", "job_seeking",
 	"freelance", "union", "no_union", "company_shaky", "political_office",
 	"waiting_list", "misdiagnosed", "on_meds", "poor_vision", "bad_teeth", "poor_hearing", "chronic", "symptoms",
-	"unfit", "fit", "sleep_poor", "worn", "well_kept", "fallen"]
-const PREFIXES := ["landlord:", "commute:", "tech:", "pretech:", "diet:", "plan:", "boss:", "culture:", "colleague:"]
+	"unfit", "fit", "sleep_poor", "worn", "well_kept", "fallen", "road_walked"]
+const PREFIXES := ["chapter:", "landlord:", "commute:", "tech:", "pretech:", "diet:", "plan:", "boss:", "culture:", "colleague:"]
 
 
 func known_tag(t: String) -> bool:

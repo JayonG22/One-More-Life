@@ -3814,5 +3814,383 @@
    "sports_titles": 1
   },
   "v": 8
+ },
+ {
+  "id": "arc_pirate_3",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏴‍☠️",
+  "name": "Halfway down the Pirate's Road",
+  "desc": "Open the third chapter of the Pirate's Road.",
+  "req": {
+   "arc_pirate": 3
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_pirate_5",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🏴‍☠️",
+  "name": "Walked the Pirate's Road",
+  "desc": "Open all five chapters of the Pirate's Road.",
+  "req": {
+   "arc_pirate": 5
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_colonist_3",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🪐",
+  "name": "Halfway down Under Glass",
+  "desc": "Open the third chapter of Under Glass.",
+  "req": {
+   "arc_colonist": 3
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_colonist_5",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🪐",
+  "name": "Walked Under Glass",
+  "desc": "Open all five chapters of Under Glass.",
+  "req": {
+   "arc_colonist": 5
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_traveler_3",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "⌛",
+  "name": "Halfway down Borrowed Time",
+  "desc": "Open the third chapter of Borrowed Time.",
+  "req": {
+   "arc_traveler": 3
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_traveler_5",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "⌛",
+  "name": "Walked Borrowed Time",
+  "desc": "Open all five chapters of Borrowed Time.",
+  "req": {
+   "arc_traveler": 5
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_royal_3",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "👑",
+  "name": "Halfway down the Crown",
+  "desc": "Open the third chapter of the Crown.",
+  "req": {
+   "arc_royal": 3
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_royal_5",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "👑",
+  "name": "Walked the Crown",
+  "desc": "Open all five chapters of the Crown.",
+  "req": {
+   "arc_royal": 5
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_witch_3",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🧙",
+  "name": "Halfway down the Craft",
+  "desc": "Open the third chapter of the Craft.",
+  "req": {
+   "arc_witch": 3
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_witch_5",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🧙",
+  "name": "Walked the Craft",
+  "desc": "Open all five chapters of the Craft.",
+  "req": {
+   "arc_witch": 5
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_super_3",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🦸",
+  "name": "Halfway down the Mask",
+  "desc": "Open the third chapter of the Mask.",
+  "req": {
+   "arc_super": 3
+  },
+  "v": 17
+ },
+ {
+  "id": "arc_super_5",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🦸",
+  "name": "Walked the Mask",
+  "desc": "Open all five chapters of the Mask.",
+  "req": {
+   "arc_super": 5
+  },
+  "v": 17
+ },
+ {
+  "id": "end_sea_legend",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🌊",
+  "name": "Sea Legend",
+  "desc": "End a pirate life as a Sea Legend.",
+  "req": {
+   "ending_sea_legend": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_hanged",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "⚖️",
+  "name": "The Gallows",
+  "desc": "End a pirate life on the gallows.",
+  "req": {
+   "ending_hanged": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_retired_rich",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏝️",
+  "name": "Got Out With the Hold",
+  "desc": "Retire from piracy rich.",
+  "req": {
+   "ending_retired_rich": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_contact",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "📡",
+  "name": "First Contact",
+  "desc": "End a colony life having answered the signal.",
+  "req": {
+   "ending_contact": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_founder",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🏛️",
+  "name": "Founder of Ares Haven",
+  "desc": "Die as Colony Founder.",
+  "req": {
+   "ending_founder": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_lost_colony",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🪐",
+  "name": "The Dome Failed",
+  "desc": "End a colony life as the air ran out.",
+  "req": {
+   "ending_lost_colony": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_erased",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🌀",
+  "name": "Erased",
+  "desc": "Be erased by the timeline.",
+  "req": {
+   "ending_erased": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_historian",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏺",
+  "name": "The Quiet Historian",
+  "desc": "End a time-travel life as a collector.",
+  "req": {
+   "ending_historian": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_stranded",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "⌛",
+  "name": "Stranded",
+  "desc": "End a time-travel life stranded in one year.",
+  "req": {
+   "ending_stranded": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_beloved",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "👑",
+  "name": "A Reign Remembered",
+  "desc": "End a royal life with a reign remembered.",
+  "req": {
+   "ending_beloved": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_deposed",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏴",
+  "name": "Deposed",
+  "desc": "Lose the throne.",
+  "req": {
+   "ending_deposed": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_abdicated",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🏳️",
+  "name": "Put It Down",
+  "desc": "Abdicate the throne.",
+  "req": {
+   "ending_abdicated": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_burned",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🔥",
+  "name": "Found Out",
+  "desc": "End a witch's life found out.",
+  "req": {
+   "ending_burned": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_ascended",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🌙",
+  "name": "Ascended",
+  "desc": "End a witch's life ascended.",
+  "req": {
+   "ending_ascended": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_matriarch",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🕯️",
+  "name": "Matriarch of the Coven",
+  "desc": "End a witch's life leading a coven.",
+  "req": {
+   "ending_matriarch": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_icon",
+  "cat": "life",
+  "tier": "gold",
+  "icon": "🌆",
+  "name": "An Icon",
+  "desc": "End a hero's life an icon.",
+  "req": {
+   "ending_icon": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_infamous",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "😈",
+  "name": "Infamous",
+  "desc": "End a villain's life infamous.",
+  "req": {
+   "ending_infamous": 1
+  },
+  "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "end_unmasked_fall",
+  "cat": "life",
+  "tier": "silver",
+  "icon": "🎭",
+  "name": "Unmasked",
+  "desc": "End a Gifted life unmasked.",
+  "req": {
+   "ending_unmasked_fall": 1
+  },
+  "v": 17,
+  "hidden": true
  }
 ]

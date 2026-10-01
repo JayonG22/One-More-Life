@@ -860,6 +860,10 @@ func finalize_death(cause: String) -> Dictionary:
 		"difficulty": player.get("difficulty", "real"),
 		"consequences": Grit.consequences(),
 	}
+	var ending := Arcs.ending_entry()
+	if not ending.is_empty():
+		entry["ending"] = ending
+		entry["story"] = str(entry["story"]) + "\n" + str(ending["text"])
 	player["legacy"] = entry
 	changed.emit()
 	return entry

@@ -219,6 +219,7 @@ func yearly() -> void:
 		"super": _super_yearly()
 		"witch": _witch_yearly()
 		"pirate", "colonist", "traveler": Expansion.life_yearly()
+	Arcs.yearly()
 
 
 func ageless() -> bool:
@@ -1298,6 +1299,10 @@ func status_lines() -> Array:
 			out.append(["%d spells cast · %d potions" % [int(l["spells"]), potion_total()], ""])
 		"pirate", "colonist", "traveler":
 			out.append_array(Expansion.life_status())
+	if Arcs.has_arc():
+		var al: Array = Arcs.status_line()
+		if not al.is_empty():
+			out.append(al)
 	out.append_array(Undeath.status_lines())
 	return out
 
@@ -1318,6 +1323,7 @@ func outcome(o: Dictionary, roles: Dictionary) -> void:
 			"hero", "villain":
 				become("super", {"side": what})
 			"end_royal":
+				Arcs.freeze("overthrown" if str(o.get("milestone", "")).find("overthrown") != -1 else "abdicated")
 				GameState.player["life"] = {"type": "human", "exroyal": true}
 				GameState.add_milestone(GameState.player["age"], "lost their royal title")
 			"cure_vampire":

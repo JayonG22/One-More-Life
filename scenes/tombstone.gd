@@ -116,6 +116,10 @@ func _read_the_life(p: Dictionary) -> void:
 		ornament = "🌿"
 
 	epitaph = _epitaph(p, age, karma, worth, kids, fame, life_kind, record)
+	# a path with an ending writes its own last line
+	var end: Dictionary = entry.get("ending", {})
+	if not end.is_empty() and str(end.get("epitaph", "")) != "" and age > 12:
+		epitaph = str(end["epitaph"])
 
 
 func _epitaph(p: Dictionary, age: int, karma: int, worth: int, kids: int, fame: float, life_kind: String, record: Array) -> String:

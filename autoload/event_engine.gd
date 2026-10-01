@@ -1168,6 +1168,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Real.apply(o["real"])
 	if o.has("market"):
 		Market.outcome(o["market"])
+	if o.has("arc"):
+		Arcs.apply(o["arc"])
 	if o.has("empire"):
 		Empires.outcome(o["empire"])
 	if o.has("become"):
