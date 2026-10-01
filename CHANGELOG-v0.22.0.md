@@ -5,6 +5,6 @@
 - Star Shop rebuilt: no purchasable titles, a global rotating shelf, an avatar section, and the Do-Over item that rewinds a year (even a death).
 - Avatar creator: 14 categories, ages with your character, shown in the header and share card.
 - Event pace setting (Calm / Normal / Busy).
-- Single-column layout at large text sizes, controller support, per-mode music and sound for Pets and Prison.
+- Single-column layout at large text sizes, per-mode music and sound for Pets and Prison.
 - More events: pets, prison re-entry, workplace, estates, journeys.
 - Version numbering moved to 0.x; 1.0 is reserved for the finished game.

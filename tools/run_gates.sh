@@ -57,7 +57,6 @@ run input mg_input_probe  'MG INPUT PROBE PASS' 'FAIL' screen
 run ui    ui_test         'UI TEST DONE, screen=graveyard' 'SCRIPT ERROR' screen
 run petsui v19_ui_test    'failures=0' 'FAIL:|SCRIPT ERROR' screen
 run prisonui v20_ui_test  'failures=0' 'FAIL:|SCRIPT ERROR' screen
-run pad   pad_test        'failures=0' 'FAIL:|SCRIPT ERROR' screen
 
 echo
 if [ "$fail" -eq 0 ]; then echo "GATE: ALL $pass GREEN"; else echo "GATE: $fail FAILED (${failed[*]}) of $((pass+fail))"; fi

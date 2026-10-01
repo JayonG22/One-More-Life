@@ -1811,112 +1811,7 @@ func _age_up() -> void:
 
 
 ## Tab or an arrow key turns keyboard navigation on; a mouse click turns it off.
-# ---- gamepad: translated into the keys the game already understands
-var _stick_dir := Vector2i.ZERO
-var gamepad_mode := false
-
-
-func _joy_key(code: int, pressed: bool) -> void:
-	var ev := InputEventKey.new()
-	ev.keycode = code
-	ev.physical_keycode = code
-	ev.pressed = pressed
-	Input.parse_input_event(ev)
-
-
-func _joy_tap(code: int) -> void:
-	_joy_key(code, true)
-	_joy_key(code, false)
-
-
-func _cycle_tab(d: int) -> void:
-	var n := _tab_specs().size()
-	var cur := int(g.get("tab_cur", 0))
-	_tab_press((cur + d + n) % n)
-
-
-func _gamepad_input(event: InputEvent) -> bool:
-	if event is InputEventJoypadButton:
-		if not event.pressed:
-			return false
-		if not gamepad_mode:
-			gamepad_mode = true
-		if _current_screen() == "game" and not UIKit.kb_mode and not mg_open:
-			_set_kb_mode(true)
-			_focus_overlay.call_deferred()
-		var b: int = event.button_index
-		if mg_open:
-			# in a minigame: the stick and pad are the arrow keys, the face buttons are Space and 1-3 / A S D
-			match b:
-				JOY_BUTTON_A: _joy_tap(KEY_SPACE)
-				JOY_BUTTON_X: _joy_tap(KEY_A)
-				JOY_BUTTON_Y: _joy_tap(KEY_S)
-				JOY_BUTTON_B: _joy_tap(KEY_D)
-				JOY_BUTTON_DPAD_UP: _joy_tap(KEY_UP)
-				JOY_BUTTON_DPAD_DOWN: _joy_tap(KEY_DOWN)
-				JOY_BUTTON_DPAD_LEFT: _joy_tap(KEY_LEFT)
-				JOY_BUTTON_DPAD_RIGHT: _joy_tap(KEY_RIGHT)
-				JOY_BUTTON_START: _joy_tap(KEY_ENTER)
-				_: return false
-			return true
-		match b:
-			JOY_BUTTON_A: _joy_tap(KEY_ENTER)
-			JOY_BUTTON_B: _joy_tap(KEY_ESCAPE)
-			JOY_BUTTON_START: _joy_tap(KEY_SPACE)
-			JOY_BUTTON_LEFT_SHOULDER:
-				if _current_screen() == "game" and not popup_open:
-					if bool(g.get("single_col", false)):
-						_set_column(maxi(0, int(g.get("col_idx", 1)) - 1))
-					else:
-						_cycle_tab(-1)
-			JOY_BUTTON_RIGHT_SHOULDER:
-				if _current_screen() == "game" and not popup_open:
-					if bool(g.get("single_col", false)):
-						_set_column(mini(2, int(g.get("col_idx", 1)) + 1))
-					else:
-						_cycle_tab(1)
-			JOY_BUTTON_Y:
-				if _current_screen() == "game" and not popup_open:
-					_tab_press(5)
-			JOY_BUTTON_DPAD_UP: _joy_tap(KEY_UP)
-			JOY_BUTTON_DPAD_DOWN: _joy_tap(KEY_DOWN)
-			JOY_BUTTON_DPAD_LEFT: _joy_tap(KEY_LEFT)
-			JOY_BUTTON_DPAD_RIGHT: _joy_tap(KEY_RIGHT)
-			_: return false
-		return true
-	if event is InputEventJoypadMotion:
-		var m: InputEventJoypadMotion = event
-		if m.axis != JOY_AXIS_LEFT_X and m.axis != JOY_AXIS_LEFT_Y:
-			return false
-		var v := _stick_dir
-		var val := 0
-		if absf(m.axis_value) > 0.55:
-			val = 1 if m.axis_value > 0.0 else -1
-		if m.axis == JOY_AXIS_LEFT_X:
-			v.x = val
-		else:
-			v.y = val
-		if v != _stick_dir:
-			gamepad_mode = true
-			if _current_screen() == "game" and not UIKit.kb_mode and not mg_open:
-				_set_kb_mode(true)
-				_focus_overlay.call_deferred()
-			if _stick_dir.x != v.x:
-				if _stick_dir.x != 0:
-					_joy_key(KEY_LEFT if _stick_dir.x < 0 else KEY_RIGHT, false)
-				if v.x != 0:
-					_joy_key(KEY_LEFT if v.x < 0 else KEY_RIGHT, true)
-			if _stick_dir.y != v.y:
-				if _stick_dir.y != 0:
-					_joy_key(KEY_UP if _stick_dir.y < 0 else KEY_DOWN, false)
-				if v.y != 0:
-					_joy_key(KEY_UP if v.y < 0 else KEY_DOWN, true)
-			_stick_dir = v
-		return true
-	return false
-
-
-## When a pop-up opens and the pad is in use, put the cursor on its first choice.
+## When a pop-up opens and keyboard navigation is on, put the cursor on its first choice.
 func _focus_overlay() -> void:
 	if not UIKit.kb_mode or not popup_open:
 		return
@@ -1928,11 +1823,6 @@ func _focus_overlay() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if (event is InputEventJoypadButton or event is InputEventJoypadMotion) and _gamepad_input(event):
-		get_viewport().set_input_as_handled()
-		return
-	if event is InputEventKey and event.pressed:
-		gamepad_mode = gamepad_mode and (event as InputEventKey).keycode == 0
 	if event is InputEventMouseButton and event.pressed and UIKit.kb_mode:
 		_set_kb_mode(false)
 	elif event is InputEventKey and event.pressed and not event.echo and not UIKit.kb_mode:
