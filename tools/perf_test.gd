@@ -28,7 +28,7 @@ func _drain() -> void:
 
 
 func _ready() -> void:
-	seed(3030)
+	seed(3032)
 	# the gate shares one save folder between checks; what earlier checks left in the
 	# meta (which events were seen lately) must not decide how this life goes
 	Meta.meta["recent"] = {}

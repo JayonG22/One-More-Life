@@ -17,7 +17,8 @@ save/load, and generate meaningfully different life stories.
 | **v1.0** | **One More Life** | **shipped** — see `CHANGELOG-v1.0.0.md` |
 | **v1.1** | **Pets Life** | **shipped** — see `CHANGELOG-v1.1.0.md` |
 | **v1.2** | **Prison Life** | **shipped** — see `CHANGELOG-v1.2.0.md` |
-| v1.3+ | Whatever is next | the architecture takes new modes cleanly |
+| **v1.3** | **Share, Legacy, Seeded Lives, The Outside** | **shipped** — see `CHANGELOG-v1.3.0.md` |
+| v1.4+ | Whatever is next | the architecture takes new modes cleanly |
 
 ### The 1.0 release gates, and what met them
 

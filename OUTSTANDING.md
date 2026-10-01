@@ -39,7 +39,7 @@ Last reconciled against the code: v1.0.0.
 
 ## Next
 
-- **v1.3+** — see `ROADMAP.md`. Pets Life (v1.1) and Prison Life (v1.2) have shipped.
+- **v1.4+** — see `ROADMAP.md`. Pets Life (v1.1), Prison Life (v1.2) and the v1.3 improvements have shipped. Hospital Life was considered and dropped by decision.
 
 ---
 
