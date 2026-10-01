@@ -1,31 +1,42 @@
-# ONE MORE LIFE — v0.12.0 "Everyday"
-
-
-> **v0.12.0 note:** A content pass, not a systems one. `everyday.json` — the file
-> an ordinary life meets most — went from 180 choices with a single scripted
-> outcome to **none**, all hand-written, and from 264 outcomes to 612. The whole
-> library dropped from 55.9% to 43.1% deterministic. The tombstone is now drawn
-> from the life you actually lived. See `CHANGELOG-v0.12.0.md`.
+# ONE MORE LIFE — v1.0.0
 
 A life simulator in the spirit of BitLife, built in Godot 4.4, where every choice echoes. Everything is unlocked. No ads, no store, no passes.
 
+> **v1.0.0.** The baseline game is finished: 760 events and 2,231 choices (none with a single outcome, none with fewer than three options), a real job market and workplace, a care pathway, renting, commuting and keeping up, six life paths with chapters and endings, 22 minigames that a bot has proven winnable, keyboard play, and builds for Windows, macOS and Linux. See `CHANGELOG-v1.0.0.md`. What's next is in `ROADMAP.md`.
+
 ## Open and play
 
-1. Open **Godot 4.4** (or newer 4.x) → **Import** → pick `project.godot` in this folder.
-2. The first open imports the fonts (the emoji font is 10 MB, give it a few seconds).
-3. Press **F5** (Run Project).
+**Just play:** unzip, then run `Game/Windows/OneMoreLife.exe`, `Game/macOS/` (right-click → Open the first time; it's unsigned) or `Game/Linux/OneMoreLife.x86_64`. No install.
 
-The window opens at 1600×900. The layout is designed natively for 1920×1080 and renders crisply at any size from 1280×720 to 4K and ultrawide. Fullscreen and an interface-size option are in Settings.
+**From source:** open **Godot 4.4** (or newer 4.x) → **Import** → pick `project.godot` → **F5**. The first import takes a few seconds (the emoji font is 10 MB).
+
+The window opens at 1600×900. The layout is designed natively for 1920×1080 and is checked at 1280×720, 1366×768 and 1920×1080. Fullscreen, interface size (90–130%), high contrast and reduced motion are in Settings.
 
 ### Controls
 
 | Key | Action |
 | --- | --- |
-| Space | Age up |
+| Space | Age up (or press the selected button, in keyboard mode) |
 | 1–6 | Activities, People, Work, Assets, your Life Path (when you have one), More |
+| Tab / arrow keys | Turn on keyboard navigation and move between things |
+| Enter / Space | Select |
 | Esc / Backspace | Back in the right-hand menu |
 | 1–9 (in an event) | Pick that choice |
 | Enter / Space (in a result) | OK |
+
+A mouse click turns keyboard navigation off again.
+
+### For developers
+
+```
+tools/run_gates.sh /path/to/Godot_v4.4.1-stable_linux.x86_64   # every automated check, one verdict
+tools/mig_check.sh /path/to/godot                              # play a real v0.14 save on this build
+python3 tools/content/thin.py                                  # any choice with a single outcome
+```
+
+Content is authored by scripts in `tools/content/` (read its README for the run order). Tests write to a throwaway folder when `OML_USER_DIR` is set, so they never touch real saves.
+
+## Version history
 
 ## New in v0.8.0
 

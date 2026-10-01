@@ -4,29 +4,42 @@ Everything asked for that is **not yet done**, kept in the repo so nothing gets
 lost between versions. Each line says what it is and where it stands. When a
 thing ships, it moves to that version's changelog and comes off this list.
 
-Last reconciled against the code: v0.14.0.
+Last reconciled against the code: v1.0.0.
 
 ---
 
-## Closed in v0.14.0
+## Closed in v0.15, v0.16 and v1.0
 
-- **Parent remarriage bug** — marriages now link both ways; 2,700 NPC-years, 0 violations
-- **Birth circumstances** — nine origins, only children common, no longer always two parents
-- **Smarts decay**, and looks drift before 35
-- **The run-up to death** — warnings below 30%, crisis events below 15%
-- **Wanted stars** — 0–5, feeding sentencing, trial evidence, hiring and borders
-- **"Become a…"** — 17 paths as a manual, gated, costed application
-- **Relationships that continue** — stages, eight staged beats, crush payoff
-- **Loans** (four lenders) and **fight betting** (card, odds, and getting in the ring)
-- **NPCs with lives among each other** — bonds between your people, and a live middle band
-- **Drawn vector icons**, progress bars on the main screen, achievement moment,
-  turning-point confirmation, surprise-me, gradient bars, age-button animation,
-  pet status, craziness display, comic superhero background
-- **A layout audit** — 3,161 controls measured across 11 panel states, one spacing scale
+- **Content debt** — 284 one-outcome choices → 0; 84 events with fewer than three
+  choices → 0; follow-up coverage 7.1% → 25.0%
+- **Writing that repeats** — inline alternatives, named places, era vocabulary
+- **The ordinary parts of a life** — renting, getting about, keeping up
+- **Work** — a job market, hiring, workplaces, leaving, freelancing
+- **Body** — a care pathway, medication, eyes, teeth, hearing, four slow accounts
+- **Life paths** — chapters and endings for Royal, Witch, Gifted, Pirate, Colonist, Traveler
+- **Accessibility** — keyboard play, labels, high contrast, text size, reduced motion
+- **Minigames** — Negotiation and Road Test; boxing coached; all 22 proven winnable
+- **Drawn icons** — 20 more, used across the new menus
+- **Releases** — Windows, macOS and Linux builds from one command
+- **A bug that hid 60 events** — `v08.json` was never in the loader's file list
 
-Still open from that list: **boxing could not be reproduced as broken** (all 21
-minigames run and Fight Night works end to end in the real UI), and the
-Streamline icon library cannot be used — it is licensed.
+## Still open
+
+- **Real Windows and macOS hardware.** The Windows build was launched under Wine
+  and the macOS build was exported and inspected; neither has been run on the
+  real operating system by the author of this register. The Linux build was run
+  natively.
+- **macOS is unsigned.** First launch needs right-click → Open.
+- **Interface size tops out at 130%.** The three-column layout needs about
+  1,277 × 784 logical pixels; beyond 130% it would clip. A single-column layout
+  for very large text is the real fix and is a post-1.0 item.
+- **Economy.** Bankruptcies in the simulation rose about 13% against v0.14 after
+  the real-life costs went in. Inside run-to-run noise, but worth a balance pass.
+- **Streamline icons** — licensed; not used, by decision.
+
+## Next
+
+- **v1.1 Pets Life** and **v1.2 Prison Life** — designed in `ROADMAP.md`.
 
 ---
 
