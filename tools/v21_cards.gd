@@ -14,7 +14,7 @@ func _ready() -> void:
 	GameState.new_life({"first": "Sam", "last": "Reed", "gender": "male", "country": "us", "life_path": "prisoner", "keep_family": true, "story": "innocent"})
 	for y in range(4):
 		EventEngine.age_up(); EventEngine.pending.clear()
-	Prison.conclude("exonerated")
+	Prison.conclude("exonerated", true)
 	main._share_life(GameState.player["legacy"])
 	for i in range(8): await get_tree().process_frame
 	print("CARDS DONE ", main.last_share)

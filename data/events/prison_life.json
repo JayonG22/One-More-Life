@@ -14,7 +14,8 @@
     "newbie"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -167,7 +168,8 @@
     "cellmate"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -278,7 +280,8 @@
     "newbie"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -429,7 +432,8 @@
     "loner"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -575,7 +579,8 @@
     "served>=1"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -726,7 +731,8 @@
     "debt"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -880,7 +886,8 @@
     "respect<=50"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1022,7 +1029,8 @@
     "job:kitchen"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1135,7 +1143,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1279,7 +1288,8 @@
     "served>=1"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1389,7 +1399,8 @@
     "support>=20"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1534,7 +1545,8 @@
     "support>=30"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1641,7 +1653,8 @@
     "served>=1"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1791,7 +1804,8 @@
     "served>=1"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -1892,7 +1906,8 @@
     "tension<=80"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2012,7 +2027,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2163,7 +2179,8 @@
     "appeal>=25"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2310,7 +2327,8 @@
     "story:first"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2413,7 +2431,8 @@
     "served>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2575,7 +2594,8 @@
     "respect>=15"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2681,7 +2701,8 @@
     "respect>=20"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2828,7 +2849,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -2977,7 +2999,8 @@
     "served>=1"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -3127,7 +3150,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -7384,7 +7408,8 @@
     "tension>=50"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -7492,7 +7517,8 @@
     "war"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -7866,7 +7892,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8038,7 +8065,8 @@
     "solitary_before"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8140,7 +8168,8 @@
     "served>=1"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8245,7 +8274,8 @@
     "hearing_due"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8353,7 +8383,8 @@
     "served>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8470,7 +8501,8 @@
     "served>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8628,7 +8660,8 @@
     "tension>=40"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8788,7 +8821,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -8887,7 +8921,8 @@
     "served>=5"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9037,7 +9072,8 @@
     "support<=60"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9142,7 +9178,8 @@
     "served>=5"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9234,7 +9271,8 @@
     "served>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9336,7 +9374,8 @@
     "plan"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9490,7 +9529,8 @@
     "escape>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9634,7 +9674,8 @@
     "plan"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -9776,6 +9817,9 @@
    "life": "prisoner",
    "pr": [
     "fugitive"
+   ],
+   "not_pr": [
+    "reentry"
    ]
   },
   "choices": [
@@ -9872,6 +9916,9 @@
    "life": "prisoner",
    "pr": [
     "fugitive"
+   ],
+   "not_pr": [
+    "reentry"
    ]
   },
   "choices": [
@@ -9969,6 +10016,9 @@
    "pr": [
     "fugitive",
     "support>=20"
+   ],
+   "not_pr": [
+    "reentry"
    ]
   },
   "choices": [
@@ -10940,7 +10990,8 @@
     "served>=2"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -11044,7 +11095,8 @@
     "tension>=35"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -11197,7 +11249,8 @@
     "served>=4"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -11299,7 +11352,8 @@
     "tension<=70"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -11449,7 +11503,8 @@
     "served>=8"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -11952,7 +12007,8 @@
     "gang"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -12069,7 +12125,8 @@
    ],
    "life": "prisoner",
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -12170,7 +12227,8 @@
    ],
    "life": "prisoner",
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -12262,7 +12320,8 @@
    ],
    "life": "prisoner",
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -12361,7 +12420,8 @@
     "kids"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -12462,7 +12522,8 @@
     "appeal>=25"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -12578,7 +12639,8 @@
    ],
    "life": "prisoner",
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -14248,7 +14310,8 @@
    ],
    "life": "prisoner",
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -14354,7 +14417,8 @@
     "served>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -14454,7 +14518,8 @@
     "escape>=3"
    ],
    "not_pr": [
-    "fugitive"
+    "fugitive",
+    "reentry"
    ]
   },
   "choices": [
@@ -14736,5 +14801,1488 @@
   ],
   "weight": 1,
   "followup_only": true
+ },
+ {
+  "id": "re.first",
+  "icon": "🍽️",
+  "title": "The first meal",
+  "text": "Nobody tells you how many decisions there are. A man behind a counter asks what you want, and what you want turns out to be a very large question. The menu has forty things on it. You've eaten from a tray for years.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Order what you remember",
+    "outcomes": [
+     {
+      "text": "A cheeseburger, which tasted like grease and salt and a memory. I ate it slowly and thought it was the best thing I'd ever had, and also that something was missing, and the thing missing was the noise.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pr": {
+       "stab": 3
+      }
+     },
+     {
+      "text": "I ordered the thing I'd thought about for years. It was fine. The thinking had been better. I sat in the window and watched people walk past as though it was nothing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pr": {
+       "stab": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let someone else order",
+    "outcomes": [
+     {
+      "text": "I said 'whatever you're having'. The waitress smiled. It was the first time anybody had decided something for me kindly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pr": {
+       "stab": 3,
+       "support": 2
+      }
+     },
+     {
+      "text": "I let the person with me choose. I realised halfway through the meal that I was eating with my arm round the plate. I took it away, slowly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "pr": {
+       "stab": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave without eating",
+    "outcomes": [
+     {
+      "text": "It was too much: the light, the choice, the noise. I stood outside and breathed. Somebody asked if I was alright. I said yes, and meant it a little.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -2
+      }
+     },
+     {
+      "text": "I walked out. I got a sandwich from a shop, in a bag, and ate it on a wall by myself. It was exactly what I needed, and I did not mind that nobody knew.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 2
+      },
+      "pr": {
+       "stab": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "once": true
+ },
+ {
+  "id": "re.phone",
+  "icon": "📱",
+  "title": "The phone",
+  "text": "Everything is a screen. The bus has one, the bank has one, the form for the job has one and the form wants to know your email address, a thing you've never had. A teenager on the bus helps you without looking up.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask someone to show you",
+    "outcomes": [
+     {
+      "text": "A boy of about twelve took it out of my hand, did it in four seconds and handed it back. 'It's easy,' he said, kindly. I thanked him far too much.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "happiness": 2
+      },
+      "pr": {
+       "stab": 3
+      }
+     },
+     {
+      "text": "A woman at the library desk sat with me for an hour. She never asked why I didn't know. I have never forgotten it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4
+      },
+      "pr": {
+       "stab": 4,
+       "support": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Work it out alone",
+    "outcomes": [
+     {
+      "text": "It took a week and a great deal of swearing. I got there. There was pride in it that was disproportionate to the achievement.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 4
+      },
+      "pr": {
+       "stab": 2
+      }
+     },
+     {
+      "text": "I got it wrong several times, including once in front of a queue. I went red. Then I got it right and nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "pr": {
+       "stab": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Avoid it entirely",
+    "outcomes": [
+     {
+      "text": "I did without. It meant forms in person, queues, cash. It meant being the one with the paper. I got by, but the world is built for the other kind of person.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -4
+      }
+     },
+     {
+      "text": "I kept to places that did not need it. It's a way to live. It's a narrow one.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pr": {
+       "stab": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "once": true
+ },
+ {
+  "id": "re.interview",
+  "icon": "💼",
+  "title": "The question on the form",
+  "text": "It's the fifth interview. It's gone well. The manager likes you. Then the form comes out, and there's the box, and you know that however you answer, the room is going to change.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "employed"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Tell the whole truth",
+    "outcomes": [
+     {
+      "text": "I said it plainly: what, when, how long, and what I'd done with the time. He listened without writing. 'I'll be honest, that gives me pause. But the rest of what you've said doesn't.' I got the job.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "pr": {
+       "stab": 8,
+       "work": 1
+      }
+     },
+     {
+      "text": "I told him everything. He thanked me for my honesty and said they'd be in touch. They weren't. Honesty doesn't always pay, but I could look at myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      },
+      "pr": {
+       "stab": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give the short version",
+    "outcomes": [
+     {
+      "text": "'A conviction, a long time ago, served in full.' He nodded as though I'd said something about the weather. I took the job and carried that sentence home with me for weeks.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pr": {
+       "stab": 5,
+       "work": 1
+      }
+     },
+     {
+      "text": "I gave the short version. It worked, once. Then a background check found the rest, and it looked much worse for the missing detail.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -4
+      },
+      "pr": {
+       "stab": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave the box blank",
+    "outcomes": [
+     {
+      "text": "They didn't check. I started on Monday, and spent two years waiting for someone to look.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      },
+      "pr": {
+       "stab": 3,
+       "work": 1,
+       "heat": 4
+      }
+     },
+     {
+      "text": "It came back to bite me. The HR woman was kind about it, which was worse. I was let go on a Friday with a box.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "happiness": -6
+      },
+      "pr": {
+       "stab": -8,
+       "work": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.landlord",
+  "icon": "🏘️",
+  "title": "The deposit",
+  "text": "The room is a decent one. The landlord is a tired man with a ring of keys. He wants a month's deposit, two references, and a look at your face while you say where you've been for the last few years.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "employed"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pay up front and explain",
+    "outcomes": [
+     {
+      "text": "I counted out the cash and told him straight. He looked at the money for a long time. 'No trouble?' 'None.' 'Right,' he said, and held out a key.",
+      "weight": 1,
+      "effects": {
+       "money": -1200,
+       "happiness": 4
+      },
+      "pr": {
+       "stab": 6,
+       "home": 1
+      }
+     },
+     {
+      "text": "I explained. He listened, then asked for six months' rent in advance. I paid it. It left me with very little, and a room.",
+      "weight": 1,
+      "effects": {
+       "money": -2500,
+       "stress": 4
+      },
+      "pr": {
+       "stab": 4,
+       "home": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask family to vouch",
+    "outcomes": [
+     {
+      "text": "My sister signed the form without a word and drove me to the door. She stood on the step until I had gone in, as though I might not.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pr": {
+       "stab": 5,
+       "home": 1,
+       "support": 4
+      }
+     },
+     {
+      "text": "I asked, and they said yes, and I had to carry that: the weight of someone else's name on my lease.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 2
+      },
+      "pr": {
+       "stab": 5,
+       "home": 1,
+       "support": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Doss for now",
+    "outcomes": [
+     {
+      "text": "A friend's floor, a hostel, a car for two weeks in March. It's survivable. It's not a life, and I could feel the margin thinning.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 8
+      },
+      "pr": {
+       "stab": -6
+      }
+     },
+     {
+      "text": "I took what was offered by the day: a sofa here, a bed in a church hall there. People are kinder than they should have to be.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -3,
+       "support": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.officer",
+  "icon": "🧾",
+  "title": "A very ordinary appointment",
+  "text": "The probation officer's office has a pot plant and a poster about domestic safety. She has your file open and a look on her face that is neither friendly nor unfriendly. 'How's it going?' she asks.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "employed"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Be completely straight",
+    "outcomes": [
+     {
+      "text": "I told her about the money, about the temptation, about the man I'd seen. She wrote it down, calmly. 'That's what the appointment is for.' It was the first time I'd ever been helped by an official.",
+      "weight": 1,
+      "effects": {
+       "stress": -4
+      },
+      "pr": {
+       "stab": 6
+      }
+     },
+     {
+      "text": "I told her it was hard. She didn't flinch. She sent me to a programme and a man who helps with CVs. It was a better conversation than I'd expected.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "pr": {
+       "stab": 5,
+       "support": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say all is fine",
+    "outcomes": [
+     {
+      "text": "'All fine.' She nodded, and made a note, and there was a pause which told me she knew exactly what 'fine' was worth.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "pr": {
+       "stab": 1
+      }
+     },
+     {
+      "text": "I said I was fine. I was not fine. She wrote 'doing well' and I walked out feeling worse than when I went in.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I didn't go. A letter arrived. Then another. I went to the next one, and she said, very gently, that there is only one more of those before it becomes something else.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      },
+      "pr": {
+       "stab": -5,
+       "viol": 1
+      }
+     },
+     {
+      "text": "I missed the appointment. The text from her said only 'please call.' It was the politest warning I have ever had.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -4,
+       "viol": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.oldfriends",
+  "icon": "🍻",
+  "title": "The old crowd",
+  "text": "Three of them are on the corner by the shop. They saw you before you saw them. One lifts a hand. They look older, and well, and there's a car in the road with the engine running that no one has mentioned.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cross the street",
+    "outcomes": [
+     {
+      "text": "I crossed. It cost me a feeling in the stomach. But I didn't turn round, and that night I slept better than I had in months.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": 3
+      },
+      "pr": {
+       "stab": 5,
+       "heat": -3
+      }
+     },
+     {
+      "text": "I crossed the road and kept my head down. One of them called my name. I did not look back. It's the loneliest thing I've done.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      },
+      "pr": {
+       "stab": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say hello and move on",
+    "outcomes": [
+     {
+      "text": "I stopped, shook hands, asked after somebody's mother. Nobody asked me for anything. I felt the pull of it all the same, like a tide.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pr": {
+       "stab": -1,
+       "heat": 4
+      }
+     },
+     {
+      "text": "We talked for ten minutes. One of them pressed a number into my hand, 'in case'. I put it in my pocket. I didn't throw it away.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "pr": {
+       "stab": -3,
+       "heat": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get in the car",
+    "outcomes": [
+     {
+      "text": "I got in. It was, for a while, wonderful. It was familiar, and warm, and everything I'd missed. Six weeks later, it wasn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 6
+      },
+      "pr": {
+       "stab": -8,
+       "heat": 15,
+       "viol": 1,
+       "pay": 600
+      }
+     },
+     {
+      "text": "I got in. Nobody asked anything of me that night. Nobody had to.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pr": {
+       "stab": -6,
+       "heat": 12,
+       "pay": 300
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30
+ },
+ {
+  "id": "re.parent",
+  "icon": "👵",
+  "title": "The funeral you can attend",
+  "text": "While you were inside, someone died. Now there's a grave, a stone, and a relative who says 'I'm sorry' and then, quietly, 'she asked for you'. The cemetery has gravel paths and a smell of cut grass.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and stand there",
+    "outcomes": [
+     {
+      "text": "I stood at the stone for an hour. I said what I hadn't been able to say in letters. It didn't make anything right, but something in my chest unclenched a little.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": -6
+      },
+      "pr": {
+       "stab": 4,
+       "support": 3
+      }
+     },
+     {
+      "text": "I went at dawn, when the gates opened. I talked to the stone. A man cutting the grass pretended not to hear. I was grateful to him.",
+      "weight": 1,
+      "effects": {
+       "stress": -4
+      },
+      "pr": {
+       "stab": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bring flowers to the family",
+    "outcomes": [
+     {
+      "text": "They didn't know what to say. We sat in the kitchen and said very little. My aunt gave me a photograph. It's on the shelf.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pr": {
+       "stab": 5,
+       "support": 6
+      }
+     },
+     {
+      "text": "It was awkward and kind. A cousin asked how long I was out for, and nobody laughed, and then everyone did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "pr": {
+       "stab": 4,
+       "support": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Avoid it",
+    "outcomes": [
+     {
+      "text": "I couldn't. I stayed in my room that week with the blind down. I told myself I'd go next month.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      },
+      "pr": {
+       "stab": -5
+      }
+     },
+     {
+      "text": "I told myself it was too late to matter. I know that's not true. I think about it most days.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 4
+      },
+      "pr": {
+       "stab": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 50,
+  "once": true
+ },
+ {
+  "id": "re.child",
+  "icon": "🧒",
+  "title": "The child who remembers",
+  "text": "She was six when you went in. She's tall now, with your jaw, and she looks at you across the table the way you'd look at a stranger who happened to know your name.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "kids"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Be patient",
+    "outcomes": [
+     {
+      "text": "I didn't push. I asked about school. She told me about a teacher. At the end she asked if I'd come to the school play. I said yes before she'd finished the sentence.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "pr": {
+       "stab": 6,
+       "support": 5
+      }
+     },
+     {
+      "text": "I let her decide the pace. Months passed. One Sunday she knocked on the door with her homework. Neither of us spoke about why.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "pr": {
+       "stab": 6,
+       "support": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell her everything",
+    "outcomes": [
+     {
+      "text": "She listened to all of it, white-faced. At the end she said 'I knew that.' She had known for years. We sat for a long time in the same silence.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 4
+      },
+      "pr": {
+       "stab": 3,
+       "support": 3
+      }
+     },
+     {
+      "text": "I told her. She cried, and was angry, and then she asked a question I'd not expected: 'were you scared?' I said yes. It was the first honest conversation either of us had had.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 6
+      },
+      "pr": {
+       "stab": 4,
+       "support": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make it up with presents",
+    "outcomes": [
+     {
+      "text": "I bought her a phone I could not afford. She thanked me politely. We both knew.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 3
+      },
+      "pr": {
+       "stab": -2,
+       "support": 1
+      }
+     },
+     {
+      "text": "Presents. Cinema. A day out that tried too hard. She was kind about it. I understood afterwards that she didn't want things.",
+      "weight": 1,
+      "effects": {
+       "money": -250,
+       "stress": 2
+      },
+      "pr": {
+       "stab": 0,
+       "support": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 50,
+  "once": true
+ },
+ {
+  "id": "re.stranger",
+  "icon": "🪪",
+  "title": "Being recognised",
+  "text": "A woman at the checkout is looking at you in a certain way. Then she says, quietly, 'I know who you are. I read about it.' She isn't hostile. She isn't friendly. She is simply certain.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Own it",
+    "outcomes": [
+     {
+      "text": "'That's right. I did the time. I'm doing something else now.' She nodded slowly. Her till beeped. 'Next,' she said, and the moment was over.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 2
+      },
+      "pr": {
+       "stab": 4
+      }
+     },
+     {
+      "text": "I told her it was true. She didn't say anything else. I went back to that shop for years. We never mentioned it again.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "pr": {
+       "stab": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Deny it",
+    "outcomes": [
+     {
+      "text": "'You've got me confused with someone else.' She let it go, with a look. It sat in my stomach all day, the lie, and the knowledge that she knew.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -3
+      },
+      "pr": {
+       "stab": -2
+      }
+     },
+     {
+      "text": "I denied it, and left my shopping. I did not go to that shop again.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave without a word",
+    "outcomes": [
+     {
+      "text": "I put down the basket and walked out. In the street my hands shook. I had done nothing. That was precisely the point.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      },
+      "pr": {
+       "stab": -3
+      }
+     },
+     {
+      "text": "I paid, said nothing, and left. Later, I discovered she'd put a note in the bag. 'Good luck.' I still have it.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 4
+      },
+      "pr": {
+       "stab": 4,
+       "support": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.money",
+  "icon": "💷",
+  "title": "The first wage",
+  "text": "It's in the account. It's real. It's not much, but it's earned, in a place with a time clock and a kettle and a man called Terry who nods at you every morning.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "employed"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Save it",
+    "outcomes": [
+     {
+      "text": "I put away every spare penny. By the end of the year I'd saved a sum. It's not large, but it is a margin, and a margin is the difference between a bad month and a bad year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pr": {
+       "stab": 6,
+       "pay": 400
+      }
+     },
+     {
+      "text": "I saved the lot, and bought nothing. My sister said I was being silly. I told her it felt like a wall.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pr": {
+       "stab": 5,
+       "pay": 300
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spend some on the family",
+    "outcomes": [
+     {
+      "text": "I took them for a meal, and paid. My mother cried, quietly, into a napkin. I counted the cost and decided it was cheap.",
+      "weight": 1,
+      "effects": {
+       "money": -250,
+       "happiness": 7
+      },
+      "pr": {
+       "stab": 3,
+       "support": 6
+      }
+     },
+     {
+      "text": "I bought presents, and it felt like something. It was money well spent in a way no savings account can measure.",
+      "weight": 1,
+      "effects": {
+       "money": -200,
+       "happiness": 6
+      },
+      "pr": {
+       "stab": 2,
+       "support": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blow it",
+    "outcomes": [
+     {
+      "text": "A weekend I can only partly remember. It was glorious. Then it was Monday, and it was nothing.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "happiness": 4,
+       "health": -2
+      },
+      "pr": {
+       "stab": -5
+      }
+     },
+     {
+      "text": "I spent it fast, on things I'd been thinking about for years. The pleasure faded faster than the debt.",
+      "weight": 1,
+      "effects": {
+       "money": -450,
+       "happiness": 2
+      },
+      "pr": {
+       "stab": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.counsel",
+  "icon": "🪑",
+  "title": "A circle of chairs",
+  "text": "A man from the programme leans against the door. 'There's a meeting on Thursday. Church hall. Tea, biscuits, no one will ask you anything you don't want to say.' He doesn't push. He's been where you are.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "Eleven people in a circle. A woman spoke about her brother. A man spoke about a car. I said nothing. On the way home I said something to myself, under my breath, that I'd never said before.",
+      "weight": 1,
+      "effects": {
+       "stress": -5,
+       "happiness": 3
+      },
+      "pr": {
+       "stab": 6
+      }
+     },
+     {
+      "text": "I went for the biscuits and stayed for the people. By the third week I was putting the chairs out.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "happiness": 4
+      },
+      "pr": {
+       "stab": 7,
+       "support": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Think about it",
+    "outcomes": [
+     {
+      "text": "I thought about it for a month. Then a bad night, and a phone call, and I turned up on a Thursday with my hands in my pockets.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pr": {
+       "stab": 3
+      }
+     },
+     {
+      "text": "I didn't go. He didn't ask again. The door stays open.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pr": {
+       "stab": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say you're fine",
+    "outcomes": [
+     {
+      "text": "'I'm fine.' He nodded. 'Right.' He went off in a way that said he'd heard the words a thousand times and didn't believe a single one.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "pr": {
+       "stab": -3
+      }
+     },
+     {
+      "text": "I said I managed. I did, mostly, for another two months.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pr": {
+       "stab": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.owed",
+  "icon": "🏴",
+  "title": "What you were owed",
+  "text": "A message comes through a cousin: someone from the old wing says there's a debt, and now that you're out, it's fair game. The amount is small. The tone isn't.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "debt"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pay it",
+    "outcomes": [
+     {
+      "text": "I took the money to a pub and handed it over in an envelope. He weighed it in his hand and nodded. 'We're square.' We were. I think.",
+      "weight": 1,
+      "effects": {
+       "money": -350,
+       "stress": 4
+      },
+      "pr": {
+       "stab": 1,
+       "heat": -4,
+       "dues": -20
+      }
+     },
+     {
+      "text": "I paid it all. It left me thin for a month. But the message stopped.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "stress": 5
+      },
+      "pr": {
+       "stab": 1,
+       "heat": -6,
+       "dues": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "I said no. Nothing happened for a month. Then a car followed me home. Then nothing again. You never know.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      },
+      "pr": {
+       "stab": -3,
+       "heat": 8
+      }
+     },
+     {
+      "text": "I said I'd done my time. It got back to him. He sent a note saying only 'we'll see', and every footstep behind me for a year sounded like him.",
+      "weight": 1,
+      "effects": {
+       "stress": 10
+      },
+      "pr": {
+       "stab": -4,
+       "heat": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell my officer",
+    "outcomes": [
+     {
+      "text": "It felt like the thing I'd spent years learning not to do. But she took it seriously, and the problem went away without my name on it.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pr": {
+       "stab": 4,
+       "heat": -8
+      }
+     },
+     {
+      "text": "I told her. She wrote it up and made a call. A week later, a man was moved from one wing to another and that was the end of it.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "pr": {
+       "stab": 4,
+       "heat": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "re.nightmare",
+  "icon": "🌙",
+  "title": "Sleeping with the door open",
+  "text": "You still wake at 5.40 for a count that doesn't come. You still sit with your back to the wall. You still can't sleep without the door closed and the light a certain way, and last night the sound of someone's key in a lock two flats away put you on the floor.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Talk to someone",
+    "outcomes": [
+     {
+      "text": "A GP, twenty minutes, a leaflet. I said the word out loud. 'It's very common, in people who've been inside.' That was all. It was enough.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "happiness": 3
+      },
+      "pr": {
+       "stab": 5
+      }
+     },
+     {
+      "text": "I told a counsellor everything about the nights. He didn't flinch. We built a list of small things that help. I use it still.",
+      "weight": 1,
+      "effects": {
+       "stress": -8
+      },
+      "pr": {
+       "stab": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Handle it myself",
+    "outcomes": [
+     {
+      "text": "Routines, a light on in the hall, the radio low. It got easier slowly. It never fully stopped.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "pr": {
+       "stab": 2
+      }
+     },
+     {
+      "text": "I got through it by being tired. I worked double shifts, so I'd sleep. It's not a solution.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 4
+      },
+      "pr": {
+       "stab": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Numb it",
+    "outcomes": [
+     {
+      "text": "A drink, then another. It worked, until it didn't. A year on, I was on the edge of something I knew the shape of.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "stress": 8
+      },
+      "pr": {
+       "stab": -7
+      }
+     },
+     {
+      "text": "I found something to take the edge off. It took the rest as well.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 6,
+       "happiness": -4
+      },
+      "pr": {
+       "stab": -8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "once": true
+ },
+ {
+  "id": "re.compensation",
+  "icon": "⚖️",
+  "title": "The apology that came with a cheque",
+  "text": "A letter in an official envelope, and a second, thicker one from a solicitor. The state regrets the error. The state has calculated the regret to the nearest pound, and it is not as much as you would have chosen.",
+  "conditions": {
+   "age": [
+    16,
+    120
+   ],
+   "life": "prisoner",
+   "pr": [
+    "reentry",
+    "inno"
+   ],
+   "not_pr": [
+    "fugitive"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take it and rebuild",
+    "outcomes": [
+     {
+      "text": "The money didn't give back a day, but it made a deposit, and a business loan, and a second chance. I used it carefully, because I know what the absence of it feels like.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pr": {
+       "stab": 8,
+       "pay": 5000
+      }
+     },
+     {
+      "text": "I took it, and put most of it away. The rest went on the things I'd waited years for. I don't regret any of it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pr": {
+       "stab": 6,
+       "pay": 3500
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fight for more",
+    "outcomes": [
+     {
+      "text": "It took two more years. A lawyer, a hearing, a thin extra sum, and a statement that I could read aloud. It felt like winning something.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": 2
+      },
+      "pr": {
+       "stab": 3,
+       "pay": 6000
+      }
+     },
+     {
+      "text": "I took it to the end of the road and the end of the road was the same figure. But I'd said what I had to say, in a room, with the right people listening.",
+      "weight": 1,
+      "effects": {
+       "stress": 10
+      },
+      "pr": {
+       "stab": 2,
+       "pay": 1000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it away",
+    "outcomes": [
+     {
+      "text": "I gave most of it to the legal charity that had worked on my case. They looked at me as though they had not heard right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 8
+      },
+      "pr": {
+       "stab": 2,
+       "pay": 500
+      }
+     },
+     {
+      "text": "I split it between a charity and a few people who had written to me. It felt like the only right thing to do with it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 6
+      },
+      "pr": {
+       "stab": 2,
+       "support": 4,
+       "pay": 800
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 50,
+  "once": true
  }
 ]

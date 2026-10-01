@@ -89,7 +89,7 @@ const GAUGES_P := ["respect", "heat", "conduct", "support", "appeal", "dues"]
 const GAUGES_G := ["merit", "integrity", "control", "ia_heat", "trauma", "union", "standing"]
 const PLAN_STAGES := ["No plan", "Listening", "Tools", "A crew", "Inside help", "Ready"]
 
-const OUTCOME_KEYS := ["respect", "heat", "conduct", "support", "appeal", "dues", "tension", "order", "budget", "gang", "gang_rank", "rep", "job", "program", "stash", "intel", "escape", "crew", "solitary", "attack", "riot",
+const OUTCOME_KEYS := ["stab", "viol", "work", "home", "respect", "heat", "conduct", "support", "appeal", "dues", "tension", "order", "budget", "gang", "gang_rank", "rep", "job", "program", "stash", "intel", "escape", "crew", "solitary", "attack", "riot",
 	"hearing", "parole_mood", "exonerate", "merit", "integrity", "control", "ia_heat", "trauma", "union", "standing", "corruption", "commend", "incident", "whistle", "switch", "promote", "bribe", "flag", "then", "caught", "free", "kill", "debt", "pay", "inmate", "friend", "enemy", "transfer", "sentence", "burnout", "ring", "lawyer", "force_bad", "lives_saved"]
 
 const OPENERS := {
@@ -408,6 +408,10 @@ func relation_name(rel: String, _g: String) -> String:
 
 func yearly() -> void:
 	var l := L()
+	if bool(l.get("reentry", false)):
+		_reentry_year()
+		_outside_year()
+		return
 	if bool(l.get("fugitive", false)):
 		_fugitive_year()
 		_outside_year()
@@ -855,7 +859,7 @@ func _outside_year() -> void:
 # ---------------------------------------------------------------- set pieces
 
 func _incidents() -> void:
-	if not GameState.is_alive() or bool(L().get("fugitive", false)):
+	if not GameState.is_alive() or bool(L().get("fugitive", false)) or bool(L().get("reentry", false)):
 		return
 	var f := F()
 	var t := float(f["tension"])
@@ -890,6 +894,10 @@ func death_check() -> String:
 		if health <= 0.0:
 			return "a hard winter on the run"
 		return ""
+	if bool(l.get("reentry", false)):
+		if health <= 0.0:
+			return "a body worn out by the years inside"
+		return ""
 	if health <= 0.0:
 		if is_guard():
 			return pick(["a heart attack on the wing", "injuries from an assault on duty", "a collapse at the end of a double shift"])
@@ -904,11 +912,15 @@ func death_check() -> String:
 
 
 ## The end of the story, for any of the reasons a story here can end.
-func conclude(kind: String) -> void:
+func conclude(kind: String, final: bool = false) -> void:
 	if not GameState.is_alive():
 		return
 	var l := L()
 	var p := _p()
+	if not final and is_prisoner() and kind in ["served", "paroled", "exonerated"]:
+		if not bool(l.get("reentry", false)):
+			_begin_reentry(kind)
+		return
 	l["outcome"] = kind
 	var yrs := int(l.get("served", 0))
 	var lbl: String = {
@@ -920,7 +932,10 @@ func conclude(kind: String) -> void:
 		"fired": "Dismissed from the service after %d years" % yrs,
 		"warden": "Retired as Warden after %d years on the staff" % yrs,
 		"resigned": "Walked out of the gate for the last time",
+		"returned": "Back inside after %d years and a short time free" % yrs,
 	}.get(kind, "The story closes")
+	if final and kind in ["served", "paroled", "exonerated"]:
+		lbl += ", and stayed out"
 	match kind:
 		"served":
 			l["released"] = true
@@ -953,6 +968,8 @@ func epilogue(kind: String) -> String:
 			w = "The board's decision came in an envelope and was read aloud twice. There were conditions, a curfew, an officer to report to, and the first night of choosing what to eat."
 		"exonerated":
 			w = "The judge said it plainly, in front of people who had said the opposite. %s walked out into a corridor full of cameras, with a sum of money that could not be spent on the years." % nm
+		"returned":
+			w = "It took less time than anyone had said it would. A car, a form, a familiar corridor. %s sat on a bed very like the old one and thought: the door was never the hard part." % nm
 		"escaped":
 			w = "A different name, a different town, and a window that looks out on a field. %s kept the habit of sitting facing the door for the rest of their life." % nm
 		"retired":
@@ -967,6 +984,8 @@ func epilogue(kind: String) -> String:
 		w += " %s was there, in the good coat, and said nothing for a while." % str(GameState.npcs[par]["first"])
 	if int(l.get("kids_out", 0)) > 0:
 		w += " The children were taller."
+	if bool(l.get("reintegrated", false)) and kind in ["served", "paroled", "exonerated"]:
+		w += " Three years on, there was a job, a door with a key that opened it, and a calendar with things written on it that had nothing to do with the past."
 	return w
 
 
@@ -997,6 +1016,7 @@ func ribbon() -> Dictionary:
 		"pr_exonerated": {"name": "Exonerated", "icon": "⚖️", "desc": "The truth took eighteen years and arrived."},
 		"pr_ghost": {"name": "A Ghost", "icon": "🌫️", "desc": "They stopped looking. You never stopped checking the door."},
 		"pr_fallen": {"name": "The Other Side of the Door", "icon": "🔒", "desc": "You knew the building from both sides."},
+		"pr_returned": {"name": "Back Inside", "icon": "🔁", "desc": "You walked out. The door was never the hard part."},
 		"pr_paroled": {"name": "Paroled", "icon": "🪪", "desc": "A board believed you. You went out and did not come back."},
 		"pr_served": {"name": "Every Day of It", "icon": "📅", "desc": "Nobody gave you anything. You walked out on the last day."},
 		"pr_legend": {"name": "Old Head", "icon": "👑", "desc": "The block is quieter without you, and it knows it."},
@@ -1031,6 +1051,8 @@ func entry_extra() -> Dictionary:
 		card.append(["Convicted of", str(l.get("crime", ""))])
 		card.append(["Sentence", "%d years" % int(l.get("sentence", 0))])
 		card.append(["Served", "%d years" % served()])
+		if int(l.get("ry", 0)) > 0:
+			card.append(["Free for", "%d year%s%s" % [int(l["ry"]), "" if int(l["ry"]) == 1 else "s", "" if str(l.get("outcome", "")) != "returned" else ", then back"]])
 		card.append(["Standing", prisoner_rank()])
 		card.append(["Gang", gang_name(my_gang()) if my_gang() != "" else "None"])
 	return {"role": role, "icon": "🗝️" if is_guard() else "⛓️", "card": card, "outcome": str(l.get("outcome", "died")), "facility": str(f["name"]), "title": "Case closed", "rank": rank_name()}
@@ -1039,7 +1061,7 @@ func entry_extra() -> Dictionary:
 # ================================================================ conditions
 
 const NUM_FIELDS := ["respect", "heat", "conduct", "support", "appeal", "dues", "merit", "integrity", "control", "ia_heat", "trauma", "union", "standing", "served", "remaining", "tension", "order", "budget", "crowding",
-	"riots", "attacks", "solitary_years", "hearings", "denied", "commend", "incidents", "corruption", "rank", "age", "health", "happy", "stress", "escape", "intel", "programs", "stash", "sentence", "eligible", "lawyer", "crew", "bribes", "force_bad", "burnout", "visits", "lives_saved", "bereaved"]
+	"riots", "attacks", "solitary_years", "hearings", "denied", "commend", "incidents", "corruption", "rank", "age", "health", "happy", "stress", "escape", "intel", "programs", "stash", "sentence", "eligible", "lawyer", "crew", "bribes", "force_bad", "burnout", "visits", "lives_saved", "bereaved", "stab", "ry", "viol", "home_out"]
 
 
 func tag(t: String) -> bool:
@@ -1089,6 +1111,9 @@ func tag(t: String) -> bool:
 		"debt": return float(l.get("dues", 0)) > 0.0
 		"hurt": return GameState.stat("health") < 40.0
 		"fugitive": return bool(l.get("fugitive", false))
+		"reentry": return bool(l.get("reentry", false))
+		"employed": return bool(l.get("job_out", false))
+		"housed": return int(l.get("home_out", 0)) >= 1
 		"ex_guard": return bool(l.get("ex_guard", false))
 		"hearing_due": return bool(l.get("hearing_due", false))
 		"cellmate": return GameState.first_of("cellmate") != ""
@@ -1131,7 +1156,7 @@ func known_tag(t: String) -> bool:
 	for pre in ["gang:", "job:", "program:", "story:", "sec:", "flag:", "warden:", "intel:"]:
 		if t.begins_with(pre):
 			return true
-	return ["prisoner", "guard", "inno", "gang", "loner", "lead", "job", "stash", "plan", "crew", "debt", "hurt", "fugitive", "ex_guard", "hearing_due", "cellmate", "partner", "kids", "lockdown", "war", "newbie", "veteran", "bribed", "solitary_before", "unwell", "snitched", "whistle", "inherit"].has(t)
+	return ["prisoner", "guard", "inno", "gang", "loner", "lead", "job", "stash", "plan", "crew", "debt", "hurt", "fugitive", "reentry", "employed", "housed", "ex_guard", "hearing_due", "cellmate", "partner", "kids", "lockdown", "war", "newbie", "veteran", "bribed", "solitary_before", "unwell", "snitched", "whistle", "inherit"].has(t)
 
 
 # ================================================================ outcomes
@@ -1144,8 +1169,14 @@ func apply(ops: Dictionary) -> void:
 	for k in ops.keys():
 		var v = ops[k]
 		match str(k):
-			"respect", "heat", "conduct", "support", "appeal", "dues", "merit", "integrity", "control", "ia_heat", "trauma", "union", "standing", "lawyer":
+			"respect", "heat", "conduct", "support", "appeal", "dues", "merit", "integrity", "control", "ia_heat", "trauma", "union", "standing", "lawyer", "stab":
 				clampg(l, str(k), float(v))
+			"viol":
+				l["viol"] = maxi(0, int(l.get("viol", 0)) + int(v))
+			"work":
+				l["job_out"] = int(v) > 0
+			"home":
+				l["home_out"] = clampi(int(l.get("home_out", 0)) + int(v), 0, 2)
 			"tension", "order", "budget":
 				f[k] = clampf(float(f[k]) + float(v), 0.0, 100.0)
 			"gang":
@@ -1378,6 +1409,8 @@ func _menu_prisoner(key: String) -> Dictionary:
 	var rows: Array = []
 	var info: Array = []
 	var money := int(_p()["money"])
+	if bool(l.get("reentry", false)):
+		return _menu_reentry(key)
 	if bool(l.get("fugitive", false)):
 		return _menu_run(key)
 	match key:
@@ -1913,6 +1946,52 @@ func _act_prisoner(key: String, arg) -> void:
 				_done("🕰️", "Not yet", "Every night I lay awake and listened, and nothing was wrong enough to be right. I waited.", {"stress": 3})
 		"breakout":
 			_breakout()
+		"re_work":
+			if not GameState.spend_time(2): return
+			note("re_work")
+			var chance := 0.3 + float(programs_n()) * 0.1 + float(l.get("stab", 0)) / 300.0 + (0.1 if str(l.get("job", "none")) != "none" else 0.0)
+			if bool(l.get("exonerated", false)):
+				chance += 0.25
+			if randf() < chance:
+				l["job_out"] = true
+				clampg(l, "stab", 8.0)
+				_done("💼", "Work", pick(["The form had a box for convictions and I ticked it. The man looked at it for a long time, then at my hands. 'Can you start Monday?'", "A warehouse at five in the morning, a supervisor who didn't ask and a locker with my name on it. I stood in front of it for a while."]), {"happiness": 6})
+			else:
+				_done("💼", "No", pick(["Nine applications, nine polite emails. One of them said 'at this time'. I read it as a sentence.", "Everyone was friendly and nobody called back."]), {"happiness": -3, "stress": 4})
+		"re_home":
+			if not GameState.spend_time(1): return
+			note("re_home")
+			p["money"] = int(p["money"]) - 1500
+			l["home_out"] = clampi(int(l.get("home_out", 0)) + 1, 0, 2)
+			clampg(l, "stab", 8.0)
+			_done("🏠", "A key", "A deposit, a signature and a door that locks from the inside, which I tested four times. I put one cup on the shelf and looked at it.", {"happiness": 6, "stress": -4})
+		"re_family":
+			if not GameState.spend_time(1): return
+			note("re_family")
+			clampg(l, "support", 10.0)
+			clampg(l, "stab", 5.0)
+			_done("👪", "Home", pick(["Dinner was awkward and kind. Nobody mentioned the years; everybody counted them.", "They had kept the room, more or less. It was smaller than I remembered, or I was bigger."]), {"happiness": 6, "stress": -3})
+		"re_report":
+			if not GameState.spend_time(1): return
+			note("re_report")
+			l["reported"] = true
+			clampg(l, "stab", 3.0)
+			_done("🧾", "Reporting in", "The officer ticked the boxes, asked about work and about who I'd been seeing, and signed the card. It is not friendship. It is a handrail.", {"stress": -1})
+		"re_group":
+			if not GameState.spend_time(1): return
+			note("re_group")
+			clampg(l, "stab", 5.0)
+			clampg(l, "heat", -4.0)
+			_done("🪑", "A circle of chairs", "Eleven of us in a church hall, a kettle and a biscuit tin. Somebody said what I hadn't been able to say, and nobody looked at me while I nodded.", {"stress": -5, "happiness": 2})
+		"re_old":
+			if not GameState.spend_time(1): return
+			note("re_old")
+			p["money"] = int(p["money"]) + 400
+			clampg(l, "heat", 14.0)
+			clampg(l, "stab", -6.0)
+			if randf() < 0.3:
+				l["viol"] = int(l.get("viol", 0)) + 1
+			_done("🚬", "An old friend", "It was easy. That was the trouble: it was easy, and it was warm, and the money was there on the table before I had said anything.", {"stress": 2})
 		"run_low":
 			if not GameState.spend_time(1): return
 			clampg(l, "heat", -18.0)
@@ -2030,6 +2109,114 @@ func _break_out(_bonus: float) -> void:
 	GameState.add_log("Then there was a hedge, and a ditch, and a road, and the sound of a car I did not recognise slowing down for me. %s" % ("I did not look back. Behind me, %d of the others did not make it." % lost if lost > 0 else "I did not look back. All of us were out."))
 	GameState.apply_effects({"happiness": 15, "stress": 20})
 	EventEngine.push_info("🌫️", "Out", "You are on the other side of the wall.\n\nThe building will count at six. By then you will need a different name, somewhere to be, and a reason that a police officer would look away.\n\nHeat is at 75%. It will fall if you let it.")
+
+
+# ---------------------------------------------------------------- the outside
+
+## The gate opens, and the story does not close: three years of being free, which
+## is its own sentence. Stability is the number that decides it.
+func _begin_reentry(kind: String) -> void:
+	var l := L()
+	var p := _p()
+	l["reentry"] = true
+	l["reentry_from"] = kind
+	l["ry"] = 0
+	l["viol"] = 0
+	l["job_out"] = false
+	l["home_out"] = 1 if float(l.get("support", 0)) >= 45.0 else 0
+	l["stab"] = clampf(34.0 + float(l.get("support", 0)) * 0.2 + float(programs_n()) * 4.0 + (14.0 if kind == "exonerated" else 0.0), 10.0, 85.0)
+	l["released"] = true
+	if kind == "paroled":
+		l["paroled"] = true
+	if kind == "exonerated":
+		l["exonerated"] = true
+	l["heat"] = minf(float(l["heat"]), 15.0)
+	p["money"] = int(p["money"]) + 200 + (45000 if kind == "exonerated" else 0)
+	GameState.add_milestone(int(p["age"]), "walked out of %s" % str(F()["name"]))
+	GameState.add_log(epilogue(kind))
+	GameState.apply_effects({"happiness": 12, "stress": 6})
+	EventEngine.push_info("🚪", "Out", "The gate is behind you, and the story isn't over.\n\nThere are three years of being free to get through: a job, somewhere to live, the people outside, and the people who were waiting for you to come back.\n\nStability is what counts. Keep it up and you stay out.")
+
+
+func _reentry_year() -> void:
+	var l := L()
+	var p := _p()
+	l["ry"] = int(l.get("ry", 0)) + 1
+	GameState.counter("pr_reentry_years")
+	var from := str(l.get("reentry_from", "served"))
+	var d := 0.0
+	if bool(l.get("job_out", false)):
+		p["money"] = int(p["money"]) + 11000
+		d += 5.0
+	else:
+		d -= 6.0
+	var home := int(l.get("home_out", 0))
+	p["money"] = int(p["money"]) - [0, 4800, 9000][home]
+	d += [-6.0, 2.0, 4.0][home]
+	d += float(l.get("support", 0)) / 30.0 + float(programs_n()) * 0.8
+	var lure := float(int(l.get("gang_rank", 0))) * 8.0 + float(l.get("dues", 0)) / 4.0 + float(l["heat"]) / 6.0
+	d -= lure / 8.0
+	if int(p["money"]) < 0:
+		d -= 7.0
+	clampg(l, "stab", d)
+	l["heat"] = clampf(float(l["heat"]) - 6.0, 0.0, 100.0)
+	GameState.apply_effects({"stress": 2 if bool(l.get("job_out", false)) else 6})
+	if not bool(l.get("exonerated", false)):
+		var risk := clampf(0.26 - float(l["stab"]) / 400.0 + lure / 320.0, 0.03, 0.45)
+		if bool(l.get("reported", false)) or from != "paroled":
+			risk *= 0.6
+		if randf() < risk:
+			l["viol"] = int(l.get("viol", 0)) + 1
+			GameState.add_log(pick([
+				"I broke a condition. It was a small thing, the kind of thing that is only a crime when someone is counting.",
+				"A night I shouldn't have been out, and a person I shouldn't have been with. Nobody saw. That is what I told myself.",
+				"I missed the appointment. I had a reason. The reason was not on the form."]))
+			clampg(l, "stab", -8.0)
+	l["reported"] = false
+	if not bool(l.get("exonerated", false)):
+		if int(l.get("viol", 0)) >= 2 or float(l["stab"]) <= 8.0 or (from == "paroled" and int(l.get("viol", 0)) >= 1 and float(l["stab"]) < 30.0):
+			_returned()
+			return
+	if int(l["ry"]) >= 3:
+		l["reintegrated"] = true
+		conclude(from, true)
+		return
+	GameState.add_log(pick([
+		"A year of ordinary things done carefully: a bus pass, a payslip, a landlord's wave in the corridor.",
+		"The outside was noisier than I remembered and kinder than I had feared, and I was never quite sure where to put my hands.",
+		"I still wake at six for a count that does not come. I lie there and listen to a house that is not counting me."]))
+
+
+func _returned() -> void:
+	var l := L()
+	var p := _p()
+	l["reentry"] = false
+	l["outcome"] = "returned"
+	GameState.counter("pr_returned")
+	var lbl := "Back inside after %d years and %d free" % [int(l.get("served", 0)), int(l.get("ry", 0))]
+	GameState.add_milestone(int(p["age"]), "went back inside")
+	GameState.add_log(epilogue("returned"))
+	EventEngine.kill(lbl, true)
+
+
+func _menu_reentry(key: String) -> Dictionary:
+	var l := L()
+	var rows: Array = []
+	var info: Array = []
+	var money := int(_p()["money"])
+	var from := str(l.get("reentry_from", "served"))
+	info.append("Year %d of 3 outside · stability %d%% · support %d%%" % [int(l.get("ry", 0)) + 1, int(l.get("stab", 0)), int(l.get("support", 0))])
+	info.append("%s · %s · cash $%d" % ["Working" if bool(l.get("job_out", false)) else "No work", ["no fixed address", "a rented room", "a flat of your own"][int(l.get("home_out", 0))], money])
+	if from == "paroled":
+		info.append("On licence: %d breach%s so far. Two and you go back." % [int(l.get("viol", 0)), "" if int(l.get("viol", 0)) == 1 else "es"])
+	rows.append(_row("💼", "Look for work", "A conviction on the form. Certificates and a steady record help", "re_work", null, _left() >= 2 and did("re_work") < 2 and not bool(l.get("job_out", false))))
+	rows.append(_row("🏠", "Find a place", "$1,500 for the deposit. Stability up", "re_home", null, money >= 1500 and _left() >= 1 and int(l.get("home_out", 0)) < 2 and did("re_home") < 1))
+	rows.append(_row("👪", "Be with your family", "Support and stability up", "re_family", null, _left() >= 1 and did("re_family") < 1))
+	if from == "paroled":
+		rows.append(_row("🧾", "Report to your officer", "Keeps the year's risk down", "re_report", null, _left() >= 1 and did("re_report") < 1))
+	rows.append(_row("🪑", "Go to a meeting", "Stability up; heat down", "re_group", null, _left() >= 1 and did("re_group") < 1))
+	rows.append(_row("🚬", "See an old friend", "Money now. Risk and a price later", "re_old", null, _left() >= 1 and did("re_old") < 1))
+	return {"icon": "🚪", "title": "Outside", "rows": rows, "info": info}
 
 
 func _fugitive_year() -> void:
@@ -2219,6 +2406,8 @@ func _act_guard(key: String, arg) -> void:
 func tabs() -> Array:
 	if is_guard():
 		return [["🚨", "Post", "pr:post"], ["🧍", "Wing", "pr:block"], ["📈", "Career", "pr:career"], ["🗝️", "Integrity", "pr:integrity"], ["🛤️", "Road", "real:arc"], ["⋯", "More", "more"]]
+	if bool(L().get("reentry", false)):
+		return [["🚪", "Outside", "pr:home"], ["🚪", "Outside", "pr:home"], ["🚪", "Outside", "pr:home"], ["🚪", "Outside", "pr:home"], ["🛤️", "Road", "real:arc"], ["⋯", "More", "more"]]
 	if bool(L().get("fugitive", false)):
 		return [["🌫️", "Run", "pr:home"], ["🌫️", "Run", "pr:home"], ["🌫️", "Run", "pr:home"], ["🌫️", "Run", "pr:home"], ["🛤️", "Road", "real:arc"], ["⋯", "More", "more"]]
 	return [["⛓️", "Inside", "pr:home"], ["👥", "People", "pr:people"], ["🔗", "Gang", "pr:gang"], ["⚖️", "Case", "pr:case"], ["🛤️", "Road", "real:arc"], ["⋯", "More", "more"]]
@@ -2241,6 +2430,8 @@ func balance_label() -> String:
 func portrait() -> String:
 	if not bool(_p().get("alive", true)):
 		return "🕊️"
+	if bool(L().get("reentry", false)):
+		return "🚶"
 	if bool(L().get("fugitive", false)):
 		return "🌫️"
 	var g := str(_p().get("gender", "male"))
@@ -2253,6 +2444,8 @@ func header_occ() -> String:
 	var l := L()
 	if is_guard():
 		return "🗝️ %s · %s" % [rank_name(), str(F()["name"]).get_slice(" ", 0)]
+	if bool(l.get("reentry", false)):
+		return "🚪 Free · %s" % ("on licence" if str(l.get("reentry_from", "")) == "paroled" else "released")
 	if bool(l.get("fugitive", false)):
 		return "🌫️ On the run · %s" % number_label()
 	return "⛓️ %s · %s" % [prisoner_rank(), number_label()]
@@ -2263,6 +2456,8 @@ func header_sub() -> String:
 	var f := F()
 	if is_guard():
 		return "%s · year %d on the staff" % [str(f["name"]), served() + 1]
+	if bool(l.get("reentry", false)):
+		return "Year %d outside · %s" % [int(l.get("ry", 0)) + 1, str(F()["name"])]
 	if bool(l.get("fugitive", false)):
 		return "Year %d on the run" % int(l.get("fugitive_years", 0))
 	return "%s · %s · %d to go" % [str(f["name"]), str(SECURITY[str(f["security"])]).get_slice(" ", 0), remaining()]
@@ -2281,6 +2476,8 @@ func tracks() -> Array:
 	var f := F()
 	if is_guard():
 		return [["🗝️", "Control", float(l["control"])], ["🧭", "Integrity", float(l["integrity"])], ["📈", "Merit", minf(100.0, float(l["merit"]))], ["🕵️", "IA interest", float(l["ia_heat"])], ["🔥", "Tension", float(f["tension"])], ["🌑", "Trauma", float(l["trauma"])]]
+	if bool(l.get("reentry", false)):
+		return [["🧱", "Stability", float(l.get("stab", 0))], ["👪", "Support", float(l["support"])], ["🚨", "Heat", float(l["heat"])]]
 	if bool(l.get("fugitive", false)):
 		return [["🚨", "Heat", float(l["heat"])], ["👪", "Support", float(l["support"])]]
 	var out: Array = [["👑", "Respect", float(l["respect"])], ["🚨", "Heat", float(l["heat"])], ["📋", "Conduct", float(l["conduct"])], ["👪", "Support", float(l["support"])], ["🔥", "Tension", float(f["tension"])]]
@@ -2319,6 +2516,8 @@ func fin_text() -> String:
 	var l := L()
 	var lines: Array = []
 	lines.append("%s" % ("LOCKDOWN" if int(f.get("lockdown", 0)) > 0 else ("A gang war is on." if int(f.get("war", 0)) > 0 else "The building is %s." % ("quiet" if float(f["tension"]) < 35.0 else ("tense" if float(f["tension"]) < 65.0 else "about to go")))))
+	if bool(l.get("reentry", false)):
+		return "Out. %s, %s." % ["Working" if bool(l.get("job_out", false)) else "No work yet", ["no fixed address", "a rented room", "a flat of your own"][int(l.get("home_out", 0))]]
 	if is_prisoner() and not bool(l.get("fugitive", false)):
 		lines.append("Warden: %s" % warden_name())
 		if bool(l.get("hearing_due", false)):

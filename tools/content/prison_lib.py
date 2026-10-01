@@ -31,6 +31,8 @@ def _conds(role, tags, not_tags, age):
     nt = list(not_tags or [])
     if role == "prisoner" and "fugitive" not in t:
         nt.append("fugitive")
+    if role == "prisoner" and "reentry" not in t:
+        nt.append("reentry")
     if nt:
         c["not_pr"] = nt
     return c

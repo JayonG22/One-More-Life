@@ -20,6 +20,7 @@ func _ready() -> void:
 	_legacy()
 	_seeded()
 	_recall_check()
+	_reentry()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -153,3 +154,30 @@ func _recall_check() -> void:
 	var before: int = GameState.npcs[id]["memory"].size()
 	ok(before >= 1, "memory lost")
 	print("  recall: an old memory is brought back up exactly once")
+
+
+func _reentry() -> void:
+	var stayed := 0
+	var back := 0
+	for i in 30:
+		GameState.new_life({"first": "Test", "last": "Person", "gender": "male", "country": "us", "life_path": "prisoner", "keep_family": true, "story": ["first", "career", "gang", "white", "innocent", "political", "lifer"][i % 7], "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+		Prison.conclude("paroled" if i % 2 == 0 else "served")
+		ok(GameState.is_alive() and bool(Prison.L().get("reentry", false)), "release did not open the outside")
+		ok(Prison.tabs().size() == 6, "outside tabs missing")
+		ok(not Prison._menu_reentry("home")["rows"].is_empty(), "outside menu empty")
+		for y in 6:
+			if not GameState.is_alive():
+				break
+			if i % 3 == 0:
+				Prison.L()["job_out"] = true
+				Prison.L()["home_out"] = 2
+			Prison.yearly()
+		ok(not GameState.is_alive(), "the outside never resolved (life %d)" % i)
+		var o := str(Prison.L().get("outcome", ""))
+		if o == "returned":
+			back += 1
+		elif o in ["served", "paroled"]:
+			stayed += 1
+		ok(o in ["served", "paroled", "returned"], "odd outcome '%s'" % o)
+	ok(stayed >= 3 and back >= 3, "re-entry is lopsided: %d stayed, %d returned" % [stayed, back])
+	print("  reentry: %d stayed out, %d went back" % [stayed, back])
