@@ -12,6 +12,9 @@ WIRE = []   # (echo id, years, [source ids])
 def O(text, fx=None, w=1, **extra):
     o = {"text": text, "weight": w, "effects": fx or {}}
     o.update(extra)
+    if isinstance(o.get("habit"), dict):          # the engine takes ["habit_id", amount]
+        (k, v), = o["habit"].items()
+        o["habit"] = [k, v]
     return o
 
 def C(label, *outs):
@@ -299,6 +302,68 @@ F("echo.history", "🌍", "When the news was everything", "Years later, a {~docu
   C("Tell it honestly", O("I told it without drama. They listened and asked quiet questions.", {"happiness": 4, "karma": 2}), O("I told it honestly, and it got to me a little.", {"happiness": 1, "stress": 3})),
   C("Tell the funny parts", O("There were funny parts, as there always are. We laughed until it hurt.", {"happiness": 6}), O("I told the funny parts, and then the others came.", {"happiness": 2, "stress": 2})),
   C("Let them find their own", O("They'll learn it from the world, as we did.", {"happiness": 0}), O("They did, and called me to say so.", {"happiness": 3, "karma": 1})))
+
+# ------------------------------------------------------------ v0.25 echoes
+F("echo.job_story", "🗣️", "The story from work", "{~At a barbecue|On a train|In a quiet moment}, you hear yourself telling the story of that day at work again. {~It's got better with age.|It has a shape now.}", [2, 6],
+  ["job.pt_cashier_1", "job.pt_burger_1", "job.pt_lifeguard_1", "job.pt_babysitter_1", "job.pt_dogwalker_1", "job.pt_stocker_1", "job.pt_delivery_1", "job.retail_1", "job.fastfood_1", "job.warehouse_1", "job.trucker_1", "job.janitor_1", "job.security_1", "job.receptionist_1", "job.electrician_1", "job.plumber_1", "job.mechanic_1", "job.carpenter_1", "job.hairstylist_1", "job.line_cook_1"],
+  C("Tell it properly", O("I told it with the pauses. They laughed in the right places, and something in me settled.", {"happiness": 4}), O("I told it and heard how much I'd left out. I told them the rest.", {"happiness": 2, "karma": 1})),
+  C("Cut it short", O("They asked for more. I gave them a line, and the line was enough.", {"happiness": 1}), O("I cut it short. Someone had heard it before.", {"stress": 1})),
+  C("Wonder what became of everyone in it", O("I looked a couple of them up. One had done remarkably well. One had not. Both wrote back.", {"happiness": 2, "karma": 1}), O("I looked them up and found nothing at all. That was strangely moving.", {"happiness": -1, "stress": 1})))
+F("echo.career_weight", "🎖️", "What the work left behind", "{~On a quiet evening|Passing the place|Reading a notice}, you find yourself thinking about what that case, or that shift, left behind in you.", [2, 7],
+  ["job.firefighter_1", "job.nurse_1", "job.police_1", "job.doctor_1", "job.pilot_1", "job.army_1", "job.navy_1", "job.air_force_1", "job.lawyer_1", "job.vet_1", "job.counselor_1", "job.probation_1", "job.journalist_1", "job.pharmacist_1", "job.flight_attendant_1", "job.teacher_1"],
+  C("Talk to someone about it", O("I told a colleague I trusted. They'd carried the same thing. It was lighter, shared.", {"stress": -5, "happiness": 4}), O("I talked to a professional. It took a few sessions, and it helped.", {"stress": -4, "money": -200})),
+  C("Keep it to yourself", O("I kept it in a box, as I always do. The box got heavier.", {"stress": 4}), O("I kept it quiet. In time it softened.", {"stress": 1})),
+  C("Write it down", O("I wrote a page, then ten. I haven't shown anyone, but I feel different.", {"stress": -3, "smarts": 1}), O("I wrote it down and burned the page. That worked, too.", {"stress": -3})))
+F("echo.office_ripple", "📎", "A ripple from the office", "{~A former colleague|Someone in the lift|An email thread} brings up what happened that time. {~It has become part of the building's history.|It has quietly changed how people see you.}", [1, 4],
+  ["job.accountant_1", "job.marketing_1", "job.analyst_1", "job.engineer_1", "job.architect_1", "job.designer_1", "job.lab_tech_1", "job.paralegal_1", "job.civil_servant_1", "job.executive_1", "job.professor_1", "job.scientist_1", "job.developer_1", "job.game_dev_1", "job.chef_1", "job.music_teacher_1", "job.dentist_1"],
+  C("Own it", O("I said, 'Yes, that was me.' Respect came back with interest.", {"job_perf": 3, "karma": 2}), O("Owning it spared me the whispering, and cost me a little pride.", {"job_perf": 1, "karma": 2})),
+  C("Let them tell it their way", O("It wasn't entirely accurate, but it flattered me. I let it stand.", {"happiness": 2, "karma": -1}), O("It wasn't accurate and it didn't flatter me. I regretted my silence.", {"stress": 3})),
+  C("Move on", O("Nobody remembered by spring.", {"stress": -1}), O("Somebody brought it up again at the party. I smiled, a little more thinly.", {"stress": 2})))
+F("echo.last_drink", "🍷", "The glass on the table", "{~At a family dinner|Out with friends|Alone at home}, you notice how you're holding your glass. {~It's a habit you've watched for a while.|Someone else has noticed too.}", [1, 4],
+  ["alc.first_drink", "alc.pub_quiz", "alc.drunk_text", "alc.drive_home", "alc.hangover", "alc.wedding_toast", "alc.blackout", "alc.work_function", "alc.beer_garden", "alc.hosting", "alc.bar_fight", "uni.party"],
+  C("Put it down", O("I put it down and did not pick it up again that night. A small victory, quietly counted.", {"health": 2, "karma": 1}, habit={"drinking": -4}), O("I put it down and felt strangely light. It lasted a week.", {"happiness": 2}, habit={"drinking": -3})),
+  C("Finish it", O("I finished it. And the next. The night went exactly as nights like that do.", {"happiness": 1, "health": -2}, habit={"drinking": 3}), O("I finished it and watched the bottom of the glass with great interest.", {"stress": 2}, habit={"drinking": 2})),
+  C("Ask a friend how they see it", O("She said, 'Honestly? I've been meaning to say.' It was kind, and it was true.", {"karma": 3, "stress": 3}, habit={"drinking": -6}), O("He laughed it off, which told me what I needed to know.", {"stress": 2})))
+F("echo.the_pull", "🌫️", "The old pull", "{~A smell|A song|A certain street} brings it back: the thing you tried, years ago, and how it felt. {~You know where it would be found.|It is not entirely a memory.}", [2, 6],
+  ["drug.offer_party", "drug.edible", "drug.dealer_knock", "drug.pressure_pills", "drug.festival", "drug.search_bag", "drug.painkillers", "drug.friend_using"],
+  C("Call someone", O("I called a friend who knew. She stayed on the phone until the feeling passed.", {"karma": 3, "stress": -3}, habit={"drugs": -5}), O("I called, and got voicemail. I left a message and the message was enough.", {"stress": -1}, habit={"drugs": -3})),
+  C("Go for a walk", O("A long, cold walk. By the end it was just a street again.", {"health": 2, "stress": -3}), O("I walked, and walked, and ended up exactly where I'd been trying not to go.", {"stress": 4, "money": -60}, habit={"drugs": 5})),
+  C("Give in", O("It was as good as I remembered, and then it was worse. I woke up ashamed.", {"happiness": -4, "health": -3}, habit={"drugs": 9}), O("I gave in, once. I told someone the next day, and that made all the difference.", {"karma": 2, "stress": 3}, habit={"drugs": 2})))
+F("echo.close_call", "🫀", "The day it nearly happened", "{~On the anniversary|In the dark|Reading about someone else's accident}, you think about how close it was. {~You are still here.|Everyone who was there remembers it differently.}", [1, 5],
+  ["risk.car_skid", "risk.house_fire", "risk.swim_current", "risk.heart_flutter", "risk.choking", "risk.lost_hiking", "risk.allergy", "risk.mugging", "risk.sleepwalk", "risk.train_platform", "risk.earthquake", "risk.flood", "risk.stalker", "risk.diagnosis"],
+  C("Be grateful", O("I made a list of ten things I'd been putting off. I did four. It was a good year.", {"happiness": 6, "stress": -3}), O("I rang everyone I loved. Some answered. It was a good evening.", {"happiness": 5, "karma": 1})),
+  C("Change something", O("I took a first-aid course, a swimming lesson, a long weekend. The fear became a habit worth having.", {"smarts": 2, "health": 2, "stress": -2}), O("I changed the locks, the route, the habit. The fear gave me a reason.", {"stress": -2, "money": -100})),
+  C("Try not to think about it", O("I didn't, mostly. It left me alone, mostly.", {"stress": 1}), O("It followed me for a while in the small hours.", {"stress": 4, "happiness": -2})))
+F("echo.the_cost", "🧾", "The bill comes in", "{~A letter|A phone call|A face across a table} reminds you, with exquisite politeness, of that decision you made. {~It was a long time ago, and it has been waiting.|The interest has been running quietly.}", [1, 5],
+  ["bad.shoplift_dare", "bad.quit_in_anger", "bad.credit_binge", "bad.tell_secret", "bad.lie_resume", "bad.skip_checkup", "bad.ghost_friend", "bad.speeding_fine", "bad.revenge_post", "bad.pyramid_scheme", "bad.loan_friend", "bad.road_rage", "bad.cheat_partner", "bad.borrowed_car", "bad.sell_pass", "bad.hit_run"],
+  C("Face it", O("I faced it the same day, which was the only way. It cost me, and then it was over.", {"money": -200, "stress": -3, "karma": 2}), O("I faced it and it was worse than I'd imagined, and also over.", {"money": -400, "stress": 3, "karma": 2})),
+  C("Try to talk my way out of it", O("Charm bought me an extension. It didn't buy me out.", {"stress": 2, "money": -100}), O("Charm failed. Honesty would have been cheaper.", {"stress": 5, "money": -300, "karma": -1})),
+  C("Pretend it isn't happening", O("It went away on its own, as these occasionally do.", {"stress": 1}), O("It didn't go away. It brought friends.", {"stress": 6, "money": -500})))
+F("echo.the_payoff", "🌱", "It paid off", "{~Years later|Quite suddenly|On an ordinary Tuesday}, you realise a choice you made back then is bearing fruit. {~You'd almost forgotten you made it.|You can trace the line from there to here.}", [2, 7],
+  ["good.learn_skill", "good.save_habit", "good.volunteer_day", "good.apologise", "good.run_morning", "good.check_in", "good.therapy_start", "good.buy_book", "good.mentor_ask", "good.kind_stranger", "good.moving_day", "good.pay_debt", "good.adopt_shelter", "good.forgive"],
+  C("Savour it", O("I sat with it for an evening. It felt like being handed a medal for something I'd forgotten to enter.", {"happiness": 6, "stress": -3}), O("I told someone about it. They were pleased in the way that matters.", {"happiness": 5, "karma": 1})),
+  C("Pass it on", O("I helped someone else do the same. It felt like a loop closing.", {"karma": 5, "happiness": 4}), O("I wrote it down for my younger self. Then I wrote it for anyone.", {"karma": 3, "smarts": 1})),
+  C("Do it again", O("I did it again, better. The second time was easier.", {"smarts": 1, "happiness": 3}), O("I did it again, differently, and was surprised by the result.", {"happiness": 3})))
+F("echo.after_the_date", "💌", "Whatever became of them", "{~A song|A restaurant|A text from a friend} reminds you of someone you once dated or nearly dated. {~You wonder.|You are not sure you want to know.}", [2, 8],
+  ["date.coffee_shop", "date.app_match", "date.blind_date", "date.first_kiss", "date.ghosted", "date.dating_class", "date.holiday_romance", "date.friend_zone", "date.catfish", "date.older_flame", "date.rebound"],
+  C("Look them up", O("They looked happy. I felt a small pang and a larger relief.", {"happiness": 1, "stress": 1}), O("They had changed completely. So had I. We sent two lines each and left it there.", {"happiness": 2})),
+  C("Leave it", O("Some stories are better unfinished.", {"stress": -1}), O("I left it. I thought about it for most of the day.", {"stress": 1})),
+  C("Send a short, kind message", O("They replied with a smile and a photo of a very large dog. It was a lovely little exchange.", {"happiness": 4}), O("They didn't reply. That, too, was an answer.", {"happiness": -1})))
+F("echo.school_days", "🏫", "Back through the gates", "{~You pass your old school|Someone mentions a teacher|A photo surfaces}. The smell of floor polish and chalk comes back, whole.", [3, 10],
+  ["sch.lunch_table", "sch.bully", "sch.cheating", "sch.science_fair", "sch.crush", "sch.detention", "sch.sports_try", "sch.exam_panic", "sch.teacher_mentor", "sch.school_play", "sch.prom", "sch.study_group", "sch.field_trip", "sch.thesis", "sch.graduation"],
+  C("Go in and have a look", O("A caretaker let me walk the corridors. Everything was smaller. I touched my old locker and felt eleven.", {"happiness": 4}), O("It had been rebuilt. I stood in the car park, a little lost.", {"happiness": 0})),
+  C("Look up someone from then", O("A friend I hadn't spoken to in years replied in minutes.", {"happiness": 5}), O("The person I wanted to find had passed away. It was a sobering evening.", {"happiness": -3, "stress": 2})),
+  C("Let the memory pass", O("I let it. Some places live better in the head.", {"stress": 0}), O("It stayed with me all day.", {"happiness": 1})))
+F("echo.the_gift_kept", "🎁", "Still on the shelf", "You find it again: the gift, the card, the little thing someone gave you. {~It has survived three house moves.|It's a bit worn.} {~You realise how much it meant.|You realise you never really said so.}", [2, 8],
+  ["gift.birthday_surprise", "gift.wrong_gift", "gift.surprise_party", "gift.expensive_gift", "gift.handmade", "gift.inherited_watch", "gift.flowers_apology", "gift.generosity_stranger", "gift.friendship_gift", "gift.gifted_trip"],
+  C("Get in touch and say so", O("I rang and said it plainly. There was a pause, and then a laugh that was also something else.", {"happiness": 5, "karma": 2}), O("I wrote a card. It arrived the day they needed it.", {"happiness": 5, "karma": 3})),
+  C("Put it somewhere you'll see it", O("It lives on the mantelpiece now.", {"happiness": 3}), O("It lives by the bed now. It makes the room feel like mine.", {"happiness": 3})),
+  C("Pass it on", O("I gave it to someone who'd love it. It felt right.", {"karma": 3}), O("I passed it on, and wished I hadn't. A small, real regret.", {"karma": 1, "happiness": -2})))
+F("echo.the_twist", "🌀", "How it all turned out", "{~It's strange to look back|Years on, you see the shape of it}: that odd turn, that unexpected thing, the day the story changed direction. {~It rearranged more than you realised.|It's become part of who you are.}", [2, 8],
+  ["turn.long_lost_relative", "turn.surprise_inheritance", "turn.wrong_number", "turn.found_money", "turn.job_poached", "turn.street_performer", "turn.viral_moment", "turn.stranded_airport", "turn.lottery_win", "turn.new_neighbour_secret", "turn.sudden_move", "turn.old_photo", "turn.plane_seat", "turn.stage_fright", "turn.storm_power_cut", "turn.reunion_invite", "turn.accidental_witness", "turn.career_pivot"],
+  C("Tell the story", O("I told it at a dinner party and the whole table went quiet at the end.", {"happiness": 5}), O("I told it to my younger relatives. They didn't believe it, so I showed them the photo.", {"happiness": 4, "karma": 1})),
+  C("See what else it opened", O("One thing had led to another, and another. I'd been walking a different road for years.", {"smarts": 2, "happiness": 4}), O("It had led to a few lovely things and one small sadness. A fair trade.", {"happiness": 3})),
+  C("Just be glad", O("I was. Quietly, thoroughly.", {"happiness": 5, "stress": -3}), O("I was glad, and a little afraid of how thin the thread had been.", {"happiness": 3, "stress": 2})))
 
 # ------------------------------------------------------------ write and wire
 json.dump(FU, open(os.path.join(ROOT, 'data/events/echoes.json'), 'w'), indent=1, ensure_ascii=False)

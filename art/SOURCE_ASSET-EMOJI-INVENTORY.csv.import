@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dxpw4uh3ffycg"
+
+[deps]
+
+files=["res://art/SOURCE_ASSET-EMOJI-INVENTORY.total.translation", "res://art/SOURCE_ASSET-EMOJI-INVENTORY.files.translation", "res://art/SOURCE_ASSET-EMOJI-INVENTORY.top.translation"]
+
+source_file="res://art/SOURCE_ASSET-EMOJI-INVENTORY.csv"
+dest_files=["res://art/SOURCE_ASSET-EMOJI-INVENTORY.total.translation", "res://art/SOURCE_ASSET-EMOJI-INVENTORY.files.translation", "res://art/SOURCE_ASSET-EMOJI-INVENTORY.top.translation"]
+
+[params]
+
+compress=true
+delimiter=0

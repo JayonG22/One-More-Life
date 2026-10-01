@@ -34,6 +34,8 @@ const HABITS := {
 	"shopping": {"name": "Shopping", "icon": "🛍️", "desc": "Buying things feels good for about a day."},
 	"workaholic": {"name": "Workaholism", "icon": "💼", "desc": "Rest feels like falling behind."},
 	"partying": {"name": "Partying", "icon": "🪩", "desc": "Every night is a good night to go out."},
+	"drinking": {"name": "Drinking", "icon": "🍺", "desc": "One won't hurt. It never is one."},
+	"drugs": {"name": "Drug use", "icon": "💊", "desc": "It started as a way to feel better. Now it's how you feel normal."},
 }
 
 const BOONS := {
@@ -225,6 +227,27 @@ func _habits_yearly() -> void:
 					for nid in GameState.npcs_with(rel):
 						GameState.change_closeness(nid, -6)
 				GameState.add_log("I worked through birthdays and weekends again. My family barely sees me.")
+			"drinking":
+				var tab := Actions._cost(2200)
+				GameState.apply_effects({"money": -tab, "health": -5, "looks": -2, "happiness": -2})
+				GameState.add_log("Another year with a bottle close by. It cost %s and a little more of my liver." % GameState.fmt_money(tab))
+				if randf() < 0.07 * d("harsh") and Law.has_license("driver"):
+					Law.suspend("driver", 2, "caught driving after drinking")
+					p["record"].append("drink driving")
+					GameState.add_log("I was stopped on the way home. I blew over the limit.")
+				if randf() < 0.10:
+					GameState.apply_effects({"stress": 5})
+					for rel in ["partner", "child"]:
+						for nid in GameState.npcs_with(rel):
+							GameState.change_closeness(nid, -5)
+			"drugs":
+				var dose := Actions._cost(5000)
+				GameState.apply_effects({"money": -dose, "health": -8, "looks": -3, "smarts": -1, "happiness": -3})
+				GameState.add_log("The habit took %s and a bit more of me this year." % GameState.fmt_money(dose))
+				if randf() < 0.06 * d("harsh"):
+					p["record"].append("drug possession")
+					GameState.add_log("I was caught with something I shouldn't have had.")
+					Law.trial("drug possession", 0, 1)
 			"partying":
 				var cost := Actions._cost(3000)
 				GameState.apply_effects({"money": -cost, "health": -6, "looks": -2})

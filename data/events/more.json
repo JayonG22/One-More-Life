@@ -3873,6 +3873,13 @@
       "effects": {
        "happiness": 7,
        "school": -6
+      },
+      "schedule": {
+       "event": "echo.last_drink",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3882,6 +3889,13 @@
        "happiness": 6,
        "school": 3,
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.last_drink",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3894,6 +3908,13 @@
       "weight": 3,
       "effects": {
        "school": 7
+      },
+      "schedule": {
+       "event": "echo.last_drink",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3902,6 +3923,13 @@
       "effects": {
        "school": -3,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.last_drink",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3915,6 +3943,13 @@
       "effects": {
        "happiness": 5,
        "school": 2
+      },
+      "schedule": {
+       "event": "echo.last_drink",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3923,6 +3958,13 @@
       "effects": {
        "happiness": 4,
        "school": -9
+      },
+      "schedule": {
+       "event": "echo.last_drink",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]

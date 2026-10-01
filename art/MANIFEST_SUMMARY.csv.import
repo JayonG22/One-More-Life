@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bw4rf2lfgsbiq"
+
+[deps]
+
+files=["res://art/MANIFEST_SUMMARY.source.translation", "res://art/MANIFEST_SUMMARY.count.translation"]
+
+source_file="res://art/MANIFEST_SUMMARY.csv"
+dest_files=["res://art/MANIFEST_SUMMARY.source.translation", "res://art/MANIFEST_SUMMARY.count.translation"]
+
+[params]
+
+compress=true
+delimiter=0

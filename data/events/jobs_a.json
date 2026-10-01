@@ -1,0 +1,3120 @@
+[
+ {
+  "id": "job.pt_cashier_1",
+  "icon": "🧾",
+  "title": "The till is out",
+  "text": "At close, the drawer is forty dollars short. The manager is counting it a second time with a face like a locked door, and you were the last one on it.",
+  "conditions": {
+   "job": "pt_cashier",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Count it with them, out loud",
+    "outcomes": [
+     {
+      "text": "We found a pair of stuck notes under the tray. Forty dollars, and a lot of unearned suspicion lifted.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The count stayed short. They wrote it up as an error and nobody said my name, which is its own kind of looking.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer to cover it",
+    "outcomes": [
+     {
+      "text": "I put two twenties in. It was a stupid, noble thing. They gave it back the next week.",
+      "weight": 1,
+      "effects": {
+       "money": -40,
+       "karma": 2,
+       "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I paid it. They never gave it back, and I never forgot.",
+      "weight": 1,
+      "effects": {
+       "money": -40,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing and go home",
+    "outcomes": [
+     {
+      "text": "It sorted itself out by morning. It had never been mine to fix.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "They remembered I'd said nothing. It was held against me, quietly, at the next rota.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_cashier_2",
+  "icon": "🛒",
+  "title": "A customer with a coupon",
+  "text": "A man holds up the line over a coupon that expired yesterday. The queue behind him is getting loud. He is not wrong, exactly. He is just very loud.",
+  "conditions": {
+   "job": "pt_cashier",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Honour it, quietly",
+    "outcomes": [
+     {
+      "text": "He left with an expression of astonished gratitude. The queue forgave me instantly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "Next day the manager docked it from the till. 'Policy.' I should have known.",
+      "weight": 1,
+      "effects": {
+       "money": -12,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold the line, politely",
+    "outcomes": [
+     {
+      "text": "He stormed out. A woman behind him said 'thank you' with her eyes.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "He asked for a manager. The manager sided with him. I stood there and learned how it works.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call the supervisor and step back",
+    "outcomes": [
+     {
+      "text": "It was resolved in thirty seconds by somebody paid more to deal with it. A lesson in itself.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The supervisor took forty minutes. The queue was a fire.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_burger_1",
+  "icon": "🍔",
+  "title": "Grease fire",
+  "text": "The fryer flares up with a roar and a wall of orange. Everyone freezes for one stupid second. You are the closest person to the red extinguisher.",
+  "conditions": {
+   "job": "pt_burger",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Grab the extinguisher",
+    "outcomes": [
+     {
+      "text": "Foam everywhere, and out in four seconds. The manager called me 'a natural' and meant it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I got it out and burned the back of my hand. A scar the shape of a small country.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "job_perf": 5
+      },
+      "scar": "burns",
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hit the kill switch and shout",
+    "outcomes": [
+     {
+      "text": "Everyone got out in time. Nobody was hurt. I got a free lunch for a month.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The flare caught the hood vent. The kitchen closed for a day.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run",
+    "outcomes": [
+     {
+      "text": "It was a small fire and everyone saw me leave. The nickname lasted a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "job_perf": -5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "Somebody else put it out. They did not say a word to me for a week, which was worse than saying it.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_burger_2",
+  "icon": "🍟",
+  "title": "Mystery shopper",
+  "text": "A woman orders a plain burger and spends eleven minutes writing in a small notebook. The manager has gone pale. 'That's corporate,' he whispers, to nobody.",
+  "conditions": {
+   "job": "pt_burger",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go above and beyond",
+    "outcomes": [
+     {
+      "text": "I topped up her drink, wiped her table, and learned her name. The report said 'exceptional'. It came with a voucher.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 7,
+       "money": 20
+      }
+     },
+     {
+      "text": "I was so bright and eager I forgot a customer's order. The notebook caught it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Act normally",
+    "outcomes": [
+     {
+      "text": "I made her burger like I make everyone's. It scored well enough, and the manager hugged me, which was bad.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "It was a middling score and a long conversation about 'consistency'.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spot her and tell the whole shift",
+    "outcomes": [
+     {
+      "text": "The place had never been so clean. We all got a pizza afterwards and nobody mentioned how.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "The manager made us stand in a row and be silent. It was the weirdest shift of my life.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_lifeguard_1",
+  "icon": "🛟",
+  "title": "A kid goes under",
+  "text": "From the chair it is simply a pair of flailing arms between a thousand others, and then it is not. You are already moving before you decide to move.",
+  "conditions": {
+   "job": "pt_lifeguard",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Dive in",
+    "outcomes": [
+     {
+      "text": "I had her up and on the deck in twenty seconds. She coughed, cried, and then asked for ice cream. Her mother hugged me for a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 6,
+       "job_perf": 8
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I got her out, but the water had her and she needed an ambulance. She was fine. I was not, for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "karma": 5,
+       "job_perf": 6
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blow the whistle and use the pole",
+    "outcomes": [
+     {
+      "text": "The pole reached. It was the right call and the training manual's exact words. She was fine.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The pole was just short. A father got there first. I couldn't look at him after.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Yell for the other guard",
+    "outcomes": [
+     {
+      "text": "It took an extra five seconds that felt like an hour. She was fine. I replayed those seconds every night.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "Someone else was already in the water. I never learned if they were faster than I'd have been.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_lifeguard_2",
+  "icon": "☀️",
+  "title": "Heat and a bad shift",
+  "text": "Thirty-eight degrees and a full pool. Your whistle hand has gone numb and your vision has started to swim at the edges.",
+  "conditions": {
+   "job": "pt_lifeguard",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask for a swap",
+    "outcomes": [
+     {
+      "text": "They swapped me and I sat in the shade with a bottle of water for ten minutes. A small mercy.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "They told me to 'tough it out'. I did, and I'd resent them for it later.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push through",
+    "outcomes": [
+     {
+      "text": "I stayed on the chair until close. I could barely walk to the bus.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "job_perf": 4,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I nearly fainted, and a kid saw it. The manager sent me home early, apologetic.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pour water over my head and keep going",
+    "outcomes": [
+     {
+      "text": "It worked for about twenty minutes. I felt like a legend.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "It worked for about twenty minutes.",
+      "weight": 1,
+      "effects": {
+       "health": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_babysitter_1",
+  "icon": "🍼",
+  "title": "The wrong kind of quiet",
+  "text": "The kids went to bed an hour ago and it has been far too silent for far too long. You stand at the bottom of the stairs, listening.",
+  "conditions": {
+   "job": "pt_babysitter",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and look",
+    "outcomes": [
+     {
+      "text": "Both asleep, one still gripping a torch. Heartbreakingly sweet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The five-year-old was awake and had drawn all over the landing wall. In crayon, not pen, thank God.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call the parents",
+    "outcomes": [
+     {
+      "text": "They laughed and said 'that means they're asleep'. Mildly insulting.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "They came home early and weren't happy. I didn't get a tip.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "money": -10
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it and watch TV",
+    "outcomes": [
+     {
+      "text": "It was fine. I got to watch my show in peace. A good night's work.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": 30
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "It was not fine. I woke to a child standing next to me, saying one word: 'hungry'.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_babysitter_2",
+  "icon": "🎒",
+  "title": "A fever at nine pm",
+  "text": "The little one is hot to the touch, flushed, and crying in a way that is not tantrum-crying. Their mother's phone goes straight to voicemail.",
+  "conditions": {
+   "job": "pt_babysitter",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call the emergency line",
+    "outcomes": [
+     {
+      "text": "They talked me through it. A fever, and a good, slow calm. When the parents came home I was practically a hero.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 5,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The ambulance came for a childhood fever and a parent was annoyed. I was told I'd done the right thing anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cool them down and keep trying the parents",
+    "outcomes": [
+     {
+      "text": "I did what I'd read. It broke by midnight. The mother cried when she hugged me.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "money": 40,
+       "stress": 4
+      }
+     },
+     {
+      "text": "It held. They came home to a quiet house, and I never found out how close it had been.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Panic",
+    "outcomes": [
+     {
+      "text": "I called my own mother and we sorted it out over the phone. Not my best moment. Not my worst.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "I cried too. It's a feeling I understand differently now.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_dogwalker_1",
+  "icon": "🐕",
+  "title": "Six leads, one squirrel",
+  "text": "You have six dogs on six leads, and every one of them has just seen the same squirrel. The leads wrap you like a maypole.",
+  "conditions": {
+   "job": "pt_dogwalker",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Plant my feet",
+    "outcomes": [
+     {
+      "text": "I held. I was dragged six metres but I held. The dogs looked at me with new respect.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I held and fell. A very kind woman helped me up and I never knew her name.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let one go, keep five",
+    "outcomes": [
+     {
+      "text": "The loose one came back in a minute, delighted. I got the lecture from its owner anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "It did not come back for four terrifying hours.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drop them all",
+    "outcomes": [
+     {
+      "text": "They ran in a happy bundle straight into the tennis club. Chaos, and a story I'll tell forever.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The park keeper had to catch them with a coat. He was furious.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_dogwalker_2",
+  "icon": "🐾",
+  "title": "The dog who knows",
+  "text": "One of your regulars, an elderly spaniel, always pulls to the same bench. Today you let it, and an old man sitting there says, 'She was his.'",
+  "conditions": {
+   "job": "pt_dogwalker",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Sit with him",
+    "outcomes": [
+     {
+      "text": "He told me about the dog's owner, his wife, and the walks they used to take. I came away very quiet and very glad.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 3
+      }
+     },
+     {
+      "text": "He started to cry gently. We sat there a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Nod and keep walking",
+    "outcomes": [
+     {
+      "text": "I felt that I'd missed something. I took a different route next time and sat on that bench myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The next week he wasn't there.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask the owner about it",
+    "outcomes": [
+     {
+      "text": "The owner's voice changed. It turned out to be a bigger story than I'd guessed, and a lovely one.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The owner told me to mind my own business. It was fair.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_tutor_1",
+  "icon": "📖",
+  "title": "The student who stares",
+  "text": "Your student has been looking at the same maths problem for twelve minutes without writing a thing. His mother is pacing in the next room, pretending not to listen.",
+  "conditions": {
+   "job": "pt_tutor",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask what he's afraid of",
+    "outcomes": [
+     {
+      "text": "He admitted he didn't understand any of it, and hadn't for months. We started again from the beginning. It was the best hour of the year.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 4,
+       "job_perf": 5
+      }
+     },
+     {
+      "text": "He went quiet, then shrugged. Something loosened a bit.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Show the solution and move on",
+    "outcomes": [
+     {
+      "text": "He copied it down. He passed the test, and learned nothing.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -1,
+       "karma": -1
+      }
+     },
+     {
+      "text": "His mother saw the page and was delighted. She doubled my pay. I felt like a fraud.",
+      "weight": 1,
+      "effects": {
+       "money": 30,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make it a game",
+    "outcomes": [
+     {
+      "text": "We turned it into a points race. He beat me, fairly. Next week he asked for harder ones.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "job_perf": 6
+      }
+     },
+     {
+      "text": "It worked for ten minutes and then he got bored. But he laughed, which was new.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "job_perf": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_tutor_2",
+  "icon": "✏️",
+  "title": "Exam night",
+  "text": "It's the night before her exam and her mother has called you in a panic. 'Can you come tonight? I'll pay double.'",
+  "conditions": {
+   "job": "pt_tutor",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and stay late",
+    "outcomes": [
+     {
+      "text": "We went through every past paper at the kitchen table. She got a B+. Her mum wept with joy.",
+      "weight": 1,
+      "effects": {
+       "money": 60,
+       "karma": 2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "She sat the exam exhausted. I wasn't sure it had been a good idea.",
+      "weight": 1,
+      "effects": {
+       "money": 60,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no, kindly, and send a one-page summary",
+    "outcomes": [
+     {
+      "text": "It was the better idea. She slept, and passed.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "karma": 1
+      }
+     },
+     {
+      "text": "Her mum was cross, but the summary helped.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Turn up and chat, not teach",
+    "outcomes": [
+     {
+      "text": "I told her she already knew it all. She believed me. She was right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 2
+      }
+     },
+     {
+      "text": "She was calmer. It didn't help the exam, but it helped her.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_barista_1",
+  "icon": "☕",
+  "title": "The ten-person order",
+  "text": "A man walks in, tablet in hand, and reads out a ten-drink order with modifiers. Behind him, a queue to the door.",
+  "conditions": {
+   "job": "pt_barista",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Work through it, calmly",
+    "outcomes": [
+     {
+      "text": "I got every one right. He actually clapped.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I got nine right and one wrong. He tipped anyway.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "money": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a coworker to share the load",
+    "outcomes": [
+     {
+      "text": "We were a machine. The queue melted. It was weirdly beautiful.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "My coworker sighed theatrically. We got it done.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the order go wrong",
+    "outcomes": [
+     {
+      "text": "Two drinks came out cold and one with the wrong milk. He complained. The manager sided with him.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -5,
+       "stress": 5
+      }
+     },
+     {
+      "text": "He was nice about it. I wasn't.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_barista_2",
+  "icon": "🥛",
+  "title": "The regular who never smiles",
+  "text": "A man in a grey coat comes in at 7:12 every morning and orders a flat white without a word. Today he says, 'You remember my order. Thank you.'",
+  "conditions": {
+   "job": "pt_barista",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask how he's doing",
+    "outcomes": [
+     {
+      "text": "He's a widower, it turned out. He had never been asked. I learned his name, and every morning thereafter I had it ready.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "He said 'fine' and looked at the floor. He didn't come in for a week, then did.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Smile and carry on",
+    "outcomes": [
+     {
+      "text": "He nodded and left. It was a tiny thing and I never knew if it mattered.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The next day he asked for a different coffee and I got it wrong. We both laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write his name on the cup",
+    "outcomes": [
+     {
+      "text": "He looked at the cup for a long moment. He kept it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 3
+      }
+     },
+     {
+      "text": "He frowned, then smiled, then took a different seat. I think it was shyness.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_stocker_1",
+  "icon": "📦",
+  "title": "The pallet jack",
+  "text": "The pallet jack's brake has been sticky all week. On aisle nine, loaded with tinned tomatoes, it begins to roll.",
+  "conditions": {
+   "job": "pt_stocker",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Throw yourself in front of it",
+    "outcomes": [
+     {
+      "text": "It stopped against my knees. I limped for a week and was a hero for a day.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "My shin was bruised blue and I was told off for not following protocol. The irony stayed with me.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Step aside and shout",
+    "outcomes": [
+     {
+      "text": "It crashed into the end shelf and sixty tins went rolling. No one was hurt.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "It hit a display of cereal. We were laughing by closing time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Grab the handle and yank the brake",
+    "outcomes": [
+     {
+      "text": "It bit, just in time. I felt like a stunt person.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The brake snapped off. I held the handle like an idiot while it rolled.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_stocker_2",
+  "icon": "🌙",
+  "title": "Nightshift, 3 a.m.",
+  "text": "The store is silent except for the buzz of a light that has been flickering for an hour. Something in the back freezer has begun to knock.",
+  "conditions": {
+   "job": "pt_stocker",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Open the freezer",
+    "outcomes": [
+     {
+      "text": "It was a loose crate, knocking in a draught. I laughed out loud, alone, at 3 a.m. Good.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "It was a fox, which had been sleeping in the loading bay. We eyed each other. It left.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Check the cameras",
+    "outcomes": [
+     {
+      "text": "Nothing on the footage. I never solved it.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "The footage showed a trolley, rolling by itself on a slope. Case closed.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it and keep stacking",
+    "outcomes": [
+     {
+      "text": "The knocking stopped. I decided that was the right call.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "It went on for the rest of the shift. I was relieved when the day crew arrived.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_delivery_1",
+  "icon": "🛵",
+  "title": "The wrong address",
+  "text": "The app says to drop the order at number 14. Number 14 is a boarded-up house with a dog behind the fence, and the customer is texting: 'Where ARE you?'",
+  "conditions": {
+   "job": "pt_delivery",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call them",
+    "outcomes": [
+     {
+      "text": "It was 41, not 14, the app had swapped the digits. A big tip for the trouble.",
+      "weight": 1,
+      "effects": {
+       "money": 12,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "They didn't answer. I cancelled and ate their curry myself in the car.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Knock anyway",
+    "outcomes": [
+     {
+      "text": "The dog and I came to an understanding. The neighbour took the food. I never knew if she was the customer.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The dog did not come to an understanding.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it by the door",
+    "outcomes": [
+     {
+      "text": "They reported it as missing. The platform sided with them.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "money": -9
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The neighbour's cat ate the starter. It was all anyone talked about.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pt_delivery_2",
+  "icon": "🌧️",
+  "title": "Pouring rain, two orders",
+  "text": "It is the heaviest rain of the year, and the orders are stacking up. One more run, and your hands are shaking from the cold.",
+  "conditions": {
+   "job": "pt_delivery",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take both",
+    "outcomes": [
+     {
+      "text": "I got soaked, but the tips were generous. It paid for the week.",
+      "weight": 1,
+      "effects": {
+       "money": 45,
+       "health": -3
+      }
+     },
+     {
+      "text": "I skidded at a roundabout and lost a whole order into a gutter.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "money": -20,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take one, wait out the worst",
+    "outcomes": [
+     {
+      "text": "I sat in a bus shelter and watched the rain, quietly satisfied.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "money": 18
+      }
+     },
+     {
+      "text": "The second order was given to someone else and I lost the tip.",
+      "weight": 1,
+      "effects": {
+       "money": 8,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go home",
+    "outcomes": [
+     {
+      "text": "Dry, warm, and a little ashamed. It was the right call.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "money": -15
+      }
+     },
+     {
+      "text": "The platform noted my low acceptance rate. It cost me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.retail_1",
+  "icon": "🛍️",
+  "title": "The returns desk",
+  "text": "A woman puts a sofa cushion on your counter. It has clearly been used, and the box it came in has clearly never been near it. 'I want a refund,' she says, with her whole chest.",
+  "conditions": {
+   "job": "retail",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Refuse, politely",
+    "outcomes": [
+     {
+      "text": "She called me names and then called the manager. The manager took my side, which is rare and I valued it.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "She returned with a camera crew. It turned out to be her nephew. We all moved on.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give in",
+    "outcomes": [
+     {
+      "text": "She got her money and left, smiling. I was told off for it later.",
+      "weight": 1,
+      "effects": {
+       "money": 0,
+       "job_perf": -4,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "She came back the next week with a different cushion. I stood my ground that time.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get the manager",
+    "outcomes": [
+     {
+      "text": "He did the little speech. She did the little speech. They bowed to each other like wrestlers. I learned a lot.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "The manager gave her store credit. She left happier than anyone should be.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.retail_2",
+  "icon": "🎄",
+  "title": "The last week before the holiday",
+  "text": "The shop floor looks like a battlefield. A man is fighting a woman for the last light-up reindeer. You are the only staff member with a free pair of hands.",
+  "conditions": {
+   "job": "retail",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Step in",
+    "outcomes": [
+     {
+      "text": "I split them with a clipboard and a firm voice. The reindeer went to the first person who touched it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": 5
+      }
+     },
+     {
+      "text": "It turned into a shouting match and security came. The reindeer ended up in pieces.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer to find another one",
+    "outcomes": [
+     {
+      "text": "In the stockroom there was one, in a battered box. Both customers took it as a gift.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "There wasn't one. I made something up about 'a new shipment'.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them fight",
+    "outcomes": [
+     {
+      "text": "It ended in a draw. They left in opposite directions with nothing, and I felt weirdly satisfied.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "Somebody filmed it. The video did the rounds. The store was mentioned in the comments.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.fastfood_1",
+  "icon": "🍗",
+  "title": "Rush hour",
+  "text": "The whole queue arrives at once, and the screens turn red. Six drive-through orders, four counter orders, and the fryer timer is going off.",
+  "conditions": {
+   "job": "fastfood",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the counter",
+    "outcomes": [
+     {
+      "text": "I flew through it. By the end I felt like I'd run a marathon, and I'd loved it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I flew through it and burned a finger on a tray. Worth it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "health": -2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help the kitchen",
+    "outcomes": [
+     {
+      "text": "Between us we cleared the screens in record time. A manager nodded at me.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I got in someone's way and knocked a tray of fries. We laughed.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide in the stockroom for a minute",
+    "outcomes": [
+     {
+      "text": "I counted to sixty and came back calmer, ready.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I was caught. The shift manager's eyebrow said it all.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.fastfood_2",
+  "icon": "🥤",
+  "title": "The milkshake machine",
+  "text": "The milkshake machine has been broken for three weeks and a regular has just ordered one for the fourth time. 'It's my birthday,' she says.",
+  "conditions": {
+   "job": "fastfood",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Make it by hand",
+    "outcomes": [
+     {
+      "text": "It took twenty minutes, a lot of ice cream and a tiny sparkler from the drawer. She cried.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "It came out lumpy and she ate it anyway, with great ceremony.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the truth",
+    "outcomes": [
+     {
+      "text": "She understood. We gave her a free sundae instead.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "money": -3
+      }
+     },
+     {
+      "text": "She left unhappy. The sundae was cold comfort.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fake it with a cup of soft-serve",
+    "outcomes": [
+     {
+      "text": "She noticed. She smiled and ate it, because she's kind.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "stress": 2
+      }
+     },
+     {
+      "text": "She noticed. She wrote a review.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.warehouse_1",
+  "icon": "🏭",
+  "title": "The speed target",
+  "text": "The board says the line is twelve percent behind. Someone has turned up the scanner pace overnight, and nobody has said so.",
+  "conditions": {
+   "job": "warehouse",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Work faster",
+    "outcomes": [
+     {
+      "text": "I hit the number. My lower back reminded me the next day.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "health": -3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I hit the number and dropped a box of glassware. It came out of my wages.",
+      "weight": 1,
+      "effects": {
+       "money": -30,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Raise it at the team meeting",
+    "outcomes": [
+     {
+      "text": "Three others agreed. Management reluctantly eased the target. It felt a bit like winning.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I was labelled 'difficult'. My shifts got worse.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pace myself",
+    "outcomes": [
+     {
+      "text": "I did a safe, steady pace and nobody fired me. A small victory.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": -1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I was written up for being slow.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.warehouse_2",
+  "icon": "🚜",
+  "title": "The forklift near-miss",
+  "text": "A forklift reverses out of the aisle with no horn and no beeper. You are in its path, looking at your scanner.",
+  "conditions": {
+   "job": "warehouse",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Dive sideways",
+    "outcomes": [
+     {
+      "text": "It missed me by a hand's breadth. Everyone in the building was very quiet afterwards.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "health": -1
+      }
+     },
+     {
+      "text": "It clipped my heel. A bruise and a story.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Shout",
+    "outcomes": [
+     {
+      "text": "The driver stopped. Nothing happened. The safety lead cried a bit.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "He didn't hear. A colleague shoved me out of the way.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Report the beeper after",
+    "outcomes": [
+     {
+      "text": "They fixed it the same day. A rare win.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": -1
+      }
+     },
+     {
+      "text": "They said they would. They did not. I told the union.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.trucker_1",
+  "icon": "🚛",
+  "title": "Black ice at 4 a.m.",
+  "text": "The road ahead is a perfect silver ribbon. The dashboard says minus three. The rig feels light, and then it feels very light.",
+  "conditions": {
+   "job": "trucker",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ease off the throttle and steer gently",
+    "outcomes": [
+     {
+      "text": "The truck held. I stopped at the next services and sat for twenty minutes with my hands shaking.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "It slid sideways, caught, and straightened. I stopped and said a long prayer to no one.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Brake hard",
+    "outcomes": [
+     {
+      "text": "The back end swung. The trailer clipped a barrier and the load shifted. I was fine, the freight less so.",
+      "weight": 1,
+      "effects": {
+       "health": -6,
+       "stress": 10,
+       "job_perf": -5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I stopped in the ditch. Nothing broke but my pride and the dispatcher's patience.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -150
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pull in and wait for the gritter",
+    "outcomes": [
+     {
+      "text": "I lost two hours and nobody minded. The gritter came and I followed it home.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "Dispatch was furious about the delay. I'd do it again.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.trucker_2",
+  "icon": "🛣️",
+  "title": "The hitchhiker",
+  "text": "Midnight on a long empty road, and a figure stands in your headlights with a thumb out and a rucksack. Company policy is clear: no passengers.",
+  "conditions": {
+   "job": "trucker",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stop and give a lift",
+    "outcomes": [
+     {
+      "text": "A student, trying to get home. She slept for most of it, and woke up to thank me. It cost me nothing.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "A strange man, as it turned out. The twenty minutes felt like two hours. I put him down at a petrol station.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive past",
+    "outcomes": [
+     {
+      "text": "I watched her shrink in the mirror. I thought about her more than I should.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "karma": -1
+      }
+     },
+     {
+      "text": "I called it in, later. A patrol car found her. She was fine.",
+      "weight": 1,
+      "effects": {
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stop and call the police for her",
+    "outcomes": [
+     {
+      "text": "A patrol car came; she was embarrassed but safe. I got a thank-you card.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "She had been waiting for her brother, who showed up as I left. Slightly awkward.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.janitor_1",
+  "icon": "🧹",
+  "title": "What you find in the bins",
+  "text": "In a bin outside the boardroom, under a pile of shredded paper, there is a clear envelope full of cash.",
+  "conditions": {
+   "job": "janitor",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Hand it in",
+    "outcomes": [
+     {
+      "text": "It turned out to be the petty cash for an event. They gave me a bonus and a handshake I'll remember.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "money": 100
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "Nobody claimed it. After a month, the manager said I could have it. It paid the electricity bill for the year.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "money": 400
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pocket it",
+    "outcomes": [
+     {
+      "text": "I spent it quickly, and guiltily. The envelope haunted me.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "karma": -5,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "A camera had caught it. I was walked out by security.",
+      "weight": 1,
+      "effects": {
+       "karma": -5
+      },
+      "fired": true,
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it where it is",
+    "outcomes": [
+     {
+      "text": "A week later it was gone, and so was the person who had hidden it. I never found out.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I told a manager. They said 'thanks' and the envelope vanished. I don't know where.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "karma": 1
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.janitor_2",
+  "icon": "🌃",
+  "title": "The long night",
+  "text": "Empty offices at night have their own rules. At 2 a.m. the senior partner is still at his desk, head down, shoulders shaking.",
+  "conditions": {
+   "job": "janitor",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Quietly leave a coffee on his desk",
+    "outcomes": [
+     {
+      "text": "He looked up and smiled. We never discussed it. He remembered my name at the Christmas party.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "He didn't look up. The coffee was cold when I came back. Sometimes nothing happens.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask if he's all right",
+    "outcomes": [
+     {
+      "text": "He told me his wife had left. For ten minutes I wasn't the cleaner. I was a person.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "He snapped at me. I felt foolish, but I'd do it again.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Clean around him",
+    "outcomes": [
+     {
+      "text": "I did my job and he never knew. Sometimes that's the kindest thing.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "He asked if I could be quieter. I could.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.security_1",
+  "icon": "🛡️",
+  "title": "The 3 a.m. alarm",
+  "text": "A motion alarm trips in the empty east wing at 3 a.m. The cameras show nothing at all, and your torch is flickering.",
+  "conditions": {
+   "job": "security",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Check it alone",
+    "outcomes": [
+     {
+      "text": "A bird had got in through a vent. It looked at me with real disgust.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "A homeless man was asleep in the stairwell. We chatted quietly. I let him stay until dawn.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call for backup",
+    "outcomes": [
+     {
+      "text": "Backup took forty minutes and found the bird. I got teased for weeks.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "Backup found someone. It turned out to be a real break-in, and my call prevented the worst.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Watch the cameras",
+    "outcomes": [
+     {
+      "text": "Nothing happened. A shift later, I realised the camera had been unplugged.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "I saw a shadow. I never knew what it was.",
+      "weight": 1,
+      "effects": {
+       "stress": 7
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.security_2",
+  "icon": "🎟️",
+  "title": "The rowdy guest",
+  "text": "At a late event, a man has had far too much and is arguing with the bar staff. He is twice your size and extremely sure he is in the right.",
+  "conditions": {
+   "job": "security",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Talk him down",
+    "outcomes": [
+     {
+      "text": "I made him laugh, took his arm, and got him a taxi. He called me 'mate' and hugged me. A win.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 2
+      }
+     },
+     {
+      "text": "He swung at me. I stepped back and the other guards came in.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "health": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call for backup",
+    "outcomes": [
+     {
+      "text": "Three of us escorted him out. A professional, smooth little operation.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      }
+     },
+     {
+      "text": "It escalated. A glass broke and a report had to be filed.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the bar staff handle it",
+    "outcomes": [
+     {
+      "text": "They did, thank goodness, in their own way.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "They didn't. I was blamed afterwards for 'not being there'.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.receptionist_1",
+  "icon": "📞",
+  "title": "The VIP in the lobby",
+  "text": "A man in an immaculate coat has been waiting for forty minutes for a meeting that no one seems to have in their diary. He is polite, and radiating pressure.",
+  "conditions": {
+   "job": "receptionist",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Find out who he's meeting",
+    "outcomes": [
+     {
+      "text": "It was the chief executive's wife's brother. A tangle, but I sorted it. He remembered me.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "He was in the wrong building. I gave him a map and a coffee.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let him wait",
+    "outcomes": [
+     {
+      "text": "He left, fuming. Somebody got shouted at, and it wasn't me.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "He was an investor. It was a very bad forty minutes for the firm.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -6
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Escort him to the board room",
+    "outcomes": [
+     {
+      "text": "I knocked and entered. Awkward, but it turned out to be the right door.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     },
+     {
+      "text": "It wasn't the right door. I have never felt as small.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.job_story",
+       "years": [
+        2,
+        6
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.receptionist_2",
+  "icon": "📋",
+  "title": "A mislaid message",
+  "text": "You wrote down a phone message on a yellow note and put it on the wrong desk. Nobody knows. It was from a client, and it said 'urgent'.",
+  "conditions": {
+   "job": "receptionist",
+   "age": [
+    14,
+    72
+   ]
+  },
+  "choices": [
+   {
+    "label": "Own up now",
+    "outcomes": [
+     {
+      "text": "The partner groaned, called the client, and fixed it. I got a lecture and a gentle pat on the shoulder.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 1,
+       "karma": 2
+      }
+     },
+     {
+      "text": "It was too late. The client had gone elsewhere. I was not fired, to my surprise.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Find it and slip it onto the right desk",
+    "outcomes": [
+     {
+      "text": "Smoothly done. The message was read, the problem was fixed, and no one knew.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 1
+      }
+     },
+     {
+      "text": "A colleague saw and kept it to themselves, but now they had something on me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "The client called back, angrier. The firm blamed the phone system.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": -2
+      }
+     },
+     {
+      "text": "It was never found out. I never forgot.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ }
+]

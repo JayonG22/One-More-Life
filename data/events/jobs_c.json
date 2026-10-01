@@ -1,0 +1,5224 @@
+[
+ {
+  "id": "job.accountant_1",
+  "icon": "🧮",
+  "title": "The number that doesn't tie",
+  "text": "Reconciling the quarter, a figure sits eleven thousand dollars off. It is a very clean error, the kind that doesn't happen by accident.",
+  "conditions": {
+   "job": "accountant",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Trace it to the source",
+    "outcomes": [
+     {
+      "text": "It was a mistyped invoice by a junior. Easy fix, and I taught her the checks. She sent a card.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It led to a supplier who'd been double-billing for years. The firm recovered the money. I was noticed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 9,
+       "money": 150,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask the finance director",
+    "outcomes": [
+     {
+      "text": "He went pale, said he'd handle it, and the matter vanished. I thought about it often.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "He thanked me. A month later he was gone.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Plug the gap and move on",
+    "outcomes": [
+     {
+      "text": "I made an adjusting entry. It balanced, and it bothered me for months.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "An auditor found it a year later. I explained, and it cost me.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -6,
+       "karma": -3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.accountant_2",
+  "icon": "📊",
+  "title": "Tax week",
+  "text": "Fourteen clients, one deadline and a shared printer that jams on the third page. A client has dropped off a shoebox of receipts and said, 'Everything's in there.'",
+  "conditions": {
+   "job": "accountant",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go through the box line by line",
+    "outcomes": [
+     {
+      "text": "I found a legitimate deduction he'd never have claimed. He tipped me in whisky.",
+      "weight": 1,
+      "effects": {
+       "money": 60,
+       "job_perf": 5,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The box was mostly napkins. I did what I could.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask him to resubmit it sorted",
+    "outcomes": [
+     {
+      "text": "He did. It saved me an evening.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "He fumed and took his business elsewhere.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "File with what you have",
+    "outcomes": [
+     {
+      "text": "It passed. Nobody was happier or sadder.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "The tax office queried it. I spent a month on letters.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.marketing_1",
+  "icon": "📣",
+  "title": "The campaign that nobody asked for",
+  "text": "Your pitch is two hours from presentation. The client wants 'edgy but safe', 'viral but classic'. The last slide has your best joke on it, and your boss hates it.",
+  "conditions": {
+   "job": "marketing",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep the joke",
+    "outcomes": [
+     {
+      "text": "The client laughed out loud. The campaign won an award.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The client didn't get it. The room was horribly quiet.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cut it",
+    "outcomes": [
+     {
+      "text": "The deck was safe and forgettable. It was approved without a flicker of feeling.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The client said it lacked 'spark'. I wanted the floor to open.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Show both versions",
+    "outcomes": [
+     {
+      "text": "They picked the joke. My boss pretended it was his idea.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "They picked the safe one, then asked about the joke for a month.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.marketing_2",
+  "icon": "🔥",
+  "title": "The post that went wrong",
+  "text": "A cheerful social post you scheduled lands at the same moment as a sad news story. Within an hour it is being quoted back at the brand, with screenshots.",
+  "conditions": {
+   "job": "marketing",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take it down and apologise",
+    "outcomes": [
+     {
+      "text": "A short, sincere apology. The internet moved on in a day.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": 5
+      }
+     },
+     {
+      "text": "The apology was screenshotted too. A long weekend.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "The storm passed. Nobody ever fired anyone.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "The silence was louder than the post. The client was furious.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -5,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Own it with humour",
+    "outcomes": [
+     {
+      "text": "Self-deprecating, quick, and perfectly pitched. It turned the mood.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 7,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It landed badly. A newspaper picked it up.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -6,
+       "stress": 9
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.analyst_1",
+  "icon": "📉",
+  "title": "The model says no",
+  "text": "Your forecast shows the product line the CEO loves will lose money for three years. He has already announced it.",
+  "conditions": {
+   "job": "analyst",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Present it honestly",
+    "outcomes": [
+     {
+      "text": "He listened, and for once did not shoot the messenger. The product was re-scoped.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 7,
+       "karma": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "He thanked me coldly. I was moved to another team within a month.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Adjust the assumptions",
+    "outcomes": [
+     {
+      "text": "It looked better. It was all my fault when the real numbers came in.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -5,
+       "karma": -4,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "Nobody checked. Nobody ever checks. I didn't sleep.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Show it privately to someone who can act",
+    "outcomes": [
+     {
+      "text": "The CFO took it quietly and turned the ship. I was thanked in private.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It leaked. The CEO found out. He didn't forgive me.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.analyst_2",
+  "icon": "🔍",
+  "title": "The beautiful dataset",
+  "text": "A messy dataset hides a pattern that nobody has seen: customers who buy on Tuesday are twice as likely to churn.",
+  "conditions": {
+   "job": "analyst",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Dig deeper",
+    "outcomes": [
+     {
+      "text": "It led to a big discovery and a real change in strategy. I got a promotion track.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "smarts": 2
+      }
+     },
+     {
+      "text": "It was a statistical fluke. I felt a bit silly, but I learned.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "job_perf": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share it with the team",
+    "outcomes": [
+     {
+      "text": "The team ran with it. I got a credit in the deck.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "Someone else presented it. I stayed quiet and furious.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sit on it for now",
+    "outcomes": [
+     {
+      "text": "I verified it for months. Eventually it came out right.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 3
+      }
+     },
+     {
+      "text": "A competitor published it first.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.engineer_1",
+  "icon": "🏗️",
+  "title": "The load test",
+  "text": "The bridge model passes every test but one, and the one it fails is a rare combination of wind and traffic that probably never happens.",
+  "conditions": {
+   "job": "engineer",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Redesign the joint",
+    "outcomes": [
+     {
+      "text": "It cost two weeks and delayed the deadline. The design was better for it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "karma": 3,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The client balked at the cost. I was backed by the senior engineer.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Add a safety factor",
+    "outcomes": [
+     {
+      "text": "Cheap and elegant. Nobody even noticed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It was too elegant: it hid the real issue.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sign it off",
+    "outcomes": [
+     {
+      "text": "It stood for fifty years. Nobody ever knew.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "A storm tested it. It held, barely. I aged ten years in a night.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 10,
+       "health": -3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.engineer_2",
+  "icon": "🔬",
+  "title": "The prototype",
+  "text": "Your prototype works, which is the problem. Management wants to ship it Monday. It has never run for more than six hours.",
+  "conditions": {
+   "job": "engineer",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Fight for more testing",
+    "outcomes": [
+     {
+      "text": "They gave me a week. I found three failures. The product was safer.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "karma": 3
+      }
+     },
+     {
+      "text": "They gave me one day. It wasn't enough, but it was something.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ship it with a warning",
+    "outcomes": [
+     {
+      "text": "It worked. Nobody read the warning.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "A customer was injured. I replayed it for years.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "stress": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quietly add extra safeguards",
+    "outcomes": [
+     {
+      "text": "A bit of rule-bending that no one ever knew about. Good engineering.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "karma": 2
+      }
+     },
+     {
+      "text": "It broke the schedule and my reputation took a hit.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.architect_1",
+  "icon": "📐",
+  "title": "The client's cousin",
+  "text": "The client's cousin, an amateur, 'just has a few suggestions' that would turn your elegant atrium into a glass-fronted car park.",
+  "conditions": {
+   "job": "architect",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Listen and politely decline",
+    "outcomes": [
+     {
+      "text": "The cousin was flattered to be heard. The atrium survived.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The cousin escalated to the client. A very long lunch.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sketch his idea",
+    "outcomes": [
+     {
+      "text": "It was awful. I showed him why. He conceded.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It was surprisingly not awful. I borrowed one idea.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cave",
+    "outcomes": [
+     {
+      "text": "It was built. It was ugly. It won no prizes.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It was built, and the cousin took all the credit. I did the paperwork.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.architect_2",
+  "icon": "🏛️",
+  "title": "The last model night",
+  "text": "The competition deadline is at nine in the morning. The model is balsa, glue and exhaustion, and at 3 a.m. a corner collapses.",
+  "conditions": {
+   "job": "architect",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Rebuild it",
+    "outcomes": [
+     {
+      "text": "I rebuilt it by dawn, bleary and proud. It placed second.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 6,
+       "health": -2
+      }
+     },
+     {
+      "text": "It came out better. It won.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10,
+       "happiness": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Present it broken",
+    "outcomes": [
+     {
+      "text": "I called it 'a ruin by design'. The jury loved it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The jury did not.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -4,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Withdraw",
+    "outcomes": [
+     {
+      "text": "I slept for 12 hours and felt fine.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "I regretted it for years.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.designer_1",
+  "icon": "🎨",
+  "title": "Make the logo bigger",
+  "text": "The client's feedback on version nine: 'Can you make the logo bigger? Also smaller. Also more minimal.' The deadline is Thursday.",
+  "conditions": {
+   "job": "designer",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Do all three and send options",
+    "outcomes": [
+     {
+      "text": "They picked option two, which was my favourite anyway.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "They picked all three and told me to combine them.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push back politely",
+    "outcomes": [
+     {
+      "text": "They listened. The final was elegant, and they thought it was their idea.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "They threatened to go elsewhere. They bluffed.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make it bigger",
+    "outcomes": [
+     {
+      "text": "It looked like a billboard. They loved it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It looked terrible. They loved it anyway.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.designer_2",
+  "icon": "🖌️",
+  "title": "A stolen idea",
+  "text": "Scrolling through a competitor's site, you stop dead: your layout, your palette, your odd little rounded-corner trick. It's a pixel-perfect match.",
+  "conditions": {
+   "job": "designer",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Send a polite note",
+    "outcomes": [
+     {
+      "text": "They took it down and apologised. I felt dignified.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "They ignored it. A lawyer would cost more than the job.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it public",
+    "outcomes": [
+     {
+      "text": "It trended. They were embarrassed. A few clients came to me out of sympathy.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "stress": 6,
+       "fame": 1
+      }
+     },
+     {
+      "text": "It trended against me. I looked petty.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it as a compliment",
+    "outcomes": [
+     {
+      "text": "I did. It stung, and then it didn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "I was hurt for a long while, and then I made something better.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "job_perf": 3,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.journalist_1",
+  "icon": "📰",
+  "title": "The source who won't go on record",
+  "text": "A person in a position to know calls you at midnight with a story that could end a career. 'But I'll deny I said it,' they say.",
+  "conditions": {
+   "job": "journalist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Verify it independently",
+    "outcomes": [
+     {
+      "text": "It took three weeks and two more sources. The story ran, and it was true.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 9,
+       "fame": 2,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "I couldn't confirm it. We killed the story. I felt the loss for months.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run it with the one source",
+    "outcomes": [
+     {
+      "text": "It ran. It was true. It was luck, nothing more.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "karma": -2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It was wrong. The retraction was humiliating.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -8,
+       "stress": 10
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "Someone else ran it a week later. I watched with envy.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "The story never came out. Sometimes that's the way.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.journalist_2",
+  "icon": "🎙️",
+  "title": "The doorstep",
+  "text": "A tragedy has hit the town, and your editor wants a quote from the family of the victim. You stand at their door with a notebook that feels like a weapon.",
+  "conditions": {
+   "job": "journalist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Knock and be human",
+    "outcomes": [
+     {
+      "text": "The mother let me in. We sat in the kitchen for two hours. I didn't use a word of it until she asked me to.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "job_perf": 6
+      }
+     },
+     {
+      "text": "They shut the door, gently. I wrote about that instead.",
+      "weight": 1,
+      "effects": {
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave a card",
+    "outcomes": [
+     {
+      "text": "They called a week later. A quiet, dignified piece.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "job_perf": 4
+      }
+     },
+     {
+      "text": "They never called. I ran the piece without them.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push for the quote",
+    "outcomes": [
+     {
+      "text": "I got it. I hated myself for it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "karma": -5,
+       "stress": 5
+      }
+     },
+     {
+      "text": "The father shouted at me. I deserved it.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.counselor_1",
+  "icon": "🛋️",
+  "title": "The silence",
+  "text": "A teenager sits in your office for the third session and says nothing. At minute forty-five he mutters, 'You'd just tell my mum.'",
+  "conditions": {
+   "job": "counselor",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Explain confidentiality honestly",
+    "outcomes": [
+     {
+      "text": "I laid out what I could and couldn't keep private. He thought about it, and began to talk.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "job_perf": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He listened, nodded and left. He never came back.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Promise to tell no one",
+    "outcomes": [
+     {
+      "text": "He opened up. Then I learned something I couldn't keep to myself. I had to break it.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 9
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It worked. It also felt like a lie I'd have to pay for.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sit quietly with him",
+    "outcomes": [
+     {
+      "text": "We sat for another ten minutes. At the end he said, 'Same time next week?'",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "The silence was just silence. But he came back.",
+      "weight": 1,
+      "effects": {
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.counselor_2",
+  "icon": "💭",
+  "title": "A client in a good mood",
+  "text": "A long-term client announces that she is doing so well she'd like to stop. You are not sure, but she is certain.",
+  "conditions": {
+   "job": "counselor",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Support the decision",
+    "outcomes": [
+     {
+      "text": "A graduation of sorts. We marked it with a handshake. She wrote a year later: fine.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "She relapsed within a month. I felt I'd failed her.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Suggest a taper",
+    "outcomes": [
+     {
+      "text": "We ended slowly. It worked.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "karma": 3
+      }
+     },
+     {
+      "text": "She was cross. She came back anyway.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push to continue",
+    "outcomes": [
+     {
+      "text": "She stayed. I kept her dependent, and I knew it.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "money": 40
+      }
+     },
+     {
+      "text": "She left, offended. A fair reaction.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.lab_tech_1",
+  "icon": "🧫",
+  "title": "The contaminated plate",
+  "text": "Six weeks of cell culture ruined by a single fuzzy spot in the corner. The professor is coming for his Monday update.",
+  "conditions": {
+   "job": "lab_tech",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Tell him straight",
+    "outcomes": [
+     {
+      "text": "He grunted and said 'it happens'. He ordered a restart. I loved him a little for it.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "He sighed, and lost his temper, then apologised. Awkward.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame the incubator",
+    "outcomes": [
+     {
+      "text": "He bought it. It was later found to be faulty, to my relief.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The facilities team checked the incubator and found nothing. I was caught.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "job_perf": -5,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quietly restart and hope",
+    "outcomes": [
+     {
+      "text": "I caught up in four weeks. He never knew.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "health": -2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "He noticed the date mismatch. I explained, and it went fine.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.lab_tech_2",
+  "icon": "🧪",
+  "title": "An odd result",
+  "text": "A routine sample comes back showing something that shouldn't be there at all. Not a mistake, you think. Not a mistake.",
+  "conditions": {
+   "job": "lab_tech",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Tell the lead scientist",
+    "outcomes": [
+     {
+      "text": "She went very quiet and then very excited. It became a paper, and my name was in the acknowledgements.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 7,
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "She dismissed it. A year later someone else published it.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rerun the test",
+    "outcomes": [
+     {
+      "text": "It repeated. The odd result was real.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "job_perf": 4
+      }
+     },
+     {
+      "text": "It didn't repeat. A relief, and a letdown.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bury the data",
+    "outcomes": [
+     {
+      "text": "I will never know what that was.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "smarts": -1
+      }
+     },
+     {
+      "text": "It haunted me every time I saw that sample number.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.chef_1",
+  "icon": "👨‍🍳",
+  "title": "Inspection day",
+  "text": "An environmental health officer arrives unannounced at the lunch rush and starts opening fridge doors with a torch. In the third is last Tuesday's stock.",
+  "conditions": {
+   "job": "chef",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Own up and bin it",
+    "outcomes": [
+     {
+      "text": "She noted it and moved on. We got a four-star rating. The staff cheered.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "She wrote it up and we got a two. The owner was furious.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3,
+       "stress": 7
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Distract her",
+    "outcomes": [
+     {
+      "text": "A tour of the pastry section did it. Deeply unprofessional, deeply effective.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": -2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "She saw right through me. A fine followed.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 8,
+       "karma": -2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Blame the sous chef",
+    "outcomes": [
+     {
+      "text": "She took the blame. We didn't speak after.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The sous chef quit. So did half the team.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.chef_2",
+  "icon": "🍽️",
+  "title": "The critic's table",
+  "text": "The waiter whispers: the woman at table six is writing the review that will make or break the season. Her fish has just come back with a request for 'a little less salt'.",
+  "conditions": {
+   "job": "chef",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Recook it with full attention",
+    "outcomes": [
+     {
+      "text": "She cleaned the plate. Her review used the word 'precise'.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "She sent the second one back too. Four stars, 'a stumble'.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send it back with a smile",
+    "outcomes": [
+     {
+      "text": "She noticed the cheek and loved it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5
+      }
+     },
+     {
+      "text": "She found it condescending. The review stung.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it personally",
+    "outcomes": [
+     {
+      "text": "I stormed into the walk-in. I was fine. The fish was fine.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I yelled at the commis. I regret it.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.music_teacher_1",
+  "icon": "🎻",
+  "title": "Recital night",
+  "text": "Your most talented student freezes on stage. Fifty parents hold their breath. Fourteen bars of nothing.",
+  "conditions": {
+   "job": "music_teacher",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Walk on and sit beside her",
+    "outcomes": [
+     {
+      "text": "I played the left hand, gently. She found her place. The room clapped for a long time.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "She cried, but she finished. I held her afterwards.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Nod from the wings",
+    "outcomes": [
+     {
+      "text": "She breathed, and started again. Perfect.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "She never played again. A hard one.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it play out",
+    "outcomes": [
+     {
+      "text": "She found her way. It took a minute. She was stronger for it.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "She walked off. Her parents were furious with me.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.music_teacher_2",
+  "icon": "🎹",
+  "title": "The prodigy",
+  "text": "A new student, nine years old, sits down at the piano and plays a Bach prelude from memory, and then asks, 'Is that right?'",
+  "conditions": {
+   "job": "music_teacher",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Teach her properly",
+    "outcomes": [
+     {
+      "text": "She became my favourite student. I never felt prouder.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "job_perf": 5
+      }
+     },
+     {
+      "text": "She outgrew me in a year. I passed her to a conservatoire, proud and a little hollow.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refer her to someone better",
+    "outcomes": [
+     {
+      "text": "A hard thing to do, and the right one.",
+      "weight": 1,
+      "effects": {
+       "karma": 4
+      }
+     },
+     {
+      "text": "She never forgave her parents for moving her.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep her to yourself",
+    "outcomes": [
+     {
+      "text": "I held her back. I know it.",
+      "weight": 1,
+      "effects": {
+       "karma": -3
+      }
+     },
+     {
+      "text": "She quit music at fifteen. I'll never know why.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.paralegal_1",
+  "icon": "📑",
+  "title": "The missing exhibit",
+  "text": "At 11 p.m. the night before the hearing, you notice exhibit F is missing from the bundle, and exhibit F is the whole case.",
+  "conditions": {
+   "job": "paralegal",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call the partner",
+    "outcomes": [
+     {
+      "text": "She cursed, laughed, and drove in. We rebuilt it by dawn.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "She was furious. We found it in a different folder. I almost cried.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": 0
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Search the archive alone",
+    "outcomes": [
+     {
+      "text": "I found it at 3 a.m. under a coffee ring. I didn't tell anyone how close it was.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 7,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It was gone. I recreated it from emails and prayer.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": 9
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hope no one notices",
+    "outcomes": [
+     {
+      "text": "The judge noticed. I was named in court.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -8,
+       "stress": 10
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "No one did. I'll never be that lucky again.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.paralegal_2",
+  "icon": "⚖️",
+  "title": "A client in the corridor",
+  "text": "A man corners you in the corridor of the court and says, quietly, 'I didn't do it. Please tell them.' You're not supposed to talk to him at all.",
+  "conditions": {
+   "job": "paralegal",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Tell the barrister",
+    "outcomes": [
+     {
+      "text": "He listened. It changed his cross-examination. The client was acquitted.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "job_perf": 7
+      }
+     },
+     {
+      "text": "He said it was irrelevant. The client was convicted.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "The case went as it went. I think about him sometimes.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -2
+      }
+     },
+     {
+      "text": "He looked at me like I'd forgotten a promise.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell him to speak to his lawyer",
+    "outcomes": [
+     {
+      "text": "Correct, professional, and a little cold.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "He nodded, hollow-eyed, and did.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.probation_1",
+  "icon": "📎",
+  "title": "A missed check-in",
+  "text": "A young man on your caseload hasn't turned up for two appointments. Breaching him is the rule. His mother has just called, in tears.",
+  "conditions": {
+   "job": "probation",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Visit him at home",
+    "outcomes": [
+     {
+      "text": "He'd lost his job and was ashamed. We put a plan together. He kept every meeting after that.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "job_perf": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He was drunk and angry. I stayed calm. It was a long hour.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "File the breach",
+    "outcomes": [
+     {
+      "text": "By the book. The court sent him back to prison. His mother never forgave me.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He was taken. A year later he told me it saved him.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Extend another chance",
+    "outcomes": [
+     {
+      "text": "He took it, and didn't waste it.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He wasted it. My supervisor reminded me about the rules.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.probation_2",
+  "icon": "🔑",
+  "title": "The good news",
+  "text": "A woman you've supervised for three years walks in with a job offer letter, shaking, holding it out like it might break.",
+  "conditions": {
+   "job": "probation",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Celebrate with her",
+    "outcomes": [
+     {
+      "text": "We both laughed, then cried a little. A day I'll remember.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 4
+      }
+     },
+     {
+      "text": "She went and told her kids. I closed the office and cried, privately.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Remain professional",
+    "outcomes": [
+     {
+      "text": "I shook her hand. She'd have liked more, but she understood.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I regretted it for a long while.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Check the employer is safe",
+    "outcomes": [
+     {
+      "text": "A sensible step. It was a good place.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "karma": 2
+      }
+     },
+     {
+      "text": "It wasn't. I got her out before she signed.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "job_perf": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.civil_servant_1",
+  "icon": "🗂️",
+  "title": "Form 27-B",
+  "text": "A citizen has filled in Form 27-B, but the box that needs ticking only exists on Form 27-C. Both forms have been withdrawn.",
+  "conditions": {
+   "job": "civil_servant",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Bend the rule and tick it",
+    "outcomes": [
+     {
+      "text": "The citizen's problem went away. Mine began a week later in a staff meeting.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 4,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It was a small kindness that slipped through. I'll never know if it mattered.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Escalate to a supervisor",
+    "outcomes": [
+     {
+      "text": "It took six weeks. The citizen wrote a thank-you note and I cried.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The supervisor found a loophole in an hour. I felt silly.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "stress": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send them away",
+    "outcomes": [
+     {
+      "text": "A regrettable day. The queue grew.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The citizen wept. I felt it for a week.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.civil_servant_2",
+  "icon": "🏢",
+  "title": "The reorganisation",
+  "text": "A memo arrives announcing a 'transformation programme'. Your department will be 'streamlined' by Christmas. Nobody will say what that means.",
+  "conditions": {
+   "job": "civil_servant",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Volunteer for the project team",
+    "outcomes": [
+     {
+      "text": "I joined the team and shaped the plan. My job was safe, and it was the right call.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 5
+      }
+     },
+     {
+      "text": "I became the face of the cuts. I was not liked.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quietly look elsewhere",
+    "outcomes": [
+     {
+      "text": "I found a better role at another department. I left on good terms.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The market was dry. I stayed, uneasy.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait and see",
+    "outcomes": [
+     {
+      "text": "My role survived. Half my floor didn't.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": -1
+      }
+     },
+     {
+      "text": "I was moved to a job I hated.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.lawyer_1",
+  "icon": "👩‍⚖️",
+  "title": "The settlement offer",
+  "text": "The other side has offered a settlement. It's good, but not great. Your client wants to take it. You think you can win.",
+  "conditions": {
+   "job": "lawyer",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Advise acceptance",
+    "outcomes": [
+     {
+      "text": "A safe, reasonable resolution. The client wept with relief.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "karma": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "I regretted it when I saw the verdict in a similar case, a month later.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Advise going to trial",
+    "outcomes": [
+     {
+      "text": "We won, handsomely. The client was thrilled, and I felt invincible.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10,
+       "money": 400,
+       "stress": 8
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "We lost. The client lost everything. I live with that.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -8,
+       "karma": -2,
+       "stress": 12
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the client decide",
+    "outcomes": [
+     {
+      "text": "They took the offer. It was their right. I stood by them.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "They went to trial. It was their right. It went wrong.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.lawyer_2",
+  "icon": "🧾",
+  "title": "The inconvenient email",
+  "text": "While preparing disclosure, you find an email from your own client that could sink his case. The rules say it must be disclosed.",
+  "conditions": {
+   "job": "lawyer",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Disclose it",
+    "outcomes": [
+     {
+      "text": "The client was furious, then relieved. Honesty won the judge, and the case.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "job_perf": 7
+      }
+     },
+     {
+      "text": "We lost, and the client fired me. My name is clean.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 8,
+       "job_perf": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the client to withdraw",
+    "outcomes": [
+     {
+      "text": "He did. The matter settled quietly.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "He refused, and I withdrew from the case.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Overlook it",
+    "outcomes": [
+     {
+      "text": "It came out at trial. I was reported to the regulator.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "job_perf": -9,
+       "stress": 12
+      }
+     },
+     {
+      "text": "No one ever found it. I know it's there, in a box.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.doctor_1",
+  "icon": "🥼",
+  "title": "Bad news at 5 p.m.",
+  "text": "A test result has come back, and it's the kind you'd never wish on a person. The patient is in the waiting room, smiling at her phone.",
+  "conditions": {
+   "job": "doctor",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Tell her in person, now",
+    "outcomes": [
+     {
+      "text": "I sat down and said it plainly and kindly. She was quiet, then asked three good questions. I felt I'd done it right.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "job_perf": 6,
+       "stress": 7
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "She cried in the room and thanked me. It took a long time to go home.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "stress": 9
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask her to come back tomorrow",
+    "outcomes": [
+     {
+      "text": "A restless night for both of us, but it gave me time to plan the conversation.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "She read it online first. I'll never forgive myself.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "karma": -3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Delegate to a colleague",
+    "outcomes": [
+     {
+      "text": "It was handled kindly. It was not mine to handle, and I knew it.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "My colleague did it badly. The patient complained.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.doctor_2",
+  "icon": "🚑",
+  "title": "The 3 a.m. page",
+  "text": "You've been awake for twenty-two hours when the page goes. A young man in the ER with a fever and a rash that you've only read about.",
+  "conditions": {
+   "job": "doctor",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Order the full workup",
+    "outcomes": [
+     {
+      "text": "It was meningitis, caught in time. He walked out a week later. I slept for a day.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 9,
+       "karma": 6,
+       "stress": 6
+      }
+     },
+     {
+      "text": "It was nothing; a rash from a new detergent. An expensive night, but safe.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Observe and wait",
+    "outcomes": [
+     {
+      "text": "He got worse. We caught up, barely.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "job_perf": -3
+      }
+     },
+     {
+      "text": "He got better. Judgment calls are the job.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague for a second look",
+    "outcomes": [
+     {
+      "text": "She saw it in a second. I swallowed my pride.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "She was asleep. I woke her. She was gracious, and right.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.dentist_1",
+  "icon": "🦷",
+  "title": "The terrified patient",
+  "text": "A grown man has gripped the arms of the chair so hard his knuckles are white. He needs a root canal, and he has not had a check-up in fifteen years.",
+  "conditions": {
+   "job": "dentist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Talk him through every step",
+    "outcomes": [
+     {
+      "text": "He relaxed gradually. Afterwards he said it was 'not that bad'. He booked a check-up.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "He gasped at every sound. We finished. He wrote a nice review.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer sedation",
+    "outcomes": [
+     {
+      "text": "A safe, sleepy hour. He was grateful, and chatty afterwards.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It worked too well. He said some funny things about his mother.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just do it quickly",
+    "outcomes": [
+     {
+      "text": "It was fast. He vowed never to return.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "He fainted. We laughed about it later.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.dentist_2",
+  "icon": "😁",
+  "title": "The upsell",
+  "text": "The practice manager hands you a target: whitening packages, up 20% this quarter. A patient with perfectly good teeth sits waiting.",
+  "conditions": {
+   "job": "dentist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Recommend what she needs",
+    "outcomes": [
+     {
+      "text": "I told her to save her money. She thanked me and referred three friends.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "The manager frowned. The patient came back anyway.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push the package",
+    "outcomes": [
+     {
+      "text": "She bought it. It looked nice. I felt cheap.",
+      "weight": 1,
+      "effects": {
+       "money": 200,
+       "karma": -4
+      }
+     },
+     {
+      "text": "She sensed it. She didn't return.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer a cheap alternative",
+    "outcomes": [
+     {
+      "text": "She agreed. A fair compromise.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "She declined. We parted friends.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pharmacist_1",
+  "icon": "💊",
+  "title": "The prescription that looks wrong",
+  "text": "A dose on a prescription is ten times what it should be. The doctor's number goes to voicemail and the patient is shifting from foot to foot.",
+  "conditions": {
+   "job": "pharmacist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Refuse to dispense and keep trying the doctor",
+    "outcomes": [
+     {
+      "text": "I reached her after twenty minutes. A misplaced decimal. She thanked me, and meant it.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "job_perf": 8
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "The patient was furious about the wait. It didn't matter. It was right.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Dispense anyway",
+    "outcomes": [
+     {
+      "text": "It was right. I'd misread it. I felt dumb.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It wasn't right. A patient was hospitalised.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 12,
+       "job_perf": -9
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Dispense a lower dose",
+    "outcomes": [
+     {
+      "text": "It worked, and nobody was harmed. It was against the rules.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": 0
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It didn't treat the illness. The patient returned in a worse state.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pharmacist_2",
+  "icon": "🧴",
+  "title": "The regular who asks too much",
+  "text": "An older man asks about his tablets for the fourth time this month. You realise he isn't confused, he is lonely.",
+  "conditions": {
+   "job": "pharmacist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Make time for a chat",
+    "outcomes": [
+     {
+      "text": "We talked about his garden. He bought a small thing for his cough, and left lighter.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "He kept me twenty minutes. The queue grew. He apologised and I said it was fine.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Answer briefly and move on",
+    "outcomes": [
+     {
+      "text": "I answered. I didn't forget his face.",
+      "weight": 1,
+      "effects": {
+       "karma": 0
+      }
+     },
+     {
+      "text": "He stopped coming. I wondered about that.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Suggest a community group",
+    "outcomes": [
+     {
+      "text": "He joined a choir. He came in to tell me.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "He politely refused. I left it there.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.vet_1",
+  "icon": "🐶",
+  "title": "The choice no one wants",
+  "text": "A family brings in a fourteen-year-old dog, failing fast. The cost of treatment is huge, the outlook poor. The children are in the corner, silent.",
+  "conditions": {
+   "job": "vet",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Be honest and gentle",
+    "outcomes": [
+     {
+      "text": "We said goodbye together. The kids sat on the floor with her. I cried in the car.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 8
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "They chose treatment. She had three more good months.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer every option",
+    "outcomes": [
+     {
+      "text": "They spent everything they had. It worked, for a while.",
+      "weight": 1,
+      "effects": {
+       "money": 400,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It didn't work. They were bankrupted and bitter.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 7
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Recommend euthanasia",
+    "outcomes": [
+     {
+      "text": "A gentle ending. They thanked me, quietly.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "They went elsewhere. The dog died there a week later.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": 0
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.vet_2",
+  "icon": "🐴",
+  "title": "Farm call at dawn",
+  "text": "A farmer rings at five: a mare in labour for three hours with no progress. The road is ice. You pull on your boots in the dark.",
+  "conditions": {
+   "job": "vet",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go straight out",
+    "outcomes": [
+     {
+      "text": "A breech foal. It took an hour. Both lived. The farmer made me tea and I could have wept.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "job_perf": 8
+      }
+     },
+     {
+      "text": "The mare died. The foal lived. I had to hand-feed it for a week.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "stress": 9
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give instructions over the phone",
+    "outcomes": [
+     {
+      "text": "It sorted itself. A lucky pass.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "It went wrong. I should have gone.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 9,
+       "job_perf": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a colleague",
+    "outcomes": [
+     {
+      "text": "She went and did well. I envied her for it.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "She was out of her depth. I drove out after.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.executive_1",
+  "icon": "📈",
+  "title": "The board wants blood",
+  "text": "The quarter is bad, the board is restless, and the chair has suggested 'efficiencies'. A list of four hundred names is on your desk.",
+  "conditions": {
+   "job": "executive",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cut the list in half and cut your own pay",
+    "outcomes": [
+     {
+      "text": "The board grumbled. The staff noticed. Morale, remarkably, held.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "job_perf": 5,
+       "money": -200
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It wasn't enough. The next quarter I cut the rest.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "karma": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sign the full list",
+    "outcomes": [
+     {
+      "text": "Cold, quick, defensible. I couldn't look at the car park for a month.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 7,
+       "money": 300
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "A newspaper got hold of the list. I was the villain.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 10,
+       "fame": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Resist and find another way",
+    "outcomes": [
+     {
+      "text": "I proposed a pay cut across the board. It was a bold move and it worked.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "karma": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "The board replaced me. I was out in a month.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "karma": 4
+      },
+      "fired": true,
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.executive_2",
+  "icon": "🥂",
+  "title": "The offer from the rival",
+  "text": "A rival's CEO takes you to dinner. Across the tablecloth he slides a figure: 40% more, and a bigger title. 'You're wasted where you are.'",
+  "conditions": {
+   "job": "executive",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Accept",
+    "outcomes": [
+     {
+      "text": "A new chapter. I took my best people with me and felt like a pirate.",
+      "weight": 1,
+      "effects": {
+       "money": 400,
+       "job_perf": 4,
+       "stress": 5
+      }
+     },
+     {
+      "text": "The new firm was a mess. I'd made a mistake.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Use it to renegotiate",
+    "outcomes": [
+     {
+      "text": "My own board matched it in a day. A bit humiliating, a lot profitable.",
+      "weight": 1,
+      "effects": {
+       "money": 250,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "They called my bluff. I had to take it.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline",
+    "outcomes": [
+     {
+      "text": "Loyalty paid off. Within a year I was promoted.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 5
+      }
+     },
+     {
+      "text": "A year later he was my boss. Awkward.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.professor_1",
+  "icon": "🎓",
+  "title": "The peer review",
+  "text": "Reviewer Two has written a savage critique of your paper, which includes the line 'The authors appear unaware of the literature'. They are quoting a paper they have written.",
+  "conditions": {
+   "job": "professor",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Respond politely and thoroughly",
+    "outcomes": [
+     {
+      "text": "The editor sided with me. The paper was published.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It took a year. The paper came out, but I aged.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rage-write a rebuttal",
+    "outcomes": [
+     {
+      "text": "It felt wonderful. I deleted it before sending.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "I sent it. The editor remembered it for a decade.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -5,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cite their paper",
+    "outcomes": [
+     {
+      "text": "They became my biggest supporter. Academia is petty and generous.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "They didn't notice. I did.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.professor_2",
+  "icon": "🧑‍🏫",
+  "title": "The student who wants a letter",
+  "text": "A student who has missed half your lectures asks for a letter of recommendation for a funded programme. 'I'm just more of an independent learner,' he says.",
+  "conditions": {
+   "job": "professor",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Decline honestly",
+    "outcomes": [
+     {
+      "text": "He was shocked, and a little ashamed. He came to the next lecture.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "He complained to the dean. The dean backed me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write a measured letter",
+    "outcomes": [
+     {
+      "text": "He got in. He worked harder than he ever had.",
+      "weight": 1,
+      "effects": {
+       "karma": 3
+      }
+     },
+     {
+      "text": "The programme wrote back asking questions. I was careful.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write a glowing letter",
+    "outcomes": [
+     {
+      "text": "He got in, and wasted it.",
+      "weight": 1,
+      "effects": {
+       "karma": -4
+      }
+     },
+     {
+      "text": "He got in, and called me from there. He'd changed.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.scientist_1",
+  "icon": "🔭",
+  "title": "The result that breaks the model",
+  "text": "Your data contradicts the theory your whole group has spent a decade building. The professor wants a clean paper by spring.",
+  "conditions": {
+   "job": "scientist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Publish the real result",
+    "outcomes": [
+     {
+      "text": "It was controversial, then confirmed. A career-defining moment.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 10,
+       "smarts": 2,
+       "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "It cost me my funding and my mentor. I still believe it was right.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 9,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rerun everything",
+    "outcomes": [
+     {
+      "text": "Same result. A restful certainty.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "A different result. I'd made a mistake; a relief and a shame.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quietly drop the outlier",
+    "outcomes": [
+     {
+      "text": "The paper sailed through. I hated the paper.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 7
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     },
+     {
+      "text": "A reviewer asked about the missing data. I was found out.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "job_perf": -10,
+       "stress": 12
+      },
+      "schedule": {
+       "event": "echo.office_ripple",
+       "years": [
+        1,
+        4
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.scientist_2",
+  "icon": "🌌",
+  "title": "Observation time",
+  "text": "A rare slot on the telescope opens: eight hours of sky, after a three-year wait. The weather forecast says clouds.",
+  "conditions": {
+   "job": "scientist",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go anyway",
+    "outcomes": [
+     {
+      "text": "A clear patch opened at midnight. The data was gorgeous.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "Clouds all night. I stood outside and just looked up.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Swap with a colleague",
+    "outcomes": [
+     {
+      "text": "She got her data. I got a favour owed.",
+      "weight": 1,
+      "effects": {
+       "karma": 4
+      }
+     },
+     {
+      "text": "Her night was clear. Mine would have been.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cancel",
+    "outcomes": [
+     {
+      "text": "The next slot was a year away.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "It rained. I was relieved.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.army_1",
+  "icon": "🪖",
+  "title": "The forced march",
+  "text": "Thirty kilometres in full kit, in rain, on four hours' sleep. At kilometre twenty-two the soldier next to you says, quietly, 'I can't.'",
+  "conditions": {
+   "job": "army",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take half his pack",
+    "outcomes": [
+     {
+      "text": "We both made it. He's been my friend ever since.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "health": -3,
+       "job_perf": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "I hit the wall at twenty-eight. We crossed the line together, limping.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "health": -5,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Encourage him to keep going",
+    "outcomes": [
+     {
+      "text": "He gritted his teeth and finished. He thanked me, wordlessly.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He dropped out. He took it hard.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Focus on your own pace",
+    "outcomes": [
+     {
+      "text": "I finished well. He did not. I thought about it.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He was picked up by the truck. I was awarded something I didn't want.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.army_2",
+  "icon": "🎖️",
+  "title": "The order that feels wrong",
+  "text": "Your sergeant gives an order that violates the written rules of engagement, quietly and with confidence. Everyone else is already moving.",
+  "conditions": {
+   "job": "army",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Refuse and say why",
+    "outcomes": [
+     {
+      "text": "It cost me a promotion. A year later, an inquiry vindicated me.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "job_perf": -3,
+       "stress": 8
+      }
+     },
+     {
+      "text": "The sergeant yelled. The lieutenant changed the order.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Comply and report afterwards",
+    "outcomes": [
+     {
+      "text": "I wrote the report. It went nowhere. I didn't forget.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 8
+      }
+     },
+     {
+      "text": "Nothing happened. That's not the point.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Comply",
+    "outcomes": [
+     {
+      "text": "I did what I was told. I live with it.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "stress": 10
+      }
+     },
+     {
+      "text": "It was fine. I'll never know if that's lucky or terrible.",
+      "weight": 1,
+      "effects": {
+       "karma": -5,
+       "stress": 7
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.navy_1",
+  "icon": "⚓",
+  "title": "Heavy weather",
+  "text": "Day nine of a storm at sea. The deck moves like a living thing. A rope has parted and a crate is sliding toward a sailor at the rail.",
+  "conditions": {
+   "job": "navy",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lunge for the crate",
+    "outcomes": [
+     {
+      "text": "I held it long enough for him to clear. I broke two ribs.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "health": -6,
+       "job_perf": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It missed him by a hair. I was told off for the risk.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Shout a warning",
+    "outcomes": [
+     {
+      "text": "He ducked. The crate hit the rail and splintered.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He didn't hear me.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Raise the alarm",
+    "outcomes": [
+     {
+      "text": "A team arrived in thirty seconds. Everybody was fine.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It took too long. Someone was injured.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.navy_2",
+  "icon": "🌊",
+  "title": "Shore leave",
+  "text": "Port at last, after seven weeks at sea. A free evening, the town's neon on the water, and a message from home that you haven't answered.",
+  "conditions": {
+   "job": "navy",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Call home",
+    "outcomes": [
+     {
+      "text": "It was the best hour of the trip. They told me I sounded like myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -4
+      }
+     },
+     {
+      "text": "The call was bad news. I sat on the dock a long time.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go out with the crew",
+    "outcomes": [
+     {
+      "text": "A loud, warm, brilliant night. I remember maybe half of it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -80,
+       "health": -1
+      }
+     },
+     {
+      "text": "A fight started and I got involved. I spent the next day on report.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -4,
+       "money": -60
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sleep",
+    "outcomes": [
+     {
+      "text": "Eleven hours. The best investment of the trip.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "stress": -4
+      }
+     },
+     {
+      "text": "I woke up with the world's worst crick in my neck.",
+      "weight": 1,
+      "effects": {
+       "health": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.air_force_1",
+  "icon": "🛩️",
+  "title": "The pre-flight check",
+  "text": "A tech has signed off an aircraft, but a gauge you glance at on the walk-round isn't reading right. The brief is in ten minutes and the schedule is tight.",
+  "conditions": {
+   "job": "air_force",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ground the aircraft",
+    "outcomes": [
+     {
+      "text": "It had a fault that would have killed someone. I got a quiet commendation.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "job_perf": 9
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It was a loose connection. The squadron lost an hour and I lost some patience.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fly it, watching the gauge",
+    "outcomes": [
+     {
+      "text": "It held. A very long flight.",
+      "weight": 1,
+      "effects": {
+       "stress": 8
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It failed in the air. I got down by the skin of my teeth.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "health": -2,
+       "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the tech re-check",
+    "outcomes": [
+     {
+      "text": "The tech found it. We both learned something.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "He was offended. It took a month to smooth over.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.air_force_2",
+  "icon": "🧭",
+  "title": "The long deployment",
+  "text": "Eight months away. In the last video call, your kid held up a drawing and said, 'This is you,' and it was a stick figure on a screen.",
+  "conditions": {
+   "job": "air_force",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Write every week",
+    "outcomes": [
+     {
+      "text": "The letters became a book on the family shelf.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The mail was slow, but it arrived. They kept every one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bury yourself in the work",
+    "outcomes": [
+     {
+      "text": "Efficient, hollow, effective. I came home a stranger.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "happiness": -4
+      }
+     },
+     {
+      "text": "I was promoted. My family wasn't impressed.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask about early leave",
+    "outcomes": [
+     {
+      "text": "They approved it. I was home for the birthday.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "They refused. I made peace with it.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pilot_1",
+  "icon": "👨‍✈️",
+  "title": "A warning light at cruise",
+  "text": "At thirty-eight thousand feet, an amber light blinks on. The co-pilot says 'sensor?' in the voice of a man hoping to be right.",
+  "conditions": {
+   "job": "pilot",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Run the checklist",
+    "outcomes": [
+     {
+      "text": "A faulty sensor, as we'd hoped. We landed on time. The passengers never knew.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "A real fault, minor. We diverted. Everyone cheered when we touched down.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 7,
+       "stress": 8
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore and monitor",
+    "outcomes": [
+     {
+      "text": "It cleared. I felt an old man's relief.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "It didn't clear. I was lucky.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "job_perf": -4
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Declare an emergency",
+    "outcomes": [
+     {
+      "text": "Fire trucks lined the runway. It was nothing. The airline was grateful I'd erred on the side of caution.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 3,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     },
+     {
+      "text": "Fire trucks lined the runway. It was nothing. The airline was less grateful.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.career_weight",
+       "years": [
+        2,
+        7
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "job.pilot_2",
+  "icon": "🌫️",
+  "title": "Fog at the destination",
+  "text": "The destination is closed in fog, the alternate is an hour away, and fuel is adequate but not generous. The passengers don't know.",
+  "conditions": {
+   "job": "pilot",
+   "age": [
+    18,
+    74
+   ]
+  },
+  "choices": [
+   {
+    "label": "Divert early",
+    "outcomes": [
+     {
+      "text": "The sensible, boring choice. We landed with a comfortable margin.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5
+      }
+     },
+     {
+      "text": "The airline wasn't pleased. Safety isn't cheap.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hold and wait for a gap",
+    "outcomes": [
+     {
+      "text": "The fog lifted. We landed. I let out a breath I'd held for an hour.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 6,
+       "stress": 7
+      }
+     },
+     {
+      "text": "It didn't lift. We had to divert with less fuel than I liked.",
+      "weight": 1,
+      "effects": {
+       "stress": 11,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Attempt the approach",
+    "outcomes": [
+     {
+      "text": "A low, beautiful, nerve-shredding landing. Passengers applauded.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "stress": 9
+      }
+     },
+     {
+      "text": "Missed approach. A go-around. My heart took a week to settle.",
+      "weight": 1,
+      "effects": {
+       "stress": 12
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ }
+]

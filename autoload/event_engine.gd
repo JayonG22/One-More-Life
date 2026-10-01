@@ -746,6 +746,26 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 			return false
 	if cond.has("employed") and bool(cond["employed"]) != GameState.has_job():
 		return false
+	if cond.has("job"):
+		var jid: String = str(p.get("job", {}).get("id", "")) if p.get("job", {}) is Dictionary else ""
+		var want_job = cond["job"]
+		if want_job is Array:
+			if not Array(want_job).has(jid):
+				return false
+		elif str(want_job) != jid:
+			return false
+	if cond.has("habit_active"):
+		for hid in Array(cond["habit_active"]):
+			if not Grit.active_habits().has(str(hid)):
+				return false
+	if cond.has("habit_min"):
+		for hid2 in cond["habit_min"].keys():
+			if float(p.get("habits", {}).get(hid2, {}).get("level", 0.0)) < float(cond["habit_min"][hid2]):
+				return false
+	if cond.has("habit_max"):
+		for hid3 in cond["habit_max"].keys():
+			if float(p.get("habits", {}).get(hid3, {}).get("level", 0.0)) > float(cond["habit_max"][hid3]):
+				return false
 	if cond.has("in_school") and bool(cond["in_school"]) != GameState.in_school():
 		return false
 	if cond.has("university") and bool(cond["university"]) != GameState.in_university():
@@ -1213,6 +1233,10 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Pets.apply(o["pet"])
 	if o.has("gain_pet"):
 		Companions.gain(o["gain_pet"])
+	if o.has("record"):
+		p["record"].append(str(o["record"]))
+	if o.get("license_suspend", false) and Law.has_license("driver"):
+		Law.suspend("driver", 2, "caught driving after drinking")
 	if o.has("pet_cure"):
 		Companions.cure(str(o["pet_cure"]))
 	if o.has("pet_harm"):

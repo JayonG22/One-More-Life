@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dstt13ecg00nl"
+
+[deps]
+
+files=["res://art/ONE_MORE_LIFE_MASTER_MANIFEST.group.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.asset.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.variant.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.size.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.transparent.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.priority.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.source.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.notes.translation"]
+
+source_file="res://art/ONE_MORE_LIFE_MASTER_MANIFEST.csv"
+dest_files=["res://art/ONE_MORE_LIFE_MASTER_MANIFEST.group.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.asset.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.variant.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.size.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.transparent.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.priority.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.source.translation", "res://art/ONE_MORE_LIFE_MASTER_MANIFEST.notes.translation"]
+
+[params]
+
+compress=true
+delimiter=0

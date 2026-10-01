@@ -1134,8 +1134,8 @@ func _build_game() -> Control:
 	var hh := U.hb(16)
 	head.add_child(hh)
 	var port := U.card("Portrait")
-	port.custom_minimum_size = Vector2(118, 118)
-	var pl := U.lbl("👶", "Emoji", 72)
+	port.custom_minimum_size = Vector2(104, 104)
+	var pl := U.lbl("👶", "Emoji", 60)
 	pl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	pl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	port.add_child(pl)
@@ -1212,7 +1212,12 @@ func _build_game() -> Control:
 
 	var info := U.card()
 	var iv := U.vb(10)
-	info.add_child(iv)
+	iv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var isc := ScrollContainer.new()   # a long life summary scrolls here instead of stretching the whole column
+	isc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	isc.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	isc.add_child(iv)
+	info.add_child(isc)
 	var traits := HFlowContainer.new()
 	traits.add_theme_constant_override("h_separation", U.sp(8))
 	traits.add_theme_constant_override("v_separation", U.sp(8))
@@ -1271,7 +1276,7 @@ func _build_game() -> Control:
 	ageb.add_child(av)
 	var ah := U.hb(20)
 	ah.alignment = BoxContainer.ALIGNMENT_CENTER
-	var qa := U.icon_btn("🎓", "School", func(): _quick_press(0), "Row", true, 34, 17)
+	var qa := U.icon_btn("⏪", "Do-Over", func(): _quick_press(0), "Row", true, 34, 17)
 	qa.custom_minimum_size = Vector2(150, 96)
 	g["quick_left"] = qa
 	ah.add_child(qa)
@@ -1279,7 +1284,7 @@ func _build_game() -> Control:
 	age_btn.custom_minimum_size = Vector2(140, 140)
 	g["age_btn"] = age_btn
 	ah.add_child(age_btn)
-	var qb := U.icon_btn("💰", "Assets", func(): _quick_press(1), "Row", true, 34, 17)
+	var qb := U.icon_btn("🎯", "Missions", func(): _quick_press(1), "Row", true, 34, 17)
 	qb.custom_minimum_size = Vector2(150, 96)
 	g["quick_right"] = qb
 	ah.add_child(qb)
@@ -1688,15 +1693,14 @@ func _refresh_side() -> void:
 	g["time_bar"].value = 100.0 * tleft / GameState.TIME_PER_YEAR
 	U.set_bar_color(g["time_bar"], ThemeManager.c("good") if tleft > 3 else ThemeManager.c("warn"))
 	var ql: Button = g["quick_left"]
-	var qtxt := "Career"
-	var qicon := "💼"
-	if GameState.has_job():
-		qtxt = "Work"
-	elif int(p["age"]) >= 5 and (GameState.in_school() or GameState.in_university()):
-		qtxt = "School"
-		qicon = "🎓"
-	ql.get_meta("icon").text = qicon
-	ql.get_meta("label").text = qtxt
+	var have_redo := Items.owned("do_over")
+	ql.get_meta("icon").text = "⏪"
+	ql.get_meta("label").text = ("Do-Over ×%d" % have_redo) if have_redo > 0 else "Do-Over"
+	ql.modulate = Color(1, 1, 1, 1.0 if have_redo > 0 else 0.62)
+	var qr2: Button = g["quick_right"]
+	var ready_n := Goals.unclaimed_count()
+	qr2.get_meta("icon").text = "🎯"
+	qr2.get_meta("label").text = ("Claim %d" % ready_n) if ready_n > 0 else "Missions"
 	g["age_btn"].disabled = not p["alive"]
 	VFX.pulse(g["age_btn"], p["alive"] and not popup_open and int(p["time_left"]) >= GameState.TIME_PER_YEAR - 1)
 
@@ -1935,7 +1939,14 @@ func _quick_press(side: int) -> void:
 		var key: String = str(Lives.mode().quick()[side][2])
 		_open_panel(func(): MP.show(key), true)
 		return
-	_open_panel(_panel_occupation if side == 0 else _panel_assets, true)
+	if side == 1:
+		_show_missions()
+		return
+	if Items.owned("do_over") > 0 and Items.has_snapshot():
+		_confirm_do_over()
+	else:
+		star_tab = "items"
+		_show_star_shop()
 
 
 func _apply_mode_chrome() -> void:
@@ -1967,8 +1978,8 @@ func _apply_mode_chrome() -> void:
 		qr.get_meta("icon").text = str(qk[1][0])
 		qr.get_meta("label").text = str(qk[1][1])
 	else:
-		qr.get_meta("icon").text = "💰"
-		qr.get_meta("label").text = "Assets"
+		qr.get_meta("icon").text = "🎯"
+		qr.get_meta("label").text = "Missions"
 
 
 func _panel_more_pet() -> void:
@@ -2777,6 +2788,26 @@ func _show_decision(inst: Dictionary) -> void:
 
 ## A turning point asks once. Answering no puts the original choices back rather
 ## than closing the event, because backing out is not the same as deciding.
+func _confirm_do_over() -> void:
+	Fx.play("choice")
+	var v := _open_popup(560)
+	var ic := U.lbl("⏪", "Emoji", 54)
+	ic.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	v.add_child(ic)
+	var t := U.lbl("Use a Do-Over?", "Title", 26)
+	t.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	v.add_child(t)
+	var w := U.lbl("The year goes back to its start and you live it again. You have %d." % Items.owned("do_over"), "Dim", 16)
+	w.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	w.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	v.add_child(w)
+	var yes := U.btn("Rewind the year", func(): _close_popup(); _use_star_item("do_over"), "Primary")
+	yes.custom_minimum_size = Vector2(0, 54)
+	v.add_child(yes)
+	var no := U.btn("Not now", _close_popup, "Row")
+	v.add_child(no)
+
+
 func _confirm_twist(inst: Dictionary, idx: int, label: String) -> void:
 	Fx.play("choice")
 	var v := _open_popup(560)

@@ -52,6 +52,7 @@ run crawl menu_crawl      'CRAWL DONE' 'SCRIPT ERROR'
 run layout layout_audit   'problems=0' 'SCRIPT ERROR'
 run perf  perf_test        'PERF TEST' 'FAIL:'
 run a11y  a11y_test       'failures=0' 'FAIL:' screen
+run v25 v25_events_test 'failures=0' 'FAIL:|SCRIPT ERROR'
 run gamble gamble_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
 run minigames mg_smart    'MG GATE PASS' 'MG GATE FAIL|SCRIPT ERROR' screen
 run input mg_input_probe  'MG INPUT PROBE PASS' 'FAIL' screen

@@ -1,0 +1,5656 @@
+[
+ {
+  "id": "sch.lunch_table",
+  "icon": "🍱",
+  "title": "The lunch table",
+  "text": "It's the third week at the new school and you're standing with a tray, scanning the room. Every table looks like a country with its own border.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    6,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Sit with the kids who look lost",
+    "outcomes": [
+     {
+      "text": "There were three of them, and by Friday we were a country of our own. One became a friend for life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "It was quiet and awkward, but nobody was mean. I kept going back.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try the popular table",
+    "outcomes": [
+     {
+      "text": "They let me stay. It felt like winning something and losing something.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "looks": 1,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "They looked up, then looked at each other, then back at me. I found a different seat.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Eat in the library",
+    "outcomes": [
+     {
+      "text": "I read my way through half a shelf. Not a bad plan.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The librarian caught me and gave me a stack of books. It saved my year.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.bully",
+  "icon": "👊",
+  "title": "The corridor",
+  "text": "A bigger kid has started waiting by your locker. Today he doesn't say anything. He just holds out his hand, palm up.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    8,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Walk away",
+    "outcomes": [
+     {
+      "text": "It cost me nothing today. It cost me something tomorrow.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "He let me go. Then he found someone else. I felt it.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell a teacher",
+    "outcomes": [
+     {
+      "text": "It was handled. He was suspended. He never forgave me, but he left me alone.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": 1,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "They told me to 'work it out'. I felt abandoned.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stand your ground",
+    "outcomes": [
+     {
+      "text": "He backed down, shocked. It was the biggest thing I'd ever done.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": -1,
+       "karma": 0
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "He hit me. I hit back. We both got detention, and a strange respect.",
+      "weight": 1,
+      "effects": {
+       "health": -4,
+       "stress": 5,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.cheating",
+  "icon": "📝",
+  "title": "Eyes on the paper",
+  "text": "The kid beside you has left his answers completely uncovered, and you've blanked on question six. Time ticks down.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    10,
+    25
+   ]
+  },
+  "choices": [
+   {
+    "label": "Copy one answer",
+    "outcomes": [
+     {
+      "text": "I got it right and felt sick all afternoon.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "karma": -3,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The teacher saw. She said nothing, but wrote something on her clipboard.",
+      "weight": 1,
+      "effects": {
+       "school": -3,
+       "karma": -3,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it blank",
+    "outcomes": [
+     {
+      "text": "I got zero for that one. I slept fine.",
+      "weight": 1,
+      "effects": {
+       "school": -1,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I left it blank, and then I remembered the answer at lunchtime. Typical.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Guess",
+    "outcomes": [
+     {
+      "text": "A lucky guess. I felt like a gambler who'd won.",
+      "weight": 1,
+      "effects": {
+       "school": 1,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "An unlucky guess. At least it was honest.",
+      "weight": 1,
+      "effects": {
+       "school": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.science_fair",
+  "icon": "🧪",
+  "title": "The science fair",
+  "text": "Your volcano has to be ready by Thursday. You have a bottle, a box of baking soda, and a rumour that someone else is building a rocket.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    8,
+    15
+   ]
+  },
+  "choices": [
+   {
+    "label": "Build something ambitious",
+    "outcomes": [
+     {
+      "text": "It erupted gloriously, to a gasp from the judges. First place.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 6,
+       "school": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "It exploded early, painting the gym ceiling. A legend of a failure.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "school": -1,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Do the simple volcano",
+    "outcomes": [
+     {
+      "text": "Neat, tidy, and unremarkable. A ribbon for participation.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "school": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "Four other kids did the same. We got to compare.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I took a 'sick day'. It was fine until my mother found out.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "school": -2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The teacher gave me a make-up project. It was harder.",
+      "weight": 1,
+      "effects": {
+       "school": -1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.crush",
+  "icon": "💘",
+  "title": "Note passed in class",
+  "text": "A folded square of paper lands on your desk. It's from the person you've been thinking about for weeks. Inside is one line: 'Do you like me?'",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    11,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Write 'yes'",
+    "outcomes": [
+     {
+      "text": "We've been inseparable since. It's the kind of thing you remember for fifty years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "They showed it to their friends. I wanted to disappear.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write 'maybe'",
+    "outcomes": [
+     {
+      "text": "They laughed. It became a thing. We became a thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "They lost interest. I never knew.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "I regretted it for a while.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "It was probably a joke anyway. Probably.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.detention",
+  "icon": "⏰",
+  "title": "Detention",
+  "text": "You've been given detention for something that was, frankly, partly your fault. You sit in the classroom with a clock that ticks like a metronome.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    9,
+    17
+   ]
+  },
+  "choices": [
+   {
+    "label": "Do your homework",
+    "outcomes": [
+     {
+      "text": "An hour of silence and I finished everything. A productive punishment.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The teacher was impressed. She cut my time short.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Doodle",
+    "outcomes": [
+     {
+      "text": "I drew a comic. Someone saw it. It circulated for weeks.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "looks": 0
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "My doodle was confiscated. It was framed on a staff room wall.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a friend in the next seat",
+    "outcomes": [
+     {
+      "text": "Another troublemaker. We became partners in crime.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "She talked the whole hour. I came away exhausted.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.sports_try",
+  "icon": "🏀",
+  "title": "Team trials",
+  "text": "The coach is running trials on Friday. You've never been very athletic. You've also never tried.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    9,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go and give it everything",
+    "outcomes": [
+     {
+      "text": "I made the second team. I've never been so proud of a bench.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I came last in the run, and the coach clapped for me anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "health": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go and have fun",
+    "outcomes": [
+     {
+      "text": "I made a friend in the queue. I missed the team but gained a mate.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The coach said the spirit was great, the skill 'developing'.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't go",
+    "outcomes": [
+     {
+      "text": "I watched through the fence, wishing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I read in the library. Fine, but I thought about it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.exam_panic",
+  "icon": "😰",
+  "title": "Exam eve",
+  "text": "It's midnight and the exam is at nine. You've covered two out of seven chapters and the others look like another language.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    13,
+    25
+   ]
+  },
+  "choices": [
+   {
+    "label": "Pull an all-nighter",
+    "outcomes": [
+     {
+      "text": "I scraped a pass and a headache. Never again, I said.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "health": -3,
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I fell asleep on the textbook at 4 and woke up late. A disaster.",
+      "weight": 1,
+      "effects": {
+       "school": -4,
+       "stress": 9
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cover the big topics and sleep",
+    "outcomes": [
+     {
+      "text": "The right trade-off. I did fine.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The questions were on the chapters I missed.",
+      "weight": 1,
+      "effects": {
+       "school": -2,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a friend for notes",
+    "outcomes": [
+     {
+      "text": "She sent photos of hers. I owed her a pizza forever.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "karma": 1,
+       "money": -15
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "Her handwriting was illegible. I tried.",
+      "weight": 1,
+      "effects": {
+       "school": 0,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.teacher_mentor",
+  "icon": "🍎",
+  "title": "The teacher who noticed",
+  "text": "A teacher stops you after class. 'You're better than the work you hand in,' she says. 'I'd like to know why.'",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    11,
+    22
+   ]
+  },
+  "choices": [
+   {
+    "label": "Tell her the truth",
+    "outcomes": [
+     {
+      "text": "I told her about home. She listened. She became a lifeline.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 2,
+       "school": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "She nodded and offered help. I didn't take it, but I knew it was there.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Shrug it off",
+    "outcomes": [
+     {
+      "text": "She let it drop, but kept an eye on me.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "She gave up on me. I felt it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rise to the challenge",
+    "outcomes": [
+     {
+      "text": "I put in the work. My grades went up. She was thrilled.",
+      "weight": 1,
+      "effects": {
+       "school": 5,
+       "smarts": 2,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "It was exhausting. But something shifted.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.school_play",
+  "icon": "🎭",
+  "title": "The school play",
+  "text": "The drama teacher is casting. You can go for a lead role, a small part, or the lighting desk, which has a lovely quiet corner.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    8,
+    18
+   ]
+  },
+  "choices": [
+   {
+    "label": "Audition for the lead",
+    "outcomes": [
+     {
+      "text": "I got it. Opening night was a blur of light and applause.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "fame": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I forgot my first line and improvised. The audience loved it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a small part",
+    "outcomes": [
+     {
+      "text": "I stole one scene. People still remember it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I was a tree. A very good tree.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Run the lights",
+    "outcomes": [
+     {
+      "text": "I loved the dark and the power. I found my place.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "A cue went wrong. The show survived.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.prom",
+  "icon": "💃",
+  "title": "Prom night",
+  "text": "Everyone has a plan and a date. You have a suit, a ticket and a decision to make.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    16,
+    19
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask the person you actually like",
+    "outcomes": [
+     {
+      "text": "They said yes. It was the best night of my teenage life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "They said no, kindly. I went with friends and had a wonderful time anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go with friends",
+    "outcomes": [
+     {
+      "text": "We danced badly and loudly. Photos still make me smile.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -60
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "We argued about the music. We left early.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "money": -50
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I stayed home. I regretted it by midnight.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I read on the roof. It was a nice night.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.student_loan",
+  "icon": "🎓",
+  "title": "Offer letter",
+  "text": "The university offer is in your hand. The fees underneath are in a font that looks like it's whispering.",
+  "conditions": {
+   "in_school": false,
+   "age": [
+    17,
+    22
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the loan",
+    "outcomes": [
+     {
+      "text": "Debt as a doorway. It was worth it, I think.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "smarts": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I'd be paying for years. I tried to focus on the first lecture.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Defer and work",
+    "outcomes": [
+     {
+      "text": "A year of earning. I came back clearer.",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I never went back. I'll never know.",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pick a cheaper course",
+    "outcomes": [
+     {
+      "text": "Local, practical, affordable. A sensible choice.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The course was dull. But I finished.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.study_group",
+  "icon": "📚",
+  "title": "Study group",
+  "text": "Three classmates invite you to a study group. One is brilliant, one is funny and one has a reputation for taking over.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    14,
+    25
+   ]
+  },
+  "choices": [
+   {
+    "label": "Join",
+    "outcomes": [
+     {
+      "text": "We all passed. One of them became a friend for life.",
+      "weight": 1,
+      "effects": {
+       "school": 4,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The takeover one took over. I learned fast, and not just the material.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Study alone",
+    "outcomes": [
+     {
+      "text": "Quiet and efficient. I did fine.",
+      "weight": 1,
+      "effects": {
+       "school": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I missed some things only a group would've caught.",
+      "weight": 1,
+      "effects": {
+       "school": 0,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start your own group",
+    "outcomes": [
+     {
+      "text": "It took off. Twelve people. I became a minor celebrity.",
+      "weight": 1,
+      "effects": {
+       "school": 3,
+       "happiness": 5,
+       "fame": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "Four people turned up. Two left. It was fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.field_trip",
+  "icon": "🚌",
+  "title": "Field trip",
+  "text": "The coach is loud, the museum is sleepy, and your best friend has just whispered a plan to 'get lost' in the gift shop.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    7,
+    15
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go along",
+    "outcomes": [
+     {
+      "text": "We bought rubber snakes and put one in the teacher's bag. Detention for a week, and worth it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "We got caught immediately. The teacher laughed in spite of herself.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay with the group",
+    "outcomes": [
+     {
+      "text": "I actually learned something about the Romans. It was irritating.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "My friend went alone and got in trouble. I felt like a coward.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask the guide a question",
+    "outcomes": [
+     {
+      "text": "The guide lit up. I got a private tour of the back rooms.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "The question was silly. The class laughed. The guide laughed hardest.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.school_exchange",
+  "icon": "✈️",
+  "title": "Exchange offer",
+  "text": "A flyer on the noticeboard: a year abroad, host family provided. It's a long way from home.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    14,
+    19
+   ]
+  },
+  "choices": [
+   {
+    "label": "Apply",
+    "outcomes": [
+     {
+      "text": "I got in. A year that changed me.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 6,
+       "money": -600
+      }
+     },
+     {
+      "text": "I got in, and was horribly homesick. I came back changed anyway.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 6,
+       "money": -600
+      }
+     }
+    ]
+   },
+   {
+    "label": "Think about it",
+    "outcomes": [
+     {
+      "text": "The deadline passed. I wondered for years.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I applied a year late and went anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "smarts": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass",
+    "outcomes": [
+     {
+      "text": "I stayed. I made a good year of it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "My best friend went instead. I missed her.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.uni_party",
+  "icon": "🍻",
+  "title": "Freshers' week",
+  "text": "Everyone around you is shouting and laughing and holding a plastic cup, and you don't know anyone yet.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    18,
+    24
+   ],
+   "university": true
+  },
+  "choices": [
+   {
+    "label": "Throw yourself in",
+    "outcomes": [
+     {
+      "text": "Chaos, friendship, and a bad morning. A classic start.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": -2,
+       "money": -40
+      },
+      "habit": [
+       "drinking",
+       3
+      ]
+     },
+     {
+      "text": "I over-did it. Someone put me in the recovery position. I met my best friend that way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "health": -4,
+       "stress": 3
+      },
+      "habit": [
+       "drinking",
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "label": "Stay for an hour",
+    "outcomes": [
+     {
+      "text": "Enough to know a few names. Exactly right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I left feeling like an outsider, but the next day was better.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I called my mother. A different kind of start.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I used the quiet to settle in. By the time everyone was hungover, I knew where everything was.",
+      "weight": 1,
+      "effects": {
+       "school": 2,
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.thesis",
+  "icon": "📖",
+  "title": "The thesis wall",
+  "text": "It's three weeks before the deadline and your dissertation is eight thousand words short, and your supervisor is on holiday.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    20,
+    30
+   ],
+   "university": true
+  },
+  "choices": [
+   {
+    "label": "Write through the night",
+    "outcomes": [
+     {
+      "text": "Fourteen thousand words in a fortnight. I handed it in dazed, with eyes like stones.",
+      "weight": 1,
+      "effects": {
+       "school": 5,
+       "health": -4,
+       "stress": 9
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I wrote nonsense for half of it. A lower grade, but done.",
+      "weight": 1,
+      "effects": {
+       "school": 1,
+       "stress": 8
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for an extension",
+    "outcomes": [
+     {
+      "text": "Granted. A gift.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "school": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "Refused. The panic came back.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cut the scope",
+    "outcomes": [
+     {
+      "text": "A tighter paper, better argued. The examiner appreciated the focus.",
+      "weight": 1,
+      "effects": {
+       "school": 4,
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I cut too much. It was thin.",
+      "weight": 1,
+      "effects": {
+       "school": -1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "sch.graduation",
+  "icon": "🎓",
+  "title": "Graduation day",
+  "text": "The gown is too long, the hat is too small, and your name is next. Somewhere in the crowd, someone is holding a camera.",
+  "conditions": {
+   "in_school": true,
+   "age": [
+    18,
+    35
+   ]
+  },
+  "choices": [
+   {
+    "label": "Cross the stage with a big grin",
+    "outcomes": [
+     {
+      "text": "They cheered. I cried a bit, in the good way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I tripped on my gown. The video of that went around the family.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a joke",
+    "outcomes": [
+     {
+      "text": "The dean laughed. The crowd laughed. It was my finest moment.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "Nobody laughed. A pure silence. I would live.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it and have the certificate posted",
+    "outcomes": [
+     {
+      "text": "Quiet and cheap. I never regretted it.",
+      "weight": 1,
+      "effects": {
+       "money": 100,
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     },
+     {
+      "text": "I regretted it every time I saw other people's photos.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.school_days",
+       "years": [
+        3,
+        10
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.coffee_shop",
+  "icon": "☕",
+  "title": "The regular at the counter",
+  "text": "There's someone in your coffee shop who is always there at the same time, with the same book, and who has started saying 'hi' in a way that sounds practised.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Say something about the book",
+    "outcomes": [
+     {
+      "text": "It was a book I loved. We talked for an hour and swapped numbers.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They hadn't read it, they said. They were just holding it. We laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Smile and carry on",
+    "outcomes": [
+     {
+      "text": "They smiled back. Nothing came of it, but the coffee tasted better.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They stopped coming. I'll never know.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave a note on the cup",
+    "outcomes": [
+     {
+      "text": "They found it. A reply came the next day. It was a good one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They didn't reply, but they didn't stop coming either.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same"
+   }
+  }
+ },
+ {
+  "id": "date.app_match",
+  "icon": "📱",
+  "title": "A match at midnight",
+  "text": "A match you swiped on has sent: 'You look like someone who has opinions about pizza.' Your thumbs hover.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Reply with something good",
+    "outcomes": [
+     {
+      "text": "It was an excellent conversation. We met the next week. It went somewhere.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They stopped replying after four messages. Fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait until morning",
+    "outcomes": [
+     {
+      "text": "By morning, they'd moved on. I learned about timing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "Morning came and they were still there. A good sign.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Unmatch",
+    "outcomes": [
+     {
+      "text": "It didn't feel right. I put the phone down.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I kept swiping. Nothing felt right.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same"
+   }
+  }
+ },
+ {
+  "id": "date.blind_date",
+  "icon": "🍝",
+  "title": "Set up by a friend",
+  "text": "A friend swears they've found 'the one'. You are not convinced, but there's a table booked for Thursday at 7:30.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Go and be open",
+    "outcomes": [
+     {
+      "text": "They turned up in the wrong shirt and made me laugh until I cried. We saw each other again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was pleasant, and I knew in ten minutes it wouldn't go further.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go and be guarded",
+    "outcomes": [
+     {
+      "text": "I closed up. They noticed. It was polite and cold.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "Eventually I relaxed. Too late, but still.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cancel last minute",
+    "outcomes": [
+     {
+      "text": "My friend was furious. I never got a second set-up.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I stayed in with a film and felt guilty about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same"
+   }
+  }
+ },
+ {
+  "id": "date.first_kiss",
+  "icon": "💋",
+  "title": "The doorstep",
+  "text": "The date has been lovely. You've reached the door, and neither of you has said goodnight. The porch light hums.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Lean in",
+    "outcomes": [
+     {
+      "text": "It was soft and brief and perfect. We both laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "Our noses collided. We laughed until it hurt.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for them",
+    "outcomes": [
+     {
+      "text": "They did. It was worth the wait.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They said 'good night', cheerfully, and went in. Mystery.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say goodnight",
+    "outcomes": [
+     {
+      "text": "They smiled. I replayed it all evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was probably the right call. Probably.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.ghosted",
+  "icon": "👻",
+  "title": "Gone quiet",
+  "text": "You had a fantastic third date. You've sent two messages. Four days of silence later, you can see they've read both.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Send a third message",
+    "outcomes": [
+     {
+      "text": "A reply came an hour later: 'sorry, work!' It was true. We met up.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "Nothing. I was embarrassed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I forgot them within a week. Lesson learned.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It stung more than I expected.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call",
+    "outcomes": [
+     {
+      "text": "They picked up. 'I'm seeing someone else.' Quick, clean, brutal.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They picked up and said they'd been unwell. We talked for an hour.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.meet_parents",
+  "icon": "🏡",
+  "title": "Meeting the parents",
+  "text": "You're in the hallway of their parents' house, holding a bunch of supermarket flowers. Somewhere inside, a dog is barking. Someone is saying 'they're here!'",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Be charming",
+    "outcomes": [
+     {
+      "text": "Their mother loved me. Their father said 'good lad' or 'good lass' and meant it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I said one thing too many. They laughed, politely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be nervous and honest",
+    "outcomes": [
+     {
+      "text": "I admitted I was terrified. They relaxed. The evening was warm.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I spilled the gravy. Everyone reassured me. It stuck.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make an excuse",
+    "outcomes": [
+     {
+      "text": "I cancelled with a fake cold. My partner saw through it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I cancelled. My partner said 'okay'. Which meant not okay.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.jealous",
+  "icon": "😒",
+  "title": "The message",
+  "text": "Your partner's phone buzzes on the table. Name on the screen: someone you've never heard of. They flip it face-down, quickly.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Ask calmly",
+    "outcomes": [
+     {
+      "text": "It was a surprise party plan. I felt like an idiot, and loved.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It was an old flame. We talked it through. It was healthy.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look at the phone",
+    "outcomes": [
+     {
+      "text": "It was nothing. I'd broken their trust for no reason.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 5,
+       "karma": -2
+      }
+     },
+     {
+      "text": "It was something. I wish I hadn't looked.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "It sat in my chest for a week, then dissolved.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     },
+     {
+      "text": "It never went away.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.anniversary",
+  "icon": "🥂",
+  "title": "Anniversary dinner",
+  "text": "The restaurant is booked. The gift is wrapped. The thing you forgot, you realise at the table, is the card.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Confess and make it up",
+    "outcomes": [
+     {
+      "text": "They laughed. The dessert was on me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "They were quiet. It took a week to be forgiven.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write one on a napkin",
+    "outcomes": [
+     {
+      "text": "It was the best card I've ever written. They kept the napkin.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "It was awkward, but they were touched.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "They didn't notice, or pretended not to.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "They noticed. It turned into an argument.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.long_distance",
+  "icon": "🛫",
+  "title": "Seven hundred miles",
+  "text": "Your partner has taken a job in another country. They've offered a move, and also, gently, the option to end things kindly.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Move with them",
+    "outcomes": [
+     {
+      "text": "A new place and a new start. It was hard, and ours.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 5,
+       "money": -500
+      }
+     },
+     {
+      "text": "I moved and hated it. They noticed. We drifted.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "money": -500,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try long distance",
+    "outcomes": [
+     {
+      "text": "Video calls, visits, a countdown calendar. It held for a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "It frayed by the third month.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "End it kindly",
+    "outcomes": [
+     {
+      "text": "We cried, hugged, and stayed friends. It was grown-up.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     },
+     {
+      "text": "We didn't speak for a year. Then we did.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.proposal",
+  "icon": "💍",
+  "title": "The ring",
+  "text": "The ring box has been in your jacket for eleven days. Tonight is the night, if you can stop your hands from shaking.",
+  "conditions": {
+   "age": [
+    19,
+    70
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Ask on the beach",
+    "outcomes": [
+     {
+      "text": "Yes. They were already crying before I finished the sentence.",
+      "weight": 1,
+      "effects": {
+       "happiness": 12
+      }
+     },
+     {
+      "text": "They said 'ask me again in a year'. That was fair.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask at home",
+    "outcomes": [
+     {
+      "text": "Quiet and honest. Yes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9
+      }
+     },
+     {
+      "text": "Surprised and tender. They said they were scared too.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait",
+    "outcomes": [
+     {
+      "text": "I waited another year. In hindsight, it was fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The moment passed. It took ages to come back.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.wedding_chaos",
+  "icon": "👰",
+  "title": "The wedding",
+  "text": "Three hours before the ceremony, the florist has called to say the flowers are in a different city, and your best man has lost the rings.",
+  "conditions": {
+   "age": [
+    20,
+    75
+   ],
+   "has_partner": true,
+   "married": false
+  },
+  "choices": [
+   {
+    "label": "Improvise",
+    "outcomes": [
+     {
+      "text": "We picked flowers from the garden. The rings turned up in his sock. It was perfect.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      }
+     },
+     {
+      "text": "It was chaotic and wonderful. Everyone said so.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Delay",
+    "outcomes": [
+     {
+      "text": "An hour late and nobody minded. Photos came out gorgeous.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 4
+      }
+     },
+     {
+      "text": "The venue was booked for another event. We rushed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Panic",
+    "outcomes": [
+     {
+      "text": "My partner laughed and said 'we're still getting married'. I calmed down.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "I cried through the vows. People said it was moving.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.breakup_text",
+  "icon": "📵",
+  "title": "The message you didn't want",
+  "text": "It's a Sunday afternoon. Your partner's text says: 'We need to talk.' Six words that make the room go very quiet.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Call straight away",
+    "outcomes": [
+     {
+      "text": "They said they were unhappy. I was shocked, but it was honest.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 7
+      }
+     },
+     {
+      "text": "They wanted to move in together. I'd been bracing for the wrong thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait and prepare",
+    "outcomes": [
+     {
+      "text": "I overthought everything for two days. It was about their job.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     },
+     {
+      "text": "I'd been right to be nervous. It was over.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It never got better by ignoring.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     },
+     {
+      "text": "They came round, in person. It was worse and better.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.rebound",
+  "icon": "🥀",
+  "title": "After the split",
+  "text": "You're newly single, eating cereal for dinner. A friend has just invited you out with the words 'it'll do you good'.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Go out",
+    "outcomes": [
+     {
+      "text": "It was just what I needed. I laughed for the first time in weeks.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -3,
+       "money": -35
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I drank too much and cried in a taxi. The driver was kind.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "money": -50
+      },
+      "habit": [
+       "drinking",
+       3
+      ],
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay home and heal",
+    "outcomes": [
+     {
+      "text": "A weekend in pyjamas, and a long walk after. Slow and right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": -3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I stayed home and spiralled. It lasted a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Text the ex",
+    "outcomes": [
+     {
+      "text": "A mistake. They didn't reply. I felt humiliated.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 5
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They replied kindly. It helped, and then it didn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.older_flame",
+  "icon": "🔥",
+  "title": "An old flame",
+  "text": "At a wedding you spot someone you dated decades ago. They are standing alone with a glass, looking right at you.",
+  "conditions": {
+   "age": [
+    30,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go over",
+    "outcomes": [
+     {
+      "text": "We talked for hours. Time had been kind. It was a lovely, bittersweet evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "We talked, and I realised why we'd ended. A relief of a kind.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wave and stay put",
+    "outcomes": [
+     {
+      "text": "I regretted it for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was right. Some doors stay closed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave early",
+    "outcomes": [
+     {
+      "text": "I went home and wondered.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I told my partner. They laughed. It was fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.dating_class",
+  "icon": "🎨",
+  "title": "The pottery class",
+  "text": "A friend dragged you to a Thursday-night class. The person next to you has clay up to their elbows and is laughing at their own mistakes.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Ask for a cup of tea afterwards",
+    "outcomes": [
+     {
+      "text": "We drank tea and talked about nothing and everything. It began there.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They already had plans. They said 'next week?'. I took it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Compliment their pot",
+    "outcomes": [
+     {
+      "text": "They blushed and said it was a plate. We became friends.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was upside down, they said. We laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Focus on your own clay",
+    "outcomes": [
+     {
+      "text": "I made a lopsided mug that I love.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "My pot collapsed, which was embarrassing.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same"
+   }
+  }
+ },
+ {
+  "id": "date.holiday_romance",
+  "icon": "🌴",
+  "title": "Holiday romance",
+  "text": "Four days into the trip, you meet someone on the beach. They're funny, you're tanned, and the flight home is in nine days.",
+  "conditions": {
+   "age": [
+    18,
+    60
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Make the most of it",
+    "outcomes": [
+     {
+      "text": "Nine perfect days. I cried at the airport. It's a good memory.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "money": -200
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "We kept in touch. It turned into something real.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": -200
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it light",
+    "outcomes": [
+     {
+      "text": "A few evenings, a few laughs, a postcard.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They were serious. I wasn't. It got awkward.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Avoid it",
+    "outcomes": [
+     {
+      "text": "I read three books. They were good.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I regretted it on the plane.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same"
+   }
+  }
+ },
+ {
+  "id": "date.couples_therapy",
+  "icon": "🛋️",
+  "title": "The counsellor's sofa",
+  "text": "You and your partner have been arguing about the dishes, but it's about something else, and you both know it. A counsellor has an opening on Tuesday.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Book it",
+    "outcomes": [
+     {
+      "text": "Six sessions in, we could talk again. It saved us.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "money": -400
+      }
+     },
+     {
+      "text": "It showed us we wanted different things. We parted kindly.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "money": -400,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try on your own",
+    "outcomes": [
+     {
+      "text": "We had a talk on the balcony. It helped, for a while.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "We didn't. The dishes piled up.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Avoid it",
+    "outcomes": [
+     {
+      "text": "The tension eased by itself, in the way those things do.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "It didn't. It festered.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.friend_zone",
+  "icon": "🧱",
+  "title": "Just friends",
+  "text": "Your closest friend has just said, over dinner, 'I think of you as family.' You've been hoping for something else for two years.",
+  "conditions": {
+   "age": [
+    16,
+    75
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Tell them how you feel",
+    "outcomes": [
+     {
+      "text": "They were quiet, then said, 'I've wondered, too.' We tried it, nervously.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "new_partner": "f",
+      "keep_role": "f",
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They were kind. It was clear. We stayed friends, with effort.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "I swallowed it. I got over it, slowly.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I swallowed it. I never did, entirely.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pull back from the friendship",
+    "outcomes": [
+     {
+      "text": "A painful distance. It healed, in time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They noticed and asked why. I lied.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "f": {
+    "new": "friend",
+    "age": "same"
+   }
+  }
+ },
+ {
+  "id": "date.catfish",
+  "icon": "🎭",
+  "title": "Not who they said",
+  "text": "The person you've been messaging for three months has turned up at the restaurant, and it is quite plainly not the person in the photos.",
+  "conditions": {
+   "age": [
+    18,
+    70
+   ],
+   "has_partner": false
+  },
+  "choices": [
+   {
+    "label": "Stay for dinner",
+    "outcomes": [
+     {
+      "text": "They were nervous and sweet. We ended up friends.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They asked for money by dessert. I left.",
+      "weight": 1,
+      "effects": {
+       "money": -30,
+       "stress": 5,
+       "karma": 0
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave",
+    "outcomes": [
+     {
+      "text": "I walked out. I felt bad and also fine.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I cried in the car. It had been so real.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call it out",
+    "outcomes": [
+     {
+      "text": "They apologised and sobbed. It was awful.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They snapped and left. I felt a bit better.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.after_the_date",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "date.midlife_crush",
+  "icon": "💭",
+  "title": "A crush at the school gates",
+  "text": "You're married, and busy, and you have just noticed that you look forward to Thursday pick-up for a very specific reason.",
+  "conditions": {
+   "age": [
+    28,
+    60
+   ],
+   "married": true
+  },
+  "choices": [
+   {
+    "label": "Admit it to yourself and step back",
+    "outcomes": [
+     {
+      "text": "I stopped going to the gate. It passed. I loved my spouse more for it.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "It took months to fade. I said nothing.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell your spouse",
+    "outcomes": [
+     {
+      "text": "A frank, brave conversation. It brought us closer.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 4
+      }
+     },
+     {
+      "text": "They were hurt. We worked on it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pursue it",
+    "outcomes": [
+     {
+      "text": "It ended badly for everyone.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "happiness": -8,
+       "stress": 12
+      }
+     },
+     {
+      "text": "It stayed a secret. The secret rotted me.",
+      "weight": 1,
+      "effects": {
+       "karma": -6,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.birthday_surprise",
+  "icon": "🎁",
+  "title": "A parcel on your birthday",
+  "text": "There's a heavy parcel on the doormat, addressed in familiar handwriting. It's from {m.first}, and it rattles.",
+  "conditions": {
+   "age": [
+    6,
+    90
+   ],
+   "chance": 0.3
+  },
+  "choices": [
+   {
+    "label": "Open it right away",
+    "outcomes": [
+     {
+      "text": "It was something I'd mentioned once, years ago. I was speechless.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "relationship": {
+       "m": 5
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was a jumper. A bit loud, but lovingly chosen.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "relationship": {
+       "m": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Save it for later",
+    "outcomes": [
+     {
+      "text": "I opened it with a cup of tea at night. A lovely, quiet pleasure.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "m": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I forgot about it for a week. I felt awful.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "relationship": {
+       "m": -2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Phone to say thank you",
+    "outcomes": [
+     {
+      "text": "They were thrilled, we talked for an hour.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "relationship": {
+       "m": 6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They were out. I left a message and felt silly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "m": {
+    "relation": "mother"
+   }
+  }
+ },
+ {
+  "id": "gift.wrong_gift",
+  "icon": "🧦",
+  "title": "The wrong gift",
+  "text": "Your {m.rel} has given you a present with enormous pride. It is an extremely ugly lamp, and they're watching your face.",
+  "conditions": {
+   "age": [
+    10,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Gush",
+    "outcomes": [
+     {
+      "text": "They glowed. I put the lamp in the spare room and told no one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 1
+      },
+      "relationship": {
+       "m": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They wanted to see it in my house. Next visit, I had to prop it up.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "relationship": {
+       "m": 5
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be honest",
+    "outcomes": [
+     {
+      "text": "They laughed and said they hated it too. It was from a church sale.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "relationship": {
+       "m": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They were hurt. It took a while.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "relationship": {
+       "m": -6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Re-gift it",
+    "outcomes": [
+     {
+      "text": "It went to a charity shop. Someone, somewhere, loves it.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It went to my cousin, who gave it back to my mother. A full circle.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "m": {
+    "relation": "mother"
+   }
+  }
+ },
+ {
+  "id": "gift.surprise_party",
+  "icon": "🎉",
+  "title": "Surprise!",
+  "text": "You open the door and thirty people jump out and shout. The balloon string is wrapped around your head.",
+  "conditions": {
+   "age": [
+    16,
+    80
+   ],
+   "chance": 0.25
+  },
+  "choices": [
+   {
+    "label": "Cry happy tears",
+    "outcomes": [
+     {
+      "text": "The best night in years. I won't forget the faces.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was overwhelming and wonderful.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pretend you knew",
+    "outcomes": [
+     {
+      "text": "Nobody believed me. They roared.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They wanted details. I made them up.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide in the bathroom for five minutes",
+    "outcomes": [
+     {
+      "text": "I came out calmer. The party started again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I stayed an hour. They sent a search party.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.expensive_gift",
+  "icon": "💎",
+  "title": "Too much",
+  "text": "Your partner hands you a small box that is obviously from a jeweller you can't afford. 'It's nothing,' they say. It is very much something.",
+  "conditions": {
+   "has_partner": true,
+   "min_money": 0
+  },
+  "choices": [
+   {
+    "label": "Accept warmly",
+    "outcomes": [
+     {
+      "text": "I wore it that night. It meant more than it cost.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I felt guilty about the price. It faded.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say it's too much",
+    "outcomes": [
+     {
+      "text": "They insisted. I gave in.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They were hurt. We had a real talk.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give something back",
+    "outcomes": [
+     {
+      "text": "A handwritten letter. It was my best present.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "A cheap gift. I felt awkward.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.handmade",
+  "icon": "🧶",
+  "title": "Handmade",
+  "text": "A child has pressed something into your hands: a card made of glue, glitter, and the world's most heartfelt spelling mistakes.",
+  "conditions": {
+   "has_children": true,
+   "age": [
+    24,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Put it on the fridge",
+    "outcomes": [
+     {
+      "text": "It stayed there for years. Every glance was a small joy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It fell down, was found years later, and made me cry.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Frame it",
+    "outcomes": [
+     {
+      "text": "A little too much. They loved it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It's on my desk at work. People ask.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say thank you and move on",
+    "outcomes": [
+     {
+      "text": "They nodded. I felt I'd missed a moment.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They were quiet at dinner. I noticed.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.secret_santa",
+  "icon": "🎅",
+  "title": "Secret Santa",
+  "text": "The office draw gave you the person you know least, with a twenty-dollar limit and no hints.",
+  "conditions": {
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Research them",
+    "outcomes": [
+     {
+      "text": "Their desk had a tiny cactus. I bought another. They cried.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "job_perf": 2,
+       "money": -20
+      }
+     },
+     {
+      "text": "I guessed wrong. It was a gift voucher for a shop they hate.",
+      "weight": 1,
+      "effects": {
+       "money": -20,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy chocolate",
+    "outcomes": [
+     {
+      "text": "Nobody dislikes chocolate. Safe and kind.",
+      "weight": 1,
+      "effects": {
+       "money": -15
+      }
+     },
+     {
+      "text": "They were allergic. We both felt dreadful.",
+      "weight": 1,
+      "effects": {
+       "money": -15,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go wild",
+    "outcomes": [
+     {
+      "text": "A ridiculous gift. The whole office loved it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -30,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "It was too much. HR got involved.",
+      "weight": 1,
+      "effects": {
+       "money": -30,
+       "job_perf": -3,
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.inherited_watch",
+  "icon": "⌚",
+  "title": "The old watch",
+  "text": "Your grandparent presses a heavy box into your hand. 'I want you to have this while I can still see your face.' Inside, a watch with a worn leather strap.",
+  "conditions": {
+   "age": [
+    16,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Wear it every day",
+    "outcomes": [
+     {
+      "text": "It kept time like a heartbeat. I thought of them every hour.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It broke a year later. I had it repaired, at some cost, and wore it more carefully.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "money": -150
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put it in a drawer",
+    "outcomes": [
+     {
+      "text": "It's still there. I look at it sometimes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was stolen in a burglary. The loss was larger than the watch.",
+      "weight": 1,
+      "effects": {
+       "happiness": -5,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask about its story",
+    "outcomes": [
+     {
+      "text": "They told me everything. We spent the afternoon together.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was shorter than I'd hoped, but sweet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.flowers_apology",
+  "icon": "💐",
+  "title": "Flowers",
+  "text": "A bunch of flowers arrives at your door with no card. The delivery driver shrugs. 'No name.'",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "chance": 0.4
+  },
+  "choices": [
+   {
+    "label": "Find out who sent them",
+    "outcomes": [
+     {
+      "text": "It was a friend I'd lost touch with. We began to talk again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It was a neighbour with a crush. Awkward, but sweet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enjoy them",
+    "outcomes": [
+     {
+      "text": "They lasted a week and made the room smell wonderful.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They died fast. Mystery remained.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw them out",
+    "outcomes": [
+     {
+      "text": "A bit rude. But I wasn't in the mood.",
+      "weight": 1,
+      "effects": {
+       "karma": -1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I felt bad about it all day.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.bribe_gift",
+  "icon": "🍾",
+  "title": "A gift with strings",
+  "text": "A supplier sends a case of excellent wine to your office, with a note: 'Looking forward to continuing our work together.'",
+  "conditions": {
+   "employed": true,
+   "age": [
+    24,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Send it back",
+    "outcomes": [
+     {
+      "text": "My boss was impressed by the ethics. The supplier was not.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "The supplier took offence and went elsewhere.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share it with the team",
+    "outcomes": [
+     {
+      "text": "A joyful Friday. Nobody talked about the supplier.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 0
+      },
+      "habit": [
+       "drinking",
+       2
+      ]
+     },
+     {
+      "text": "Compliance heard about it and called me in.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it",
+    "outcomes": [
+     {
+      "text": "It was delicious. It also made me a little complicit.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": -3
+      }
+     },
+     {
+      "text": "It came back to bite me during an audit.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "job_perf": -6,
+       "stress": 8
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.generosity_stranger",
+  "icon": "🤲",
+  "title": "Kindness of a stranger",
+  "text": "At the till you've realised your card has declined. Behind you, a man in a hi-vis jacket says, 'I've got this one,' and taps his card.",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "chance": 0.4
+  },
+  "choices": [
+   {
+    "label": "Accept",
+    "outcomes": [
+     {
+      "text": "I thanked him. I paid it forward the next week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I accepted and went red. I've told that story ever since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse politely",
+    "outcomes": [
+     {
+      "text": "I put things back. It was my pride talking.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "He insisted. I gave in.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer to pay back",
+    "outcomes": [
+     {
+      "text": "He gave me his number. We never spoke again.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "He waved it away with a smile.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.lottery_gift",
+  "icon": "🎟️",
+  "title": "A scratch card",
+  "text": "Your {m.rel} presses a scratch card into your palm. 'Just for luck,' they say. You scratch it in the car park with a coin.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ]
+  },
+  "choices": [
+   {
+    "label": "Scratch it now",
+    "outcomes": [
+     {
+      "text": "Fifty dollars! A tiny, joyous jolt.",
+      "weight": 1,
+      "effects": {
+       "money": 50,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Nothing. A delicious little nothing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Save it",
+    "outcomes": [
+     {
+      "text": "I forgot it in a coat pocket. It had expired.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I scratched it at New Year. Twenty dollars.",
+      "weight": 1,
+      "effects": {
+       "money": 20,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it back",
+    "outcomes": [
+     {
+      "text": "They laughed and gave it to someone else. That someone won a hundred dollars.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "They insisted I keep it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "m": {
+    "relation": "father"
+   }
+  }
+ },
+ {
+  "id": "gift.friendship_gift",
+  "icon": "🎒",
+  "title": "Packed for you",
+  "text": "A friend has turned up at your door, out of breath, with a rucksack. 'You said you were stressed. I booked us a weekend. Pack.'",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go",
+    "outcomes": [
+     {
+      "text": "Two days of hills, fish and chips, and nobody asking anything of me. It fixed something.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -8,
+       "money": -60
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It rained the whole time. We laughed, soaked. A glorious mess.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -5,
+       "money": -60
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say you can't",
+    "outcomes": [
+     {
+      "text": "They understood. I felt guilty.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "They went with someone else. I felt the gap.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say yes, then cancel",
+    "outcomes": [
+     {
+      "text": "They were gutted. We both knew it.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "I felt terrible for weeks.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.pet_gift",
+  "icon": "🐶",
+  "title": "A gift with a pulse",
+  "text": "A neighbour has turned up with a cardboard box and an apologetic face. Inside, a puppy that looks like it's already decided to live with you.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "has_pet": false
+  },
+  "choices": [
+   {
+    "label": "Take the puppy",
+    "outcomes": [
+     {
+      "text": "Chewed shoes, 5 a.m. walks, and the best decision I made that year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 3,
+       "money": -150
+      },
+      "gain_pet": "dog"
+     },
+     {
+      "text": "It was tough at first. It became my shadow.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 5,
+       "money": -150
+      },
+      "gain_pet": "dog"
+     }
+    ]
+   },
+   {
+    "label": "Say no",
+    "outcomes": [
+     {
+      "text": "She understood and found it a home.",
+      "weight": 1,
+      "effects": {
+       "karma": 0
+      }
+     },
+     {
+      "text": "I felt sad about it for days.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Think about it",
+    "outcomes": [
+     {
+      "text": "She waited two days. I said yes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -150
+      },
+      "gain_pet": "dog"
+     },
+     {
+      "text": "She gave it to someone else. I saw it in the park. I smiled and hurt.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "gift.gifted_trip",
+  "icon": "🧳",
+  "title": "A ticket",
+  "text": "An envelope on the table contains two flight tickets and a handwritten note from a relative who rarely speaks of feelings: 'Go. Take someone who matters.'",
+  "conditions": {
+   "age": [
+    20,
+    90
+   ],
+   "chance": 0.3
+  },
+  "choices": [
+   {
+    "label": "Take your partner",
+    "outcomes": [
+     {
+      "text": "A week of sun and not much else. Perfect.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "stress": -6
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "We argued about luggage and then forgot why. A lovely memory.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -3
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a friend",
+    "outcomes": [
+     {
+      "text": "A trip we still talk about.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "A trip we still argue about.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sell the tickets",
+    "outcomes": [
+     {
+      "text": "A practical choice. I felt a tiny bit grubby.",
+      "weight": 1,
+      "effects": {
+       "money": 400,
+       "karma": -2
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     },
+     {
+      "text": "The relative found out. It stung.",
+      "weight": 1,
+      "effects": {
+       "money": 400,
+       "karma": -5,
+       "stress": 4
+      },
+      "schedule": {
+       "event": "echo.the_gift_kept",
+       "years": [
+        2,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ }
+]

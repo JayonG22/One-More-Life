@@ -51,6 +51,8 @@ func _money_to_everything() -> void:
 		GameState.player["housing"] = "apartment"
 		Tenancy.sync()
 		Tenancy.st()["rent"] = 8000 if kind == 0 else 30000
+		Tenancy.st()["mates"] = []   # a flatmate would split the rent and hide the difference
+		GameState.player["region"] = Places.regions("us")[0]["id"]   # same city both times, so the cost of living is the same
 		var m0 := int(GameState.player["money"])
 		EventEngine._yearly_finances()
 		if kind == 0:
