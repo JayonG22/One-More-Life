@@ -48,7 +48,7 @@ const SPECIES := {
 }
 
 const ORIGINS := {
-	"loving": {"name": "A loving house", "icon": "🏡", "desc": "Born into, or brought straight to, a warm home. The easy start. Complications arrive later.", "life_mod": 1, "home": "home", "bond": 42, "belonging": 70, "instinct": 25, "hunger": 62, "role": "companion"},
+	"loving": {"name": "A loving house", "icon": "🏡", "desc": "Born into, or brought straight to, a warm home. The easy start. Complications arrive later.", "life_mod": 1, "home": "home", "bond": 30, "belonging": 70, "instinct": 25, "hunger": 62, "role": "companion"},
 	"barn": {"name": "A farm litter", "icon": "🌾", "desc": "Born in straw, used to weather and work. Self-reliant and a little feral about the edges.", "life_mod": 0, "home": "farm", "bond": 24, "belonging": 55, "instinct": 55, "hunger": 52, "role": "companion"},
 	"mill": {"name": "A mill", "icon": "⛓️", "desc": "Born in a breeding operation. Underfed, undersocialised and then, if you are lucky, rescued.", "life_mod": -2, "home": "mill", "bond": 8, "belonging": 15, "instinct": 18, "hunger": 28, "role": "companion"},
 	"shelter": {"name": "A shelter", "icon": "🏢", "desc": "Born into or arrived in a shelter. A queue of kennels and a lot of people walking past.", "life_mod": 0, "home": "shelter", "bond": 16, "belonging": 25, "instinct": 35, "hunger": 50, "role": "companion"},
@@ -271,6 +271,9 @@ func setup(opts: Dictionary) -> void:
 	_birth_story(ok)
 	GameState.counter("life_pet")
 	GameState.counter("pet_" + spk)
+	var ms: Dictionary = Meta.meta.get("pets_species", {})
+	ms[spk] = true
+	Meta.meta["pets_species"] = ms
 
 
 func _birth_story(ok: String) -> void:

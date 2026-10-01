@@ -196,17 +196,27 @@ func _build_title() -> Control:
 	var modes_row := U.hb(10)
 	bv.add_child(modes_row)
 	for md in [
-		["NewLifeBtn", "🧑", "Human Life", "The classic. Be born, grow up, choose, die.", func(): _open_new_life(), true],
-		["PetsBtn", "🐾", "Pets Life", "Live as a dog, cat, rabbit, parrot or horse.", func(): _open_pet_setup(), true],
-		["PrisonBtn", "⛓️", "Prison Life", "Prisoner or guard. Ranks, gangs, a jailbreak. Arrives in v1.2.", func(): _show_info("⛓️", "Prison Life", "Prison Life is the next game mode: serve a sentence or work the walls as a guard, with ranks, gangs, contraband, parole and a jailbreak.\n\nIt arrives in version 1.2.", {}), false],
+		["NewLifeBtn", "🧑", "Human Life", "The classic. Be born, grow up, choose, die.", func(): _open_new_life(), true, Color("#34c759")],
+		["PetsBtn", "🐾", "Pets Life", "Live as a dog, cat, rabbit, parrot or horse.", func(): _open_pet_setup(), true, Color("#4a90ff")],
+		["PrisonBtn", "⛓️", "Prison Life", "Prisoner or guard. Arrives in v1.2.", func(): _show_info("⛓️", "Prison Life", "Prison Life is the next game mode: serve a sentence or work the walls as a guard, with ranks, gangs, contraband, parole and a jailbreak.\n\nIt arrives in version 1.2.", {}), false, Color("#ff5a5f")],
 	]:
-		var card := U.btn("", md[5], "Accent" if md[0] == "NewLifeBtn" else "Primary")
+		var card := U.btn("", md[4], "Row")
 		card.name = md[0]
-		card.custom_minimum_size = Vector2(0, 150)
+		card.custom_minimum_size = Vector2(0, 176)
 		card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		card.tooltip_text = "%s: %s" % [md[2], md[3]]
-		var cv := U.vb(2)
+		var strip := ColorRect.new()
+		strip.color = md[6]
+		strip.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
+		strip.custom_minimum_size = Vector2(0, 6)
+		strip.size = Vector2(0, 6)
+		strip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		card.add_child(strip)
+		var cv := U.vb(4)
 		cv.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		cv.offset_left = 8
+		cv.offset_right = -8
+		cv.offset_top = 14
 		cv.alignment = BoxContainer.ALIGNMENT_CENTER
 		cv.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var ci := U.lbl(md[1], "Emoji", 44)
@@ -215,15 +225,16 @@ func _build_title() -> Control:
 		cv.add_child(ci)
 		var cn := U.lbl(md[2], "Bold", 20)
 		cn.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		cn.add_theme_color_override("font_color", md[6].lightened(0.25))
 		cn.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		cv.add_child(cn)
-		var cd := U.lbl(md[3], "Dim", 12, true)
+		var cd := U.lbl(md[3], "", 13, true)
 		cd.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		cd.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		cv.add_child(cd)
 		card.add_child(cv)
-		if not md[4]:
-			card.modulate = Color(1, 1, 1, 0.62)
+		if not md[5]:
+			card.modulate = Color(1, 1, 1, 0.7)
 		modes_row.add_child(card)
 	var sep := HSeparator.new()
 	bv.add_child(sep)
@@ -2466,7 +2477,7 @@ func _fill_death(entry: Dictionary) -> void:
 	var card_lines: Array = [["Age", str(entry["age"])], ["Born", str(entry["born"])], ["Died", str(entry["died"])], ["Cause of Death", str(entry["cause"]).capitalize()], ["Occupation", str(entry["occupation"])], ["Net Worth", GameState.fmt_money(int(entry["net_worth"]))]]
 	if entry.has("pet"):
 		var pe: Dictionary = entry["pet"]
-		card_lines = [["Age", str(entry["age"])], ["Born", str(entry["born"])], ["Died", str(entry["died"])], ["Cause of Death", str(entry["cause"]).capitalize()], ["Kind", "%s · %s" % [str(pe.get("breed", "")), str(pe.get("species", "")).capitalize()]], ["Started", str(pe.get("origin", ""))], ["Calling", str(entry.get("occupation", ""))], ["Loved by", str(pe.get("owner", "")) + " " + str(pe.get("house", ""))]]
+		card_lines = [["Age", str(entry["age"])], ["Born", str(entry["born"])], ["Died", str(entry["died"])], ["Cause of Death", str(entry["cause"]).capitalize()], ["Kind", "%s · %s" % [str(pe.get("breed", "")), str(pe.get("species", "")).capitalize()]], ["Started", str(pe.get("origin", ""))], ["Calling", str(entry.get("occupation", ""))], ["Loved by", (str(pe.get("owner", "")) + " " + str(pe.get("house", ""))).strip_edges() if str(pe.get("owner", "")) != "" else "No one in particular"]]
 	for line in card_lines:
 		var hh := U.hb()
 		hh.add_child(U.lbl(line[0] + ":", "Bold", 17))

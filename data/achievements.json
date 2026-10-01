@@ -392,31 +392,6 @@
   "hidden": true
  },
  {
-  "id": "pets_1",
-  "cat": "family",
-  "tier": "bronze",
-  "icon": "🐾",
-  "name": "Best Friend",
-  "desc": "Have 1 pet(s).",
-  "req": {
-   "pets": 1
-  }
- },
- {
-  "id": "pets_2",
-  "cat": "family",
-  "tier": "silver",
-  "icon": "🐾",
-  "name": "Animal Lover",
-  "desc": "Have 4 pet(s).",
-  "req": {
-   "pets": 4
-  },
-  "needs": [
-   "pets_1"
-  ]
- },
- {
   "id": "gen_1",
   "cat": "family",
   "tier": "silver",
@@ -4191,6 +4166,400 @@
    "ending_unmasked_fall": 1
   },
   "v": 17,
+  "hidden": true
+ },
+ {
+  "id": "pets_first",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🐾",
+  "name": "Four Legs, Two Wings or Both",
+  "desc": "Start a Pets Life.",
+  "req": {
+   "life_pet": 1
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_dog",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🐕",
+  "name": "Dog Years",
+  "desc": "Live eight years as a dog.",
+  "req": {
+   "pet_dog": 1,
+   "pet_years": 8
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_cat",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🐈",
+  "name": "Nine Lives, Roughly",
+  "desc": "Live nine years as a cat.",
+  "req": {
+   "pet_cat": 1,
+   "pet_years": 9
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_rabbit",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🐇",
+  "name": "Binky",
+  "desc": "Live six years as a rabbit.",
+  "req": {
+   "pet_rabbit": 1,
+   "pet_years": 6
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_parrot",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🦜",
+  "name": "Longer Than Anyone Expected",
+  "desc": "Live twenty-five years as a parrot.",
+  "req": {
+   "pet_parrot": 1,
+   "pet_years": 25
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_horse",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🐎",
+  "name": "Long in the Tooth",
+  "desc": "Live twenty years as a horse.",
+  "req": {
+   "pet_horse": 1,
+   "pet_years": 20
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_old",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🕰️",
+  "name": "A Very Old Friend",
+  "desc": "Reach the age of 15.",
+  "req": {
+   "age": 15
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_adopted",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🏠",
+  "name": "Chosen",
+  "desc": "Be taken home by someone who wanted you.",
+  "req": {
+   "pet_adopted": 1
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_rescued",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🩹",
+  "name": "Out of the Mill",
+  "desc": "Be rescued from a breeding mill.",
+  "req": {
+   "pet_rescued": 1
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_found",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🧭",
+  "name": "Home by Dark",
+  "desc": "Be found after being lost.",
+  "req": {
+   "pet_found": 1
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_rehomed",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "💔",
+  "name": "Given Up, Not Given In",
+  "desc": "Be rehomed, and still find a home again.",
+  "req": {
+   "pet_rehomed": 1,
+   "pet_adopted": 2
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_heroics1",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🎖️",
+  "name": "Good One",
+  "desc": "Do something brave.",
+  "req": {
+   "pet_heroics": 1
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_heroics3",
+  "cat": "pets",
+  "tier": "gold",
+  "icon": "🏅",
+  "name": "Local Hero",
+  "desc": "Do three brave things in one life.",
+  "req": {
+   "pet_heroics": 3
+  },
+  "mode": "pet",
+  "v": 19,
+  "needs": [
+   "pets_heroics1"
+  ]
+ },
+ {
+  "id": "pets_tricks5",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🎓",
+  "name": "Smart Cookie",
+  "desc": "Learn five tricks.",
+  "req": {
+   "pet_tricks": 5
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_tricks8",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🎩",
+  "name": "Showman",
+  "desc": "Learn eight tricks.",
+  "req": {
+   "pet_tricks": 8
+  },
+  "mode": "pet",
+  "v": 19,
+  "needs": [
+   "pets_tricks5"
+  ]
+ },
+ {
+  "id": "pets_titles1",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🏆",
+  "name": "Best in Class",
+  "desc": "Win a show.",
+  "req": {
+   "pet_titles": 1
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_titles3",
+  "cat": "pets",
+  "tier": "gold",
+  "icon": "🥇",
+  "name": "Champion of Champions",
+  "desc": "Win three shows in one life.",
+  "req": {
+   "pet_titles": 3
+  },
+  "mode": "pet",
+  "v": 19,
+  "needs": [
+   "pets_titles1"
+  ]
+ },
+ {
+  "id": "pets_friends",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🐾",
+  "name": "Social Animal",
+  "desc": "Make five friends of your own.",
+  "req": {
+   "pet_friends": 5
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_visits",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "💞",
+  "name": "The Therapy Animal",
+  "desc": "Make five therapy visits.",
+  "req": {
+   "pet_visits": 5
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_shifts",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🪢",
+  "name": "A Day's Work",
+  "desc": "Work ten shifts.",
+  "req": {
+   "pet_shifts": 10
+  },
+  "mode": "pet",
+  "v": 19
+ },
+ {
+  "id": "pets_end_best_friend",
+  "cat": "pets",
+  "tier": "gold",
+  "icon": "💞",
+  "name": "Best Friend",
+  "desc": "End a life as somebody's whole world.",
+  "req": {
+   "ending_pet_best_friend": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_end_hero",
+  "cat": "pets",
+  "tier": "gold",
+  "icon": "🎖️",
+  "name": "A Hero",
+  "desc": "End a life as a hero.",
+  "req": {
+   "ending_pet_hero": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_end_champion",
+  "cat": "pets",
+  "tier": "gold",
+  "icon": "🏆",
+  "name": "Best in Show",
+  "desc": "End a life as a champion.",
+  "req": {
+   "ending_pet_champion": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_end_stray_king",
+  "cat": "pets",
+  "tier": "gold",
+  "icon": "👑",
+  "name": "Lord of the Alley",
+  "desc": "End a life as the king of the street.",
+  "req": {
+   "ending_pet_stray_king": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_end_sunbeam",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "☀️",
+  "name": "A Long, Warm Life",
+  "desc": "End a life old, loved and in the sun.",
+  "req": {
+   "ending_pet_sunbeam": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_end_lost",
+  "cat": "pets",
+  "tier": "silver",
+  "icon": "🧭",
+  "name": "Never Came Home",
+  "desc": "Be lost and never found.",
+  "req": {
+   "ending_pet_lost": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_end_good",
+  "cat": "pets",
+  "tier": "bronze",
+  "icon": "🐾",
+  "name": "A Good Life",
+  "desc": "Have a short, good life.",
+  "req": {
+   "ending_pet_good": 1
+  },
+  "mode": "pet",
+  "v": 19,
+  "hidden": true,
+  "at_death": true
+ },
+ {
+  "id": "pets_all_species",
+  "cat": "pets",
+  "tier": "platinum",
+  "icon": "🌈",
+  "name": "Every Kind",
+  "desc": "Live a life as each of the five animals.",
+  "req": {
+   "species_lived": 5
+  },
+  "mode": "pet",
+  "v": 19,
   "hidden": true
  }
 ]

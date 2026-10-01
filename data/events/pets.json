@@ -2731,6 +2731,13 @@
        "instinct": 3,
        "bond": -1,
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -2743,6 +2750,13 @@
       "pet": {
        "instinct": 3,
        "territory": 2
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -2759,6 +2773,13 @@
       "pet": {
        "hunger": 3,
        "belonging": 2
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -2770,6 +2791,13 @@
       },
       "pet": {
        "instinct": 1
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -2785,6 +2813,13 @@
       },
       "pet": {
        "instinct": 4
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -2796,6 +2831,13 @@
       "pet": {
        "instinct": 2,
        "obedience": 2
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3059,6 +3101,13 @@
       "pet": {
        "fitness": 4,
        "instinct": 3
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3072,6 +3121,13 @@
        "instinct": 4,
        "bond": -3,
        "escapes": 1
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3088,6 +3144,13 @@
       "pet": {
        "instinct": 5,
        "obedience": 3
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3098,6 +3161,13 @@
       },
       "pet": {
        "obedience": 3
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3114,6 +3184,13 @@
       "pet": {
        "belonging": 2,
        "instinct": 1
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3121,6 +3198,13 @@
       "weight": 1,
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "pl.f.postie",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3373,6 +3457,13 @@
        "instinct": 5,
        "hunger": 2,
        "bond": 1
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3385,6 +3476,13 @@
       "pet": {
        "instinct": 5,
        "bond": -1
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3402,6 +3500,13 @@
       "pet": {
        "instinct": 3,
        "fitness": 3
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3413,6 +3518,13 @@
       },
       "pet": {
        "instinct": 4
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3429,6 +3541,13 @@
       },
       "pet": {
        "instinct": 1
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3439,6 +3558,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3482,6 +3608,13 @@
       "pet": {
        "territory": 6,
        "instinct": 3
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3494,6 +3627,13 @@
       "pet": {
        "territory": 3,
        "rival": true
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3511,6 +3651,13 @@
        "hunger": -3,
        "belonging": 2,
        "befriend": "cat"
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3523,6 +3670,13 @@
        "hunger": -6,
        "instinct": 1,
        "befriend": "cat"
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3539,6 +3693,13 @@
       "pet": {
        "territory": 4,
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3550,6 +3711,13 @@
       "pet": {
        "instinct": 3,
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3592,6 +3760,13 @@
       },
       "pet": {
        "bond": 2
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3603,6 +3778,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3619,6 +3801,13 @@
       "pet": {
        "instinct": 5,
        "territory": 3
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3632,6 +3821,13 @@
        "instinct": 6,
        "hunger": 3,
        "bond": -2
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3647,6 +3843,13 @@
       },
       "pet": {
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -3658,6 +3861,13 @@
       "pet": {
        "mischief": 1,
        "bond": -1
+      },
+      "schedule": {
+       "event": "pl.f.garden_quiet",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -3811,6 +4021,13 @@
        "instinct": -1,
        "means": -3,
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -3823,6 +4040,13 @@
        "mischief": 1,
        "bond": -1,
        "means": -2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -3838,6 +4062,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -3848,6 +4079,13 @@
       },
       "pet": {
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -3864,6 +4102,13 @@
       "pet": {
        "bond": 4,
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -3874,6 +4119,13 @@
       },
       "pet": {
        "bond": 2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -3916,6 +4168,13 @@
       },
       "pet": {
        "fitness": 5
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -3926,6 +4185,13 @@
       },
       "pet": {
        "fitness": 4
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -3942,6 +4208,13 @@
       "pet": {
        "territory": 6,
        "escapes": 1
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -3954,6 +4227,13 @@
        "territory": 4,
        "escapes": 1,
        "bond": 1
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -3970,6 +4250,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -3980,6 +4267,13 @@
       },
       "pet": {
        "instinct": 3
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4022,6 +4316,13 @@
       },
       "pet": {
        "instinct": 4
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4033,6 +4334,13 @@
       "pet": {
        "bond": 5,
        "instinct": 3
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4051,6 +4359,13 @@
        "bond": 4,
        "instinct": 3,
        "heroics": 1
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4062,6 +4377,13 @@
       },
       "pet": {
        "instinct": 3
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4077,6 +4399,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4085,6 +4414,13 @@
       "effects": {
        "stress": 6,
        "health": -2
+      },
+      "schedule": {
+       "event": "pl.f.hutch",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4129,6 +4465,13 @@
        "mischief": 1,
        "bond": -2,
        "mood": -3
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4140,6 +4483,13 @@
       "pet": {
        "bond": 1,
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4155,6 +4505,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4165,6 +4522,13 @@
       },
       "pet": {
        "instinct": 1
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4181,6 +4545,13 @@
       "pet": {
        "bond": 4,
        "obedience": 2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4192,6 +4563,13 @@
       "pet": {
        "mischief": 1,
        "bond": 1
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4237,6 +4615,13 @@
        "territory": 8,
        "escapes": 1,
        "bond": 3
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4250,6 +4635,13 @@
        "territory": 6,
        "escapes": 1,
        "bond": -1
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4265,6 +4657,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4276,6 +4675,13 @@
       "pet": {
        "instinct": 2,
        "belonging": 1
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4292,6 +4698,13 @@
       "pet": {
        "obedience": 3,
        "bond": 2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4302,6 +4715,13 @@
       },
       "pet": {
        "bond": 1
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4348,6 +4768,13 @@
       "pet": {
        "bond": 5,
        "means": -2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4359,6 +4786,13 @@
       },
       "pet": {
        "bond": 3
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4376,6 +4810,13 @@
       },
       "pet": {
        "bond": -2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4384,6 +4825,13 @@
       "effects": {
        "stress": 5,
        "looks": -5
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4400,6 +4848,13 @@
       },
       "pet": {
        "mood": -4
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -4411,6 +4866,13 @@
       "pet": {
        "mood": -6,
        "bond": -2
+      },
+      "schedule": {
+       "event": "pl.f.echo_word",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4454,6 +4916,13 @@
       "pet": {
        "obedience": 5,
        "bond": 3
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4465,6 +4934,13 @@
       },
       "pet": {
        "obedience": 4
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4481,6 +4957,13 @@
       "pet": {
        "bond": 2,
        "mischief": 1
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4491,6 +4974,13 @@
       },
       "pet": {
        "obedience": -1
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4507,6 +4997,13 @@
       "pet": {
        "obedience": -4,
        "bond": -2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4517,6 +5014,13 @@
       },
       "pet": {
        "obedience": -2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4561,6 +5065,13 @@
        "fitness": 3,
        "bond": -2,
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4572,6 +5083,13 @@
       "pet": {
        "bond": 2,
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4590,6 +5108,13 @@
        "obedience": 4,
        "instinct": 3,
        "bond": 3
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4601,6 +5126,13 @@
       "pet": {
        "obedience": 3,
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4617,6 +5149,13 @@
       "pet": {
        "bond": 5,
        "obedience": 3
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4627,6 +5166,13 @@
       },
       "pet": {
        "bond": 4
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4671,6 +5217,13 @@
        "territory": 8,
        "escapes": 1,
        "bond": -2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4683,6 +5236,13 @@
       "pet": {
        "territory": 5,
        "escapes": 1
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4701,6 +5261,13 @@
        "escapes": 1,
        "mischief": 1,
        "befriend": "horse"
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4712,6 +5279,13 @@
       },
       "pet": {
        "obedience": 2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4727,6 +5301,13 @@
       },
       "pet": {
        "obedience": 2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4737,6 +5318,13 @@
       },
       "pet": {
        "instinct": 2
+      },
+      "schedule": {
+       "event": "pl.f.rider",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -6211,6 +6799,13 @@
       "pet": {
        "bond": 2,
        "fitness": 2
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -6222,6 +6817,13 @@
       },
       "pet": {
        "bond": 3
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -6238,6 +6840,13 @@
       },
       "pet": {
        "bond": 6
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -6248,6 +6857,13 @@
       },
       "pet": {
        "bond": 7
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -6264,6 +6880,13 @@
       },
       "pet": {
        "belonging": 4
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -6275,6 +6898,13 @@
       "pet": {
        "bond": 3,
        "obedience": -1
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -6319,6 +6949,13 @@
       "pet": {
        "bond": 5,
        "territory": 6
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -6330,6 +6967,13 @@
       "pet": {
        "bond": 6,
        "fitness": 3
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -6346,6 +6990,13 @@
       },
       "pet": {
        "bond": 6
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -6357,6 +7008,13 @@
       },
       "pet": {
        "bond": 5
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -6373,6 +7031,13 @@
       },
       "pet": {
        "hunger": 14
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -6384,6 +7049,13 @@
       "pet": {
        "hunger": 10,
        "bond": 4
+      },
+      "schedule": {
+       "event": "pl.f.last_vet",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -7644,6 +8316,643 @@
   ],
   "weight": 1,
   "followup_only": true
+ },
+ {
+  "id": "pl.f.postie",
+  "icon": "📮",
+  "title": "The new postie",
+  "text": "The Man Who Comes Every Day has gone. Someone new is coming up the path, with the same bag and a different walk. The whole street smells of change.",
+  "conditions": {
+   "age": [
+    0,
+    90
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Accept the replacement",
+    "outcomes": [
+     {
+      "text": "I gave them the full ritual, from the gate to the doormat. They put their hand through the letterbox, and I licked it. We have an understanding.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "belonging": 2,
+       "instinct": 1
+      }
+     },
+     {
+      "text": "It took three weeks, a lot of biscuits and a very cautious greeting at the gate. We are friends now. It's not the same, but it's good.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "obedience": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for the old one",
+    "outcomes": [
+     {
+      "text": "I waited every morning at the door for months. Then, one day, I stopped. I don't know why. I never stopped loving him.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      },
+      "pet": {
+       "bond": 1
+      }
+     },
+     {
+      "text": "I waited at the gate, and one winter morning he came, in a coat, on a bike, off duty, with a bag of treats. We looked at each other, and it was enough.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pet": {
+       "belonging": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bark at them for a year",
+    "outcomes": [
+     {
+      "text": "I barked at the new one daily for twelve months. Slowly, the barks became a greeting. Eventually, a sort of fond complaint.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "instinct": 2,
+       "obedience": -1
+      }
+     },
+     {
+      "text": "I made it quite clear that they were not welcome, and they left the post at the end of the road. A neighbour had to bring it up.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "pet": {
+       "territory": 3,
+       "bond": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.f.garden_quiet",
+  "icon": "🌱",
+  "title": "The quiet garden",
+  "text": "The garden has gone quiet. The birds, the mice, the small things I used to watch have gone somewhere else, or I've gotten slower, or both.",
+  "conditions": {
+   "age": [
+    0,
+    90
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Look for them",
+    "outcomes": [
+     {
+      "text": "I walked the whole garden, the fence and the hedge. A single starling watched me from the shed. We both understood a great deal.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "territory": 4,
+       "instinct": 2
+      }
+     },
+     {
+      "text": "I found a whole new corner of the garden, under the rhubarb, and stayed there a month.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "territory": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make my peace with it",
+    "outcomes": [
+     {
+      "text": "I took the best spot in the sun and watched the empty lawn, as a king watches a quiet kingdom.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -4
+      },
+      "pet": {
+       "belonging": 3
+      }
+     },
+     {
+      "text": "I slept through the spring. I'd never done that before. I woke up in the summer, and it was lovely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go further",
+    "outcomes": [
+     {
+      "text": "I crossed two gardens and a lane, and found a place where everything was happening. I became a regular.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "territory": 8,
+       "instinct": 3,
+       "escapes": 1
+      }
+     },
+     {
+      "text": "I went too far and had to be fetched home from a stranger's shed. It was worth it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 3
+      },
+      "pet": {
+       "territory": 6,
+       "escapes": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.f.hutch",
+  "icon": "🏡",
+  "title": "The new run",
+  "text": "There's a new thing in the garden. It's a wire tunnel with a little roof, and a door, and a pile of hay at the far end. {o.first} is holding the door open with a face like Christmas.",
+  "conditions": {
+   "age": [
+    0,
+    90
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go in at once",
+    "outcomes": [
+     {
+      "text": "I ran in, straight to the end, and did a binky so big that I hit the roof. It's the best thing that has ever been built for me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "pet": {
+       "fitness": 4,
+       "bond": 4
+      }
+     },
+     {
+      "text": "I went in with my nose first, then my ears, then the rest. It's tall enough to stand up in. I did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "pet": {
+       "fitness": 3,
+       "bond": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Inspect it, thoroughly",
+    "outcomes": [
+     {
+      "text": "I tested every wire, every join and every corner. I found one weakness, and made it known. {o.first} fixed it that evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "instinct": 4,
+       "bond": 3
+      }
+     },
+     {
+      "text": "I took three days to enter it. Every inch had to be smelled. It's an excellent run, and I'm told I was very rude about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "instinct": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Dig out of it",
+    "outcomes": [
+     {
+      "text": "The base was cement. I dug for an hour, then gave up, and sat in the middle of the run and sulked.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      },
+      "pet": {
+       "mischief": 1
+      }
+     },
+     {
+      "text": "It had no floor. By morning, I was at the other end of the garden, grinning.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "territory": 5,
+       "escapes": 1,
+       "mischief": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.f.echo_word",
+  "icon": "🔁",
+  "title": "The word comes back",
+  "text": "A new visitor has just rung the bell. Before {o.first} can get to the door, a voice from the hall says, in {o.first}'s exact tone: 'You're late.' It is my voice.",
+  "conditions": {
+   "age": [
+    0,
+    90
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Say it again, louder",
+    "outcomes": [
+     {
+      "text": "The visitor was delighted. I was told to say it to every guest for the rest of the year. I did. I was a hit.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pet": {
+       "bond": 2,
+       "mischief": 1
+      }
+     },
+     {
+      "text": "I said it again, and again, and again. By Thursday, everyone in the house had stopped finding it funny. I hadn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2
+      },
+      "pet": {
+       "mood": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say something new",
+    "outcomes": [
+     {
+      "text": "I said 'good morning' at midnight. I said 'the kettle's on' to an empty room. I had a whole range of material, and I used it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "instinct": 3
+      }
+     },
+     {
+      "text": "I did the microwave, then the phone. A visitor looked around for the source. I've never been so pleased.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "instinct": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go quiet",
+    "outcomes": [
+     {
+      "text": "I sat on my perch and said nothing at all for three weeks. {o.first} became very concerned. I'd made my point, and I was very comfortable.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "bond": 3
+      }
+     },
+     {
+      "text": "I went quiet, and then the house went quiet too. I realised I was the only one who made a noise in it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      },
+      "pet": {
+       "bond": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.f.rider",
+  "icon": "🧒",
+  "title": "A child on my back",
+  "text": "A child is standing at the gate with a hard hat and a carrot. They look small, serious and determined. {o.first} is saying 'gently, now' in a voice that isn't for me.",
+  "conditions": {
+   "age": [
+    0,
+    90
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stand still and let them climb up",
+    "outcomes": [
+     {
+      "text": "I stood like a statue, and the child scrambled on to my back. I walked, slowly, around the paddock. When the lesson was over, they put their face in my mane and said my name.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "pet": {
+       "bond": 8,
+       "obedience": 3
+      }
+     },
+     {
+      "text": "I stood still, and they got on. It was a long, slow, careful hour. It's the best thing I've ever done.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "stress": -3
+      },
+      "pet": {
+       "bond": 7,
+       "obedience": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Test them",
+    "outcomes": [
+     {
+      "text": "I took one step to the left, to see what they'd do. They did the right thing. I've never respected anyone so much.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "obedience": 2,
+       "bond": 4
+      }
+     },
+     {
+      "text": "I walked a little faster than I was asked. They said 'whoa' in a very small voice, and I stopped. We've been friends ever since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "bond": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a break for it",
+    "outcomes": [
+     {
+      "text": "I went across the paddock, round the pond and into the lane. They held on. When I stopped, they were beaming. {o.first} was grey.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 3
+      },
+      "pet": {
+       "fitness": 4,
+       "bond": -2,
+       "escapes": 1
+      }
+     },
+     {
+      "text": "I bolted. They fell off, into the soft grass. Nobody was hurt, and I was made to stand in the corner for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      },
+      "pet": {
+       "bond": -4,
+       "obedience": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.f.last_vet",
+  "icon": "🕯️",
+  "title": "The long appointment",
+  "text": "It is a short drive, in the evening. {o.first} is carrying me from the car and talking quietly, and I recognise the smell of the building. It's the vet's. The light is gentler than usual.",
+  "conditions": {
+   "age": [
+    0,
+    90
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Press against them",
+    "outcomes": [
+     {
+      "text": "I put my whole weight into their chest and they held me. They said all the things they'd been saving. I understood the tone, if not the words. I wasn't frightened.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -6
+      },
+      "pet": {
+       "bond": 8
+      }
+     },
+     {
+      "text": "I looked at them, the whole time. They looked at me. It was the whole of what we'd had, in a minute.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -5
+      },
+      "pet": {
+       "bond": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be brave for them",
+    "outcomes": [
+     {
+      "text": "I held my head up and thumped my tail once, twice, on the table. I wanted them to know that it was all right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "bond": 6,
+       "heroics": 0
+      }
+     },
+     {
+      "text": "I licked their hand, which was wet. I wasn't sure why. I don't mind.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "bond": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look for the sun",
+    "outcomes": [
+     {
+      "text": "The window had a square of late sun in it. I looked at it, and it was warm, and I thought of every place I'd ever been warm.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -8
+      },
+      "pet": {
+       "belonging": 5
+      }
+     },
+     {
+      "text": "There was a smell of cut grass from somewhere. I closed my eyes. I was in the field again, young and fast, and the whole day was ahead.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -8
+      },
+      "pet": {
+       "belonging": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
  },
  {
   "id": "arc.pet.1",

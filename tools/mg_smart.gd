@@ -14,7 +14,7 @@ func _ready() -> void:
 	seed(5)
 	GameState.new_life({"gender": "male", "country": "us"})
 	ids = Minigames.DEFS.keys()
-	ids = ids + ids + ["infiltrate", "infiltrate", "escape", "escape", "escape", "burglary", "burglary", "burglary", "minefield", "minefield"]
+	ids = ids + ids + ["infiltrate", "infiltrate", "escape", "escape", "escape", "burglary", "burglary", "burglary", "minefield", "minefield", "blackjack", "blackjack", "blackjack", "blackjack"]
 	Engine.time_scale = 2.0
 	_next()
 
