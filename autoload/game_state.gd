@@ -891,6 +891,9 @@ func finalize_death(cause: String) -> Dictionary:
 	if not ending.is_empty():
 		entry["ending"] = ending
 		entry["story"] = str(entry["story"]) + "\n" + str(ending["text"])
+	var sd: Dictionary = Seeded.evaluate(entry)
+	if not sd.is_empty():
+		entry["seeded"] = sd
 	player["legacy"] = entry
 	changed.emit()
 	return entry

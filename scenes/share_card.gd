@@ -55,6 +55,9 @@ static func share_text(entry: Dictionary) -> String:
 	out.append("Age %d, %d–%d. %s" % [int(entry.get("age", 0)), int(entry.get("born", 0)), int(entry.get("died", 0)), str(entry.get("cause", ""))])
 	if not e.is_empty():
 		out.append("“%s”" % str(e.get("epitaph", "")))
+	var sd: Dictionary = entry.get("seeded", {})
+	if not sd.is_empty():
+		out.append("%s %s %s — %s (score %d)" % ["Daily" if sd["kind"] == "daily" else "Weekly", str(sd["key"]), str(sd["goal"]), "goal met" if sd["met"] else "goal missed", int(sd["score"])])
 	for h in highlights(entry):
 		out.append("• " + str(h))
 	return "\n".join(out)

@@ -18,6 +18,7 @@ func _ready() -> void:
 	_endings_log()
 	_share()
 	_legacy()
+	_seeded()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -97,3 +98,36 @@ func _legacy() -> void:
 	GameState.new_life({"gender": "male", "country": "us", "keep_family": true})
 	ok(Legacy.pending().size() == before, "an heir consumed an echo")
 	print("  legacy: echoes recorded, picked up once in every mode, never by an heir")
+
+
+func _seeded() -> void:
+	for kind in ["daily", "weekly"]:
+		for i in range(100, 160):
+			var a: Dictionary = Seeded.spec(kind, i)
+			var b: Dictionary = Seeded.spec(kind, i)
+			ok(JSON.stringify(a) == JSON.stringify(b), "%s spec %d is not deterministic" % [kind, i])
+			ok(Seeded.describe(a) != "", "no description for %s %d" % [kind, i])
+	var modes := {}
+	for i in range(0, 40):
+		modes[Seeded.spec("daily", i)["mode"]] = true
+	ok(modes.size() == 4, "daily seeds cover %d modes" % modes.size())
+	# every mode starts, plays a few years and is scored
+	for m in Seeded.MODES:
+		var idx := 0
+		while str(Seeded.spec("daily", idx)["mode"]) != m:
+			idx += 1
+		var sp: Dictionary = Seeded.spec("daily", idx)
+		var first := ""
+		for pass_i in 2:
+			seed(int(sp["seed"]))
+			var opts := {}
+			Seeded.start("daily")
+			if pass_i == 0:
+				first = str(GameState.player["name"]) if GameState.player.has("name") else ""
+		ok(Seeded.active(), "seeded life not flagged active (%s)" % m)
+		ok(Seeded.status_line() != "", "no status line (%s)" % m)
+		GameState.player["age"] = 40
+		var e: Dictionary = GameState.finalize_death("test")
+		ok(e.has("seeded") and int(e["seeded"]["score"]) >= 400, "death not scored (%s)" % m)
+		ok(preload("res://scenes/share_card.gd").share_text(e).find(str(e["seeded"]["key"])) != -1, "share text lacks the seeded day (%s)" % m)
+	print("  seeded: specs deterministic, all four modes start and score")

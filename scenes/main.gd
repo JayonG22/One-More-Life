@@ -238,7 +238,7 @@ func _build_title() -> Control:
 		modes_row.add_child(card)
 	var sep := HSeparator.new()
 	bv.add_child(sep)
-	for item in [["⏯️", "Continue Life", _continue_life, "ContinueBtn"], ["📂", "Your Lives", func(): SP.show_lives(), "LivesBtn"], ["🎁", "Daily Heirloom", func(): SP.show_heirloom(), "HeirBtn"], ["🏆", "Trophy Room", _show_trophies, "TrophyBtn"], ["🎯", "Missions", _show_missions, "MissionBtn"], ["⭐", "Star Shop", _show_star_shop, "StarBtn"], ["⚙️", "Settings", _show_settings_popup, ""], ["🎨", "Theme", _cycle_theme_title, "ThemeBtn"], ["🪦", "Graveyard", func(): _open_graveyard(), ""], ["🚪", "Quit", func(): get_tree().quit(), ""]]:
+	for item in [["⏯️", "Continue Life", _continue_life, "ContinueBtn"], ["📅", Seeded.label("daily"), func(): _start_seeded("daily"), "DailyBtn"], ["🗓️", Seeded.label("weekly"), func(): _start_seeded("weekly"), "WeeklyBtn"], ["📂", "Your Lives", func(): SP.show_lives(), "LivesBtn"], ["🎁", "Daily Heirloom", func(): SP.show_heirloom(), "HeirBtn"], ["🏆", "Trophy Room", _show_trophies, "TrophyBtn"], ["🎯", "Missions", _show_missions, "MissionBtn"], ["⭐", "Star Shop", _show_star_shop, "StarBtn"], ["⚙️", "Settings", _show_settings_popup, ""], ["🎨", "Theme", _cycle_theme_title, "ThemeBtn"], ["🪦", "Graveyard", func(): _open_graveyard(), ""], ["🚪", "Quit", func(): get_tree().quit(), ""]]:
 		var b := U.icon_btn(item[0], item[1], item[2], "Row", false, 24, 18)
 		b.custom_minimum_size = Vector2(0, 52)
 		if item[3] != "":
@@ -261,6 +261,10 @@ func _refresh_title() -> void:
 	var hb := t.find_child("HeirBtn", true, false) as Button
 	if hb:
 		hb.get_meta("label").text = "Daily Heirloom" + ("  ·  ready to open!" if Goals.daily_available() else "  ·  next in " + Goals.fmt_left(Goals.seconds_left("daily")))
+	for sk in ["daily", "weekly"]:
+		var sb := t.find_child("DailyBtn" if sk == "daily" else "WeeklyBtn", true, false) as Button
+		if sb:
+			sb.get_meta("label").text = Seeded.label(sk)
 	var tb := t.find_child("ThemeBtn", true, false) as Button
 	if tb:
 		tb.get_meta("label").text = "Theme: " + ThemeManager.LABELS[ThemeManager.current]
@@ -392,6 +396,18 @@ func _start_pet() -> void:
 	last_stats.clear()
 	SaveManager.save_game()
 	_show("game")
+
+
+func _start_seeded(kind: String) -> void:
+	if not SaveManager.begin_new_life():
+		_show_info("💾", "No free save slot", SaveManager.last_error, {})
+		return
+	Seeded.start(kind)
+	panel_stack.clear()
+	last_stats.clear()
+	SaveManager.save_game()
+	_show("game")
+	_toast("🎯", "Goal", str(GameState.player["seeded"]["goal"]["text"]), ThemeManager.c("gold"))
 
 
 # ================================================================= LEGACY
@@ -1275,7 +1291,7 @@ func _refresh_side_mode() -> void:
 		g["traits"].add_child(chip)
 	g["home"].text = str(md.home_text())
 	g["fin"].text = str(md.fin_text())
-	g["extra"].text = str(md.extra_text())
+	g["extra"].text = (str(md.extra_text()) + "\n" + Seeded.status_line()).strip_edges()
 	var tleft: int = p["time_left"]
 	g["time_lbl"].text = "Time %d/%d" % [tleft, GameState.TIME_PER_YEAR]
 	g["time_bar"].value = 100.0 * tleft / GameState.TIME_PER_YEAR
@@ -1468,7 +1484,7 @@ func _refresh_side() -> void:
 			for goal in cdef["goals"]:
 				var gp := Meta.goal_progress(goal)
 				extra += "   %s %s  (%s)\n" % ["✅" if gp[0] else "⬜", goal["label"], gp[1]]
-	g["extra"].text = extra.strip_edges()
+	g["extra"].text = (extra + "\n" + Seeded.status_line()).strip_edges()
 	g["name"].text = ("%s %s" % [p["first"], p["last"]]) + ("  " + p["badge"] if p.get("badge", "") != "" else "")
 	_sync_life_theme()
 	var tleft: int = p["time_left"]
@@ -2682,6 +2698,12 @@ func _fill_death(entry: Dictionary) -> void:
 	var desc := U.lbl(ribbon.get("desc", ""), "Dim", 16, true)
 	desc.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lv.add_child(desc)
+	if entry.has("seeded"):
+		var sd: Dictionary = entry["seeded"]
+		var sl := U.lbl("%s %s: %s — %s · score %d" % ["📅" if sd["kind"] == "daily" else "🗓️", "Daily" if sd["kind"] == "daily" else "Weekly", str(sd["goal"]), "goal met ✓" if sd["met"] else "goal missed", int(sd["score"])], "Bold", 16, true)
+		sl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		sl.add_theme_color_override("font_color", ThemeManager.c("gold"))
+		lv.add_child(sl)
 	var heirs: Array = GameState.heirs() if GameState.has_life() and not p.get("alive", true) else []
 	var cont := U.btn("Continue as Child", _continue_as_child, "Accent")
 	cont.custom_minimum_size = Vector2(0, 56)
