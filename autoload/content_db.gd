@@ -11,6 +11,8 @@ const EVENT_FILES := [
 	"prison.json",
 	"companions.json",
 	"journeys.json",
+	"workplace.json",
+	"estates.json",
 	"followups.json",
 	"everyday.json",
 	"careers.json",

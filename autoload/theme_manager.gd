@@ -11,13 +11,13 @@ const LABELS := {
 const PALETTES := {
 	"dark": {
 		"bg": "0b1424", "surface": "13213a", "surface2": "1a2b48", "border": "263b5e",
-		"text": "eef3fb", "dim": "8fa3c2", "accent": "34c759", "accent_text": "ffffff",
+		"text": "eef3fb", "dim": "8fa3c2", "accent": "2ec4b6", "accent_text": "ffffff",
 		"primary": "1f6fe0", "primary_text": "ffffff", "event_bg": "1a2b48", "event_text": "eef3fb",
 		"good": "34c759", "warn": "f5b82e", "bad": "ef4b4b", "track": "22324f", "gold": "f2c14e", "border_w": 1,
 	},
 	"light": {
 		"bg": "eef2f7", "surface": "ffffff", "surface2": "f3f6fa", "border": "d7dfea",
-		"text": "1b2433", "dim": "6b7a90", "accent": "2fb350", "accent_text": "ffffff",
+		"text": "1b2433", "dim": "6b7a90", "accent": "1fa89a", "accent_text": "ffffff",
 		"primary": "1f6fe0", "primary_text": "ffffff", "event_bg": "ffffff", "event_text": "1b2433",
 		"good": "2fb350", "warn": "e8a317", "bad": "e04545", "track": "e3e9f1", "gold": "e0a82e", "border_w": 1,
 	},

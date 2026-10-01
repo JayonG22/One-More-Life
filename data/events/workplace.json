@@ -1,0 +1,1077 @@
+[
+ {
+  "id": "wk.pip_meeting",
+  "icon": "📋",
+  "title": "A quiet word",
+  "text": "{boss.first} has asked you into the small meeting room, the one with the glass wall and no window. There is a folder on the table with your name on it.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "max_stat": {
+    "happiness": 55
+   }
+  },
+  "choices": [
+   {
+    "label": "Listen, and ask what good looks like",
+    "outcomes": [
+     {
+      "text": "{boss.first} had expected a fight. Instead we wrote three goals on one page. It felt like the first adult conversation we'd had.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": 6
+      },
+      "relationship": {
+       "boss": 6
+      }
+     },
+     {
+      "text": "I took notes. I asked for a date to review it. {boss.first} nodded slowly, as if recalibrating.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 5
+      },
+      "relationship": {
+       "boss": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push back on the figures",
+    "outcomes": [
+     {
+      "text": "I came with my own numbers. Some were right. {boss.first} adjusted one thing and left the rest standing.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": 2
+      },
+      "relationship": {
+       "boss": -2
+      }
+     },
+     {
+      "text": "It turned into an argument. {boss.first} went quiet in a way I did not like.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": -3
+      },
+      "relationship": {
+       "boss": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look at other jobs that night",
+    "outcomes": [
+     {
+      "text": "I updated the CV before I got home. It was the most productive evening I'd had in months.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I applied to six places and heard back from one. It was a start.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 15,
+  "roles": {
+   "boss": {
+    "relation": "boss"
+   }
+  }
+ },
+ {
+  "id": "wk.layoff_rumour",
+  "icon": "📉",
+  "title": "The rumour",
+  "text": "It starts in the kitchen. Someone's friend in finance has seen a spreadsheet with a column headed 'headcount'. By lunch half the floor knows, and nobody has said the word.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "world": "recession"
+  },
+  "choices": [
+   {
+    "label": "Ask {boss.first} directly",
+    "outcomes": [
+     {
+      "text": "{boss.first} said nothing was decided, in the voice of someone for whom it was. At least I knew where I stood.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "relationship": {
+       "boss": 2
+      }
+     },
+     {
+      "text": "{boss.first} told me, off the record, that my role was safe for now. I believed it more than I should have.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "relationship": {
+       "boss": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quietly start looking",
+    "outcomes": [
+     {
+      "text": "Three interviews in a fortnight. When the announcement came I already had an offer in my pocket.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "money": 0,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "Everyone else was looking too. The market was thin. I was glad I had started early.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep my head down and work",
+    "outcomes": [
+     {
+      "text": "I stayed late for a month and said nothing. I wasn't on the list. I don't know if that was why.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "job_perf": 4
+      }
+     },
+     {
+      "text": "It didn't help. A good quarter doesn't outweigh a bad spreadsheet.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "job_perf": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "boss": {
+    "relation": "boss"
+   }
+  }
+ },
+ {
+  "id": "wk.credit_taken",
+  "icon": "🎭",
+  "title": "Your idea, their slide",
+  "text": "The deck is on the big screen and slide four is your idea. It has {co.first}'s name under it.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Say so, in the meeting",
+    "outcomes": [
+     {
+      "text": "The room went quiet. {boss.first} asked for the draft history. It had my name on it. I was right and slightly sick about it.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "job_perf": 4
+      },
+      "relationship": {
+       "co": -12
+      }
+     },
+     {
+      "text": "I said, 'I'm glad that landed.' Everybody understood. {co.first} did not look up for the rest of the hour.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "job_perf": 3
+      },
+      "relationship": {
+       "co": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Raise it privately with {co.first}",
+    "outcomes": [
+     {
+      "text": "{co.first} apologised and meant it, mostly. The next deck had my name where it belonged.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "relationship": {
+       "co": 5
+      }
+     },
+     {
+      "text": "{co.first} said they'd 'misremembered'. It was a lie we both agreed to accept.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "relationship": {
+       "co": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go, and keep better records",
+    "outcomes": [
+     {
+      "text": "From then on everything I wrote was dated and sent to the whole team. It worked. It also felt a little joyless.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I let it go. I did not forget it. The next time it happened I was ready.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 14,
+  "roles": {
+   "co": {
+    "relation": "coworker"
+   }
+  }
+ },
+ {
+  "id": "wk.promotion_party",
+  "icon": "🥂",
+  "title": "Drinks on the firm",
+  "text": "A promotion lands and so does the invitation: Thursday, the bar by the station, everybody expected. People who haven't spoken to you in a year are suddenly delighted.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "min_stat": {
+    "happiness": 40
+   }
+  },
+  "choices": [
+   {
+    "label": "Go and buy a round",
+    "outcomes": [
+     {
+      "text": "I stood the first round and made a short speech I'd rehearsed in the shower. It went down well. The bill did not.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -140
+      },
+      "relationship": {
+       "co": 5
+      }
+     },
+     {
+      "text": "A good night. Somebody told me, in confidence, what the last person in the job had been paid. I'm glad I know.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -90,
+       "smarts": 1
+      },
+      "relationship": {
+       "co": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go for an hour",
+    "outcomes": [
+     {
+      "text": "One drink, one toast, one exit before the singing. Exactly right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -30
+      }
+     },
+     {
+      "text": "I left early and was told I was 'quiet now you're senior'. I wasn't, I was tired.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "money": -25
+      }
+     }
+    ]
+   },
+   {
+    "label": "Skip it",
+    "outcomes": [
+     {
+      "text": "I went home. The next morning I heard everything I'd missed, and some of it was about me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "relationship": {
+       "co": -4
+      }
+     },
+     {
+      "text": "I had the evening to myself. It was lovely, and cost me a little capital I didn't know I'd spent.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "relationship": {
+       "co": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "co": {
+    "relation": "coworker"
+   }
+  }
+ },
+ {
+  "id": "wk.strike_vote",
+  "icon": "✊",
+  "title": "The vote",
+  "text": "The union has called a vote on action over pay and conditions. The leaflet in your pigeonhole says every voice matters. The notice on the wall says the opposite.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "traits_any": [
+    "Loyal",
+    "Hothead",
+    "Ambitious",
+    "Lazy",
+    "Charmer",
+    "Funny",
+    "Anxious",
+    "Honest"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Vote to strike",
+    "outcomes": [
+     {
+      "text": "The stoppage lasted nine days. We won most of it. The first payslip afterwards was lighter than I'd like and the mood on the floor was electric.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -250,
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "It dragged to three weeks and ended in a fudge. I'm proud of it and I'm still paying it off.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "money": -600,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Vote against",
+    "outcomes": [
+     {
+      "text": "The motion carried without me. People remembered who had voted which way, quietly, for a long time.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "relationship": {
+       "co": -5
+      }
+     },
+     {
+      "text": "The strike failed to get a majority. I'd like to think I helped. A few colleagues stopped saying hello.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "job_perf": 2
+      },
+      "relationship": {
+       "co": -7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Abstain, and stay out of it",
+    "outcomes": [
+     {
+      "text": "Nobody could blame me for either. Nobody could thank me either.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "I took the day as leave. The picket line was all anyone talked about on my return.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "money": -80
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 25,
+  "roles": {
+   "co": {
+    "relation": "coworker"
+   }
+  }
+ },
+ {
+  "id": "wk.remote_offer",
+  "icon": "🏠",
+  "title": "Working from home",
+  "text": "Management has announced a hybrid policy, two days in the office, three at home, 'subject to review'. Your commute looks different tonight.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "era_year_min": 2012
+  },
+  "choices": [
+   {
+    "label": "Take every home day going",
+    "outcomes": [
+     {
+      "text": "No commute, no small talk, and by March I had a routine I loved and a face the team hardly recognised.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -4,
+       "job_perf": -1
+      }
+     },
+     {
+      "text": "I got more done than I ever had, at the kitchen table, in a jumper. The team noticed. So did the boss.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -3,
+       "job_perf": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go in more than I have to",
+    "outcomes": [
+     {
+      "text": "The office was empty and I enjoyed it. I was seen, which in practice counts for something.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "job_perf": 4
+      }
+     },
+     {
+      "text": "I kept up the old routine. It was good for the friendships and bad for the budget.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "money": -60
+      }
+     }
+    ]
+   },
+   {
+    "label": "Argue for four days at home",
+    "outcomes": [
+     {
+      "text": "They said no, politely. I got a cushion on my chair and a half-day on Fridays.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "They said yes to a trial. I made it work. Three of my colleagues asked how.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "job_perf": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "once": true
+ },
+ {
+  "id": "wk.training_budget",
+  "icon": "🎓",
+  "title": "A training budget",
+  "text": "HR has sent a note: everyone has money to spend on 'development' before the end of the quarter. Nobody is quite sure how.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "A proper course",
+    "outcomes": [
+     {
+      "text": "Six evenings over eight weeks and a certificate. I learned more than I expected and it showed in March.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "job_perf": 5,
+       "stress": 3
+      }
+     },
+     {
+      "text": "The course was dull but the person next to me knew someone. A job interview followed.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "job_perf": 2
+      },
+      "relationship": {}
+     }
+    ]
+   },
+   {
+    "label": "A conference",
+    "outcomes": [
+     {
+      "text": "Two days, fourteen badges, and one conversation that mattered. I flew home with a plan.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "smarts": 1,
+       "money": 0,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "I spent most of it in the hotel bar. Nobody asked what I'd learned, which was lucky.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "job_perf": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spend it on books and tools",
+    "outcomes": [
+     {
+      "text": "A shelf of books and a good chair. The chair did more for my work than the books.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": -2,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "I bought a very good monitor. I am not ashamed.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "job_perf": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 10
+ },
+ {
+  "id": "wk.mentor_offer",
+  "icon": "🧭",
+  "title": "Someone takes an interest",
+  "text": "A senior person, who has never said more to you than hello in the lift, asks if you'd like a coffee. 'Nothing formal,' they say. It sounds formal.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "min_stat": {
+    "smarts": 40
+   }
+  },
+  "choices": [
+   {
+    "label": "Say yes",
+    "outcomes": [
+     {
+      "text": "It turned into a monthly habit. They told me the unwritten rules of the place, and one or two of the written ones.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "job_perf": 5,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "It was awkward for the first few meetings and enormously useful for the next fifty.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "job_perf": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask what they want from it",
+    "outcomes": [
+     {
+      "text": "They laughed. 'To see someone do it better than I did.' I thought about that for a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "They wanted a favour, eventually. A small one. It was still a favour.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 3,
+       "karma": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline politely",
+    "outcomes": [
+     {
+      "text": "They nodded and said the door was open. It is never as open the second time.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "I was too busy. I was always too busy.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "once": true
+ },
+ {
+  "id": "wk.burnout_signs",
+  "icon": "🕯️",
+  "title": "Sunday dread",
+  "text": "It starts on Sunday afternoon now: a tightness in the chest, a list that grows while you look at it. Last week you cried in the stationery cupboard and told no one.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "min_stat": {
+    "stress": 60
+   }
+  },
+  "choices": [
+   {
+    "label": "Talk to {boss.first}",
+    "outcomes": [
+     {
+      "text": "{boss.first} did something I hadn't expected: listened, took two projects off me and sent me home early. I felt guilty and slept for ten hours.",
+      "weight": 1,
+      "effects": {
+       "stress": -12,
+       "happiness": 4
+      },
+      "relationship": {
+       "boss": 6
+      }
+     },
+     {
+      "text": "{boss.first} said all the right words and changed nothing. At least I'd said it aloud.",
+      "weight": 1,
+      "effects": {
+       "stress": -3
+      },
+      "relationship": {
+       "boss": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take real leave",
+    "outcomes": [
+     {
+      "text": "Two weeks, no email. By day five I was bored. By day ten I was myself.",
+      "weight": 1,
+      "effects": {
+       "stress": -18,
+       "happiness": 6,
+       "job_perf": -2
+      }
+     },
+     {
+      "text": "The leave was approved and ruined by a handover that wouldn't stay handed over.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "job_perf": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push through",
+    "outcomes": [
+     {
+      "text": "I pushed through. The work held up, and a few months later, something else did not.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "health": -4,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "It got worse. I was lucky someone noticed before I did anything I'd regret.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "health": -3,
+       "happiness": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "boss": {
+    "relation": "boss"
+   }
+  }
+ },
+ {
+  "id": "wk.office_romance",
+  "icon": "💘",
+  "title": "Across the open plan",
+  "text": "The person from the other team keeps appearing at the printer when you do. Their laugh carries. Everyone has noticed, which makes noticing impossible.",
+  "conditions": {
+   "age": [
+    20,
+    55
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Ask them to lunch",
+    "outcomes": [
+     {
+      "text": "A very ordinary lunch and a very good afternoon. We agreed to keep it quiet; it lasted about a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 2
+      }
+     },
+     {
+      "text": "They said yes, then no, then yes. By the time it settled I was invested.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it professional",
+    "outcomes": [
+     {
+      "text": "We remained very good colleagues. Years later I'd think about that.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "I played it safe. They moved to another office six months later and the printer was quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Check the policy first",
+    "outcomes": [
+     {
+      "text": "There was a form. There was always a form. We filled it in together and laughed at question six.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The policy was clear. It would have meant one of us leaving. We were both sensible, and a little sad.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 25
+ },
+ {
+  "id": "wk.relocation",
+  "icon": "📦",
+  "title": "A move for the job",
+  "text": "The firm is closing your office. Two options: a transfer to the head office four hundred miles away, or a redundancy package with some strings in it.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true,
+   "world": "recession"
+  },
+  "choices": [
+   {
+    "label": "Take the transfer",
+    "outcomes": [
+     {
+      "text": "A new city, a new flat, a team that did not know me. The first six months were hard. After that it started to feel like mine.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": 2,
+       "job_perf": 3,
+       "money": -600
+      }
+     },
+     {
+      "text": "I hated it for a year and loved it for ten. I'm glad I went.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "happiness": 1,
+       "job_perf": 4,
+       "money": -600
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take the package",
+    "outcomes": [
+     {
+      "text": "The money gave me a year to think. I thought about it a lot, and I spent it carefully.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "money": 6000
+      }
+     },
+     {
+      "text": "The package was less than they'd implied. It paid for two months. The rest I did myself.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": 2500
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push for remote work",
+    "outcomes": [
+     {
+      "text": "They said they'd consider it. Eight weeks later they said yes, on a trial basis. I was the only one in the building who still had a desk at home.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "The answer was no. I'd lost two months to asking.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30
+ },
+ {
+  "id": "wk.side_hustle_work",
+  "icon": "🔧",
+  "title": "A little something on the side",
+  "text": "A friend needs a thing done that is half your job and half a favour. The pay is cash. The contract says you can't take outside work.",
+  "conditions": {
+   "age": [
+    17,
+    68
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Do it, quietly",
+    "outcomes": [
+     {
+      "text": "It was easy money and a small thrill. Nobody ever found out. I did it again twice.",
+      "weight": 1,
+      "effects": {
+       "money": 800,
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "My manager found out two months later. 'We'll say no more about it,' she said, which meant plenty.",
+      "weight": 1,
+      "effects": {
+       "money": 800,
+       "stress": 6,
+       "job_perf": -5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask permission first",
+    "outcomes": [
+     {
+      "text": "They said yes, with conditions, and a nod. I liked the honesty and I liked the money.",
+      "weight": 1,
+      "effects": {
+       "money": 600,
+       "stress": 1,
+       "job_perf": 1
+      }
+     },
+     {
+      "text": "They said no, and thanked me for asking. My friend found someone else.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Refuse",
+    "outcomes": [
+     {
+      "text": "My friend sulked. Years later it came up and we both laughed.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "karma": 1
+      }
+     },
+     {
+      "text": "I felt like a saint and a mug in equal parts.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 15
+ }
+]

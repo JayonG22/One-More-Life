@@ -1,0 +1,623 @@
+[
+ {
+  "id": "es.will_dispute",
+  "icon": "📜",
+  "title": "The will",
+  "text": "The solicitor reads it twice. The house goes to {sib.first}, the savings are split, and a clause nobody expected leaves your late mother's jewellery 'to whoever looked after her'. {sib.first} is already looking at you.",
+  "conditions": {
+   "age": [
+    28,
+    85
+   ],
+   "min_net_worth": 1000
+  },
+  "choices": [
+   {
+    "label": "Contest it",
+    "outcomes": [
+     {
+      "text": "It took fourteen months and a lot of money. I won a little, lost a good deal and gained a sister or brother I do not speak to.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "money": -3500,
+       "happiness": -4
+      },
+      "relationship": {
+       "sib": -25
+      }
+     },
+     {
+      "text": "We settled outside court on a Tuesday, over tea nobody drank. It was fair. It did not feel fair.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "money": -900
+      },
+      "relationship": {
+       "sib": -10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let {sib.first} have the house",
+    "outcomes": [
+     {
+      "text": "{sib.first} cried in the kitchen. They said they'd never forget it. They did not forget it, in a good way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -2,
+       "karma": 6
+      },
+      "relationship": {
+       "sib": 18
+      }
+     },
+     {
+      "text": "I let it go and kept the jewellery. It felt like something I could carry.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 3
+      },
+      "relationship": {
+       "sib": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Propose a split",
+    "outcomes": [
+     {
+      "text": "We drew up a list on the back of an envelope. By the end of the afternoon it was nearly civil.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": 2
+      },
+      "relationship": {
+       "sib": 5
+      }
+     },
+     {
+      "text": "They said yes, and then no, and then their solicitor wrote to mine.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -600
+      },
+      "relationship": {
+       "sib": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "roles": {
+   "sib": {
+    "relation": "sibling"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "es.sibling_abroad",
+  "icon": "✈️",
+  "title": "Moving abroad",
+  "text": "{sib.first} has taken a job in another country: a good one, the sort of offer you do not ignore. They are going in six weeks, and they have asked you to help pack.",
+  "conditions": {
+   "age": [
+    24,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Help them move, and promise to visit",
+    "outcomes": [
+     {
+      "text": "I spent a weekend wrapping plates. At the airport we both pretended we weren't crying. I did visit, twice.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3,
+       "money": -200
+      },
+      "relationship": {
+       "sib": 8
+      }
+     },
+     {
+      "text": "A tearful goodbye and a lot of video calls after. We stayed closer than I'd feared.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      },
+      "relationship": {
+       "sib": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to stay",
+    "outcomes": [
+     {
+      "text": "They stayed for another year. Then went anyway, a little colder.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      },
+      "relationship": {
+       "sib": -8
+      }
+     },
+     {
+      "text": "They said it was the best thing that would ever happen to them. I felt small for asking.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -3
+      },
+      "relationship": {
+       "sib": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wish them well and let it be",
+    "outcomes": [
+     {
+      "text": "Our messages thinned out. I still send a card at the holidays.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "relationship": {
+       "sib": -5
+      }
+     },
+     {
+      "text": "I was too busy to see them off. I regretted it for a while.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      },
+      "relationship": {
+       "sib": -7
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 25,
+  "roles": {
+   "sib": {
+    "relation": "sibling"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "es.child_emigrates",
+  "icon": "🛫",
+  "title": "Our child is leaving",
+  "text": "{kid.first} has announced, over a perfectly ordinary dinner, that they've taken a position overseas. They have already booked the flight. They have already told their friends.",
+  "conditions": {
+   "age": [
+    40,
+    85
+   ]
+  },
+  "choices": [
+   {
+    "label": "Be proud, and say so",
+    "outcomes": [
+     {
+      "text": "{kid.first} hugged me for a long time. 'I was afraid you'd stop me.' I almost did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 3
+      },
+      "relationship": {
+       "kid": 10
+      }
+     },
+     {
+      "text": "I toasted them at dinner. It was the best speech I ever gave, mostly because I meant it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      },
+      "relationship": {
+       "kid": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them how much you'll miss them",
+    "outcomes": [
+     {
+      "text": "Honest and quiet. They said they'd phone every Sunday. They did, mostly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 3
+      },
+      "relationship": {
+       "kid": 5
+      }
+     },
+     {
+      "text": "It came out as guilt. They left anyway, with the guilt.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "relationship": {
+       "kid": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer money to help them settle",
+    "outcomes": [
+     {
+      "text": "I sent a sum I could ill afford. They never asked for more, which is how I knew it mattered.",
+      "weight": 1,
+      "effects": {
+       "money": -1500,
+       "happiness": 3
+      },
+      "relationship": {
+       "kid": 12
+      }
+     },
+     {
+      "text": "I sent what I could. The note I wrote with it did more than the money.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "happiness": 2
+      },
+      "relationship": {
+       "kid": 7
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30,
+  "roles": {
+   "kid": {
+    "relation": "child"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "es.partner_offer_abroad",
+  "icon": "🧳",
+  "title": "A job in another country",
+  "text": "{par.first} has been offered something huge, three time zones away. They haven't said yes. They haven't said no. They put the letter on the table between you and went to make tea.",
+  "conditions": {
+   "age": [
+    25,
+    60
+   ],
+   "has_partner": true
+  },
+  "choices": [
+   {
+    "label": "Go with them",
+    "outcomes": [
+     {
+      "text": "We sold the sofa, kept the dog, and landed in January in a flat with no heating. It was one of the best things we ever did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 6,
+       "money": -1800
+      },
+      "relationship": {
+       "par": 14
+      }
+     },
+     {
+      "text": "I followed them. The first year I was lonely. The second I found my own life there.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 7,
+       "money": -1800
+      },
+      "relationship": {
+       "par": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to turn it down",
+    "outcomes": [
+     {
+      "text": "They did. We never said another word about it. It sat in the kitchen like a third person for years.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 4
+      },
+      "relationship": {
+       "par": -10
+      }
+     },
+     {
+      "text": "They refused it and resented it quietly. I didn't notice at the time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 3
+      },
+      "relationship": {
+       "par": -6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try a long-distance year",
+    "outcomes": [
+     {
+      "text": "It was harder than the brochure. We saw each other six times. We survived, barely.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "happiness": -2,
+       "money": -1200
+      },
+      "relationship": {
+       "par": 2
+      }
+     },
+     {
+      "text": "A year of video calls and holidays. Then one of us went home.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "money": -1000
+      },
+      "relationship": {
+       "par": -4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "roles": {
+   "par": {
+    "relation": "partner"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "es.family_business_row",
+  "icon": "🏭",
+  "title": "Who takes over",
+  "text": "{sib.first} and you have both been in the family firm for years. Your father hasn't named a successor. Last night he said the name out loud at dinner, and it was not yours.",
+  "conditions": {
+   "age": [
+    30,
+    70
+   ],
+   "has_business": true
+  },
+  "choices": [
+   {
+    "label": "Challenge the decision",
+    "outcomes": [
+     {
+      "text": "It split the family for a decade. I got a buy-out and a lifelong silence.",
+      "weight": 1,
+      "effects": {
+       "stress": 10,
+       "money": 8000,
+       "happiness": -4
+      },
+      "relationship": {
+       "sib": -25
+      }
+     },
+     {
+      "text": "We went to mediation, which is a word that sounds gentler than it was. We both left with half of what we wanted.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "money": 3000
+      },
+      "relationship": {
+       "sib": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Back {sib.first}",
+    "outcomes": [
+     {
+      "text": "I gave the speech at the handover. It cost me, and it was the right thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3,
+       "karma": 5
+      },
+      "relationship": {
+       "sib": 15
+      }
+     },
+     {
+      "text": "I backed {sib.first} and was quietly made a director. A good outcome I didn't expect.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 3
+      },
+      "relationship": {
+       "sib": 10
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave and start something of my own",
+    "outcomes": [
+     {
+      "text": "It was the hardest year of my life, and then it wasn't. I did not look back.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -2500,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It took three attempts. By the third I knew exactly what I was doing.",
+      "weight": 1,
+      "effects": {
+       "stress": 9,
+       "money": -3500,
+       "smarts": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "roles": {
+   "sib": {
+    "relation": "sibling"
+   }
+  },
+  "once": true
+ },
+ {
+  "id": "es.parent_remarries",
+  "icon": "💍",
+  "title": "Mum has news",
+  "text": "{mom.first} asks you to come over, because she has something to tell you. She's smiling too hard. A stranger's coat is on the hook.",
+  "conditions": {
+   "age": [
+    30,
+    70
+   ]
+  },
+  "choices": [
+   {
+    "label": "Be warm about it",
+    "outcomes": [
+     {
+      "text": "I hugged them both. He turned out to be kind and a little boring, which she said was exactly the point.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      },
+      "relationship": {
+       "mom": 10
+      }
+     },
+     {
+      "text": "We had a long dinner, and the next week I came back with flowers.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "relationship": {
+       "mom": 8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Worry about the inheritance",
+    "outcomes": [
+     {
+      "text": "I said nothing aloud, but I asked a solicitor a quiet question. {mom.first} found out and did not speak to me for a month.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "karma": -3
+      },
+      "relationship": {
+       "mom": -14
+      }
+     },
+     {
+      "text": "I raised it as delicately as I could. It was not delicate enough.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "relationship": {
+       "mom": -8
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take time to adjust",
+    "outcomes": [
+     {
+      "text": "It took a year. By the end I liked him, which surprised us both.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 2
+      },
+      "relationship": {
+       "mom": 3
+      }
+     },
+     {
+      "text": "I kept my distance for too long. She noticed. So did he.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
+      },
+      "relationship": {
+       "mom": -6
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "roles": {
+   "mom": {
+    "relation": "mother"
+   }
+  },
+  "once": true
+ }
+]

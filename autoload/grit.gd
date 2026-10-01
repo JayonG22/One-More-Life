@@ -4,7 +4,7 @@ extends Node
 ## care and neglect. Comfort is never guaranteed.
 
 const DIFFICULTY := {
-	"classic": {"name": "Classic", "icon": "🌤️", "desc": "Forgiving, like BitLife. Rare twists and soft landings.",
+	"classic": {"name": "Classic", "icon": "🌤️", "desc": "Forgiving. Rare twists and soft landings.",
 		"twist": 0.45, "harsh": 0.7, "cost": 0.9, "sentence": 0.8, "acquit": 1.25, "age": 0.85, "heal": 1.3, "grudge": 0.5, "habit": 0.7, "credit_min": 520},
 	"real": {"name": "Real", "icon": "⚖️", "desc": "The default. Twists happen and choices cost something.",
 		"twist": 1.0, "harsh": 1.0, "cost": 1.0, "sentence": 1.0, "acquit": 1.0, "age": 1.0, "heal": 1.0, "grudge": 1.0, "habit": 1.0, "credit_min": 580},

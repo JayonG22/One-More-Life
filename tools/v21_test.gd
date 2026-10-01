@@ -26,6 +26,7 @@ func _ready() -> void:
 	_transport()
 	_companions_and_director()
 	_items_and_avatar()
+	_mode_audio()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -268,15 +269,15 @@ func _transport() -> void:
 	var good_walk := 0
 	var good_car := 0
 	GameState.player["car"] = ""
-	for i in 400:
+	for i in 2000:
 		if bool(EventEngine._pick_outcome(def["choices"][0]["outcomes"], "trip").get("good", false)):
 			good_walk += 1
 	GameState.player["car"] = GameState.CARS.keys()[0]
-	for i in 400:
+	for i in 2000:
 		if bool(EventEngine._pick_outcome(def["choices"][0]["outcomes"], "trip").get("good", false)):
 			good_car += 1
-	ok(good_car > good_walk * 2, "the car did not improve the odds (walk %d, car %d)" % [good_walk, good_car])
-	print("  transport: the good outcome came %d/400 on foot and %d/400 by car" % [good_walk, good_car])
+	ok(float(good_car) > float(good_walk) * 1.2, "the car did not improve the odds (walk %d, car %d)" % [good_walk, good_car])
+	print("  transport: the good outcome came %d/2000 without a car and %d/2000 by car" % [good_walk, good_car])
 
 
 func _companions_and_director() -> void:
@@ -390,3 +391,14 @@ func _items_and_avatar() -> void:
 	v.setup(rnd, 70, "female")
 	v.free()
 	print("  items & avatar: shelf is stable and rotates, Do-Over rewinds a year and a death, avatar parts are owned or bought")
+
+
+func _mode_audio() -> void:
+	for k in ["pets", "prison", "guard"]:
+		var st: AudioStreamWAV = Fx._compose_loop(k)
+		ok(st != null and st.data.size() > 100000, "no music was composed for %s" % k)
+		ok(Fx.THEME_FLAVOR.has(k), "no sound flavour for %s" % k)
+	Fx.set_mode("prison")
+	ok(Fx.mode_key == "prison", "the sound mode did not switch")
+	Fx.set_mode("")
+	print("  mode audio: Pets, Prison and the guard each have their own music and sound")

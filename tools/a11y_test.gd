@@ -181,7 +181,7 @@ func _ratio(a: Color, b: Color) -> float:
 func _scale() -> void:
 	var s := GameState.settings
 	var sc := main.screens["game"] as Control
-	for step in [0.9, 1.0, 1.15, 1.3]:
+	for step in [0.9, 1.0, 1.15, 1.3, 1.5, 1.75]:
 		s["ui_scale"] = step
 		main._apply_display()
 		for i in range(3):

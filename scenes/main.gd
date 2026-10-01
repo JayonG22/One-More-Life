@@ -120,6 +120,8 @@ func _show(name_key: String) -> void:
 		screen_tween.tween_property(s, "modulate:a", 1.0, 0.28).set_trans(Tween.TRANS_SINE)
 		if was != "":
 			Fx.play("whoosh", 0.05)
+	if name_key != "game":
+		Fx.set_mode("")
 	if name_key == "title":
 		_refresh_title()
 	if name_key == "game":
@@ -1103,8 +1105,25 @@ func _build_game() -> Control:
 	var m := MarginContainer.new()
 	for side in ["left", "right", "top", "bottom"]:
 		m.add_theme_constant_override("margin_" + side, 22)
+	var shell := U.vb(10)
+	m.add_child(shell)
+	# On a narrow window or a large interface size the three columns become one, with a
+	# switcher: You · Story · Do.
+	var col_tabs := U.hb(8)
+	col_tabs.visible = false
+	g["col_tabs"] = col_tabs
+	g["col_idx"] = 1
+	for ct in [["🧍 You", 0], ["📖 Story", 1], ["🕹️ Do", 2]]:
+		var ci: int = ct[1]
+		var cb := U.btn(str(ct[0]), func(): _set_column(ci), "Row")
+		cb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		cb.custom_minimum_size = Vector2(0, 46)
+		cb.name = "ColTab%d" % ci
+		col_tabs.add_child(cb)
+	shell.add_child(col_tabs)
 	var h := U.hb(22)
-	m.add_child(h)
+	h.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	shell.add_child(h)
 
 	# ---- left column
 	var left := U.vb(16)
@@ -1227,7 +1246,22 @@ func _build_game() -> Control:
 	var logv := U.vb(4)
 	logv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sc.add_child(logv)
-	logc.add_child(sc)
+	var logbox := U.vb(6)
+	var chips := HFlowContainer.new()
+	chips.add_theme_constant_override("h_separation", U.sp(6))
+	g["log_filter"] = "all"
+	for f in [["all", "📖 All"], ["money", "💰 Money"], ["people", "👪 People"], ["work", "💼 Work"], ["health", "❤️ Health"]]:
+		var fk: String = f[0]
+		var chip := U.btn(str(f[1]), func():
+			g["log_filter"] = fk
+			for ch in chips.get_children():
+				(ch as Button).theme_type_variation = "Primary" if ch.name == "LogFilter_" + fk else "Chip"
+			_rebuild_log(), "Primary" if fk == "all" else "Chip")
+		chip.name = "LogFilter_" + fk
+		chips.add_child(chip)
+	logbox.add_child(chips)
+	logbox.add_child(sc)
+	logc.add_child(logbox)
 	g["log"] = logv
 	g["log_scroll"] = sc
 	center.add_child(logc)
@@ -1673,6 +1707,7 @@ func _rebuild_log() -> void:
 	if not g.has("log"):
 		return
 	U.clear(g["log"])
+	g.erase("pending_header")
 	for y in GameState.log_years:
 		_add_year_header(int(y["age"]))
 		for line in y["lines"]:
@@ -1680,7 +1715,41 @@ func _rebuild_log() -> void:
 	_scroll_log()
 
 
+## Which kind of thing a line of the story is about, so the story can be read by topic.
+func _log_cats(text: String) -> Array:
+	var t := text.to_lower()
+	var out: Array = []
+	var money_words := ["£", "$", "€", "earned", "salary", "bills", "paid", "loan", "mortgage", "debt", "bank", "tax", "rent", "invest", "savings", "bought", "sold", "inherit", "lottery", "casino", "bet ", "shares", "profit", "bankrupt", "credit", "wage", "pension", "severance"]
+	var work_words := ["job", "promot", "fired", "boss", "career", "school", "grade", "degree", "company", "hired", "interview", "application", "colleague", "coworker", "office", "demot", "redundan", "review", "university", "exam", "class", "teacher", "business", "employer", "manager"]
+	var health_words := ["health", "doctor", "hospital", "ill ", "illness", "injur", "sick", "surgery", "therapy", "diagnos", "cancer", "medic", "symptom", "stress", "flu", "scar", "recover", "sleep", "died", "funeral", "vet "]
+	var people_words := ["mother", "father", "mum", "dad", "sister", "brother", "friend", "partner", "married", "divorce", "wife", "husband", "kid", "baby", "child", "son ", "daughter", "uncle", "aunt", "cousin", "grand", "family", "dating", "girlfriend", "boyfriend", "ex ", "neighbo", "relationship", "wedding", "pet", "dog", "cat "]
+	for w in money_words:
+		if t.find(w) != -1:
+			out.append("money")
+			break
+	for w2 in work_words:
+		if t.find(w2) != -1:
+			out.append("work")
+			break
+	for w3 in health_words:
+		if t.find(w3) != -1:
+			out.append("health")
+			break
+	for w4 in people_words:
+		if t.find(w4) != -1:
+			out.append("people")
+			break
+	return out
+
+
 func _add_year_header(age: int) -> void:
+	if str(g.get("log_filter", "all")) != "all":
+		g["pending_header"] = age
+		return
+	_really_add_header(age)
+
+
+func _really_add_header(age: int) -> void:
 	var box: VBoxContainer = g["log"]
 	if box.get_child_count() > 0:
 		var gap := Control.new()
@@ -1692,6 +1761,13 @@ func _add_year_header(age: int) -> void:
 
 
 func _add_log_line(text: String) -> void:
+	var flt := str(g.get("log_filter", "all"))
+	if flt != "all":
+		if not _log_cats(text).has(flt):
+			return
+		if g.has("pending_header"):
+			_really_add_header(int(g["pending_header"]))
+			g.erase("pending_header")
 	var l := U.lbl(text, "", 18, true)
 	var big := text.find("!") != -1
 	if big:
@@ -1735,7 +1811,128 @@ func _age_up() -> void:
 
 
 ## Tab or an arrow key turns keyboard navigation on; a mouse click turns it off.
+# ---- gamepad: translated into the keys the game already understands
+var _stick_dir := Vector2i.ZERO
+var gamepad_mode := false
+
+
+func _joy_key(code: int, pressed: bool) -> void:
+	var ev := InputEventKey.new()
+	ev.keycode = code
+	ev.physical_keycode = code
+	ev.pressed = pressed
+	Input.parse_input_event(ev)
+
+
+func _joy_tap(code: int) -> void:
+	_joy_key(code, true)
+	_joy_key(code, false)
+
+
+func _cycle_tab(d: int) -> void:
+	var n := _tab_specs().size()
+	var cur := int(g.get("tab_cur", 0))
+	_tab_press((cur + d + n) % n)
+
+
+func _gamepad_input(event: InputEvent) -> bool:
+	if event is InputEventJoypadButton:
+		if not event.pressed:
+			return false
+		if not gamepad_mode:
+			gamepad_mode = true
+		if _current_screen() == "game" and not UIKit.kb_mode and not mg_open:
+			_set_kb_mode(true)
+			_focus_overlay.call_deferred()
+		var b: int = event.button_index
+		if mg_open:
+			# in a minigame: the stick and pad are the arrow keys, the face buttons are Space and 1-3 / A S D
+			match b:
+				JOY_BUTTON_A: _joy_tap(KEY_SPACE)
+				JOY_BUTTON_X: _joy_tap(KEY_A)
+				JOY_BUTTON_Y: _joy_tap(KEY_S)
+				JOY_BUTTON_B: _joy_tap(KEY_D)
+				JOY_BUTTON_DPAD_UP: _joy_tap(KEY_UP)
+				JOY_BUTTON_DPAD_DOWN: _joy_tap(KEY_DOWN)
+				JOY_BUTTON_DPAD_LEFT: _joy_tap(KEY_LEFT)
+				JOY_BUTTON_DPAD_RIGHT: _joy_tap(KEY_RIGHT)
+				JOY_BUTTON_START: _joy_tap(KEY_ENTER)
+				_: return false
+			return true
+		match b:
+			JOY_BUTTON_A: _joy_tap(KEY_ENTER)
+			JOY_BUTTON_B: _joy_tap(KEY_ESCAPE)
+			JOY_BUTTON_START: _joy_tap(KEY_SPACE)
+			JOY_BUTTON_LEFT_SHOULDER:
+				if _current_screen() == "game" and not popup_open:
+					if bool(g.get("single_col", false)):
+						_set_column(maxi(0, int(g.get("col_idx", 1)) - 1))
+					else:
+						_cycle_tab(-1)
+			JOY_BUTTON_RIGHT_SHOULDER:
+				if _current_screen() == "game" and not popup_open:
+					if bool(g.get("single_col", false)):
+						_set_column(mini(2, int(g.get("col_idx", 1)) + 1))
+					else:
+						_cycle_tab(1)
+			JOY_BUTTON_Y:
+				if _current_screen() == "game" and not popup_open:
+					_tab_press(5)
+			JOY_BUTTON_DPAD_UP: _joy_tap(KEY_UP)
+			JOY_BUTTON_DPAD_DOWN: _joy_tap(KEY_DOWN)
+			JOY_BUTTON_DPAD_LEFT: _joy_tap(KEY_LEFT)
+			JOY_BUTTON_DPAD_RIGHT: _joy_tap(KEY_RIGHT)
+			_: return false
+		return true
+	if event is InputEventJoypadMotion:
+		var m: InputEventJoypadMotion = event
+		if m.axis != JOY_AXIS_LEFT_X and m.axis != JOY_AXIS_LEFT_Y:
+			return false
+		var v := _stick_dir
+		var val := 0
+		if absf(m.axis_value) > 0.55:
+			val = 1 if m.axis_value > 0.0 else -1
+		if m.axis == JOY_AXIS_LEFT_X:
+			v.x = val
+		else:
+			v.y = val
+		if v != _stick_dir:
+			gamepad_mode = true
+			if _current_screen() == "game" and not UIKit.kb_mode and not mg_open:
+				_set_kb_mode(true)
+				_focus_overlay.call_deferred()
+			if _stick_dir.x != v.x:
+				if _stick_dir.x != 0:
+					_joy_key(KEY_LEFT if _stick_dir.x < 0 else KEY_RIGHT, false)
+				if v.x != 0:
+					_joy_key(KEY_LEFT if v.x < 0 else KEY_RIGHT, true)
+			if _stick_dir.y != v.y:
+				if _stick_dir.y != 0:
+					_joy_key(KEY_UP if _stick_dir.y < 0 else KEY_DOWN, false)
+				if v.y != 0:
+					_joy_key(KEY_UP if v.y < 0 else KEY_DOWN, true)
+			_stick_dir = v
+		return true
+	return false
+
+
+## When a pop-up opens and the pad is in use, put the cursor on its first choice.
+func _focus_overlay() -> void:
+	if not UIKit.kb_mode or not popup_open:
+		return
+	for b in overlay_box.find_children("*", "BaseButton", true, false):
+		var bb := b as BaseButton
+		if bb.is_visible_in_tree() and not bb.disabled and bb.focus_mode != Control.FOCUS_NONE:
+			bb.grab_focus()
+			return
+
+
 func _input(event: InputEvent) -> void:
+	if (event is InputEventJoypadButton or event is InputEventJoypadMotion) and _gamepad_input(event):
+		get_viewport().set_input_as_handled()
+		return
+	if event is InputEventKey and event.pressed:
+		gamepad_mode = gamepad_mode and (event as InputEventKey).keycode == 0
 	if event is InputEventMouseButton and event.pressed and UIKit.kb_mode:
 		_set_kb_mode(false)
 	elif event is InputEventKey and event.pressed and not event.echo and not UIKit.kb_mode:
@@ -1838,6 +2035,7 @@ func _tab_press(i: int) -> void:
 	var specs := _tab_specs()
 	if i < 0 or i >= specs.size():
 		return
+	g["tab_cur"] = i
 	var cb: Callable = specs[i][2]
 	_open_panel(cb, true)
 
@@ -2534,7 +2732,7 @@ func _panel_more() -> void:
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
 	_add(U.row("🏅", "Challenges", "Goal lives and badges", func(): _open_panel(_panel_challenges)))
 	_add(U.row("🎀", "Ribbon Collection", "Every ribbon across all your lives", func(): _open_panel(_panel_ribbons)))
-	_add(U.row("🧙", "God Mode", "Edit anyone's stats, money, looks and more (free)", func(): _open_panel(_panel_god)))
+	_add(U.row("🧙", "Sandbox Mode", "Edit anyone's stats, money, looks and more (free)", func(): _open_panel(_panel_god)))
 	_add(U.row("⚙️", "Settings", "Sound, effects, motion, celebrity theme", func(): _open_panel(_panel_settings)))
 	_add(U.row("🎨", "Theme: " + ThemeManager.LABELS[ThemeManager.current], "Tap to switch · " + ", ".join(ThemeManager.ORDER.map(func(k): return ThemeManager.LABELS[k])), func(): _set_theme(ThemeManager.next_theme()), true, false))
 	_add(U.row("📂", "Your Lives", "Switch to another saved life", func(): SaveManager.save_game(); SP.show_lives()))
@@ -2596,6 +2794,8 @@ func _open_popup(width: int = 640) -> VBoxContainer:
 	VFX.pop_in(overlay_frame)
 	var v := U.vb(14)
 	cardp.add_child(v)
+	if UIKit.kb_mode:
+		_focus_overlay.call_deferred()
 	return v
 
 
@@ -3107,6 +3307,11 @@ func _show_grave(e: Dictionary) -> void:
 # ================================================================= TIER 2 PANELS
 
 func _sync_life_theme() -> void:
+	# modes have their own sound, independent of the look
+	var want_snd := ""
+	if GameState.has_life() and _current_screen() == "game" and Lives.separate():
+		want_snd = "pets" if Pets.active() else ("guard" if Prison.is_guard() else "prison")
+	Fx.set_mode(want_snd)
 	if not GameState.has_life() or _current_screen() != "game" or mg_open:
 		return
 	var p := GameState.player
@@ -3583,8 +3788,8 @@ func _panel_ribbons() -> void:
 
 
 func _panel_god() -> void:
-	_panel_header("🧙", "God Mode")
-	_add(U.lbl("Edit anyone. Using God Mode tags this life as Modified.", "Dim", 15, true))
+	_panel_header("🧙", "Sandbox Mode")
+	_add(U.lbl("Edit anyone. Using Sandbox Mode tags this life as Modified.", "Dim", 15, true))
 	var p := GameState.player
 	_add(U.row(U.face(p["gender"], int(p["age"]), int(p["face"])), "You", "Stats, money, traits", func(): _open_panel(func(): _panel_god_edit(""))))
 	for id in GameState.npcs.keys():
@@ -3715,7 +3920,7 @@ func _settings_rows(redraw: Callable) -> Array:
 		redraw.call(), true, false))
 	var scale := float(s.get("ui_scale", 1.0))
 	out.append(U.row("🔎", "Interface size: %d%%" % int(round(scale * 100)), "Tap to cycle 90 · 100 · 115 · 130%", func():
-		var steps := [0.9, 1.0, 1.15, 1.3]
+		var steps := [0.9, 1.0, 1.15, 1.3, 1.5, 1.75]
 		var idx := steps.find(float(GameState.settings.get("ui_scale", 1.0)))
 		GameState.settings["ui_scale"] = steps[(idx + 1) % steps.size()]
 		SaveManager.save_settings()
@@ -3742,10 +3947,33 @@ func _settings_rows(redraw: Callable) -> Array:
 ## The three-column game screen needs about 1630 logical pixels. A larger
 ## interface size shrinks the logical screen, so below that width the columns
 ## give up some of their minimum width instead of running off the edge.
+func _set_column(i: int) -> void:
+	g["col_idx"] = i
+	_fit_layout()
+
+
 func _fit_layout() -> void:
 	if not g.has("left_col") or not is_instance_valid(g["left_col"]):
 		return
 	var w := get_viewport().get_visible_rect().size.x
+	var single := float(GameState.settings.get("ui_scale", 1.0)) >= 1.45 or w < 1000.0
+	g["single_col"] = single
+	if g.has("col_tabs") and is_instance_valid(g["col_tabs"]):
+		(g["col_tabs"] as Control).visible = single
+		var cols: Array = [g["left_col"], g.get("mid_col"), g["right_col"]]
+		for ci in range(3):
+			var cc: Control = cols[ci]
+			if cc != null and is_instance_valid(cc):
+				cc.visible = (not single) or int(g.get("col_idx", 1)) == ci
+				if single:
+					cc.custom_minimum_size.x = 0.0
+					cc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		for ci2 in range(3):
+			var tb := (g["col_tabs"] as Control).get_child(ci2) as Button
+			if tb != null:
+				tb.theme_type_variation = "Primary" if int(g.get("col_idx", 1)) == ci2 else "Row"
+		if single:
+			return
 	var compact := w < 1680.0
 	var tight := w < 1380.0
 	(g["left_col"] as Control).custom_minimum_size.x = (310.0 if tight else 350.0) if compact else 470.0
@@ -3957,6 +4185,8 @@ func _big_popup(width: int, icon: String, title: String, sub: String = "") -> VB
 	VFX.pop_in(overlay_frame)
 	var body := U.vb(12)
 	overlay_box.add_child(body)
+	if UIKit.kb_mode:
+		_focus_overlay.call_deferred()
 	return body
 
 

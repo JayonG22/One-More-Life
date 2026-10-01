@@ -129,7 +129,7 @@ relevant questions, real choices, sub-panels, not a click that moves a stat:
 - **"Monster Life" as a special-career category** — a discoverable route into the
   supernatural lives rather than only random Turning Points.
 - **Hospital that cannot always help you** — a real chance treatment fails or is
-  unavailable, per your request for challenge beyond BitLife.
+  unavailable, per your request for challenge beyond the genre baseline.
 - **More minigames** — only the pace control was added, not new games.
 - **Per-country licence law variants** — banks are written but not forked by
   country (driving side, drinking age, firearm rules).

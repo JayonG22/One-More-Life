@@ -34,5 +34,13 @@ func _ready() -> void:
 	main._open_avatar_editor(Avatar.for_player(), "female", 24, func(a): pass)
 	for i in range(6): await get_tree().process_frame
 	get_viewport().get_texture().get_image().save_png("/tmp/gshots/editor.png")
+	main._close_popup()
+	GameState.settings["ui_scale"] = 1.5
+	main._apply_display()
+	for i in range(8): await get_tree().process_frame
+	get_viewport().get_texture().get_image().save_png("/tmp/gshots/single1.png")
+	main._set_column(0)
+	for i in range(6): await get_tree().process_frame
+	get_viewport().get_texture().get_image().save_png("/tmp/gshots/single0.png")
 	print("V23 DONE")
 	get_tree().quit()

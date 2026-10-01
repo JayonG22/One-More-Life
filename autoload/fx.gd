@@ -19,6 +19,9 @@ const THEME_FLAVOR := {
 	"superhero": {"pitch": 1.06, "wave": "square", "bright": 1.2},
 	"royal": {"pitch": 0.94, "wave": "tri", "bright": 1.1},
 	"witch": {"pitch": 0.9, "wave": "tri", "bright": 0.85},
+	"pets": {"pitch": 1.14, "wave": "sine", "bright": 1.1},
+	"prison": {"pitch": 0.78, "wave": "square", "bright": 0.55},
+	"guard": {"pitch": 0.84, "wave": "tri", "bright": 0.65},
 }
 
 ## Music: [root Hz, chords as semitone offsets, pad wave, arp wave, tempo (s per arp note), mood gain]
@@ -32,6 +35,9 @@ const MUSIC := {
 	"superhero": [196.0, [[0, 4, 7], [7, 11, 14], [9, 12, 16], [5, 9, 12]], "tri", "square", 0.25, 0.75],
 	"royal": [293.7, [[0, 4, 7], [5, 9, 12], [7, 11, 14], [0, 4, 7]], "tri", "sine", 0.5, 0.9],
 	"witch": [220.0, [[0, 3, 7], [5, 8, 12], [7, 11, 14], [0, 3, 7]], "sine", "tri", 0.375, 0.9],
+	"pets": [329.6, [[0, 4, 7], [5, 9, 12], [7, 11, 14], [2, 5, 9]], "sine", "tri", 0.3, 0.9],
+	"prison": [98.0, [[0, 3, 6], [-2, 1, 5], [-5, -2, 1], [-1, 2, 6]], "saw", "square", 1.2, 0.55],
+	"guard": [110.0, [[0, 3, 7], [-4, 0, 3], [-2, 2, 5], [-5, -1, 2]], "tri", "square", 0.9, 0.6],
 }
 
 var _cache: Dictionary = {}
@@ -199,7 +205,7 @@ func _render(notes: Array, total: float, rate: int = RATE, pad: bool = false) ->
 
 
 func _build(id: String) -> AudioStreamWAV:
-	var fl: Dictionary = THEME_FLAVOR.get(ThemeManager.current, THEME_FLAVOR["dark"])
+	var fl: Dictionary = THEME_FLAVOR.get(_key(), THEME_FLAVOR["dark"])
 	var p: float = fl["pitch"]
 	var w: String = fl["wave"]
 	var br: float = fl["bright"]
@@ -277,7 +283,7 @@ func _build(id: String) -> AudioStreamWAV:
 func play(id: String, pitch_var: float = 0.03) -> void:
 	if not _enabled:
 		return
-	var key := id + "_" + ThemeManager.current
+	var key := id + "_" + _key()
 	if id == "bubble":
 		key += str(randi() % 4)
 	if not _cache.has(key):
@@ -316,11 +322,26 @@ func play_for_changes(changes: Dictionary) -> void:
 
 # ---------------------------------------------------------------- music
 
+## A mode (Pets Life, Prison Life) has its own sound, whatever the visual theme is.
+var mode_key := ""
+
+
+func set_mode(k: String) -> void:
+	if k == mode_key:
+		return
+	mode_key = k
+	_on_theme()
+
+
+func _key() -> String:
+	return mode_key if mode_key != "" else ThemeManager.current
+
+
 func _on_theme() -> void:
 	_cache.clear()
 	if not _music_on:
 		return
-	var th: String = ThemeManager.current
+	var th: String = _key()
 	if th == _music_theme:
 		return
 	_music_theme = th
@@ -357,9 +378,9 @@ func _music_ready(th: String, st: AudioStreamWAV) -> void:
 		_thread.wait_to_finish()
 		_thread = null
 	_music_cache[th] = st
-	if ThemeManager.current == th:
+	if _key() == th:
 		_start_music(st)
-	elif ThemeManager.current != _music_theme:
+	elif _key() != _music_theme:
 		_music_theme = ""
 		_on_theme()
 

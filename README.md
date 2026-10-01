@@ -1,6 +1,6 @@
 # ONE MORE LIFE — v0.21.0
 
-A life simulator in the spirit of BitLife, built in Godot 4.4, where every choice echoes. Everything is unlocked. No ads, no store, no passes.
+A text-driven life simulator, built in Godot 4.4, where every choice echoes. Everything is unlocked. No ads, no store, no passes.
 
 > **v0.19.0 — three game modes.** The title screen opens on **Choose your game mode**: **Human Life** (the classic), **Pets Life** (live as a dog, cat, rabbit, parrot or horse — v0.18) and **Prison Life** (serve a sentence, or work the walls as a guard — v0.19). Each is its own game with its own year, events, screens and endings. See `CHANGELOG-v0.18.0.md` and `CHANGELOG-v0.19.0.md`.
 >
@@ -156,7 +156,7 @@ Life Threads, physical and mental health, meaningful home ownership, expanded ca
 - **Grudges:** seriously wronging someone (firing, suing, dumping, fighting) makes them hold a grudge. Grudges fade slowly and can turn into payback: a lawsuit, sabotage at work, rumors, turning your family against you, tipping off the police, or a fight in the street. Make amends from their profile. Big grudges pass to your heirs as family feuds.
 - **Consequences of neglect:** adult children you ignore can cut you off. In old age, who looks after you depends on how you treated your family; with nobody close, you end up in a nursing home.
 - **Achievements:** 205 achievements across 12 categories and 4 tiers in the **Trophy Room**, with prerequisite chains (locked tiles show what opens them) and secret ones. Unlocks pop up as toasts mid-game.
-- **Missions:** daily (3), weekly (5) and monthly (8) boards that reset on the real calendar, like BitLife's challenges. Progress counts across every life you play in the period. Clearing a board pays a bonus.
+- **Missions:** daily (3), weekly (5) and monthly (8) boards that reset on the real calendar. Progress counts across every life you play in the period. Clearing a board pays a bonus.
 - **Stars and the Star Shop:** earned from achievements and missions (never paid). Spend them on 16 titles (achievements unlock 8 more) and 8 **Legacy Boons** you can choose at New Life: Trust Fund, Gifted, Second Wind, Lucky Star, Iron Will, Family Ties, Clean Slate and Street Smarts.
 - **The death screen** adds "What caught up with you" (scars, habits, bankruptcies, grudges, estranged children, Turning Points survived) and the achievements unlocked that life.
 - v0.3.0 saves load in v0.4.0.
@@ -201,7 +201,7 @@ Life Threads, physical and mental health, meaningful home ownership, expanded ca
 - **Property:** buy from a yearly listing (studio condo up to a private island), tenants as real people, rent, repairs, renovations, rent rises and evictions.
 - **Possessions:** jewelry, art, collectibles and vehicles whose value moves over time; they pass down as heirlooms.
 - **Courts and law:** trials with three lawyer tiers and plea deals, suing anyone (and being sued), and 5 licenses (driver's, motorcycle, boating, firearms, pilot).
-- **God Mode (free):** edit your stats, karma, fame, money, traits and any person's relationship, looks and age.
+- **Sandbox Mode (free):** edit your stats, karma, fame, money, traits and any person's relationship, looks and age.
 - **Life Modifiers (free):** Golden Passport, Golden Piggy Bank, Star Power, Golden Diploma, Brass Knuckles, Get Out of Jail Card. Lives using them are tagged **Modified** and counted separately.
 - **13 Challenges** with live checklists on the main screen and badges that appear next to your name.
 - **Ribbon collection** across every life you have played.
