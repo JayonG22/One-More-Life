@@ -3,7 +3,7 @@ extends MinigameGamble
 ## LUCKY WHEEL. Sixteen slices, a flapper that ticks past them, and a long slowing
 ## spin. The slice is drawn first; the wheel is built to stop there.
 
-const SEG := [0.0, 2.0, 0.0, 1.0, 0.0, 0.5, 0.0, 3.0, 0.0, 1.0, 0.5, 0.0, 1.5, 0.0, 2.0, 3.5]
+const SEG := [0.0, 2.0, 0.0, 1.0, 0.0, 0.5, 0.0, 3.0, 0.0, 0.5, 0.5, 0.0, 1.5, 0.0, 2.0, 3.5]
 var a := 0.0
 var spinning := false
 var t := 0.0

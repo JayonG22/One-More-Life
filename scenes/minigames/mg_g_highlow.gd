@@ -83,7 +83,7 @@ func _guess(high: bool) -> void:
 			msg_l.text = "A tie. The pot stays."
 			Fx.play("tap")
 		elif win:
-			var f := 0.96 / p
+			var f := 0.92 / p
 			pot *= f
 			streak += 1
 			msg_l.text = "Right!  ×%.2f" % f

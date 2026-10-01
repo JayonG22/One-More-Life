@@ -56,7 +56,7 @@ func _next() -> void:
 	plan_for = ""
 	pass
 	var g = load(Minigames.DEFS[cur_id]["script"]).new()
-	g.setup({"skill": 60, "difficulty": 1.0, "sport": "basketball", "opponent": "Rival", "map": randi() % 3})
+	g.setup({"skill": 60, "difficulty": 1.0, "sport": "basketball", "opponent": "Rival", "map": randi() % 3, "single": true})
 	g.finished.connect(func(score: float, detail: Dictionary):
 		results[cur_id] = results.get(cur_id, []) + ["%.2f" % score + (str(detail) if cur_id == "potion" else "")]
 		call_deferred("_next"))

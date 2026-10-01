@@ -1,7 +1,7 @@
 extends MinigameGamble
 
 ## ROCKET. A multiplier climbs. Cash out before it blows. The point where it
-## crashes is drawn up front from a fair curve (the house keeps 4%), and everyone
+## crashes is drawn up front from a fair curve (the house keeps 8%), and everyone
 ## who has ever played knows exactly how it feels to watch it go past 3x and wait.
 
 var crash_at := 2.0
@@ -38,7 +38,7 @@ func build() -> void:
 	auto_l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	place(auto_l, Vector2(0, 510), Vector2(W, 24))
 	var u := randf()
-	crash_at = maxf(1.0, snappedf(0.96 / maxf(0.0001, 1.0 - u), 0.01))
+	crash_at = maxf(1.0, snappedf(0.92 / maxf(0.0001, 1.0 - u), 0.01))
 	if luck > 1.0 and randf() < (luck - 1.0) * 0.04:
 		crash_at *= 1.6
 	crash_at = minf(crash_at, 500.0)

@@ -2,7 +2,7 @@ extends MinigameGamble
 
 ## SLOTS. Three reels that spin and stop one at a time. Two matching with the third
 ## still to come makes the whole table lean in. A near-miss offers a respin of the
-## odd reel for half the bet again. Three 🎁 open a bonus: pick three chests.
+## odd reel for a full bet again; only a triple pays after that. Three 🎁 open a bonus: pick three chests.
 
 const SYM := ["🍒", "🍋", "🔔", "⭐", "💎", "7️⃣"]
 const WEIGHTS := [30, 25, 18, 13, 9, 5]
@@ -58,10 +58,10 @@ func build() -> void:
 		(reels[i] as Label).text = SYM[randi() % SYM.size()]
 	spin_btn = button("SPIN  [Space]", _spin, "Primary")
 	place(spin_btn, Vector2(W / 2.0 - 150, 430), Vector2(300, 66))
-	respin_btn = button("Respin the odd reel  (+%s)" % GameState.fmt_money(int(bet * 0.5)), _respin, "Accent")
+	respin_btn = button("Respin the odd reel  (+%s)" % GameState.fmt_money(bet), _respin, "Accent")
 	place(respin_btn, Vector2(W / 2.0 - 190, 430), Vector2(380, 66))
 	respin_btn.visible = false
-	var legend := label("7️⃣ 100×  ·  💎 50×  ·  ⭐ 20×  ·  🔔 12×  ·  🍋 8×  ·  🍒 5×   |   any pair pays 1.5×   |   🎁🎁🎁 bonus chests", 14, true)
+	var legend := label("7️⃣ 100×  ·  💎 50×  ·  ⭐ 20×  ·  🔔 12×  ·  🍋 8×  ·  🍒 5×   |   any pair pays your bet back   |   🎁🎁🎁 bonus chests", 14, true)
 	legend.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	place(legend, Vector2(0, 508), Vector2(W, 24))
 
@@ -104,7 +104,7 @@ func _spin() -> void:
 func _respin() -> void:
 	if spinning or done or respun:
 		return
-	extra_stake = int(bet * 0.5)
+	extra_stake = bet
 	respun = true
 	respin_btn.visible = false
 	var odd := 0
@@ -179,8 +179,8 @@ func _evaluate() -> void:
 		mult = float(PAY[a])
 		msg_l.text = "THREE %s !" % a
 	elif (a == b or b == c) and b != GIFT:
-		mult = 1.5 if b != "🍒" else 2.0
-		msg_l.text = "A pair…"
+		mult = 1.0 if not respun else 0.0
+		msg_l.text = "A pair…" if not respun else "No luck."
 		# a pair offers the respin once
 		if not respun and money_now >= int(bet * 2.0):
 			respin_btn.visible = true
@@ -191,7 +191,7 @@ func _evaluate() -> void:
 			t.tween_callback(func(): if not done and not spinning and respin_btn.visible: respin_btn.visible = false; _finish(mult, txt))
 			return
 	elif final_syms.has("🍒"):
-		mult = 0.5
+		mult = 0.5 if not respun else 0.0
 		msg_l.text = "A cherry."
 	else:
 		msg_l.text = "Nothing."

@@ -30,9 +30,7 @@ Last reconciled against the code: v0.17.0.
   real operating system by the author of this register. The Linux build was run
   natively.
 - **macOS is unsigned.** First launch needs right-click → Open.
-- **Interface size tops out at 130%.** The three-column layout needs about
-  1,277 × 784 logical pixels; beyond 130% it would clip. A single-column layout
-  for very large text is the real fix and is a post-1.0 item.
+- **Large text.** Interface size now goes to 175%, using a single column with Life / Play / Activities tabs when the screen is too narrow for three.
 - **Economy.** Bankruptcies in the simulation rose about 13% against v0.14 after
   the real-life costs went in. Inside run-to-run noise, but worth a balance pass.
 - **Streamline icons** — licensed; not used, by decision.

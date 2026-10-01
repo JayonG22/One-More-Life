@@ -1,4 +1,4 @@
-# ONE MORE LIFE — v0.22.0
+# ONE MORE LIFE — v0.23.0
 
 A text-driven life simulator, built in Godot 4.4, where every choice echoes. Everything is unlocked. No ads, no store, no passes.
 

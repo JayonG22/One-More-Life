@@ -35,7 +35,7 @@ func build() -> void:
 
 func _print_card() -> void:
 	symbols.clear()
-	var wins := rolled(0.27)
+	var wins := rolled(0.155)
 	if wins:
 		var tot := 0
 		for k in WEIGHT.keys():

@@ -965,7 +965,7 @@ func _casino_roll(game: String, amt: int, choice: String) -> void:
 	var luck := Shop.luck()
 	match game:
 		"rocket":
-			var cp := maxf(1.0, 0.96 / maxf(0.0001, 1.0 - randf()))
+			var cp := maxf(1.0, 0.92 / maxf(0.0001, 1.0 - randf()))
 			var tgt := 1.0 + randf() * 1.5
 			_payout("Rocket", amt, int(amt * tgt) if cp >= tgt else 0, "I tried to cash out at %.2fx. The rocket went to %.2fx." % [tgt, minf(cp, 99.0)])
 		"plinko":
@@ -977,10 +977,10 @@ func _casino_roll(game: String, amt: int, choice: String) -> void:
 			_payout("Plinko", amt, int(amt * float(tab[k])), "The ball dropped into the %s× bucket." % str(tab[k]))
 		"scratch":
 			var wm: float = [2.0, 3.0, 5.0, 10.0, 25.0, 100.0][mini(5, int(pow(randf(), 3.0) * 6.0))]
-			var hit := randf() < 0.27 * (1.0 + (luck - 1.0) * 0.12)
+			var hit := randf() < 0.155 * (1.0 + (luck - 1.0) * 0.12)
 			_payout("Scratch card", amt, int(amt * wm) if hit else 0, "I scratched the card.")
 		"wheel":
-			var wt := [0.0, 2.0, 0.0, 1.0, 0.0, 0.5, 0.0, 3.0, 0.0, 1.0, 0.5, 0.0, 1.5, 0.0, 2.0, 3.5]
+			var wt := [0.0, 2.0, 0.0, 1.0, 0.0, 0.5, 0.0, 3.0, 0.0, 0.5, 0.5, 0.0, 1.5, 0.0, 2.0, 3.5]
 			var wv: float = wt[randi() % wt.size()]
 			_payout("Lucky wheel", amt, int(amt * wv), "The wheel stopped on %s×." % str(wv))
 		"roulette":
@@ -1022,7 +1022,7 @@ func _casino_roll(game: String, amt: int, choice: String) -> void:
 			if reels[0] == reels[1] and reels[1] == reels[2]:
 				mult2 = {"🍒": 5.0, "🍋": 8.0, "🔔": 12.0, "⭐": 20.0, "💎": 50.0, "7️⃣": 100.0}[reels[0]]
 			elif reels[0] == reels[1] or reels[1] == reels[2]:
-				mult2 = 1.5 if reels[1] != "🍒" else 2.0
+				mult2 = 1.0
 			elif reels.has("🍒"):
 				mult2 = 0.5
 			_payout("Slots", amt, int(amt * mult2), "%s  %s  %s" % reels)
@@ -1036,7 +1036,8 @@ func _casino_roll(game: String, amt: int, choice: String) -> void:
 			var won := (b > a and guess_high) or (b < a and not guess_high)
 			if not won and randf() < (luck - 1.0) * 0.05:
 				won = true
-			_payout("High or low", amt, amt * 2 if won else 0, "The dealer showed a %s. I called %s. Next card: %s." % [an, "higher" if guess_high else "lower", bn])
+			var hp := float(14 - a) / 13.0 if guess_high else float(a - 2) / 13.0
+			_payout("High or low", amt, int(amt * 0.92 / maxf(0.08, hp)) if won else 0, "The dealer showed a %s. I called %s. Next card: %s." % [an, "higher" if guess_high else "lower", bn])
 
 
 func _weighted_reel() -> int:

@@ -303,7 +303,8 @@ func _save_and_next() -> void:
 	GameState.new_life({"first": "Pickle", "last": "", "gender": "male", "country": "uk", "life_path": "pet", "keep_family": true, "species": "cat", "origin": "loving", "inherit": opts["inherit"]})
 	ok(Pets.active() and GameState.player["first"] == "Pickle", "the next life did not start")
 	var kept: String = str(GameState.player["last"])
-	ok(kept == house or str(entry["pet"].get("house", "")) == house, "the house name was not remembered (%s vs %s)" % [kept, house])
+	# the household can change over a long life (a rehoming); the next life remembers the last house
+	ok(kept == str(entry["pet"].get("house", "")) and kept != "", "the house name was not remembered (%s vs %s)" % [kept, house])
 	ok(Pets.owner_id() != "", "the next life has no household")
 	print("  save and continue: a pet round-trips; the next life comes to the same house (%s, %s)" % [house, owner])
 

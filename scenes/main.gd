@@ -1141,7 +1141,7 @@ func _build_game() -> Control:
 	port.add_child(pl)
 	g["portrait"] = pl
 	var avv := AvatarView.new()
-	avv.custom_minimum_size = Vector2(118, 142)
+	avv.custom_minimum_size = Vector2(118, 126)
 	avv.visible = false
 	avv.mouse_filter = Control.MOUSE_FILTER_PASS
 	port.add_child(avv)
@@ -4506,11 +4506,19 @@ func _mg_play(id: String, params: Dictionary, cb: Callable) -> void:
 	mg_box.add_child(holder)
 	_mg_fit()
 	var on_done := func(score: float, detail: Dictionary) -> void:
+		if bool(Minigames.DEFS[id].get("gamble", false)):
+			get_tree().create_timer(0.3).timeout.connect(func(): _mg_finish(cb, score, detail))
+			return
 		get_tree().create_timer(0.9).timeout.connect(func(): _mg_result(id, score, detail, cb))
 	game.finished.connect(on_done)
+	if game.has_signal("restarted"):
+		game.connect("restarted", func(n: Minigame) -> void:
+			mg_game = n
+			n.finished.connect(on_done)
+			_mg_fit())
 	var give_up := func() -> void:
-		if is_instance_valid(game) and not game.done:
-			game.finish(0.05, {"quit": true})
+		if is_instance_valid(mg_game) and not mg_game.done:
+			mg_game.finish(0.05, {"quit": true})
 	var quit := U.btn("Give up", give_up, "Flat")
 	mg_box.add_child(quit)
 	mg_default = null
