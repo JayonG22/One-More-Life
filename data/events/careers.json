@@ -21,6 +21,13 @@
       "effects": {
        "fame": 3,
        "money": 15000
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -30,6 +37,13 @@
        "fame": 5,
        "money": 40000,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -43,6 +57,13 @@
       "effects": {
        "skill": 5,
        "fame": 2
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -50,6 +71,13 @@
       "weight": 1,
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -64,6 +92,13 @@
        "skill": 6,
        "fame": 2,
        "money": -8000
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -73,6 +108,13 @@
        "skill": 2,
        "happiness": -3,
        "money": -5000
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -746,6 +788,13 @@
        "money": -800,
        "skill": 3,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -756,6 +805,13 @@
        "money": -1400,
        "happiness": 7,
        "fame": 1
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -765,6 +821,13 @@
        "money": -900,
        "stress": -4,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -778,6 +841,13 @@
       "effects": {
        "skill": 4,
        "fame": 1
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -787,6 +857,13 @@
        "fame": -2,
        "karma": -1,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -796,6 +873,13 @@
        "skill": 5,
        "fame": 3,
        "money": 4000
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -808,6 +892,13 @@
       "weight": 1,
       "effects": {
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -816,6 +907,13 @@
       "effects": {
        "skill": 2,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -1304,6 +1402,13 @@
       "effects": {
        "money": 80000,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -1313,6 +1418,13 @@
        "money": 50000,
        "happiness": -6,
        "fame": 3
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -1322,6 +1434,13 @@
        "happiness": -8,
        "money": 20000,
        "karma": -2
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -1339,6 +1458,13 @@
       "trait_bonus": {
        "Charmer": 2,
        "Rebel": 2
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -1346,6 +1472,13 @@
       "weight": 1,
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -1360,6 +1493,13 @@
        "money": 30000,
        "happiness": 3,
        "fame": 1
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -1368,6 +1508,13 @@
       "effects": {
        "money": 70000,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.stagecareer",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -1496,7 +1643,14 @@
        "skill": 2,
        "fame": 4
       },
-      "keep_role": "rv"
+      "keep_role": "rv",
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
+      }
      },
      {
       "text": "They outplayed me. Ouch.",
@@ -1505,7 +1659,14 @@
        "fame": -2,
        "happiness": -4
       },
-      "keep_role": "rv"
+      "keep_role": "rv",
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
+      }
      }
     ]
    },
@@ -1518,7 +1679,14 @@
       "effects": {
        "fame": 3
       },
-      "keep_role": "rv"
+      "keep_role": "rv",
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
+      }
      },
      {
       "text": "The league fined us both. The jerseys with our names on sold twice as fast.",
@@ -1527,6 +1695,13 @@
        "fame": 4,
        "money": -3000,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1537,6 +1712,13 @@
        "money": -20000,
        "karma": -3,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -1549,6 +1731,13 @@
       "weight": 1,
       "effects": {
        "karma": 2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1558,6 +1747,13 @@
        "fame": 4,
        "happiness": 6,
        "skill": 2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1566,6 +1762,13 @@
       "effects": {
        "stress": 6,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -1783,6 +1986,13 @@
       "effects": {
        "happiness": 2,
        "fame": 1
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1791,6 +2001,13 @@
       "effects": {
        "happiness": -5,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1799,6 +2016,13 @@
       "effects": {
        "happiness": -3,
        "fame": -1
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -1814,6 +2038,13 @@
       },
       "trait_bonus": {
        "Ambitious": 2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1821,6 +2052,13 @@
       "weight": 1,
       "effects": {
        "fame": -2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -1834,6 +2072,13 @@
       "effects": {
        "happiness": 6,
        "fame": 2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -1842,6 +2087,13 @@
       "effects": {
        "happiness": -2,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -2091,6 +2343,13 @@
       "effects": {
        "happiness": 8,
        "money": 60000
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -2100,6 +2359,13 @@
        "stress": 8,
        "happiness": 3,
        "money": 60000
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -2109,6 +2375,13 @@
        "happiness": 12,
        "karma": 3,
        "money": 60000
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -2121,6 +2394,13 @@
       "weight": 1,
       "effects": {
        "stress": -5
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -2129,6 +2409,13 @@
       "effects": {
        "happiness": -5,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -2137,6 +2424,13 @@
       "effects": {
        "karma": 2,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -2150,6 +2444,13 @@
       "effects": {
        "happiness": 5,
        "money": 20000
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -2158,6 +2459,13 @@
       "effects": {
        "happiness": -1,
        "money": 15000
+      },
+      "schedule": {
+       "event": "echo.sportlegacy",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -2192,6 +2500,13 @@
       },
       "stat_bonus": {
        "smarts": 1.0
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2199,6 +2514,13 @@
       "weight": 1,
       "effects": {
        "approval": -2
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2216,6 +2538,13 @@
       "trait_bonus": {
        "Funny": 2,
        "Charmer": 2
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2223,6 +2552,13 @@
       "weight": 1,
       "effects": {
        "approval": -5
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2236,6 +2572,13 @@
       "effects": {
        "approval": 3,
        "karma": -4
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2245,6 +2588,13 @@
        "approval": -5,
        "karma": -2,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2254,6 +2604,13 @@
        "approval": 9,
        "fame": 4,
        "karma": -3
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2487,6 +2844,13 @@
       "effects": {
        "happiness": 5,
        "approval": -6
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2496,6 +2860,13 @@
        "happiness": 6,
        "approval": -3,
        "karma": -2
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2505,6 +2876,13 @@
        "approval": -14,
        "stress": 10,
        "heat": 5
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2518,6 +2896,13 @@
       "effects": {
        "approval": 4,
        "karma": 4
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2527,6 +2912,13 @@
        "approval": 2,
        "money": -10000,
        "karma": 3
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2536,6 +2928,13 @@
        "approval": -2,
        "karma": 4,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2549,6 +2948,13 @@
       "effects": {
        "approval": 1,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2557,6 +2963,13 @@
       "effects": {
        "approval": -3,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2586,6 +2999,13 @@
       "effects": {
        "approval": 5,
        "karma": -8
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2594,6 +3014,13 @@
       "effects": {
        "approval": -6,
        "karma": -6
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2606,6 +3033,13 @@
       "weight": 1,
       "effects": {
        "karma": 6
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2614,6 +3048,13 @@
       "effects": {
        "karma": 6,
        "approval": 3
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2624,6 +3065,13 @@
        "approval": -4,
        "stress": 5,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2638,6 +3086,13 @@
        "approval": 5,
        "karma": -6,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -2647,6 +3102,13 @@
        "approval": -8,
        "karma": -3,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.politicalmemory",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -2776,6 +3238,13 @@
       "weight": 1,
       "effects": {
        "respect": 8
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2784,6 +3253,13 @@
       "effects": {
        "respect": 4,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2793,6 +3269,13 @@
        "respect": 12,
        "stress": 8,
        "heat": 3
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -2806,6 +3289,13 @@
       "effects": {
        "respect": -10,
        "stress": 10
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2814,6 +3304,13 @@
       "effects": {
        "respect": 10,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2823,6 +3320,13 @@
        "respect": -8,
        "stress": 12,
        "heat": 4
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -2835,6 +3339,13 @@
       "weight": 1,
       "effects": {
        "respect": -15
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2843,6 +3354,13 @@
       "effects": {
        "respect": -6,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2851,6 +3369,13 @@
       "effects": {
        "respect": 5,
        "karma": 3
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -2971,6 +3496,13 @@
       "effects": {
        "respect": 10,
        "karma": -10
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2981,6 +3513,13 @@
        "karma": -15,
        "stress": 12,
        "happiness": -8
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -2990,6 +3529,13 @@
        "respect": 12,
        "karma": -8,
        "heat": 4
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -3003,7 +3549,14 @@
       "effects": {
        "karma": 6
       },
-      "keep_role": "cm"
+      "keep_role": "cm",
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
+      }
      },
      {
       "text": "The boss found out I warned them.",
@@ -3011,6 +3564,13 @@
       "effects": {
        "respect": -20,
        "health": -10
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -3020,7 +3580,14 @@
     "outcomes": [
      {
       "text": "I kept my mouth shut.",
-      "weight": 1
+      "weight": 1,
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
+      }
      },
      {
       "text": "{cm.first} was arrested the following week. Everyone looked at me.",
@@ -3029,6 +3596,13 @@
        "respect": -10,
        "stress": 12,
        "heat": 6
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3037,6 +3611,13 @@
       "effects": {
        "stress": -3,
        "karma": 2
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -3449,6 +4030,13 @@
        "cred": 4,
        "heat": 8,
        "karma": -5
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3462,7 +4050,14 @@
        "theft",
        0,
        1
-      ]
+      ],
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
+      }
      }
     ]
    },
@@ -3471,7 +4066,14 @@
     "outcomes": [
      {
       "text": "Not worth the risk.",
-      "weight": 1
+      "weight": 1,
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
+      }
      },
      {
       "text": "Two blocks later he was robbed by someone less careful. I heard the shout and kept walking.",
@@ -3479,6 +4081,13 @@
       "effects": {
        "karma": 1,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3486,6 +4095,13 @@
       "weight": 1,
       "effects": {
        "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -3498,6 +4114,13 @@
       "weight": 1,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3506,6 +4129,13 @@
       "effects": {
        "stress": 2,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.underworld",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]

@@ -122,6 +122,13 @@
       },
       "trait_bonus": {
        "Charmer": 2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -132,6 +139,13 @@
       },
       "effects": {
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -147,6 +161,13 @@
       },
       "relationship": {
        "nb": -15
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -156,6 +177,13 @@
        "money": -60,
        "stress": 5,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -167,6 +195,13 @@
       },
       "relationship": {
        "nb": 10
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -186,6 +221,13 @@
       },
       "trait_bonus": {
        "Hothead": 2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -197,6 +239,13 @@
       },
       "relationship": {
        "nb": 8
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -209,6 +258,13 @@
       },
       "relationship": {
        "nb": -25
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -221,6 +277,13 @@
       "weight": 1,
       "effects": {
        "money": -15
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -231,6 +294,13 @@
        "happiness": -3,
        "money": -15,
        "health": -2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -240,6 +310,13 @@
        "happiness": 5,
        "stress": -4,
        "money": -15
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -273,6 +350,13 @@
       "weight": 1,
       "effects": {
        "money": -800
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -282,6 +366,13 @@
        "money": -1400,
        "stress": 4,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -291,6 +382,13 @@
        "money": -150,
        "happiness": 4,
        "karma": 2
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ],
@@ -310,6 +408,13 @@
       },
       "stat_bonus": {
        "smarts": 1.2
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -318,6 +423,13 @@
       "effects": {
        "money": -1500,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -330,6 +442,13 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -339,6 +458,13 @@
        "money": -200,
        "happiness": 1,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -347,6 +473,13 @@
       "effects": {
        "happiness": -6,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -688,6 +821,13 @@
       },
       "relationship": {
        "friend": 12
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -697,6 +837,13 @@
        "money": -150,
        "happiness": 3,
        "karma": 2
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -706,6 +853,13 @@
        "money": -150,
        "happiness": -5,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -718,6 +872,13 @@
       "weight": 1,
       "relationship": {
        "friend": -8
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -726,6 +887,13 @@
       "effects": {
        "karma": -2,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -734,6 +902,13 @@
       "effects": {
        "happiness": 4,
        "stress": -3
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -750,6 +925,13 @@
       },
       "relationship": {
        "friend": -60
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -758,6 +940,13 @@
       "effects": {
        "happiness": 8,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -767,6 +956,13 @@
        "karma": -8,
        "stress": 8,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ],
@@ -1060,6 +1256,13 @@
       "effects": {
        "karma": 6,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      },
      {
@@ -1069,6 +1272,13 @@
        "happiness": 2,
        "karma": 2,
        "stress": 1
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      },
      {
@@ -1077,6 +1287,13 @@
       "effects": {
        "karma": 8,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      }
     ]
@@ -1089,6 +1306,13 @@
       "weight": 1,
       "effects": {
        "karma": -3
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      },
      {
@@ -1097,6 +1321,13 @@
       "effects": {
        "karma": -2,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      },
      {
@@ -1104,6 +1335,13 @@
       "weight": 1,
       "effects": {
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      }
     ]
@@ -1117,6 +1355,13 @@
       "effects": {
        "karma": 3,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      },
      {
@@ -1125,6 +1370,13 @@
       "effects": {
        "karma": 4,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.goodturn",
+       "years": [
+        2,
+        9
+       ]
       }
      }
     ]
@@ -1459,7 +1711,14 @@
       "relationship": {
        "nb": 20
       },
-      "keep_role": "nb"
+      "keep_role": "nb",
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
+      }
      },
      {
       "text": "The potato salad had been left in the sun for an hour. The party became a story everyone tells.",
@@ -1468,6 +1727,13 @@
        "happiness": -4,
        "health": -4,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1476,6 +1742,13 @@
       "effects": {
        "happiness": 7,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -1488,6 +1761,13 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1497,6 +1777,13 @@
        "happiness": -2,
        "stress": 3,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1505,6 +1792,13 @@
       "effects": {
        "happiness": 6,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -1514,7 +1808,14 @@
     "outcomes": [
      {
       "text": "I stayed in.",
-      "weight": 1
+      "weight": 1,
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
+      }
      },
      {
       "text": "I heard the laughter through the wall until eleven and felt, for the first time, that I lived next to a community I wasn't part of.",
@@ -1522,6 +1823,13 @@
       "effects": {
        "happiness": -5,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1530,6 +1838,13 @@
       "effects": {
        "happiness": 4,
        "stress": -4
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]

@@ -24,6 +24,13 @@
       "effects": {
        "stress": 1,
        "job_perf": 3
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -33,6 +40,13 @@
        "stress": 5,
        "job_perf": 1,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -47,6 +61,13 @@
        "stress": -4,
        "happiness": 3,
        "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -55,6 +76,13 @@
       "effects": {
        "stress": 2,
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -64,6 +92,13 @@
        "stress": 5,
        "happiness": -3,
        "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -77,6 +112,13 @@
       "effects": {
        "stress": -2,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -85,6 +127,13 @@
       "effects": {
        "happiness": 3,
        "job_perf": -1
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -119,6 +168,13 @@
        "smarts": 3,
        "job_perf": 3,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -127,6 +183,13 @@
       "effects": {
        "smarts": 2,
        "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -140,6 +203,13 @@
       "effects": {
        "job_perf": 4,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -149,6 +219,13 @@
        "job_perf": -2,
        "smarts": 1,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -162,6 +239,13 @@
       "effects": {
        "stress": -1,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -170,6 +254,13 @@
       "effects": {
        "smarts": 1.5,
        "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -203,6 +294,13 @@
       "effects": {
        "job_perf": 5,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -212,6 +310,13 @@
        "job_perf": 1,
        "stress": 6,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -226,6 +331,13 @@
        "happiness": 5,
        "stress": -2,
        "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -234,6 +346,13 @@
       "effects": {
        "stress": 4,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -248,6 +367,13 @@
        "job_perf": 2,
        "karma": -2,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -257,6 +383,13 @@
        "stress": 6,
        "happiness": -4,
        "karma": -2
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -377,6 +510,13 @@
        "smarts": 2,
        "job_perf": 4,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -385,6 +525,13 @@
       "effects": {
        "job_perf": 1,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -398,6 +545,13 @@
       "effects": {
        "job_perf": 2,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -407,6 +561,13 @@
        "job_perf": 2,
        "karma": 2,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -420,6 +581,13 @@
       "effects": {
        "job_perf": -1,
        "stress": 1
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -428,6 +596,13 @@
       "effects": {
        "job_perf": 0,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -547,6 +722,13 @@
        "money": 6000,
        "stress": -3,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -556,6 +738,13 @@
        "money": 4000,
        "happiness": -3,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -569,6 +758,13 @@
       "effects": {
        "stress": 3,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -577,6 +773,13 @@
       "effects": {
        "stress": 6,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -590,6 +793,13 @@
       "effects": {
        "job_perf": 5,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -599,6 +809,13 @@
        "job_perf": 2,
        "stress": 8,
        "happiness": -5
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -607,6 +824,13 @@
       "effects": {
        "stress": 3,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -986,6 +1210,13 @@
        "money": 4000,
        "happiness": 3,
        "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -994,6 +1225,13 @@
       "effects": {
        "stress": 3,
        "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -1006,6 +1244,13 @@
       "weight": 1,
       "effects": {
        "job_perf": 1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -1013,6 +1258,13 @@
       "weight": 1,
       "effects": {
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -1027,6 +1279,13 @@
        "money": 3000,
        "job_perf": 2,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -1036,6 +1295,13 @@
        "stress": 5,
        "job_perf": -3,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -1069,6 +1335,13 @@
       "effects": {
        "happiness": 4,
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -1077,6 +1350,13 @@
       "effects": {
        "happiness": -2,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -1091,6 +1371,13 @@
        "money": 2500,
        "stress": -3,
        "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -1100,6 +1387,13 @@
        "money": 2200,
        "happiness": -4,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -1114,6 +1408,13 @@
        "karma": 4,
        "happiness": 4,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -1122,6 +1423,13 @@
       "effects": {
        "karma": 3,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -1154,6 +1462,13 @@
       "effects": {
        "stress": 2,
        "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1161,6 +1476,13 @@
       "weight": 1,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -1173,6 +1495,13 @@
       "weight": 1,
       "effects": {
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1181,6 +1510,13 @@
       "effects": {
        "stress": -2,
        "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -1195,6 +1531,13 @@
        "money": -700,
        "stress": 1,
        "health": 1
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -1203,6 +1546,13 @@
       "effects": {
        "money": -700,
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -1319,6 +1669,13 @@
        "health": -5,
        "stress": 6,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -1327,6 +1684,13 @@
       "effects": {
        "health": -2,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -1340,6 +1704,13 @@
       "effects": {
        "health": 1,
        "stress": -1
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -1348,6 +1719,13 @@
       "effects": {
        "health": 1,
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -1362,6 +1740,13 @@
        "health": 1,
        "stress": -2,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -1369,6 +1754,13 @@
       "weight": 1,
       "effects": {
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -1653,6 +2045,13 @@
        "health": 3,
        "happiness": 5,
        "stress": -3
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -1661,6 +2060,13 @@
       "effects": {
        "health": 0,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -1674,6 +2080,13 @@
       "effects": {
        "health": 2,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -1682,6 +2095,13 @@
       "effects": {
        "money": -300,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -1694,6 +2114,13 @@
       "weight": 1,
       "effects": {
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -1702,6 +2129,13 @@
       "effects": {
        "health": 2,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -1735,6 +2169,13 @@
        "health": 2,
        "stress": -4,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -1743,6 +2184,13 @@
       "effects": {
        "stress": -1,
        "happiness": 1
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -1756,6 +2204,13 @@
       "effects": {
        "stress": -2,
        "health": 1
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -1765,6 +2220,13 @@
        "stress": -3,
        "happiness": 3,
        "money": -150
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -1779,6 +2241,13 @@
        "stress": 5,
        "karma": -2,
        "health": -1
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -1787,6 +2256,13 @@
       "effects": {
        "health": -2,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]

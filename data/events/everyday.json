@@ -750,6 +750,13 @@
       "effects": {
        "happiness": 6,
        "popularity": 5
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -758,6 +765,13 @@
       "effects": {
        "health": -6,
        "popularity": 3
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -770,6 +784,13 @@
       "weight": 2,
       "effects": {
        "stress": -4
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -777,6 +798,13 @@
       "weight": 1,
       "effects": {
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -792,6 +820,13 @@
       },
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -799,6 +834,13 @@
       "weight": 1,
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -812,6 +854,13 @@
       "effects": {
        "happiness": -8,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -820,6 +869,13 @@
       "effects": {
        "happiness": 2,
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -859,6 +915,13 @@
       "weight": 1,
       "effects": {
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -866,6 +929,13 @@
       "weight": 1,
       "effects": {
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -883,6 +953,13 @@
       },
       "counter": {
        "science_fairs": 1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -891,6 +968,13 @@
       "effects": {
        "smarts": 2,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -904,6 +988,13 @@
       "effects": {
        "karma": -2,
        "school": 2
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -912,6 +1003,13 @@
       "effects": {
        "school": -3,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -1371,6 +1469,13 @@
       },
       "counter": {
        "talents": 1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -1379,6 +1484,13 @@
       "effects": {
        "happiness": -3,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -1391,6 +1503,13 @@
       "weight": 2,
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -1398,6 +1517,13 @@
       "weight": 1,
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -1408,13 +1534,27 @@
      {
       "text": "I never did anything with it. Sometimes I wonder.",
       "weight": 2,
-      "effects": {}
+      "effects": {},
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
+      }
      },
      {
       "text": "I ignored it, and years later somebody I went to school with got famous doing exactly that thing.",
       "weight": 1,
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -2105,6 +2245,13 @@
       "effects": {
        "happiness": 10,
        "health": 2
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -2113,6 +2260,13 @@
       "effects": {
        "happiness": 4,
        "health": -3
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -2125,6 +2279,13 @@
       "weight": 2,
       "effects": {
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -2133,6 +2294,13 @@
       "effects": {
        "happiness": 5,
        "health": 2
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -2146,6 +2314,13 @@
       "effects": {
        "happiness": 8,
        "popularity": 3
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -2153,6 +2328,13 @@
       "weight": 1,
       "effects": {
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -2256,6 +2438,13 @@
       "weight": 1,
       "effects": {
        "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -2263,6 +2452,13 @@
       "weight": 1,
       "effects": {
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -2278,6 +2474,13 @@
       },
       "relationship": {
        "m": 8
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -2285,6 +2488,13 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -2298,6 +2508,13 @@
       "effects": {
        "happiness": 6,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -2306,6 +2523,13 @@
       "effects": {
        "happiness": -5,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.gift",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -2610,6 +2834,13 @@
        "money": 400,
        "happiness": 3,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.firstjob",
+       "years": [
+        5,
+        25
+       ]
       }
      },
      {
@@ -2617,6 +2848,13 @@
       "weight": 1,
       "effects": {
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.firstjob",
+       "years": [
+        5,
+        25
+       ]
       }
      }
     ]
@@ -2629,6 +2867,13 @@
       "weight": 2,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.firstjob",
+       "years": [
+        5,
+        25
+       ]
       }
      },
      {
@@ -2636,6 +2881,13 @@
       "weight": 1,
       "effects": {
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.firstjob",
+       "years": [
+        5,
+        25
+       ]
       }
      }
     ]
@@ -2650,6 +2902,13 @@
        "money": 400,
        "smarts": 2,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.firstjob",
+       "years": [
+        5,
+        25
+       ]
       }
      },
      {
@@ -2657,6 +2916,13 @@
       "weight": 1,
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.firstjob",
+       "years": [
+        5,
+        25
+       ]
       }
      }
     ]
@@ -2778,6 +3044,13 @@
        "school": 10,
        "stress": 8,
        "health": -2
+      },
+      "schedule": {
+       "event": "echo.exam",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -2786,6 +3059,13 @@
       "effects": {
        "school": -6,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.exam",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -2799,6 +3079,13 @@
       "effects": {
        "school": 7,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.exam",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -2808,6 +3095,13 @@
        "school": 2,
        "happiness": 4,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.exam",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -2820,6 +3114,13 @@
       "weight": 1,
       "effects": {
        "school": -5
+      },
+      "schedule": {
+       "event": "echo.exam",
+       "years": [
+        5,
+        20
+       ]
       }
      },
      {
@@ -2828,6 +3129,13 @@
       "effects": {
        "school": 2,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.exam",
+       "years": [
+        5,
+        20
+       ]
       }
      }
     ]
@@ -3052,6 +3360,13 @@
       "weight": 1,
       "effects": {
        "karma": -3
+      },
+      "schedule": {
+       "event": "echo.teensecret",
+       "years": [
+        3,
+        15
+       ]
       }
      },
      {
@@ -3062,6 +3377,13 @@
       },
       "relationship": {
        "p": -8
+      },
+      "schedule": {
+       "event": "echo.teensecret",
+       "years": [
+        3,
+        15
+       ]
       }
      }
     ]
@@ -3077,6 +3399,13 @@
       },
       "effects": {
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.teensecret",
+       "years": [
+        3,
+        15
+       ]
       }
      },
      {
@@ -3086,6 +3415,13 @@
        "happiness": -6,
        "stress": 6,
        "karma": 3
+      },
+      "schedule": {
+       "event": "echo.teensecret",
+       "years": [
+        3,
+        15
+       ]
       }
      }
     ]
@@ -3098,6 +3434,13 @@
       "weight": 2,
       "effects": {
        "karma": -5
+      },
+      "schedule": {
+       "event": "echo.teensecret",
+       "years": [
+        3,
+        15
+       ]
       }
      },
      {
@@ -3106,6 +3449,13 @@
       "effects": {
        "karma": -4,
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.teensecret",
+       "years": [
+        3,
+        15
+       ]
       }
      }
     ]
@@ -3387,6 +3737,13 @@
       "effects": {
        "smarts": 2,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.college",
+       "years": [
+        3,
+        15
+       ]
       }
      },
      {
@@ -3395,6 +3752,13 @@
       "effects": {
        "smarts": 2,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.college",
+       "years": [
+        3,
+        15
+       ]
       }
      }
     ]
@@ -3407,6 +3771,13 @@
       "weight": 2,
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.college",
+       "years": [
+        3,
+        15
+       ]
       }
      },
      {
@@ -3415,6 +3786,13 @@
       "effects": {
        "smarts": 3,
        "school": 2
+      },
+      "schedule": {
+       "event": "echo.college",
+       "years": [
+        3,
+        15
+       ]
       }
      }
     ]
@@ -3427,6 +3805,13 @@
       "weight": 2,
       "relationship": {
        "p": -3
+      },
+      "schedule": {
+       "event": "echo.college",
+       "years": [
+        3,
+        15
+       ]
       }
      },
      {
@@ -3435,6 +3820,13 @@
       "effects": {
        "happiness": -6,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.college",
+       "years": [
+        3,
+        15
+       ]
       }
      }
     ]
@@ -3631,6 +4023,13 @@
       "weight": 2,
       "effects": {
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -3638,6 +4037,13 @@
       "weight": 1,
       "effects": {
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -3650,6 +4056,13 @@
       "weight": 2,
       "effects": {
        "money": -120
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -3659,6 +4072,13 @@
        "money": -120,
        "stress": 6,
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -3671,6 +4091,13 @@
       "weight": 2,
       "relationship": {
        "f": 8
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -3678,6 +4105,13 @@
       "weight": 1,
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -3794,6 +4228,13 @@
        "health": 6,
        "looks": 3,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -3801,6 +4242,13 @@
       "weight": 2,
       "effects": {
        "money": -400
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -3814,6 +4262,13 @@
       "effects": {
        "money": -150,
        "looks": 1
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -3822,6 +4277,13 @@
       "effects": {
        "money": -150,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -3834,6 +4296,13 @@
       "weight": 2,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -3842,6 +4311,13 @@
       "effects": {
        "health": 4,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -3876,6 +4352,13 @@
       "weight": 1,
       "effects": {
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3883,6 +4366,13 @@
       "weight": 1,
       "effects": {
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -3895,6 +4385,13 @@
       "weight": 2,
       "effects": {
        "stress": -3
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3902,6 +4399,13 @@
       "weight": 1,
       "effects": {
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -3914,6 +4418,13 @@
       "weight": 2,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -3922,6 +4433,13 @@
       "effects": {
        "happiness": 4,
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -4035,6 +4553,13 @@
       },
       "effects": {
        "happiness": 7
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -4045,6 +4570,13 @@
       },
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -4055,6 +4587,13 @@
       },
       "effects": {
        "health": -3
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -4070,6 +4609,13 @@
       },
       "effects": {
        "money": -120
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -4078,6 +4624,13 @@
       "effects": {
        "money": -120,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -4090,6 +4643,13 @@
       "weight": 2,
       "relationship": {
        "f": -8
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -4097,6 +4657,13 @@
       "weight": 1,
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.wedding",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -4465,6 +5032,13 @@
       "effects": {
        "money": -150,
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4473,6 +5047,13 @@
       "effects": {
        "money": -150,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4485,6 +5066,13 @@
       "weight": 1,
       "effects": {
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4493,6 +5081,13 @@
       "effects": {
        "happiness": 2,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4506,6 +5101,13 @@
       "effects": {
        "karma": 3,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4514,6 +5116,13 @@
       "effects": {
        "karma": 3,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.neighbour",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4545,6 +5154,13 @@
       "weight": 2,
       "effects": {
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4552,6 +5168,13 @@
       "weight": 1,
       "effects": {
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4564,6 +5187,13 @@
       "weight": 2,
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4572,6 +5202,13 @@
       "effects": {
        "stress": 10,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4585,6 +5222,13 @@
       "effects": {
        "money": -3000,
        "happiness": -8
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -4594,6 +5238,13 @@
        "money": -200,
        "stress": 14,
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -4745,6 +5396,13 @@
       "weight": 1,
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -4752,6 +5410,13 @@
       "weight": 1,
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -4768,6 +5433,13 @@
       "keep_role": "f",
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -4776,6 +5448,13 @@
       "effects": {
        "happiness": 2,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -4786,13 +5465,27 @@
      {
       "text": "Some doors should stay closed.",
       "weight": 2,
-      "effects": {}
+      "effects": {},
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
+      }
      },
      {
       "text": "I skipped it and found out afterwards that somebody had been asking about me all night.",
       "weight": 1,
       "effects": {
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -4912,6 +5605,13 @@
       "effects": {
        "job_perf": 6,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -4921,6 +5621,13 @@
        "job_perf": 4,
        "stress": 16,
        "happiness": -12
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -4934,6 +5641,13 @@
       "effects": {
        "smarts": 1,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -4943,6 +5657,13 @@
        "smarts": 2,
        "happiness": 8,
        "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -4953,7 +5674,14 @@
      {
       "text": "It was just a rumor.",
       "weight": 2,
-      "effects": {}
+      "effects": {},
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
+      }
      },
      {
       "text": "It wasn't just a rumor.",
@@ -4961,6 +5689,13 @@
       "fired": true,
       "effects": {
        "happiness": -10
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -4994,6 +5729,13 @@
       "effects": {},
       "relationship": {
        "f": 8
+      },
+      "schedule": {
+       "event": "echo.loan",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -5004,6 +5746,13 @@
       },
       "relationship": {
        "f": -5
+      },
+      "schedule": {
+       "event": "echo.loan",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -5020,6 +5769,13 @@
       },
       "relationship": {
        "f": 15
+      },
+      "schedule": {
+       "event": "echo.loan",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -5029,6 +5785,13 @@
        "money": -500,
        "karma": 4,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.loan",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -5041,6 +5804,13 @@
       "weight": 2,
       "relationship": {
        "f": -10
+      },
+      "schedule": {
+       "event": "echo.loan",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -5048,6 +5818,13 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.loan",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -5092,6 +5869,13 @@
       "effects": {
        "money": -1800,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -5100,6 +5884,13 @@
       "effects": {
        "money": -4200,
        "stress": 10
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -5113,6 +5904,13 @@
       "effects": {
        "money": -200,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -5121,6 +5919,13 @@
       "effects": {
        "money": -2600,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -5135,6 +5940,13 @@
        "money": 200,
        "happiness": -4,
        "health": -2
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -5144,6 +5956,13 @@
        "money": -900,
        "health": -5,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -5176,6 +5995,13 @@
       "effects": {
        "money": 250,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.windfall",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -5183,6 +6009,13 @@
       "weight": 3,
       "effects": {
        "money": -5
+      },
+      "schedule": {
+       "event": "echo.windfall",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -5196,6 +6029,13 @@
       "effects": {
        "money": 2000,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.windfall",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -5203,6 +6043,13 @@
       "weight": 1,
       "effects": {
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.windfall",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -5215,6 +6062,13 @@
       "weight": 2,
       "effects": {
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.windfall",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -5223,6 +6077,13 @@
       "effects": {
        "money": -800,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.windfall",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -5344,6 +6205,13 @@
       "keep_role": "pet",
       "effects": {
        "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -5352,6 +6220,13 @@
       "effects": {
        "happiness": 4,
        "money": -1400
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -5364,6 +6239,13 @@
       "weight": 2,
       "effects": {
        "karma": 3
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -5373,6 +6255,13 @@
        "karma": 2,
        "happiness": 5,
        "money": -200
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -5385,6 +6274,13 @@
       "weight": 2,
       "effects": {
        "karma": -2
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -5393,6 +6289,13 @@
       "effects": {
        "karma": -2,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -5438,7 +6341,14 @@
       "relationship": {
        "f": 10
       },
-      "milestone": "ran a marathon"
+      "milestone": "ran a marathon",
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
+      }
      },
      {
       "text": "I made it to mile 18 before my knees gave out.",
@@ -5446,7 +6356,14 @@
       "effects": {
        "health": 3
       },
-      "scar": "bad_knee"
+      "scar": "bad_knee",
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
+      }
      }
     ]
    },
@@ -5458,6 +6375,13 @@
       "weight": 2,
       "relationship": {
        "f": -5
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -5465,6 +6389,13 @@
       "weight": 1,
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -5479,6 +6410,13 @@
        "health": -6,
        "happiness": 9,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -5487,6 +6425,13 @@
       "effects": {
        "health": -8,
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.habit",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -5859,6 +6804,13 @@
       },
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -5867,6 +6819,13 @@
       "effects": {
        "happiness": -4,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -5879,6 +6838,13 @@
       "weight": 2,
       "relationship": {
        "m": -4
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -5886,6 +6852,13 @@
       "weight": 1,
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -5899,6 +6872,13 @@
       "effects": {
        "happiness": 8,
        "stress": -4
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -5906,6 +6886,13 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -5942,6 +6929,13 @@
       },
       "effects": {
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -5949,6 +6943,13 @@
       "weight": 1,
       "effects": {
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -5961,6 +6962,13 @@
       "weight": 2,
       "relationship": {
        "d": -4
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -5969,6 +6977,13 @@
       "effects": {
        "smarts": 2,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -5982,6 +6997,13 @@
       "effects": {
        "happiness": 9,
        "karma": 3
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -5990,6 +7012,13 @@
       "effects": {
        "happiness": -5,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.parent",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6029,6 +7058,13 @@
       },
       "effects": {
        "karma": 2
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -6036,6 +7072,13 @@
       "weight": 1,
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6048,6 +7091,13 @@
       "weight": 2,
       "relationship": {
        "s": -25
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -6056,6 +7106,13 @@
       "effects": {
        "karma": 3,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6071,6 +7128,13 @@
       },
       "effects": {
        "karma": -4
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -6079,6 +7143,13 @@
       "effects": {
        "karma": -4,
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6119,6 +7190,13 @@
       },
       "relationship": {
        "s": -6
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -6128,6 +7206,13 @@
        "smarts": 2,
        "happiness": -4,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6140,6 +7225,13 @@
       "weight": 2,
       "relationship": {
        "s": 10
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -6147,6 +7239,13 @@
       "weight": 1,
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6159,6 +7258,13 @@
       "weight": 2,
       "relationship": {
        "p": 6
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      },
      {
@@ -6167,6 +7273,13 @@
       "effects": {
        "happiness": -7,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.sibling",
+       "years": [
+        2,
+        7
+       ]
       }
      }
     ]
@@ -6298,6 +7411,13 @@
       "weight": 1,
       "relationship": {
        "k": 12
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -6308,6 +7428,13 @@
       },
       "effects": {
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -6320,6 +7447,13 @@
       "weight": 2,
       "relationship": {
        "k": -8
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -6328,6 +7462,13 @@
       "effects": {
        "happiness": -6,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -6343,6 +7484,13 @@
       },
       "effects": {
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -6351,6 +7499,13 @@
       "effects": {
        "stress": 5,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -6472,6 +7627,13 @@
       "weight": 2,
       "relationship": {
        "k": 12
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -6480,6 +7642,13 @@
       "effects": {
        "happiness": -4,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -6492,6 +7661,13 @@
       "weight": 2,
       "relationship": {
        "k": 3
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -6499,6 +7675,13 @@
       "weight": 1,
       "effects": {
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -6511,6 +7694,13 @@
       "weight": 2,
       "relationship": {
        "k": -10
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      },
      {
@@ -6519,6 +7709,13 @@
       "effects": {
        "happiness": -6,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.grownkid",
+       "years": [
+        3,
+        9
+       ]
       }
      }
     ]
@@ -6561,6 +7758,13 @@
       "effects": {
        "happiness": 10,
        "money": -200
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      },
      {
@@ -6570,6 +7774,13 @@
        "happiness": 6,
        "money": -200,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      }
     ]
@@ -6585,6 +7796,13 @@
       },
       "effects": {
        "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      },
      {
@@ -6592,6 +7810,13 @@
       "weight": 1,
       "effects": {
        "happiness": 9
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      }
     ]
@@ -6604,6 +7829,13 @@
       "weight": 2,
       "relationship": {
        "g": -6
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      },
      {
@@ -6611,6 +7843,13 @@
       "weight": 1,
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      }
     ]
@@ -6645,6 +7884,13 @@
       "weight": 1,
       "relationship": {
        "p": 4
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -6652,6 +7898,13 @@
       "weight": 1,
       "relationship": {
        "p": -12
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -6664,6 +7917,13 @@
       "weight": 2,
       "relationship": {
        "p": -5
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -6671,6 +7931,13 @@
       "weight": 1,
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -6684,6 +7951,13 @@
       "effects": {
        "happiness": 10,
        "money": -200
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -6692,6 +7966,13 @@
       "effects": {
        "happiness": -3,
        "money": -200
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -6729,6 +8010,13 @@
       },
       "effects": {
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -6739,6 +8027,13 @@
       },
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -6751,6 +8046,13 @@
       "weight": 1,
       "relationship": {
        "p": 4
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -6758,6 +8060,13 @@
       "weight": 1,
       "relationship": {
        "p": -30
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -6770,6 +8079,13 @@
       "weight": 2,
       "relationship": {
        "p": -10
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -6778,6 +8094,13 @@
       "effects": {
        "happiness": -8,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.partner",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -6980,6 +8303,13 @@
       },
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -6987,6 +8317,13 @@
       "weight": 1,
       "effects": {
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -7002,6 +8339,13 @@
       },
       "effects": {
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -7010,6 +8354,13 @@
       "effects": {
        "happiness": -5,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -7022,6 +8373,13 @@
       "weight": 2,
       "relationship": {
        "f": -15
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -7029,6 +8387,13 @@
       "weight": 1,
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.friends",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -7069,6 +8434,13 @@
       },
       "relationship": {
        "pet": 10
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -7079,6 +8451,13 @@
       },
       "relationship": {
        "pet": 15
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -7089,7 +8468,14 @@
      {
       "text": "{pet.first} bounced back the next day.",
       "weight": 1,
-      "effects": {}
+      "effects": {},
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
+      }
      },
      {
       "text": "It got worse.",
@@ -7097,6 +8483,13 @@
       "effects": {
        "happiness": -8,
        "money": -800
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -7110,6 +8503,13 @@
       "effects": {
        "happiness": 6,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -7119,6 +8519,13 @@
        "money": -900,
        "happiness": -8,
        "stress": 10
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -7387,6 +8794,13 @@
       },
       "counter": {
        "memoirs": 1
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      },
      {
@@ -7396,6 +8810,13 @@
        "smarts": 2,
        "happiness": -2,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      }
     ]
@@ -7408,6 +8829,13 @@
       "weight": 2,
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      },
      {
@@ -7416,6 +8844,13 @@
       "effects": {
        "happiness": 4,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      }
     ]
@@ -7429,6 +8864,13 @@
       "effects": {
        "happiness": 9,
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      },
      {
@@ -7436,6 +8878,13 @@
       "weight": 1,
       "effects": {
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.elders",
+       "years": [
+        3,
+        12
+       ]
       }
      }
     ]
@@ -7865,6 +9314,13 @@
       "weight": 1,
       "effects": {
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -7873,6 +9329,13 @@
       "effects": {
        "money": -200,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -7885,6 +9348,13 @@
       "weight": 2,
       "effects": {
        "money": -200
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -7894,6 +9364,13 @@
        "money": -200,
        "stress": 7,
        "smarts": 1
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -7907,6 +9384,13 @@
       "effects": {
        "money": -40,
        "smarts": 3
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -7915,6 +9399,13 @@
       "effects": {
        "money": -200,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.paperwork",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -7945,6 +9436,13 @@
       "effects": {
        "money": 4000,
        "happiness": 8
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -7953,6 +9451,13 @@
       "effects": {
        "money": -1600,
        "happiness": -5
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -7963,7 +9468,14 @@
      {
       "text": "I'll never know.",
       "weight": 2,
-      "effects": {}
+      "effects": {},
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
+      }
      },
      {
       "text": "I passed, and watched it climb for a fortnight, and then watched it collapse entirely.",
@@ -7971,6 +9483,13 @@
       "effects": {
        "happiness": 5,
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -7984,6 +9503,13 @@
       "effects": {
        "money": 900,
        "smarts": 3
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -7992,6 +9518,13 @@
       "effects": {
        "money": -300,
        "smarts": 2
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]

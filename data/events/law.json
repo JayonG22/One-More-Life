@@ -18,13 +18,27 @@
      {
       "text": "The officer let me off with a warning.",
       "weight": 1,
-      "karma_bonus": 1.0
+      "karma_bonus": 1.0,
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
+      }
      },
      {
       "text": "I got a $200 ticket.",
       "weight": 1,
       "effects": {
        "money": -200
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -38,6 +52,13 @@
       "effects": {
        "money": -400,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -47,6 +68,13 @@
        "stress": -2,
        "karma": -1,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -56,6 +84,13 @@
        "money": -900,
        "stress": 8,
        "heat": 2
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -69,6 +104,13 @@
       "effects": {
        "happiness": 4,
        "stress": 10
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -81,6 +123,13 @@
       ],
       "effects": {
        "stress": 10
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -108,6 +157,13 @@
       "effects": {
        "karma": 6,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -117,6 +173,13 @@
        "karma": 6,
        "stress": 8,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -126,6 +189,13 @@
        "karma": 10,
        "stress": 2,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -138,6 +208,13 @@
       "weight": 1,
       "effects": {
        "karma": -4
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -147,6 +224,13 @@
        "karma": -6,
        "stress": 6,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -155,6 +239,13 @@
       "effects": {
        "karma": -4,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -168,6 +259,13 @@
       "effects": {
        "karma": 5,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -176,6 +274,13 @@
       "effects": {
        "karma": 4,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -310,6 +415,13 @@
       "effects": {
        "money": 10000,
        "karma": -15
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -319,7 +431,14 @@
        "jury tampering",
        1,
        5
-      ]
+      ],
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
+      }
      }
     ]
    },
@@ -331,6 +450,13 @@
       "weight": 1,
       "effects": {
        "karma": 10
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -340,6 +466,13 @@
        "karma": 10,
        "stress": 12,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -348,6 +481,13 @@
       "effects": {
        "karma": 8,
        "happiness": 4
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -357,6 +497,13 @@
        "karma": 6,
        "stress": 3,
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -371,6 +518,13 @@
        "karma": 12,
        "stress": 10,
        "fame": 1
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -380,6 +534,13 @@
        "karma": 5,
        "stress": 12,
        "heat": 2
+      },
+      "schedule": {
+       "event": "echo.record",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]

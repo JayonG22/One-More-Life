@@ -1,0 +1,3268 @@
+[
+ {
+  "id": "echo.windfall",
+  "icon": "💸",
+  "title": "Where did it go?",
+  "text": "{~Looking back|Doing the accounts one evening|A friend asks, innocently}, you try to work out where that sudden money went. {~There is a pattern, and it isn't flattering.|It's both better and worse than you thought.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Go through it line by line",
+    "outcomes": [
+     {
+      "text": "The honest accounting hurt for an evening. I came out of it a more careful person.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "stress": 2,
+       "money": 600
+      }
+     },
+     {
+      "text": "I found a subscription I'd forgotten for three years. The ledger was a bruise.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": 3,
+       "money": 400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decide it was worth it",
+    "outcomes": [
+     {
+      "text": "Some money is for living. I raised a glass to the afternoon it bought me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Telling myself it was worth it worked for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Resolve to save the next one",
+    "outcomes": [
+     {
+      "text": "I opened a savings account the next morning and fed it a little every month.",
+      "weight": 1,
+      "effects": {
+       "money": 800,
+       "stress": -3
+      }
+     },
+     {
+      "text": "I resolved. Then the next windfall came and went the same way.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "money": -300
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.tip",
+  "icon": "📉",
+  "title": "About that tip",
+  "text": "{~A newspaper article|A podcast|Your own bank statement} reminds you of the tip you {~took|passed on|half-listened to} {~a few|some} years ago.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Check what it would have been",
+    "outcomes": [
+     {
+      "text": "It would have been a lot. I looked at the number for a long minute and closed the tab.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "It would have been worth nothing. I felt briefly clever and then very lucky.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Message the person who gave it",
+    "outcomes": [
+     {
+      "text": "We laughed about it. They'd lost money too, and had been too embarrassed to tell me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 1
+      }
+     },
+     {
+      "text": "They'd moved on and didn't remember the tip at all.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "There's no use in the fortune you didn't make. I let it go like a train.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "I let it go, and it let go of me about a year later.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.tenant",
+  "icon": "🔑",
+  "title": "Your name in the building",
+  "text": "{~A former tenant|Someone in the building|A new tenant} mentions what they've heard about you as a landlord. {~It isn't what you expected.|It's been going round for a while.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Listen and take it in",
+    "outcomes": [
+     {
+      "text": "It was fairer than I'd feared, and more specific than I'd like. I changed one habit.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 2
+      }
+     },
+     {
+      "text": "It was unfair, and partly true, which is the worst combination.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Set the record straight",
+    "outcomes": [
+     {
+      "text": "I wrote a note to the building. People remembered it kindly.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "Setting the record straight made it a bigger story than it had been.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a gesture",
+    "outcomes": [
+     {
+      "text": "I fixed the thing they'd complained about before they asked. It paid off over several years.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "karma": 4
+      }
+     },
+     {
+      "text": "The gesture was misread as guilt, and a little was taken advantage of.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.paperwork",
+  "icon": "📄",
+  "title": "The envelope",
+  "text": "A brown envelope arrives. {~It's about the thing from a couple of years ago.|You'd forgotten all about it.|You open it with your thumb under the flap and your heart under your tongue.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Deal with it at once",
+    "outcomes": [
+     {
+      "text": "It took an afternoon and a phone call. It was nothing, and I felt like an adult.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "It took an afternoon, and it was something. I paid it and felt slightly sick.",
+      "weight": 1,
+      "effects": {
+       "money": -500,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put it in the drawer",
+    "outcomes": [
+     {
+      "text": "The drawer got fuller. In the end it never mattered.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The drawer got fuller. In the end it very much mattered.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a friend to read it",
+    "outcomes": [
+     {
+      "text": "They read it in twenty seconds and said 'ignore that one'. I could have kissed them.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "They read it and went quiet. Then they helped me fix it.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "karma": 1,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.loan",
+  "icon": "🤝",
+  "title": "The money question again",
+  "text": "{~It comes up at dinner|It's mentioned in passing|Someone asks, casually}: the loan, or the gift, from a while back. Everyone is suddenly very interested in their glass.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Bring it up yourself",
+    "outcomes": [
+     {
+      "text": "I said it plainly. The air cleared and we both felt better.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": -3
+      }
+     },
+     {
+      "text": "Saying it plainly made it a Thing. We didn't speak for a month.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Forgive it, in so many words",
+    "outcomes": [
+     {
+      "text": "I said 'forget it'. They cried a little. It's the best money I've ever lost.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4,
+       "money": -300
+      }
+     },
+     {
+      "text": "I said 'forget it', and meant it for about a year.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Change the subject",
+    "outcomes": [
+     {
+      "text": "I changed the subject and nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "I changed the subject and everybody noticed.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.party",
+  "icon": "🎉",
+  "title": "The night people still mention",
+  "text": "{~Someone at a gathering|An old photo|A message out of nowhere} brings up that night. {~It's become a story.|They remember it better than you do.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Tell the story properly",
+    "outcomes": [
+     {
+      "text": "I told it with the gestures. It's improved with the years, as these things do.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I told it and got a detail wrong. Someone corrected me, gently.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Play it down",
+    "outcomes": [
+     {
+      "text": "Modesty went over well. I was told I was 'refreshing'.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "Modesty didn't land. People thought I was hiding something.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Plan another one",
+    "outcomes": [
+     {
+      "text": "We did it again, smaller and better. It's now a tradition.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "money": -400
+      }
+     },
+     {
+      "text": "We tried to repeat it, and the magic stayed in the first one.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "money": -600
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.neighbour",
+  "icon": "🏘️",
+  "title": "Next door, a year on",
+  "text": "The {~noise|argument|barbecue} with the neighbour is ancient history now. {~Or it was, until this morning.|They've just knocked on the door.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Answer warmly",
+    "outcomes": [
+     {
+      "text": "They'd come about a parcel. We talked for twenty minutes on the step and it was lovely.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 2
+      }
+     },
+     {
+      "text": "They'd come to complain again. I answered warmly and it didn't help.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Answer coolly",
+    "outcomes": [
+     {
+      "text": "Coolly was enough. They went away and something resolved itself.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     },
+     {
+      "text": "Coolly started the feud again, with fresh enthusiasm.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't answer",
+    "outcomes": [
+     {
+      "text": "I let it ring. They left a note, which was kind.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "I let it ring. They left a note, which was not kind.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.repair",
+  "icon": "🔧",
+  "title": "What the repair taught",
+  "text": "The {~boiler|wall|roof} is still fine. You catch yourself {~knowing exactly what to do when something small goes wrong|explaining it to a friend with startling authority}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Share what you learned",
+    "outcomes": [
+     {
+      "text": "A friend borrowed my know-how and saved a fortune. They sent a bottle.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "A friend ignored my advice and flooded their bathroom. I was kind about it.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take on a bigger project",
+    "outcomes": [
+     {
+      "text": "I did the whole bathroom myself. It's slightly crooked and I adore it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -300,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "The bigger project ate a whole summer. Someone had to finish it for me.",
+      "weight": 1,
+      "effects": {
+       "money": -900,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay for peace of mind",
+    "outcomes": [
+     {
+      "text": "A service contract, a yearly check, and sleep. Priceless.",
+      "weight": 1,
+      "effects": {
+       "money": -250,
+       "stress": -4
+      }
+     },
+     {
+      "text": "The service contract turned out to cover nothing I needed.",
+      "weight": 1,
+      "effects": {
+       "money": -250,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.landlord",
+  "icon": "✉️",
+  "title": "A letter from the landlord",
+  "text": "A letter from {~the agency|your landlord} arrives. {~It uses the word 'regarding'.|It's the third this year.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Read it carefully",
+    "outcomes": [
+     {
+      "text": "I read it twice. A small clause was in my favour and I used it.",
+      "weight": 1,
+      "effects": {
+       "money": 200,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I read it twice. It was exactly as bad as I thought.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "money": -300
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a tenants' group",
+    "outcomes": [
+     {
+      "text": "A group of tenants told me it was illegal. It stopped.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -3
+      }
+     },
+     {
+      "text": "The group said it was legal and annoying. I felt less alone.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Think about moving",
+    "outcomes": [
+     {
+      "text": "I looked at four places and found one that made me feel hopeful.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I looked at four places and came home grateful for the one I had.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.flatmate",
+  "icon": "🧑‍🤝‍🧑",
+  "title": "Whatever happened to your flatmate",
+  "text": "{~A friend sends you a link|You see them across a street|A mutual friend tells you} about the person who shared your flat. {~Their life is nothing like you'd expect.|They are exactly who you thought they'd be.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Get in touch",
+    "outcomes": [
+     {
+      "text": "We had a drink. The old arguments were funny from this distance.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 1
+      }
+     },
+     {
+      "text": "We had a drink. We agreed that some people are meant for one flat.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wish them well from afar",
+    "outcomes": [
+     {
+      "text": "I sent a thumbs-up and felt a clean, small kind of affection.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I wished them well and thought of the dishes.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the story of the flat",
+    "outcomes": [
+     {
+      "text": "The story of the flat got the loudest laugh of the dinner.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The story of the flat was funnier to me than to them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.carstory",
+  "icon": "🚗",
+  "title": "The car story",
+  "text": "At {~a dinner|a wedding|a pub} you tell the story of {~the car|the crash|the breakdown}. {~It's improved with the telling.|It's got a punchline now.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Tell it straight",
+    "outcomes": [
+     {
+      "text": "Straight is funnier than I'd have thought. People laughed in the right places.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Straight was dull. I cut it short.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Embellish a little",
+    "outcomes": [
+     {
+      "text": "A little became a lot, and the story acquired a goat.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": -1
+      }
+     },
+     {
+      "text": "Someone who was there corrected the goat.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let someone else tell it",
+    "outcomes": [
+     {
+      "text": "Someone else told it, wrongly and brilliantly.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Someone else told it and got my part completely wrong.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.rival",
+  "icon": "🥊",
+  "title": "Your old rival",
+  "text": "{~On a professional network|At a conference|In the queue for coffee}, you meet the person you once competed with. {~They look well.|They look, to your surprise, tired.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Congratulate them",
+    "outcomes": [
+     {
+      "text": "It was the grown-up thing. They were visibly thrown, then touched.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "It was the grown-up thing. They were suspicious.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Be coolly polite",
+    "outcomes": [
+     {
+      "text": "Polite, brief, civil. We'll never be friends and nothing else needs saying.",
+      "weight": 1,
+      "effects": {
+       "stress": 0
+      }
+     },
+     {
+      "text": "Polite, brief, civil, and someone nearby clearly noticed it was loaded.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them for a favour",
+    "outcomes": [
+     {
+      "text": "They did it, with an air of relief. Some rivalries are one favour from friendship.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "They refused, with an air of triumph.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.oldboss",
+  "icon": "👔",
+  "title": "Your old boss",
+  "text": "Your old boss {~sends a message|appears at an event|is mentioned in the news}. {~You haven't thought of them in years.|Everything about them comes back at once.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Reply warmly",
+    "outcomes": [
+     {
+      "text": "They remembered one thing I'd done that I'd forgotten. It was a kindness I hadn't known they'd noticed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      }
+     },
+     {
+      "text": "They wanted a favour. I did it, because I'm that kind of person.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "karma": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Reply briefly",
+    "outcomes": [
+     {
+      "text": "A short reply was enough. They never wrote again.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "A short reply was read as a snub, and that got around.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't reply",
+    "outcomes": [
+     {
+      "text": "I let it lie. It felt like cutting a thread.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I let it lie, and wondered for a long time what it was about.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.company",
+  "icon": "🏢",
+  "title": "The company you left",
+  "text": "{~The company you used to work for|Your old employer} is in the news. {~It isn't going well.|It's being bought.|It's doing better than it ever did with you.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Feel quietly relieved",
+    "outcomes": [
+     {
+      "text": "I felt the relief of someone who left a sinking ship, and the guilt of one who left others on it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": -1
+      }
+     },
+     {
+      "text": "I felt relief. It was a small, mean pleasure and I enjoyed it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Reach out to former colleagues",
+    "outcomes": [
+     {
+      "text": "Three of them were glad to hear from me. One needed a job.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "Nobody answered. They were all busy being scared.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Mention it nowhere",
+    "outcomes": [
+     {
+      "text": "I decided it wasn't my business, and it wasn't.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "I decided it wasn't my business, and read about it every day for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.mentor",
+  "icon": "🎓",
+  "title": "What they told you",
+  "text": "{~A line|A piece of advice|A habit} you picked up from {~a mentor|someone senior} turns out to be the thing that gets you through today.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Pass it on to someone junior",
+    "outcomes": [
+     {
+      "text": "They looked at me as if I'd given them a map. I remembered exactly how that felt.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "They nodded politely and forgot it. Perhaps it takes ten years.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write to the mentor",
+    "outcomes": [
+     {
+      "text": "They wrote back at once. They remembered me, which was the best part.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The letter came back. They had moved, or worse.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it to yourself",
+    "outcomes": [
+     {
+      "text": "It stayed a private advantage, and a quiet one.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "It stayed private, and I thought about that selfishness at night.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.recruiter",
+  "icon": "📞",
+  "title": "A second call",
+  "text": "{~The same recruiter|Another recruiter|An unexpected name on the screen} rings again, {~two years after the first time|with a different job and the same smile}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Listen properly this time",
+    "outcomes": [
+     {
+      "text": "The offer was better than the last. I negotiated, and it was easier than I remembered.",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The offer was the same, with a better title and a worse commute.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline again",
+    "outcomes": [
+     {
+      "text": "I declined again. The recruiter, for once, said 'good for you'.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I declined again, and a month later regretted it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass it to a friend",
+    "outcomes": [
+     {
+      "text": "A friend got the job and cried. It was the best thing I did all year.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 6
+      }
+     },
+     {
+      "text": "A friend got the job, and it didn't suit them. We still laugh about it.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.stagecareer",
+  "icon": "🎭",
+  "title": "The part you turned down",
+  "text": "You hear that the {~role|record deal|contract} you passed on has gone to someone else. {~They're very good in it.|It did well.|It flopped, gloriously.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Go and see it",
+    "outcomes": [
+     {
+      "text": "They were good. I sat in the dark and clapped for someone else's version of my life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 2
+      }
+     },
+     {
+      "text": "They were bad. I was ashamed of how pleased I was.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Don't go",
+    "outcomes": [
+     {
+      "text": "I stayed home and learned the lines of something else.",
+      "weight": 1,
+      "effects": {
+       "skill": 2
+      }
+     },
+     {
+      "text": "I stayed home and thought about it all night.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write to them",
+    "outcomes": [
+     {
+      "text": "They wrote back warmly. It turned into a long correspondence.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 2
+      }
+     },
+     {
+      "text": "They didn't reply, and I understood.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.famecost",
+  "icon": "📸",
+  "title": "What being known costs",
+  "text": "A stranger {~recognises you in a very private moment|knows something about you they shouldn't|says a thing that tells you how you look from outside}. {~You pretend not to mind.|It stays with you for days.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Take a break from the public",
+    "outcomes": [
+     {
+      "text": "A season in the country, a phone in a drawer. I returned a little more myself.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "fame": -3,
+       "stress": -6
+      }
+     },
+     {
+      "text": "The break was read as a retreat, and the commentary was unkind.",
+      "weight": 1,
+      "effects": {
+       "fame": -2,
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Lean into it",
+    "outcomes": [
+     {
+      "text": "I made it into a joke on my terms. They loved it.",
+      "weight": 1,
+      "effects": {
+       "fame": 4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I tried to make it a joke. It wasn't, and I'd shown that.",
+      "weight": 1,
+      "effects": {
+       "fame": 1,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing",
+    "outcomes": [
+     {
+      "text": "Silence cooled it. The next story took over.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "Silence was read as guilt, and the story grew.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "fame": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.sportlegacy",
+  "icon": "🏟️",
+  "title": "A young player asks",
+  "text": "A young player {~at a clinic|after a match|in the car park} asks you what it was like. {~They're nervous.|They've watched your tapes.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Tell them the truth",
+    "outcomes": [
+     {
+      "text": "I told them about the injuries and the loneliness and the joy. They listened like it was scripture.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I told them the truth, and saw their face fall. I tried to rescue it.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them the highlights",
+    "outcomes": [
+     {
+      "text": "The highlights were exactly what they wanted. We both had a lovely afternoon.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "fame": 1
+      }
+     },
+     {
+      "text": "The highlights rang hollow, and they could tell.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer them a place to train",
+    "outcomes": [
+     {
+      "text": "They trained with me for a year and went on to great things. They still send photos.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 7
+      }
+     },
+     {
+      "text": "They trained for a month and left. Not everyone sticks.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.politicalmemory",
+  "icon": "🗳️",
+  "title": "The voter remembers",
+  "text": "At {~a fundraiser|a supermarket|a school event}, someone {~thanks|challenges|quotes} you on something you said {~at a debate|about a bill|about a donor}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Own what you said",
+    "outcomes": [
+     {
+      "text": "Owning it won more respect than the original statement had.",
+      "weight": 1,
+      "effects": {
+       "approval": 5,
+       "karma": 3
+      }
+     },
+     {
+      "text": "Owning it cost me a donor and bought me a crowd.",
+      "weight": 1,
+      "effects": {
+       "approval": 2,
+       "money": -4000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Explain what you meant",
+    "outcomes": [
+     {
+      "text": "I explained. They nodded slowly, and changed their mind.",
+      "weight": 1,
+      "effects": {
+       "approval": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "I explained. They filmed it. The clip was not generous.",
+      "weight": 1,
+      "effects": {
+       "approval": -4,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Change the subject smoothly",
+    "outcomes": [
+     {
+      "text": "I'm good at smoothly. They never noticed.",
+      "weight": 1,
+      "effects": {
+       "approval": 1
+      }
+     },
+     {
+      "text": "I'm not as good at smoothly as I thought.",
+      "weight": 1,
+      "effects": {
+       "approval": -2,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.underworld",
+  "icon": "🕶️",
+  "title": "A debt that isn't money",
+  "text": "A name from the old days {~turns up|calls|appears at a table}. They remember what you did, and what you didn't.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Meet them, in public",
+    "outcomes": [
+     {
+      "text": "A bright cafe, a long coffee. We talked around the point until it dissolved.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "respect": 3
+      }
+     },
+     {
+      "text": "A bright cafe, and they weren't alone. I paid for everyone's coffee.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -80
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay what you owe",
+    "outcomes": [
+     {
+      "text": "I paid it and it wasn't about the money. They nodded and the matter was closed.",
+      "weight": 1,
+      "effects": {
+       "money": -3000,
+       "stress": -4,
+       "respect": 2
+      }
+     },
+     {
+      "text": "I paid. It wasn't enough, and I learned how much would be.",
+      "weight": 1,
+      "effects": {
+       "money": -8000,
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Disappear for a while",
+    "outcomes": [
+     {
+      "text": "I took a long trip and came back to a different set of problems. It worked.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "money": -1200
+      }
+     },
+     {
+      "text": "I took a trip and they were waiting at the other end.",
+      "weight": 1,
+      "effects": {
+       "stress": 12,
+       "heat": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.studio",
+  "icon": "🎬",
+  "title": "The studio comes back",
+  "text": "{~The studio|A producer|Your agent} rings again, years after the last argument. {~They want something.|They sound almost humble.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Take the meeting",
+    "outcomes": [
+     {
+      "text": "The meeting was a revelation: they wanted me on my terms. I was smug for a week.",
+      "weight": 1,
+      "effects": {
+       "money": 20000,
+       "skill": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The meeting was the same argument in a better suit.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make them wait",
+    "outcomes": [
+     {
+      "text": "I made them wait a month. They improved the offer by a third.",
+      "weight": 1,
+      "effects": {
+       "money": 14000,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I made them wait a month. They called someone else.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass the opportunity to a friend",
+    "outcomes": [
+     {
+      "text": "A friend got a break and never forgot it.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A friend got a break and wasted it. I was surprised how much that stung.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.spy",
+  "icon": "🕵️",
+  "title": "A face from the service",
+  "text": "Someone you worked with {~appears in a crowd|sits down at your table|sends a postcard with no name}. {~You both know what you used to do.|Neither of you says a word at first.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Greet them as an old friend",
+    "outcomes": [
+     {
+      "text": "We sat for an hour discussing nothing. It was the most intimate conversation I've had in years.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -3
+      }
+     },
+     {
+      "text": "We greeted each other as old friends. Someone watched us do it.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk on",
+    "outcomes": [
+     {
+      "text": "Walking on felt like leaving a coat in a cold room.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": -1
+      }
+     },
+     {
+      "text": "Walking on, I noticed I was being followed, and was cheered by it.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "skill": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass a message",
+    "outcomes": [
+     {
+      "text": "I passed it. It was received. We never learned what it did.",
+      "weight": 1,
+      "effects": {
+       "skill": 2,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I passed it, and it went to the wrong person.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "heat": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.space",
+  "icon": "🚀",
+  "title": "Looking up",
+  "text": "On a clear night, {~you stand in a garden|you're on a roof|you walk home}, looking up at where you used to {~work|train|live}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Take someone with you to look",
+    "outcomes": [
+     {
+      "text": "They looked up at a dot and I told them all of it. It was the best conversation of the month.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 1
+      }
+     },
+     {
+      "text": "They looked up, and then at their phone. I forgave them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stand alone and remember",
+    "outcomes": [
+     {
+      "text": "The memories came in a quiet line. I was lucky, and I knew it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -3
+      }
+     },
+     {
+      "text": "The memories came in a loud rush. I went indoors.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start planning your next trip",
+    "outcomes": [
+     {
+      "text": "I booked something small and real. It cured the ache.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -600
+      }
+     },
+     {
+      "text": "I planned a trip and never booked it. The plan was enough.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.sibling",
+  "icon": "👫",
+  "title": "Brother, sister, years on",
+  "text": "Your {~brother|sister|sibling} {~calls out of the blue|appears on the doorstep|writes a long email}. {~You haven't spoken properly in a while.|It's about something small, which is how you know it isn't.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Make time, properly",
+    "outcomes": [
+     {
+      "text": "We sat up all night in the kitchen. By morning we'd said everything.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -4
+      }
+     },
+     {
+      "text": "We sat up all night and said only half of it. It was a start.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it short",
+    "outcomes": [
+     {
+      "text": "Short was enough. We'll finish it at Christmas.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "Short was too short. I felt it afterwards.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bring up the old thing",
+    "outcomes": [
+     {
+      "text": "I brought it up and we both laughed. It had been too small to hold for so long.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I brought it up and we argued for an hour. We were better afterwards.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.parent",
+  "icon": "👵",
+  "title": "The phone call",
+  "text": "Your {~mother|father|parent} rings, {~as they always do on a Sunday|at an odd hour|with nothing in particular to say}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Stay on the line",
+    "outcomes": [
+     {
+      "text": "An hour about nothing. I learned a story I'd never heard about their youth.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 2
+      }
+     },
+     {
+      "text": "An hour about nothing. They seemed lonelier than they sounded.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Plan a visit",
+    "outcomes": [
+     {
+      "text": "I went the next weekend. We fixed a gate and ate too much.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "money": -120
+      }
+     },
+     {
+      "text": "I planned a visit and cancelled it. They said they understood.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it go to voicemail",
+    "outcomes": [
+     {
+      "text": "It went to voicemail. The message was warm, and made me feel worse.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "It went to voicemail, and I called back that night. We talked for hours.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.grownkid",
+  "icon": "🧒",
+  "title": "The child is grown",
+  "text": "Your child {~says something that stops you|does something you didn't teach them|treats you, for a moment, like an equal}. {~You're startled by how much of you is in it.|You're startled by how little.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Tell them you're proud",
+    "outcomes": [
+     {
+      "text": "They said 'I know', then 'thanks'. I heard everything under it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "karma": 2
+      }
+     },
+     {
+      "text": "They said 'Mum, stop.' They smiled anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for their advice",
+    "outcomes": [
+     {
+      "text": "They gave me an answer I'd not thought of. The student had become a teacher.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "They gave advice I didn't want to follow. I thought about it for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say nothing and watch",
+    "outcomes": [
+     {
+      "text": "Watching them was the best part. They're their own person.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "Watching them, I wished I could say it. I never did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.partner",
+  "icon": "💞",
+  "title": "A conversation you've been avoiding",
+  "text": "{~Late at night|On a long drive|Over the washing-up}, the subject of {~what you each want|the big decision|the thing you never discuss} finally comes up.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Say what you actually think",
+    "outcomes": [
+     {
+      "text": "It was frightening. It was also, by morning, a relief.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -3
+      }
+     },
+     {
+      "text": "It came out wrong, and we spent three days recovering.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Listen first",
+    "outcomes": [
+     {
+      "text": "Listening revealed that we'd been afraid of the same thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 2
+      }
+     },
+     {
+      "text": "Listening revealed a gap I hadn't known was there.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Postpone it, kindly",
+    "outcomes": [
+     {
+      "text": "We agreed to talk on Sunday. On Sunday it was easier.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -1
+      }
+     },
+     {
+      "text": "We agreed to talk on Sunday, then didn't. It sat between us.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.friends",
+  "icon": "🥂",
+  "title": "The old crowd",
+  "text": "Someone {~organises|suggests|just starts} a get-together with the old crowd. {~Half of them will turn up.|It's been far too long.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Go, whatever it takes",
+    "outcomes": [
+     {
+      "text": "It took a train and a babysitter. It was worth every penny.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": -100
+      }
+     },
+     {
+      "text": "It took a train and a babysitter, and the evening was awkward. I'm glad I went.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -100
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go for an hour",
+    "outcomes": [
+     {
+      "text": "An hour was enough to remember why we were friends.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "An hour was the right length for how things are now.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a gift instead",
+    "outcomes": [
+     {
+      "text": "The gift was passed round the table and I was toasted in absentia.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -60
+      }
+     },
+     {
+      "text": "The gift arrived late and was a bit of an apology.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "money": -60
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.wedding",
+  "icon": "💍",
+  "title": "Wedding photos",
+  "text": "Someone finds the {~wedding photos|album|video}. {~Everyone looks so young.|One of the guests isn't in the story any more.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Look through them together",
+    "outcomes": [
+     {
+      "text": "We laughed at the hair. Somebody cried at the speeches.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      }
+     },
+     {
+      "text": "We looked through them, and a few missing faces made it quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put them away",
+    "outcomes": [
+     {
+      "text": "I put them away for another time. It's a kindness to the day.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     },
+     {
+      "text": "I put them away, and thought of them for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send copies to the guests",
+    "outcomes": [
+     {
+      "text": "Three people wrote back, moved. One had lost the original.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Nobody replied, but I know they were opened.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.elders",
+  "icon": "📖",
+  "title": "Their stories",
+  "text": "A story from {~a grandparent|an elder|a relative} comes back to you, {~word for word|in their voice|at an odd moment}. {~You realise you're the only one who still has it.|You wonder who else remembers.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Write it down",
+    "outcomes": [
+     {
+      "text": "It filled four pages. I put them in the family box.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "karma": 3,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It filled four pages and I lost them. I remember it, mostly.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell it to a child",
+    "outcomes": [
+     {
+      "text": "The child listened with their whole face. The story lives on.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 3
+      }
+     },
+     {
+      "text": "The child asked if there was a screen version. I laughed until I wept.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it to yourself",
+    "outcomes": [
+     {
+      "text": "It's mine, and I like having it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     },
+     {
+      "text": "It's mine. When I go, it goes. I think about that more than I admit.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.pet",
+  "icon": "🐾",
+  "title": "The animal knows",
+  "text": "Your {~pet|animal|stray-turned-resident} does something that {~makes you laugh until you cry|makes your heart stop|tells you they've been listening all along}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Take a photograph",
+    "outcomes": [
+     {
+      "text": "The photograph is on the fridge. It's the best thing in the flat.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "The photograph is blurred. The memory is perfect.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spoil them rotten",
+    "outcomes": [
+     {
+      "text": "A new bed, a long walk, and a snack. They have regard for me now.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -60
+      }
+     },
+     {
+      "text": "A new bed, ignored in favour of the box it came in.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -60
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell everyone",
+    "outcomes": [
+     {
+      "text": "Everyone has a pet story. We traded them all evening.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 1
+      }
+     },
+     {
+      "text": "Nobody wanted another pet story. I kept going.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.classmate",
+  "icon": "🏫",
+  "title": "Whatever happened to them",
+  "text": "{~Out of nowhere|On a feed|At a funeral} you hear about someone from school. {~You haven't thought about them in years.|They were the one you'd never have guessed.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Look them up",
+    "outcomes": [
+     {
+      "text": "Their life was a surprise, a good one. I smiled for the rest of the day.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Their life was a surprise, a hard one. I sat quietly.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get in touch",
+    "outcomes": [
+     {
+      "text": "They replied in minutes. It was as if no time had passed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 1
+      }
+     },
+     {
+      "text": "They replied in a week, politely. That was all.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it in the past",
+    "outcomes": [
+     {
+      "text": "Some things are better as a warm blur.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I left it, and thought about them on and off for a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.gift",
+  "icon": "🎨",
+  "title": "The thing you were good at",
+  "text": "You come across {~a drawing|a trophy|an old project} from {~childhood|school|years ago} that shows the thing you once were good at. {~It was never a career.|You'd forgotten how much you loved it.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Pick it back up",
+    "outcomes": [
+     {
+      "text": "It was rusty. By the third evening it was a joy.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "skill": 2
+      }
+     },
+     {
+      "text": "It was rusty. I stopped after a week, with a bruised ego.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Teach it to a child",
+    "outcomes": [
+     {
+      "text": "The child had a gift too. We spent a summer of evenings on it.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 7
+      }
+     },
+     {
+      "text": "The child was bored in ten minutes. I laughed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Frame it",
+    "outcomes": [
+     {
+      "text": "It hangs in the hall. People ask about it and I tell them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "It hangs in the hall, and the frame outshines it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.firstjob",
+  "icon": "🧢",
+  "title": "Your first job, remembered",
+  "text": "{~The smell of a kitchen|A uniform in a shop window|A phrase from a customer} takes you back to your first job. {~You were so young.|You were so tired, and so proud.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Tell a young person about it",
+    "outcomes": [
+     {
+      "text": "They listened, shocked at the wages. I felt about a hundred years old.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 1
+      }
+     },
+     {
+      "text": "They told me the minimum wage was a human right. They're right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go back and visit",
+    "outcomes": [
+     {
+      "text": "It was still there, smaller. The manager remembered my name.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "It was a phone shop now. I stood outside, grinning.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tip generously, wherever you go",
+    "outcomes": [
+     {
+      "text": "A habit for life: I tip generously and mean it.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "money": -50
+      }
+     },
+     {
+      "text": "It was noticed, and returned in small ways.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 3,
+       "money": -50
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.teensecret",
+  "icon": "🔒",
+  "title": "The thing nobody knew",
+  "text": "Something from your teens — {~the party|the dare|what your parents found} — {~comes up in conversation|surfaces in a photo|is told by someone else}. {~You thought it was forgotten.|You'd made your peace with it.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Laugh about it",
+    "outcomes": [
+     {
+      "text": "Laughing was right. It was hilarious, from where I stand now.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "Laughing was awkward. Not everyone found it funny.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell it properly",
+    "outcomes": [
+     {
+      "text": "I told the whole of it, including the part that wasn't flattering. People loved it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I told it. I'd forgotten an important detail and was corrected.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Change the subject",
+    "outcomes": [
+     {
+      "text": "A seamless change of subject. I've still got it.",
+      "weight": 1,
+      "effects": {
+       "stress": 0
+      }
+     },
+     {
+      "text": "A clumsy change of subject. Everyone noticed.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.exam",
+  "icon": "📝",
+  "title": "A test of a different kind",
+  "text": "Years after the exam, you find yourself {~in a situation where it would have helped|explaining something you learned for it|dreaming that you're sitting it again}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Enrol in a course",
+    "outcomes": [
+     {
+      "text": "A short evening course, and I was a student again. I loved it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "happiness": 5,
+       "money": -400
+      }
+     },
+     {
+      "text": "A short evening course, and I fell behind. It was a brave attempt.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": 3,
+       "money": -400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Teach someone else",
+    "outcomes": [
+     {
+      "text": "Teaching was the best way to learn it again.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "karma": 3
+      }
+     },
+     {
+      "text": "Teaching revealed how much I'd forgotten.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just laugh at the dream",
+    "outcomes": [
+     {
+      "text": "The dream faded in the morning, as dreams do.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "The dream came back the next night.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.college",
+  "icon": "🎓",
+  "title": "The road not taken",
+  "text": "{~A university brochure|A colleague's stories|An old friend's photos} makes you wonder about the {~course|city|year abroad} you could have done.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Take a course now",
+    "outcomes": [
+     {
+      "text": "It was never too late. I'm now the oldest in the room and the happiest.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "smarts": 2,
+       "money": -800
+      }
+     },
+     {
+      "text": "It was nearly too late. I got through it on stubbornness.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "smarts": 1,
+       "stress": 3,
+       "money": -800
+      }
+     }
+    ]
+   },
+   {
+    "label": "Visit the place",
+    "outcomes": [
+     {
+      "text": "A weekend there was enough to make peace with the choice.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -400
+      }
+     },
+     {
+      "text": "A weekend there made me wonder even more.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "money": -400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the what-if sit",
+    "outcomes": [
+     {
+      "text": "Every life has its rooms we don't enter. This one's mine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The what-if sits with me still. I've learned to have tea with it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.scare",
+  "icon": "🩺",
+  "title": "A year on from the scare",
+  "text": "It has been a year since {~the tests|the symptoms|the worry}. You're {~fine|better|learning to live with it}, and the follow-up appointment is in the diary.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Go, and ask every question",
+    "outcomes": [
+     {
+      "text": "I asked everything. The doctor answered patiently. I left with a plan.",
+      "weight": 1,
+      "effects": {
+       "stress": -5,
+       "health": 2
+      }
+     },
+     {
+      "text": "I asked everything. The answers raised more questions, and I took them home.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go, but say little",
+    "outcomes": [
+     {
+      "text": "I said little and heard little. It was fine, which is all I'd wanted.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      }
+     },
+     {
+      "text": "I said little. Something I didn't say turned out to matter.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cancel it",
+    "outcomes": [
+     {
+      "text": "I cancelled, and my body forgave me.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      }
+     },
+     {
+      "text": "I cancelled, and my body didn't.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.habit",
+  "icon": "🏃",
+  "title": "The habit that stuck",
+  "text": "{~Without noticing|One ordinary Tuesday|After a bad week}, you realise {~you've been exercising for months|the routine you started is simply part of you now|you hardly think about it}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Increase it, a little",
+    "outcomes": [
+     {
+      "text": "A little more, and the results compounded in the way they do.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A little more, and a niggle in the knee. I eased off.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Introduce a friend",
+    "outcomes": [
+     {
+      "text": "My friend started with me. Two people keep each other going.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "happiness": 5,
+       "karma": 1
+      }
+     },
+     {
+      "text": "My friend lasted three weeks. I carried on.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Reward yourself",
+    "outcomes": [
+     {
+      "text": "A good dinner, with no guilt. I'd earned it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -80
+      }
+     },
+     {
+      "text": "A good dinner, then another. The habit felt a little less pure.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "happiness": 3,
+       "money": -120
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.rest",
+  "icon": "🌙",
+  "title": "What your body said",
+  "text": "{~After a bad stretch|In a quiet moment|At the end of a long week}, your body {~says plainly|insists|whispers} that you need to {~stop|slow down|sleep}.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Take a real break",
+    "outcomes": [
+     {
+      "text": "A week of nothing. I came out of it a different person.",
+      "weight": 1,
+      "effects": {
+       "stress": -8,
+       "health": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "A week of nothing, interrupted by emails. I learned I couldn't switch off.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "health": 0
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for help",
+    "outcomes": [
+     {
+      "text": "I said I was struggling. The relief of being believed was immense.",
+      "weight": 1,
+      "effects": {
+       "stress": -6,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I said I was struggling. It was awkward, then it wasn't.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push on",
+    "outcomes": [
+     {
+      "text": "I pushed on, and was fine. Until I wasn't.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "health": -2
+      }
+     },
+     {
+      "text": "I pushed on and got away with it. That's the dangerous kind of luck.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.goodturn",
+  "icon": "🌱",
+  "title": "Someone remembers",
+  "text": "{~A stranger|Someone you barely know|A person in a shop} says, 'You're the one who...' and tells a story about a small thing you did. {~You'd completely forgotten it.|You remember it differently.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Say it was nothing",
+    "outcomes": [
+     {
+      "text": "Modesty was the right note. They told me the story again, better.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "Modesty was taken at face value. They moved on.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to tell you more",
+    "outcomes": [
+     {
+      "text": "Their version had a hero in it. It was me. I was moved.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 2
+      }
+     },
+     {
+      "text": "Their version had a mistake. I corrected it, and regretted it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay it forward that same day",
+    "outcomes": [
+     {
+      "text": "I did something small for a stranger before bedtime. It felt like wearing a clean shirt.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I tried to pay it forward and nobody wanted help. I felt faintly ridiculous.",
+      "weight": 1,
+      "effects": {
+       "karma": 1,
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.record",
+  "icon": "⚖️",
+  "title": "The system remembers",
+  "text": "A letter, a form, or a polite phone call reminds you that the {~ticket|statement|court date} from before hasn't gone away.",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Sort it out in person",
+    "outcomes": [
+     {
+      "text": "An hour in a queue and a signature. It was over, and I felt silly for dreading it.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "money": -80
+      }
+     },
+     {
+      "text": "An hour in a queue, then a second one. The second was a surprise.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "money": -200
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay it online",
+    "outcomes": [
+     {
+      "text": "A click, a receipt, a weight lifted.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "money": -150
+      }
+     },
+     {
+      "text": "A click, and the website crashed. I didn't know if it had worked until a month later.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "money": -150
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a lawyer first",
+    "outcomes": [
+     {
+      "text": "The lawyer said 'don't worry', for a modest fee. I worried less.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "money": -200
+      }
+     },
+     {
+      "text": "The lawyer found a complication. It cost more than the original.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "money": -600
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.trip",
+  "icon": "🧳",
+  "title": "The story of the trip",
+  "text": "Years later, the {~trip|journey|holiday} is still a family legend. {~Nobody remembers it the same way.|Everyone has a different favourite part.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Plan another one",
+    "outcomes": [
+     {
+      "text": "We booked something for next summer. The legend deepens.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "money": -900
+      }
+     },
+     {
+      "text": "We planned another one and cancelled it. We still talk about the first.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a photo book",
+    "outcomes": [
+     {
+      "text": "The book took a month. It sits on every coffee table we own.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -60
+      }
+     },
+     {
+      "text": "The book took a month and had three typos. We love it anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -60
+      }
+     }
+    ]
+   },
+   {
+    "label": "Just retell it",
+    "outcomes": [
+     {
+      "text": "Retelling is half the pleasure of a trip.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "Retelling it, I realised the details were slipping.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "echo.history",
+  "icon": "🌍",
+  "title": "When the news was everything",
+  "text": "Years later, a {~documentary|anniversary|child's question} brings it back: the {~shortages|lockdown|war|crisis} you lived through. {~Younger people can't imagine it.|You find you can't quite explain it.}",
+  "conditions": {},
+  "choices": [
+   {
+    "label": "Tell it honestly",
+    "outcomes": [
+     {
+      "text": "I told it without drama. They listened and asked quiet questions.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I told it honestly, and it got to me a little.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the funny parts",
+    "outcomes": [
+     {
+      "text": "There were funny parts, as there always are. We laughed until it hurt.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I told the funny parts, and then the others came.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them find their own",
+    "outcomes": [
+     {
+      "text": "They'll learn it from the world, as we did.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     },
+     {
+      "text": "They did, and called me to say so.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ }
+]

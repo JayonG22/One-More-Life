@@ -45,6 +45,21 @@ func _depth() -> void:
 				thin += 1
 	ok(thin == 0, "%d choices still have a single outcome" % thin)
 	ok(short == 0, "%d events still have fewer than three choices" % short)
+	var sched := 0
+	var targets := {}
+	for e in ContentDB.events:
+		var has_s := false
+		for c in e.get("choices", []):
+			for o in c.get("outcomes", []):
+				if (o as Dictionary).has("schedule"):
+					has_s = true
+					targets[str(o["schedule"]["event"])] = true
+					ok(ContentDB.events_by_id.has(str(o["schedule"]["event"])), "%s schedules a missing event %s" % [e["id"], o["schedule"]["event"]])
+		if has_s:
+			sched += 1
+	var pct := 100.0 * float(sched) / float(maxi(1, events))
+	ok(pct >= 25.0, "only %.1f%% of events have a delayed follow-up (target 25%%)" % pct)
+	print("  follow-ups: %d of %d events (%.1f%%) lead to %d distinct echoes" % [sched, events, pct, targets.size()])
 	ok(events >= 633, "only %d events are loaded — a file is missing from EVENT_FILES" % events)
 	print("  depth: %d events, %d choices, %d thin" % [events, choices, thin])
 

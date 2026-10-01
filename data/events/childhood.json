@@ -444,7 +444,14 @@
       "relationship": {
        "kid": 25
       },
-      "keep_role": "kid"
+      "keep_role": "kid",
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
+      }
      },
      {
       "text": "{kid.first} turned out to be a spy. Well, not really, but we played spy for years.",
@@ -455,6 +462,13 @@
       },
       "relationship": {
        "kid": 30
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -466,6 +480,13 @@
       },
       "relationship": {
        "kid": 18
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -475,13 +496,27 @@
     "outcomes": [
      {
       "text": "I stuck with my usual group.",
-      "weight": 1
+      "weight": 1,
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
+      }
      },
      {
       "text": "{kid.first} ate alone for a week, then found another table. I saw them laughing and felt a small pang.",
       "weight": 1,
       "effects": {
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -490,6 +525,13 @@
       "effects": {
        "happiness": -2,
        "karma": -1
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -510,7 +552,14 @@
       "relationship": {
        "kid": -30
       },
-      "keep_role": "kid"
+      "keep_role": "kid",
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
+      }
      },
      {
       "text": "A teacher saw it. The lecture was longer than I can bear to describe.",
@@ -522,6 +571,13 @@
       },
       "relationship": {
        "kid": -20
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -533,6 +589,13 @@
       },
       "relationship": {
        "kid": 8
+      },
+      "schedule": {
+       "event": "echo.classmate",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]

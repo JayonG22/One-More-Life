@@ -1049,6 +1049,13 @@
       },
       "effects": {
        "happiness": 10
+      },
+      "schedule": {
+       "event": "echo.trip",
+       "years": [
+        3,
+        10
+       ]
       }
      },
      {
@@ -1060,6 +1067,13 @@
       "effects": {
        "happiness": 6,
        "health": -3
+      },
+      "schedule": {
+       "event": "echo.trip",
+       "years": [
+        3,
+        10
+       ]
       }
      }
     ]
@@ -1072,6 +1086,13 @@
       "weight": 3,
       "relationship": {
        "k": -12
+      },
+      "schedule": {
+       "event": "echo.trip",
+       "years": [
+        3,
+        10
+       ]
       }
      },
      {
@@ -1082,6 +1103,13 @@
       },
       "effects": {
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.trip",
+       "years": [
+        3,
+        10
+       ]
       }
      }
     ]
@@ -1098,6 +1126,13 @@
       "effects": {
        "happiness": 12,
        "money": -600
+      },
+      "schedule": {
+       "event": "echo.trip",
+       "years": [
+        3,
+        10
+       ]
       }
      },
      {
@@ -1109,6 +1144,13 @@
       "effects": {
        "happiness": 2,
        "money": -600
+      },
+      "schedule": {
+       "event": "echo.trip",
+       "years": [
+        3,
+        10
+       ]
       }
      }
     ]
@@ -2232,6 +2274,13 @@
       "relationship": {
        "t": 8,
        "k": 5
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -2243,6 +2292,13 @@
       },
       "effects": {
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -2259,6 +2315,13 @@
       },
       "effects": {
        "money": -2000
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -2269,6 +2332,13 @@
       },
       "effects": {
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -2284,6 +2354,13 @@
       },
       "effects": {
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -2294,6 +2371,13 @@
       },
       "effects": {
        "happiness": -5
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]

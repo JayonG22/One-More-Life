@@ -26,6 +26,13 @@
       },
       "real": {
        "rent_pct": 6
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -38,6 +45,13 @@
       },
       "real": {
        "rent_pct": 8
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -53,6 +67,13 @@
       },
       "real": {
        "rent_pct": 2
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -63,6 +84,13 @@
       },
       "real": {
        "rent_pct": 7
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -74,6 +102,13 @@
       "real": {
        "rent_pct": 5,
        "forced_move": false
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -89,6 +124,13 @@
       },
       "real": {
        "forced_move": true
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -101,6 +143,13 @@
       },
       "real": {
        "forced_move": true
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -136,6 +185,13 @@
       },
       "real": {
        "damp": -25
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -146,6 +202,13 @@
       },
       "real": {
        "damp": -5
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -157,6 +220,13 @@
       },
       "real": {
        "damp": -50
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -173,6 +243,13 @@
       },
       "real": {
        "damp": -20
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -184,6 +261,13 @@
       },
       "real": {
        "damp": -5
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -200,6 +284,13 @@
       },
       "real": {
        "damp": 12
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -212,6 +303,13 @@
       },
       "real": {
        "damp": 15
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -248,6 +346,13 @@
       },
       "real": {
        "boiler_age": -20
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -260,6 +365,13 @@
       },
       "real": {
        "boiler_age": -20
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -268,6 +380,13 @@
       "effects": {
        "stress": 7,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -284,6 +403,13 @@
       },
       "real": {
        "boiler_age": -20
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -295,6 +421,13 @@
       },
       "real": {
        "boiler_age": -20
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -311,6 +444,13 @@
       },
       "real": {
        "boiler_age": -20
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -319,6 +459,13 @@
       "effects": {
        "happiness": -2,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.repair",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -438,6 +585,13 @@
       },
       "real": {
        "deposit_loss": 10
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -449,6 +603,13 @@
       },
       "real": {
        "deposit_loss": 50
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -465,6 +626,13 @@
       },
       "real": {
        "deposit_loss": 60
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -476,6 +644,13 @@
       },
       "real": {
        "deposit_loss": 80
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -493,6 +668,13 @@
       },
       "real": {
        "deposit_loss": 0
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -505,6 +687,13 @@
       },
       "real": {
        "deposit_loss": 10
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -517,6 +706,13 @@
       },
       "real": {
        "deposit_loss": 80
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -550,6 +746,13 @@
       "effects": {
        "money": -500,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -559,6 +762,13 @@
        "money": -600,
        "stress": 4,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -573,6 +783,13 @@
        "stress": -2,
        "happiness": 2,
        "karma": 1
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -581,6 +798,13 @@
       "effects": {
        "stress": 6,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -597,6 +821,13 @@
       },
       "real": {
        "flatmate_leaves": true
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -608,6 +839,13 @@
       },
       "real": {
        "flatmate_leaves": true
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -642,6 +880,13 @@
        "happiness": 6,
        "health": -1,
        "stress": -2
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -650,6 +895,13 @@
       "effects": {
        "happiness": 3,
        "stress": 2
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -663,6 +915,13 @@
       "effects": {
        "stress": 5,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -671,6 +930,13 @@
       "effects": {
        "happiness": 1,
        "stress": 1
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -684,6 +950,13 @@
       "effects": {
        "happiness": 2,
        "stress": -1
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -692,6 +965,13 @@
       "effects": {
        "stress": 5,
        "happiness": -3
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -703,6 +983,13 @@
       },
       "real": {
        "rent_pct": 2
+      },
+      "schedule": {
+       "event": "echo.flatmate",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -738,6 +1025,13 @@
       },
       "real": {
        "rent_pct": 4
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -748,6 +1042,13 @@
       },
       "real": {
        "rent_pct": 7
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -763,6 +1064,13 @@
       },
       "real": {
        "rent_pct": 9
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -774,6 +1082,13 @@
       },
       "real": {
        "forced_move": true
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -791,6 +1106,13 @@
       },
       "real": {
        "forced_move": true
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -803,6 +1125,13 @@
       },
       "real": {
        "forced_move": true
+      },
+      "schedule": {
+       "event": "echo.landlord",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -1014,6 +1343,13 @@
       },
       "real": {
        "crash": "minor"
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -1025,6 +1361,13 @@
       },
       "real": {
        "crash": "minor"
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -1042,6 +1385,13 @@
       },
       "real": {
        "crash": "moderate"
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -1053,6 +1403,13 @@
       },
       "real": {
        "crash": "minor"
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -1071,6 +1428,13 @@
       "real": {
        "crash": "moderate",
        "fine": 800
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -1084,6 +1448,13 @@
       "real": {
        "crash": "moderate",
        "fine": 1200
+      },
+      "schedule": {
+       "event": "echo.carstory",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]

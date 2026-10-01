@@ -139,6 +139,13 @@
         "health",
         "followup"
        ]
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -150,7 +157,14 @@
       },
       "unflags": [
        "health_followup_needed"
-      ]
+      ],
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
+      }
      }
     ]
    },
@@ -167,7 +181,14 @@
       },
       "unflags": [
        "health_followup_needed"
-      ]
+      ],
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
+      }
      },
      {
       "text": "The second opinion agrees with the first: monitor it, but do not panic.",
@@ -178,7 +199,14 @@
       },
       "unflags": [
        "health_followup_needed"
-      ]
+      ],
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
+      }
      }
     ]
    },
@@ -191,6 +219,13 @@
       "effects": {
        "health": -4,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      },
      {
@@ -198,6 +233,13 @@
       "weight": 1,
       "effects": {
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.scare",
+       "years": [
+        1,
+        3
+       ]
       }
      }
     ]
@@ -709,6 +751,13 @@
       "effects": {
        "stress": -10,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -717,6 +766,13 @@
       "effects": {
        "stress": -6,
        "happiness": 3
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -730,6 +786,13 @@
       "effects": {
        "stress": -8,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -738,6 +801,13 @@
       "effects": {
        "stress": 3,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -751,6 +821,13 @@
       "effects": {
        "stress": 5,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -759,6 +836,13 @@
       "effects": {
        "stress": 10,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.rest",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]

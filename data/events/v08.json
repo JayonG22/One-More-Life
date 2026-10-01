@@ -3086,6 +3086,13 @@
       "ambition": {
        "kind": "pet_health",
        "value": 10
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -3098,6 +3105,13 @@
       "ambition": {
        "kind": "pet_health",
        "value": 3
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -3115,6 +3129,13 @@
       "ambition": {
        "kind": "pet_health",
        "value": 5
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -3127,6 +3148,13 @@
       "ambition": {
        "kind": "pet_health",
        "value": 1
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -3143,6 +3171,13 @@
       "ambition": {
        "kind": "pet_health",
        "value": 2
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      },
      {
@@ -3155,6 +3190,13 @@
       "ambition": {
        "kind": "pet_health",
        "value": -9
+      },
+      "schedule": {
+       "event": "echo.pet",
+       "years": [
+        1,
+        5
+       ]
       }
      }
     ]
@@ -5801,6 +5843,13 @@
       "ambition": {
        "kind": "career_network",
        "value": 8
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -5812,6 +5861,13 @@
       "ambition": {
        "kind": "career_network",
        "value": 5
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -5829,6 +5885,13 @@
       "ambition": {
        "kind": "career_network",
        "value": 6
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -5840,6 +5903,13 @@
       "ambition": {
        "kind": "career_reputation",
        "value": 2
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -5856,6 +5926,13 @@
       "ambition": {
        "kind": "career_reputation",
        "value": 1
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -5867,6 +5944,13 @@
       "ambition": {
        "kind": "career_network",
        "value": -1
+      },
+      "schedule": {
+       "event": "echo.mentor",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]

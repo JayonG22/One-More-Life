@@ -3095,6 +3095,13 @@
       "effects": {
        "health": 5,
        "money": -400
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3104,6 +3111,13 @@
        "health": 5,
        "money": -3000,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3117,6 +3131,13 @@
       "effects": {
        "money": -3000,
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3126,6 +3147,13 @@
        "money": -9000,
        "stress": 15,
        "health": -5
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3139,6 +3167,13 @@
       "effects": {
        "money": -1200,
        "karma": -3
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3146,6 +3181,13 @@
       "weight": 1,
       "effects": {
        "money": -2500
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3273,6 +3315,13 @@
       "effects": {
        "smarts": 6,
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3282,6 +3331,13 @@
        "smarts": 2,
        "happiness": -8,
        "stress": 10
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3296,6 +3352,13 @@
        "happiness": 6,
        "health": -10,
        "karma": -6
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3304,6 +3367,13 @@
       "fine": 1000,
       "effects": {
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3317,6 +3387,13 @@
       "effects": {
        "happiness": -8,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3326,6 +3403,13 @@
        "happiness": 6,
        "stress": -8,
        "smarts": 4
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3523,6 +3607,13 @@
       "effects": {
        "money": 40000,
        "happiness": 10
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3531,6 +3622,13 @@
       "effects": {
        "money": -5000,
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3543,6 +3641,13 @@
       "weight": 3,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3551,6 +3656,13 @@
       "effects": {
        "smarts": 4,
        "happiness": 5
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3564,6 +3676,13 @@
       "effects": {
        "money": 9000,
        "smarts": 5
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      },
      {
@@ -3571,6 +3690,13 @@
       "weight": 1,
       "effects": {
        "money": -2500
+      },
+      "schedule": {
+       "event": "echo.tip",
+       "years": [
+        1,
+        4
+       ]
       }
      }
     ]
@@ -3604,7 +3730,14 @@
       },
       "flags": [
        "bought_the_top"
-      ]
+      ],
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
+      }
      },
      {
       "text": "I got outbid eleven times and won the twelfth by paying an amount I still do not say out loud.",
@@ -3615,7 +3748,14 @@
       },
       "flags": [
        "bought_the_top"
-      ]
+      ],
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
+      }
      }
     ]
    },
@@ -3627,6 +3767,13 @@
       "weight": 3,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3635,6 +3782,13 @@
       "effects": {
        "smarts": 5,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]
@@ -3649,6 +3803,13 @@
        "money": -8000,
        "smarts": 6,
        "happiness": 6
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      },
      {
@@ -3658,6 +3819,13 @@
        "money": -30000,
        "stress": 15,
        "happiness": -8
+      },
+      "schedule": {
+       "event": "echo.history",
+       "years": [
+        4,
+        15
+       ]
       }
      }
     ]

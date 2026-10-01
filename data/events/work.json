@@ -23,6 +23,13 @@
       },
       "effects": {
        "job_perf": 4
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -33,6 +40,13 @@
       },
       "effects": {
        "stress": 5
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -48,6 +62,13 @@
       },
       "relationship": {
        "cw": -20
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -55,6 +76,13 @@
       "weight": 1,
       "effects": {
        "job_perf": -5
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -67,6 +95,13 @@
       "weight": 1,
       "effects": {
        "stress": 4
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -76,6 +111,13 @@
        "stress": 6,
        "job_perf": -2,
        "happiness": -4
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -85,6 +127,13 @@
        "stress": -2,
        "job_perf": 2,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      }
     ]
@@ -101,6 +150,13 @@
       },
       "relationship": {
        "cw": -10
+      },
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
       }
      },
      {
@@ -109,7 +165,14 @@
       "effects": {
        "karma": -8
       },
-      "fired": true
+      "fired": true,
+      "schedule": {
+       "event": "echo.rival",
+       "years": [
+        2,
+        6
+       ]
+      }
      }
     ]
    }
@@ -146,6 +209,13 @@
       },
       "relationship": {
        "boss": 8
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -155,6 +225,13 @@
        "job_perf": 2,
        "stress": 8,
        "happiness": -6
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -167,6 +244,13 @@
       },
       "relationship": {
        "boss": 10
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -182,6 +266,13 @@
       },
       "relationship": {
        "boss": -6
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -191,6 +282,13 @@
        "job_perf": -6,
        "stress": 4,
        "happiness": -2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -203,6 +301,13 @@
       },
       "relationship": {
        "boss": 6
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -221,6 +326,13 @@
       "trait_bonus": {
        "Charmer": 2,
        "Ambitious": 2
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      },
      {
@@ -228,6 +340,13 @@
       "weight": 1,
       "effects": {
        "job_perf": -3
+      },
+      "schedule": {
+       "event": "echo.oldboss",
+       "years": [
+        3,
+        8
+       ]
       }
      }
     ]
@@ -508,6 +627,13 @@
        "money": 5000,
        "happiness": 2,
        "stress": 6
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -518,6 +644,13 @@
        "money": 5000,
        "happiness": -2,
        "stress": 8
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -528,6 +661,13 @@
        "money": 3000,
        "stress": 10,
        "happiness": -5
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -537,7 +677,14 @@
     "outcomes": [
      {
       "text": "I stayed. Home is home.",
-      "weight": 1
+      "weight": 1,
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
+      }
      },
      {
       "text": "My replacement thrived. I looked at LinkedIn too often that year.",
@@ -545,6 +692,13 @@
       "effects": {
        "happiness": -4,
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -554,6 +708,13 @@
        "happiness": 3,
        "stress": -2,
        "job_perf": 2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -568,6 +729,13 @@
        "job_perf": 5,
        "stress": 3,
        "happiness": 2
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -576,6 +744,13 @@
       "effects": {
        "stress": 3,
        "happiness": -1
+      },
+      "schedule": {
+       "event": "echo.recruiter",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -605,6 +780,13 @@
       "effects": {
        "stress": 6,
        "job_perf": 6
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -613,6 +795,13 @@
       "fired": true,
       "effects": {
        "happiness": -8
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -625,6 +814,13 @@
       "weight": 1,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -634,6 +830,13 @@
        "stress": -2,
        "job_perf": 2,
        "money": 3000
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -642,6 +845,13 @@
       "effects": {
        "stress": 5,
        "job_perf": -2
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
@@ -657,6 +867,13 @@
       },
       "trait_bonus": {
        "Charmer": 2
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      },
      {
@@ -664,6 +881,13 @@
       "weight": 1,
       "effects": {
        "stress": 3
+      },
+      "schedule": {
+       "event": "echo.company",
+       "years": [
+        2,
+        5
+       ]
       }
      }
     ]
