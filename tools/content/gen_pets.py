@@ -1108,6 +1108,8 @@ A(5, "🌇", "The long evening",
     O("I found the best spot in the house, and I stayed in it. I was warm. I was unbothered. I was where I wanted to be.", {"happiness": 8, "stress": -8}, {"belonging": 6}),
     O("The sun, a long afternoon, a hand on my head. I don't need more, and I never have.", {"happiness": 8, "stress": -8}, {"bond": 5})))
 
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gen_pets_b.py')).read())
+
 # ======================================================================== write
 for (fid, years, sources) in FOLLOW:
     for e in EV:

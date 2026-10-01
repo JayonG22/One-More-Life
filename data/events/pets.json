@@ -9450,5 +9450,1538 @@
   ],
   "weight": 1,
   "followup_only": true
+ },
+ {
+  "id": "pl.pk.bowl",
+  "icon": "🥣",
+  "title": "Whose bowl",
+  "text": "There are two bowls by the back door and one of them is clearly the better bowl. {~Nobody has ever said so|It has been the better bowl since the day it arrived}. {~Everyone knows|The whole house knows}.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pack"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the good bowl",
+    "outcomes": [
+     {
+      "text": "I went in first and ate slowly. The others waited. It was a small, brutal victory, and I tried not to enjoy it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "standing": 5,
+       "belonging": -3
+      }
+     },
+     {
+      "text": "I got it by being quicker. They shifted aside. They'll remember.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "pet": {
+       "standing": 4,
+       "belonging": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let the other one have it",
+    "outcomes": [
+     {
+      "text": "I moved aside. It was a courtesy, and everybody noticed. I ate from the old bowl and it tasted the same.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "standing": -3,
+       "belonging": 5
+      }
+     },
+     {
+      "text": "I deferred. It's easier to keep the peace than the best bowl. They gave me a long, careful look afterwards.",
+      "weight": 1,
+      "effects": {
+       "stress": -1
+      },
+      "pet": {
+       "standing": -2,
+       "belonging": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Eat from both",
+    "outcomes": [
+     {
+      "text": "I made a nuisance of myself with both. Order broke down. We were all told off, which at least was fair.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 1
+      },
+      "pet": {
+       "standing": 0,
+       "belonging": 2
+      }
+     },
+     {
+      "text": "I went from one to the other, and nobody could say anything. It was chaos and I'd do it again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "standing": 1,
+       "instinct": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 10
+ },
+ {
+  "id": "pl.pk.newcomer",
+  "icon": "🐾",
+  "title": "A new smell in the hall",
+  "text": "There's a carrier in the hall and something is breathing in it. The people are being very bright and very quiet. Whatever's in there, it's staying.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pack",
+    "has_home"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Meet it at the door",
+    "outcomes": [
+     {
+      "text": "I put my nose to the grille. It put its nose to mine. That was the first thing, and in some ways the whole thing. We worked out the rest by Thursday.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "belonging": 6,
+       "packmate": 1
+      }
+     },
+     {
+      "text": "I was calm, and polite, and clear about my position. It took the point. The new one learned the house from me.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "standing": 4,
+       "packmate": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Sulk for a week",
+    "outcomes": [
+     {
+      "text": "I withdrew to a high place and did not come down. The new one had my bed. Eventually I had to concede that it was a good bed for two.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -3
+      },
+      "pet": {
+       "belonging": 2,
+       "packmate": 1
+      }
+     },
+     {
+      "text": "I made it clear I had been wronged. It took six days and a lot of treats for me to forgive anybody.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "pet": {
+       "bond": -2,
+       "packmate": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Test it",
+    "outcomes": [
+     {
+      "text": "A growl, a snap, a retreat. We did a lot of this. By the end of the month we had a pecking order and a cold war and a secret friendship.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 2
+      },
+      "pet": {
+       "standing": 3,
+       "packmate": 1
+      }
+     },
+     {
+      "text": "I tried it with the shoe, the food, the bed. It passed most of them. I respect that.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 2
+      },
+      "pet": {
+       "belonging": 4,
+       "packmate": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "pl.pk.leader",
+  "icon": "👑",
+  "title": "The one in charge",
+  "text": "There's one of us the others watch. {~The leader has never needed to growl|The leader barely has to look up}. Today they're asleep in the doorway, and everyone is stepping carefully round them.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pack"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Step over them",
+    "outcomes": [
+     {
+      "text": "I stepped over them. One eye opened. It closed again. I took a note.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "pet": {
+       "standing": 5,
+       "instinct": 2
+      }
+     },
+     {
+      "text": "I walked across. They let me. Whatever was supposed to happen didn't, and the room noticed.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      },
+      "pet": {
+       "standing": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go round",
+    "outcomes": [
+     {
+      "text": "I went round the long way, like everyone else, and felt the old order settle again like a warm blanket.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "pet": {
+       "standing": -1,
+       "belonging": 3
+      }
+     },
+     {
+      "text": "I took the long way. Nobody said anything. Good order is something you can feel in the floor.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "pet": {
+       "belonging": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Lie down next to them",
+    "outcomes": [
+     {
+      "text": "I lay in the warm bit next to the leader and was allowed to stay. A quiet kind of promotion.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -4
+      },
+      "pet": {
+       "standing": 4,
+       "belonging": 6
+      }
+     },
+     {
+      "text": "They shifted a bit to make room. It's the nicest thing anyone has done for me all year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "belonging": 7
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "pl.pk.loss",
+  "icon": "🕯️",
+  "title": "The empty place",
+  "text": "There's a spot on the sofa that nobody is sitting in. The people keep looking at it. {~The bowl by the door is the wrong shape of empty|The smell in the hall is going, day by day}.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pack"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lie in their spot",
+    "outcomes": [
+     {
+      "text": "It still smelled of them. I lay in it for a week, and when the smell was gone I stayed anyway.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "stress": -3
+      },
+      "pet": {
+       "belonging": 4,
+       "bond": 3
+      }
+     },
+     {
+      "text": "I took their place on the sofa. The humans looked at me and didn't move me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": -4
+      },
+      "pet": {
+       "bond": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look for them",
+    "outcomes": [
+     {
+      "text": "I checked every room, twice a day. Eventually I stopped. I haven't stopped checking, entirely.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 4
+      },
+      "pet": {
+       "belonging": -3
+      }
+     },
+     {
+      "text": "I went to the door and waited. Nobody came. A person sat on the step with me, and we didn't talk about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      },
+      "pet": {
+       "bond": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Press on",
+    "outcomes": [
+     {
+      "text": "I played, because that's what you do. It was a bit hollow at first. After a while it wasn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "pet": {
+       "fitness": 3
+      }
+     },
+     {
+      "text": "I got on with things. I ate, I slept, I chased the usual. I slept closer to the people.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "pet": {
+       "bond": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "pl.pk.mate",
+  "icon": "💞",
+  "title": "The one at the fence",
+  "text": "A {~sleek|scruffy|determined} someone has been at the fence every afternoon for a week. I find that my attention has narrowed to a single point. This is, I understand, a thing that happens.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "adult",
+    "has_home"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Follow your nose",
+    "outcomes": [
+     {
+      "text": "It was the best week of my life. I'd be lying to say I'd planned anything.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "pet": {
+       "instinct": 4,
+       "litters": 0
+      }
+     },
+     {
+      "text": "We met at the gate and it was inevitable. I have thoughts about it still.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 3
+      },
+      "pet": {
+       "instinct": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay by the people",
+    "outcomes": [
+     {
+      "text": "I stayed in. I sat by the window. I'll admit it hurt a little to be sensible.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 4
+      },
+      "pet": {
+       "bond": 3,
+       "obedience": 3
+      }
+     },
+     {
+      "text": "I looked at the fence all afternoon, and then at {o.first}, and decided to be good. It cost something.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "pet": {
+       "bond": 4,
+       "obedience": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a break for it",
+    "outcomes": [
+     {
+      "text": "I got out. It was glorious. I came home after two days with leaves in my coat and a look on my face that fooled no one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 4
+      },
+      "pet": {
+       "escapes": 1,
+       "instinct": 5,
+       "territory": 4
+      }
+     },
+     {
+      "text": "I was gone before anyone saw the gate open. I came back. I'd like it known that I came back.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 3
+      },
+      "pet": {
+       "escapes": 1,
+       "territory": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.pk.pups",
+  "icon": "🍼",
+  "title": "The first night with the pups",
+  "text": "{~They are not much bigger than a hand|They are warm and blind and loud}, and they're mine, and they smell of milk. It's three in the morning, and one of them has just discovered its voice.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pups"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Keep them close",
+    "outcomes": [
+     {
+      "text": "I curled round them, all night, every night, for a fortnight. I did not eat properly and I didn't care.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": -2,
+       "stress": 3
+      },
+      "pet": {
+       "bond": 3,
+       "belonging": 6
+      }
+     },
+     {
+      "text": "I wouldn't let anyone near them for a week. Eventually I was talked round by a hand and a bowl of something good.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 4
+      },
+      "pet": {
+       "belonging": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let {o.first} help",
+    "outcomes": [
+     {
+      "text": "{o.first} sat on the floor for hours, with a towel and a hot-water bottle and a lot of patience. I let them. It was the right call.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pet": {
+       "bond": 8
+      }
+     },
+     {
+      "text": "I let them hold one. I watched like a hawk. {o.first} said afterwards that I was the best parent they'd ever seen.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "bond": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave them to it",
+    "outcomes": [
+     {
+      "text": "I took a break. A short one. I felt awful, then lighter, then awful again. They were fine.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      },
+      "pet": {
+       "bond": -1
+      }
+     },
+     {
+      "text": "I went off for the afternoon and slept in the sun. I came back to a chorus. It was the best sound I'd ever heard.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.pk.rehome",
+  "icon": "📦",
+  "title": "Homes for them",
+  "text": "People are coming to look at the pups. A woman with a clipboard, a boy who can't keep his hands still, a quiet man with a very good coat. Each of them is holding one of mine.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pups"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Watch each one carefully",
+    "outcomes": [
+     {
+      "text": "I stood and watched. The right ones were the ones who looked at the pup, not at me. It went well. I'd like to think I was a good judge.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 4
+      },
+      "pet": {
+       "bond": 2
+      }
+     },
+     {
+      "text": "I reviewed each of them with a fixed stare. Three were rejected. They didn't know why, and neither did {o.first}.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 5
+      },
+      "pet": {
+       "standing": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide one",
+    "outcomes": [
+     {
+      "text": "I took the smallest into the cupboard and sat in front of it. {o.first} found us, and sighed, and put a note on the list: 'staying'.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pet": {
+       "bond": 5,
+       "belonging": 4,
+       "packmate": 1
+      }
+     },
+     {
+      "text": "I tucked one behind the sofa. It stayed. It's here now. It has my ears.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      },
+      "pet": {
+       "belonging": 5,
+       "packmate": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them go",
+    "outcomes": [
+     {
+      "text": "They left one by one, in arms and boxes and on a lead. By the last, I was just watching. The house was very quiet.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 3
+      },
+      "pet": {
+       "belonging": -3
+      }
+     },
+     {
+      "text": "I let them go. I think I understood. The house was quiet. I slept very late the next day.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "pet": {
+       "bond": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.pk.street",
+  "icon": "🌆",
+  "title": "The crew",
+  "text": "{~Three of us|Four of us|Five of us} run the stretch behind the market. We've got a spot, a schedule and a way of working the bins. A new one has turned up at the end of the alley, thin and watchful.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "homeless"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let it in",
+    "outcomes": [
+     {
+      "text": "Another body, another pair of eyes. It was good with the lorries. Within a month it was one of us.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "belonging": 6,
+       "packmate": 1
+      }
+     },
+     {
+      "text": "I let it share the warm vent. It remembered. Some debts are good ones to have.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "belonging": 5,
+       "packmate": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive it off",
+    "outcomes": [
+     {
+      "text": "A noisy, vicious few minutes. The new one left. I won, and I felt it all night.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      },
+      "pet": {
+       "standing": 5,
+       "instinct": 4
+      }
+     },
+     {
+      "text": "It left. The alley stayed ours. Nobody was friendly with me for a day or two, though.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "pet": {
+       "standing": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Test it with a bone",
+    "outcomes": [
+     {
+      "text": "I dropped a scrap and watched. It waited, took it only when I'd gone. Good manners. It stayed.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "belonging": 4,
+       "packmate": 1
+      }
+     },
+     {
+      "text": "It took it, and fought for it, and lost. It still limped after us, and I had to respect that.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": 2
+      },
+      "pet": {
+       "standing": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "pl.pk.hierarchy",
+  "icon": "📊",
+  "title": "The long argument",
+  "text": "It's been building all week. {~A look over a bowl|A snap on the stairs|A growl at the door} and then a rumble, a stand-off, and now the whole room is leaning to see what happens next.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "pack",
+    "adult"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stand your ground",
+    "outcomes": [
+     {
+      "text": "I stood tall and I made myself big, and said, in every way I know, that I was not moving. They moved.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 2
+      },
+      "pet": {
+       "standing": 8
+      }
+     },
+     {
+      "text": "I didn't blink. It went on for a long time. In the end it didn't need to be a fight.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "pet": {
+       "standing": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Back down",
+    "outcomes": [
+     {
+      "text": "I looked away first. It didn't hurt as much as I'd expected. The room relaxed.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "pet": {
+       "standing": -6,
+       "belonging": 4
+      }
+     },
+     {
+      "text": "I conceded, and went to my bed. Nobody said anything. The day went on.",
+      "weight": 1,
+      "effects": {
+       "stress": -2
+      },
+      "pet": {
+       "standing": -5,
+       "belonging": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a noise and run",
+    "outcomes": [
+     {
+      "text": "I created a distraction with a considerable amount of shouting. Everything stopped. We all looked at the person coming to see what was going on.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      },
+      "pet": {
+       "standing": 1,
+       "mischief": 1
+      }
+     },
+     {
+      "text": "I yelled the house down and skidded round the corner. The whole argument evaporated into a tangle of laughing and shouting.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "belonging": 3,
+       "mischief": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 10
+ },
+ {
+  "id": "pl.old.quiet",
+  "icon": "🌙",
+  "title": "The long quiet",
+  "text": "I sleep more than I used to. I find that I'm just as content in the sun as I ever was in the run. The younger ones race around me, and I watch them, and I think: I was that, once.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "senior",
+    "pack"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Teach the young ones",
+    "outcomes": [
+     {
+      "text": "I showed one of them where the warm spot is, and the best way to get a treat. They listened more than I had expected.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "standing": 3,
+       "belonging": 5
+      }
+     },
+     {
+      "text": "I gave them the old lessons. They're better at them than I was. I told them so.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "belonging": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them go on without me",
+    "outcomes": [
+     {
+      "text": "I let the runners run. I lay in the shade and watched the shape of the afternoon.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -4
+      },
+      "pet": {
+       "belonging": 3
+      }
+     },
+     {
+      "text": "I let them play. From the sofa the world is a fine place and I'm happy to watch it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": -4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay close to the people",
+    "outcomes": [
+     {
+      "text": "I spent the months on the sofa, at someone's feet, a heavy warm weight. I think they liked the weight.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -5
+      },
+      "pet": {
+       "bond": 6
+      }
+     },
+     {
+      "text": "A lap, a rug, the same low chair. It's all I need.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -5
+      },
+      "pet": {
+       "bond": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "pl.day.delivery",
+  "icon": "📦",
+  "title": "The box",
+  "text": "A large cardboard box has arrived and the people have taken what was inside and left the box. The box is empty. The box is on the floor. I regard this as an invitation.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get in",
+    "outcomes": [
+     {
+      "text": "I was in it before they'd put the tape down. It was a perfect fit. I would be unreachable for the rest of the afternoon.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -4
+      },
+      "pet": {
+       "bond": 2
+      }
+     },
+     {
+      "text": "I got in, turned round three times, and sat. {o.first} took a photograph. It was, I'm told, a hit.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "bond": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Destroy it",
+    "outcomes": [
+     {
+      "text": "It took four minutes, and the carpet is now a snowfield. I regret nothing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "mischief": 2,
+       "instinct": 3
+      }
+     },
+     {
+      "text": "I took it apart with a degree of purpose. {o.first} stood in the doorway and said my name in a particular way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "mischief": 2,
+       "bond": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It was a box. I'm an adult. I looked at it for several minutes before I got in.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "pet": {
+       "obedience": 1
+      }
+     },
+     {
+      "text": "I walked past it with an air of indifference. At night, when no one was watching, I sat in it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 10,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.day.visitor",
+  "icon": "🧳",
+  "title": "Someone's brought a suitcase",
+  "text": "There's a stranger in the house and they have a suitcase and a habit of sitting in my chair. The people are delighted. I'm assessing the situation.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Win them over",
+    "outcomes": [
+     {
+      "text": "A well-timed sigh. A head on the knee. I had them within the hour, and they were in my debt by the end of the week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "bond": 2
+      }
+     },
+     {
+      "text": "I did the face. It is a very good face. By the weekend, we were close.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "pet": {
+       "bond": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Guard the house",
+    "outcomes": [
+     {
+      "text": "I stood between the stranger and the stairs for most of a day. They were very patient with me. By evening I conceded they were allowed to use the toilet.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      },
+      "pet": {
+       "obedience": -2,
+       "instinct": 3
+      }
+     },
+     {
+      "text": "I patrolled, and growled, and reported to the window. They were allowed, eventually, to stay.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      },
+      "pet": {
+       "instinct": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Hide",
+    "outcomes": [
+     {
+      "text": "Under the bed. For three days. The stranger left and I came out, and it was as though nothing had happened.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I found a place behind the curtain and watched everything from there. A useful education.",
+      "weight": 1,
+      "effects": {
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.day.vet2",
+  "icon": "💉",
+  "title": "The waiting room",
+  "text": "A room full of animals, all of whom are pretending not to be afraid. Someone's cat is making a low continuous noise. The floor smells of something that isn't quite food.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Be good",
+    "outcomes": [
+     {
+      "text": "I sat on {o.first}'s feet and looked at the wall. When my name was called I went in as though it were my idea. I got a biscuit.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 2
+      },
+      "pet": {
+       "obedience": 3,
+       "bond": 2
+      }
+     },
+     {
+      "text": "I was perfect, which was a shock to everyone. The vet said I was an example to the others.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 3
+      },
+      "pet": {
+       "obedience": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make it known",
+    "outcomes": [
+     {
+      "text": "I told the entire room how I felt. The cat answered. A small dog joined in. {o.first} apologised to everybody.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 1
+      },
+      "pet": {
+       "obedience": -2,
+       "instinct": 2
+      }
+     },
+     {
+      "text": "I protested at some length and at some volume. The vet was unmoved, and good with their hands.",
+      "weight": 1,
+      "effects": {
+       "stress": 5
+      },
+      "pet": {
+       "obedience": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try to leave",
+    "outcomes": [
+     {
+      "text": "I got as far as the door. A kind receptionist caught me with a biscuit. It was a trap, and a fair one.",
+      "weight": 1,
+      "effects": {
+       "stress": 6
+      },
+      "pet": {
+       "escapes": 0,
+       "obedience": -2
+      }
+     },
+     {
+      "text": "I wedged myself under the chair. It took two people to remove me. I'll be remembered.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -1
+      },
+      "pet": {
+       "obedience": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 8,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.day.walk2",
+  "icon": "🍂",
+  "title": "The new route",
+  "text": "We're going a different way today. The usual turn is behind us and ahead there's a street that smells of things I've never smelled. {o.first} seems unsure. I am not.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner",
+    "dog"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Lead the way",
+    "outcomes": [
+     {
+      "text": "I pulled, gently, towards the park with the pond. {o.first} laughed and let me. We found a bench and a man with sandwiches.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "territory": 5,
+       "bond": 3
+      }
+     },
+     {
+      "text": "I took the lead and we found a lane I'd only ever smelled from a distance. I put a nose on every post.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "territory": 6
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay close",
+    "outcomes": [
+     {
+      "text": "I stayed at heel. It was a slower walk, but I saw things properly: the bakery, the cat in the window, the old man's chair.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "obedience": 3,
+       "bond": 3
+      }
+     },
+     {
+      "text": "I kept to {o.first}'s side. The world was big and I was glad of the lead.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "pet": {
+       "bond": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go home",
+    "outcomes": [
+     {
+      "text": "I turned round and sat down. We went home, by the usual way. Some things are as they should be.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "pet": {
+       "bond": 1
+      }
+     },
+     {
+      "text": "I sat on the kerb and wouldn't move. We went back. I'm creature of habit and proud of it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "pet": {
+       "obedience": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 8,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
+ },
+ {
+  "id": "pl.day.sunbeam",
+  "icon": "☀️",
+  "title": "The best spot",
+  "text": "A square of sunlight is crossing the floor, and a chair, and a sofa arm. At exactly four o'clock it will be in the corner of the room. I know this. I intend to be there.",
+  "conditions": {
+   "age": [
+    0,
+    60
+   ],
+   "life": "pet",
+   "pet": [
+    "has_home",
+    "owner"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get there first",
+    "outcomes": [
+     {
+      "text": "I was there at 3:50, flat on my side, one eye open, as the light arrived. I was warm in a way that is hard to describe.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -6
+      }
+     },
+     {
+      "text": "I took the best spot and made myself look comfortable. No one challenged me. It's a gift.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -6
+      },
+      "pet": {
+       "standing": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share it",
+    "outcomes": [
+     {
+      "text": "I moved aside. A packmate climbed in. We lay together in the one warm patch in the house, in perfect silence.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -5
+      },
+      "pet": {
+       "belonging": 5
+      }
+     },
+     {
+      "text": "I shared the patch with {o.first}'s foot. It was a very good arrangement.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      },
+      "pet": {
+       "bond": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for a better one",
+    "outcomes": [
+     {
+      "text": "I waited. The light moved. I got a better spot, in the end, and it was mine alone.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -4
+      }
+     },
+     {
+      "text": "I moved on to the kitchen floor, where it was cooler. I'm a connoisseur.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 6,
+  "roles": {
+   "o": {
+    "relation": "owner"
+   }
+  }
  }
 ]

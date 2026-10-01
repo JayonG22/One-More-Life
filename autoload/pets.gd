@@ -292,6 +292,9 @@ func _birth_story(ok: String) -> void:
 	}
 	GameState.add_log(pick(lines[ok]))
 	GameState.add_milestone(0, "was born as %s %s %s" % ["an" if str(sd["noun"]).begins_with("a") else "a", str(l["breed"]).to_lower(), str(sd["noun"])])
+	if not inh.is_empty() and str(inh.get("parent", "")) != "":
+		GameState.add_log("My mother was %s. I have her ears and, I'm told, her opinions." % str(inh["parent"]))
+		GameState.add_milestone(0, "was born to %s" % str(inh["parent"]))
 	if not inh.is_empty():
 		GameState.add_log("The house still smelled, faintly, of the one who had been here before. %s had kept the old collar on the hook by the door." % owner_name("The household"))
 		GameState.add_milestone(0, "came to a house that remembered %s" % str(inh.get("name", "another one")))
@@ -438,6 +441,7 @@ func yearly() -> void:
 	_bond_year()
 	_role_year()
 	_flavour_year()
+	_pack_year()
 	# gauges that fade without use
 	l["obedience"] = clampf(float(l["obedience"]) - 2.5, 0.0, 100.0)
 	l["territory"] = clampf(float(l["territory"]) - 3.0, 0.0, 100.0)
@@ -925,6 +929,123 @@ func _role_year() -> void:
 		GameState.add_log(pick(["A shape came up the drive at night, and I told it everything I thought of it. It left. The house slept.", "I stood at the window until the thing in the hedge became a fox and went away."]))
 
 
+# ================================================================ the pack
+
+func pack() -> Array:
+	var l := L()
+	if not l.has("pack"):
+		l["pack"] = []
+		l["standing"] = 40.0
+		var n := 0
+		match str(l.get("origin", "loving")):
+			"barn": n = randi_range(2, 3)
+			"mill": n = 2
+			"shelter": n = randi_range(1, 2)
+			"street": n = randi_range(1, 3)
+			"working", "show": n = randi_range(1, 2)
+			_: n = 1 if randf() < 0.55 else (2 if randf() < 0.3 else 0)
+		if species() == "horse":
+			n = mini(n, 2)
+		for i in n:
+			_add_packmate(true)
+		if not l["pack"].is_empty():
+			l["pack"][randi() % l["pack"].size()]["lead"] = true
+	return l["pack"]
+
+
+func _add_packmate(silent: bool = false) -> void:
+	var l := L()
+	if not l.has("pack"):
+		pack()
+	var names: Array = []
+	for m in l["pack"]:
+		names.append(str(m["name"]))
+	var nm := ContentDB.random_pet_name()
+	var tries := 0
+	while names.has(nm) and tries < 20:
+		nm = ContentDB.random_pet_name()
+		tries += 1
+	l["pack"].append({"name": nm, "lead": false})
+	if not silent:
+		GameState.add_log("%s joined the house. I have not decided yet what I think of %s." % [nm, "them"])
+
+
+func _lose_packmate() -> void:
+	var l := L()
+	var pk := pack()
+	if pk.is_empty():
+		return
+	var i := randi() % pk.size()
+	var m: Dictionary = pk[i]
+	pk.remove_at(i)
+	if bool(m.get("lead", false)) and not pk.is_empty():
+		pk[0]["lead"] = true
+	GameState.counter("pet_pack_lost")
+	GameState.add_log(pick(["%s did not come home. The bowl by the door was picked up on the third day. I kept to my side of the room for a long time." % str(m["name"]), "%s was gone one morning, and the house was a different shape afterwards." % str(m["name"])]))
+	GameState.apply_effects({"happiness": -8, "stress": 6})
+	l["belonging"] = clampf(float(l.get("belonging", 40)) - 8.0, 0.0, 100.0)
+
+
+func standing_name() -> String:
+	var st := float(L().get("standing", 40))
+	if pack().is_empty():
+		return "on your own"
+	if st >= 80.0: return "the one they follow"
+	if st >= 60.0: return "second in the room"
+	if st >= 35.0: return "somewhere in the middle"
+	if st >= 15.0: return "near the bottom"
+	return "last in line"
+
+
+func _pack_year() -> void:
+	var l := L()
+	var pk := pack()
+	var st := float(l.get("standing", 40))
+	var fit := float(l.get("fitness", 50))
+	st += (fit - 50.0) / 25.0 + (float(l["bond"]) - 40.0) / 80.0
+	if stage_index() >= 3:
+		st -= 3.0
+	l["standing"] = clampf(st, 0.0, 100.0)
+	if not pk.is_empty() and randf() < 0.05 + 0.03 * float(stage_index()):
+		_lose_packmate()
+	elif pk.size() < 3 and str(l["home"]) in ["home", "farm", "kennel", "show"] and randf() < 0.05:
+		_add_packmate()
+	elif not pk.is_empty() and randf() < 0.2:
+		var m: Dictionary = pk[randi() % pk.size()]
+		GameState.add_log(pick(["%s stole my bed and defended it with unreasonable conviction." % str(m["name"]), "%s and I have an understanding about the water bowl. It is that it is mine." % str(m["name"]), "%s sat beside me all afternoon and neither of us made anything of it." % str(m["name"])]))
+
+
+## A litter. Size depends on the animal; the household keeps one and finds homes for the rest.
+func _litter() -> void:
+	var l := L()
+	var sz := 1
+	match species():
+		"dog": sz = randi_range(3, 7)
+		"cat": sz = randi_range(2, 5)
+		"rabbit": sz = randi_range(4, 8)
+		"parrot": sz = randi_range(2, 4)
+		"horse": sz = 1
+	var home := str(l["home"])
+	if home == "street":
+		sz = maxi(1, sz - 2)
+	if randf() < 0.22:
+		_done("💔", "No litter", "It did not come to anything. The year went on without comment, and I carried some of it for a while.", {"happiness": -4})
+		return
+	l["litters"] = int(l.get("litters", 0)) + 1
+	l["last_litter"] = int(_p()["age"])
+	var pups: Array = []
+	for _i in sz:
+		pups.append(ContentDB.random_pet_name())
+	l["pups"] = pups
+	GameState.counter("pet_litters")
+	GameState.add_milestone(int(_p()["age"]), "had a %s of %d" % ["foal" if species() == "horse" else ("clutch" if species() == "parrot" else "litter"), sz])
+	if home != "street" and not pack().is_empty() or home in ["home", "farm", "kennel", "show"]:
+		_add_packmate(true)
+		l["pack"][l["pack"].size() - 1]["name"] = str(pups[0])
+		l["pack"][l["pack"].size() - 1]["pup"] = true
+	_done("🍼", "A litter" if species() != "horse" else "A foal", "%d %s. %s" % [sz, "of them" if sz > 1 else "one, who was entirely mine", pick(["The house was louder, and smaller, and smelled of milk. Everyone was tired and nobody minded.", "Eyes shut, paws working, a tide of tiny noise. I did not leave the box for three days."])], {"happiness": 10, "stress": 5})
+
+
 func _flavour_year() -> void:
 	var l := L()
 	if randf() > 0.4 or str(l["home"]) not in ["home", "farm", "kennel", "show"]:
@@ -1058,6 +1179,9 @@ func tag(t: String) -> bool:
 		"has_rival": return GameState.first_of("rival_pet") != ""
 		"role_set": return bool(l.get("role_set", false))
 		"inherit": return not Dictionary(l.get("inherit", {})).is_empty()
+		"pack": return not pack().is_empty()
+		"pups": return not Array(l.get("pups", [])).is_empty()
+		"mated": return int(l.get("litters", 0)) > 0
 	return false
 
 
@@ -1074,6 +1198,9 @@ func _num(f: String) -> float:
 		"stress": return GameState.stat("stress")
 		"wits": return GameState.stat("smarts")
 		"coat": return GameState.stat("looks")
+		"packmates": return float(pack().size())
+		"standing": return float(l.get("standing", 40))
+		"pups": return float(Array(l.get("pups", [])).size())
 	return float(l.get(f, 0))
 
 
@@ -1132,6 +1259,11 @@ func apply(ops: Dictionary) -> void:
 			"rescues": l["rescues"] = int(l.get("rescues", 0)) + int(v)
 			"escapes": l["escapes"] = int(l.get("escapes", 0)) + int(v)
 			"litters": l["litters"] = int(l.get("litters", 0)) + int(v)
+			"standing": l["standing"] = clampf(float(l.get("standing", 40)) + float(v), 0.0, 100.0)
+			"packmate":
+				_add_packmate()
+			"packloss":
+				_lose_packmate()
 			"mischief": l["mischief"] = int(l.get("mischief", 0)) + int(v)
 			"vaccinated": l["vaccinated"] = bool(v)
 			_:
@@ -1302,7 +1434,7 @@ func entry_extra() -> Dictionary:
 	return {"card": card, "title": "Death / Legacy", "species": species(), "icon": str(sp()["icon"]), "breed": str(l.get("breed", "")), "origin": str(ORIGINS[str(l["origin"])]["name"]),
 		"bond": int(l.get("bond", 0)), "tricks": Array(l.get("tricks", [])).size(), "role": str(ROLES[str(l.get("role", "companion"))]["name"]),
 		"heroics": int(l.get("heroics", 0)), "titles": int(l.get("titles", 0)), "friends": int(l.get("friends_made", 0)),
-		"owner": owner_name(""), "house": str(_p().get("last", ""))}
+		"owner": owner_name(""), "house": str(_p().get("last", "")), "litters": int(l.get("litters", 0)), "pups": Array(l.get("pups", [])).size()}
 
 
 # ---------------------------------------------------------------- next life
@@ -1355,6 +1487,8 @@ func menu(key: String) -> Dictionary:
 			rows.append(_sub("🎓", "Learn", "Tricks, scent work, agility and obedience", "train"))
 			rows.append(_sub("🌳", "The wider world", "Explore, mark, escape, forage and hunt", "wild"))
 			rows.append(_sub("🏠", "The people", "Everyone in this household", "house"))
+			if not pack().is_empty() or int(L().get("litters", 0)) > 0 or stage_index() >= 2:
+				rows.append(_sub("🐕", "The pack", "Packmates, your standing, a mate, a litter", "pack"))
 			rows.append(_sub("🏅", "A calling", "What you are for. Or choose not to be for anything", "calling"))
 			return {"icon": "🐾", "title": "A day in the life", "rows": rows, "info": info}
 		"care":
@@ -1409,6 +1543,24 @@ func menu(key: String) -> Dictionary:
 			if str(l["home"]) not in ["home", "farm", "kennel", "show"]:
 				info.append("You don't have a household at the moment.")
 			return {"icon": "🏠", "title": "The people", "rows": rows, "info": info}
+		"pack":
+			var pk := pack()
+			info.append("Standing: %s (%d%%)" % [standing_name(), int(l.get("standing", 40))])
+			for m in pk:
+				info.append("%s · %s" % [str(m["name"]), "the leader" if bool(m.get("lead", false)) else "pack"])
+			if pk.is_empty():
+				info.append("There are no others. Just you and the people.")
+			var homed := str(l["home"]) in ["home", "farm", "kennel", "show", "street"]
+			rows.append(_row("⚔️", "Challenge the leader", "Standing up or down. Needs fitness. Takes 1", "pack_challenge", null, _left() >= 1 and not pk.is_empty() and did("pack_challenge") < 1))
+			rows.append(_row("🍖", "Share your food", "Belonging up; belly down a bit", "pack_share", null, _left() >= 1 and not pk.is_empty() and did("pack_share") < 1))
+			rows.append(_row("🧼", "Groom a packmate", "Belonging up, stress down", "pack_groom", null, _left() >= 1 and not pk.is_empty() and did("pack_groom") < 1))
+			rows.append(_row("🐾", "Lead the others out", "Needs standing 60. Territory up", "pack_lead", null, _left() >= 1 and float(l.get("standing", 40)) >= 60.0 and not pk.is_empty() and did("pack_lead") < 1))
+			rows.append(_row("💞", "Look for a mate", "Adult only. A litter may follow", "mate", null, _left() >= 2 and stage_index() >= 2 and homed and int(l.get("last_litter", -9)) + 2 <= int(_p()["age"]) and did("mate") < 1))
+			var pups: Array = l.get("pups", [])
+			if not pups.is_empty():
+				rows.append(_row("🍼", "Look after your pups", "%d of them. Bond and belonging up" % pups.size(), "pups", null, _left() >= 1 and did("pups") < 1))
+				info.append("Pups: " + ", ".join(pups.map(func(x): return str(x))))
+			return {"icon": "🐕", "title": "The pack", "rows": rows, "info": info}
 		"calling":
 			info.append("Current: %s %s" % [str(ROLES[str(l["role"])]["icon"]), str(ROLES[str(l["role"])]["name"])])
 			info.append(str(ROLES[str(l["role"])]["desc"]))
@@ -1452,6 +1604,50 @@ func act(key: String, arg) -> void:
 	var l := L()
 	var o := owner_name("someone")
 	match key:
+		"pack_challenge":
+			if not GameState.spend_time(1): return
+			note("pack_challenge")
+			var pk := pack()
+			var lead := ""
+			for m in pk:
+				if bool(m.get("lead", false)):
+					lead = str(m["name"])
+			if lead == "":
+				lead = str(pk[0]["name"])
+			var odds := 0.25 + float(l.get("fitness", 50)) / 220.0 + float(l.get("standing", 40)) / 300.0 + float(l.get("instinct", 30)) / 400.0
+			if randf() < odds:
+				l["standing"] = clampf(float(l.get("standing", 40)) + 18.0, 0.0, 100.0)
+				_done("⚔️", "The challenge", pick(["%s held my stare for a long time, and then looked away. Nobody said anything. By evening, the order of the room had changed." % lead, "A short, loud business. I came out of it with a torn ear and a bowl that was, from that day, mine to eat from first."]), {"happiness": 4, "stress": 3})
+			else:
+				l["standing"] = clampf(float(l.get("standing", 40)) - 10.0, 0.0, 100.0)
+				_done("⚔️", "Not yet", pick(["%s did not even stand up. I got the message through the weight of it." % lead, "I picked the wrong day. The lesson took four seconds and a lot of noise."]), {"health": -3, "stress": 4})
+		"pack_share":
+			if not GameState.spend_time(1): return
+			note("pack_share")
+			l["belonging"] = clampf(float(l.get("belonging", 40)) + 8.0, 0.0, 100.0)
+			l["hunger"] = clampf(float(l["hunger"]) - 5.0, 0.0, 100.0)
+			_done("🍖", "Shared", pick(["I pushed the bowl across with my nose. Nobody commented. Everyone understood.", "I left the best of it. The others ate in a quiet that I'd call, if I were a person, peace."]), {"happiness": 4})
+		"pack_groom":
+			if not GameState.spend_time(1): return
+			note("pack_groom")
+			l["belonging"] = clampf(float(l.get("belonging", 40)) + 6.0, 0.0, 100.0)
+			_done("🧼", "Looked after", pick(["I worked at the back of an ear that couldn't be reached, for an hour. It leaned into me.", "A long, boring, essential job. The sort of thing that holds a pack together."]), {"stress": -5, "happiness": 2})
+		"pack_lead":
+			if not GameState.spend_time(1): return
+			note("pack_lead")
+			l["territory"] = clampf(float(l["territory"]) + 8.0, 0.0, 100.0)
+			l["standing"] = clampf(float(l.get("standing", 40)) + 3.0, 0.0, 100.0)
+			_done("🐾", "In front", pick(["I went first through the gate and the others fell in behind me without being asked. I tried to look as if it was nothing.", "At the head of a line of tails, I felt like something that mattered."]), {"happiness": 5})
+		"mate":
+			if not GameState.spend_time(2): return
+			note("mate")
+			_litter()
+		"pups":
+			if not GameState.spend_time(1): return
+			note("pups")
+			l["bond"] = clampf(float(l["bond"]) + 3.0, 0.0, 100.0)
+			l["belonging"] = clampf(float(l.get("belonging", 40)) + 6.0, 0.0, 100.0)
+			_done("🍼", "Small ones", pick(["They climbed me like a hill. One of them fell asleep with a paw over my nose.", "A heap of warm, loud, wrong-sized animals. All of them mine. I didn't move for an hour."]), {"happiness": 6, "stress": -4})
 		"beg":
 			if not GameState.spend_time(1): return
 			note("beg")
@@ -1867,7 +2063,10 @@ func ribbon() -> Dictionary:
 ## Another life in the same house. The household keeps what it remembers of the one before.
 func next_life_opts(entry: Dictionary) -> Dictionary:
 	var pe: Dictionary = entry.get("pet", {})
-	return {"inherit": {"name": str(entry.get("name", "")).get_slice(" ", 0), "house": str(pe.get("house", "")), "owner": str(pe.get("owner", "")), "icon": str(pe.get("icon", "🐾")), "years": int(entry.get("age", 10))}}
+	var inh := {"name": str(entry.get("name", "")).get_slice(" ", 0), "house": str(pe.get("house", "")), "owner": str(pe.get("owner", "")), "icon": str(pe.get("icon", "🐾")), "years": int(entry.get("age", 10))}
+	if int(pe.get("pups", 0)) > 0:
+		inh["parent"] = str(entry.get("name", "")).get_slice(" ", 0)
+	return {"inherit": inh}
 
 
 ## Used by the content gate: is this a tag the game understands?
@@ -1876,11 +2075,11 @@ func known_tag(t: String) -> bool:
 		var i := t.find(op)
 		if i > 0:
 			var f := t.substr(0, i)
-			return GAUGES.has(f) or ["age", "means", "mood", "tricks", "vocab", "health", "happy", "stress", "wits", "coat", "heroics", "titles", "escapes", "litters", "rescues", "lost_years", "shelter_years", "street_years", "years_with", "shows", "shifts", "visits", "friends_made", "mischief"].has(f)
+			return GAUGES.has(f) or ["age", "means", "mood", "tricks", "vocab", "health", "happy", "stress", "wits", "coat", "heroics", "titles", "escapes", "litters", "rescues", "lost_years", "shelter_years", "street_years", "years_with", "shows", "shifts", "visits", "friends_made", "mischief", "packmates", "standing", "pups"].has(f)
 	for pre in ["origin:", "home:", "role:", "household:", "flag:", "trait:", "sp:", "trick:"]:
 		if t.begins_with(pre):
 			return true
-	return ["dog", "cat", "rabbit", "parrot", "horse", "young", "baby", "adult", "senior", "has_home", "homeless", "in_shelter", "lost", "ill", "hungry", "owner", "partnered", "kids", "baby_in_house", "tight", "flush", "broke", "has_friend", "has_rival", "role_set", "inherit"].has(t)
+	return ["dog", "cat", "rabbit", "parrot", "horse", "young", "baby", "adult", "senior", "has_home", "homeless", "in_shelter", "lost", "ill", "hungry", "owner", "partnered", "kids", "baby_in_house", "tight", "flush", "broke", "has_friend", "has_rival", "role_set", "inherit", "pack", "pups", "mated"].has(t)
 
 
-const OUTCOME_KEYS := ["means", "mood", "flag", "role", "lost", "home", "adopt", "rehome", "illness", "found", "learn", "trick", "befriend", "rival", "heroics", "titles", "rescues", "escapes", "litters", "mischief", "vaccinated"]
+const OUTCOME_KEYS := ["means", "mood", "flag", "role", "lost", "home", "adopt", "rehome", "illness", "found", "learn", "trick", "befriend", "rival", "heroics", "titles", "rescues", "escapes", "litters", "mischief", "vaccinated", "standing", "packmate", "packloss"]
