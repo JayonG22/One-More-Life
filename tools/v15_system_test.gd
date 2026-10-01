@@ -255,9 +255,7 @@ func _events() -> void:
 		for k in ["real", "not_real"]:
 			for t in e.get("conditions", {}).get(k, []):
 				GameState.new_life({"gender": "male", "country": "us"})
-				var known := ["renting", "flatmate", "no_flatmate", "damp", "boiler_old", "insured_home", "uninsured_home", "drives", "uninsured", "insured", "young_driver", "long_commute", "clean_record", "recent_crash", "invite", "lapsed_friend", "missed_funeral"]
-				var s := str(t)
-				ok(known.has(s) or s.begins_with("landlord:") or s.begins_with("commute:") or s.begins_with("tech:") or s.begins_with("pretech:") or s.begins_with("diet:") or s.begins_with("plan:"), "%s uses an unknown tag %s" % [e["id"], s])
+				ok(Real.known_tag(str(t)), "%s uses an unknown tag %s" % [e["id"], str(t)])
 	# play a real event end to end: pick every choice of a tenancy event
 	_fresh()
 	Tenancy.sync()

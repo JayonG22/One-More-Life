@@ -25,6 +25,7 @@ const EVENT_FILES := [
 	"v07.json",
 	"v08.json",
 	"real.json",
+	"workbody.json",
 ]
 
 var names: Dictionary = {}

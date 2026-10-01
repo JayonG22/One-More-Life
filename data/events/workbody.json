@@ -1,0 +1,2197 @@
+[
+ {
+  "id": "wb.micromanager",
+  "icon": "🔍",
+  "title": "Copied in on everything",
+  "text": "{~Your manager|The person you report to} has started {~asking for a status update before lunch|copying themselves into every email|standing behind your desk}. {~Your work hasn't changed. Their anxiety has.|You are starting to dread the sound of their shoes.}",
+  "conditions": {
+   "age": [
+    18,
+    64
+   ],
+   "real": [
+    "boss:micromanager"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Over-communicate until they relax",
+    "outcomes": [
+     {
+      "text": "I sent a summary every morning. After a month they stopped checking, and I kept sending them out of habit.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "It fed the beast. They wanted more, and I became the person who always answered within a minute.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": 1,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Raise it, calmly",
+    "outcomes": [
+     {
+      "text": "They were embarrassed and then grateful. Things eased. I think they'd never been asked.",
+      "weight": 1,
+      "effects": {
+       "stress": -4,
+       "happiness": 3,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "They said they'd 'reflect', then did the same thing more quietly.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": -1
+      }
+     },
+     {
+      "text": "It went around the office by lunchtime. My name was used in a sentence beginning 'Apparently'.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "happiness": -3,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start looking elsewhere",
+    "outcomes": [
+     {
+      "text": "I updated my CV at the kitchen table, and the act of it felt like opening a window.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "A recruiter called before I'd finished the first draft. The timing felt like a sign.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "job_perf": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.brilliant_boss",
+  "icon": "🧠",
+  "title": "The boss who is better than you",
+  "text": "{~Your manager|The head of your team} {~rewrote your report in the margin, and they were right|handled a client call in a way you'll be analysing for weeks|says your ideas are 'fine'}. You've never felt so sharpened and so stupid.",
+  "conditions": {
+   "age": [
+    20,
+    64
+   ],
+   "real": [
+    "boss:brilliant"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Ask to shadow them",
+    "outcomes": [
+     {
+      "text": "I spent a year a pace behind, and learned more than in any course.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "job_perf": 3,
+       "stress": 3
+      }
+     },
+     {
+      "text": "They let me sit in on two meetings and then forgot. I made the most of the two.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "job_perf": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push back on a decision",
+    "outcomes": [
+     {
+      "text": "They thought for a moment and said 'you may be right'. I'll be living off that for years.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "happiness": 5
+      }
+     },
+     {
+      "text": "I was wrong, and it was public, and educational.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "smarts": 1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep your head down",
+    "outcomes": [
+     {
+      "text": "Safe and dull. I learned the minimum and felt the lack.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "Quietly, I got better just by watching. It took two years and nobody noticed.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1.5,
+       "job_perf": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.office_rival",
+  "icon": "🥊",
+  "title": "A rival in the next desk",
+  "text": "{~A colleague|Someone two desks along} has started {~getting invited to meetings you're not|saying 'we' when they mean themselves|competing with you on everything, including who arrives first}.",
+  "conditions": {
+   "age": [
+    18,
+    64
+   ],
+   "real": [
+    "colleague:rival"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Out-work them",
+    "outcomes": [
+     {
+      "text": "I won the quarter and lost a weekend. They sent me a small, sincere message of congratulation.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "stress": 4
+      }
+     },
+     {
+      "text": "I wore myself out and they got the client anyway. I deserved better, which is not how it works.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "stress": 6,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make an ally of them",
+    "outcomes": [
+     {
+      "text": "We had a coffee. It turned out they were as scared as I was. We became the closest pair on the floor.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -2,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "They took the coffee and used the conversation in the next meeting against me.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go above their head",
+    "outcomes": [
+     {
+      "text": "The director listened, nodded, and did nothing visible. A month later my rival's budget shrank.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "karma": -2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "It got back to them before it got to anyone else. The atmosphere on the floor changed.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -4,
+       "karma": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.gossip",
+  "icon": "🗣️",
+  "title": "You have been told something",
+  "text": "{~A colleague|The office gossip} lowers their voice and tells you {~who is being let go|who earns what|that two senior people are in a relationship|what the director really said}.",
+  "conditions": {
+   "age": [
+    18,
+    64
+   ],
+   "real": [
+    "colleague:gossip"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Keep it to yourself",
+    "outcomes": [
+     {
+      "text": "It was heavy to carry, but by spring nobody remembered who knew it first.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "karma": 2
+      }
+     },
+     {
+      "text": "I accidentally let it slip in a meeting. Someone looked at me very carefully.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "karma": -2,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pass it on",
+    "outcomes": [
+     {
+      "text": "I got a moment of popularity and then a long hangover of regret.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": -4,
+       "stress": 2
+      }
+     },
+     {
+      "text": "It went round the floor like a virus. I was found out within a week.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": -5,
+       "stress": 5,
+       "job_perf": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them you'd rather not know",
+    "outcomes": [
+     {
+      "text": "They looked hurt, then relieved. We've never discussed it again.",
+      "weight": 1,
+      "effects": {
+       "karma": 2,
+       "stress": -1
+      }
+     },
+     {
+      "text": "They told me anyway, in a corridor, in four words.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.mentor",
+  "icon": "🎓",
+  "title": "Someone is paying attention",
+  "text": "{~A senior colleague|A manager from another team} has been {~quietly sending you useful articles|stopping by your desk to ask how it's going|putting your name forward for things}.",
+  "conditions": {
+   "age": [
+    20,
+    60
+   ],
+   "real": [
+    "colleague:mentor"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Ask them to mentor you properly",
+    "outcomes": [
+     {
+      "text": "We met monthly for two years. It was the best professional decision I ever made.",
+      "weight": 1,
+      "effects": {
+       "smarts": 2,
+       "job_perf": 4,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "They said yes, and their calendar said no. We managed four meetings.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept the help quietly",
+    "outcomes": [
+     {
+      "text": "I took the tips and never said thank you. I regret that.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "karma": -1
+      }
+     },
+     {
+      "text": "I sent a card at Christmas. They kept it on their desk for years.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "karma": 2,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Turn it down, politely",
+    "outcomes": [
+     {
+      "text": "I wanted to do it my own way. It was slower.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -1,
+       "stress": 1
+      }
+     },
+     {
+      "text": "They respected it, and left the door open.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 0,
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.union_vote",
+  "icon": "✊",
+  "title": "A vote on industrial action",
+  "text": "{~The union has called a ballot|Your colleagues are talking about a walk-out|A notice on the board proposes a strike}, over {~pay|staffing|a change to the pension|a rota nobody agreed to}.",
+  "conditions": {
+   "age": [
+    18,
+    64
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Vote to strike",
+    "outcomes": [
+     {
+      "text": "The picket line was cold and oddly joyful. We won most of what we asked for.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 4,
+       "money": -600,
+       "karma": 2
+      }
+     },
+     {
+      "text": "The strike went on for weeks. The company held out. We went back with less than we'd hoped.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "stress": 7,
+       "money": -1800
+      }
+     }
+    ]
+   },
+   {
+    "label": "Vote against",
+    "outcomes": [
+     {
+      "text": "I crossed the line and was spat at in a car park. The company thanked me in an email.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4,
+       "karma": -3,
+       "stress": 6,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "The vote failed without me. I kept working and felt the looks for a year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "karma": -1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Abstain",
+    "outcomes": [
+     {
+      "text": "I stayed out of it. The outcome was a compromise that pleased nobody, which is usually how you can tell it's fair.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "Nobody asked me why, which is how I found out I wasn't as central as I'd thought.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.restructure",
+  "icon": "📉",
+  "title": "The all-hands meeting",
+  "text": "A meeting is called at short notice. {~The director's smile is a little too steady.|There are pastries, which is always a bad sign.|Everyone has brought a notebook and nobody is writing.}",
+  "conditions": {
+   "age": [
+    20,
+    64
+   ],
+   "real": [
+    "company_shaky"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Take the voluntary redundancy",
+    "outcomes": [
+     {
+      "text": "The package was better than I'd feared. I left with a cheque and a card and a clean feeling.",
+      "weight": 1,
+      "effects": {
+       "money": 6000,
+       "stress": -3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I took it, and three months later the same company was hiring for my old role at less.",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "happiness": -3,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start job hunting now",
+    "outcomes": [
+     {
+      "text": "By the time the letters went round, I already had two interviews. I kept my head up.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "I found nothing and felt the clock in my chest.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay and make yourself useful",
+    "outcomes": [
+     {
+      "text": "I picked up the work of two people who'd left. They noticed, eventually.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 5,
+       "stress": 6
+      }
+     },
+     {
+      "text": "I worked twice as hard and was let go anyway in the next round.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "stress": 8,
+       "happiness": -5
+      }
+     },
+     {
+      "text": "The wave passed over me. I've felt vaguely guilty about my luck ever since.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "karma": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.political_chance",
+  "icon": "🎯",
+  "title": "A seat at the right table",
+  "text": "{~A senior person|The director} has noticed you, and {~wants you in the room for the big presentation|suggested you lead the new project|put your name on a list}. {~It might be a break. It might be a trap.|Everybody is watching to see what you do with it.}",
+  "conditions": {
+   "age": [
+    22,
+    60
+   ],
+   "real": [
+    "political_office"
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Take it and own it",
+    "outcomes": [
+     {
+      "text": "I rehearsed for a week. It went better than I dared hope, and I was promoted by summer.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 8,
+       "happiness": 5,
+       "stress": 4
+      }
+     },
+     {
+      "text": "It went wrong in a small, instructive way. They forgave me because they'd forgiven themselves worse.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 2,
+       "stress": 6,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share the credit",
+    "outcomes": [
+     {
+      "text": "My team loved me for it, and the director noted the gesture. Modesty, it turns out, is a tactic.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 4,
+       "karma": 3,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The director liked the confidence of a solo act more. I was quietly passed over.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -1,
+       "karma": 2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Decline and recommend someone else",
+    "outcomes": [
+     {
+      "text": "I sent someone deserving. They never forgot it, and later returned the favour.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 2,
+       "job_perf": 1
+      }
+     },
+     {
+      "text": "They thanked me and did not offer again.",
+      "weight": 1,
+      "effects": {
+       "job_perf": -2,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.freelance_late",
+  "icon": "📬",
+  "title": "An invoice that never gets paid",
+  "text": "A client is {~sixty days|ninety days|four months} late paying a {~large|rather important|frankly life-sustaining} invoice, and every email you send gets a cheerful auto-reply.",
+  "conditions": {
+   "age": [
+    20,
+    75
+   ],
+   "real": [
+    "freelance"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Chase, politely, again",
+    "outcomes": [
+     {
+      "text": "On the fifth email they paid, with an apology so warm I almost felt I'd been rude.",
+      "weight": 1,
+      "effects": {
+       "money": 2500,
+       "stress": 2
+      }
+     },
+     {
+      "text": "They paid a third of it and promised the rest. The rest is, as I write, still promised.",
+      "weight": 1,
+      "effects": {
+       "money": 900,
+       "stress": 6,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write it off",
+    "outcomes": [
+     {
+      "text": "I told myself I was buying a lesson. It was an expensive one.",
+      "weight": 1,
+      "effects": {
+       "money": -400,
+       "stress": 3,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "I wrote it off and spent a month telling myself it was fine. It wasn't, but it was over.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a formal demand",
+    "outcomes": [
+     {
+      "text": "A letter from a solicitor worked in a day. I got paid, and lost the client. I'd have made the same call again.",
+      "weight": 1,
+      "effects": {
+       "money": 2800,
+       "stress": 4,
+       "karma": -1
+      }
+     },
+     {
+      "text": "The company had gone into administration. The demand reached no one.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 7,
+       "happiness": -3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.freelance_windfall",
+  "icon": "🌟",
+  "title": "The big client",
+  "text": "{~A larger company|A client with a recognisable name} wants to {~retain you for six months|give you a proper, long-term contract}. The rate is {~half again your usual|more money than you've asked for in one go}.",
+  "conditions": {
+   "age": [
+    20,
+    75
+   ],
+   "real": [
+    "freelance"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take it, exclusively",
+    "outcomes": [
+     {
+      "text": "Six months of steady work, and steady pay. I also stopped looking for other clients, which bit me at the end.",
+      "weight": 1,
+      "effects": {
+       "money": 14000,
+       "happiness": 3,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The contract was renewed, then cancelled with a week's notice. I had no pipeline.",
+      "weight": 1,
+      "effects": {
+       "money": 9000,
+       "happiness": -2,
+       "stress": 7
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it, but keep other clients",
+    "outcomes": [
+     {
+      "text": "I ran myself ragged and ended up earning more than I ever had. I slept like the dead.",
+      "weight": 1,
+      "effects": {
+       "money": 17000,
+       "stress": 7,
+       "health": -1
+      }
+     },
+     {
+      "text": "Something slipped, and a small client left in a huff. A price worth paying, I think.",
+      "weight": 1,
+      "effects": {
+       "money": 12000,
+       "stress": 5,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Negotiate harder",
+    "outcomes": [
+     {
+      "text": "They came up again, and I learned how much I'd been under-charging for years.",
+      "weight": 1,
+      "effects": {
+       "money": 20000,
+       "happiness": 6,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "They said no and went elsewhere. I've thought about the extra 10% every day since.",
+      "weight": 1,
+      "effects": {
+       "money": 0,
+       "happiness": -4,
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.midlife_switch",
+  "icon": "🔄",
+  "title": "Is this it?",
+  "text": "You're {~in a meeting|on the train home|in the kitchen at 6 a.m.} and the thought arrives, fully formed: {~'I could do something else.'|'I've been doing this for fifteen years.'|'What if I'd been wrong about what I wanted?'}",
+  "conditions": {
+   "age": [
+    34,
+    56
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Start retraining in the evenings",
+    "outcomes": [
+     {
+      "text": "Two years of night classes. It nearly broke my marriage, and then it rebuilt it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 3,
+       "stress": 6,
+       "happiness": 4,
+       "money": -4000
+      }
+     },
+     {
+      "text": "I quit after six months. The notes are still in a drawer, and sometimes I open it.",
+      "weight": 1,
+      "effects": {
+       "smarts": 1,
+       "stress": 3,
+       "money": -1500,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Quit and jump",
+    "outcomes": [
+     {
+      "text": "I resigned on a Friday and felt my shoulders drop an inch. I've never looked back.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 5,
+       "money": -9000
+      }
+     },
+     {
+      "text": "I quit, and the first six months were a disaster. The next three years were wonderful.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 9,
+       "money": -14000
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay, and change what you can",
+    "outcomes": [
+     {
+      "text": "I asked for a transfer. Three weeks later I was in a different team and a slightly different life.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     },
+     {
+      "text": "Nothing changed, except that I now knew what I was putting up with.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 10
+ },
+ {
+  "id": "wb.recruiter",
+  "icon": "📞",
+  "title": "A call from a recruiter",
+  "text": "A recruiter has {~your number and a pitch|found you online|heard good things about you from someone you don't know}. The job is {~more money, less interesting|the same work at a better company|something you've never done and a bit terrifying}.",
+  "conditions": {
+   "age": [
+    23,
+    60
+   ],
+   "employed": true
+  },
+  "choices": [
+   {
+    "label": "Take the interview",
+    "outcomes": [
+     {
+      "text": "I got the offer. I used it to ask for a raise at my current job, which I got.",
+      "weight": 1,
+      "effects": {
+       "money": 4000,
+       "happiness": 3,
+       "job_perf": 2
+      }
+     },
+     {
+      "text": "The interview went better than expected and the job turned out to be a different one from the brief.",
+      "weight": 1,
+      "effects": {
+       "stress": 3,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Politely decline",
+    "outcomes": [
+     {
+      "text": "They checked back in a year. By then I was ready.",
+      "weight": 1,
+      "effects": {
+       "job_perf": 1
+      }
+     },
+     {
+      "text": "I never heard from them again, and sometimes I wonder about the other path.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let it slip to your boss",
+    "outcomes": [
+     {
+      "text": "It worked. I got a raise and a slightly uncomfortable hug.",
+      "weight": 1,
+      "effects": {
+       "money": 3000,
+       "job_perf": 2,
+       "karma": -1
+      }
+     },
+     {
+      "text": "It did not work. My boss said 'Good luck', and meant it.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "job_perf": -3,
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.job_hunt_low",
+  "icon": "🪫",
+  "title": "Another month of searching",
+  "text": "{~The emails have stopped|The auto-replies are all the same|The CV feels like a work of fiction} and the gap on it is getting harder to explain.",
+  "conditions": {
+   "age": [
+    20,
+    62
+   ],
+   "real": [
+    "job_seeking",
+    "cv_gap"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ask a friend for a referral",
+    "outcomes": [
+     {
+      "text": "A friend pushed my CV to the top of a pile. I got an interview because of a name, not a line.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The friend's company wasn't hiring. They felt awful, and so did I.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take any work, for now",
+    "outcomes": [
+     {
+      "text": "A stopgap job turned out to be fine. It also made the next application easier.",
+      "weight": 1,
+      "effects": {
+       "money": 2500,
+       "stress": -3,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "A stopgap job felt like a defeat. I worked it through gritted teeth.",
+      "weight": 1,
+      "effects": {
+       "money": 2200,
+       "happiness": -4,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Volunteer to fill the gap",
+    "outcomes": [
+     {
+      "text": "Volunteering gave me a story to tell, and a reference.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 4,
+       "smarts": 1
+      }
+     },
+     {
+      "text": "It felt good, and did nothing to the CV, and I did it anyway.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.gp_dismissed",
+  "icon": "🩺",
+  "title": "'Probably nothing'",
+  "text": "The GP listened for two minutes, checked a screen and said it was {~probably stress|probably nothing|probably a virus}. You don't think it's {~stress|nothing|a virus}.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "real": [
+    "symptoms"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Insist on a referral",
+    "outcomes": [
+     {
+      "text": "They sighed and wrote the letter. It took a minute. I'd been dreading that minute for a week.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "They referred me, reluctantly. The waiting list was long, but I was on it.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Go back in a month",
+    "outcomes": [
+     {
+      "text": "A different GP took it seriously the second time. The first was overstretched, not wrong.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "The symptoms eased, and I felt both foolish and relieved.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get it checked privately",
+    "outcomes": [
+     {
+      "text": "A private clinic found it in an hour. The bill was not small.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "stress": 1,
+       "health": 1
+      }
+     },
+     {
+      "text": "They found nothing, and charged me for the privilege. At least I know now.",
+      "weight": 1,
+      "effects": {
+       "money": -700,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.waiting_letter",
+  "icon": "✉️",
+  "title": "The letter that hasn't come",
+  "text": "You're {~still waiting|keeping the hall table clear|checking the post} for the specialist's appointment. Every brown envelope makes your stomach drop.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "real": [
+    "waiting_list"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Phone the hospital",
+    "outcomes": [
+     {
+      "text": "A receptionist found my name on a list I'd never have believed existed. A date was given, and it helped.",
+      "weight": 1,
+      "effects": {
+       "stress": -3
+      }
+     },
+     {
+      "text": "I was on hold for an hour and then told to 'wait for the letter'.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay to go private",
+    "outcomes": [
+     {
+      "text": "The consultant saw me within the week. The bill sat in my chest for a month.",
+      "weight": 1,
+      "effects": {
+       "money": -1100,
+       "stress": -4,
+       "health": 2
+      }
+     },
+     {
+      "text": "Private was faster and no more certain. I'm not sure what I bought.",
+      "weight": 1,
+      "effects": {
+       "money": -1100,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try not to think about it",
+    "outcomes": [
+     {
+      "text": "I threw myself into work, and was more productive than I'd been in years.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "job_perf": 3
+      }
+     },
+     {
+      "text": "I couldn't stop thinking about it and lost a month to 3 a.m. searching.",
+      "weight": 1,
+      "effects": {
+       "stress": 7,
+       "happiness": -4,
+       "health": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.pill_fatigue",
+  "icon": "💊",
+  "title": "Tired of taking them",
+  "text": "It's the third year of the tablets. You {~feel fine|feel better than you did|can't remember the last flare} and the little box on the shelf is starting to feel like a verdict.",
+  "conditions": {
+   "age": [
+    18,
+    90
+   ],
+   "real": [
+    "on_meds"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stop quietly",
+    "outcomes": [
+     {
+      "text": "For six months I felt great. Then the flare came back harder than before.",
+      "weight": 1,
+      "effects": {
+       "health": -5,
+       "stress": 6,
+       "happiness": -3
+      }
+     },
+     {
+      "text": "I got away with it for a year, but every twinge made me uneasy.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep taking them",
+    "outcomes": [
+     {
+      "text": "Boring, reliable, and exactly why I'm still well.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": -1
+      }
+     },
+     {
+      "text": "The side effects were real but manageable. I kept taking them, and resented them a little less each year.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Talk it through with the doctor",
+    "outcomes": [
+     {
+      "text": "We lowered the dose. I felt no different and was told I was a model patient.",
+      "weight": 1,
+      "effects": {
+       "health": 1,
+       "stress": -2,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "The doctor said a polite 'no', and was right, and I didn't enjoy it.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.eyes_menu",
+  "icon": "📖",
+  "title": "Holding the menu at arm's length",
+  "text": "You find yourself {~holding the menu at arm's length|squinting at a screen|asking someone to read the small print}. {~They notice.|You're pretending it isn't happening.}",
+  "conditions": {
+   "age": [
+    38,
+    90
+   ],
+   "real": [
+    "poor_vision"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Book an eye test",
+    "outcomes": [
+     {
+      "text": "The optician said 'quite common'. I felt like I was being admitted to a club.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "The optician said 'you should have come two years ago'.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Buy reading glasses at the chemist",
+    "outcomes": [
+     {
+      "text": "Three pairs, in different rooms, all of them lost by Friday.",
+      "weight": 1,
+      "effects": {
+       "money": -40,
+       "stress": 1
+      }
+     },
+     {
+      "text": "They work. I look like my father. I'm at peace with it.",
+      "weight": 1,
+      "effects": {
+       "money": -20,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on squinting",
+    "outcomes": [
+     {
+      "text": "I gave myself a headache that lasted a week. A colleague laughed at me, kindly.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 3
+      }
+     },
+     {
+      "text": "I missed a street sign and took a twenty-minute detour.",
+      "weight": 1,
+      "effects": {
+       "stress": 2,
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.toothache",
+  "icon": "🦷",
+  "title": "Three a.m., and a tooth",
+  "text": "A tooth wakes you at {~three|half past two|four} in the morning and will not be reasoned with. {~You haven't seen a dentist in years.|It has been coming for months.}",
+  "conditions": {
+   "age": [
+    16,
+    90
+   ],
+   "real": [
+    "bad_teeth"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Find an emergency dentist",
+    "outcomes": [
+     {
+      "text": "The dentist was kind and the bill was not. The relief was biblical.",
+      "weight": 1,
+      "effects": {
+       "money": -320,
+       "stress": -3,
+       "health": 1
+      }
+     },
+     {
+      "text": "They saw me within the hour and saved the tooth. I became a person who flosses.",
+      "weight": 1,
+      "effects": {
+       "money": -350,
+       "stress": -2,
+       "health": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pain relief and hope",
+    "outcomes": [
+     {
+      "text": "Two days of painkillers and a swollen jaw. The tooth is lost now.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 4,
+       "looks": -1
+      }
+     },
+     {
+      "text": "It eased off and I forgot about it, until the next time, which came worse.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Finally book a proper check-up",
+    "outcomes": [
+     {
+      "text": "An hour in the chair, a bill, a plan. I left feeling stupidly proud.",
+      "weight": 1,
+      "effects": {
+       "money": -380,
+       "happiness": 2,
+       "health": 1
+      }
+     },
+     {
+      "text": "The dentist tutted at six separate things. I'm paying them off in instalments.",
+      "weight": 1,
+      "effects": {
+       "money": -600,
+       "stress": 3,
+       "health": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.hearing_tv",
+  "icon": "📺",
+  "title": "'Turn it up'",
+  "text": "Your {~family|partner|friends} keep asking you {~to repeat yourself|if you're all right|whether you've had your ears checked}. The television is now louder than is polite.",
+  "conditions": {
+   "age": [
+    50,
+    95
+   ],
+   "real": [
+    "poor_hearing"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get your hearing tested",
+    "outcomes": [
+     {
+      "text": "The test said what I already knew. The audiologist was gentle about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "stress": -1
+      }
+     },
+     {
+      "text": "They said it was age, and told me the options. I chose to think about it.",
+      "weight": 1,
+      "effects": {
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Insist everyone else mumbles",
+    "outcomes": [
+     {
+      "text": "It didn't work, but it made for some good family arguments.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1,
+       "stress": 2
+      }
+     },
+     {
+      "text": "My daughter filmed me and played it back. It was funnier than it should have been.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Get a hearing aid",
+    "outcomes": [
+     {
+      "text": "A small beige object changed Sundays. I'd forgotten the sound of the kettle.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "happiness": 7
+      }
+     },
+     {
+      "text": "It took weeks to get used to. Then I heard my grandchild whisper my name.",
+      "weight": 1,
+      "effects": {
+       "money": -800,
+       "happiness": 8,
+       "stress": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.fitness_wake",
+  "icon": "🏃",
+  "title": "The stairs are a negotiation",
+  "text": "You {~climb a flight of stairs|run for the bus|play with the kids} and realise you {~have to stop halfway|are out of breath|can feel it in your knees}. {~That was not always true.|The stairs used to be nothing.}",
+  "conditions": {
+   "age": [
+    28,
+    70
+   ],
+   "real": [
+    "unfit"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Start running",
+    "outcomes": [
+     {
+      "text": "The first run was a disaster. The third was a good one. By spring I could do a parkrun without stopping.",
+      "weight": 1,
+      "effects": {
+       "health": 3,
+       "happiness": 5,
+       "stress": -3
+      }
+     },
+     {
+      "text": "I got shin splints in week three and stopped. I kept the trainers by the door as a reproach.",
+      "weight": 1,
+      "effects": {
+       "health": 0,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join a gym with a friend",
+    "outcomes": [
+     {
+      "text": "We went every Tuesday. We talked more than we lifted, and it was the best part of the week.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "The friend dropped out after two weeks. I kept paying for three months.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell yourself you'll start in January",
+    "outcomes": [
+     {
+      "text": "January came. I started in February.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I did start, eventually, and two years later I was glad I'd waited for nobody.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "happiness": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.sleepless",
+  "icon": "🌙",
+  "title": "You can't remember the last good night",
+  "text": "You're {~awake at 3 a.m. again|running on coffee|forgetting words mid-sentence}. The kind of tired that makes everything a little less bearable.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "real": [
+    "sleep_poor"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Change your evenings",
+    "outcomes": [
+     {
+      "text": "No screens after ten, a book, a proper lamp. In three weeks I was sleeping like a teenager.",
+      "weight": 1,
+      "effects": {
+       "health": 2,
+       "stress": -4,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I lasted nine days. The habit is easy, and the discipline isn't.",
+      "weight": 1,
+      "effects": {
+       "stress": -1,
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "See a doctor",
+    "outcomes": [
+     {
+      "text": "The doctor asked five questions and put the answer on a leaflet. It was right.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "health": 1
+      }
+     },
+     {
+      "text": "They suggested therapy for the things keeping me awake. I went. It was a good idea.",
+      "weight": 1,
+      "effects": {
+       "stress": -3,
+       "happiness": 3,
+       "money": -150
+      }
+     }
+    ]
+   },
+   {
+    "label": "Push through",
+    "outcomes": [
+     {
+      "text": "A month later I snapped at someone who didn't deserve it. I'm apologising still.",
+      "weight": 1,
+      "effects": {
+       "stress": 5,
+       "karma": -2,
+       "health": -1
+      }
+     },
+     {
+      "text": "I got through on caffeine and will. I am not proud of the price.",
+      "weight": 1,
+      "effects": {
+       "health": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.fortieth",
+  "icon": "4️⃣0️⃣",
+  "title": "Forty",
+  "text": "{~Forty|The fortieth birthday} arrives, {~and with it a specific pain in the lower back|with a card about being over the hill|and somebody kindly offers you a seat on the train}.",
+  "conditions": {
+   "age": [
+    40,
+    41
+   ]
+  },
+  "choices": [
+   {
+    "label": "Make a list of what you still want",
+    "outcomes": [
+     {
+      "text": "The list had eleven things on it. I crossed one off within the month.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -2
+      }
+     },
+     {
+      "text": "The list was depressing. I burned it, then wrote a better one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Throw a party",
+    "outcomes": [
+     {
+      "text": "Everyone I love was in one room, which is rare. It was the best night of the decade.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "money": -500
+      }
+     },
+     {
+      "text": "Nobody came who I hoped would. The ones who did were brilliant.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "money": -400
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It was a Tuesday. I went to work.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I got through the day. The next morning my back told me I hadn't got away with it.",
+      "weight": 1,
+      "effects": {
+       "health": -1,
+       "stress": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 40,
+  "cooldown": 6,
+  "once": true
+ },
+ {
+  "id": "wb.sixtieth",
+  "icon": "6️⃣0️⃣",
+  "title": "Sixty",
+  "text": "You are {~sixty|sixty today}, {~and it doesn't feel like what sixty was supposed to feel like|and still in possession of most of your marbles and a good number of your knees}.",
+  "conditions": {
+   "age": [
+    60,
+    61
+   ]
+  },
+  "choices": [
+   {
+    "label": "Plan the next decade properly",
+    "outcomes": [
+     {
+      "text": "I sat with a notebook and a glass of wine. The decade started to look like a place you could go.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -3
+      }
+     },
+     {
+      "text": "The plan fell apart on contact with reality, as plans do, but I'd had the thinking time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Travel somewhere you've always meant to",
+    "outcomes": [
+     {
+      "text": "I went to a place in a photograph on a wall I'd had since I was twenty. It was smaller and better.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "money": -4500
+      }
+     },
+     {
+      "text": "The trip was harder than I'd planned for. My body reminded me of its terms. It was still worth it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "health": -1,
+       "money": -4500
+      }
+     }
+    ]
+   },
+   {
+    "label": "Have a quiet day",
+    "outcomes": [
+     {
+      "text": "I walked to the park and sat on a bench and was perfectly content.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -3
+      }
+     },
+     {
+      "text": "A quiet day, and a long phone call with someone I love.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 40,
+  "cooldown": 6,
+  "once": true
+ },
+ {
+  "id": "wb.eightieth",
+  "icon": "8️⃣0️⃣",
+  "title": "Eighty",
+  "text": "{~Eighty|Your eightieth year} and the {~stairs|garden|walk to the shops} are all a matter of {~planning|pace|negotiation}. {~The grandchildren are taller than you.|Somebody has said 'you don't look it' and they lied.}",
+  "conditions": {
+   "age": [
+    80,
+    81
+   ]
+  },
+  "choices": [
+   {
+    "label": "Gather the family",
+    "outcomes": [
+     {
+      "text": "Four generations in one room. Nobody argued, which was a miracle.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "money": -400
+      }
+     },
+     {
+      "text": "They all came, stayed too long, left a mess. I'd have had it no other way.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 2,
+       "money": -300
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write the letters you've meant to write",
+    "outcomes": [
+     {
+      "text": "It took a month. I left them with the solicitor. I slept better afterwards.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": -4
+      }
+     },
+     {
+      "text": "Halfway through, I found a letter I'd never sent in 1974. I sent it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on as normal",
+    "outcomes": [
+     {
+      "text": "Normal is not a small thing at eighty. It's a gift.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I pretended it was just another day. A neighbour brought a cake, and I let them.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 40,
+  "cooldown": 6,
+  "once": true
+ },
+ {
+  "id": "wb.after_fall",
+  "icon": "🦯",
+  "title": "After the fall",
+  "text": "It has been {~a few months|a long winter} since you fell, and {~you've stopped going down the stairs without the rail|the flat feels bigger and less safe|everyone has become very careful around you}.",
+  "conditions": {
+   "age": [
+    60,
+    100
+   ],
+   "real": [
+    "fallen"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Get the home adapted",
+    "outcomes": [
+     {
+      "text": "Rails, a stair lift and a walk-in shower. I felt old for a week and independent for years.",
+      "weight": 1,
+      "effects": {
+       "money": -2500,
+       "health": 2,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "The installation took a month and was a nuisance, but the confidence was worth it.",
+      "weight": 1,
+      "effects": {
+       "money": -2500,
+       "stress": -2,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Move closer to family",
+    "outcomes": [
+     {
+      "text": "I moved in two streets from my daughter. She pretended not to be thrilled, and I pretended not to be glad.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": -3
+      }
+     },
+     {
+      "text": "It was the right thing and I spent a year missing my old house.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2,
+       "stress": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on exactly as before",
+    "outcomes": [
+     {
+      "text": "I was fine for another year, and then I wasn't.",
+      "weight": 1,
+      "effects": {
+       "health": -3,
+       "stress": 4
+      }
+     },
+     {
+      "text": "Stubbornness, I've found, is sometimes the very thing that keeps you going.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1,
+       "health": 0
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ },
+ {
+  "id": "wb.well_kept",
+  "icon": "✨",
+  "title": "'You look well'",
+  "text": "{~A friend|Someone you haven't seen in years} tells you {~you look well|you don't look your age|they'd have thought you were ten years younger}. {~You try not to smile.|You realise it's true.}",
+  "conditions": {
+   "age": [
+    45,
+    95
+   ],
+   "real": [
+    "well_kept"
+   ]
+  },
+  "choices": [
+   {
+    "label": "Credit the habits",
+    "outcomes": [
+     {
+      "text": "I listed them: walking, sleep, real food, not too much of the rest. They wrote them down.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "karma": 1
+      }
+     },
+     {
+      "text": "I said 'it's just luck', and they said 'no it isn't'. They were right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Brush it off",
+    "outcomes": [
+     {
+      "text": "Compliments are a tax I'd pay every day if I could.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "They said it again a year later. I finally believed it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to come with you next time",
+    "outcomes": [
+     {
+      "text": "They came for a walk and a coffee. It became a fortnightly thing.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "health": 1
+      }
+     },
+     {
+      "text": "They said yes, once, and never again. I understood.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 6,
+  "cooldown": 6
+ }
+]

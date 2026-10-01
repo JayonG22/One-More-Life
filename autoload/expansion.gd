@@ -463,7 +463,7 @@ func medical_yearly() -> void:
 		var risk := 0.022 + maxi(0, age - 30) * 0.0012 + maxi(0.0, 55.0 - GameState.stat("health")) / 900.0 + GameState.stat("stress") / 2600.0
 		if Lives.kind() == "traveler" and era_year() < 1940:
 			risk *= 1.25
-		if randf() < risk * Grit.d("harsh"):
+		if randf() < risk * Grit.d("harsh") * Body.risk_mult():
 			var pool: Array = ["viral","migraine","asthma","anemia","gastritis","mono"]
 			if age >= 30: pool.append_array(["thyroid","hypertension","diabetes","ulcer"])
 			if age >= 45: pool.append_array(["pneumonia","arthritis","kidney","autoimmune","epilepsy"])

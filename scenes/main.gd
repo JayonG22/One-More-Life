@@ -1540,6 +1540,7 @@ func _panel_occupation() -> void:
 		_add(U.row("💪", "Work harder", "Performance up, stress up", _act(Actions.work_harder), not j.get("worked_hard", false), false))
 		_add(U.row("💰", "Ask for a raise", "Depends on your performance", _act(Actions.ask_raise), true, false))
 		_add(U.row("🧭", "Professional Life", "Projects, mentors, rivals and career-specific systems", func(): MP.open("amb:work")))
+		_add(U.row("🏢", "Your workplace", "Boss, colleagues, the union, and ways out", func(): MP.open("real:work")))
 		if j["field"] == "Military":
 			_add(U.row("💣", "Deploy", "Minigame · clear a path through a minefield", _act(Actions.deploy), GameState.can_interact("job", "deploy"), false))
 		if Shop.has_tag("suit") and not j.get("suited", false):
@@ -1557,6 +1558,8 @@ func _panel_occupation() -> void:
 	elif age < 5:
 		school_sub = "School starts at 5"
 	_add(U.row("🎓", "Education", school_sub, func(): _open_panel(_panel_education), age >= 5))
+	if not GameState.has_job() and age >= 18:
+		_add(U.row("🏢", "Career moves", "Freelancing, retraining, and what your CV says", func(): MP.open("real:work")))
 	_add(U.row("🍔", "Part-Time Jobs", "Find a part-time job" if age >= 13 else "Age 13+", func(): _open_panel(func(): _panel_jobs("part")), age >= 13))
 	_add(U.row("💼", "Full-Time Jobs", "Find a full-time job" if age >= 18 else "Age 18+", func(): _open_panel(func(): _panel_jobs("full")), age >= 18))
 	_add(U.row("🎖️", "Military", "Enlist and climb the ranks" if age >= 18 else "Age 18+", func(): _open_panel(func(): _panel_jobs("military")), age >= 18))
@@ -1633,18 +1636,26 @@ func _panel_back_to_root() -> void:
 func _panel_jobs(kind: String) -> void:
 	var titles := {"part": "Part-Time Jobs", "full": "Full-Time Jobs", "military": "Military"}
 	_panel_header({"part": "🍔", "full": "💼", "military": "🎖️"}[kind], titles[kind])
-	_add(U.lbl("New openings appear every year. Applying uses 1 time point and leads to an interview.", "Dim", 15, true))
-	var list := Actions.listings(kind)
+	_add(U.lbl("Real openings, with real competition. Applying uses 1 time point: a screening, then an interview, then an offer you can negotiate.", "Dim", 15, true))
+	var list := Market.openings(kind)
 	if list.is_empty():
 		_add(U.lbl("No openings right now. Check again next year.", "Dim", 16))
-	for jid in list:
-		var jd := ContentDB.job(jid)
-		var why := Actions.job_requirement(jd)
-		var sub := "%s / year · %s" % [GameState.fmt_money(Actions.job_salary(jd)), jd.get("field", "")]
+	for l in list:
+		var jd := ContentDB.job(str(l["job"]))
+		var why := str(l["locked"])
+		var stand := Market.standing(l)
+		var sub := "%s · %s a year · %d applicants%s" % [str(l["company"]), GameState.fmt_money(int(l["salary"])), int(l["apps"]), " · remote" if bool(l["remote"]) else ""]
+		if int(l["exp"]) > 0:
+			sub += " · wants %d yr%s" % [int(l["exp"]), "" if int(l["exp"]) == 1 else "s"]
 		if why != "":
 			sub = "🔒 Requires: " + why
-		var j_id: String = jid
-		_add(U.row(str(jd.get("icon", "💼" if kind != "military" else "🎖️")), jd["ranks"][0], sub, _act(func(): Actions.apply_job(j_id)), why == ""))
+		else:
+			sub += "  ·  your odds: about %d%%" % int(round(float(stand["chance"]) * 100.0))
+		var applied: bool = Market.st()["applied"].has(str(l["id"]))
+		if applied:
+			sub = "✓ Applied  ·  " + sub
+		var l_id: String = str(l["id"])
+		_add(U.row(str(jd.get("icon", "💼" if kind != "military" else "🎖️")), str(jd["ranks"][0]), sub, _act(func(): Market.apply(l_id)), why == "" and not applied))
 
 
 # ---- assets

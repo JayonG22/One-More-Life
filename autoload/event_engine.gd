@@ -1166,6 +1166,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Minigames.play(pl["id"], pl.get("params", {}), Callable(Careers, "resolve_play").bind(pl))
 	if o.has("real"):
 		Real.apply(o["real"])
+	if o.has("market"):
+		Market.outcome(o["market"])
 	if o.has("empire"):
 		Empires.outcome(o["empire"])
 	if o.has("become"):
