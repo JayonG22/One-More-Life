@@ -19,10 +19,10 @@ Everything the game currently shows with a stock emoji, plus the few things draw
 | Hair options | 5 | red, curly, white, bald, blond |
 | Avatar backdrops | 8 colours | currently flat circles |
 | NPC faces (relatives, friends, partners, coworkers) | same set as the player | pets use the animal set below |
-| Life-path portraits | 10+ | royal, vampire, witch, revenant, traveler, super, pirate, colonist, undead, celebrity |
+| Life-path portraits | 12 | human, royal, vampire, witch, super, revenant, pirate, colonist, traveler, pet, prisoner, guard (plus the superpowers: strength, flight, speed, telekinesis, invisibility, mind, fire, healing) |
 
 ## 3. Animals (Pets Life and companions)
-12 species with 3–4 life stages each (baby, young, adult, senior): dog, cat, rabbit, parrot, horse, plus the companion species (hamster, fish, snake, turtle and others). Currently one emoji each.
+12 species: dog, cat, rabbit, parrot, horse, hamster, guinea pig, goldfish, turtle, ferret, lizard, snake. Currently one emoji each (hamster and guinea pig share one); ideally a baby, young, adult and senior version of each.
 
 ## 4. Content icons (by area, with approximate counts)
 | Area | Count | Where |
@@ -54,7 +54,7 @@ Everything the game currently shows with a stock emoji, plus the few things draw
 | Backdrop art per mode | Pets, Prison, Prison guard, Celebrity, Royal, Vampire… (currently colour themes) |
 
 ## 6. Typography and theme
-Two open fonts (Nunito, Noto Color Emoji). If emoji are replaced, Noto Color Emoji can be dropped from the build (saves about 10 MB). Themes: 6 colour palettes.
+Two open fonts (Nunito, Noto Color Emoji). If emoji are replaced, Noto Color Emoji can be dropped from the build (it is about 10 MB). Themes: 9 colour palettes (dark, light, celebrity, vampire, undead, villain, superhero, royal, witch).
 
 ## Suggested order
 1. Brand (section 1), then portraits and animals (2, 3): the parts players look at most.
