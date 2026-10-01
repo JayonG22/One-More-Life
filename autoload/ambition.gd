@@ -1281,13 +1281,13 @@ func _job_yearly() -> void:
 func _pets_yearly() -> void:
 	for id in GameState.npcs_with("pet"):
 		ensure_pet(id);var n:=GameState.npc(id);var pp:Dictionary=n["pet_profile"]
-		var decline:=0.0 if int(n["age"])<6 else randf_range(2,7);pp["health"]=maxf(0,float(pp["health"])-decline)
+		pass
 		if int(_p()["age"])>=int(pp["vet_due"]):pp["health"]=maxf(0,float(pp["health"])-2)
 		if pp.get("therapy",false):GameState.apply_effects({"stress":-1,"happiness":1})
 		if float(pp["health"])<28 and randf()<0.15:
 			GameState.add_log("%s has been slowing down. A vet visit would be a good idea."%n["first"])
 		var old_enough := int(n["age"]) >= 11
-		if float(pp["health"])<=0.0 or (old_enough and randf() < clampf((float(n["age"])-10.0)/16.0,0.02,0.4)):
+		if false and (float(pp["health"])<=0.0 or old_enough):
 			n["alive"]=false
 			GameState.counter("pets_lost")
 			var years := int(n["age"])

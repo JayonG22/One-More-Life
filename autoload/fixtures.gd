@@ -88,8 +88,6 @@ func employer() -> String:
 		return "the firm"
 	var j: Dictionary = p["job"]
 	if not j.has("employer_name"):
-		var kind := str(j.get("title", "")).to_lower()
-		var first: Array = ["Halden", "Brightwell", "Corvin", "Ashby", "Northfield", "Lumen", "Kestrel", "Marlow", "Pryor", "Tandem", "Greaves", "Fairlight"]
-		var tail: Array = ["& Sons", "Partners", "Group", "Holdings", "Systems", "Services", "Co.", "Logistics", "Works", "Associates"]
-		j["employer_name"] = "%s %s" % [_pick(first), _pick(tail)]
+		var jd := ContentDB.job(str(j.get("id", "")))
+		j["employer_name"] = Names.company(str(j.get("field", jd.get("field", ""))), str(p.get("country", "")))
 	return str(j["employer_name"])

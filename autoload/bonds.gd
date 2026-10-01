@@ -517,6 +517,7 @@ func _pet_menu(id: String, n: Dictionary) -> Dictionary:
 		_r(id, "pet_walk", "🦮", "Go for a walk", "Fresh air for both of you"),
 		_r(id, "pet_train", "🦴", "Train them", "Sit, stay, don't eat the couch"),
 		_r(id, "pet_bathe", "🛁", "Give them a bath", "They'll hate it"),
+		_r(id, "pet_feed", "🥣", "Feed them properly", "A real meal. Fed and bond up"),
 		_r(id, "pet_treat", "🍖", "Give a treat", "Good boy, good girl"),
 		_r(id, "pet_vet", "🩺", "Take to the vet", GameState.fmt_money(Actions._cost(200))),
 		_r(id, "pet_rehome", "🏠", "Give them away", "Find them a new home"),
@@ -617,6 +618,10 @@ func act(key: String, arg = null) -> void:
 	var before_close := int(GameState.npc(id).get("closeness", -1))
 	var before_free := GameState.can_interact(id, aid)
 	_act(key, arg)
+	if aid.begins_with("pet_") and GameState.npcs.has(id):
+		Companions.tend(id, 25.0 if aid == "pet_feed" else (10.0 if aid == "pet_treat" else 0.0))
+		if aid == "pet_vet":
+			Companions.cure(id)
 	if not GameState.npcs.has(id):
 		return
 	var ran := (before_free and not GameState.can_interact(id, aid)) or int(GameState.npc(id).get("closeness", -1)) != before_close
@@ -1220,6 +1225,11 @@ func _act(key: String, arg = null) -> void:
 				_res(id, "🛁", "%s did not want a bath. I have scratches to prove it." % nm, -5, {"health": -2})
 			else:
 				_res(id, "🛁", "%s is clean and fluffy and furious about it." % nm, 3, {})
+		"pet_feed":
+			if not _once(id, aid): return
+			var fc := Actions._cost(25)
+			if not Actions._can_pay(fc, "Pet food"): return
+			_res(id, "🥣", "I made %s a proper meal instead of the usual scoop. %s cleaned the bowl and looked up for more." % [nm, nm], 5, {"money": -fc, "happiness": 2})
 		"pet_treat":
 			if not _once(id, aid): return
 			_res(id, "🍖", "I gave %s a treat. Best friend for life." % nm, 6, {"happiness": 2, "money": -Actions._cost(5)})

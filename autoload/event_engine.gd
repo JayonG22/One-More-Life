@@ -54,6 +54,7 @@ func age_up() -> void:
 	World.yearly()
 	Places.yearly()
 	Bonds.yearly()
+	Companions.yearly()
 	Romance.yearly()
 	NpcWorld.yearly()
 	Daily.yearly()
@@ -1217,6 +1218,12 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Arcs.apply(o["arc"])
 	if o.has("pet"):
 		Pets.apply(o["pet"])
+	if o.has("gain_pet"):
+		Companions.gain(o["gain_pet"])
+	if o.has("pet_cure"):
+		Companions.cure(str(o["pet_cure"]))
+	if o.has("pet_harm"):
+		Companions.harm(str(o["pet_harm"][0]), float(o["pet_harm"][1]))
 	if o.has("pr"):
 		Prison.apply(o["pr"])
 	if o.has("empire"):

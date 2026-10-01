@@ -42,6 +42,7 @@ const ACTIVITY_GROUPS := [
 	]},
 	{"id": "shopping", "name": "Shopping", "icon": "🛍️", "sub": "Jewelers, electronics, boats, novelties", "items": [
 		{"id": "shop", "name": "Go shopping", "icon": "🛍️", "min": 8, "sub": "12 stores", "menu": "shop:root"},
+		{"id": "animals", "name": "Animals", "icon": "🐾", "min": 8, "sub": "Shelter, pet shop, breeder", "menu": "comp:root"},
 		{"id": "mystuff", "name": "Your stuff", "icon": "🎒", "min": 0, "sub": "What you own and what it does", "menu": "shop:mine"},
 	]},
 	{"id": "crime", "name": "Crime", "icon": "🥷", "sub": "Shoplift, steal, rob", "items": [

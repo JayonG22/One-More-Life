@@ -9,6 +9,7 @@ const EVENT_FILES := [
 	"family.json",
 	"elder.json",
 	"prison.json",
+	"companions.json",
 	"followups.json",
 	"everyday.json",
 	"careers.json",

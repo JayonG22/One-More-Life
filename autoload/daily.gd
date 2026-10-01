@@ -192,7 +192,7 @@ func menu(key: String) -> Dictionary:
 			if gl == "banned":
 				rows10.append(_row("🃏", "Find the underground game", "Gambling is illegal here. Risky.", "underground"))
 				return {"icon": "🎰", "title": "Casino", "rows": rows10}
-			for g in [["blackjack", "🃏", "Blackjack", "Play it yourself. Beat the dealer to 21"], ["roulette", "🎡", "Roulette", "Red, black, odd, even, or one number for 35×"], ["slots", "🎰", "Slots", "Three reels, pure luck"], ["highlow", "🂠", "High or low", "Guess the next card"]]:
+			for g in [["blackjack", "🃏", "Blackjack", "Play it yourself. Beat the dealer to 21"], ["roulette", "🎡", "Roulette", "Red, black, odd, even, or one number for 35×"], ["slots", "🎰", "Slots", "Three reels, pure luck"], ["highlow", "🂠", "High or low", "Build a streak, cash out any time"], ["rocket", "🚀", "Rocket", "Cash out before it crashes"], ["plinko", "🔵", "Plinko", "Drop the ball, pick your risk"], ["scratch", "🎟️", "Scratch card", "Three of a kind wins"], ["wheel", "🎡", "Lucky wheel", "Spin for a multiplier"]]:
 				if gl == "restricted" and g[0] != "slots":
 					continue
 				rows10.append(_sub(g[1], g[2], g[3], "bet:" + g[0], age >= 18))
@@ -459,9 +459,10 @@ func act(key: String, arg = null) -> void:
 			Actions._done("🎙️" if key == "voice" else "🎭", "%s lessons" % t.capitalize(), "I took %s lessons (%d so far). %s" % [t, lvl, ["My teacher says I have potential.", "I hit a note I didn't know I had." if key == "voice" else "I cried on cue. My teacher clapped.", "Progress is slow, but it's progress."][randi() % 3]], {"money": -c, "happiness": 2, "skill": 1 if Careers.has_career() else 0})
 		"memory":
 			if Actions._out_of_time(): return
-			var score := clampi(int(GameState.stat("smarts") / 10.0 + randi_range(-2, 3)), 1, 14)
-			var fx := {"smarts": 1} if score >= 8 else {}
-			Actions._done("🧠", "Memory test", "I remembered a sequence of %d items. %s" % [score, "Impressive." if score >= 9 else ("Solid." if score >= 6 else "Goldfish energy.")], fx)
+			Minigames.play("memory", {"skill": GameState.stat("smarts"), "difficulty": 1.0}, func(score: float, d: Dictionary) -> void:
+				var n := int(d.get("length", 0)) if not d.get("auto", false) else clampi(int(GameState.stat("smarts") / 10.0 + randi_range(-2, 3)), 1, 10)
+				var fx := {"smarts": 1} if score >= 0.6 else {}
+				Actions._done("🧠", "Memory test", "I held a sequence of %d. %s" % [n, "Impressive." if score >= 0.7 else ("Solid." if score >= 0.4 else "Goldfish energy.")], fx))
 		"pray":
 			if Actions._out_of_time(): return
 			var r := randf()
@@ -935,14 +936,53 @@ func _payout(game: String, amt: int, won: int, text: String) -> void:
 	Actions._done("🎰", game, text + (" I won %s." % _money(net) if net > 0 else (" I lost %s." % _money(-net) if net < 0 else " I broke even.")), fx)
 
 
+const GAMBLE_GAMES := ["slots", "roulette", "rocket", "plinko", "scratch", "wheel", "highlow"]
+
+
 func _casino(game: String, amt: int, choice: String) -> void:
 	if game == "blackjack":
 		if not _gamble_ok(amt): return
 		Minigames.play("blackjack", {"bet": amt, "skill": 50, "difficulty": 1.0, "can_double": int(_p()["money"]) >= amt * 2}, Callable(self, "_bj_done").bind(amt))
 		return
 	if not _gamble_ok(amt): return
+	if GAMBLE_GAMES.has(game):
+		Minigames.play("g_" + game, {"bet": amt, "luck": Shop.luck(), "choice": choice, "money": int(_p()["money"]), "skill": 50, "difficulty": 1.0}, Callable(self, "_gamble_done").bind(game, amt, choice))
+		return
+	_casino_roll(game, amt, choice)
+
+
+## What the minigame decided, paid out. With minigames off or headless it falls back
+## to the plain roll, so the money always moves the same way.
+func _gamble_done(_score: float, detail: Dictionary, game: String, amt: int, choice: String) -> void:
+	if detail.get("auto", false) or not detail.has("won"):
+		_casino_roll(game, amt, choice)
+		return
+	var extra := int(detail.get("extra", 0))
+	_payout(game.capitalize(), amt + extra, int(detail["won"]), str(detail.get("text", "")))
+
+
+func _casino_roll(game: String, amt: int, choice: String) -> void:
 	var luck := Shop.luck()
 	match game:
+		"rocket":
+			var cp := maxf(1.0, 0.96 / maxf(0.0001, 1.0 - randf()))
+			var tgt := 1.0 + randf() * 1.5
+			_payout("Rocket", amt, int(amt * tgt) if cp >= tgt else 0, "I tried to cash out at %.2fx. The rocket went to %.2fx." % [tgt, minf(cp, 99.0)])
+		"plinko":
+			var tab := [12.0, 3.0, 1.3, 0.6, 0.35, 0.6, 1.3, 3.0, 12.0]
+			var k := 0
+			for _i in range(8):
+				if randf() < 0.5:
+					k += 1
+			_payout("Plinko", amt, int(amt * float(tab[k])), "The ball dropped into the %s× bucket." % str(tab[k]))
+		"scratch":
+			var wm: float = [2.0, 3.0, 5.0, 10.0, 25.0, 100.0][mini(5, int(pow(randf(), 3.0) * 6.0))]
+			var hit := randf() < 0.27 * (1.0 + (luck - 1.0) * 0.12)
+			_payout("Scratch card", amt, int(amt * wm) if hit else 0, "I scratched the card.")
+		"wheel":
+			var wt := [0.0, 2.0, 0.0, 1.0, 0.0, 0.5, 0.0, 3.0, 0.0, 1.0, 0.5, 0.0, 1.5, 0.0, 2.0, 3.5]
+			var wv: float = wt[randi() % wt.size()]
+			_payout("Lucky wheel", amt, int(amt * wv), "The wheel stopped on %s×." % str(wv))
 		"roulette":
 			var n := randi() % 37
 			var red := [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36].has(n)
@@ -1038,6 +1078,16 @@ func _horse(idx: int, amt: int) -> void:
 	var race := _race()
 	if not _gamble_ok(amt): return
 	var horses: Array = race["horses"]
+	Minigames.play("g_horses", {"bet": amt, "luck": Shop.luck(), "horses": horses, "pick": idx, "skill": 50, "difficulty": 1.0}, Callable(self, "_horse_done").bind(idx, amt))
+
+
+func _horse_done(_score: float, detail: Dictionary, idx: int, amt: int) -> void:
+	var race := _race()
+	var horses: Array = race["horses"]
+	GameState.world.erase("race")
+	if not detail.get("auto", false) and detail.has("won"):
+		_payout("Horse races", amt, int(detail["won"]), str(detail.get("text", "")))
+		return
 	var r := randf()
 	var acc := 0.0
 	var winner := 0
@@ -1051,7 +1101,6 @@ func _horse(idx: int, amt: int) -> void:
 	var mine: Dictionary = horses[idx]
 	var won := int(amt * float(mine["odds"])) if winner == idx else 0
 	var place := "won" if winner == idx else "finished behind %s" % horses[winner]["name"]
-	GameState.world.erase("race")
 	_payout("Horse races", amt, won, "I bet on %s at %.1f to 1. %s %s." % [mine["name"], float(mine["odds"]) - 1.0, mine["name"], place])
 
 

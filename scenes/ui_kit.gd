@@ -276,6 +276,8 @@ static func npc_face(n: Dictionary) -> String:
 		"cat": return "🐱"
 		"rabbit": return "🐰"
 		"parrot": return "🦜"
+		"human": pass
+		_: return Companions.icon(str(n.get("species", "human")))
 	if not n.get("alive", true):
 		return "😇"
 	return face(n.get("gender", "male"), int(n.get("age", 30)), int(n.get("face", 0)))

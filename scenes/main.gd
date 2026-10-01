@@ -2012,6 +2012,10 @@ func _panel_person(id: String) -> void:
 			iv.add_child(U.lbl("🐾 %s" % str(pp.get("temperament", "")).capitalize(), "Bold", 16))
 			iv.add_child(U.track("❤️", "Health", float(pp.get("health", 100)), 100.0,
 				ThemeManager.bar_color("health", float(pp.get("health", 100))), "%d%%" % int(pp.get("health", 100))))
+			var cr: Dictionary = Companions.ensure(id).get("care", {})
+			iv.add_child(U.track("🥣", "Fed", float(cr.get("fed", 70)), 100.0,
+				ThemeManager.bar_color("health", float(cr.get("fed", 70))), "%d%%" % int(cr.get("fed", 70))))
+			iv.add_child(U.lbl(Companions.status_line(id), "Dim", 14, true))
 			iv.add_child(U.track("🧠", "Training", float(pp.get("training", 0)), 100.0,
 				ThemeManager.c("accent"), "%d%%" % int(pp.get("training", 0))))
 			iv.add_child(U.track("🏅", "Pedigree", float(pp.get("pedigree", 50)), 100.0,

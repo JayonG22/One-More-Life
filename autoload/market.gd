@@ -63,8 +63,8 @@ func add_experience(field: String, years: int = 1) -> void:
 	s["exp"][field] = int(s["exp"].get(field, 0)) + years
 
 
-func _company() -> String:
-	return "%s %s" % [CO_A[randi() % CO_A.size()], CO_B[randi() % CO_B.size()]]
+func _company(field: String = "") -> String:
+	return Names.company(field, str(_p().get("country", "")))
 
 
 ## The year's openings for one kind of job ("part", "full", "military").
@@ -93,7 +93,7 @@ func openings(kind: String) -> Array:
 		var bk: Array = BOSSES.keys()
 		var ck: Array = CULTURES.keys()
 		out.append({
-			"id": "%s_%d" % [key, i], "job": jid, "company": _company(), "salary": sal,
+			"id": "%s_%d" % [key, i], "job": jid, "company": _company(str(jd.get("field", ""))), "salary": sal,
 			"apps": apps, "exp": exp_req, "remote": randf() < (0.25 if Phrases.tech_level() >= 2 else 0.04),
 			"perk": PERKS[randi() % PERKS.size()] if randf() < 0.55 else "",
 			"boss": bk[randi() % bk.size()], "culture": ck[randi() % ck.size()], "health": randf_range(0.3, 1.0),

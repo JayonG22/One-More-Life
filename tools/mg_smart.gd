@@ -28,6 +28,10 @@ func _next() -> void:
 		for k in results.keys():
 			print("%-12s %s" % [k, str(results[k])])
 			var best := 0.0
+			if bool(Minigames.DEFS.get(k, {}).get("gamble", false)):
+				if results[k].is_empty() or str(results[k][0]) == "TIMEOUT":
+					lost.append(k)
+				continue
 			for r in results[k]:
 				if str(r) == "TIMEOUT":
 					continue
@@ -163,6 +167,49 @@ func _process(delta: float) -> void:
 			if cool <= 0 and g.step_i < g.STEPS.size():
 				cool = 0.8
 				g._tool(int(g.STEPS[g.step_i][2]))
+		"g_slots":
+			if not g.spinning and not g.done:
+				if g.spin_btn.visible and cool <= 0:
+					cool = 0.3
+					g._spin()
+				elif g.respin_btn.visible:
+					g._finish(1.5, "bot")
+				elif g.bonus_open and g.picks_left > 0 and cool <= 0:
+					cool = 0.2
+					for i in range(9):
+						if not (g.chest_btns[i] as Button).disabled:
+							g._chest(i)
+							break
+		"g_roulette":
+			if not g.spinning and g.spin_btn.visible:
+				g._spin()
+		"g_horses":
+			if not g.running and g.go_btn.visible:
+				g._go()
+		"g_rocket":
+			if not g.running and g.go_btn.visible:
+				g._go()
+			elif g.running and g.mult >= 1.4:
+				g._cash()
+		"g_plinko":
+			if not g.dropping:
+				g._drop()
+		"g_scratch":
+			g._all()
+		"g_wheel":
+			if not g.spinning and g.spin_btn.visible:
+				g._spin()
+		"g_highlow":
+			if not g.busy and cool <= 0:
+				cool = 0.3
+				if g.streak >= 2:
+					g._take()
+				else:
+					g._guess(g.card <= 8)
+		"memory":
+			if g.phase == "input" and cool <= 0:
+				cool = 0.05
+				g._press(int(g.seq[g.input_i]))
 		"pr_parole":
 			if cool <= 0 and not g.locked and g.round_i <= g.ROUNDS:
 				cool = 0.25

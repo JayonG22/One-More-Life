@@ -223,8 +223,11 @@ func start_business(ind_id: String) -> void:
 	if _t(): return
 	var e := edge(ind_id)
 	var nm: String = ind["names"][randi() % ind["names"].size()]
-	if randf() < 0.3:
-		nm = "%s %s" % [p["last"], ["Group", "& Co.", "Holdings", "Enterprises", "Brothers"][randi() % 5]]
+	var fmap := {"restaurant": "Food", "tech": "Tech", "fashion": "Design", "label": "Media", "studio": "Media"}
+	if randf() < 0.55:
+		nm = Names.company(str(fmap.get(ind_id, "Business")), str(p.get("country", "")))
+	elif randf() < 0.3:
+		nm = "%s %s" % [p["last"], ["Group", "& Co.", "Holdings", "Enterprises", "Brothers", "& Daughters", "& Sons", "Ltd"][randi() % 8]]
 	p["money"] = int(p["money"]) - cost
 	p["business"] = {"ind": ind_id, "name": nm, "founded": GameState.year_now(), "quality": 30.0 + float(e["edge"]) * 60.0,
 		"marketing": 10.0, "staff": 2, "crew": [], "value": cost, "rev": 0, "profit": 0, "public": false, "stake": 1.0,

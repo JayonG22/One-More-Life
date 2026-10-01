@@ -1,0 +1,1840 @@
+[
+ {
+  "id": "co.porch_cat",
+  "icon": "🐈",
+  "title": "Something on the porch",
+  "text": "{~A thin cat|A scruffy tabby|A one-eared ginger cat} has been sitting on the porch every evening for a week. Today it is sitting by the door, looking at you the way a landlord looks at a late tenant.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Let it in",
+    "outcomes": [
+     {
+      "text": "It walked in as if it had paid the deposit. Within a week it owned the sofa.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": -3
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "stray"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "It ate, slept for fourteen hours and then began to supervise. I think I have been adopted.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "stray"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put out a bowl and see",
+    "outcomes": [
+     {
+      "text": "It came every night after that. One cold night, it didn't leave. That was that.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": -2
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "stray"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "It ate and left. It came back for three days and then I never saw it again. I still put the bowl out sometimes.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it alone",
+    "outcomes": [
+     {
+      "text": "It left the next week. I told myself it had somewhere to be.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "A neighbour took it in. I saw it in their window and it did not look at me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3,
+       "karma": -1
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 20
+ },
+ {
+  "id": "co.kittens_box",
+  "icon": "📦",
+  "title": "A box by the bins",
+  "text": "There's a cardboard box by the bins behind the building. Something in it is making a noise like a squeaky hinge.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the box home",
+    "outcomes": [
+     {
+      "text": "Four kittens. I kept one. The other three went to people at work who were not prepared for how quickly it would happen.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 4,
+       "money": -80
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "rescue"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "One of them climbed my sleeve in the lift and refused to come down. I named it before we reached my floor.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "rescue"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Call the shelter",
+    "outcomes": [
+     {
+      "text": "A volunteer came within the hour, and thanked me twice. I went home feeling like I had done something.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 3
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "They took the box. They called me a week later to say all four had found homes. I cried a bit, to my surprise.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk on",
+    "outcomes": [
+     {
+      "text": "I walked on. For two days I thought about the sound, and then I stopped, and that was worse.",
+      "weight": 1,
+      "effects": {
+       "karma": -4,
+       "happiness": -4
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I walked on. When I came back the box was gone. I will never know.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30,
+  "once": true
+ },
+ {
+  "id": "co.friend_litter",
+  "icon": "🐕",
+  "title": "Whose puppy",
+  "text": "A friend's dog has had a litter and every one of them has been spoken for except one: a clumsy, serious brown one that keeps falling over its own feet. Your friend looks at you.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the puppy",
+    "outcomes": [
+     {
+      "text": "It slept on my chest the first night. By the second night it had eaten a shoe. I have never been happier.",
+      "weight": 1,
+      "effects": {
+       "happiness": 10,
+       "stress": 4,
+       "money": -120
+      },
+      "gain_pet": {
+       "species": "dog",
+       "source": "friend"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I took it home in my coat. It was a catastrophe and a joy. The neighbours know its name.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "stress": 5
+      },
+      "gain_pet": {
+       "species": "dog",
+       "source": "friend"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Think about it",
+    "outcomes": [
+     {
+      "text": "I thought about it for a week and went round to say yes. The brown one had gone. I got a photograph and a feeling.",
+      "weight": 1,
+      "effects": {
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I thought. The puppy went to a family with a garden. It was the right call, and I still check the photographs.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say no kindly",
+    "outcomes": [
+     {
+      "text": "My friend understood. The puppy went to their sister. We still get updates.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "It was a hard thing to say. The puppy found a home and so did my conscience.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30
+ },
+ {
+  "id": "co.gift_pet",
+  "icon": "🎁",
+  "title": "A gift that breathes",
+  "text": "Someone who loves you very much has presented you with a gift that is looking around the room and has already found the curtains.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Accept it with gratitude",
+    "outcomes": [
+     {
+      "text": "It was thoughtful, impulsive and a lot of work. I have not regretted it for a single day since the third week.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 3
+      },
+      "gain_pet": {
+       "species": "any",
+       "source": "gift"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I said thank you and meant it by Thursday. Never trust a gift with a pulse; also, keep it.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 4
+      },
+      "gain_pet": {
+       "species": "any",
+       "source": "gift"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Explain you can't",
+    "outcomes": [
+     {
+      "text": "They were hurt, then relieved, then said they'd return it. The look on their face is still with me.",
+      "weight": 1,
+      "effects": {
+       "happiness": -4
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "It went back to the person who had given it to them. We had a long, awkward conversation.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rehome it to someone better placed",
+    "outcomes": [
+     {
+      "text": "A cousin with a garden took it. It sends me photographs.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "karma": 2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "It went to a family down the road. I get to wave at it over the fence.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30
+ },
+ {
+  "id": "co.classroom_pet",
+  "icon": "🐹",
+  "title": "The class hamster",
+  "text": "The teacher has an announcement: the hamster needs a home for the summer, and whose house will it be?",
+  "conditions": {
+   "age": [
+    8,
+    14
+   ]
+  },
+  "choices": [
+   {
+    "label": "Put your hand up",
+    "outcomes": [
+     {
+      "text": "I carried the cage home on my knee in the car. Nobody has ever concentrated so hard on not tilting something.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "stress": 2
+      },
+      "gain_pet": {
+       "species": "hamster",
+       "source": "event"
+      }
+     },
+     {
+      "text": "Mum said yes, to my amazement. The hamster turned out to be a night-time person and so did I.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8
+      },
+      "gain_pet": {
+       "species": "hamster",
+       "source": "event"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait to see who else does",
+    "outcomes": [
+     {
+      "text": "Someone else got it. I watched it leave in its cage like a minor celebrity.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     },
+     {
+      "text": "It went to the loudest kid in the class, who named it Gerald. I was not consulted.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say your family isn't allowed",
+    "outcomes": [
+     {
+      "text": "It was true, and I was relieved and ashamed in equal parts.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "Dad said no, but he looked sad about it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40,
+  "once": true
+ },
+ {
+  "id": "co.inherited_pet",
+  "icon": "🕯️",
+  "title": "What was left",
+  "text": "After the funeral, someone mentions that no one has taken the dog. Everyone looks at their shoes. The dog is looking at you.",
+  "conditions": {
+   "age": [
+    20,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Take the animal home",
+    "outcomes": [
+     {
+      "text": "It sat on the doorstep and did not come in until it was dark. Then it did. We have been looking after each other since.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "stress": 3,
+       "karma": 3
+      },
+      "gain_pet": {
+       "species": "dog",
+       "source": "inherit"
+      },
+      "schedule": {
+       "event": "co.goodbye_pet",
+       "years": [
+        6,
+        8
+       ]
+      }
+     },
+     {
+      "text": "It missed them as much as I did. We worked it out together, slowly, over some months.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4,
+       "stress": 2,
+       "karma": 3
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "inherit"
+      },
+      "schedule": {
+       "event": "co.goodbye_pet",
+       "years": [
+        6,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Find it a good home",
+    "outcomes": [
+     {
+      "text": "A neighbour's daughter took it. They send me a photograph at the holidays.",
+      "weight": 1,
+      "effects": {
+       "karma": 2
+      },
+      "schedule": {
+       "event": "co.goodbye_pet",
+       "years": [
+        6,
+        8
+       ]
+      }
+     },
+     {
+      "text": "A cousin took it, and said all the right things, and it is probably fine.",
+      "weight": 1,
+      "effects": {
+       "karma": 1
+      },
+      "schedule": {
+       "event": "co.goodbye_pet",
+       "years": [
+        6,
+        8
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say you can't",
+    "outcomes": [
+     {
+      "text": "It went to a shelter. It was nobody's fault. I don't think about it more than twice a week.",
+      "weight": 1,
+      "effects": {
+       "karma": -3,
+       "happiness": -3
+      },
+      "schedule": {
+       "event": "co.goodbye_pet",
+       "years": [
+        6,
+        8
+       ]
+      }
+     },
+     {
+      "text": "A rescue took it in. They said it would be rehomed quickly. I held that thought tightly.",
+      "weight": 1,
+      "effects": {
+       "karma": -1,
+       "happiness": -2
+      },
+      "schedule": {
+       "event": "co.goodbye_pet",
+       "years": [
+        6,
+        8
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 60,
+  "once": true
+ },
+ {
+  "id": "co.pet_shop_window",
+  "icon": "🪟",
+  "title": "The window",
+  "text": "You've walked past the pet shop on the high street three hundred times. Today something in the window is looking at you.",
+  "conditions": {
+   "age": [
+    12,
+    80
+   ]
+  },
+  "choices": [
+   {
+    "label": "Go in",
+    "outcomes": [
+     {
+      "text": "I went in to look. I came out holding a very small thing in a very large cardboard box. It was not a good financial decision. It was the best one I made that year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 9,
+       "money": -200
+      },
+      "gain_pet": {
+       "species": "any",
+       "source": "shop"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "The staff were kind and let me hold it. That was a mistake. I paid at the till with an expression I could not identify.",
+      "weight": 1,
+      "effects": {
+       "happiness": 8,
+       "money": -150
+      },
+      "gain_pet": {
+       "species": "any",
+       "source": "shop"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look, and go home",
+    "outcomes": [
+     {
+      "text": "I looked. I thought. I went home and did not buy anything. It was probably wise.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I told myself I'd come back on Saturday. I did not.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tap the glass and be told off",
+    "outcomes": [
+     {
+      "text": "A very patient person asked me to stop. I stopped. The animal didn't.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I tapped, I was told off, I left. A week later a child did the same thing and I felt a small pang.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30
+ },
+ {
+  "id": "co.beach_turtle",
+  "icon": "🐢",
+  "title": "On the road",
+  "text": "A turtle is crossing a busy road. It has been crossing for some time. It has perhaps a metre to go.",
+  "conditions": {
+   "age": [
+    10,
+    85
+   ]
+  },
+  "choices": [
+   {
+    "label": "Stop and carry it across",
+    "outcomes": [
+     {
+      "text": "I carried it across in both hands. It did not thank me. I felt like a hero for most of the afternoon.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      }
+     },
+     {
+      "text": "I carried it across and it left a very dignified wet patch on my jumper. Worth it.",
+      "weight": 1,
+      "effects": {
+       "karma": 5,
+       "happiness": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it home",
+    "outcomes": [
+     {
+      "text": "I looked it up afterwards. It is the kind that can live forty years. I am now responsible for something that will see my grandchildren.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 3
+      },
+      "gain_pet": {
+       "species": "turtle",
+       "source": "rescue"
+      }
+     },
+     {
+      "text": "It lives in a tank on my windowsill now, and I am told by the internet that I did this wrong, and then right.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "stress": 3
+      },
+      "gain_pet": {
+       "species": "turtle",
+       "source": "rescue"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Drive on",
+    "outcomes": [
+     {
+      "text": "I drove on. In the mirror I saw another car stop for it.",
+      "weight": 1,
+      "effects": {
+       "karma": -2,
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I drove on. I thought about it for a mile.",
+      "weight": 1,
+      "effects": {
+       "karma": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30,
+  "once": true
+ },
+ {
+  "id": "co.lost_dog",
+  "icon": "🔍",
+  "title": "The poster",
+  "text": "A dog is sitting outside your door in the rain. It has a collar and no tag. There is a poster on the lamp-post two streets away that says LOST in capitals.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Ring the number on the poster",
+    "outcomes": [
+     {
+      "text": "A woman sobbed with relief on the phone. She came within ten minutes. She brought cake the next day.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": 6
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "The owner turned up and thanked me four times. The dog looked back at me over her shoulder. I felt a lot.",
+      "weight": 1,
+      "effects": {
+       "karma": 8,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the dog",
+    "outcomes": [
+     {
+      "text": "I said I'd keep it for a while 'just in case'. After a month I stopped saying 'just in case'. It is not my proudest moment, or my least happy one.",
+      "weight": 1,
+      "effects": {
+       "karma": -8,
+       "happiness": 6
+      },
+      "gain_pet": {
+       "species": "dog",
+       "source": "stray"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "I told myself the poster must be old. It was not. I know that, and the dog knows that.",
+      "weight": 1,
+      "effects": {
+       "karma": -9,
+       "happiness": 4
+      },
+      "gain_pet": {
+       "species": "dog",
+       "source": "stray"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it to the vet to scan",
+    "outcomes": [
+     {
+      "text": "There was a chip. The vet rang the owners while I held the lead. A good day.",
+      "weight": 1,
+      "effects": {
+       "karma": 6,
+       "happiness": 4
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "No chip. The vet gave me a week to find the owner. No one came. We kept the dog.",
+      "weight": 1,
+      "effects": {
+       "karma": 3,
+       "happiness": 6
+      },
+      "gain_pet": {
+       "species": "dog",
+       "source": "stray"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "co.neighbour_moves",
+  "icon": "🚚",
+  "title": "They're moving",
+  "text": "The neighbours are moving to a flat that doesn't allow animals. Their old cat has been walking round your garden as if it already knew.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ]
+  },
+  "choices": [
+   {
+    "label": "Offer to take the cat",
+    "outcomes": [
+     {
+      "text": "They almost cried. The cat wore the expression of someone being informed of a merger.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "karma": 4
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "friend"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "The cat and I settled it with a stare. It moved into the airing cupboard on the first night.",
+      "weight": 1,
+      "effects": {
+       "happiness": 7,
+       "karma": 4
+      },
+      "gain_pet": {
+       "species": "cat",
+       "source": "friend"
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help them find a home for it",
+    "outcomes": [
+     {
+      "text": "I put up posters and asked around. A woman three streets over took it. I get regular reports.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "A friend of a friend took it, and sent a picture of it on a very expensive armchair.",
+      "weight": 1,
+      "effects": {
+       "karma": 4,
+       "happiness": 2
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wish them luck",
+    "outcomes": [
+     {
+      "text": "They found it a home themselves. I felt vaguely like a bystander.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     },
+     {
+      "text": "The cat was gone by the weekend. I haven't seen it since.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      },
+      "schedule": {
+       "event": "co.grown",
+       "years": [
+        3,
+        5
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "co.kid_hamster",
+  "icon": "🧒",
+  "title": "Can we get a hamster",
+  "text": "Your child has prepared a presentation, a budget, a signed promise and a drawing of a hamster in a hat.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ],
+   "has_children": true
+  },
+  "choices": [
+   {
+    "label": "Get the hamster",
+    "outcomes": [
+     {
+      "text": "It lasted two and a half years and was loved beyond all reason. I became its main carer by week three.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 3,
+       "money": -40
+      },
+      "gain_pet": {
+       "species": "hamster",
+       "source": "event"
+      }
+     },
+     {
+      "text": "The chores promise lasted nine days. The hamster lasted longer than I expected. So did the love.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "stress": 4
+      },
+      "gain_pet": {
+       "species": "hamster",
+       "source": "event"
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say not yet",
+    "outcomes": [
+     {
+      "text": "Disappointment of operatic proportions. It was over in an hour.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "They pretended to understand. I saw a drawing later that proved otherwise.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Compromise on a goldfish",
+    "outcomes": [
+     {
+      "text": "Goldfish: four days of fascination, followed by a very long period of indifference. I am the goldfish guy now.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      },
+      "gain_pet": {
+       "species": "goldfish",
+       "source": "event"
+      }
+     },
+     {
+      "text": "The fish was named Steve and is somehow still alive. It is, in a sense, the one stable thing in our house.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      },
+      "gain_pet": {
+       "species": "goldfish",
+       "source": "event"
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 40
+ },
+ {
+  "id": "co.shoe",
+  "icon": "👟",
+  "title": "The shoe",
+  "text": "There is a shoe in the hallway. It is no longer a shoe in the way that matters. The animal is sitting next to it looking like a lawyer.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ],
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Laugh",
+    "outcomes": [
+     {
+      "text": "I laughed so much the animal began to look worried. We have a good understanding now about footwear.",
+      "weight": 1,
+      "effects": {
+       "happiness": 4
+      }
+     },
+     {
+      "text": "It was the left one. It was always going to be the left one.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell them off",
+    "outcomes": [
+     {
+      "text": "I tried to be stern. They looked at me. I gave up and made tea.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     },
+     {
+      "text": "A short lecture followed by a long cuddle. I think we both learned something.",
+      "weight": 1,
+      "effects": {
+       "stress": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take it as a hint",
+    "outcomes": [
+     {
+      "text": "I bought a toy. It was ignored in favour of the next shoe.",
+      "weight": 1,
+      "effects": {
+       "money": -15,
+       "happiness": 1
+      }
+     },
+     {
+      "text": "I got a proper chew toy and three weeks of peace. Then a sandal.",
+      "weight": 1,
+      "effects": {
+       "money": -20,
+       "happiness": 1
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 10
+ },
+ {
+  "id": "co.pet_birthday",
+  "icon": "🎂",
+  "title": "Whose birthday",
+  "text": "It's the animal's birthday, or near enough. Nobody can prove it either way.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ],
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Throw a party",
+    "outcomes": [
+     {
+      "text": "A hat, a cake made of something safe, and four animals from the street. It was chaos and everyone had a lovely time.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -40
+      }
+     },
+     {
+      "text": "A small party with a cake, three friends and a lot of noise. The animal slept through the second half.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -30
+      }
+     }
+    ]
+   },
+   {
+    "label": "A special treat",
+    "outcomes": [
+     {
+      "text": "A good treat, a long walk and an extra hour on the sofa. A quiet, correct birthday.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3,
+       "money": -10
+      }
+     },
+     {
+      "text": "I bought the fancy food. The animal ate it in nine seconds and asked for more.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "money": -15
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ignore it",
+    "outcomes": [
+     {
+      "text": "It was a regular Tuesday. The animal did not appear to mind. I minded a little.",
+      "weight": 1,
+      "effects": {
+       "happiness": -1
+      }
+     },
+     {
+      "text": "I forgot until the next day. I felt terrible, and got extra treats.",
+      "weight": 1,
+      "effects": {
+       "happiness": -2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 10
+ },
+ {
+  "id": "co.pet_vs_partner",
+  "icon": "💔",
+  "title": "Him or the cat",
+  "text": "Your partner has gently pointed out that the animal has claimed their side of the bed, their spot on the sofa and, they suspect, their toothbrush.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ],
+   "has_partner": true,
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Negotiate",
+    "outcomes": [
+     {
+      "text": "A rota of seats. A treaty. Within a month the animal had violated it and we both thought it was funny.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "We sorted it out over dinner. The animal ate a corner of the treaty.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Side with the animal",
+    "outcomes": [
+     {
+      "text": "My partner sighed, laughed, and stayed. I like to think the animal had a say.",
+      "weight": 1,
+      "effects": {
+       "happiness": 2,
+       "stress": 2
+      }
+     },
+     {
+      "text": "I held firm. There was a silence. Then the animal sneezed on both of us and that ended it.",
+      "weight": 1,
+      "effects": {
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Put the animal in the kitchen",
+    "outcomes": [
+     {
+      "text": "The animal cried at the door for a night and a half. I lost.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": -2
+      }
+     },
+     {
+      "text": "It lasted two nights. The sofa was shared. The peace was uneasy.",
+      "weight": 1,
+      "effects": {
+       "stress": 3
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 20
+ },
+ {
+  "id": "co.landlord_pets",
+  "icon": "🏘️",
+  "title": "No pets",
+  "text": "A letter from the landlord: a clause about animals has been enforced across the building, with immediate effect. There is a form.",
+  "conditions": {
+   "age": [
+    18,
+    80
+   ],
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Fight for the animal",
+    "outcomes": [
+     {
+      "text": "A tenants' meeting, a petition, a cake. We won, narrowly.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "I wrote a letter so polite it was almost a threat. The landlord relented.",
+      "weight": 1,
+      "effects": {
+       "stress": 4,
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Pay the pet deposit",
+    "outcomes": [
+     {
+      "text": "A deposit, an inspection and a look from the landlord. The animal behaved perfectly, which was suspicious.",
+      "weight": 1,
+      "effects": {
+       "money": -300,
+       "stress": 2
+      }
+     },
+     {
+      "text": "A quiet fee, and a promise. The animal gave nothing away.",
+      "weight": 1,
+      "effects": {
+       "money": -250
+      }
+     }
+    ]
+   },
+   {
+    "label": "Start looking for somewhere new",
+    "outcomes": [
+     {
+      "text": "It took two months and a lot of tabs. The new flat has a better window.",
+      "weight": 1,
+      "effects": {
+       "stress": 6,
+       "money": -500,
+       "happiness": 2
+      }
+     },
+     {
+      "text": "Everything within budget was a no-pets clause. Eventually I found a little place that said yes.",
+      "weight": 1,
+      "effects": {
+       "stress": 8,
+       "money": -400
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 30
+ },
+ {
+  "id": "co.walk_stranger",
+  "icon": "🦮",
+  "title": "The dog walk",
+  "text": "On a morning walk, someone with their own animal stops to talk. You've seen them here before.",
+  "conditions": {
+   "age": [
+    8,
+    95
+   ],
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Chat",
+    "outcomes": [
+     {
+      "text": "We talked about the animals and then, for twenty minutes, about everything else. It turned out we lived on the same road.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     },
+     {
+      "text": "A nice conversation about nothing. We nodded at each other for the rest of the year, and sometimes more.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Nod and walk on",
+    "outcomes": [
+     {
+      "text": "Politeness achieved. Nothing ventured. The animal looked back, which felt like a reproach.",
+      "weight": 1,
+      "effects": {
+       "happiness": 0
+      }
+     },
+     {
+      "text": "A nod. A smile. Our animals did all the real talking.",
+      "weight": 1,
+      "effects": {
+       "happiness": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them for coffee",
+    "outcomes": [
+     {
+      "text": "We got coffee. The animals lay under the table and plotted. We're still friends.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6,
+       "money": -5
+      }
+     },
+     {
+      "text": "They said yes. A decent hour, a good chat, and a plan for the weekend.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5,
+       "money": -5
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1.0,
+  "cooldown": 12
+ },
+ {
+  "id": "co.grown",
+  "icon": "🌱",
+  "title": "Look how you've grown",
+  "text": "The animal you took in has settled into the house in a way that is hard to remember not having. Someone mentions how much it has changed you, too.",
+  "conditions": {
+   "age": [
+    8,
+    100
+   ],
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Say it's the best thing you did",
+    "outcomes": [
+     {
+      "text": "It was easy to say because it was true. The animal looked up as if it had understood.",
+      "weight": 1,
+      "effects": {
+       "happiness": 6
+      }
+     },
+     {
+      "text": "I told them. They said they could tell. I think that's the nicest thing anyone said all year.",
+      "weight": 1,
+      "effects": {
+       "happiness": 5
+      }
+     }
+    ]
+   },
+   {
+    "label": "Joke about the vet bills",
+    "outcomes": [
+     {
+      "text": "We laughed, and I paid the vet bill the next day with a good heart.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     },
+     {
+      "text": "We joked about the money. We both knew I'd pay it all again.",
+      "weight": 1,
+      "effects": {
+       "happiness": 3
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a plan for its future",
+    "outcomes": [
+     {
+      "text": "I wrote down a list: insurance, a will with a line for the animal, the number of a good sitter. I felt like a grown-up.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 3
+      }
+     },
+     {
+      "text": "A tidy, practical afternoon. The animal slept through all of it.",
+      "weight": 1,
+      "effects": {
+       "stress": -2,
+       "happiness": 2
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ },
+ {
+  "id": "co.goodbye_pet",
+  "icon": "🌈",
+  "title": "A hard conversation",
+  "text": "The vet has said the thing vets say. The animal is old, the animal is tired, and the decision is going to be made, one way or another, this week.",
+  "conditions": {
+   "age": [
+    14,
+    100
+   ],
+   "has_pet": true
+  },
+  "choices": [
+   {
+    "label": "Stay with them to the end",
+    "outcomes": [
+     {
+      "text": "I held them. They looked at me the whole time. It was the worst and the most important hour of the year.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "stress": 8,
+       "karma": 4
+      }
+     },
+     {
+      "text": "I stayed. The room was quiet. I think we both knew. It was done with love.",
+      "weight": 1,
+      "effects": {
+       "happiness": -8,
+       "stress": 6,
+       "karma": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take them home for a last good day",
+    "outcomes": [
+     {
+      "text": "A last day: the park, the good food, the sofa. The next morning we went. I would do it the same way again.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 5,
+       "karma": 3
+      }
+     },
+     {
+      "text": "We had a perfect, ordinary day. It was the right way to end it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -6,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let someone else take them in",
+    "outcomes": [
+     {
+      "text": "I could not. A friend went with them. I have carried that for a long time.",
+      "weight": 1,
+      "effects": {
+       "happiness": -12,
+       "stress": 8,
+       "karma": -2
+      }
+     },
+     {
+      "text": "I stayed in the car. I regret it, and I understand why I did it.",
+      "weight": 1,
+      "effects": {
+       "happiness": -10,
+       "stress": 7
+      }
+     }
+    ]
+   }
+  ],
+  "weight": 1,
+  "followup_only": true
+ }
+]
