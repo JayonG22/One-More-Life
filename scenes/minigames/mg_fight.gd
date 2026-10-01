@@ -16,6 +16,12 @@ var opp_l: Label
 var me_l: Label
 var call_l: Label
 var opp_name := "The Challenger"
+var hint_l: Label
+var tell_l: Label
+var btn_high: Button
+var btn_low: Button
+var btn_strike: Button
+var learned := 0     # clean blocks so far; the first few telegraphs are slower
 
 
 func build() -> void:
@@ -30,10 +36,21 @@ func build() -> void:
 	call_l = label("", 36, true)
 	call_l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	place(call_l, Vector2(0, 260), Vector2(W, 50))
+	tell_l = label("", 64, true)
+	tell_l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	place(tell_l, Vector2(W / 2 + 60, 230), Vector2(300, 74))
+	hint_l = label("", 20, true)
+	hint_l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	place(hint_l, Vector2(40, 318), Vector2(W - 80, 60))
 	var names := [["⬆ Block high  [W]", _block.bind("HIGH")], ["⬇ Block low  [S]", _block.bind("LOW")], ["👊 Strike  [Space]", _strike]]
 	for i in range(3):
 		var b := button(names[i][0], names[i][1], "Accent" if i == 2 else "Primary")
 		place(b, Vector2(110 + i * 270, 440), Vector2(250, 66))
+		b.tooltip_text = ["Guard against a punch to the head", "Guard against a punch to the body", "Hit back — only lands hard right after a block"][i]
+		match i:
+			0: btn_high = b
+			1: btn_low = b
+			_: btn_strike = b
 	var legend := label("W / ↑ block high   ·   S / ↓ block low   ·   Space strike, but only after a block lands", 15, true)
 	legend.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	place(legend, Vector2(0, 512), Vector2(W, 24))
@@ -52,6 +69,9 @@ func _telegraph() -> void:
 		tele = "HIGH" if randf() < 0.5 else "LOW"
 	state = "tele"
 	state_t = maxf(0.38, 0.8 - 0.14 * difficulty - (round_i - 1) * 0.06)
+	# until the player has the idea, the tell lasts long enough to read
+	if learned < 3 and not bool(GameState.settings.get("fight_learned", false)):
+		state_t = maxf(state_t, 1.5)
 	blocked_ok = false
 	call_l.text = {"HIGH": "⬆ HIGH!", "LOW": "⬇ LOW!", "FEINT": "↔ ..."}[tele]
 	call_l.add_theme_color_override("font_color", col("warn"))
@@ -69,6 +89,9 @@ func _block(where: String) -> void:
 			_to_idle()
 		elif where == tele:
 			blocked_ok = true
+			learned += 1
+			if learned >= 3:
+				GameState.settings["fight_learned"] = true
 			Fx.play("tap")
 			state = "counter"
 			# The counter window is the whole game. At the relaxed default it is
@@ -138,9 +161,42 @@ func _check_end() -> void:
 		finish(0.35 * (1.0 - opp_hp / 100.0), {"won": false, "ko": true, "opp_hp": opp_hp})
 
 
+## Say exactly what to do right now, and light up the button that does it.
+func _coach() -> void:
+	var pulse := 0.65 + 0.35 * sin(Time.get_ticks_msec() / 1000.0 * 9.0)
+	for b in [btn_high, btn_low, btn_strike]:
+		if is_instance_valid(b):
+			(b as Button).modulate = Color(1, 1, 1, 1)
+	match state:
+		"tele":
+			match tele:
+				"HIGH":
+					hint_l.text = "He's swinging at your HEAD.\nBlock HIGH now: press W or ⬆."
+					tell_l.text = "⬆"
+					btn_high.modulate = Color(1, 1, 1, pulse)
+				"LOW":
+					hint_l.text = "He's swinging at your BODY.\nBlock LOW now: press S or ⬇."
+					tell_l.text = "⬇"
+					btn_low.modulate = Color(1, 1, 1, pulse)
+				_:
+					hint_l.text = "A feint — he's only pretending.\nDon't react. Wait."
+					tell_l.text = "↔"
+			tell_l.add_theme_color_override("font_color", col("warn"))
+		"counter":
+			hint_l.text = "You blocked it. He's open.\nSTRIKE NOW: press Space."
+			tell_l.text = "👊"
+			tell_l.add_theme_color_override("font_color", col("good"))
+			btn_strike.modulate = Color(1, 1, 1, pulse)
+		_:
+			hint_l.text = "Watch his gloves. When he winds up, block the same height.\nA block opens a counter — that is where the damage comes from."
+			tell_l.text = ""
+	hint_l.add_theme_color_override("font_color", col("text"))
+
+
 func _process(delta: float) -> void:
 	if done:
 		return
+	_coach()
 	stamina = minf(100.0, stamina + 9.0 * delta)
 	round_t -= delta
 	state_t -= delta
