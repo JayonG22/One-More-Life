@@ -62,7 +62,7 @@ func _life_card(c: Dictionary) -> Control:
 	cv.add_child(top)
 	var port := U.card("Portrait")
 	port.custom_minimum_size = Vector2(104, 104)
-	var face := U.lbl(U.face(str(c.get("gender", "male")), int(c.get("age", 0)), int(c.get("face", 0))) if alive else "🪦", "Emoji", 60)
+	var face := U.lbl((str(c["portrait"]) if c.has("portrait") else U.face(str(c.get("gender", "male")), int(c.get("age", 0)), int(c.get("face", 0)))) if alive else "🪦", "Emoji", 60)
 	face.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	face.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	port.add_child(face)
@@ -95,13 +95,16 @@ func _life_card(c: Dictionary) -> Control:
 	var place := "%s %s" % [c.get("flag", ""), c.get("country", "")]
 	if str(c.get("city", "")) != "":
 		place += " · " + str(c["city"])
+	if c.has("place"):
+		place = str(c["place"])
 	info.add_child(U.lbl(place, "Dim", 15))
 	if str(c.get("occupation", "")) != "":
 		info.add_child(U.lbl("💼 " + str(c["occupation"]), "", 15))
 	var stats := U.hb(14)
 	cv.add_child(stats)
-	var nw := U.lbl("📊 " + GameState.fmt_money(int(c.get("net_worth", 0))), "Money", 17)
-	stats.add_child(nw)
+	if not c.get("hide_money", false):
+		var nw := U.lbl("📊 " + GameState.fmt_money(int(c.get("net_worth", 0))), "Money", 17)
+		stats.add_child(nw)
 	stats.add_child(U.lbl("🧬 Gen %d" % int(c.get("generation", 1)), "", 15))
 	var dd: Dictionary = Grit.DIFFICULTY.get(str(c.get("difficulty", "real")), {})
 	if not dd.is_empty():

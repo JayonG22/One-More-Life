@@ -278,6 +278,8 @@ func _save_and_next() -> void:
 		EventEngine.age_up()
 		_drain()
 	var d := GameState.to_dict()
+	var card := SaveManager._card_from(d)
+	ok(card.has("portrait") and card.get("hide_money", false) and str(card.get("occupation", "")) != "", "the pet save card is still a human one: %s" % str(card))
 	var before := JSON.stringify(Lives.life())
 	GameState.from_dict(JSON.parse_string(JSON.stringify(d)))
 	ok(Pets.active(), "a saved pet loaded as something else")

@@ -155,7 +155,12 @@ func _card_from(d: Dictionary) -> Dictionary:
 		summary.append("%d kid%s" % [kids, "" if kids == 1 else "s"])
 	if p.get("business", {}).size() > 0:
 		summary.append("owns " + str(p["business"].get("name", "a company")))
-	return {
+	var extra := {}
+	if lt in ["pet", "prisoner", "guard"]:
+		extra = _mode_card(lt, lf, p)
+		if str(extra.get("occupation", "")) != "":
+			occ = str(extra["occupation"])
+	var card := {
 		"name": "%s %s" % [p.get("first", "?"), p.get("last", "")],
 		"age": int(p.get("age", 0)),
 		"gender": p.get("gender", "male"),
@@ -174,6 +179,29 @@ func _card_from(d: Dictionary) -> Dictionary:
 		"summary": "  ·  ".join(summary),
 		"cause": p.get("cause", ""),
 	}
+	card.merge(extra, true)
+	card["occupation"] = occ
+	return card
+
+
+## How a pet, a prisoner or a guard is shown on a save card: no flag, no net worth.
+func _mode_card(lt: String, lf: Dictionary, p: Dictionary) -> Dictionary:
+	var out := {"hide_money": true}
+	match lt:
+		"pet":
+			var sd: Dictionary = Pets.SPECIES.get(str(lf.get("species", "dog")), Pets.SPECIES["dog"])
+			out["portrait"] = str(sd["icon"])
+			out["place"] = "%s household" % str(p.get("last", "")).strip_edges() if str(lf.get("home", "")) in ["home", "farm", "kennel", "show"] else str(Pets.ORIGINS.get(str(lf.get("origin", "loving")), {}).get("name", ""))
+			out["occupation"] = "%s %s" % [str(lf.get("breed", "")), str(sd["noun"])]
+		"prisoner":
+			out["portrait"] = "⛓️"
+			out["place"] = str(lf.get("fac", {}).get("name", ""))
+			out["occupation"] = "Inmate #%s" % str(lf.get("number", ""))
+		"guard":
+			out["portrait"] = "🗝️"
+			out["place"] = str(lf.get("fac", {}).get("name", ""))
+			out["occupation"] = str(Prison.RANK_G[clampi(int(lf.get("rank", 1)), 0, Prison.RANK_G.size() - 1)])
+	return out
 
 
 func has_save() -> bool:

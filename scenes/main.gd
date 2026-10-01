@@ -2764,7 +2764,8 @@ func _fill_graveyard() -> void:
 		if e.get("modified", false):
 			cv.add_child(U.lbl("🧪 Modified life", "Dim", 14))
 		cv.add_child(U.lbl("%d – %d  ·  Age %d  ·  Gen %d" % [int(e["born"]), int(e["died"]), int(e["age"]), int(e.get("generation", 1))], "Dim", 16))
-		cv.add_child(U.lbl("Died of %s" % e["cause"], "", 16))
+		var is_case: bool = e.has("mode") and (e["mode"] as Dictionary).has("role")
+		cv.add_child(U.lbl(("Outcome: %s" if is_case else "Died of %s") % e["cause"], "", 16))
 		cv.add_child(U.lbl("%s %s" % [r.get("icon", ""), r.get("name", "")], "Bold", 18))
 		var story: String = e.get("story", "")
 		var nm: String = e["name"]

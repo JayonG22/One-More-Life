@@ -29,6 +29,9 @@ func _drain() -> void:
 
 func _ready() -> void:
 	seed(3030)
+	# the gate shares one save folder between checks; what earlier checks left in the
+	# meta (which events were seen lately) must not decide how this life goes
+	Meta.meta["recent"] = {}
 	SaveManager.begin_new_life()
 	GameState.new_life({"gender": "female", "country": "us", "life_path": "vampire"})
 	var first_ms := 0.0
@@ -61,7 +64,7 @@ func _ready() -> void:
 	var loaded := SaveManager.load_slot(SaveManager.current_slot)
 	var load_ms := float(Time.get_ticks_usec() - t2) / 1000.0
 	if years < 150:
-		failures.append("the ageless life ended after only %d years" % years)
+		failures.append("the ageless life ended after only %d years (%s)" % [years, str(GameState.player.get("cause", ""))])
 	if first_ms > 0.0 and last_ms > first_ms * 4.0 + 20.0:
 		failures.append("a year costs %.0f ms at the end against %.0f ms at the start" % [last_ms, first_ms])
 	if total_ms / float(maxi(1, years)) > 250.0:

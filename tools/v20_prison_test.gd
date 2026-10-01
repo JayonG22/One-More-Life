@@ -368,6 +368,8 @@ func _save() -> void:
 		for y in range(4):
 			EventEngine.age_up()
 			_drain()
+		var card := SaveManager._card_from(GameState.to_dict())
+		ok(card.has("portrait") and card.get("hide_money", false) and str(card.get("place", "")) != "" and str(card.get("occupation", "")) != "", "the %s save card is still a human one: %s" % [role, str(card)])
 		var before := str(Lives.life()["fac"]["name"]) + str(int(Lives.life()["fac"]["tension"]))
 		var d := GameState.to_dict()
 		GameState.from_dict(JSON.parse_string(JSON.stringify(d)))
