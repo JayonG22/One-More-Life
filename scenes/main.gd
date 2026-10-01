@@ -676,16 +676,18 @@ func _build_new_life() -> Control:
 	left.add_child(U.lbl("Your Character", "Bold"))
 	var pr := U.hb(12)
 	pr.alignment = BoxContainer.ALIGNMENT_CENTER
-	pr.add_child(U.btn("‹", func(): _nl_face(-1), "Flat"))
+	pr.add_child(U.btn("🎲", func(): _nl_face(1), "Flat"))
 	var port := U.card("Portrait")
-	port.custom_minimum_size = Vector2(130, 130)
-	var pl := U.lbl(U.face(nl["gender"], 20, nl["face"]), "Emoji", 80)
-	pl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	pl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	port.add_child(pl)
-	nl["portrait"] = pl
+	port.custom_minimum_size = Vector2(150, 180)
+	if not nl.has("avatar"):
+		nl["avatar"] = Avatar.current().duplicate()
+	var pav := AvatarView.new()
+	pav.custom_minimum_size = Vector2(150, 180)
+	pav.setup(nl["avatar"], 20, str(nl["gender"]))
+	port.add_child(pav)
+	nl["portrait"] = pav
 	pr.add_child(port)
-	pr.add_child(U.btn("›", func(): _nl_face(1), "Flat"))
+	pr.add_child(U.btn("✏️", func(): _open_avatar_editor(nl["avatar"], str(nl["gender"]), 20, func(a): nl["avatar"] = a; nl["portrait"].setup(a, 20, str(nl["gender"]))), "Flat"))
 	left.add_child(pr)
 
 	for field in [["First Name", "first"], ["Last Name", "last"]]:
@@ -893,6 +895,89 @@ func _build_new_life() -> Control:
 	return c
 
 
+## The avatar editor: a preview, a row per part, and the option to buy what you do not own.
+func _open_avatar_editor(start: Dictionary, gender: String, age: int, on_save: Callable) -> void:
+	var av := start.duplicate()
+	var body := _big_popup(1000, "🪞", "Appearance", "Parts marked with a star price are sold in the Star Shop.")
+	var row := U.hb(24)
+	body.add_child(row)
+	var prev := AvatarView.new()
+	prev.custom_minimum_size = Vector2(300, 360)
+	prev.setup(av, age, gender)
+	var pc := U.card("Portrait")
+	pc.add_child(prev)
+	row.add_child(pc)
+	var sc := ScrollContainer.new()
+	sc.custom_minimum_size = Vector2(560, 470)
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	sc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.add_child(sc)
+	var list := U.vb(8)
+	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sc.add_child(list)
+	var refresh: Array = []
+	for cat in Avatar.CATEGORIES:
+		var key: String = cat[0]
+		var count: int = cat[2]
+		var kind: String = cat[3]
+		var h := U.hb(8)
+		var nm := U.lbl(str(cat[1]), "Bold", 15)
+		nm.custom_minimum_size = Vector2(130, 0)
+		h.add_child(nm)
+		var val := U.lbl("", "", 15)
+		val.custom_minimum_size = Vector2(170, 0)
+		var sw := ColorRect.new()
+		sw.custom_minimum_size = Vector2(26, 26)
+		var buy := U.btn("", func(): pass, "Row")
+		var upd := func():
+			var i: int = int(av[key])
+			val.text = Avatar.name_of(key, i) if kind == "style" else "#%d" % (i + 1)
+			sw.visible = kind == "color"
+			if kind == "color":
+				sw.color = Avatar.color_of(key, i)
+			var owned := Avatar.is_owned(key, i)
+			buy.visible = not owned
+			buy.text = "Buy ⭐ %d" % Avatar.cost_of(key, i)
+			buy.disabled = Goals.stars() < Avatar.cost_of(key, i)
+			prev.setup(av, age, gender)
+		refresh.append(upd)
+		var kk := key
+		var cc := count
+		h.add_child(U.btn("‹", func():
+			av[kk] = (int(av[kk]) - 1 + cc) % cc
+			upd.call(), "Flat"))
+		h.add_child(sw)
+		h.add_child(val)
+		h.add_child(U.btn("›", func():
+			av[kk] = (int(av[kk]) + 1) % cc
+			upd.call(), "Flat"))
+		h.add_child(buy)
+		buy.pressed.connect(func():
+			if Avatar.buy(kk, int(av[kk])):
+				Fx.play("coin")
+			for u in refresh:
+				u.call())
+		list.add_child(h)
+		upd.call()
+	var foot := U.hb(10)
+	body.add_child(foot)
+	foot.add_child(U.btn("🎲 Surprise me", func():
+		var r := Avatar.random(gender)
+		for k in r.keys():
+			av[k] = r[k]
+		for u in refresh:
+			u.call(), "Row"))
+	foot.add_child(U.spacer())
+	var save := U.btn("Save look", func():
+		for cat in Avatar.CATEGORIES:
+			if not Avatar.is_owned(cat[0], int(av[cat[0]])):
+				_toast("🔒", "Not yet", "%s is sold in the Star Shop." % Avatar.name_of(cat[0], int(av[cat[0]])), ThemeManager.c("warn"))
+				return
+		on_save.call(av)
+		_close_popup(), "Accent")
+	foot.add_child(save)
+
+
 func _nl_toggle_mod(on: bool, key: String) -> void:
 	if on and not nl["mods"].has(key):
 		nl["mods"].append(key)
@@ -912,14 +997,14 @@ func _nl_pick_challenge(idx: int, desc: Label) -> void:
 	desc.text = "" if idx == 0 else Meta.challenges[idx - 1]["desc"]
 
 
-func _nl_face(d: int) -> void:
-	nl["face"] = (int(nl["face"]) + d + 5) % 5
-	nl["portrait"].text = U.face(nl["gender"], 20, nl["face"])
+func _nl_face(_d: int) -> void:
+	nl["avatar"] = Avatar.random(str(nl["gender"]))
+	nl["portrait"].setup(nl["avatar"], 20, str(nl["gender"]))
 
 
 func _nl_gender(gk: String) -> void:
 	nl["gender"] = gk
-	nl["portrait"].text = U.face(gk, 20, nl["face"])
+	nl["portrait"].setup(nl["avatar"], 20, gk)
 
 
 func _nl_fill_regions() -> void:
@@ -986,7 +1071,8 @@ func _start_life() -> void:
 			first = ContentDB.random_first(nl["gender"], nl["country"])
 		if last == "":
 			last = ContentDB.random_last(nl["country"])
-		opts = {"first": first, "last": last, "gender": nl["gender"], "country": nl["country"], "face": nl["face"]}
+		opts = {"first": first, "last": last, "gender": nl["gender"], "country": nl["country"], "face": nl["face"], "avatar": nl["avatar"]}
+		Avatar.set_current(nl["avatar"])
 		var tr: Array = [nl["t1"]]
 		if nl["t2"] != nl["t1"]:
 			tr.append(nl["t2"])
@@ -1035,6 +1121,12 @@ func _build_game() -> Control:
 	pl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	port.add_child(pl)
 	g["portrait"] = pl
+	var avv := AvatarView.new()
+	avv.custom_minimum_size = Vector2(118, 142)
+	avv.visible = false
+	avv.mouse_filter = Control.MOUSE_FILTER_PASS
+	port.add_child(avv)
+	g["avatar_view"] = avv
 	hh.add_child(port)
 	var nv := U.vb(2)
 	nv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -1316,6 +1408,8 @@ func _refresh_side_mode() -> void:
 	var p := GameState.player
 	var md = Lives.mode()
 	g["portrait"].text = str(md.portrait())
+	g["portrait"].visible = true
+	g["avatar_view"].visible = false
 	g["name"].text = ("%s %s" % [p["first"], p["last"]] if not Pets.active() else str(p["first"])) + ("  " + str(p["badge"]) if str(p.get("badge", "")) != "" else "")
 	g["occ"].text = str(md.header_occ())
 	g["country"].text = str(md.header_sub())
@@ -1373,6 +1467,10 @@ func _refresh_side() -> void:
 		_refresh_side_mode()
 		return
 	g["portrait"].text = U.face(p["gender"], int(p["age"]), int(p["face"])) if p["alive"] else "😇"
+	var human_av: Dictionary = Avatar.for_player()
+	g["portrait"].visible = not p["alive"]
+	g["avatar_view"].visible = bool(p["alive"])
+	g["avatar_view"].setup(human_av, int(p["age"]), str(p["gender"]))
 	g["name"].text = "%s %s" % [p["first"], p["last"]]
 	g["occ"].text = GameState.occupation_label()
 	var c := ContentDB.country(p["country"])
@@ -1793,7 +1891,7 @@ func _panel_more_pet() -> void:
 	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
 	_add(U.row("🧭", "Endings seen", _endings_sub(), _show_endings))
 	_add(U.row("🕰️", "What past lives left", "%d echo%s waiting for the next life" % [Legacy.pending().size(), "" if Legacy.pending().size() == 1 else "es"], _show_legacy))
-	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
+	_add(U.row("⭐", "Star Shop", "Items, avatar parts, boons and titles", _show_star_shop))
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
 	_add(U.row("⚙️", "Settings", "Sound, effects, motion, display", func(): _open_panel(_panel_settings)))
 	_add(U.row("🎨", "Theme: " + ThemeManager.LABELS[ThemeManager.current], "Tap to switch", func(): _set_theme(ThemeManager.next_theme()), true, false))
@@ -2430,7 +2528,8 @@ func _panel_more() -> void:
 	_add(U.row("🏆", "Trophy Room", "%d / %d achievements · ⭐ %d Stars" % [Meta.meta["goals"]["ach"].size(), Goals.achievements.size(), Goals.stars()], _show_trophies))
 	_add(U.row("🧭", "Endings seen", _endings_sub(), _show_endings))
 	_add(U.row("🕰️", "What past lives left", "%d echo%s waiting for the next life" % [Legacy.pending().size(), "" if Legacy.pending().size() == 1 else "es"], _show_legacy))
-	_add(U.row("⭐", "Star Shop", "Titles and Legacy Boons", _show_star_shop))
+	_add(U.row("⭐", "Star Shop", "Items, avatar parts, boons and titles", _show_star_shop))
+	_add(U.row("🪞", "Appearance", "Change how you look", func(): _open_avatar_editor(Avatar.for_player(), str(GameState.player.get("gender", "male")), int(GameState.player.get("age", 25)), func(a): Avatar.set_current(a); _refresh_side())))
 	_add(U.row("🌳", "Family Tree", "Your bloodline at a glance", _show_family_tree))
 	_add(U.row("🪦", "Graveyard", "Past lives and their stories", _open_graveyard))
 	_add(U.row("🏅", "Challenges", "Goal lives and badges", func(): _open_panel(_panel_challenges)))
@@ -2848,6 +2947,11 @@ func _fill_death(entry: Dictionary) -> void:
 		rb.custom_minimum_size = Vector2(0, 56)
 		rb.tooltip_text = "Crawl out as a Revenant. Unfinished business awaits."
 		lv.add_child(rb)
+	if Items.owned("do_over") > 0 and Items.has_snapshot() and not entry.has("mode"):
+		var dob2 := U.btn("🔄  Use a Do-Over  (you have %d)" % Items.owned("do_over"), func(): _use_star_item("do_over"), "Accent")
+		dob2.name = "DoOverButton"
+		dob2.custom_minimum_size = Vector2(0, 52)
+		lv.add_child(dob2)
 	var shb := U.btn("📸  Share this life", func(): _share_life(entry), "Row")
 	shb.custom_minimum_size = Vector2(0, 46)
 	shb.name = "ShareBtn"
@@ -3981,63 +4085,173 @@ func _show_missions() -> void:
 			cv.add_child(U.lbl("🎉 Board cleared!", "Bold", 16))
 
 
+var star_tab := "items"
+
+
 func _show_star_shop() -> void:
 	var g: Dictionary = Meta.meta["goals"]
 	var v := _big_popup(1200, "⭐", "Star Shop", "You have ⭐ %d Stars. Earn more from achievements and missions." % Goals.stars())
-	var cols := U.hb(16)
-	v.add_child(cols)
-	var lc := U.vb(8)
-	lc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	cols.add_child(lc)
-	lc.add_child(U.section("Titles (shown under your name)"))
-	var tsc := ScrollContainer.new()
-	tsc.custom_minimum_size = Vector2(0, 560)
-	tsc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	lc.add_child(tsc)
-	var tl := U.vb(6)
-	tl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	tsc.add_child(tl)
-	tl.add_child(U.row("🚫", "No title", "Hide your title", func():
-		Goals.set_title("")
-		_show_star_shop(), true, false))
-	var entries: Array = []
-	for k in Goals.TITLES.keys():
-		entries.append([k, Goals.TITLES[k]["name"], int(Goals.TITLES[k]["cost"]), ""])
-	for a in Goals.achievements:
-		if a.has("title"):
-			entries.append([a["title"], a.get("title_name", a["title"]), -1, a["name"]])
-	for e in entries:
-		var tid: String = e[0]
-		var owned: bool = g["titles"].has(tid)
-		var equipped: bool = g["title"] == tid
-		var sub := ""
-		if equipped:
-			sub = "✓ Equipped"
-		elif owned:
-			sub = "Owned · tap to wear"
-		elif int(e[2]) >= 0:
-			sub = "⭐ %d" % int(e[2])
-		else:
-			sub = "🏆 Unlock the \"%s\" achievement" % e[3]
-		var ok := owned or (int(e[2]) >= 0 and Goals.stars() >= int(e[2]))
-		tl.add_child(U.row("🎖️", e[1], sub, func():
-			if Goals.owns_title(tid):
-				Goals.set_title(tid)
-			else:
-				Goals.buy_title(tid)
-			_show_star_shop(), ok, false))
-	var rc := U.vb(8)
-	rc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	cols.add_child(rc)
-	rc.add_child(U.section("Legacy Boons (pick them at New Life)"))
-	rc.add_child(U.lbl("Boons are yours forever once bought. Choose which ones to bring into each new life.", "Dim", 14, true))
-	for bk in Grit.BOONS.keys():
-		var bd: Dictionary = Grit.BOONS[bk]
-		var own := Goals.owns_boon(bk)
-		var bkey: String = bk
-		rc.add_child(U.row(bd["icon"], bd["name"], bd["desc"] + ("  ·  ✓ Owned" if own else "  ·  ⭐ %d" % int(bd["cost"])), func():
-			Goals.buy_boon(bkey)
-			_show_star_shop(), own or Goals.stars() >= int(bd["cost"]), false))
+	var tabs := U.hb(8)
+	v.add_child(tabs)
+	for t in [["items", "🧰", "Items"], ["avatar", "🪞", "Avatar"], ["boons", "✨", "Legacy Boons"], ["titles", "🎖️", "Titles"]]:
+		var tk: String = t[0]
+		var tb := U.btn("%s  %s" % [t[1], t[2]], func():
+			star_tab = tk
+			_show_star_shop(), "Primary" if star_tab == tk else "Row")
+		tb.name = "StarTab_" + tk
+		tabs.add_child(tb)
+	var sc := ScrollContainer.new()
+	sc.custom_minimum_size = Vector2(0, 560)
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	v.add_child(sc)
+	var box := U.vb(10)
+	box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sc.add_child(box)
+	match star_tab:
+		"items": _star_items(box)
+		"avatar": _star_avatar(box)
+		"boons":
+			box.add_child(U.lbl("Boons are yours forever once bought. Choose which ones to bring into each new life.", "Dim", 14, true))
+			for bk in Grit.BOONS.keys():
+				var bd: Dictionary = Grit.BOONS[bk]
+				var own := Goals.owns_boon(bk)
+				var bkey: String = bk
+				box.add_child(U.row(bd["icon"], bd["name"], bd["desc"] + ("  ·  ✓ Owned" if own else "  ·  ⭐ %d" % int(bd["cost"])), func():
+					Goals.buy_boon(bkey)
+					_show_star_shop(), not own and Goals.stars() >= int(bd["cost"]), false))
+		"titles":
+			box.add_child(U.lbl("Titles are earned from achievements and shown under your name. Pick the one you want to wear.", "Dim", 14, true))
+			box.add_child(U.row("🚫", "No title", "Hide your title", func():
+				Goals.set_title("")
+				_show_star_shop(), true, false))
+			for a in Goals.achievements:
+				if not a.has("title"):
+					continue
+				var tid: String = a["title"]
+				var owned: bool = g["titles"].has(tid)
+				var equipped: bool = g["title"] == tid
+				var sub := "✓ Worn" if equipped else ("Earned · tap to wear" if owned else "🏆 Earn the \"%s\" achievement" % a["name"])
+				box.add_child(U.row("🎖️", a.get("title_name", tid), sub, func():
+					Goals.set_title(tid)
+					_show_star_shop(), owned, false))
+			for tk2 in Goals.TITLES.keys():
+				if g["titles"].has(tk2):
+					var tkk: String = tk2
+					box.add_child(U.row("🎖️", Goals.TITLES[tk2]["name"], "✓ Worn" if g["title"] == tk2 else "Owned · tap to wear", func():
+						Goals.set_title(tkk)
+						_show_star_shop(), true, false))
+
+
+func _star_items(box: VBoxContainer) -> void:
+	var left := Items.seconds_left()
+	box.add_child(U.lbl("The shelf turns over every half hour and is the same for everyone. New stock in %dm %02ds." % [left / 60, left % 60], "Dim", 14, true))
+	var grid := GridContainer.new()
+	grid.columns = 3
+	grid.add_theme_constant_override("h_separation", U.sp(12))
+	grid.add_theme_constant_override("v_separation", U.sp(12))
+	box.add_child(grid)
+	for id in Items.stock():
+		var d: Array = Items.CATALOG[id]
+		var iid: String = id
+		var card := U.card("Inset")
+		card.custom_minimum_size = Vector2(360, 0)
+		card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var cv := U.vb(4)
+		card.add_child(cv)
+		var top := U.hb(10)
+		top.add_child(U.lbl(str(d[1]), "Emoji", 40))
+		var tv := U.vb(1)
+		tv.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		tv.add_child(U.lbl(str(d[0]), "Bold", 18))
+		tv.add_child(U.lbl("you own %d" % Items.owned(iid), "Dim", 13))
+		top.add_child(tv)
+		cv.add_child(top)
+		cv.add_child(U.lbl(str(d[4]), "Dim", 14, true))
+		var left_n := Items.left_in_stock(iid)
+		var buy := U.btn("Buy  ⭐ %d   ·   %d left" % [int(d[2]), left_n] if left_n > 0 else "Sold out this rotation", func():
+			if Items.buy(iid):
+				Fx.play("coin")
+			_show_star_shop(), "Primary" if left_n > 0 and Goals.stars() >= int(d[2]) else "Row")
+		buy.disabled = left_n <= 0 or Goals.stars() < int(d[2])
+		cv.add_child(buy)
+		grid.add_child(card)
+	box.add_child(U.section("Your items"))
+	var any := false
+	for id2 in Items.CATALOG.keys():
+		if Items.owned(id2) <= 0:
+			continue
+		any = true
+		var d2: Array = Items.CATALOG[id2]
+		var uid: String = id2
+		var why := Items.can_use(uid)
+		box.add_child(U.row(str(d2[1]), "%s  ×%d" % [str(d2[0]), Items.owned(uid)], str(d2[4]) if why == "" else why, func():
+			_use_star_item(uid), why == "", false))
+	if not any:
+		box.add_child(U.lbl("Nothing yet. Items you buy are kept across every life and every save.", "Dim", 14, true))
+
+
+func _use_star_item(id: String) -> void:
+	var r := Items.use(id)
+	if r == "":
+		return
+	if r == "__redo":
+		_close_popup()
+		panel_stack.clear()
+		last_stats.clear()
+		_show("game")
+		_toast("🔄", "Do-Over", "The year is back at the start. Live it differently.", ThemeManager.c("good"))
+		return
+	Fx.play("good")
+	_toast(str(Items.CATALOG[id][1]), str(Items.CATALOG[id][0]), r, ThemeManager.c("good"))
+	_show_star_shop()
+
+
+func _star_avatar(box: VBoxContainer) -> void:
+	box.add_child(U.lbl("Hats, wild hair, glasses and clothes for your avatar. Each part is yours in every save once bought; wear it from Appearance, or right here.", "Dim", 14, true))
+	var cur := Avatar.current()
+	var gender := str(GameState.player.get("gender", "male")) if GameState.has_life() else "male"
+	var age := 28
+	for cat in Avatar.CATEGORIES:
+		var key: String = cat[0]
+		var shown := false
+		var flow := HFlowContainer.new()
+		flow.add_theme_constant_override("h_separation", U.sp(10))
+		flow.add_theme_constant_override("v_separation", U.sp(10))
+		for i in range(int(cat[2])):
+			if Avatar.cost_of(key, i) == 0:
+				continue
+			if not shown:
+				box.add_child(U.section(str(cat[1])))
+				box.add_child(flow)
+				shown = true
+			var ii := i
+			var card := U.card("Inset")
+			card.custom_minimum_size = Vector2(150, 0)
+			var cv := U.vb(3)
+			card.add_child(cv)
+			var look := cur.duplicate()
+			look[key] = i
+			var pv := AvatarView.new()
+			pv.custom_minimum_size = Vector2(110, 132)
+			pv.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+			pv.setup(look, age, gender)
+			cv.add_child(pv)
+			var nl2 := U.lbl(Avatar.name_of(key, i) if str(cat[3]) == "style" else "Colour %d" % (i + 1), "Bold", 13)
+			nl2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			cv.add_child(nl2)
+			var owned := Avatar.is_owned(key, i)
+			var worn := int(cur.get(key, 0)) == i
+			var b := U.btn("Worn" if worn else ("Wear" if owned else "Buy  ⭐ %d" % Avatar.cost_of(key, i)), func():
+				if not Avatar.is_owned(key, ii):
+					Avatar.buy(key, ii)
+				else:
+					var c2 := Avatar.current().duplicate()
+					c2[key] = ii
+					Avatar.set_current(c2)
+				_show_star_shop(), "Primary" if not owned else "Row")
+			b.disabled = worn or (not owned and Goals.stars() < Avatar.cost_of(key, i))
+			cv.add_child(b)
+			flow.add_child(card)
 
 
 # ================================================================= MINIGAMES

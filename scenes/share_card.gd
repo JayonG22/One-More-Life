@@ -80,7 +80,16 @@ static func build(entry: Dictionary) -> Control:
 	var e: Dictionary = entry.get("ending", {})
 	var is_case: bool = m.has("role")
 	_text(bg, "ONE MORE LIFE", Vector2(48, 30), 22, acc.lightened(0.2), 400)
-	_text(bg, icon, Vector2(48, 78), 96, Color.WHITE, 140, true)
+	var av: Dictionary = entry.get("avatar", {})
+	if not av.is_empty() and m.is_empty():
+		var face := AvatarView.new()
+		face.position = Vector2(40, 66)
+		face.custom_minimum_size = Vector2(140, 168)
+		face.size = Vector2(140, 168)
+		bg.add_child(face)
+		face.setup(av, int(entry.get("age", 30)), str(entry.get("gender", "male")))
+	else:
+		_text(bg, icon, Vector2(48, 78), 96, Color.WHITE, 140, true)
 	_text(bg, str(entry.get("name", "")), Vector2(200, 80), 54, Color.WHITE, W - 260)
 	var years := "%d – %d  ·  age %d" % [int(entry.get("born", 0)), int(entry.get("died", 0)), int(entry.get("age", 0))]
 	_text(bg, years, Vector2(200, 148), 26, Color("#9db0d0"), W - 260)

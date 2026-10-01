@@ -37,6 +37,7 @@ func age_up() -> void:
 		_age_up_separate()
 		return
 	pending.clear()
+	Items.snapshot()
 	GameState.begin_year()
 	_run_routines()
 	_yearly_body()

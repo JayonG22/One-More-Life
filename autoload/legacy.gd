@@ -29,6 +29,14 @@ func pending() -> Array:
 	return _store().filter(func(e): return not bool(e.get("used", false)))
 
 
+## A death that is undone leaves no echo.
+func forget(who: String) -> void:
+	var st := _store()
+	for i in range(st.size() - 1, -1, -1):
+		if str(st[i].get("who", "")) == who and not bool(st[i].get("used", false)) and int(Time.get_unix_time_from_system()) - int(st[i].get("made", 0)) < 3600:
+			st.remove_at(i)
+
+
 func _add(kind: String, text: String, who: String, extra: Dictionary = {}) -> void:
 	var st := _store()
 	var e := {"kind": kind, "text": text, "who": who, "used": false, "made": int(Time.get_unix_time_from_system())}

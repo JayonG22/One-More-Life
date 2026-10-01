@@ -199,6 +199,11 @@ func apply(id: String) -> void:
 	if Actions._out_of_time():
 		return
 	s["applied"][id] = true
+	if bool(_p().get("golden_ticket", false)):
+		_p()["golden_ticket"] = false
+		GameState.add_log("I showed the golden ticket. The interview was a formality.")
+		offer(id)
+		return
 	var st_ := standing(l)
 	# screening: the CV is read against the post. A noise term stands for the reader's mood,
 	# but a weak fit is a rejection, and the reason given is the real one.

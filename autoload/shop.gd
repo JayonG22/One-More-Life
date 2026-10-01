@@ -241,7 +241,10 @@ func count_tag(tag: String) -> int:
 
 
 func luck() -> float:
-	return 1.0 + 0.25 * mini(3, count_tag("luck"))
+	var l := 1.0 + 0.25 * mini(3, count_tag("luck"))
+	if not GameState.player.is_empty() and int(GameState.player.get("lucky_year", -9)) == int(GameState.player.get("age", 0)):
+		l += 0.5
+	return l
 
 
 func power_text(it: Dictionary) -> String:

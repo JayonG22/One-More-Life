@@ -68,6 +68,8 @@ func available(mode: String) -> bool:
 
 ## How you would actually get somewhere beyond the neighbourhood: the best way open to you.
 func reach_mode() -> String:
+	if int(_p().get("travel_pass", -9)) == int(_p().get("age", 0)):
+		return "drive"
 	if has_car() and int(_p().get("age", 0)) >= 16:
 		return "drive"
 	if available("train"):

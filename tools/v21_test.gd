@@ -25,6 +25,7 @@ func _ready() -> void:
 	_reasoned_rejections()
 	_transport()
 	_companions_and_director()
+	_items_and_avatar()
 	print("V21 TEST checks=%d failures=%d" % [checks, failures.size()])
 	for f in failures:
 		print("FAIL: ", f)
@@ -334,3 +335,58 @@ func _companions_and_director() -> void:
 		seen[Names.company("Food", "us")] = true
 	ok(seen.size() >= 40, "restaurant names repeat too much (%d distinct of 60)" % seen.size())
 	print("  companions & director: pets are kept and tended, the year is capped, names vary (%d distinct)" % seen.size())
+
+
+func _items_and_avatar() -> void:
+	# the shelf is a function of the clock, the same for every save, and turns over
+	var a := Items.stock(5000)
+	var b := Items.stock(5000)
+	ok(JSON.stringify(a) == JSON.stringify(b), "the shop shelf differs between reads of the same rotation")
+	ok(a.size() == Items.STOCK_SIZE, "the shelf has %d items" % a.size())
+	var changed := 0
+	for sl in range(5001, 5021):
+		if JSON.stringify(Items.stock(sl)) != JSON.stringify(a):
+			changed += 1
+	ok(changed >= 15, "the shelf barely changes between rotations (%d of 20)" % changed)
+	# buying and using
+	Meta.meta["goals"]["stars"] = 500
+	Meta.meta["goals"]["items"] = {}
+	GameState.new_life({"first": "Test", "last": "Rewind", "gender": "male", "country": "us", "modifiers": [], "difficulty": "real", "boons": [], "challenge": ""})
+	var shelf := Items.stock()
+	var got := ""
+	for id in shelf:
+		if Items.buy(id):
+			got = id
+			break
+	ok(got != "" and Items.owned(got) == 1, "could not buy from the shelf")
+	# a Do-Over rewinds a year, and rewinds a death
+	Items.add("do_over", 2)
+	GameState.player["age"] = 30
+	var money0 := int(GameState.player["money"])
+	Items.snapshot()
+	EventEngine.age_up()
+	var age_after := int(GameState.player["age"])
+	ok(age_after == 31, "the year did not pass")
+	var r := Items.use("do_over")
+	ok(r == "__redo" and int(GameState.player["age"]) == 30 and int(GameState.player["money"]) == money0, "the Do-Over did not rewind (age %d)" % int(GameState.player["age"]))
+	ok(Items.owned("do_over") == 1, "the Do-Over was not consumed")
+	Items.snapshot()
+	EventEngine.kill("a test", true)
+	ok(not bool(GameState.player["alive"]), "the test life did not die")
+	var graves := SaveManager.graveyard.size()
+	var r2 := Items.use("do_over")
+	ok(r2 == "__redo" and bool(GameState.player["alive"]), "the Do-Over did not undo a death")
+	ok(SaveManager.graveyard.size() == graves - 1, "the undone death still has a grave")
+	# the avatar: free parts are owned, premium ones are not until bought
+	Meta.meta["goals"]["avatar_owned"] = {}
+	ok(Avatar.is_owned("hair", 2) and not Avatar.is_owned("hat", 3), "ownership of avatar parts is wrong")
+	ok(Avatar.buy("hat", 3), "could not buy the crown with 500 stars")
+	ok(Avatar.is_owned("hat", 3), "the crown is not owned after buying it")
+	var rnd := Avatar.random("female")
+	for cat in Avatar.CATEGORIES:
+		ok(Avatar.is_owned(cat[0], int(rnd[cat[0]])), "a random avatar wears a part it does not own (%s)" % cat[0])
+	var v := AvatarView.new()
+	v.size = Vector2(120, 144)
+	v.setup(rnd, 70, "female")
+	v.free()
+	print("  items & avatar: shelf is stable and rotates, Do-Over rewinds a year and a death, avatar parts are owned or bought")

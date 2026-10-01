@@ -134,6 +134,7 @@ func new_life(opts: Dictionary) -> void:
 		"money": int(opts.get("money", 0)),
 		"traits": traits,
 		"face": int(opts.get("face", randi() % 5)),
+		"avatar": Dictionary(opts.get("avatar", Avatar.random(str(opts.get("gender", "male"))))).duplicate(),
 		"education": _blank_education(),
 		"job": {},
 		"retired": false,
@@ -880,6 +881,7 @@ func finalize_death(cause: String) -> Dictionary:
 		"name": "%s %s" % [player["first"], player["last"]],
 		"gender": player["gender"],
 		"face": player["face"],
+		"avatar": player.get("avatar", {}),
 		"born": int(player["born_year"]),
 		"died": year_now(),
 		"age": int(player["age"]),
@@ -1000,6 +1002,15 @@ func continue_as(child_id: String) -> void:
 	milestones.clear()
 	player["age"] = age
 	player["face"] = child.get("face", 0)
+	var oldav: Dictionary = old.get("avatar", {})
+	var kidav := Avatar.random(str(player["gender"]))
+	if not oldav.is_empty():
+		kidav["skin"] = clampi(int(oldav["skin"]) + randi_range(-1, 1), 0, Avatar.SKIN.size() - 1)
+		if randf() < 0.6:
+			kidav["hair_col"] = oldav["hair_col"]
+		if randf() < 0.5:
+			kidav["eye_col"] = oldav["eye_col"]
+	player["avatar"] = kidav
 	player["stats"]["smarts"] = clampf((stat("smarts") + float(old["stats"]["smarts"])) / 2.0 + randf_range(-10, 10), 5, 100)
 	var parent_rel := "father" if old["gender"] == "male" else "mother"
 	if old["gender"] == "nonbinary":
