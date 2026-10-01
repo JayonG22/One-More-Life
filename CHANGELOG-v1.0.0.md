@@ -4,7 +4,7 @@ The baseline game is finished. This note says what that means and, as importantl
 what was and was not checked.
 
 `tools/run_gates.sh` runs every automated check against a throwaway save folder
-and prints one verdict. At release: **all green.**
+and prints one verdict. At release: **all 21 green.**
 
 ---
 
@@ -88,9 +88,9 @@ version info (set with `rcedit` under Wine in the build environment).
 
 | Check | Result |
 | --- | --- |
-| 18 automated gates (`tools/run_gates.sh`) | all green |
+| 21 automated gates (`tools/run_gates.sh`) | all green |
 | A real v0.14 save loaded and played from 44 to 62–67 | 0 failures (`tools/mig_check.sh`) |
-| A 300-year ageless life | 18 ms a year, 0.25 MB save, 8 ms load |
+| A 300-year ageless life | 16 ms a year, 0.25 MB save, 8 ms load |
 | Linux build, launched natively | boots, runs, exits clean |
 | Windows build, launched under Wine | boots, runs, exits clean |
 | macOS build | exported and inspected (`.app`, icon, 72 MB zip) |

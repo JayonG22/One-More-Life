@@ -25,13 +25,13 @@ save/load, and generate meaningfully different life stories.
 | --- | --- |
 | No one-outcome choices; every event has three or more choices | `v15_system_test` (library: 760 events, 2,231 choices, 0 thin) |
 | Delayed follow-ups at the design target | 25.0% of events lead to a delayed echo (target 25%) |
-| No dead buttons | `menu_crawl`: 2,060 menus, 10,979 actions, no errors |
+| No dead buttons | `menu_crawl`: about 2,000 menus and 10,900 actions, no errors |
 | All major systems have cross-system consequences | `v08_echo_test`, `v18_echo_test` |
 | Every life path has progression and an ending | `v17_arcs_test`: 6 roads × 5 chapters, 27 endings reachable |
 | Every minigame has a fair manual path and a regression bot | `mg_smart`: 22 of 22 winnable, none without a bot |
 | Accessibility: keyboard, labels, contrast, text size, reduced motion | `a11y_test` |
 | UI at supported resolutions and interface sizes | `layout_audit` (3,197 controls, 0 problems), `a11y_test` (every size to 130%) |
-| Long-life and performance | `perf_test`: a 300-year life, 18 ms a year, 0.25 MB save |
+| Long-life and performance | `perf_test`: a 300-year life, 16 ms a year, 0.25 MB save |
 | Migration from a supported earlier version | `tools/mig_check.sh` plays a real v0.14 save forward |
 | Originality / licensing review | `CREDITS.md`: two open-licensed fonts, everything else original |
 | One command to run all of it | `tools/run_gates.sh` |

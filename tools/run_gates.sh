@@ -51,6 +51,7 @@ run perf  perf_test        'PERF TEST' 'FAIL:'
 run a11y  a11y_test       'failures=0' 'FAIL:' screen
 run minigames mg_smart    'MG GATE PASS' 'MG GATE FAIL|SCRIPT ERROR' screen
 run input mg_input_probe  'MG INPUT PROBE PASS' 'FAIL' screen
+run ui    ui_test         'UI TEST DONE, screen=graveyard' 'SCRIPT ERROR' screen
 
 echo
 if [ "$fail" -eq 0 ]; then echo "GATE: ALL $pass GREEN"; else echo "GATE: $fail FAILED (${failed[*]}) of $((pass+fail))"; fi
