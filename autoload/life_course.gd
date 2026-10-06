@@ -7,14 +7,18 @@ func _ready() -> void:
 
 # Calendar ranges are game approximations informed by CDC milestones and ADA
 # first-tooth guidance. They are not a developmental assessment of a real child.
+## [earliest month, latest month, card title, first-person log line, life-story
+## phrase]. The fifth entry is a past-tense verb phrase because the life story
+## prefixes every milestone with "At <age>, he …" — a title like "My first
+## social smile" produced "At 0, he At 2 months: my first social smile."
 const FIRSTS := {
-	"smile":[2,3,"My first social smile","I smiled back at a familiar face. They acted as if I had invented joy."],
-	"roll":[4,6,"Rolling over","I rolled from my tummy onto my back. The floor became a much larger country."],
-	"sit":[7,9,"Sitting up","I sat without someone propping me up. The view improved immediately."],
-	"tooth":[6,14,"My first tooth","My first tooth appeared. The family celebrated; my gums were less enthusiastic."],
-	"stand":[10,12,"Pulling up to stand","I pulled myself up against the furniture. Everything interesting was suddenly closer."],
-	"word":[12,15,"A first word","I used my first word for someone familiar. Everyone had a different theory about what I meant."],
-	"walk":[15,18,"My first steps","I took a few steps on my own. An entire room held its breath, then cheered."],
+	"smile":[2,3,"My first social smile","I smiled back at a familiar face. They acted as if I had invented joy.","first smiled back at a familiar face"],
+	"roll":[4,6,"Rolling over","I rolled from my tummy onto my back. The floor became a much larger country.","first rolled over"],
+	"sit":[7,9,"Sitting up","I sat without someone propping me up. The view improved immediately.","first sat up unaided"],
+	"tooth":[6,14,"My first tooth","My first tooth appeared. The family celebrated; my gums were less enthusiastic.","cut a first tooth"],
+	"stand":[10,12,"Pulling up to stand","I pulled myself up against the furniture. Everything interesting was suddenly closer.","first pulled up to stand"],
+	"word":[12,15,"A first word","I used my first word for someone familiar. Everyone had a different theory about what I meant.","said a first word"],
+	"walk":[15,18,"My first steps","I took a few steps on my own. An entire room held its breath, then cheered.","took a first step"],
 }
 
 func state() -> Dictionary:
@@ -62,7 +66,7 @@ func _development(months: int) -> void:
 	for entry in due:
 		var key: String = entry[0]
 		s["firsts"][key]=entry[1]
-		GameState.add_milestone(int(entry[1])/12,"At %d months: %s" % [int(entry[1]),str(FIRSTS[key][2]).to_lower()])
+		GameState.add_milestone(int(entry[1])/12,str(FIRSTS[key][4]))
 		GameState.add_log("Month %d · %s" % [int(entry[1]),FIRSTS[key][3]])
 	if due.size()==1:
 		var spec: Array = FIRSTS[due[0][0]]

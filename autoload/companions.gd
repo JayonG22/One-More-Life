@@ -25,10 +25,23 @@ const KINDS := {
 	"snake": {"name": "Snake", "icon": "🐍", "adopt": 80, "buy": 250, "upkeep": 200, "life": [15, 25], "blurb": "Quiet. Some guests will leave."},
 	"horse": {"name": "Horse", "icon": "🐴", "adopt": 1500, "buy": 8000, "upkeep": 5200, "life": [25, 32], "blurb": "A field, a farrier and a lot of hay.", "min_age": 18},
 }
+## How the animal arrived, written from the animal's side for its profile row
+## ("Came into your life at 35").
 const SOURCES := {
 	"shelter": "adopted from a shelter", "shop": "bought from a pet shop", "breeder": "bought from a breeder",
 	"stray": "found as a stray", "gift": "given as a gift", "inherit": "inherited", "event": "came into your life",
 	"litter": "born in your house", "rescue": "rescued", "friend": "taken from a friend",
+}
+## The same arrivals written from the owner's side, because the life story puts
+## them after "At 35, he …" and takes the animal as the object. Reusing SOURCES
+## there produced "At 35, he came into your life Lucy the dog." Both %s are the
+## animal's name and kind, in that order.
+const ARRIVALS := {
+	"shelter": "adopted %s the %s from a shelter", "shop": "bought %s the %s from a pet shop",
+	"breeder": "bought %s the %s from a breeder", "stray": "took in %s, a stray %s",
+	"gift": "was given %s the %s", "inherit": "inherited %s the %s",
+	"event": "took in %s the %s", "litter": "kept %s the %s, born in the house",
+	"rescue": "rescued %s the %s", "friend": "took %s the %s on from a friend",
 }
 const MAX_PETS := 6
 
@@ -93,7 +106,7 @@ func acquire(species: String, source: String = "event", name: String = "", age: 
 	n["breed"] = breed if not breed_info(species,breed).is_empty() else str(breeds(species).pick_random()["name"])
 	n["care"]["source"] = source
 	n["care"]["since"] = int(_p().get("age", 0))
-	GameState.add_milestone(int(_p().get("age", 0)), "%s %s the %s" % [str(SOURCES.get(source, "took in")), str(n["first"]), str(kind["name"]).to_lower()])
+	GameState.add_milestone(int(_p().get("age", 0)), str(ARRIVALS.get(source, "took in %s the %s")) % [str(n["first"]), str(kind["name"]).to_lower()])
 	GameState.counter("pets_kept")
 	return id
 

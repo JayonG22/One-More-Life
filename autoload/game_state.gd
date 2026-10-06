@@ -404,6 +404,32 @@ func pron(gender: String, kind: String) -> String:
 	return row.get(kind, "")
 
 
+## Milestone text is authored with "they/their/them" so it reads correctly for a
+## nonbinary character. The life story puts a gendered subject in front of it,
+## which produced "he saw their parents divorce" and "he discovered they were a
+## warlock". This agrees the pronouns, and the verb with them, for a gendered
+## subject; for a nonbinary one the authored text is already right.
+func voice(text: String, gender: String) -> String:
+	if gender != "male" and gender != "female":
+		return text
+	var subject := pron(gender, "he")
+	var pairs := [
+		["they were", "%s was" % subject],
+		["they are", "%s is" % subject],
+		["they have", "%s has" % subject],
+		["themselves", "himself" if gender == "male" else "herself"],
+		["they", subject],
+		["their", pron(gender, "his")],
+		["them", pron(gender, "him")],
+	]
+	var out := text
+	for pair in pairs:
+		var re := RegEx.new()
+		re.compile("\\b%s\\b" % str(pair[0]))
+		out = re.sub(out, str(pair[1]), true)
+	return out
+
+
 func stat(key: String) -> float:
 	return float(player["stats"].get(key, 0))
 
@@ -889,7 +915,7 @@ func build_story() -> String:
 		if not seen_birth and m["text"].begins_with("was born"):
 			seen_birth = true
 			continue
-		lines.append("At %d, %s %s." % [int(m["age"]), pron(p["gender"], "he"), m["text"]])
+		lines.append("At %d, %s %s." % [int(m["age"]), pron(p["gender"], "he"), voice(str(m["text"]), str(p["gender"]))])
 	var kids := npcs_with("child", false).size()
 	if kids > 0:
 		lines.append("%s raised %d %s." % [he, kids, "child" if kids == 1 else "children"])
