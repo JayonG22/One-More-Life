@@ -109,7 +109,7 @@ func own_slot() -> Dictionary:
 	var health := GameState.stat("health")
 	var belt := 0
 	for disc in (p.get("martial", {}) as Dictionary).keys():
-		belt = maxi(belt, int((p["martial"][disc] as Dictionary).get("rank", -1)) + 1)
+		belt = maxi(belt, int((p["martial"][disc] as Dictionary).get("belt", 0)))
 	var rating := 25.0 + health * 0.35 + float(belt) * 7.0 + (12.0 if GameState.has_trait("Athletic") else 0.0)
 	var purse := int(round(600.0 + rating * 55.0))
 	var reasons: Array = []

@@ -48,6 +48,11 @@ func remember(kind: String, title: String, memory: String, npc: String = "", str
 	for id in _p()["threads"]["items"].keys():
 		var old: Dictionary = _p()["threads"]["items"][id]
 		if old.get("state", "active") == "active" and old.get("kind", "") == kind and str(old.get("npc", "")) == npc and npc != "":
+			if not old.has("moments") or not (old["moments"] is Array):
+				old["moments"] = [{"age":int(old.get("created_age", _p()["age"])), "memory":str(old.get("memory", ""))}]
+			if str(old.get("memory", "")) != memory:
+				old["moments"].push_front({"age":int(_p()["age"]), "memory":memory})
+				if old["moments"].size() > 8: old["moments"].resize(8)
 			old["strength"] = mini(100, int(old.get("strength", 50)) + maxi(4, strength / 5))
 			old["memory"] = memory
 			old["last_touched"] = int(_p()["age"])
@@ -62,6 +67,7 @@ func remember(kind: String, title: String, memory: String, npc: String = "", str
 		"npc": npc, "created_age": int(_p()["age"]), "last_echo": int(_p()["age"]),
 		"last_touched": int(_p()["age"]), "strength": clampi(strength, 10, 100),
 		"echoes": 0, "state": "active", "tags": tags.duplicate(),
+		"moments": [{"age":int(_p()["age"]), "memory":memory}],
 	}
 	GameState.counter("life_threads")
 	return id
@@ -92,6 +98,7 @@ func resolve(id: String, note: String = "") -> void:
 	var t: Dictionary = _p()["threads"]["items"][id]
 	t["state"] = "resolved"
 	t["resolved_age"] = int(_p()["age"])
+	t["last_touched"] = int(_p()["age"])
 	if note != "": t["resolution"] = note
 	_p()["threads"]["history"].append(t.duplicate(true))
 	_p()["threads"]["items"].erase(id)
@@ -106,7 +113,7 @@ func active_count() -> int:
 func menu(key: String) -> Dictionary:
 	ensure()
 	if key == "" or key == "root":
-		var rows: Array = []
+		var rows: Array = [{"icon":"📰","name":"The world around you","sub":"Local people and projects develop with or without your help","menu":"lore:world"}]
 		var ids: Array = _p()["threads"]["items"].keys()
 		ids.sort_custom(func(a,b): return int(_p()["threads"]["items"][a].get("strength",0)) > int(_p()["threads"]["items"][b].get("strength",0)))
 		for id in ids:
@@ -130,7 +137,12 @@ func menu(key: String) -> Dictionary:
 			rows2.append({"icon":"📞", "name":"Reach out to %s" % GameState.npcs[nid]["first"], "sub":"1 time · reconnect with the person tied to this thread", "act":"threads:reach", "arg":id2, "on":true})
 		if int(t2.get("echoes",0)) > 0 or int(_p()["age"]) - int(t2["created_age"]) >= 5:
 			rows2.append({"icon":"📕", "name":"Let this chapter rest", "sub":"Archive it; it stops generating future echoes", "act":"threads:resolve", "arg":id2, "on":true})
-		return {"icon":kd2["icon"], "title":t2["title"], "rows":rows2, "info":[str(t2["memory"]), "Strength %d/100 · %d echo%s so far" % [int(t2["strength"]), int(t2["echoes"]), "" if int(t2["echoes"]) == 1 else "es"]]}
+		var details: Array = [str(t2["memory"])]
+		for moment in Array(t2.get("moments", [])).slice(1, 8):
+			var previous := str(moment.get("memory", ""))
+			if previous.length() > 150: previous = previous.substr(0, 147) + "…"
+			details.append("Age %d · %s" % [int(moment.get("age", 0)), previous])
+		return {"icon":kd2["icon"], "title":t2["title"], "rows":rows2, "info":details}
 	return menu("root")
 
 
@@ -219,6 +231,31 @@ func _echo_def(id: String, t: Dictionary) -> Dictionary:
 	var kd: Dictionary = KINDS.get(kind, KINDS["relationship"])
 	var base := {"id":"_thread_%s_%d" % [id, int(t.get("echoes",0))], "icon":kd["icon"], "title":"Life Thread", "text":"", "choices":[]}
 	match kind:
+		"relationship":
+			var linked_person := str(t.get("npc", ""))
+			if linked_person != "" and GameState.npcs.has(linked_person) and GameState.npcs[linked_person].get("alive", false):
+				base["text"] = "A conversation with {thread_person.first} brings back an old turning point. %s" % str(t.get("memory", "We remember the moment differently."))
+				base["choices"] = [
+					_ch("Talk about what changed", id, [
+						{"weight":2,"text":"We listened long enough to understand what the other meant. It did not erase the past, but it changed how we carry it.","effects":{"stress":-3,"happiness":2},"relationship":{"thread_person":5},"bond_role":"thread_person","bond":{"trust":4,"affection":2,"resentment":-3},"strength":-8},
+						{"weight":1,"text":"We tried to talk, but an old sore spot took over. We stopped before the conversation did more damage.","effects":{"stress":3},"relationship":{"thread_person":-3},"bond_role":"thread_person","bond":{"resentment":3},"strength":2},
+					]),
+					_ch("Show it through one action", id, [
+						{"weight":2,"text":"I followed through on one small thing I had promised. Trust is easier to rebuild when it has evidence.","effects":{"happiness":3},"relationship":{"thread_person":4},"bond_role":"thread_person","bond":{"trust":5,"respect":2},"strength":-7},
+						{"weight":1,"text":"I meant well, but chose the wrong kind of help. We agreed to ask before assuming next time.","effects":{"stress":2},"relationship":{"thread_person":-2},"bond_role":"thread_person","bond":{"trust":-2,"respect":1},"strength":1},
+					]),
+					_ch("Give it some room", id, [
+						{"weight":2,"text":"We let the subject rest without treating silence as a punishment.","effects":{"stress":-2},"relationship":{"thread_person":1},"strength":-4},
+						{"weight":1,"text":"Distance helped today, though the unfinished conversation stayed with me.","effects":{"stress":2,"happiness":-1},"strength":1},
+					]),
+				]
+			else:
+				base["text"] = "A relationship memory returns, even though the other person is no longer here to answer. %s" % str(t.get("memory", "Some moments stay with us."))
+				base["choices"] = [
+					_ch("Write down what I learned", id, [{"weight":2,"text":"I kept the lesson and let the old argument be incomplete.","effects":{"smarts":1,"stress":-3},"strength":-6},{"weight":1,"text":"Writing it down showed me the parts I still do not understand.","effects":{"stress":2},"strength":1}]),
+					_ch("Talk it over with someone I trust", id, [{"weight":2,"text":"Hearing another perspective helped me remember more than the ending.","effects":{"happiness":3,"stress":-2},"strength":-5},{"weight":1,"text":"I was not ready to tell the whole story, and that was all right.","effects":{"stress":1},"strength":-2}]),
+					_ch("Let the memory pass", id, [{"weight":2,"text":"I let the thought pass without needing to settle every question.","effects":{"stress":-3},"strength":-5},{"weight":1,"text":"The memory stayed for a while, then softened at its own pace.","effects":{"stress":1},"strength":-1}]),
+				]
 		"grief":
 			base["text"] = "Something ordinary brings the loss back with surprising force: a song, a smell, a date on the calendar. %s" % t["memory"]
 			base["choices"] = [

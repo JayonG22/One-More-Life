@@ -78,6 +78,7 @@ func _ms(word: String) -> bool:
 
 func facts() -> Dictionary:
 	var f := {}
+	for key in LifeCourse.FIRSTS: f["development_"+key]=1 if GameState.player.get("life_course",{}).get("firsts",{}).has(key) else 0
 	var g := _g()
 	f["lives_total"] = stat_total("lives")
 	f["years_total"] = stat_total("years")

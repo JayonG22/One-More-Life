@@ -2,12 +2,12 @@
  {
   "id": "baby.first_word",
   "icon": "🍼",
-  "title": "First word",
+  "title": "A sound I kept making",
   "text": "",
   "conditions": {
-   "age": [
-    1,
-    2
+    "age": [
+     2,
+     3
    ]
   },
   "roles": {
@@ -18,7 +18,7 @@
   "once": true,
   "outcomes": [
    {
-    "text": "My first word was \"{mom.first}\"! My mother cried.",
+    "text": "I kept repeating a sound that seemed to resemble {mom.first}. My mother cried anyway.",
     "weight": 3,
     "effects": {
      "happiness": 3
@@ -28,14 +28,14 @@
     }
    },
    {
-    "text": "My first word was \"no\". My parents were not surprised.",
+    "text": "I discovered a dramatic new noise and used it whenever my parents looked away.",
     "weight": 1,
     "effects": {
      "happiness": 2
     }
    },
    {
-    "text": "My first word was \"dog\", which offended the cat.",
+    "text": "I made a sound suspiciously like the dog, which offended the cat.",
     "weight": 1,
     "effects": {
      "happiness": 2
@@ -46,12 +46,12 @@
  {
   "id": "baby.walk",
   "icon": "👣",
-  "title": "First steps",
-  "text": "I took my first wobbly steps across the living room.",
+  "title": "My favourite route",
+  "text": "By then, I had a favourite route from the couch to the low cupboard. It was an excellent expedition.",
   "conditions": {
    "age": [
-    1,
-    2
+    2,
+    3
    ]
   },
   "once": true,
@@ -284,7 +284,7 @@
  {
   "id": "child.lost_tooth",
   "icon": "🦷",
-  "title": "Lost tooth",
+  "title": "A baby tooth lets go",
   "text": "",
   "conditions": {
    "age": [
@@ -292,7 +292,7 @@
     8
    ]
   },
-  "cooldown": 2,
+  "once": true,
   "outcomes": [
    {
     "text": "I lost a tooth and the tooth fairy left me $2.",

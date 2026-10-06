@@ -112,7 +112,8 @@
     "min_close": 25,
     "optional": true
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "tw.house_fire",
@@ -563,7 +564,8 @@
     "optional": true
    }
   },
-  "discard_unkept": true
+  "discard_unkept": true,
+  "available_from": 1995
  },
  {
   "id": "tw.double_life",
@@ -697,7 +699,8 @@
    "p": {
     "relation": "partner"
    }
-  }
+  },
+  "available_from": 1995
  },
  {
   "id": "tw.witness",
@@ -781,7 +784,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 1890
  },
  {
   "id": "tw.coma",
@@ -870,7 +874,8 @@
    }
   ],
   "weight": 3,
-  "twist": true
+  "twist": true,
+  "available_from": 1890
  },
  {
   "id": "tw.car_crash",
@@ -958,7 +963,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 1890
  },
  {
   "id": "tw.bank_collapse",
@@ -1630,7 +1636,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 1903
  },
  {
   "id": "tw.viral",
@@ -1718,7 +1725,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 1995
  },
  {
   "id": "tw.lottery",
@@ -2504,7 +2512,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 2004
  },
  {
   "id": "tw.first_love",
@@ -3057,7 +3066,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 2004
  },
  {
   "id": "tw.prison_riot",
@@ -3929,7 +3939,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 1995
  },
  {
   "id": "tw.grand_will",
@@ -4040,8 +4051,7 @@
    },
    "s": {
     "relation_any": [
-     "sibling",
-     "auntuncle"
+     "sibling"
     ]
    }
   }
@@ -4377,7 +4387,8 @@
    }
   ],
   "weight": 5,
-  "twist": true
+  "twist": true,
+  "available_from": 1890
  },
  {
   "id": "tw.fraud_victim",
@@ -4969,7 +4980,7 @@
  {
   "id": "tw.lottery_vultures",
   "icon": "🦅",
-  "title": "Everybody's cousin",
+  "title": "The requests begin",
   "text": "Since the jackpot, relatives you haven't seen in years keep asking for \"loans\".",
   "conditions": {
    "age": [
@@ -5057,7 +5068,6 @@
    "f": {
     "relation_any": [
      "sibling",
-     "auntuncle",
      "mother",
      "father"
     ]
@@ -5694,6 +5704,7 @@
   ],
   "weight": 1,
   "twist": true,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1890
  }
 ]

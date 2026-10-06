@@ -1,0 +1,2429 @@
+[
+ {
+  "id": "setting.1850.telegram",
+  "icon": "⌛",
+  "title": "A message priced by the word",
+  "text": "The telegraph office will transmit a family message, but each extra word costs money. You need to explain something delicate.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1850"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Choose the essential words",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A carefully shortened message reached its destination intact.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The recipient misunderstood the one detail I had cut.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a longer letter",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "My letter arrived with enough context to be understood.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "By the time the letter arrived, the decision had already been made.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for someone travelling there",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A traveller delivered it in person and brought news back.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The traveller changed their route; the message stayed in a coat pocket.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1850.rail",
+  "icon": "⌛",
+  "title": "The station that might change the town",
+  "text": "A proposed railway promises work and easier journeys. Its route would cut through a neighbour’s land.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1850"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Listen to the affected households",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The meeting produced a safer crossing and an amended route.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The company heard us out, then laid the original route anyway.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask about the new work",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I learned what the job involved before making promises.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The promised work was shorter and harder than the notice suggested.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep clear of the argument",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I kept my routine while the town changed around me.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "I discovered too late that my own route had disappeared.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1850.pump",
+  "icon": "⌛",
+  "title": "The water everyone shares",
+  "text": "Several households fall ill after drawing from the same street pump. Certainty is scarce; the queue still forms.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1850"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Seek another water source",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We carried clean water farther and helped a frail neighbour.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra journey exhausted us and did not answer every question.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell the local physician what I noticed",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "My account gave the physician a pattern worth investigating.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The physician dismissed the pattern; I still had to choose where to drink.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Follow the ordinary routine",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "Nothing happened to me, though the worry stayed.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "I fell ill and regretted treating familiarity as evidence.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1920.radio",
+  "icon": "⌛",
+  "title": "A room listening together",
+  "text": "A neighbour has assembled a wireless set. The signal fades just as the evening programme begins.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1920"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Help adjust the aerial",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A clearer signal turned the room into a small shared celebration.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We chased interference through the whole evening.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bring a story of my own",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "When the signal faded, my story kept the room listening.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "My story met polite silence and a request to try the dial again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Listen from the doorway",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I enjoyed the programme without taking over the gathering.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The crowded doorway made me feel more outside than I expected.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1920.car",
+  "icon": "⌛",
+  "title": "A motorcar on a narrow street",
+  "text": "A motorcar breaks down where carts and pedestrians need to pass. Its owner is embarrassed and impatient.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1920"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Help push it clear",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We freed the street before anybody had to raise their voice.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "Moving it took more effort than the owner admitted.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Fetch someone who repairs engines",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A mechanic found the fault and taught me what to look for.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The mechanic could not get a replacement part that week.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Wait for the street to clear",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The delay became a conversation with someone I had never met.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "I missed the appointment I thought could wait.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1920.hall",
+  "icon": "⌛",
+  "title": "The music through the hall door",
+  "text": "A local dance hall has a new band. A friend wants company, though tomorrow’s work starts early.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1920"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Go and leave at a sensible hour",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We caught the best set and still made the morning.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "One more tune became a very short night.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Find a quieter table",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I heard the music and a friend’s news without shouting.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "Every table was full; the quiet plan lasted minutes.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invite them another evening",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We made a plan neither of us had to rush.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "They went without me, and our next plan never quite happened.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1970.cassette",
+  "icon": "⌛",
+  "title": "A recording nobody labelled",
+  "text": "A friend lends you a cassette with a handwritten track list. One song sounds like somebody from your town.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1970"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Find out who made it",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I found a local musician and a reason to attend their next show.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The trail ended at another unlabelled copy.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a copy to share",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A carefully made copy started a new conversation between friends.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The tape tangled halfway through the song everyone wanted.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Return it with a note",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "My note mattered more to my friend than I expected.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "I returned it before listening to the last side.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1970.fuel",
+  "icon": "⌛",
+  "title": "The queue at the fuel station",
+  "text": "A supply interruption has made fuel uncertain. People trade rumours while the queue barely moves.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1970"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Arrange a shared journey",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We used less fuel and discovered a route that worked.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The shared timetable clashed with everyone’s shifts.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for reliable information",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The station gave me a realistic time to return.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The delivery was delayed again after I had rearranged the day.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep my usual journey",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I arrived on time because the queue finally moved.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "I spent the morning waiting and still left without enough fuel.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.1970.payphone",
+  "icon": "⌛",
+  "title": "Coins for one more call",
+  "text": "You need to reach someone from a public telephone. Your change will not buy a long conversation.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "traveler",
+   "context": {
+    "timeline": "1970"
+   }
+  },
+  "themes": [
+   "setting",
+   "traveler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Explain the important part first",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "They understood what mattered before the coins ran out.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The line cut off before I heard their answer.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask someone nearby for change",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A small kindness bought enough time to sort things out.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "Nobody had the right coins, and the shop was closing.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Arrange to meet in person",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The conversation was easier when we could see each other.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "I waited at the wrong entrance with no easy way to call.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.pirate.chart",
+  "icon": "📖",
+  "title": "A coast missing from the chart",
+  "text": "The lookout sees rocks where the chart promises deep water. The tide is turning.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "pirate"
+  },
+  "themes": [
+   "setting",
+   "pirate"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Heave to and sound the water",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A patient approach saved the hull and corrected our chart.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The delay let another ship reach the anchorage first.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Trust the lookout and change course",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We cleared the reef and the lookout earned the crew’s trust.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The safer course led into weather nobody had seen.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Follow the chart",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We found a narrow passage and came through.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The keel struck; repairs consumed the next voyage’s time.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.colonist.air",
+  "icon": "📖",
+  "title": "The seal that will not stay quiet",
+  "text": "A habitat air sensor keeps reporting a slow leak. The patch held yesterday; it has not held tonight.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "colonist"
+  },
+  "themes": [
+   "setting",
+   "colonist"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Isolate the section and check every seal",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We found the damaged gasket before the reserve became critical.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The search used up a shift and delayed essential maintenance elsewhere.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask another shift for a second diagnosis",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A fresh pair of eyes found the fault our routine had missed.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The second diagnosis contradicted the first; we had to test both.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep watch and wait for morning",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The readings stabilised and we repaired it in daylight.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The alarm worsened during the night and nobody slept.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.royal.petition",
+  "icon": "📖",
+  "title": "The petition beyond the gates",
+  "text": "A household affected by an official decision asks to be heard. Advisers prefer a ceremonial answer.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "royal"
+  },
+  "themes": [
+   "setting",
+   "royal"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Hear the household’s account",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A specific injustice became harder for the court to ignore.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "My interest raised expectations I could not fulfil alone.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for an independent review",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The review found a practical correction without making a spectacle.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The review took months while the household kept waiting.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send the customary response",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The ceremony was orderly and the household felt acknowledged.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The polished response answered nothing they had asked.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.vampire.keeper",
+  "icon": "📖",
+  "title": "The person who keeps the curtains closed",
+  "text": "Someone who knows your secret has begun ageing. They worry about who will protect it after them.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "vampire"
+  },
+  "themes": [
+   "setting",
+   "vampire"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Make a careful succession plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "We found a trusted person and recorded the rules together.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "Trust could not be transferred as neatly as the papers.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let them decide who to tell",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "Their choice gave the next keeper a reason to care.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "They chose someone who needed more convincing than either of us expected.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the burden to myself",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "They slept easier after handing the secret back.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "Their absence left a practical gap I had refused to plan for.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.witch.garden",
+  "icon": "📖",
+  "title": "A remedy with a living ingredient",
+  "text": "The ingredient you need grows in a neighbour’s neglected garden. Harvesting it would make the next spell easier.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "witch"
+  },
+  "themes": [
+   "setting",
+   "witch"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Ask and share what I make",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The neighbour agreed and a careful remedy helped us both.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "They asked a question my explanation could not safely answer.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Grow my own and wait",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower answer left me with a dependable supply.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The first seedlings failed and the spell had to wait.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Look for a substitute",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "An ordinary ingredient worked better than I expected.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The substitute changed the spell in a way I had not planned.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.super.identity",
+  "icon": "📖",
+  "title": "A rescue that exposes the ordinary life",
+  "text": "A witness recognises something about your civilian identity during a rescue. They ask to speak privately.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "super"
+  },
+  "themes": [
+   "setting",
+   "super"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Talk honestly within safe limits",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "They protected the secret and understood why it mattered.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "They wanted guarantees I could not honestly give.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask them to focus on the people rescued",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The story they told gave the survivors the attention.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "A small identifying detail still made it into the account.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Disappear before they can ask again",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The unanswered question faded while another story took over.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "My abrupt departure made the witness more curious.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.revenant.record",
+  "icon": "📖",
+  "title": "A record that says you are gone",
+  "text": "A clerk finds your death record while checking an ordinary form. You are standing at the counter.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": "revenant"
+  },
+  "themes": [
+   "setting",
+   "revenant"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Explain what I can calmly",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The clerk found a way to handle the form without announcing me.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The explanation attracted a supervisor and a locked office.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bring someone who remembers me",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A familiar witness gave my impossible story a human anchor.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The witness was more frightened than I had realised.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave the paperwork for another day",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "I found another way to manage the immediate problem.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The unresolved record followed me into the next task.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.actor",
+  "icon": "📖",
+  "title": "The continuity mistake",
+  "text": "A scene has been filmed with a detail that contradicts the next one. Reshooting costs time.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "actor"
+  },
+  "themes": [
+   "setting",
+   "actor"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Discuss it with the script supervisor",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.musician",
+  "icon": "📖",
+  "title": "The venue’s missing ramp",
+  "text": "A listener cannot enter the venue where your set begins in an hour.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "musician"
+  },
+  "themes": [
+   "setting",
+   "musician"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Work with the venue on access",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.athlete",
+  "icon": "📖",
+  "title": "The teammate after the injury",
+  "text": "A teammate returns from injury but cannot keep the old training pace.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "athlete"
+  },
+  "themes": [
+   "setting",
+   "athlete"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Train alongside them at their new pace",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.politician",
+  "icon": "📖",
+  "title": "The promise with no budget",
+  "text": "A popular proposal reaches your desk without a credible way to fund it.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "politician"
+  },
+  "themes": [
+   "setting",
+   "politician"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Publish the cost and revise the promise",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.mafia",
+  "icon": "📖",
+  "title": "The person behind the debt",
+  "text": "A debtor has disappeared from work after a family emergency. Your crew wants an immediate answer.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "mafia"
+  },
+  "themes": [
+   "setting",
+   "mafia"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Find out what happened before escalating",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.hustler",
+  "icon": "📖",
+  "title": "Someone using your pitch",
+  "text": "A newcomer repeats your pitch on your usual street. The crowd notices.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "hustler"
+  },
+  "themes": [
+   "setting",
+   "hustler"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Talk and agree on room for both",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.astronaut",
+  "icon": "📖",
+  "title": "The checklist nobody wants to delay",
+  "text": "A preflight reading sits just outside tolerance. The launch window is narrowing.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "astronaut"
+  },
+  "themes": [
+   "setting",
+   "astronaut"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Request a verification before clearance",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.model",
+  "icon": "📖",
+  "title": "The image that changes the brief",
+  "text": "A proposed edit changes how your body appears in a campaign.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "model"
+  },
+  "themes": [
+   "setting",
+   "model"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Ask to see and approve the final edit",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.fighter",
+  "icon": "📖",
+  "title": "The sparring partner who is hiding pain",
+  "text": "A training partner keeps shaking out one hand between rounds.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "fighter"
+  },
+  "themes": [
+   "setting",
+   "fighter"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Stop and ask the coach to assess it",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.director",
+  "icon": "📖",
+  "title": "The scene the crew cannot finish safely",
+  "text": "Your planned shot needs another exhausted night of work.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "director"
+  },
+  "themes": [
+   "setting",
+   "director"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Rewrite the shot around safe working hours",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "setting.career.agent",
+  "icon": "📖",
+  "title": "The source whose story is too tidy",
+  "text": "An informant’s account fits your expectations almost perfectly.",
+  "conditions": {
+   "age": [
+    12,
+    2000
+   ],
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant",
+    "traveler"
+   ],
+   "career": "agent"
+  },
+  "themes": [
+   "setting",
+   "agent"
+  ],
+  "weight": 8,
+  "cooldown": 12,
+  "choices": [
+   {
+    "label": "Verify the account through another channel",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The slower decision exposed something the easy answer had missed. I earned trust by explaining the work.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The extra check was necessary, but the delay still had consequences.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask a colleague to challenge my assumptions",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "A colleague noticed the detail I had stopped seeing. The plan became more workable.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "We disagreed about the priority and had to start again.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   },
+   {
+    "label": "Carry on with the existing plan",
+    "outcomes": [
+     {
+      "weight": 2,
+      "text": "The familiar plan held together this time.",
+      "effects": {
+       "happiness": 3,
+       "stress": 2,
+       "skill": 2
+      }
+     },
+     {
+      "weight": 1,
+      "text": "The ignored detail returned as a problem I could no longer delegate.",
+      "effects": {
+       "happiness": -2,
+       "stress": 4
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

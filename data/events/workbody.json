@@ -140,7 +140,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "wb.brilliant_boss",
@@ -694,7 +695,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "wb.restructure",
@@ -1011,7 +1013,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "wb.freelance_windfall",
@@ -1308,7 +1311,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "wb.job_hunt_low",
@@ -2018,7 +2022,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1930
  },
  {
   "id": "wb.fitness_wake",

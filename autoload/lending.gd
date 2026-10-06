@@ -44,7 +44,25 @@ func state() -> Dictionary:
 		return {}
 	if not p.has("debts") or not (p["debts"] is Array):
 		p["debts"] = []
+	ensure_record(p)
 	return {"list": p["debts"]}
+
+func ensure_record(p: Dictionary) -> void:
+	if not p.get("debts",[]) is Array: p["debts"]=[]
+	if not p.has("debts"): p["debts"]=[]
+	for debt in p["debts"]:
+		if str(debt.get("uid",""))=="":
+			p["loan_serial"]=int(p.get("loan_serial",0))+1
+			debt["uid"]=FamilyChronicle.identity(p)+":loan:"+str(p["loan_serial"])
+		else:
+			p["loan_serial"]=maxi(int(p.get("loan_serial",0)),int(str(debt["uid"]).get_slice(":loan:",1)))
+		if not debt.has("due_year"): debt["due_year"]=int(p.get("born_year",GameState.year_now()-int(p.get("age",0))))+int(debt.get("taken_age",p.get("age",0)))+int(debt.get("term",1))
+	if not p.has("loan_record"): p["loan_record"]=[]
+
+func remember(p: Dictionary, debt: Dictionary, text: String, year: int, paid: int = 0) -> void:
+	if not p.has("loan_record"): p["loan_record"]=[]
+	p["loan_record"].push_front({"uid":debt["uid"],"lender":debt["lender"],"year":year,"text":text,"paid":paid,"balance":int(debt["left"])})
+	if p["loan_record"].size()>60: p["loan_record"].resize(60)
 
 
 func debts() -> Array:
@@ -52,9 +70,10 @@ func debts() -> Array:
 	return st.get("list", []) if not st.is_empty() else []
 
 
-func total_owed() -> int:
+func total_owed(p: Dictionary = {}) -> int:
 	var t := 0
-	for d in debts():
+	var list: Array=debts() if p.is_empty() else p.get("debts",[])
+	for d in list:
 		t += int(d.get("left", 0))
 	return t
 
@@ -74,6 +93,7 @@ func offer(id: String) -> Dictionary:
 	var credit := Grit.credit()
 	var income := assessed_income()
 	var reasons: Array = []
+	if not GameState.is_alive() or Lives.separate() or Childhood.supported() or GameState.in_prison(): reasons.append("Independent adult lending only")
 	if int(p.get("age", 0)) < 18:
 		reasons.append("You have to be 18")
 	if credit < int(d["min_credit"]):
@@ -113,22 +133,38 @@ func offers() -> Array:
 
 ## Borrow. The yearly payment is fixed at signing, which is what makes a bad rate
 ## something you live with rather than something you can wriggle out of.
-func borrow(id: String, amount: int) -> void:
+func quote(id: String, amount: int, requested_term: int = 0) -> Dictionary:
+	var offer_data := offer(id)
+	if offer_data.is_empty() or not bool(offer_data["ok"]): return {}
+	var term := int(offer_data["term"]) if requested_term==0 else requested_term
+	if amount<500 or amount>int(offer_data["cap"]) or term<1 or term>int(offer_data["term"]): return {}
+	var total := int(round(float(amount)*(1.0+float(offer_data["rate"])*term)))
+	return {"principal":amount,"term":term,"rate":offer_data["rate"],"total":total,"payment":int(ceil(float(total)/term)),"interest":total-amount}
+
+func fraction_amount(id: String, percent: float) -> int:
+	var offer_data := offer(id)
+	if offer_data.is_empty() or percent<=0 or percent>100: return 0
+	return int(round(int(offer_data["cap"])*percent/100.0))
+
+func borrow(id: String, amount: int, requested_term: int = 0) -> void:
 	var o := offer(id)
-	if o.is_empty() or not bool(o["ok"]):
+	var terms := quote(id,amount,requested_term)
+	if terms.is_empty():
 		return
-	var amt := clampi(amount, 500, int(o["cap"]))
+	var amt := amount
 	var d: Dictionary = LENDERS[id]
-	var term := int(o["term"])
+	var term := int(terms["term"])
 	var rate := float(o["rate"])
-	var total := int(round(float(amt) * (1.0 + rate * float(term))))
-	var yearly_pay := int(ceil(float(total) / float(term)))
+	var total := int(terms["total"])
+	var yearly_pay := int(terms["payment"])
 	var p := _p()
 	p["money"] = int(p["money"]) + amt
 	debts().append({
 		"lender": id, "principal": amt, "left": total, "payment": yearly_pay,
-		"rate": rate, "taken_age": int(p.get("age", 0)), "missed": 0,
+		"rate": rate, "term":term,"taken_age": int(p.get("age", 0)), "missed": 0,"due_year":GameState.year_now()+term,
 	})
+	ensure_record(p)
+	remember(p,debts().back(),"Loan signed",GameState.year_now())
 	GameState.counter("loans_taken")
 	GameState.add_log("I borrowed %s from %s. %s a year for %d years." % [
 		GameState.fmt_money(amt), str(d["name"]).to_lower(),
@@ -142,6 +178,7 @@ func borrow(id: String, amount: int) -> void:
 
 ## Pay early, in full, if you can.
 func settle(index: int) -> void:
+	if not GameState.is_alive() or Childhood.supported() or Lives.separate(): return
 	var list := debts()
 	if index < 0 or index >= list.size():
 		return
@@ -151,31 +188,107 @@ func settle(index: int) -> void:
 	if int(p["money"]) < owed:
 		return
 	p["money"] = int(p["money"]) - owed
+	d["left"]=0
+	Employment.record_expense("Early loan repayment",owed)
+	remember(p,d,"Paid in full",GameState.year_now(),owed)
 	list.remove_at(index)
 	GameState.add_log("I cleared the whole thing: %s, gone." % GameState.fmt_money(owed))
 	Grit.change_credit(30)
 	Moments.fire("success", 0.7)
 
 
+func support_reason(debt: Dictionary, kind: String) -> String:
+	if kind not in ["reduced","pause","extend"]: return "Unknown arrangement"
+	if Childhood.supported() or Lives.separate(): return "Independent adult lending only"
+	var blocked := Journey.blocked(18)
+	if blocked!="": return blocked
+	if debt.is_empty() or int(debt.get("left",0))<=0: return "No outstanding loan"
+	if debt["lender"]=="shark": return "This lender offers no hardship plans"
+	if kind=="pause" and debt["lender"]=="online": return "This lender offers no pause"
+	if debt.get("support",{}).get("used",false): return "Arrangement already used"
+	if GameState.has_job() and int(_p()["money"])>=int(debt["payment"])*2 and GameState.stat("health")>=40: return "Hardship test not met"
+	if int(_p().get("time_left",0))<1: return "Needs 1 time"
+	return ""
+
+func request_support(uid0: String, kind: String) -> void:
+	var selected: Dictionary={}
+	for debt in debts():
+		if str(debt["uid"])==uid0: selected=debt; break
+	var reason := support_reason(selected,kind)
+	if reason!="": return
+	if not Journey.pay("loan_support:"+uid0,1,0,18): return
+	var fee := maxi(1,int(round(int(selected["left"])*0.02)))
+	selected["left"]=int(selected["left"])+fee
+	var year := GameState.year_now()
+	selected["support"]={"used":true,"kind":kind,"starts":year+1,"through":year+(2 if kind=="reduced" else 1),"fee":fee,"reviewed":false,"original_payment":int(selected["payment"])}
+	if kind=="extend":
+		var years := maxi(1,int(selected["due_year"])-year)+3
+		selected["payment"]=int(ceil(float(selected["left"])/years))
+		selected["due_year"]=year+years
+		selected["support"]["through"]=selected["due_year"]
+	remember(_p(),selected,"Arrangement: "+kind+"; fee "+GameState.fmt_money(fee),year)
+	GameState.add_log("Loan support agreed: "+kind+" · fee "+GameState.fmt_money(fee)+" added to this loan, not cash.")
+	var terms := "New annual payment %s through %d" % [GameState.fmt_money(int(selected["payment"])),selected["due_year"]] if kind=="extend" else "%s payments in %d–%d; original payments then resume" % ["Half" if kind=="reduced" else "Paused",year+1,selected["support"]["through"]]
+	EventEngine.push_info("🏦","Payment arrangement",terms+". Fee "+GameState.fmt_money(fee)+" added to the balance. Nothing was forgiven.")
+func scheduled_payment(debt: Dictionary, year: int) -> int:
+	var plan: Dictionary=debt.get("support",{})
+	if not plan.is_empty() and plan.get("kind","") in ["reduced","pause"] and year>=int(plan.get("starts",0)) and year<=int(plan["through"]):
+		return 0 if plan["kind"]=="pause" else mini(int(debt["left"]),maxi(1,int(debt["payment"])/2))
+	return maxi(0,mini(int(debt["payment"]),int(debt["left"])))
+func support_menu(uid0: String = "") -> Dictionary:
+	var rows: Array=[]; var info: Array=["Review needs hardship. One plan per loan. Fee: 2% (minimum $1), added to the debt."]
+	for debt in debts():
+		if uid0=="":
+			rows.append({"icon":LENDERS[debt["lender"]]["icon"],"name":LENDERS[debt["lender"]]["name"],"sub":"Owe "+GameState.fmt_money(int(debt["left"]))+" · next "+GameState.fmt_money(scheduled_payment(debt,GameState.year_now()+1)),"menu":"employment:loan_support:"+str(debt["uid"])})
+			continue
+		if str(debt["uid"])!=uid0: continue
+		var plan: Dictionary=debt.get("support",{})
+		info.append(str(LENDERS[debt["lender"]]["name"])+" · owe "+GameState.fmt_money(int(debt["left"]))+" · next payment "+GameState.fmt_money(scheduled_payment(debt,GameState.year_now()+1)))
+		if not plan.is_empty(): info.append(str(plan["kind"])+" · "+str(plan.get("starts",GameState.year_now()))+"–"+str(plan["through"])+(" · new payment continues until cleared" if plan["kind"]=="extend" else " · original payments resume afterwards"))
+		if debt["lender"]!="shark":
+			for kind in ["reduced","pause","extend"]:
+				var reason := support_reason(debt,kind)
+				rows.append({"icon":"🏦","name":{"reduced":"Half payments","pause":"Pause payments","extend":"Longer term"}[kind],"sub":str(LENDERS[debt["lender"]]["name"])+" · "+(reason if reason!="" else "1 time · "+{"reduced":"2 years","pause":"1 year","extend":"3 extra years"}[kind]+" · 2% fee"),"act":"employment:loan_support","arg":{"uid":debt["uid"],"kind":kind},"on":reason==""})
+		else: info.append("This lender offers no hardship plan. Extra repayments remain available.")
+	rows.append({"icon":"📖","name":"Loan record","sub":"Agreements, payments and arrears","menu":"employment:loan_history"})
+	if debts().is_empty(): info.append("No personal lender loan is on this life’s record.")
+	return {"icon":"🏦","title":"Payment support","info":info,"rows":rows}
+func history_menu() -> Dictionary:
+	state()
+	var info: Array=[]
+	for entry in _p().get("loan_record",[]): info.append("%d · %s · %s · balance %s" % [entry["year"],LENDERS[entry["lender"]]["name"],entry["text"],GameState.fmt_money(int(entry["balance"]))])
+	if info.is_empty(): info.append("No loan transactions recorded.")
+	return {"title":"Loan record","icon":"📖","info":info,"rows":[]}
+
 func yearly() -> void:
-	var st := state()
-	if st.is_empty() or not GameState.is_alive():
-		return
-	var p := _p()
-	var list: Array = st["list"]
+	if not GameState.is_alive() or Childhood.supported() or Lives.separate(): return
+	service(_p(),GameState.year_now(),true)
+
+func service(p: Dictionary, year: int, active: bool = false) -> int:
+	if not p.get("alive",true) or int(p.get("age",0))<int(p.get("childhood_budget",{}).get("independence_age",18)) or int(p.get("lending_year",-1))>=year: return 0
+	ensure_record(p)
+	p["lending_year"]=year
+	var paid := 0
+	var list: Array = p["debts"]
 	var i := list.size() - 1
 	while i >= 0:
 		var d: Dictionary = list[i]
-		var pay := int(d["payment"])
 		var left := int(d["left"])
-		var due := mini(pay, left)
-		if int(p["money"]) >= due:
+		var due := scheduled_payment(d,year)
+		var support: Dictionary=d.get("support",{})
+		if not support.is_empty() and support.get("kind","")!="extend" and year>int(support["through"]) and not support.get("reviewed",false):
+			support["reviewed"]=true
+			remember(p,d,"Original payments resumed",year)
+			if active: GameState.add_log("The loan arrangement ended. Original payments resume; the remaining balance is still due.")
+		if due==0 or int(p["money"]) >= due:
 			p["money"] = int(p["money"]) - due
+			paid+=due
 			d["left"] = left - due
-			d["missed"] = 0
+			if due>0: d["missed"] = 0
+			remember(p,d,"Payment made" if due>0 else "Agreed payment pause",year,due)
 			if int(d["left"]) <= 0:
-				GameState.add_log("Last payment on the %s loan. That is finished." % str(LENDERS[str(d["lender"])]["name"]).to_lower())
-				Grit.change_credit(25)
+				if active: GameState.add_log("Last payment on the %s loan. That is finished." % str(LENDERS[str(d["lender"])]["name"]).to_lower())
+				p["credit"]=clampi(int(p.get("credit",650))+25,300,850)
 				list.remove_at(i)
 				i -= 1
 				continue
@@ -183,10 +296,12 @@ func yearly() -> void:
 			d["missed"] = int(d.get("missed", 0)) + 1
 			# Interest on a missed payment, and then the lender's own response.
 			d["left"] = int(round(float(left) * (1.0 + float(d["rate"]) * 0.5)))
-			Grit.change_credit(-22)
-			GameState.change_stat("stress", 8.0)
-			_missed(d, int(d["missed"]))
+			p["credit"]=clampi(int(p.get("credit",650))-22-(40 if d["lender"]!="shark" and int(d["missed"])>=3 else 0),300,850)
+			p["stats"]["stress"]=minf(100,float(p["stats"].get("stress",0))+8)
+			remember(p,d,"Missed payment; interest added",year)
+			if active: _missed(d, int(d["missed"]))
 		i -= 1
+	return paid
 
 
 func _missed(d: Dictionary, times: int) -> void:
@@ -218,7 +333,6 @@ func _missed(d: Dictionary, times: int) -> void:
 		GameState.add_log("I missed the payment to %s. The letter used the word 'default'." % nm.to_lower())
 		if times >= 3:
 			GameState.add_log("%s has passed my file to a collections agency." % nm)
-			Grit.change_credit(-40)
 
 
 func summary_lines() -> Array:
@@ -226,7 +340,7 @@ func summary_lines() -> Array:
 	for d in debts():
 		var l: Dictionary = LENDERS[str(d["lender"])]
 		out.append(["%s %s" % [str(l["icon"]), str(l["name"])],
-			"%s left · %s a year%s" % [GameState.fmt_money(int(d["left"])),
-				GameState.fmt_money(int(d["payment"])),
+			"%s left · next payment %s%s" % [GameState.fmt_money(int(d["left"])),
+				GameState.fmt_money(scheduled_payment(d,GameState.year_now()+1)),
 				"  ⚠️ %d missed" % int(d["missed"]) if int(d.get("missed", 0)) > 0 else ""]])
 	return out

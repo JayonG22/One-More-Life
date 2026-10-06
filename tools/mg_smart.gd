@@ -56,7 +56,7 @@ func _next() -> void:
 	plan_for = ""
 	pass
 	var g = load(Minigames.DEFS[cur_id]["script"]).new()
-	g.setup({"skill": 60, "difficulty": 1.0, "sport": "basketball", "opponent": "Rival", "map": randi() % 3, "single": true})
+	g.setup({"bank":Depth.lessons["Arithmetic"],"needed":3,"graded":cur_id=="school_quiz","skill": 60, "difficulty": 1.0, "sport": "basketball", "opponent": "Rival", "map": randi() % 3, "single": true})
 	g.finished.connect(func(score: float, detail: Dictionary):
 		results[cur_id] = results.get(cur_id, []) + ["%.2f" % score + (str(detail) if cur_id == "potion" else "")]
 		call_deferred("_next"))
@@ -78,6 +78,8 @@ func _process(delta: float) -> void:
 		return
 	var g = cur
 	match cur_id:
+		"quiz", "school_quiz":
+			if not g.answered and g.idx<g.needed: g._answer(int(g.bank[g.idx]["correct"]))
 		"audition":
 			g.move = 0.0 if absf(g.light_x - g.me_x) < 25.0 else signf(g.light_x - g.me_x)
 			for c in g.cues:
@@ -202,7 +204,7 @@ func _process(delta: float) -> void:
 		"g_highlow":
 			if not g.busy and cool <= 0:
 				cool = 0.3
-				if g.streak >= 2:
+				if g.ladder_streak >= 2:
 					g._take()
 				else:
 					g._guess(g.card <= 8)

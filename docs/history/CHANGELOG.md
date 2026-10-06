@@ -2064,3 +2064,78 @@ Since v0.23.0: avatars are now one real emoji, picked whole (skin tone, figure, 
 - Casino: a visit is now a session. After each round you can play again at the same bet, or leave with Cash out (while you can still cover a bet) or Give up (when you can't). Leaving mid-round loses the stake in play.
 - Casino odds are real. Slots had been paying back about 114% and scratch cards about 154%, so players won on average. Every game now returns roughly 88–92% over time (roulette is the real single-zero wheel). Slots: a pair returns your bet and the respin costs a full bet. Scratch card win rate 27% → 15.5%. Rocket and High/Low house edge 4% → 8%. Wheel and high-risk Plinko trimmed.
 - Achievements show one at a time with tier sounds, voices and effects.
+
+---
+
+## Version 0.26.0 — recovered local preview
+
+# v0.26.0 — A world that follows your life
+
+- **111 contextual scenarios and 67 follow-ups**, selected for place, the year's saved weather, age, health, lifestyle, education and work. Optional questions share a yearly budget; required consequences survive. Questions shown recently stay out of the pool for at least five years, including duplicate wording under another event ID.
+- **24 additional jobs**, each with its own events. Job boards remain stable when switching categories. Relevant degrees, practical courses and experience improve hiring chances while qualifications still gate regulated roles. Employers can still reject a prepared candidate.
+- **27 setting scenarios** for the three preset timelines, life paths and special careers. Event availability and world headlines follow the current era; pirates and colonists have setting-specific pools. Timeline jumps clear incompatible queued scenes and refresh job openings.
+- **Local stories** develop through a recurring cast without player intervention. Projects can succeed or struggle, affect local demand, accept help and retain their history when the player returns.
+- **TVLife**, a fourth mode, includes four characters and 32 ordered chapters across Cartoon, Adult Animation, Anime and Crime / Action. Reflections personalise a saved journal without changing chapter order. An arc's completion is presented as a story ending, including arcs whose character remains alive.
+- **Matte Fieldnotes styling**, a revised mode-selection menu, stronger Age button feedback, additional music themes, 12 additional avatar looks and eight additional backdrops in the Star Shop.
+- **Normal-life imprisonment** has a persistent custody banner with the remaining sentence and a muted theme. Release restores the selected theme and normal activities.
+- **Custom stakes and investments:** enter casino, horse-racing and fight stakes; adjust the next casino stake. Investments include 12 additional stocks/funds, four additional cryptocurrencies and up to 24 recorded yearly prices per asset, shown in small charts. Existing saves retain their prices and gain missing assets.
+- **Casino corrections:** advertised odds no longer receive hidden luck multipliers, baccarat player/banker bets push on ties, craps resolves its actual point and hardway rules, Rocket checks crashes before cashing out, and tournament poker retains uncertainty at high skill.
+
+Validation results and limitations are recorded in `VALIDATION-v0.26.0.md`.
+
+
+## Version 0.28.0 — People Have Lives (local preview)
+
+First milestone of the approved major expansion: 14 branching family arcs,
+56 scenes, 168 choices and 336 outcome variants. Adds persistent person IDs,
+known parent links, searchable historical records, family memories, richer
+child-transfer previews, a projected former-player budget and annual summary.
+Retains v0.27's dark UI, mature story additions and minigame refinements.
+See [coverage](../releases/V0.28-COVERAGE.md) and
+[validation](../releases/V0.28-VALIDATION.md).
+
+## v0.29.0 — More Ways to Live
+
+Local portable preview. Added operating casinos, museums and agencies, luxury
+society activities, producer projects/royalties/licensing, non-graphic adult
+creator subscriptions and household bills/chores/rest/routine presets.
+Fixed large-text panel visibility and title wrapping. First loops are playable;
+remaining campaign work is recorded in UPDATE-REGISTER.md. See exact coverage
+and validation in releases/V0.29-COVERAGE.md and V0.29-VALIDATION.md.
+
+
+## v0.30.0 — Growing into yourself
+
+Local portable preview. Monthly infancy, seven first milestones/trophies and 96
+age scenes; expanded avatar catalogs and live condition badge; stat readiness;
+rare royal/noble birth rules; immediate-family relationship navigation. Added
+162 ordinary-job decisions, 30 school questions/practicals, school portfolios,
+club/clique/team/talent challenges, student campaigns/council budgets, later
+career/hiring effects, martial move assessments, tactical sports, staged civil
+claims, exact/fraction/term loans, Crime-panel murder and saved choice history.
+Repeat limits/cooldowns and the large-text appearance editor were refined.
+See releases/V0.30-COVERAGE.md and V0.30-VALIDATION.md for exact scope and checks.
+
+
+## Version 0.31.0 — Clearer Everyday Play
+
+Local preview: original monthly infancy and yearly later-life timing retained;
+configurable jump withdrawn at the user's request. Added eight paid contextual
+activity bundles with preflight, full costs, limits and playable study quiz;
+bounded monthly/annual lifestyle changes across all five stats; restored queued
+and displayed decisions; search and favourites, Back/scroll and panel trails;
+mode-aware help, clear readiness explanations, measured consequences and
+organised recaps; 16 later branches for eight earlier choices.
+The complete-base-game milestone plan preserves the accepted campaign before
+v1.0. This local preview does not complete that campaign or claim BitLife parity.
+
+
+## Version 0.31.1 — Clear buttons and better shopping
+
+Distinct action/navigation/bundle styles; shorter wording and wrapping menu rows;
+11 shopping categories, 8 specialised retailers and 44 named products; 7 primary
+home variants and 11 cars with connected pricing/upkeep and additional vector
+silhouettes; 37 animal breeds/varieties with saved identity and feeding costs.
+Primary-home/car buying moves to Shopping; Assets manages money and ownership.
+Age/licence/capacity/price checks are enforced when buying, including after reload.
+This is a local addition to v0.31; the larger v0.32 career update remains next.

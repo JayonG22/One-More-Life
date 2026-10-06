@@ -130,7 +130,7 @@ func _life_key() -> String:
 
 ## 0..1, stable for this life and this event.
 func ration_roll(id: String) -> float:
-	return float(hash(_life_key() + id) % 1000) / 1000.0
+	return float(posmod(hash(_life_key() + id), 1000)) / 1000.0
 
 
 func state() -> Dictionary:
@@ -141,6 +141,10 @@ func state() -> Dictionary:
 
 
 func weight(def: Dictionary, base: float) -> float:
+	var id := str(def.get("id",""))
+	if not id.begins_with("_") and not def.get("followup_only",false) and not def.get("once",false):
+		if int(state()["seen"].get(id,0))>=int(def.get("repeat_limit",2)): return 0.0
+		if GameState.event_history.has(id) and int(_p().get("age",0))-int(GameState.event_history[id])<maxi(8,int(def.get("cooldown",0))): return 0.0
 	var w := base
 	var prof := profile()
 	var themes := themes_of(def)
@@ -186,7 +190,16 @@ func weight(def: Dictionary, base: float) -> float:
 
 func note(def: Dictionary) -> void:
 	var st := state()
+	if Novelty.optional(def): Novelty.note(def)
 	var id := str(def.get("id", ""))
+	if id.begins_with("_course_"):
+		Novelty.note(def)
+		LifeCourse.state()["seen"][id]=true
+		LifeCourse.state()["last_scene"]=id
+	if not st.has("questions"): st["questions"] = {}
+	st["questions"][question_key(def)] = int(_p().get("age",0))
+	for k in st["questions"].keys():
+		if int(_p().get("age",0))-int(st["questions"][k]) >= 12: st["questions"].erase(k)
 	st["seen"][id] = int(st["seen"].get(id, 0)) + 1
 	for th in themes_of(def):
 		st["recent"].append(th)
@@ -200,6 +213,8 @@ func note(def: Dictionary) -> void:
 ## to the budget and decides where each casualty goes.
 func curate() -> void:
 	var items: Array = EventEngine.pending
+	# Focused scenes earn the first optional slot; required consequences stay ahead.
+	items.sort_custom(func(a, b): return Context.focus(a.get("def", {})) and not Context.focus(b.get("def", {})))
 	if items.size() <= 1:
 		return
 	var bud := budget()
@@ -210,21 +225,25 @@ func curate() -> void:
 	var keep: Dictionary = {}
 	var used := 0
 	var echoes := 0
+	var themes: Dictionary = {}
 	for r in ranked:
 		var it: Dictionary = items[int(r["i"])]
 		var tier := int(r["tier"])
-		if tier == 0:
-			keep[int(r["i"])] = true      # never trimmed, and does not spend the budget
-			continue
-		if tier == 2 and used >= 1:
-			# a year carries one follow-up echo at most, so they do not stack
-			if it.get("def", {}).get("followup_only", false):
-				echoes += 1
-				if echoes > 1:
-					continue
-		if used < bud:
+		# Required decisions must survive; a dropped court or family decision
+		# cannot reliably be recreated next year with the same people.
+		if tier <= 1:
 			keep[int(r["i"])] = true
 			used += 1
+			continue
+		if used >= bud: continue
+		var def: Dictionary = it.get("def", {})
+		if tier == 2 and echoes >= 1: continue
+		var ts := themes_of(def)
+		if tier == 3 and ts.any(func(t): return themes.has(t)): continue
+		keep[int(r["i"])] = true
+		used += 1
+		if tier == 2: echoes += 1
+		for t in ts: themes[t] = true
 	var out: Array = []
 	for i in range(items.size()):
 		if keep.has(i):
@@ -244,6 +263,7 @@ func _tier(it: Dictionary) -> int:
 	var id := str(def.get("id", ""))
 	if id in ["_bankruptcy", "_settlement", "_arrest", "_trial", "_death"] or id.begins_with("arc."):
 		return 0
+	if id.begins_with("_course_"): return 3
 	if id.begins_with("_"):
 		return 1
 	if def.get("followup_only", false):
@@ -264,8 +284,19 @@ func _shelve(it: Dictionary) -> void:
 		# an echo that did not fit comes back next year
 		GameState.followups.append({"event": id, "age": int(_p().get("age", 0)) + 1, "roles": (it.get("roles", {}) as Dictionary).duplicate(), "retries": 0})
 	elif not id.begins_with("_"):
-		# a random event that did not fit never happened
-		GameState.event_history.erase(id)
-		var st := state()
-		st["seen"][id] = maxi(0, int(st["seen"].get(id, 1)) - 1)
-	# system decisions that do not fit are dropped; they are re-raised by their own yearly check
+		# It was selected but never shown: restore its actual cooldown history.
+		if it.get("previous_age", null) != null:
+			GameState.event_history[id] = it["previous_age"]
+		else:
+			GameState.event_history.erase(id)
+		for npc_id in it.get("created", []):
+			GameState.npcs.erase(npc_id)
+
+
+func question_key(def: Dictionary) -> String:
+	return str(hash(JSON.stringify(def.get("text", ""))))
+
+func repeated(def: Dictionary) -> bool:
+	var questions: Dictionary = state().get("questions",{})
+	var k := question_key(def)
+	return questions.has(k) and int(_p().get("age",0))-int(questions[k]) < 5

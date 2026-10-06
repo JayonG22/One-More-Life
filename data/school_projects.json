@@ -1,0 +1,282 @@
+{
+ "science": [
+  [
+   "Your exhibition needs a question you can actually test with the available equipment.",
+   [
+    "Test one variable carefully",
+    "Build a visual demonstration",
+    "Collect observations over time"
+   ],
+   [
+    12,
+    9,
+    11
+   ],
+   [
+    3,
+    1,
+    2
+   ]
+  ],
+  [
+   "Early measurements vary more than expected. The exhibition deadline is still approaching.",
+   [
+    "Repeat a smaller set of measurements",
+    "Ask your mentor to review the method",
+    "Present the variation as part of the result"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    3,
+    1,
+    0
+   ]
+  ],
+  [
+   "Visitors ask what your experiment really establishes.",
+   [
+    "Explain the evidence and remaining uncertainty",
+    "Demonstrate the method live",
+    "Present a concise poster with the limits"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    2,
+    3,
+    0
+   ]
+  ]
+ ],
+ "arts": [
+  [
+   "The school production has enthusiastic performers and a modest materials budget.",
+   [
+    "Write a small cast-led production",
+    "Design a shorter visual performance",
+    "Adapt an existing permitted school script"
+   ],
+   [
+    11,
+    10,
+    9
+   ],
+   [
+    3,
+    2,
+    1
+   ]
+  ],
+  [
+   "A performer cannot attend every rehearsal. The opening date cannot move.",
+   [
+    "Adapt the part and share rehearsal notes",
+    "Arrange a supported understudy",
+    "Reduce the role with their agreement"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    3,
+    2,
+    0
+   ]
+  ],
+  [
+   "The performance is ready, but a difficult scene still feels uncertain.",
+   [
+    "Perform the full scene with a rehearsal check",
+    "Use a simpler staging",
+    "Present the scene as a narrated sequence"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    3,
+    1,
+    0
+   ]
+  ]
+ ],
+ "community": [
+  [
+   "Your reading group has mixed ages and confidence. One format will not suit everyone.",
+   [
+    "Prepare several short reading stations",
+    "Offer a guided shared story",
+    "Let readers bring their own material"
+   ],
+   [
+    11,
+    10,
+    9
+   ],
+   [
+    3,
+    2,
+    0
+   ]
+  ],
+  [
+   "Attendance falls because the current meeting time excludes some families.",
+   [
+    "Consult families and revise the schedule",
+    "Run an additional shorter session",
+    "Create take-home material"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    3,
+    2,
+    1
+   ]
+  ],
+  [
+   "The school asks what the reading group achieved.",
+   [
+    "Show attendance and reader feedback",
+    "Demonstrate a typical session",
+    "Share a selection of the group's work"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    2,
+    3,
+    0
+   ]
+  ]
+ ],
+ "team": [
+  [
+   "Your team has limited practice time and uneven experience.",
+   [
+    "Build fundamentals before complex plays",
+    "Practice a few dependable set plays",
+    "Pair newer players with experienced teammates"
+   ],
+   [
+    11,
+    10,
+    10
+   ],
+   [
+    3,
+    2,
+    1
+   ]
+  ],
+  [
+   "A regular player becomes unavailable ahead of the next fixture.",
+   [
+    "Train a replacement and revise roles",
+    "Simplify the team strategy",
+    "Ask the coach to rotate the lineup"
+   ],
+   [
+    12,
+    10,
+    9
+   ],
+   [
+    3,
+    1,
+    0
+   ]
+  ],
+  [
+   "Your season ends with mixed results. The next team needs something useful to build on.",
+   [
+    "Review training and match decisions",
+    "Document dependable plays",
+    "Hold a supported skills session"
+   ],
+   [
+    12,
+    10,
+    10
+   ],
+   [
+    2,
+    1,
+    3
+   ]
+  ]
+ ],
+ "leadership": [
+  [
+   "Your student council can fund one priority this year.",
+   [
+    "Fund accessible clubs",
+    "Fund study support",
+    "Fund team facilities"
+   ],
+   [
+    12,
+    12,
+    12
+   ],
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  [
+   "The funded service needs a workable delivery plan rather than another speech.",
+   [
+    "Coordinate a smaller guaranteed delivery",
+    "Recruit volunteers and share the workload",
+    "Phase delivery around the school calendar"
+   ],
+   [
+    12,
+    11,
+    10
+   ],
+   [
+    3,
+    2,
+    1
+   ]
+  ],
+  [
+   "Students ask what happened to your campaign promise.",
+   [
+    "Publish delivery records and what remains",
+    "Hold a question session with users",
+    "Present a concise budget and delivery report"
+   ],
+   [
+    12,
+    10,
+    11
+   ],
+   [
+    2,
+    3,
+    1
+   ]
+  ]
+ ]
+}

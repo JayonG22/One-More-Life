@@ -1,0 +1,82 @@
+[
+ {
+  "id": "client.review.0",
+  "family": "client.review",
+  "question": "Your continuing client wants the next handover to include a clearer explanation of unfinished work.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.1",
+  "family": "client.review",
+  "question": "A client contact liked the result but says the final report was hard for their team to use.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.2",
+  "family": "client.review",
+  "question": "The person who approved your earlier work has changed responsibilities. They ask you to explain the record.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.3",
+  "family": "client.review",
+  "question": "A continuing client wants a reference request backed by actual completed work.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.4",
+  "family": "client.review",
+  "question": "The client has less time for meetings this year and wants you to prioritise one unresolved concern.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.5",
+  "family": "client.review",
+  "question": "A contact asks what you learned from an earlier project before recommending you to another employer.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.6",
+  "family": "client.review",
+  "question": "A client values your reliability but asks whether your current workload allows another commitment.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ },
+ {
+  "id": "client.review.7",
+  "family": "client.review",
+  "question": "A contact says a colleague needs a trustworthy reference rather than a glowing general promise.",
+  "answers": [
+   "Review the work together · +1 time",
+   "Ask for an evidence-based reference",
+   "Keep the record but decline extra work"
+  ]
+ }
+]

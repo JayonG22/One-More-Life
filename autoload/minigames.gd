@@ -6,6 +6,20 @@ extends Node
 signal requested(id: String, params: Dictionary, cb: Callable)
 
 const DEFS := {
+ "hands_repair":{"name":"Workshop bench","icon":"🔧","script":"res://scenes/minigames/mg_hands_on.gd","how":"Inspect the toy-console relays, toggle settings and test. Keys 1–3 toggle; Enter tests. Untimed. Efficient diagnosis improves your result."},
+ "hands_music":{"name":"Play a phrase","icon":"🎹","script":"res://scenes/minigames/mg_hands_on.gd","how":"Tap the written phrase with the note buttons or keys 1–5. Clear to retry; Enter submits. Untimed and usable with sound muted."},
+ "hands_negotiation":{"name":"Make a deal","icon":"🤝","script":"res://scenes/minigames/mg_hands_on.gd","how":"Adjust offer and scope. Balance cost, client budget and required delivery. Sliders support arrow keys; Enter submits. Untimed."},
+	"workshop_repair":{"name":"Practical repair","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_budget":{"name":"Household budgeting","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_negotiation":{"name":"Contract negotiation","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_cooking":{"name":"Kitchen service","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_care":{"name":"Care coordination","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_music":{"name":"Music practice","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_logistics":{"name":"Delivery planning","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_interview":{"name":"Interview evidence","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+	"workshop_tactics":{"name":"Tactical sparring","icon":"🎯","script":"res://scenes/minigames/mg_workshop.gd","how":"Untimed. Read the constraints, choose with 1–3 or buttons, then Continue. Feedback explains each round. Practice has no stakes or rewards."},
+
+	"school_quiz": {"name":"School quiz","icon":"📚","script":"res://scenes/minigames/mg_quiz.gd","how":"Answer three questions with 1–4 or the buttons. Every answer is explained. Grades reflect the proportion correct; a quiz costs time and each subject is limited per year."},
 	"quiz": {"name": "Licence Theory Test", "icon": "📋", "script": "res://scenes/minigames/mg_quiz.gd",
 		"how": "A written test, untimed on purpose. Answer with the mouse or keys 1-4.\nEvery question must be right to pass. You are shown the correct answer either way."},
 	"audition": {"name": "Audition", "icon": "🎭", "script": "res://scenes/minigames/mg_audition.gd",
@@ -63,7 +77,7 @@ const DEFS := {
 	"g_wheel": {"name": "Lucky Wheel", "icon": "🎡", "gamble": true, "script": "res://scenes/minigames/mg_g_wheel.gd",
 		"how": "Press SPIN (Space). The flapper at the top decides your multiplier when the wheel stops."},
 	"g_highlow": {"name": "High or Low", "icon": "🂠", "gamble": true, "script": "res://scenes/minigames/mg_g_highlow.gd",
-		"how": "Guess whether the next card is higher (W) or lower (S). Each right guess multiplies the pot at fair odds; take the pot (Space) any time you like. A wrong guess loses it all."},
+		"how": "Guess whether the next card is higher (W) or lower (S). Each right guess multiplies the pot with an 8% house edge per guess; take the pot (Space) any time you like. A wrong guess loses it all."},
 	"memory": {"name": "Memory Test", "icon": "🧠", "script": "res://scenes/minigames/mg_memory.gd",
 		"how": "Nine tiles light up in a sequence. Repeat it by clicking or pressing 1–9. Every right answer adds one more. Three slips end the test.\nYour score is the longest sequence you held."},
 	"pet_pounce": {"name": "Stalk and Pounce", "icon": "🐭", "script": "res://scenes/minigames/mg_pet_pounce.gd",
@@ -79,7 +93,7 @@ const DEFS := {
 	"pr_parole": {"name": "The Parole Board", "icon": "⚖️", "script": "res://scenes/minigames/mg_pr_parole.gd",
 		"how": "Five questions. Each is listened to for one thing: that you own what you did, that you've used the time, or that you know where you'll sleep on the first night. The board's face shows which.\nAnswer with 1 (own it), 2 (evidence) or 3 (plan). Match what they're waiting for."},
 	"pr_shakedown": {"name": "Cell Search", "icon": "🔦", "script": "res://scenes/minigames/mg_pr_shakedown.gd",
-		"how": "Twelve things in a cell; three are not what they seem, and the descriptions give them away (a glued seam, a weight that's wrong).\nMark three with the mouse or keys 1–9, then press Enter to seize. Wrong items cost you."},
+		"how": "Twelve things in a cell; three are not what they seem, and the descriptions give them away (a glued seam, a weight that's wrong).\nMark three with the mouse or keys 1–9, 0, − and =, then press Enter to seize. Wrong items cost you."},
 	"pr_standoff": {"name": "Talk Him Down", "icon": "🗣️", "script": "res://scenes/minigames/mg_pr_standoff.gd",
 		"how": "He says one thing each turn, and it tells you what he needs: to be listened to (1), given a reason (2) or offered something (3). Threatening (4) almost never works.\nBring agitation down and trust up in eight turns."},
 	"surgery": {"name": "Operating Room", "icon": "🔪", "script": "res://scenes/minigames/mg_surgery.gd",
@@ -102,10 +116,14 @@ func auto_score(skill: float) -> float:
 
 
 func play(id: String, params: Dictionary, cb0: Callable) -> void:
+	params=params.duplicate(true)
+	if DEFS.has(id) and id!="blackjack" and not DEFS[id].get("gamble",false) and not Lives.separate():
+		params["skill"]=Aptitude.effective_skill(float(params.get("skill",50.0)),Aptitude.game_context(id))
+		params["difficulty"]=clampf(float(params.get("difficulty",1.0))*(1.10-Aptitude.score(Aptitude.game_context(id))*0.002),0.25,3.0)
 	var cb := cb0
 	if DEFS.has(id):
 		cb = func(s: float, d: Dictionary) -> void:
-			Goals.on_minigame(id, s, d.get("auto", false))
+			if not params.get("practice",false): Goals.on_minigame(id, s, d.get("auto", false))
 			cb0.call(s, d)
 	if Lives.has_power("speed") and params.has("difficulty"):
 		params = params.duplicate()

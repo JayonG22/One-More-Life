@@ -4,10 +4,10 @@ extends Node
 ## how they react (closeness, their craziness, their memory of you), and the
 ## lives they lead on their own every year.
 
-const UP := ["mother", "father", "stepparent", "grandparent", "auntuncle"]
-const SIDE := ["sibling", "stepsibling", "cousin"]
-const DOWN := ["child", "stepchild", "grandchild", "niece_nephew"]
-const FAMILY := ["mother", "father", "stepparent", "grandparent", "auntuncle", "sibling", "stepsibling", "cousin", "child", "stepchild", "grandchild", "niece_nephew"]
+const UP := ["mother", "father", "stepparent", "grandparent"]
+const SIDE := ["sibling", "stepsibling"]
+const DOWN := ["child", "stepchild", "grandchild"]
+const FAMILY := ["mother", "father", "stepparent", "grandparent", "sibling", "stepsibling", "child", "stepchild", "grandchild"]
 const FRIENDS := ["friend", "best_friend"]
 const WORK := ["coworker", "boss", "former_coworker"]
 const LIKES := {
@@ -39,7 +39,7 @@ func _p() -> Dictionary:
 	return GameState.player
 
 
-const PAST_RELATIONS := ["ex", "former_coworker", "former_friend", "former_tenant"]
+const PAST_RELATIONS := ["ex", "former_coworker", "former_friend", "former_tenant", "former_teacher", "former_classmate"]
 
 
 ## A relationship that has ended or faded: out of the main list, kept in "Past relationships".
@@ -126,6 +126,7 @@ func _cap(s: String) -> String:
 
 func _res(id: String, icon: String, text: String, delta: int, effects: Dictionary = {}, mem: String = "") -> void:
 	GameState.change_closeness(id, delta)
+	if delta>0: Journey.modules["coping"].contact(id)
 	if mem != "":
 		remember(id, mem, delta >= 0)
 	Actions._done(icon, GameState.npc(id).get("first", ""), text, effects)
@@ -159,6 +160,7 @@ func menu(key: String) -> Dictionary:
 	if n.get("species", "human") != "human":
 		return _pet_menu(id, n)
 	match grp:
+		"profile": return profile(id)
 		"":
 			return _root(id, n)
 		"time":
@@ -203,7 +205,14 @@ func _root(id: String, n: Dictionary) -> Dictionary:
 	var rel: String = n["relation"]
 	var age: int = p["age"]
 	var rows: Array = []
+	rows.append(_g(id,"profile","🪪","Profile","Personality, detailed stats and memories"))
+	if Journey.modules["campus"].level()!="" and Journey.modules["campus"].members().has(id):
+		rows.append({"icon":"🏫","name":"School situation","sub":"1 time · choices affect this person","act":"journey:campus:person","arg":id})
 	var far := lives_with_ex(n)
+	if age>=6:
+		rows.append({"icon":"🤝","name":"Commitments & repair","sub":"Promises, trust and practical care plans","menu":"journey:people:person:"+id})
+	if age>=18 and int(n["age"])>=18 and rel in ["partner","lover"]:
+		rows.append({"icon":"💬","name":"Boundaries & future plans","sub":"Mutual adult relationship agreements","menu":"journey:identity:partner:"+id})
 	rows.append(_r(id, "conversation", "💬", "Conversation", "Small talk"))
 	if age >= 4:
 		rows.append(_r(id, "compliment", "🌟", "Compliment", "Say something nice"))
@@ -225,7 +234,28 @@ func _root(id: String, n: Dictionary) -> Dictionary:
 		rows.append(_g(id, "conflict", "😤", "Conflict", "Argue, insult, prank, rumors, fights"))
 	for extra in earned_rows(id, n):
 		rows.append(extra)
-	return {"icon": U_face(n), "title": n["first"], "rows": rows, "person": id}
+	return {"icon": U_face(n), "title": n["first"], "info":["Age "+str(n["age"])+" · "+GameState.relation_label(id)], "bars":quick_bars(id), "rows": rows, "person": id}
+
+func quick_line(id: String) -> String:
+	var n := ensure(id)
+	return "Relationship %d · mood %d · health %d" % [int(n.get("closeness",50)),int(n.get("happiness",60)),int(n.get("health",70))]
+
+func quick_bars(id: String) -> Array:
+	var n := ensure(id)
+	return [{"name":"Relationship","value":n.get("closeness",50)},{"name":"Mood","value":n.get("happiness",60)},{"name":"Health","value":n.get("health",70)}]
+
+func profile(id: String) -> Dictionary:
+	var n := ensure(id); var info: Array=[GameState.full_name(id)+" · age "+str(n["age"]),stat_line(id),trait_line(id),status_line(id)]
+	var bars: Array=[]
+	for row in BondStats.detail_lines(id): bars.append({"name":row[1],"value":row[2]})
+	info.append("Generosity "+str(int(n.get("generosity",50)))+" · temperament "+str(int(n.get("craziness",35))))
+	info.append("Role · "+str(n.get("school_role",n.get("work_role",n.get("relation","")))).replace("_"," "))
+	if n.get("alive", false) and n.get("species", "human")=="human" and Journey.modules.has("people"):
+		for line in Journey.modules["people"].profile_lines(id): info.append(str(line))
+	for line in NpcWorld.lines_for(id): info.append(str(line))
+	for memory in memories(id): info.append(str(memory["text"])+" · age "+str(memory["age"]))
+	for memory in n.get("personal_history",[]).slice(0,8): info.append(str(memory.get("text",memory)))
+	return {"icon":U_face(n),"title":"Profile · "+str(n["first"]),"info":info,"bars":bars,"rows":[_g(id,"","←","Interactions","Return to this person's choices")]}
 
 
 ## Things you can only do because of what this relationship has become. They are
@@ -376,8 +406,6 @@ func _family_menu(id: String, n: Dictionary) -> Dictionary:
 		rows.append(_r(id, "prank", "🎭", "Prank them", "Classic"))
 		if age >= 18 and na >= 18:
 			rows.append(_r(id, "favor", "🙌", "Ask for a favor", "Help moving, a ride, a place to crash"))
-		if int(n.get("kids", 0)) > 0 and age >= 16:
-			rows.append(_r(id, "babysit", "🧸", "Babysit their kids", "Your nieces and nephews"))
 	if rel in ["child", "stepchild"]:
 		if lives_with_ex(n):
 			rows.append(_r(id, "visit", "🚪", "Visitation weekend", "You only see them sometimes"))
@@ -407,7 +435,7 @@ func _family_menu(id: String, n: Dictionary) -> Dictionary:
 				rows.append(_r(id, "babysit", "🧸", "Babysit the grandkids", "Spoil them rotten"))
 		if na >= 16:
 			rows.append(_r(id, "disown", "✂️", "Disown them", "There's no coming back from this"))
-	if rel in ["grandchild", "niece_nephew"]:
+	if rel == "grandchild":
 		if na <= 12:
 			rows.append(_r(id, "play", "🧸", "Play together", "Hide and seek"))
 			rows.append(_r(id, "story", "📖", "Tell them a story", "About when you were young"))
@@ -553,7 +581,7 @@ func _pet_menu(id: String, n: Dictionary) -> Dictionary:
 		_r(id, "pet_vet", "🩺", "Take to the vet", GameState.fmt_money(Actions._cost(200))),
 		_r(id, "pet_rehome", "🏠", "Give them away", "Find them a new home"),
 	]
-	return {"icon": U_face(n), "title": n["first"], "rows": rows, "person": id}
+	return {"icon": U_face(n), "title": n["first"], "info":[Companions.status_line(id)], "rows": rows, "person": id}
 
 
 func best_ring() -> Dictionary:
@@ -1312,6 +1340,7 @@ func _hang(id: String, n: Dictionary, what: String) -> void:
 	if cost > 0 and not Actions._can_pay(cost, str(h[2])):
 		GameState.player["time_left"] = int(GameState.player["time_left"]) + 1 + int(h[5])
 		return
+	Lifestyle.note("social")
 	var nm: String = n["first"]
 	var fx := {"money": -cost, "happiness": 4, "stress": -3}
 	var d := 10
@@ -1576,6 +1605,8 @@ func _recall() -> void:
 		var n: Dictionary = GameState.npcs[id]
 		if not n["alive"] or n.get("species", "human") != "human" or int(n.get("age", 0)) < 8:
 			continue
+		if not (str(n.get("relation", "")) in FAMILY or str(n.get("relation", "")) in FRIENDS or str(n.get("relation", "")) in ["partner", "lover"]):
+			continue
 		for m in n.get("memory", []):
 			if not m.get("told", false) and int(p["age"]) - int(m["age"]) >= 3:
 				pool.append([id, m])
@@ -1656,8 +1687,6 @@ func _npc_life(id: String, n: Dictionary) -> bool:
 		var krel := ""
 		if rel in ["child", "stepchild"]:
 			krel = "grandchild"
-		elif rel in ["sibling", "stepsibling"]:
-			krel = "niece_nephew"
 		if krel != "":
 			var kid := GameState.create_npc(krel, {"age": 0, "last": n["last"], "closeness": 55 + int(n["closeness"]) / 4})
 			GameState.npcs[kid]["parent_id"] = id
@@ -1699,7 +1728,7 @@ func _npc_life(id: String, n: Dictionary) -> bool:
 				return true
 		GameState.add_trivia("%s %s." % [who, line])
 		return true
-	if age >= 18 and rel in ["sibling", "cousin", "friend", "best_friend"] and randf() < 0.01:
+	if age >= 18 and rel in ["sibling", "friend", "best_friend"] and randf() < 0.01:
 		var c: Dictionary = ContentDB.countries[randi() % ContentDB.countries.size()]
 		if c["id"] != p["country"]:
 			n["abroad"] = c["name"]
@@ -1757,7 +1786,7 @@ func _holiday() -> void:
 	if int(p["age"]) < 6 or randf() > 0.22 or GameState.in_prison():
 		return
 	var fam: Array = []
-	for rel in ["mother", "father", "sibling", "child", "grandparent", "auntuncle", "cousin", "stepparent", "grandchild"]:
+	for rel in FAMILY:
 		fam += GameState.npcs_with(rel)
 	if fam.size() < 2:
 		return
@@ -1783,7 +1812,7 @@ func _holiday() -> void:
 
 
 func family_bonus(amount: int) -> void:
-	for rel in ["mother", "father", "sibling", "child", "grandparent", "auntuncle", "cousin", "stepparent", "grandchild", "niece_nephew"]:
+	for rel in FAMILY:
 		for id in GameState.npcs_with(rel):
 			GameState.change_closeness(id, amount)
 
@@ -1791,31 +1820,8 @@ func family_bonus(amount: int) -> void:
 # ================================================================ start of life
 
 func starting_family() -> void:
-	var p := _p()
-	var sides := ["mother", "father"]
-	if GameState.first_of("mother") == "" and GameState.first_of("father") == "":
-		# Nobody is raising you from the generation above; the wider family, if
-		# there is one, hangs off whoever is.
-		sides = ["grandparent"]
-	for side in sides:
-		var par := GameState.first_of(side)
-		if par == "":
-			continue
-		var pa: Dictionary = GameState.npcs[par]
-		for i in range(randi_range(0, 2)):
-			var aage := int(pa["age"]) + randi_range(-8, 8)
-			var alast: String = pa["last"] if side != "mother" else ContentDB.random_last(p["country"])
-			var au := GameState.create_npc("auntuncle", {"age": clampi(aage, 18, 70), "last": alast, "closeness": randi_range(35, 75)})
-			GameState.npcs[au]["side"] = side
-			if int(GameState.npcs[au]["age"]) >= 26 and randf() < 0.55:
-				GameState.npcs[au]["married"] = true
-				for k in range(randi_range(1, 2)):
-					var cage := randi_range(maxi(0, int(GameState.npcs[au]["age"]) - 40), int(GameState.npcs[au]["age"]) - 20)
-					if cage < 0:
-						continue
-					var cz := GameState.create_npc("cousin", {"age": cage, "last": alast, "closeness": randi_range(35, 70)})
-					GameState.npcs[cz]["parent_id"] = au
-				GameState.npcs[au]["kids"] = 1
+	# New lives use the immediate-family circle. Legacy family records are retained.
+	pass
 
 
 func relation_name(rel: String, g: String) -> String:

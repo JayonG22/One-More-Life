@@ -1,0 +1,110 @@
+[
+ {
+  "id": "fixture.pressing.0",
+  "family": "fixture.pressing.0",
+  "opponent": "pressing",
+  "text": "With seconds left, they crowd the front. Space opens behind their line."
+ },
+ {
+  "id": "fixture.pressing.1",
+  "family": "fixture.pressing.1",
+  "opponent": "pressing",
+  "text": "A late surge pins the team back, but the far route is clear."
+ },
+ {
+  "id": "fixture.pressing.2",
+  "family": "fixture.pressing.2",
+  "opponent": "pressing",
+  "text": "Their aggressive chase leaves an unmarked lane to the finish."
+ },
+ {
+  "id": "fixture.pressing.3",
+  "family": "fixture.pressing.3",
+  "opponent": "pressing",
+  "text": "They commit everyone to pressure; a quick switch could escape it."
+ },
+ {
+  "id": "fixture.pressing.4",
+  "family": "fixture.pressing.4",
+  "opponent": "pressing",
+  "text": "The crowd rises as the opponent closes in. There is room beyond the press."
+ },
+ {
+  "id": "fixture.pressing.5",
+  "family": "fixture.pressing.5",
+  "opponent": "pressing",
+  "text": "A rushed late attack leaves their rear coverage thin."
+ },
+ {
+  "id": "fixture.patient.0",
+  "family": "fixture.patient.0",
+  "opponent": "patient",
+  "text": "The opponent holds a compact shape and waits for a rushed decision."
+ },
+ {
+  "id": "fixture.patient.1",
+  "family": "fixture.patient.1",
+  "opponent": "patient",
+  "text": "The clock is nearly gone. They refuse to chase and protect their positions."
+ },
+ {
+  "id": "fixture.patient.2",
+  "family": "fixture.patient.2",
+  "opponent": "patient",
+  "text": "They let the team have the ball, hoping impatience opens a mistake."
+ },
+ {
+  "id": "fixture.patient.3",
+  "family": "fixture.patient.3",
+  "opponent": "patient",
+  "text": "A quiet final stretch hides a trap: they wait for an unsupported push."
+ },
+ {
+  "id": "fixture.patient.4",
+  "family": "fixture.patient.4",
+  "opponent": "patient",
+  "text": "Their defence stays still. Drawing them out could open a route."
+ },
+ {
+  "id": "fixture.patient.5",
+  "family": "fixture.patient.5",
+  "opponent": "patient",
+  "text": "They protect the lead without pressing; patience must be answered with a plan."
+ },
+ {
+  "id": "fixture.wide.0",
+  "family": "fixture.wide.0",
+  "opponent": "wide",
+  "text": "A late formation change spreads them wide and opens the middle."
+ },
+ {
+  "id": "fixture.wide.1",
+  "family": "fixture.wide.1",
+  "opponent": "wide",
+  "text": "Their wings stretch the field; the central route is briefly unguarded."
+ },
+ {
+  "id": "fixture.wide.2",
+  "family": "fixture.wide.2",
+  "opponent": "wide",
+  "text": "They chase the outside lanes while the centre has fewer defenders."
+ },
+ {
+  "id": "fixture.wide.3",
+  "family": "fixture.wide.3",
+  "opponent": "wide",
+  "text": "Seconds remain and both sides drift wide, leaving a narrow middle gap."
+ },
+ {
+  "id": "fixture.wide.4",
+  "family": "fixture.wide.4",
+  "opponent": "wide",
+  "text": "A wide overlap draws their coverage away from the centre."
+ },
+ {
+  "id": "fixture.wide.5",
+  "family": "fixture.wide.5",
+  "opponent": "wide",
+  "text": "The last play pulls them apart; controlling the pace through the middle could help."
+ }
+]

@@ -1946,12 +1946,12 @@
   "id": "sch.graduation",
   "icon": "🎓",
   "title": "Graduation day",
-  "text": "The gown is too long, the hat is too small, and your name is next. Somewhere in the crowd, someone is holding a camera.",
+  "text": "The gown is too long, the hat is too small, and your name is next. {teacher.first} saved you a seat beside {classmate.first}.",
   "conditions": {
-   "in_school": true,
+   "hs_graduated": true,
    "age": [
     18,
-    35
+    18
    ]
   },
   "choices": [
@@ -1959,13 +1959,14 @@
     "label": "Cross the stage with a big grin",
     "outcomes": [
      {
-      "text": "They cheered. I cried a bit, in the good way.",
+      "text": "{teacher.first} cheered, and {classmate.first} got the photo. I cried a bit, in the good way.",
       "weight": 1,
       "effects": {
        "happiness": 8
       },
+      "relationship": {"teacher": 4, "classmate": 4},
       "schedule": {
-       "event": "echo.school_days",
+       "event": "v091.school.graduation_echo",
        "years": [
         3,
         10
@@ -1973,14 +1974,15 @@
       }
      },
      {
-      "text": "I tripped on my gown. The video of that went around the family.",
+      "text": "I tripped on my gown. {classmate.first} caught it on camera, and {teacher.first} pretended not to laugh.",
       "weight": 1,
       "effects": {
        "happiness": 4,
        "stress": 2
       },
+      "relationship": {"teacher": 2, "classmate": 5},
       "schedule": {
-       "event": "echo.school_days",
+       "event": "v091.school.graduation_echo",
        "years": [
         3,
         10
@@ -1993,13 +1995,14 @@
     "label": "Make a joke",
     "outcomes": [
      {
-      "text": "The dean laughed. The crowd laughed. It was my finest moment.",
+      "text": "The dean laughed, then {teacher.first} joined in. {classmate.first} still quotes the joke.",
       "weight": 1,
       "effects": {
        "happiness": 7
       },
+      "relationship": {"teacher": 4, "classmate": 3},
       "schedule": {
-       "event": "echo.school_days",
+       "event": "v091.school.graduation_echo",
        "years": [
         3,
         10
@@ -2007,14 +2010,15 @@
       }
      },
      {
-      "text": "Nobody laughed. A pure silence. I would live.",
+      "text": "Nobody laughed. {classmate.first} gave me a kind look, and {teacher.first} moved things along.",
       "weight": 1,
       "effects": {
        "happiness": 1,
        "stress": 3
       },
+      "relationship": {"teacher": 2, "classmate": 2},
       "schedule": {
-       "event": "echo.school_days",
+       "event": "v091.school.graduation_echo",
        "years": [
         3,
         10
@@ -2027,14 +2031,15 @@
     "label": "Skip it and have the certificate posted",
     "outcomes": [
      {
-      "text": "Quiet and cheap. I never regretted it.",
+      "text": "I skipped the ceremony and had the certificate posted. {teacher.first} sent a note; {classmate.first} shared a photo, and my family tucked in a $100 graduation gift.",
       "weight": 1,
       "effects": {
        "money": 100,
        "happiness": 1
       },
+      "relationship": {"teacher": 2, "classmate": 2},
       "schedule": {
-       "event": "echo.school_days",
+       "event": "v091.school.graduation_echo",
        "years": [
         3,
         10
@@ -2042,13 +2047,14 @@
       }
      },
      {
-      "text": "I regretted it every time I saw other people's photos.",
+      "text": "I regretted missing it when {classmate.first} shared the photo and {teacher.first} wrote to congratulate me.",
       "weight": 1,
       "effects": {
        "happiness": -3
       },
+      "relationship": {"teacher": 2, "classmate": 1},
       "schedule": {
-       "event": "echo.school_days",
+       "event": "v091.school.graduation_echo",
        "years": [
         3,
         10
@@ -2058,6 +2064,13 @@
     ]
    }
   ],
+  "roles": {
+   "teacher": {"relation": "former_teacher", "relation_any": ["teacher", "former_teacher"], "age": [30, 65], "or_new": true},
+   "classmate": {"relation": "classmate", "relation_any": ["classmate", "friend"], "min_age": 17, "max_age": 20, "age": "same", "or_new": true}
+  },
+  "remember_relationship": true,
+  "once": true,
+  "followup_only": true,
   "weight": 1.0,
   "cooldown": 12
  },
@@ -3704,7 +3717,8 @@
     "new": "friend",
     "age": "same"
    }
-  }
+  },
+  "available_from": 1903
  },
  {
   "id": "date.couples_therapy",
@@ -4028,7 +4042,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "date.midlife_crush",
@@ -4505,7 +4520,11 @@
   "text": "Your partner hands you a small box that is obviously from a jeweller you can't afford. 'It's nothing,' they say. It is very much something.",
   "conditions": {
    "has_partner": true,
-   "min_money": 0
+   "min_money": 0,
+   "age": [
+    16,
+    110
+   ]
   },
   "choices": [
    {
@@ -4737,7 +4756,11 @@
   "title": "Secret Santa",
   "text": "The office draw gave you the person you know least, with a twenty-dollar limit and no hints.",
   "conditions": {
-   "employed": true
+   "employed": true,
+   "age": [
+    14,
+    110
+   ]
   },
   "choices": [
    {
@@ -5326,7 +5349,8 @@
    "m": {
     "relation": "father"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "gift.friendship_gift",

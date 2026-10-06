@@ -1,0 +1,938 @@
+[
+ {
+  "id": "enterprise.service.0",
+  "family": "enterprise.service",
+  "kind": "service",
+  "name": "An accessible repair booking",
+  "text": "A customer needs the repair timed around a support visit. The replacement part arrives later than the agreed date. The work is usable but one optional adjustment remains.",
+  "stages": [
+   {
+    "question": "A customer needs the repair timed around a support visit.",
+    "answers": [
+     "Agree the essential repair and access needs",
+     "Offer a smaller repair within the original slot",
+     "Arrange a partner visit with shared responsibility"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The replacement part arrives later than the agreed date.",
+    "answers": [
+     "Reschedule openly and verify the part",
+     "Fit the confirmed alternative with consent",
+     "Use the approved temporary fix"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The work is usable but one optional adjustment remains.",
+    "answers": [
+     "Record the remaining adjustment and follow-up",
+     "Arrange a separate handover review",
+     "Hide the unfinished adjustment"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.service.1",
+  "family": "enterprise.service",
+  "kind": "service",
+  "name": "A community market order",
+  "text": "A market organiser wants a large order but only a modest budget. Supplier capacity falls before delivery. The organiser disputes one charge on the final invoice.",
+  "stages": [
+   {
+    "question": "A market organiser wants a large order but only a modest budget.",
+    "answers": [
+     "Agree a realistic quantity and itemised quote",
+     "Offer fewer items at the original quality",
+     "Share the order with another supplier"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Supplier capacity falls before delivery.",
+    "answers": [
+     "Prioritise the agreed essential items",
+     "Negotiate a smaller documented delivery",
+     "Coordinate a supplier handover"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The organiser disputes one charge on the final invoice.",
+    "answers": [
+     "Explain the quote and offer a documented correction",
+     "Renegotiate the disputed part",
+     "Erase the disputed charge from the record"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.service.2",
+  "family": "enterprise.service",
+  "kind": "service",
+  "name": "A repeat-customer handover",
+  "text": "A long-standing customer wants a new person to handle the service. The successor has questions about earlier decisions. Both contacts want a clear record of who accepted delivery.",
+  "stages": [
+   {
+    "question": "A long-standing customer wants a new person to handle the service.",
+    "answers": [
+     "Agree the authority and handover record",
+     "Limit the service to the original scope",
+     "Arrange a joint planning meeting"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The successor has questions about earlier decisions.",
+    "answers": [
+     "Review the previous records with the successor",
+     "Document the limits of the available history",
+     "Request an independent check"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Both contacts want a clear record of who accepted delivery.",
+    "answers": [
+     "Record both contacts and the agreed outcome",
+     "Provide a limited handover with open questions",
+     "Claim approval that was never given"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.creative.0",
+  "family": "enterprise.creative",
+  "kind": "creative",
+  "name": "An illustrated anthology",
+  "text": "Contributors disagree about the scope and credits. One illustration misses the agreed print deadline. The launch audience asks about a missing contributor credit.",
+  "stages": [
+   {
+    "question": "Contributors disagree about the scope and credits.",
+    "answers": [
+     "Agree each contribution and its credit",
+     "Reduce the anthology to confirmed work",
+     "Share editing duties with a collaborator"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "One illustration misses the agreed print deadline.",
+    "answers": [
+     "Delay print for the agreed illustration",
+     "Release a smaller edition with consent",
+     "Arrange a revised contributor schedule"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The launch audience asks about a missing contributor credit.",
+    "answers": [
+     "Correct the credit and keep the revision record",
+     "Explain the omission and publish an update",
+     "Claim the uncredited work as my own"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.creative.1",
+  "family": "enterprise.creative",
+  "kind": "creative",
+  "name": "A small venue performance",
+  "text": "The venue needs a shorter show than the group rehearsed. A collaborator loses rehearsal time. The sponsor asks for a recording beyond the agreed rights.",
+  "stages": [
+   {
+    "question": "The venue needs a shorter show than the group rehearsed.",
+    "answers": [
+     "Agree a shorter programme and rights",
+     "Use a smaller cast with permission",
+     "Share the programme with another act"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "A collaborator loses rehearsal time.",
+    "answers": [
+     "Adapt the rehearsal plan with the group",
+     "Perform the prepared sections only",
+     "Arrange another supervised rehearsal"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The sponsor asks for a recording beyond the agreed rights.",
+    "answers": [
+     "Record only what was agreed",
+     "Negotiate a later rights agreement",
+     "Publish without contributor permission"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.creative.2",
+  "family": "enterprise.creative",
+  "kind": "creative",
+  "name": "An independent audio release",
+  "text": "A collaborator wants clear payment and ownership terms. Feedback says the mix obscures a key contribution. The audience expects an honest release note.",
+  "stages": [
+   {
+    "question": "A collaborator wants clear payment and ownership terms.",
+    "answers": [
+     "Record ownership, scope and payments",
+     "Make a smaller release with agreed credits",
+     "Share the production work"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Feedback says the mix obscures a key contribution.",
+    "answers": [
+     "Revise the mix with the collaborator",
+     "Release the verified tracks first",
+     "Ask another engineer for a review"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The audience expects an honest release note.",
+    "answers": [
+     "Describe the changes and credit contributors",
+     "Delay the release note for a joint review",
+     "Erase the contribution from the credits"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.community.0",
+  "family": "enterprise.community",
+  "kind": "community",
+  "name": "A library evening rota",
+  "text": "Parents and night-shift workers need different opening hours. Several volunteers cannot cover the proposed evenings. The first month exposed an access gap.",
+  "stages": [
+   {
+    "question": "Parents and night-shift workers need different opening hours.",
+    "answers": [
+     "Ask users and agree a funded rota",
+     "Trial fewer confirmed evenings",
+     "Share the rota with another local group"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Several volunteers cannot cover the proposed evenings.",
+    "answers": [
+     "Confirm replacements and revise opening times",
+     "Keep only the covered evenings",
+     "Train a smaller volunteer team"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The first month exposed an access gap.",
+    "answers": [
+     "Publish the access gap and revised plan",
+     "Hold a follow-up meeting before expansion",
+     "Declare access solved without checking"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.community.1",
+  "family": "enterprise.community",
+  "kind": "community",
+  "name": "A neighbourhood repair café",
+  "text": "Residents bring more objects than volunteers can assess. The team cannot source every replacement part. Several visitors mistake an inspection for a completed repair.",
+  "stages": [
+   {
+    "question": "Residents bring more objects than volunteers can assess.",
+    "answers": [
+     "Define the inspection and repair limits",
+     "Offer fewer booked assessments",
+     "Share sessions with a qualified group"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The team cannot source every replacement part.",
+    "answers": [
+     "Prioritise safe agreed repairs",
+     "Return the object with a clear report",
+     "Arrange a qualified referral"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Several visitors mistake an inspection for a completed repair.",
+    "answers": [
+     "Explain each actual repair and unresolved fault",
+     "Arrange a separate inspection handover",
+     "Mark every object repaired"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.community.2",
+  "family": "enterprise.community",
+  "kind": "community",
+  "name": "A care-network directory",
+  "text": "Residents want support without exposing private information. Some advertised services cannot accept referrals. The directory needs an accurate update after launch.",
+  "stages": [
+   {
+    "question": "Residents want support without exposing private information.",
+    "answers": [
+     "Agree consent and verify the listed services",
+     "Publish a smaller verified directory",
+     "Share verification with the care team"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Some advertised services cannot accept referrals.",
+    "answers": [
+     "Check availability before making referrals",
+     "List only the confirmed services",
+     "Arrange a joint service review"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The directory needs an accurate update after launch.",
+    "answers": [
+     "Publish the verified changes and limitations",
+     "Delay expansion pending review",
+     "Keep unavailable services listed as active"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.royal.0",
+  "family": "enterprise.royal",
+  "kind": "royal",
+  "name": "An accessible palace visit",
+  "text": "Residents want access beyond the ceremonial front entrance. The event team proposes a cheaper inaccessible route. The public asks whether the promised access was delivered.",
+  "stages": [
+   {
+    "question": "Residents want access beyond the ceremonial front entrance.",
+    "answers": [
+     "Agree resident priorities and a funded route",
+     "Offer a smaller accessible visit",
+     "Share access planning with local organisers"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The event team proposes a cheaper inaccessible route.",
+    "answers": [
+     "Verify the accessible route before opening",
+     "Reduce the guest list within safe capacity",
+     "Arrange a qualified access review"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The public asks whether the promised access was delivered.",
+    "answers": [
+     "Publish the access results and unfinished work",
+     "Hold a follow-up resident review",
+     "Claim every visitor could attend"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.royal.1",
+  "family": "enterprise.royal",
+  "kind": "royal",
+  "name": "A household grant review",
+  "text": "Local groups disagree over the purpose of a public grant. One funded activity misses its stated deadline. Residents ask for the grant accounts.",
+  "stages": [
+   {
+    "question": "Local groups disagree over the purpose of a public grant.",
+    "answers": [
+     "Publish criteria and hear the proposals",
+     "Fund a smaller verified pilot",
+     "Share review with an independent panel"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "One funded activity misses its stated deadline.",
+    "answers": [
+     "Review the missed deadline with evidence",
+     "Reduce the grant to delivered work",
+     "Arrange a revised funded schedule"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Residents ask for the grant accounts.",
+    "answers": [
+     "Publish spending and actual results",
+     "Request an independent account review",
+     "Omit the unfinished funded activity"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enterprise.royal.2",
+  "family": "enterprise.royal",
+  "kind": "royal",
+  "name": "A public flood-support visit",
+  "text": "Residents ask for practical support while the household wants ceremony. Volunteer capacity is lower than the visit schedule assumes. The public asks what changed after the visit.",
+  "stages": [
+   {
+    "question": "Residents ask for practical support while the household wants ceremony.",
+    "answers": [
+     "Agree practical tasks with local organisers",
+     "Offer a shorter useful visit",
+     "Coordinate support through an existing group"
+    ],
+    "gains": [
+     14,
+     9,
+     7
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "Volunteer capacity is lower than the visit schedule assumes.",
+    "answers": [
+     "Revise the schedule around confirmed volunteers",
+     "Keep only the practical confirmed tasks",
+     "Share duties with a trained local team"
+    ],
+    "gains": [
+     18,
+     12,
+     10
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "question": "The public asks what changed after the visit.",
+    "answers": [
+     "Report the support delivered and open needs",
+     "Arrange a later resident review",
+     "Claim the visit solved the recovery needs"
+    ],
+    "gains": [
+     12,
+     8,
+     -12
+    ],
+    "stress": [
+     3,
+     -1,
+     1
+    ],
+    "honest": [
+     true,
+     true,
+     false
+    ]
+   }
+  ]
+ }
+]

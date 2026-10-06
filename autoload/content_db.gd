@@ -1,6 +1,7 @@
 extends Node
 
 const EVENT_FILES := [
+	"depth_lives.json",
 	"childhood.json",
 	"school.json",
 	"teen.json",
@@ -19,6 +20,11 @@ const EVENT_FILES := [
 	"life_a.json",
 	"life_b.json",
 	"followups.json",
+	"contextual.json",
+	"settings.json",
+	"contextual_echoes.json",
+	"mature.json",
+	"family_chronicle.json",
 	"everyday.json",
 	"careers.json",
 	"fame.json",
@@ -34,11 +40,14 @@ const EVENT_FILES := [
 	"v07.json",
 	"v08.json",
 	"real.json",
+	"v09.json",
 	"workbody.json",
 	"arcs.json",
 	"echoes.json",
 	"pets.json",
 	"prison_life.json",
+	"v090_stories.json",
+	"v091_school_career.json",
 ]
 
 var names: Dictionary = {}

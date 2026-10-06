@@ -325,7 +325,8 @@
     "relation": "sibling",
     "min_age": 18
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "family.sibling_repays",
@@ -912,7 +913,8 @@
     "relation": "partner"
    }
   },
-  "cooldown": 3
+  "cooldown": 3,
+  "available_from": 1890
  },
  {
   "id": "family.pet_old",
@@ -1053,8 +1055,7 @@
     "father",
     "grandparent",
     "best_friend",
-    "sibling",
-    "auntuncle"
+    "sibling"
    ]
   },
   "choices": [
@@ -1318,7 +1319,8 @@
     "age": "same"
    }
   },
-  "discard_unkept": true
+  "discard_unkept": true,
+  "available_from": 1995
  },
  {
   "id": "agency.rumor",
@@ -1452,8 +1454,7 @@
     "partner",
     "child",
     "ex",
-    "coworker",
-    "auntuncle"
+    "coworker"
    ]
   },
   "choices": [
@@ -1789,6 +1790,7 @@
  },
  {
   "id": "agency.partner_cheat",
+  "tags": ["adult", "intimacy"],
   "icon": "💔",
   "title": "Suspicious texts",
   "text": "You notice {them.first} has been texting someone late at night.",
@@ -1798,6 +1800,7 @@
     90
    ],
    "agency": "bad",
+   "relationship_agreement": "exclusive",
    "them_relations": [
     "partner"
    ]
@@ -1875,6 +1878,54 @@
        "stress": 10,
        "karma": -1
       }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "agency.partner_open_boundary",
+  "tags": ["adult", "intimacy"],
+  "icon": "💬",
+  "title": "What did we agree to share?",
+  "text": "You and {them.first} chose an open relationship, but neither of you defined how much to share about new plans. A recent silence has left room for guesses.",
+  "conditions": {
+   "age": [18, 90],
+   "agency": "bad",
+   "relationship_agreement": "open",
+   "them_relations": ["partner"]
+  },
+  "choices": [
+   {
+    "label": "Clarify the boundary together",
+    "outcomes": [
+     {
+      "text": "We agreed on what to share and when. The agreement became clearer, not stricter.",
+      "effects": {"stress": -2},
+      "bond_role": "them",
+      "bond": {"trust": 4, "respect": 2}
+     }
+    ]
+   },
+   {
+    "label": "Ask for time before deciding",
+    "outcomes": [
+     {
+      "text": "We paused the conversation and chose a time to revisit it.",
+      "effects": {"stress": -1},
+      "bond_role": "them",
+      "bond": {"respect": 2}
+     }
+    ]
+   },
+   {
+    "label": "Assume the worst",
+    "outcomes": [
+     {
+      "text": "The accusation came before the conversation. The boundary is still unclear.",
+      "effects": {"stress": 5, "happiness": -3},
+      "bond_role": "them",
+      "bond": {"trust": -5, "respect": -3, "resentment": 5}
      }
     ]
    }

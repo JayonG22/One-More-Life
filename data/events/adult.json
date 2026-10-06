@@ -484,7 +484,8 @@
      }
     ]
    }
-  ]
+  ],
+  "available_from": 1890
  },
  {
   "id": "adult.jury_duty",
@@ -580,7 +581,8 @@
     ]
    }
   ],
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 1890
  },
  {
   "id": "adult.email_scam",
@@ -686,7 +688,8 @@
      "trait": "Funny"
     }
    }
-  ]
+  ],
+  "available_from": 1995
  },
  {
   "id": "adult.food_truck_pitch",
@@ -1120,7 +1123,8 @@
     ]
    }
   ],
-  "once": true
+  "once": true,
+  "available_from": 1890
  },
  {
   "id": "adult.stray_dog",
@@ -1468,7 +1472,8 @@
      }
     ]
    }
-  ]
+  ],
+  "available_from": 1890
  },
  {
   "id": "adult.minor_injury",
@@ -1648,7 +1653,8 @@
     }
    }
   ],
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 2004
  },
  {
   "id": "adult.mentor_reference",

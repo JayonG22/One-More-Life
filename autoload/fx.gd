@@ -10,6 +10,8 @@ const MUSIC_RATE := 22050
 const UI_SOUNDS := ["tap", "choice", "back", "page", "error", "whoosh"]
 
 const THEME_FLAVOR := {
+	"ink": {"pitch":0.96,"wave":"tri","bright":0.9},
+	"tv": {"pitch":1.04,"wave":"tri","bright":1.0},
 	"light": {"pitch": 1.0, "wave": "sine", "bright": 1.0},
 	"dark": {"pitch": 1.0, "wave": "sine", "bright": 0.95},
 	"celebrity": {"pitch": 1.12, "wave": "sine", "bright": 1.3},
@@ -26,6 +28,20 @@ const THEME_FLAVOR := {
 
 ## Music: [root Hz, chords as semitone offsets, pad wave, arp wave, tempo (s per arp note), mood gain]
 const MUSIC := {
+	"stormpost": [196.0, [[0,4,9],[2,5,9],[-5,-1,2],[0,4,9]], "sine", "tri", 0.7, 0.45],
+	"moon_shift": [164.8, [[0,3,7],[5,8,12],[-2,2,5],[0,3,7]], "tri", "sine", 0.65, 0.4],
+	"lantern_league": [220.0, [[0,4,7],[2,5,9],[5,9,12],[-3,0,4]], "sine", "tri", 0.55, 0.45],
+	"last_receipt": [130.8, [[0,3,7],[-2,1,5],[-5,-2,2],[0,3,7]], "sine", "sine", 1.0, 0.4],
+	"missing_tuesday": [174.6, [[0,4,9],[-3,0,4],[2,5,9],[0,4,9]], "sine", "sine", 0.9, 0.4],
+	"detour_season": [146.8, [[0,4,7],[5,9,12],[-5,-1,2],[0,4,7]], "sine", "tri", 0.95, 0.4],
+	"small_hours": [146.8, [[0,4,7],[-5,-1,2],[2,5,9],[-3,0,4]], "sine", "sine", 0.9, 0.5],
+	"borrowed_house": [130.8, [[0,3,7],[-3,0,4],[-5,-2,2],[0,3,7]], "sine", "tri", 0.8, 0.45],
+	"harbour_echoes": [164.8, [[0,3,7],[-5,-2,2],[2,5,9],[0,3,7]], "sine", "sine", 1.0, 0.55],
+	"last_greenhouse": [196.0, [[0,4,9],[5,9,12],[-3,0,4],[0,4,9]], "sine", "tri", 0.75, 0.55],
+	"borrowed_crown": [220.0, [[0,4,7],[2,5,9],[-5,-1,2],[0,4,7]], "tri", "sine", 0.75, 0.55],
+	"second_first_day": [174.6, [[0,4,7],[-3,0,4],[5,9,12],[2,5,9]], "sine", "sine", 1.0, 0.55],
+	"ink": [196.0, [[0,4,7],[-3,0,4],[5,9,12],[2,5,9],[0,4,7],[7,11,14],[-3,0,4],[5,9,12]], "sine", "tri", 0.75, 0.8],
+	"tv": [220.0, [[0,4,7],[5,9,12],[-3,0,4],[7,11,14],[0,4,7],[2,5,9],[5,9,12],[7,11,14]], "tri", "sine", 0.5, 0.85],
 	"light": [261.6, [[0, 4, 7], [-3, 0, 4], [-7, -3, 0], [-5, -1, 2]], "sine", "sine", 0.5, 1.0],
 	"dark": [220.0, [[0, 3, 7], [-4, 0, 3], [-9, -5, -2], [-2, 2, 5]], "sine", "tri", 0.5, 0.9],
 	"celebrity": [293.7, [[0, 4, 7], [7, 11, 14], [-3, 0, 4], [5, 9, 12]], "tri", "sine", 0.25, 1.0],
@@ -115,6 +131,7 @@ func apply_volumes() -> void:
 		if idx == -1:
 			continue
 		var v := _vol(pair[1], pair[2])
+		if bool(GameState.settings.get("quiet_audio",false)) and pair[0]!="Master": v=minf(v,0.35)
 		AudioServer.set_bus_mute(idx, v <= 0.001)
 		AudioServer.set_bus_volume_db(idx, linear_to_db(maxf(v, 0.0001)))
 
@@ -469,12 +486,16 @@ var mode_key := ""
 
 func set_mode(k: String) -> void:
 	if k == mode_key:
+		if _key()!=_music_theme: _on_theme()
 		return
 	mode_key = k
 	_on_theme()
 
 
 func _key() -> String:
+	if mode_key=="tv":
+		var character := str(GameState.player.get("life",{}).get("character",""))
+		if MUSIC.has(character): return character
 	return mode_key if mode_key != "" else ThemeManager.current
 
 
@@ -485,14 +506,15 @@ func _on_theme() -> void:
 	var th: String = _key()
 	if th == _music_theme:
 		return
-	_music_theme = th
 	if _music_cache.has(th):
+		_music_theme = th
 		_start_music(_music_cache[th])
 		return
 	if _thread != null and _thread.is_alive():
 		return
 	if _thread != null:
 		_thread.wait_to_finish()
+	_music_theme = th
 	if OS.has_feature("web") and not OS.has_feature("threads"):
 		# no threads in the browser build: compose in a single call, once per theme
 		call_deferred("_compose_inline", th)
@@ -521,7 +543,7 @@ func _music_ready(th: String, st: AudioStreamWAV) -> void:
 	_music_cache[th] = st
 	if _key() == th:
 		_start_music(st)
-	elif _key() != _music_theme:
+	else:
 		_music_theme = ""
 		_on_theme()
 

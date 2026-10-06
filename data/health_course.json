@@ -1,0 +1,1522 @@
+[
+  {
+    "id": "wellbeing.viral.0",
+    "family": "wellbeing.viral",
+    "condition": "viral",
+    "title": "The unfinished weekend",
+    "text": "An infection interrupts plans you were looking forward to.",
+    "choices": [
+      {
+        "label": "Move the plans and rest",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "The plans moved to a later weekend, leaving room to recover."
+      },
+      {
+        "label": "Ask a friend to handle the essentials · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Essentials were handled while I rested; the bill was recorded."
+      },
+      {
+        "label": "Keep every commitment",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Keeping the weekend packed left less room for recovery."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.viral.1",
+    "family": "wellbeing.viral",
+    "condition": "viral",
+    "title": "The return to routine",
+    "text": "You feel better, but a crowded week is waiting.",
+    "choices": [
+      {
+        "label": "Return with a smaller schedule",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A smaller week made the return to ordinary life manageable."
+      },
+      {
+        "label": "Arrange practical help · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with the backlog made space for a slower return."
+      },
+      {
+        "label": "Catch up all at once",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full schedule brought strain back before the week ended."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.migraine.0",
+    "family": "wellbeing.migraine",
+    "condition": "migraine",
+    "title": "The bright meeting room",
+    "text": "A planned meeting is in a room that makes participation difficult.",
+    "choices": [
+      {
+        "label": "Ask for a quieter setting",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Changing the room let me take part without enduring the lighting."
+      },
+      {
+        "label": "Arrange remote participation · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "The meeting setup was adjusted and the support cost recorded."
+      },
+      {
+        "label": "Push through without a break",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "I stayed in the bright room and struggled through the meeting."
+      }
+    ],
+    "min_age": 16,
+    "work_only": true
+  },
+  {
+    "id": "wellbeing.migraine.1",
+    "family": "wellbeing.migraine",
+    "condition": "migraine",
+    "title": "The cancelled evening",
+    "text": "Symptoms interrupt an evening with someone close.",
+    "choices": [
+      {
+        "label": "Explain and choose another day",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "We changed our evening plans and stayed in touch."
+      },
+      {
+        "label": "Ask them to help with the journey home · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help kept the evening from becoming another obligation."
+      },
+      {
+        "label": "Hide the problem and stay",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "I concealed the symptoms and the evening became exhausting."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.asthma.0",
+    "family": "wellbeing.asthma",
+    "condition": "asthma",
+    "title": "The dusty renovation",
+    "text": "Work nearby is making ordinary tasks harder.",
+    "choices": [
+      {
+        "label": "Adjust the route and raise the concern",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Using a quieter route kept the nearby work from dominating the day."
+      },
+      {
+        "label": "Pay for practical help this week · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with daily tasks reduced the renovation disruption."
+      },
+      {
+        "label": "Keep the same demanding routine",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Pushing through the dusty disruption left the routine harder to keep."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.asthma.1",
+    "family": "wellbeing.asthma",
+    "condition": "asthma",
+    "title": "The group outing",
+    "text": "Friends suggest an outing with little room for pauses.",
+    "choices": [
+      {
+        "label": "Plan breaks with the group",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A shorter outing with pauses let me stay involved."
+      },
+      {
+        "label": "Arrange an accessible alternative · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Someone handled the demanding parts of the outing for a recorded cost."
+      },
+      {
+        "label": "Pretend the pace is fine",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "I matched the group pace and returned with extra strain."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.anemia.0",
+    "family": "wellbeing.anemia",
+    "condition": "anemia",
+    "title": "A slower afternoon",
+    "text": "Fatigue appears before the day's tasks are done.",
+    "choices": [
+      {
+        "label": "Prioritise essential tasks",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Moving the least urgent task protected a workable afternoon."
+      },
+      {
+        "label": "Arrange help with the remainder · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with the unfinished tasks made the afternoon less demanding."
+      },
+      {
+        "label": "Stay up to finish everything",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "I finished everything at once and had little energy left."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.anemia.1",
+    "family": "wellbeing.anemia",
+    "condition": "anemia",
+    "title": "The missing energy",
+    "text": "You are tired of explaining why a normal week feels long.",
+    "choices": [
+      {
+        "label": "Discuss a workable schedule",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "An honest explanation made room for a slower week."
+      },
+      {
+        "label": "Ask someone to share the load · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support reduced the burden of another tiring week."
+      },
+      {
+        "label": "Treat it as a personal failure",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Hiding the fatigue meant agreeing to more than I could manage."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.thyroid.0",
+    "family": "wellbeing.thyroid",
+    "condition": "thyroid",
+    "title": "The unpredictable week",
+    "text": "Your energy varies, and colleagues expect the same pace each day.",
+    "choices": [
+      {
+        "label": "Plan a flexible timetable",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A variable schedule matched the energy I actually had."
+      },
+      {
+        "label": "Arrange cover for a difficult day · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support made the changing workload easier to handle."
+      },
+      {
+        "label": "Promise constant availability",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "A rigid pace turned an unpredictable week into sustained pressure."
+      }
+    ],
+    "min_age": 16,
+    "work_only": true
+  },
+  {
+    "id": "wellbeing.thyroid.1",
+    "family": "wellbeing.thyroid",
+    "condition": "thyroid",
+    "title": "The unanswered message",
+    "text": "Symptoms are changing and the old review notes feel incomplete.",
+    "choices": [
+      {
+        "label": "Prepare questions for a review",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "I wrote down the changes instead of relying on old review notes."
+      },
+      {
+        "label": "Arrange help getting to the appointment · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with the review paperwork made the changes easier to explain."
+      },
+      {
+        "label": "Ignore it until everything is urgent",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Leaving the message unanswered kept the outdated plan in place."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.gastritis.0",
+    "family": "wellbeing.gastritis",
+    "condition": "gastritis",
+    "title": "The lunch invitation",
+    "text": "A social lunch clashes with the routine you have been managing.",
+    "choices": [
+      {
+        "label": "Suggest a workable plan",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A changed lunch plan kept the invitation compatible with my routine."
+      },
+      {
+        "label": "Ask the host to help with arrangements · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Arranging help made the lunch less disruptive; the cost stayed on record."
+      },
+      {
+        "label": "Abandon the routine for appearances",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Going along with every plan made my usual routine harder to maintain."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.gastritis.1",
+    "family": "wellbeing.gastritis",
+    "condition": "gastritis",
+    "title": "The busy shift",
+    "text": "A busy shift leaves little space for ordinary breaks.",
+    "choices": [
+      {
+        "label": "Agree breaks before the shift",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "An agreed break made the shift fit around existing care."
+      },
+      {
+        "label": "Arrange temporary cover · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Cover for part of the shift gave me a real pause."
+      },
+      {
+        "label": "Skip every break",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Skipping every break left the shift more draining than it needed to be."
+      }
+    ],
+    "min_age": 16,
+    "work_only": true
+  },
+  {
+    "id": "wellbeing.mono.0",
+    "family": "wellbeing.mono",
+    "condition": "mono",
+    "title": "The long recovery",
+    "text": "Friends assume one better day means you are fully back.",
+    "choices": [
+      {
+        "label": "Explain the gradual return",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "I explained that one good day was only part of recovery."
+      },
+      {
+        "label": "Arrange help with errands · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with ordinary responsibilities gave recovery more room."
+      },
+      {
+        "label": "Resume every demanding activity",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Calling myself fully recovered added commitments I could not sustain."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.mono.1",
+    "family": "wellbeing.mono",
+    "condition": "mono",
+    "title": "The postponed goal",
+    "text": "A personal project is waiting while your energy recovers.",
+    "choices": [
+      {
+        "label": "Set a smaller milestone",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A smaller project milestone kept the goal alive without rushing recovery."
+      },
+      {
+        "label": "Find practical support · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help kept the postponed project from consuming my remaining energy."
+      },
+      {
+        "label": "Rush the whole project",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Trying to recover and catch up the whole project increased the strain."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.hypertension.0",
+    "family": "wellbeing.hypertension",
+    "condition": "hypertension",
+    "title": "The overloaded calendar",
+    "text": "A full calendar is making your agreed routine difficult to keep.",
+    "choices": [
+      {
+        "label": "Remove one avoidable commitment",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Removing one commitment made the care routine fit the calendar."
+      },
+      {
+        "label": "Arrange help with responsibilities · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with the crowded schedule protected time already set aside for care."
+      },
+      {
+        "label": "Add more work to distract yourself",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Keeping the overloaded calendar crowded out a manageable routine."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.hypertension.1",
+    "family": "wellbeing.hypertension",
+    "condition": "hypertension",
+    "title": "The review notes",
+    "text": "A follow-up asks how the plan fits your actual week.",
+    "choices": [
+      {
+        "label": "Bring a clear account of difficulties",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "The notes described what actually happened during the week."
+      },
+      {
+        "label": "Arrange support to attend · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Support organising the review made the appointment easier to use."
+      },
+      {
+        "label": "Say everything is fine",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "The incomplete account left the next review with less useful information."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.diabetes.0",
+    "family": "wellbeing.diabetes",
+    "condition": "diabetes",
+    "title": "The awkward work schedule",
+    "text": "An unpredictable rota complicates your established care routine.",
+    "choices": [
+      {
+        "label": "Request consistent breaks",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Discussing the rota made the existing routine easier to keep."
+      },
+      {
+        "label": "Arrange short-term cover · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical cover reduced the conflict between shifts and care."
+      },
+      {
+        "label": "Keep the problem to yourself",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Accepting every last-minute rota change disrupted the care schedule."
+      }
+    ],
+    "min_age": 16,
+    "work_only": true
+  },
+  {
+    "id": "wellbeing.diabetes.1",
+    "family": "wellbeing.diabetes",
+    "condition": "diabetes",
+    "title": "The journey plan",
+    "text": "A long trip needs more preparation than your companions expect.",
+    "choices": [
+      {
+        "label": "Plan the journey around your routine",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Extra preparation made the trip compatible with my established routine."
+      },
+      {
+        "label": "Pay for practical assistance · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Journey support reduced the work of travelling; its cost was recorded."
+      },
+      {
+        "label": "Leave all arrangements until departure",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Travelling without adjusting the plan made the journey harder to manage."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.pneumonia.0",
+    "family": "wellbeing.pneumonia",
+    "condition": "pneumonia",
+    "title": "The premature return",
+    "text": "There is pressure to return while recovery is still underway.",
+    "choices": [
+      {
+        "label": "Discuss a gradual return",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A gradual return left time for the remaining recovery."
+      },
+      {
+        "label": "Arrange temporary help · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with responsibilities reduced the pressure to return immediately."
+      },
+      {
+        "label": "Promise to do everything immediately",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Returning at the old pace made the recovery period more demanding."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.pneumonia.1",
+    "family": "wellbeing.pneumonia",
+    "condition": "pneumonia",
+    "title": "The home backlog",
+    "text": "Unfinished chores have piled up during illness.",
+    "choices": [
+      {
+        "label": "Choose essential tasks first",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Doing one necessary chore kept the backlog from becoming an all-day job."
+      },
+      {
+        "label": "Arrange help at home · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Paid practical help reduced the accumulated chores."
+      },
+      {
+        "label": "Do the entire backlog today",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Clearing the whole backlog at once added strain during illness."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.ulcer.0",
+    "family": "wellbeing.ulcer",
+    "condition": "ulcer",
+    "title": "The difficult deadline",
+    "text": "A deadline is making an established routine hard to keep.",
+    "choices": [
+      {
+        "label": "Negotiate a realistic workload",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A renegotiated deadline left room for the agreed routine."
+      },
+      {
+        "label": "Arrange practical cover · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with the deadline reduced the conflict with ongoing care."
+      },
+      {
+        "label": "Ignore the strain",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Trying to meet every demand displaced the time already reserved for care."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.ulcer.1",
+    "family": "wellbeing.ulcer",
+    "condition": "ulcer",
+    "title": "The follow-up form",
+    "text": "The care team asks what has changed since your last review.",
+    "choices": [
+      {
+        "label": "Describe the changes honestly",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "An accurate account gave the care team useful changes to review."
+      },
+      {
+        "label": "Arrange support for the appointment · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Support completing the form reduced the work of explaining the changes."
+      },
+      {
+        "label": "Leave the form unread",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Leaving out the difficult parts kept the review from describing my actual week."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.epilepsy.0",
+    "family": "wellbeing.epilepsy",
+    "condition": "epilepsy",
+    "title": "The unfamiliar team",
+    "text": "A new group needs to know how to support participation safely.",
+    "choices": [
+      {
+        "label": "Explain the agreed support plan",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Explaining what I needed let the new group plan around participation."
+      },
+      {
+        "label": "Arrange a trusted support contact · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support helped the group make space for me."
+      },
+      {
+        "label": "Hide every practical need",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Saying nothing left the unfamiliar group guessing at what would help."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.epilepsy.1",
+    "family": "wellbeing.epilepsy",
+    "condition": "epilepsy",
+    "title": "The changed timetable",
+    "text": "A sudden timetable change conflicts with your routine.",
+    "choices": [
+      {
+        "label": "Ask for a workable adjustment",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Discussing the timetable conflict protected a workable routine."
+      },
+      {
+        "label": "Arrange help with the transition · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help arranging the changed timetable reduced the disruption."
+      },
+      {
+        "label": "Accept every change without discussion",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Accepting the sudden change without a plan made the routine harder to keep."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.autoimmune.0",
+    "family": "wellbeing.autoimmune",
+    "condition": "autoimmune",
+    "title": "The invisible flare",
+    "text": "Others see a normal day while tasks have become much harder.",
+    "choices": [
+      {
+        "label": "Explain the change and pace the day",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Naming the flare made it easier to reduce the ordinary workload."
+      },
+      {
+        "label": "Arrange practical assistance · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help carried some tasks that others had assumed were easy."
+      },
+      {
+        "label": "Pretend nothing has changed",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Pretending the day was ordinary left the invisible flare unsupported."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.autoimmune.1",
+    "family": "wellbeing.autoimmune",
+    "condition": "autoimmune",
+    "title": "The good-day trap",
+    "text": "A better day tempts you to catch up everything at once.",
+    "choices": [
+      {
+        "label": "Keep a sustainable pace",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Leaving some jobs for another day protected the good day itself."
+      },
+      {
+        "label": "Share the remaining tasks · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help with the backlog stopped one good day becoming a catch-up marathon."
+      },
+      {
+        "label": "Use all your energy immediately",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Using the better day to catch up everything produced extra strain."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.heart.0",
+    "family": "wellbeing.heart",
+    "condition": "heart",
+    "title": "The stairs at the venue",
+    "text": "An event is welcoming, but the entrance is difficult to use.",
+    "choices": [
+      {
+        "label": "Ask for accessible entry",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "An accessible entrance let me join the event on workable terms."
+      },
+      {
+        "label": "Arrange help with travel · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Arrival support reduced the burden of the difficult entrance."
+      },
+      {
+        "label": "Struggle through to avoid asking",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Struggling through the stairs made getting to the event exhausting."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.heart.1",
+    "family": "wellbeing.heart",
+    "condition": "heart",
+    "title": "The demanding favour",
+    "text": "Someone asks for more physical help than you can comfortably offer.",
+    "choices": [
+      {
+        "label": "Offer a different useful role",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Offering a smaller favour let me help within my current limits."
+      },
+      {
+        "label": "Arrange an alternative helper · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support shared the demanding part of the favour."
+      },
+      {
+        "label": "Agree despite the strain",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Promising the whole favour left me carrying more physical work than planned."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.cancer.0",
+    "family": "wellbeing.cancer",
+    "condition": "cancer",
+    "title": "A life beyond appointments",
+    "text": "Your calendar is full of appointments, but you still want ordinary moments.",
+    "choices": [
+      {
+        "label": "Protect a small meaningful activity",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "An ordinary moment stayed on the calendar alongside care."
+      },
+      {
+        "label": "Arrange practical support · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support freed some time that appointments had taken over."
+      },
+      {
+        "label": "Cancel every source of enjoyment",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Filling every gap with obligations left little room for ordinary life."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.cancer.1",
+    "family": "wellbeing.cancer",
+    "condition": "cancer",
+    "title": "The family conversation",
+    "text": "People close to you disagree about how much help to offer.",
+    "choices": [
+      {
+        "label": "Explain what help you actually want",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A clear request gave the family a useful way to help."
+      },
+      {
+        "label": "Arrange outside support · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Arranged support reduced the work behind the family disagreement."
+      },
+      {
+        "label": "Let everyone decide for you",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Avoiding the conversation left everyone with conflicting assumptions."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.kidney.0",
+    "family": "wellbeing.kidney",
+    "condition": "kidney",
+    "title": "The appointment journey",
+    "text": "A recurring appointment means a difficult journey each time.",
+    "choices": [
+      {
+        "label": "Plan a reliable travel routine",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Planning the appointment journey reduced a recurring source of strain."
+      },
+      {
+        "label": "Arrange transport support · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Travel support made the repeated appointment trip less demanding."
+      },
+      {
+        "label": "Leave the journey to chance",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Leaving each journey until the last moment made recurring care harder to keep."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.kidney.1",
+    "family": "wellbeing.kidney",
+    "condition": "kidney",
+    "title": "The changed responsibilities",
+    "text": "A new responsibility clashes with your existing care timetable.",
+    "choices": [
+      {
+        "label": "Discuss a manageable role",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Adjusting the new responsibility kept it compatible with care."
+      },
+      {
+        "label": "Arrange practical cover · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help shared the responsibility that conflicted with appointments."
+      },
+      {
+        "label": "Promise both without a plan",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Taking on the whole responsibility made the care timetable harder to honour."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.arthritis.0",
+    "family": "wellbeing.arthritis",
+    "condition": "arthritis",
+    "title": "The hobby table",
+    "text": "A valued hobby has become uncomfortable in its usual setup.",
+    "choices": [
+      {
+        "label": "Adapt the setup",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A changed hobby setup let me continue with less discomfort."
+      },
+      {
+        "label": "Arrange help with the difficult parts · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Help adapting the hobby space kept a valued activity within reach."
+      },
+      {
+        "label": "Give it up without trying adjustments",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Using the old setup without changes made the hobby more tiring."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.arthritis.1",
+    "family": "wellbeing.arthritis",
+    "condition": "arthritis",
+    "title": "The family outing",
+    "text": "The family plans a long outing without considering rest stops.",
+    "choices": [
+      {
+        "label": "Suggest a route with pauses",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "Adding rest stops made the family outing easier to take part in."
+      },
+      {
+        "label": "Arrange accessible travel · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support shared the difficult parts of the long outing."
+      },
+      {
+        "label": "Struggle to match the fastest person",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Keeping the unbroken itinerary made the outing more draining."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.copd.0",
+    "family": "wellbeing.copd",
+    "condition": "copd",
+    "title": "The crowded commute",
+    "text": "An ordinary commute has become exhausting.",
+    "choices": [
+      {
+        "label": "Ask for a more workable schedule",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A changed route or schedule made the daily commute more manageable."
+      },
+      {
+        "label": "Arrange travel assistance · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Travel support reduced the strain of the crowded commute."
+      },
+      {
+        "label": "Keep the same pace in silence",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Sticking to the exhausting commute left less room for care at home."
+      }
+    ],
+    "min_age": 16,
+    "work_only": true
+  },
+  {
+    "id": "wellbeing.copd.1",
+    "family": "wellbeing.copd",
+    "condition": "copd",
+    "title": "The place at the club",
+    "text": "You want to stay involved, but the usual role is demanding.",
+    "choices": [
+      {
+        "label": "Choose a useful adapted role",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A smaller club role kept me involved without the full workload."
+      },
+      {
+        "label": "Arrange help with the physical tasks · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical support shared the demanding duties at the club."
+      },
+      {
+        "label": "Keep every club duty",
+        "control": -5,
+        "stress": 4,
+        "cost": 0,
+        "result": "Keeping every club duty made staying involved increasingly tiring."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false
+  },
+  {
+    "id": "wellbeing.continuity.1",
+    "family": "wellbeing.continuity.school",
+    "condition": "migraine",
+    "title": "A quieter lesson",
+    "text": "A busy class makes it hard to stay involved.",
+    "choices": [
+      {
+        "label": "Agree a quieter seat",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "The new seat makes participation easier.",
+        "later_bad": "The room changes again; revisit the arrangement."
+      },
+      {
+        "label": "Ask for lesson notes · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "The notes help you catch up.",
+        "later_bad": "Missing discussions leave gaps to review."
+      },
+      {
+        "label": "Keep struggling silently",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "You find a manageable way to stay involved.",
+        "later_bad": "The same barriers keep interrupting lessons."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false,
+    "school_only": true,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.2",
+    "family": "wellbeing.continuity.school",
+    "condition": "asthma",
+    "title": "Team expectations",
+    "text": "Your school team is planning a demanding season.",
+    "choices": [
+      {
+        "label": "Agree a manageable role",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "Your role keeps you involved through the season.",
+        "later_bad": "The role needs another discussion."
+      },
+      {
+        "label": "Arrange practical support · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "Shared duties make the season manageable.",
+        "later_bad": "Support helps, but the schedule still overwhelms you."
+      },
+      {
+        "label": "Accept every team duty",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "You complete your duties, but need a calmer next season.",
+        "later_bad": "The full workload makes participation harder."
+      }
+    ],
+    "min_age": 6,
+    "work_only": false,
+    "school_only": true,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.3",
+    "family": "wellbeing.continuity.work",
+    "condition": "anemia",
+    "title": "An uneven workday",
+    "text": "A teammate notices your energy dropping during long shifts.",
+    "choices": [
+      {
+        "label": "Agree a paced workload",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "The revised workload improves handovers.",
+        "later_bad": "The new workload still needs adjustment."
+      },
+      {
+        "label": "Share the heavy duties · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "Shared duties keep the backlog manageable.",
+        "later_bad": "The division of duties proves uneven."
+      },
+      {
+        "label": "Take the whole backlog",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "The backlog clears, but the pace remains demanding.",
+        "later_bad": "The backlog returns before you regain a routine."
+      }
+    ],
+    "min_age": 18,
+    "work_only": true,
+    "school_only": false,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.4",
+    "family": "wellbeing.continuity.home",
+    "condition": "arthritis",
+    "title": "The family outing",
+    "text": "A family trip has a packed schedule and little room to pause.",
+    "choices": [
+      {
+        "label": "Suggest a slower route",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "The slower route becomes a comfortable family habit.",
+        "later_bad": "The route still has obstacles to rethink."
+      },
+      {
+        "label": "Arrange practical help · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "Help lets you stay part of the outings.",
+        "later_bad": "The support cannot cover every part of the trip."
+      },
+      {
+        "label": "Keep the packed schedule",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "The outing works, though everyone agrees to simplify next time.",
+        "later_bad": "Another packed outing leaves you exhausted."
+      }
+    ],
+    "min_age": 18,
+    "work_only": false,
+    "school_only": false,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.5",
+    "family": "wellbeing.continuity.work",
+    "condition": "diabetes",
+    "title": "Privacy at work",
+    "text": "A coworker asks how to make the daily schedule less awkward.",
+    "choices": [
+      {
+        "label": "Explain the support you want",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "Your stated boundaries and routine are respected.",
+        "later_bad": "A new shift means explaining the arrangement again."
+      },
+      {
+        "label": "Arrange a flexible setup · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "The flexible setup survives the busy period.",
+        "later_bad": "The setup needs revision during busy periods."
+      },
+      {
+        "label": "Keep every difficulty private",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "You maintain privacy while finding your own workable routine.",
+        "later_bad": "Unspoken needs continue to clash with the schedule."
+      }
+    ],
+    "min_age": 18,
+    "work_only": true,
+    "school_only": false,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.6",
+    "family": "wellbeing.continuity.home",
+    "condition": "thyroid",
+    "title": "Changing family plans",
+    "text": "Your energy varies, but the family calendar keeps filling.",
+    "choices": [
+      {
+        "label": "Keep one manageable plan",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "The smaller calendar leaves room for meaningful time together.",
+        "later_bad": "Unexpected duties crowd the smaller calendar."
+      },
+      {
+        "label": "Share the planning work · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "Shared planning becomes a regular family habit.",
+        "later_bad": "The shared plan needs a clearer division of work."
+      },
+      {
+        "label": "Agree to every invitation",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "You keep up this time and ask for fewer plans next year.",
+        "later_bad": "The packed calendar strains both energy and relationships."
+      }
+    ],
+    "min_age": 18,
+    "work_only": false,
+    "school_only": false,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.7",
+    "family": "wellbeing.continuity.home",
+    "condition": "heart",
+    "title": "Staying involved",
+    "text": "Friends want you involved in a busy community project.",
+    "choices": [
+      {
+        "label": "Choose a manageable role",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "Your smaller role remains a valued part of the project.",
+        "later_bad": "Your role needs a new pace before continuing."
+      },
+      {
+        "label": "Arrange shared responsibilities · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "Shared responsibility keeps you connected.",
+        "later_bad": "The sharing arrangement needs another discussion."
+      },
+      {
+        "label": "Take charge of everything",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "The project finishes, but you step back from the next one.",
+        "later_bad": "Taking every duty leaves little room for recovery."
+      }
+    ],
+    "min_age": 40,
+    "work_only": false,
+    "school_only": false,
+    "followup": true
+  },
+  {
+    "id": "wellbeing.continuity.8",
+    "family": "wellbeing.continuity.home",
+    "condition": "autoimmune",
+    "title": "An unpredictable week",
+    "text": "A sibling wants to help when your schedule changes at short notice.",
+    "choices": [
+      {
+        "label": "Agree a flexible backup",
+        "control": 6,
+        "stress": -2,
+        "cost": 0,
+        "result": "A manageable arrangement is recorded.",
+        "trust": 3,
+        "npc_stress": -2,
+        "later_good": "The backup keeps family plans flexible.",
+        "later_bad": "The backup is unavailable; make a new arrangement."
+      },
+      {
+        "label": "Arrange practical cover · $100",
+        "control": 9,
+        "stress": -3,
+        "cost": 100,
+        "result": "Practical help is arranged and paid for.",
+        "trust": 2,
+        "npc_stress": -1,
+        "later_good": "Cover helps preserve important routines.",
+        "later_bad": "The cover helps some days but leaves gaps."
+      },
+      {
+        "label": "Promise nothing will change",
+        "control": -4,
+        "stress": 4,
+        "cost": 0,
+        "result": "The full workload stays on your schedule.",
+        "trust": -2,
+        "npc_stress": 3,
+        "later_good": "Plans hold this time, but the promise needs revising.",
+        "later_bad": "A changed week leaves everyone scrambling."
+      }
+    ],
+    "min_age": 18,
+    "work_only": false,
+    "school_only": false,
+    "followup": true
+  }
+]

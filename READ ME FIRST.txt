@@ -1,10 +1,7 @@
-ONE MORE LIFE — public source
-
-This repository contains a Godot project. It does not include prebuilt game
-downloads. No GitHub releases are currently published.
+ONE MORE LIFE — v0.42.0 source preview
 
 Install Godot 4.4.1, import project.godot and press F5.
-See README.md and docs/PLAYER-GUIDE.md for the current instructions.
-
-For a separately downloaded binary package, use that package's own release
-instructions. Filenames, platforms and signing status depend on that release.
+For the portable Windows preview use its own launcher and instructions.
+See README.md, docs/PLAYER-GUIDE.md and docs/releases/V0.42-COVERAGE.md.
+The supplied guide comparison is in docs/SUPPLIED-GUIDES-REVIEW.md.
+This is a local preview, not a published GitHub release or completed v1.0.

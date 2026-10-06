@@ -242,6 +242,8 @@ func record_casino(net: int, bet: int) -> void:
 
 
 func _row(icon: String, name: String, sub: String, act: String, arg = null, on: bool = true) -> Dictionary:
+	var key := "Checkup:"+str(arg) if act=="checkup" else "Treatment:"+str(arg) if act=="treat_condition" else "Injury treatment:"+str(arg) if act=="treat_injury" else "Mental support:"+act if act in ["therapy","support","psychiatry","rest"] else ""
+	if key!="" and Care.course().used(key): on=false; sub="Already done this period"
 	return {"icon": icon, "name": name, "sub": sub, "act": "exp:" + act, "arg": arg, "on": on}
 
 
@@ -299,7 +301,7 @@ func _medical_menu() -> Dictionary:
 	if not active.is_empty():
 		for id in active.keys():
 			var d: Dictionary = CONDITIONS.get(id, {"name": id, "icon": "🩺", "severity": 1})
-			rows.append(_row(d["icon"], "Treat " + str(d["name"]), "Diagnosed · severity %d/4" % int(d.get("severity", 1)), "treat_condition", id))
+			rows.append(_row(d["icon"], "Treat " + str(d["name"]), GameState.fmt_money(Actions._cost(150+int(d.get("severity",1))*650))+" · 1 time · "+("ongoing care plan" if d.get("chronic",false) else "health and care affect recovery"), "treat_condition", id))
 	if not inj.is_empty():
 		for id in inj.keys():
 			var d2: Dictionary = INJURIES.get(id, {"name": id, "icon": "🩼"})
@@ -318,6 +320,7 @@ func _mental_menu() -> Dictionary:
 	var med: Dictionary = _p()["medical"]
 	var mh: Dictionary = med["mental"]
 	var rows: Array = [
+		{"icon":"🌿","name":"Life & wellbeing","sub":"Grief, connection and practical coping","menu":"journey:coping"},
 		_row("🛋️", "Therapy session", GameState.fmt_money(Actions._cost(140)) + " · steady progress, not an instant fix", "therapy"),
 		_row("🫂", "Support group", GameState.fmt_money(Actions._cost(40)) + " · especially helpful with habits and grief", "support"),
 		_row("🧠", "Psychiatry appointment", GameState.fmt_money(Actions._cost(280)) + " · assessment and medication when appropriate", "psychiatry"),
@@ -337,21 +340,23 @@ func _mental_menu() -> Dictionary:
 
 
 func checkup(kind: String) -> void:
+	ensure()
+	if kind not in ["routine","specialist","er"]: return
 	var med: Dictionary = _p()["medical"]
 	var base_fee := 180 if kind == "routine" else (900 if kind == "specialist" else 1800)
 	var fee := Actions._cost(base_fee)
-	if not Actions._can_pay(fee, "Medical care"):
-		return
-	if Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - fee
+	if not Care.course().pay_visit("Checkup:"+kind,fee,1): return
+	Care.course().adopt_legacy()
+	for id in med["conditions"]: Care.course().reviewed(str(id),kind+" checkup")
 	med["last_checkup"] = int(_p()["age"])
 	var found := ""
 	if str(med.get("pending", "")) != "":
 		var chance := 0.72 if kind == "routine" else (0.94 if kind == "specialist" else 0.88)
-		if randf() < chance:
+		if Care.course().roll("Checkup diagnosis:"+kind) < chance:
 			found = str(med["pending"])
-			med["conditions"][found] = {"years":0,"treated":0,"controlled":false,"flares":0}
+			if not med["conditions"].has(found): med["conditions"][found] = {"years":0,"treated":0,"controlled":false,"flares":0}
+			Care.course().record("Diagnosis",str(CONDITIONS[found]["name"]))
+			Care.course().reviewed(found,kind+" checkup")
 			med["pending"] = ""
 			med["symptoms"] = []
 			GameState.counter("diagnoses")
@@ -363,32 +368,33 @@ func checkup(kind: String) -> void:
 	elif not med["injuries"].is_empty() and kind == "er":
 		var iid: String = med["injuries"].keys()[0]
 		med["injuries"][iid]["left"] = maxi(0, int(med["injuries"][iid]["left"]) - 1)
+		if med["injuries"][iid]["left"]==0: med["injuries"].erase(iid); Care.course().record("Rehab complete",iid)
 		Actions._done("🚑", "Emergency care", "The team treated my %s and got the immediate problem under control." % INJURIES[iid]["name"], {"health":5,"stress":-4})
 	else:
 		Actions._done("🩺", "Checkup", "The visit didn't uncover anything urgent. The doctor reviewed my symptoms, sleep, stress and family history.", {"health":2,"stress":-2})
 
 
 func treat_condition(id: String) -> void:
+	ensure()
 	var med: Dictionary = _p()["medical"]
 	if not med["conditions"].has(id):
 		return
 	var d: Dictionary = CONDITIONS.get(id,{})
 	var sev := int(d.get("severity",1))
 	var fee := Actions._cost(150 + sev * 650)
-	if not Actions._can_pay(fee, "Treatment"):
-		return
-	if Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - fee
+	if not Care.course().pay_visit("Treatment:"+id,fee,1): return
+	Care.course().reviewed(id,"Treatment review")
 	var c: Dictionary = med["conditions"][id]
 	c["treated"] = int(c.get("treated",0)) + 1
-	var chance := 0.62 - sev * 0.07 + GameState.stat("health") / 500.0
+	var chance: float=0.62-sev*0.07+GameState.stat("health")/500.0+float(Care.course().plan(id)["control"])/800.0
 	if bool(d.get("chronic",false)):
-		c["controlled"] = true
+		c["controlled"] = float(Care.course().plan(id)["control"])>=45
 		Actions._done(d.get("icon","🩺"), "Treatment plan", "Treatment brought my %s under better control. It still needs attention over time." % d.get("name",id), {"health":4,"stress":-5})
-	elif randf() < chance:
+	elif Care.course().roll("Treatment recovery:"+id) < chance:
 		med["conditions"].erase(id)
 		_sync_primary_illness()
+		Care.st()["meds"].erase(id)
+		Care.course().record("Recovery",str(d.get("name",id))+" · treatment completed")
 		GameState.counter("conditions_recovered")
 		LifeThreads.remember("recovery", "Getting through %s" % d.get("name",id), "Treatment, rest and time finally cleared the condition.", "", 48, ["health","recovery"])
 		Actions._done(d.get("icon","🩺"), "Recovered", "After treatment and rest, the doctor cleared my %s." % d.get("name",id), {"health":8,"happiness":6,"stress":-6})
@@ -401,15 +407,12 @@ func treat_injury(id: String) -> void:
 	if not med["injuries"].has(id):
 		return
 	var fee := Actions._cost(300 + int(INJURIES.get(id,{}).get("health",-4)) * -180)
-	if not Actions._can_pay(fee, "Injury treatment"):
-		return
-	if Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - fee
+	if not Care.course().pay_visit("Injury treatment:"+id,fee,1): return
 	var x: Dictionary = med["injuries"][id]
 	x["left"] = maxi(0, int(x.get("left",1)) - (2 if home_has("access") else 1))
 	if int(x["left"]) <= 0:
 		med["injuries"].erase(id)
+		Care.course().record("Rehab complete",str(INJURIES.get(id,{"name":id})["name"]))
 		LifeThreads.remember("recovery", "My body healed", "Rehab finally closed the chapter on %s." % INJURIES[id]["name"], "", 45, ["injury","recovery"])
 		Actions._done("🩹", "Rehab complete", "My %s finally healed." % INJURIES[id]["name"], {"health":6,"happiness":3})
 	else:
@@ -417,16 +420,13 @@ func treat_injury(id: String) -> void:
 
 
 func mental_action(kind: String) -> void:
+	ensure()
+	if kind not in ["therapy","support","psychiatry","rest"]: return
 	var med: Dictionary = _p()["medical"]
 	var mh: Dictionary = med["mental"]
 	var fee := Actions._cost({"therapy": 140, "support": 40, "psychiatry": 280, "rest": 0}[kind])
-	if fee > 0 and not Actions._can_pay(fee, "Mental health care"): return
-	var time := 2 if kind == "rest" else 1
-	if int(_p()["time_left"]) < time:
-		EventEngine.push_info("⏳", "No time left", "You need %d time point%s for this." % [time, "" if time == 1 else "s"])
-		return
-	GameState.spend_time(time)
-	_p()["money"] = int(_p()["money"]) - fee
+	if not Care.course().pay_visit("Mental support:"+kind,fee,2 if kind=="rest" else 1): return
+	Care.course().record("Mental support",kind+" · ongoing recovery")
 	match kind:
 		"therapy":
 			med["therapy_streak"] = int(med["therapy_streak"]) + 1
@@ -436,9 +436,8 @@ func mental_action(kind: String) -> void:
 		"support":
 			for id in mh.keys():
 				mh[id]["progress"] = mini(100, int(mh[id].get("progress", 0)) + randi_range(5, 14))
-			# Existing recovery logic handles active compulsive habits and can close them
-			# once they have fallen far enough. Reuse it rather than only lowering a score.
-			Grit.therapy_helps()
+			# Groups reduce pressure; sustained recovery is settled across stable years.
+			Grit.therapy_helps("group")
 			Actions._done("🫂", "Support group", "I listened, talked when I was ready, and heard from people who understood the hard parts.", {"stress": -7, "happiness": 3})
 		"psychiatry":
 			for id in mh.keys():
@@ -448,6 +447,7 @@ func mental_action(kind: String) -> void:
 		"rest":
 			if mh.has("burnout"): mh["burnout"]["progress"] = mini(100, int(mh["burnout"].get("progress", 0)) + 18)
 			Actions._done("🌿", "A quiet week", "I cleared the calendar, slept, ate actual meals and let my nervous system settle.", {"stress": -14, "health": 2, "happiness": 3})
+	Journey.modules["coping"].clinical_support(kind)
 	_resolve_mental_recovery()
 
 
@@ -455,6 +455,10 @@ func medical_yearly() -> void:
 	var p := _p()
 	var med: Dictionary = p["medical"]
 	var age := int(p["age"])
+	if int(med.get("last_course_year",-1))==GameState.year_now(): return
+	med["last_course_year"]=GameState.year_now()
+	Care.course().adopt_legacy()
+	Care.course().before_medical()
 	if str(p.get("illness","")) != "" and med["conditions"].is_empty() and str(med.get("pending","")) == "":
 		for id in CONDITIONS.keys():
 			if CONDITIONS[id]["name"] == p["illness"]:
@@ -487,9 +491,11 @@ func medical_yearly() -> void:
 			c["flares"] = int(c.get("flares",0)) + 1
 			mult *= 1.55
 			GameState.add_log("My %s flared up and made ordinary days harder." % d.get("name",id))
+			Care.course().record("Flare",str(d.get("name",id)))
 		GameState.apply_effects({"health":float(d.get("health",-2))*mult,"stress":float(d.get("stress",2))*mult})
-		if not d.get("chronic",false) and int(c["years"]) >= 2 and randf() < 0.45:
+		if not d.get("chronic",false) and int(c["years"]) >= 2 and randf() < 0.35+float(Care.course().plan(id)["control"])/500.0:
 			med["conditions"].erase(id)
+			Care.st()["meds"].erase(id); Care.course().record("Recovery",str(d.get("name",id))+" · cleared with time")
 			GameState.add_log("My %s finally cleared." % d.get("name",id))
 	for id in med["injuries"].keys().duplicate():
 		var x: Dictionary = med["injuries"][id]
@@ -514,12 +520,14 @@ func add_injury(id: String, source: String = "") -> void:
 	var d: Dictionary = INJURIES[id]
 	med["injuries"][id] = {"left":int(d["years"]),"source":source,"since":int(_p()["age"])}
 	GameState.apply_effects({"health":int(d["health"]),"stress":5})
+	Care.course().record("Injury",str(d["name"])+(" · "+source if source!="" else ""))
 	GameState.counter("injuries")
 	GameState.add_log("I suffered %s%s." % [d["name"], " during " + source if source != "" else ""])
 	LifeThreads.remember("injury", "The injury", "I suffered %s%s." % [d["name"], " during " + source if source != "" else ""], "", 50 + int(d["years"]) * 6, ["health",id])
 
 
 func _mental_yearly() -> void:
+	Journey.modules["coping"].clinical()
 	var p := _p()
 	var med: Dictionary = p["medical"]
 	var mh: Dictionary = med["mental"]
@@ -529,7 +537,7 @@ func _mental_yearly() -> void:
 	if happy <= 28 and not mh.has("depression") and randf() < 0.14: _add_mental("depression")
 	if stress >= 88 and not mh.has("panic") and randf() < 0.10: _add_mental("panic")
 	if Grit.active_habits().has("workaholic") and not mh.has("burnout") and randf() < 0.22: _add_mental("burnout")
-	if GameState.has_flag("lost_close_person") and not mh.has("grief") and randf() < 0.25: _add_mental("grief")
+	if Journey.modules["coping"].grief_risk() and not mh.has("grief") and randf() < 0.25: _add_mental("grief")
 	for id in mh.keys():
 		var d: Dictionary = MENTAL.get(id, {})
 		var r: Dictionary = mh[id]
@@ -546,6 +554,7 @@ func _add_mental(id: String) -> void:
 	if mh.has(id):
 		return
 	mh[id] = {"progress":0,"since":int(_p()["age"]),"relapses":0}
+	Care.course().record("Mental health",str(MENTAL[id]["name"])+" · support available")
 	GameState.counter("mental_health_arcs")
 	var d: Dictionary = MENTAL[id]
 	GameState.add_log("I realized I was dealing with %s. I decided to treat it like health, not a character flaw." % d["name"])
@@ -558,6 +567,7 @@ func _resolve_mental_recovery() -> void:
 	for id in mh.keys().duplicate():
 		if int(mh[id].get("progress",0)) >= 100:
 			mh.erase(id)
+			Care.course().record("Recovery milestone",str(MENTAL.get(id,{"name":id})["name"]))
 			med["medication"].erase(id)
 			med["recovery_years"] = int(med["recovery_years"]) + 1
 			GameState.counter("recovery_milestones")
@@ -575,7 +585,11 @@ func _sync_primary_illness() -> void:
 		if s > sev:
 			sev = s
 			worst = id
-	_p()["illness"] = CONDITIONS.get(worst, {"name": ""})["name"] if worst != "" else ""
+	if worst!="": _p()["illness"]=CONDITIONS.get(worst,{"name":worst})["name"]
+	else:
+		var previous := str(_p().get("illness","")).to_lower()
+		for id in CONDITIONS:
+			if previous in [str(id),str(CONDITIONS[id]["name"]).to_lower()]: _p()["illness"]=""; break
 
 
 # ================================================================ home ownership
@@ -585,7 +599,7 @@ func _home_menu() -> Dictionary:
 	var h: Dictionary = p["home"]
 	var rows: Array = []
 	if p["housing"] != "house":
-		rows.append({"icon": "🏡", "name": "Buy a home", "sub": "Use Assets → Houses for the mortgage and purchase", "on": false})
+		rows.append({"icon": "🏡", "name": "Buy a home", "sub": "Use Shopping → Homes & housing", "on": false})
 	else:
 		rows.append(_row("🔨", "Repair & maintain", "%s · condition %d%%" % [GameState.fmt_money(Actions._cost(3500)), int(h["condition"])], "home_repair"))
 		for id in HOME_UPGRADES.keys():
@@ -602,6 +616,7 @@ func _home_menu() -> Dictionary:
 			if int(h.get("primary_property", -1)) == i: continue
 			rows.append(_row(pr.get("icon", "🏠"), "Move into " + str(pr.get("type", "property")), "Stops renting it out · value %s" % GameState.fmt_money(int(pr.get("value", 0))), "move_property", i))
 	var info := ["Home condition %d%% · %d renovation%s · %d flip%s" % [int(h["condition"]), int(h["renovations"]), "" if int(h["renovations"]) == 1 else "s", int(h["flips"]), "" if int(h["flips"]) == 1 else "s"]]
+	rows.append({"name":"Household space & transport","icon":"🔑","sub":"Capacity, utility costs and commute","menu":"hold:root"})
 	if not h["upgrades"].is_empty(): info.append("Upgrades: " + ", ".join(h["upgrades"].keys().map(func(id): return HOME_UPGRADES.get(id, ["", id])[1])))
 	return {"icon": "🏡", "title": "Home", "rows": rows, "info": info}
 
@@ -615,6 +630,7 @@ func home_action(kind: String, arg = null) -> void:
 			if not Actions._can_pay(fee, "Home repair") or Actions._out_of_time(): return
 			p["money"] = int(p["money"]) - fee
 			h["condition"] = minf(100.0,float(h["condition"])+28.0)
+			Holdings.sync_home()
 			Actions._done("🔨","Home repair","I fixed the things I had been ignoring: leaks, wiring, cracks and that one door that only closed if you kicked it.",{"happiness":3,"stress":-4})
 		"upgrade":
 			var id := str(arg)
@@ -645,6 +661,8 @@ func home_action(kind: String, arg = null) -> void:
 			Actions._done("🍽️","At home","I opened the door, fed whoever showed up, and ended the night with dishes everywhere and people lingering in the kitchen.",{"happiness":8,"stress":-4,"money":-Actions._cost(180)})
 		"flip":
 			if p["housing"] != "house" or Actions._out_of_time(): return
+			if Holdings.primary_index()>=0:
+				Finance.sell_property(Holdings.primary_index()); return
 			var base := int(p.get("house_value",0))
 			if base <= 0:
 				EventEngine.push_info("🏡","House flip","I don't have a sellable home selected.")
@@ -656,6 +674,7 @@ func home_action(kind: String, arg = null) -> void:
 			p["mortgage"] = 0
 			p["mortgage_payment"] = 0
 			p["housing"] = "apartment"
+			p.erase("house_uid"); p.erase("house_model")
 			h["flips"] = int(h["flips"]) + 1
 			h["upgrades"] = {}
 			h["condition"] = 80.0
@@ -665,13 +684,18 @@ func home_action(kind: String, arg = null) -> void:
 		"move_property":
 			var idx := int(arg)
 			if idx < 0 or idx >= p["properties"].size(): return
+			if int(p.get("house_value",0))>0:
+				EventEngine.push_info("🏡","Moving home","Sell your current owned home before moving into a portfolio property."); return
 			var pr: Dictionary = p["properties"][idx]
+			if not pr.has("uid"): pr["uid"]=Journey.uid()+":property:"+str(Time.get_ticks_usec())
 			var tid := str(pr.get("tenant",""))
 			if tid != "" and GameState.npcs.has(tid):
 				GameState.npcs[tid]["relation"] = "former_tenant"
 				pr["tenant"] = ""
 			p["housing"] = "house"
-			h["primary_property"] = idx
+			p["home"]={}; ensure(); h=p["home"]
+			p["house_uid"]=pr["uid"]; p["house_model"]="family"; p["house_value"]=0
+			h["primary_property"] = idx; h["primary_uid"]=pr["uid"]
 			h["condition"] = float(pr.get("condition",80))
 			Actions._done(pr.get("icon","🏠"),"Moved in","I made the %s my home." % str(pr.get("type","property")).to_lower(),{"happiness":7,"stress":-3})
 
@@ -682,7 +706,8 @@ func home_yearly() -> void:
 	if p["housing"] != "house":
 		return
 	h["years"] = int(h["years"]) + 1
-	h["condition"] = maxf(0.0,float(h["condition"]) - randf_range(2.0,6.0))
+	var primary := Holdings.primary_index()
+	h["condition"] = float(p["properties"][primary]["condition"]) if primary>=0 else maxf(0.0,float(h["condition"]) - randf_range(2.0,6.0))
 	if int(h["years"]) == 1:
 		LifeThreads.remember("home","The first year here","This stopped feeling like a property and started feeling like the place where my life happens.","",48,["home"])
 	if h["upgrades"].has("garden"): GameState.apply_effects({"happiness":2,"stress":-2})
@@ -732,7 +757,7 @@ func _casino_bet_menu(game: String) -> Dictionary:
 			_:
 				rows.append(_row("💵", "Bet %s" % GameState.fmt_money(amt), "", "casino", {"game": game, "bet": amt, "pick": ""}))
 	if rows.is_empty(): rows.append({"icon": "💸", "name": "You need at least $10", "sub": "", "on": false})
-	return {"icon": CASINO_GAMES.get(game, ["🎲", game])[0], "title": CASINO_GAMES.get(game, ["", game.capitalize()])[1], "rows": rows}
+	return {"icon": CASINO_GAMES.get(game, ["🎲", game])[0], "title": CASINO_GAMES.get(game, ["", game.capitalize()])[1], "rows": rows, "wager": {"menu": "exp:" + game + ":%d"} if game in ["baccarat", "craps", "keno", "sicbo"] else {"act": "exp:casino", "arg": {"game": game, "bet": 0, "pick": ""}, "amount_key": "bet"}}
 
 
 func _baccarat_menu(amt: int) -> Dictionary:
@@ -769,7 +794,7 @@ func _sicbo_menu(amt: int) -> Dictionary:
 
 
 func casino_action(game: String, bet: int, pick: String) -> void:
-	if int(_p()["age"]) < 18 or bet <= 0: return
+	if int(_p()["age"]) < 18 or bet < 10 or bet > 1000000000 or not CASINO_GAMES.has(game): return
 	if int(_p()["money"]) < bet:
 		EventEngine.push_info("💸","Casino","You don't have enough cash for that bet.")
 		return
@@ -784,15 +809,34 @@ func casino_action(game: String, bet: int, pick: String) -> void:
 			var result := "banker" if r < 0.4586 else ("player" if r < 0.9048 else "tie")
 			if pick == result:
 				net = int(bet * (8.0 if pick == "tie" else (0.95 if pick == "banker" else 1.0)))
+			if result == "tie" and pick != "tie": net = 0
 			text = "The shoe came down %s." % result
 		"craps":
 			var d1 := randi_range(1,6)
 			var d2 := randi_range(1,6)
 			var total := d1 + d2
 			if pick == "field": net = bet if total in [3,4,9,10,11] else (bet * 2 if total in [2,12] else -bet)
-			elif pick == "hard8": net = bet * 9 if d1 == 4 and d2 == 4 else -bet
-			elif pick == "pass": net = bet if total in [7,11] or (total not in [2,3,12] and randf() < 0.48) else -bet
-			else: net = bet if total in [2,3] or (total not in [7,11] and randf() < 0.48) else -bet
+			elif pick == "hard8":
+				while true:
+					if d1 == 4 and d2 == 4:
+						net = bet * 9
+						break
+					if total in [7, 8]: break
+					d1 = randi_range(1, 6); d2 = randi_range(1, 6); total = d1 + d2
+			else:
+				if total in [7, 11]: net = bet if pick == "pass" else -bet
+				elif total in [2, 3]: net = -bet if pick == "pass" else bet
+				elif total == 12: net = -bet if pick == "pass" else 0
+				else:
+					var point := total
+					while true:
+						d1 = randi_range(1, 6); d2 = randi_range(1, 6); total = d1 + d2
+						if total == point:
+							net = bet if pick == "pass" else -bet
+							break
+						if total == 7:
+							net = -bet if pick == "pass" else bet
+							break
 			text = "The dice showed %d + %d = %d." % [d1,d2,total]
 		"videopoker":
 			var r2 := randf()
@@ -812,13 +856,19 @@ func casino_action(game: String, bet: int, pick: String) -> void:
 		"poker":
 			var skill := GameState.stat("smarts") * 0.45 + GameState.hidden("discipline") * 0.25 + randf_range(0,45)
 			if GameState.has_trait("Gambler"): skill += 5
-			if skill >= 90:
-				net = bet * randi_range(4,10)
-				_p()["casino"]["poker_titles"] = int(_p()["casino"].get("poker_titles",0)) + 1
-				text = "I won the whole tournament after a long final table."
-			elif skill >= 65: net = bet * 2; text = "I made a deep run and cashed."
-			elif skill >= 48: net = 0; text = "I scraped back my buy-in."
-			else: text = "I got outplayed and busted."
+			var strength := clampf(skill / 115.0, 0.0, 1.0)
+			var result := randf()
+			if result < 0.015 + strength * 0.045:
+				net = bet * randi_range(4, 10)
+				_p()["casino"]["poker_titles"] = int(_p()["casino"].get("poker_titles", 0)) + 1
+				text = "I won the tournament. Strong play helped; the final cards still had to fall my way."
+			elif result < 0.14 + strength * 0.18:
+				net = bet * 2
+				text = "I made a deep run and cashed."
+			elif result < 0.27 + strength * 0.18:
+				net = 0
+				text = "I scraped back my buy-in."
+			else: text = "I got outplayed or lost the crucial hand and busted."
 		"sicbo":
 			var a := randi_range(1,6)
 			var b := randi_range(1,6)
@@ -1085,6 +1135,7 @@ func life_action(aid: String, arg = null) -> void:
 			Actions._done("🏺","Artifact","I found something ordinary to them and priceless to a future museum. I documented it without stealing anyone's story.",{"smarts":2,"happiness":4})
 		"x_t_jump":
 			var y := int(arg)
+			if not TRAVEL_ERAS.has(y): return
 			if int(l["charge"]) < 25:
 				EventEngine.push_info("🔋","Not enough charge","A jump needs 25 charge.")
 				return
@@ -1094,6 +1145,8 @@ func life_action(aid: String, arg = null) -> void:
 			l["era"] = y
 			p["born_year"] = y
 			GameState.job_listings.clear()
+			if _p().has("market"): _p()["market"]["open"] = {}
+			EventEngine.pending = EventEngine.pending.filter(func(it): return not it.has("def") or Context.world_matches(it["def"]) and Context.matches(it["def"].get("conditions", {}).get("context", {})))
 			LifeThreads.remember("traveler","The jump to %d" % y,"The room folded and the calendar changed while I stayed the same age.","",55,["time","jump"])
 			Actions._done("⚡","Time jump","The machine screamed, the room folded, and the calendar now says %d." % (y + int(p["age"])),{"stress":5,"happiness":5})
 
@@ -1188,5 +1241,3 @@ func era_job_block(jd: Dictionary) -> String:
 	if year < 1950 and field == "Tech": return "Modern computing careers do not exist yet"
 	if year < 1975 and (jid.contains("software") or jid.contains("developer") or jid.contains("program")): return "That job belongs to a later era"
 	return ""
-
-

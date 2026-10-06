@@ -71,7 +71,7 @@ func review() -> void:
 		return
 	j["warned"] = 0
 	# --- promotion needs merit, tenure, a post to move into, and someone to back you
-	if perf >= 70.0 and rank < ranks.size() - 1:
+	if perf >= 70.0 and rank < ranks.size() - 1 and Employment.promotion_reason()=="":
 		var vacancy := 0.30 + firm * 0.35 + (0.12 if str(ww.get("boss_kind", "")) == "supportive" else 0.0) + (boss_close - 40.0) / 300.0
 		vacancy += (float(ww.get("politics", 50.0)) - 50.0) / 400.0 if str(ww.get("boss_kind", "")) == "political" else 0.0
 		if yrs_rank >= 2 and randf() < clampf(vacancy, 0.1, 0.9):
@@ -205,6 +205,7 @@ func yearly() -> void:
 	var m := mini(12, int(b["months"]))
 	var paid := int(b["amt"]) * m
 	p["money"] = int(p["money"]) + paid
+	Employment.record_income("Unemployment support",paid)
 	b["months"] = int(b["months"]) - m
 	GameState.add_log("Unemployment support paid %s this year. It runs out in %d month%s." % [GameState.fmt_money(paid), maxi(0, int(b["months"])), "" if int(b["months"]) == 1 else "s"] if int(b["months"]) > 0 else "The unemployment support ran out this year. I stopped being able to ignore the numbers.")
 	if int(b["months"]) <= 0:

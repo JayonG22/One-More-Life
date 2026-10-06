@@ -1,0 +1,1250 @@
+[
+ {
+  "id": "curriculum.0.0",
+  "family": "curriculum.0.numbers",
+  "band": 0,
+  "subject": "Numbers",
+  "question": "Two plates hold four apples each. How many apples are there?",
+  "answers": [
+   "Eight",
+   "Six",
+   "Four"
+  ],
+  "why": "Two groups of four make eight."
+ },
+ {
+  "id": "curriculum.0.1",
+  "family": "curriculum.0.reading",
+  "band": 0,
+  "subject": "Reading",
+  "question": "The sign says EXIT. What does it show?",
+  "answers": [
+   "The way out",
+   "The lunch menu",
+   "A place to hide"
+  ],
+  "why": "An exit is a way out of a building."
+ },
+ {
+  "id": "curriculum.0.2",
+  "family": "curriculum.0.nature",
+  "band": 0,
+  "subject": "Nature",
+  "question": "Which needs both water and light to grow?",
+  "answers": [
+   "A bean plant",
+   "A toy car",
+   "A stone"
+  ],
+  "why": "A bean plant needs water and light; too much water can still harm it."
+ },
+ {
+  "id": "curriculum.0.3",
+  "family": "curriculum.0.patterns",
+  "band": 0,
+  "subject": "Patterns",
+  "question": "A pattern goes circle, square, circle, square. What comes next?",
+  "answers": [
+   "Circle",
+   "Triangle",
+   "Two squares"
+  ],
+  "why": "The two shapes alternate."
+ },
+ {
+  "id": "curriculum.0.4",
+  "family": "curriculum.0.time",
+  "band": 0,
+  "subject": "Time",
+  "question": "Your class starts after breakfast and before lunch. When is it?",
+  "answers": [
+   "Morning",
+   "Evening",
+   "Midnight"
+  ],
+  "why": "Breakfast usually comes before the morning school session."
+ },
+ {
+  "id": "curriculum.0.5",
+  "family": "curriculum.0.listening",
+  "band": 0,
+  "subject": "Listening",
+  "question": "The teacher asks for one red pencil and two blue ones. How many pencils?",
+  "answers": [
+   "Three",
+   "One",
+   "Four"
+  ],
+  "why": "One plus two is three; listening to both instructions matters."
+ },
+ {
+  "id": "curriculum.0.6",
+  "family": "curriculum.0.maps",
+  "band": 0,
+  "subject": "Maps",
+  "question": "A map key says a blue line is a river. What is the blue line?",
+  "answers": [
+   "A river",
+   "A road",
+   "The school fence"
+  ],
+  "why": "A map key explains its symbols."
+ },
+ {
+  "id": "curriculum.0.7",
+  "family": "curriculum.0.safety",
+  "band": 0,
+  "subject": "Safety",
+  "question": "Your ball rolls into the road. What is the safest next step?",
+  "answers": [
+   "Ask an adult for help",
+   "Run after it without looking",
+   "Ask a younger child to fetch it"
+  ],
+  "why": "A lost ball can wait; traffic needs an adult and a safe crossing."
+ },
+ {
+  "id": "curriculum.0.8",
+  "family": "curriculum.0.reading",
+  "band": 0,
+  "subject": "Reading",
+  "question": "In the sentence The small dog barked, which word describes the dog?",
+  "answers": [
+   "Small",
+   "Barked",
+   "The"
+  ],
+  "why": "Small describes the dog; barked tells what it did."
+ },
+ {
+  "id": "curriculum.0.9",
+  "family": "curriculum.0.measuring",
+  "band": 0,
+  "subject": "Measuring",
+  "question": "Which tool would help measure the length of your desk?",
+  "answers": [
+   "A ruler",
+   "A thermometer",
+   "A clock"
+  ],
+  "why": "A ruler measures length."
+ },
+ {
+  "id": "curriculum.0.10",
+  "family": "curriculum.0.nature",
+  "band": 0,
+  "subject": "Nature",
+  "question": "Ice left in a warm room becomes what?",
+  "answers": [
+   "Liquid water",
+   "More ice",
+   "Sand"
+  ],
+  "why": "Warmth melts ice into water."
+ },
+ {
+  "id": "curriculum.0.11",
+  "family": "curriculum.0.fairness",
+  "band": 0,
+  "subject": "Fairness",
+  "question": "Four children want two swings. Which plan gives everyone a turn?",
+  "answers": [
+   "Take timed turns in pairs",
+   "Let the tallest stay on",
+   "Hide one swing"
+  ],
+  "why": "Timed turns share a limited resource."
+ },
+ {
+  "id": "curriculum.0.12",
+  "family": "curriculum.0.sorting",
+  "band": 0,
+  "subject": "Sorting",
+  "question": "Which belongs with a spoon and fork?",
+  "answers": [
+   "A knife",
+   "A sock",
+   "A flower"
+  ],
+  "why": "All three are utensils, even though they have different uses."
+ },
+ {
+  "id": "curriculum.0.13",
+  "family": "curriculum.0.numbers",
+  "band": 0,
+  "subject": "Numbers",
+  "question": "You spend three of your five tokens. How many remain?",
+  "answers": [
+   "Two",
+   "Three",
+   "Eight"
+  ],
+  "why": "Five minus three leaves two."
+ },
+ {
+  "id": "curriculum.0.14",
+  "family": "curriculum.0.communication",
+  "band": 0,
+  "subject": "Communication",
+  "question": "Your friend did not hear the game rules. What helps them understand?",
+  "answers": [
+   "Explain and let them ask questions",
+   "Speak faster",
+   "Say everyone else understands"
+  ],
+  "why": "Clear instructions and questions help someone join in."
+ },
+ {
+  "id": "curriculum.0.15",
+  "family": "curriculum.0.discovery",
+  "band": 0,
+  "subject": "Discovery",
+  "question": "Your shadow gets longer late in the day. What changed?",
+  "answers": [
+   "The angle of sunlight",
+   "Your shoes grew",
+   "The ground became taller"
+  ],
+  "why": "The Sun appears lower, changing the angle of the light."
+ },
+ {
+  "id": "curriculum.1.0",
+  "family": "curriculum.1.fractions",
+  "band": 1,
+  "subject": "Fractions",
+  "question": "A recipe needs half a cup. You make twice the recipe. How much?",
+  "answers": [
+   "One cup",
+   "A quarter cup",
+   "Two cups"
+  ],
+  "why": "Doubling one half gives one whole."
+ },
+ {
+  "id": "curriculum.1.1",
+  "family": "curriculum.1.evidence",
+  "band": 1,
+  "subject": "Evidence",
+  "question": "Two classmates disagree about yesterday’s rainfall. What could settle it?",
+  "answers": [
+   "The recorded rain gauge measurement",
+   "Who speaks louder",
+   "A guess about tomorrow"
+  ],
+  "why": "A measurement addresses this particular claim."
+ },
+ {
+  "id": "curriculum.1.2",
+  "family": "curriculum.1.writing",
+  "band": 1,
+  "subject": "Writing",
+  "question": "Which detail helps a reader picture a noisy market?",
+  "answers": [
+   "Stallholders called over rattling carts",
+   "It was a place",
+   "Many things happened"
+  ],
+  "why": "Specific sounds make the scene concrete."
+ },
+ {
+  "id": "curriculum.1.3",
+  "family": "curriculum.1.geometry",
+  "band": 1,
+  "subject": "Geometry",
+  "question": "Which shape has four equal sides and four right angles?",
+  "answers": [
+   "A square",
+   "Any rectangle",
+   "A triangle"
+  ],
+  "why": "A square has both equal sides and right angles."
+ },
+ {
+  "id": "curriculum.1.4",
+  "family": "curriculum.1.sources",
+  "band": 1,
+  "subject": "Sources",
+  "question": "A photograph is labeled ten years earlier than your report. What should you do?",
+  "answers": [
+   "Explain its date and limits",
+   "Pretend it was taken yesterday",
+   "Remove the date"
+  ],
+  "why": "A dated source can help if its limits are clear."
+ },
+ {
+  "id": "curriculum.1.5",
+  "family": "curriculum.1.ecology",
+  "band": 1,
+  "subject": "Ecology",
+  "question": "A pond loses most of its insects. What might happen to insect-eating fish?",
+  "answers": [
+   "They may have less food",
+   "They no longer need food",
+   "They become plants"
+  ],
+  "why": "Food-web changes can affect other species."
+ },
+ {
+  "id": "curriculum.1.6",
+  "family": "curriculum.1.planning",
+  "band": 1,
+  "subject": "Planning",
+  "question": "A group has one hour and three tasks. What helps prevent forgotten work?",
+  "answers": [
+   "Assign tasks and check progress",
+   "All start the same task",
+   "Leave the hardest task unnamed"
+  ],
+  "why": "Responsibilities and a check-in make a plan workable."
+ },
+ {
+  "id": "curriculum.1.7",
+  "family": "curriculum.1.numbers",
+  "band": 1,
+  "subject": "Numbers",
+  "question": "A shop gives a ten-percent discount on a 50-token item. What is the discount?",
+  "answers": [
+   "Five tokens",
+   "Ten tokens",
+   "Forty-five tokens"
+  ],
+  "why": "Ten percent of fifty is five; forty-five is the final price."
+ },
+ {
+  "id": "curriculum.1.8",
+  "family": "curriculum.1.history",
+  "band": 1,
+  "subject": "History",
+  "question": "A diary and a later textbook disagree. What is a useful next step?",
+  "answers": [
+   "Compare their context and other evidence",
+   "Always believe the older source",
+   "Choose the shorter text"
+  ],
+  "why": "Sources have different viewpoints and limits."
+ },
+ {
+  "id": "curriculum.1.9",
+  "family": "curriculum.1.reading",
+  "band": 1,
+  "subject": "Reading",
+  "question": "A character says I am fine but keeps avoiding friends. What can you infer?",
+  "answers": [
+   "Their words may hide how they feel",
+   "They must be lying about everything",
+   "They have no feelings"
+  ],
+  "why": "Actions can suggest a feeling without proving every possible explanation."
+ },
+ {
+  "id": "curriculum.1.10",
+  "family": "curriculum.1.experiment",
+  "band": 1,
+  "subject": "Experiment",
+  "question": "You test two paper planes. Which comparison is fairer?",
+  "answers": [
+   "Use the same launch point and method",
+   "Throw one from a balcony",
+   "Only count the better plane’s best flight"
+  ],
+  "why": "Keep other conditions similar and compare several trials."
+ },
+ {
+  "id": "curriculum.1.11",
+  "family": "curriculum.1.units",
+  "band": 1,
+  "subject": "Units",
+  "question": "A path is 300 centimeters long. How many meters?",
+  "answers": [
+   "Three",
+   "Thirty",
+   "Three hundred"
+  ],
+  "why": "One hundred centimeters equal one meter."
+ },
+ {
+  "id": "curriculum.1.12",
+  "family": "curriculum.1.media",
+  "band": 1,
+  "subject": "Media",
+  "question": "An advert calls a snack healthy but lists no details. What should you check?",
+  "answers": [
+   "Its ingredients and nutrition information",
+   "The mascot’s smile",
+   "How often the advert appears"
+  ],
+  "why": "The claim needs information beyond presentation."
+ },
+ {
+  "id": "curriculum.1.13",
+  "family": "curriculum.1.accessibility",
+  "band": 1,
+  "subject": "Accessibility",
+  "question": "A school notice is too small for a classmate to read. What could help?",
+  "answers": [
+   "Provide a readable version",
+   "Ask them to guess",
+   "Remove all notices"
+  ],
+  "why": "Changing the format can improve access without excluding someone."
+ },
+ {
+  "id": "curriculum.1.14",
+  "family": "curriculum.1.probability",
+  "band": 1,
+  "subject": "Probability",
+  "question": "A fair coin landed heads three times. What about its next toss?",
+  "answers": [
+   "Heads and tails are still equally likely",
+   "Tails is now guaranteed",
+   "Heads cannot happen again"
+  ],
+  "why": "Independent fair tosses do not owe a particular next result."
+ },
+ {
+  "id": "curriculum.1.15",
+  "family": "curriculum.1.environment",
+  "band": 1,
+  "subject": "Environment",
+  "question": "Which helps reduce waste before recycling is needed?",
+  "answers": [
+   "Reuse a working item",
+   "Replace it whenever packaging changes",
+   "Throw it away first"
+  ],
+  "why": "Reuse avoids making some waste in the first place."
+ },
+ {
+  "id": "curriculum.2.0",
+  "family": "curriculum.2.statistics",
+  "band": 2,
+  "subject": "Statistics",
+  "question": "A few extremely high incomes inflate the average. Which measure may describe a typical income better?",
+  "answers": [
+   "The median",
+   "The largest income",
+   "The total population"
+  ],
+  "why": "The median is less affected by extreme values."
+ },
+ {
+  "id": "curriculum.2.1",
+  "family": "curriculum.2.biology",
+  "band": 2,
+  "subject": "Biology",
+  "question": "After exercise, why can your breathing become faster?",
+  "answers": [
+   "Your body needs more oxygen",
+   "Your lungs become smaller instantly",
+   "Breathing has no link to activity"
+  ],
+  "why": "Activity increases the body’s demand for oxygen."
+ },
+ {
+  "id": "curriculum.2.2",
+  "family": "curriculum.2.budgeting",
+  "band": 2,
+  "subject": "Budgeting",
+  "question": "A monthly budget has income of 800 and expenses of 850. What is the balance?",
+  "answers": [
+   "A deficit of 50",
+   "A surplus of 50",
+   "A balance of zero"
+  ],
+  "why": "Expenses exceed income by fifty."
+ },
+ {
+  "id": "curriculum.2.3",
+  "family": "curriculum.2.research",
+  "band": 2,
+  "subject": "Research",
+  "question": "A survey asks only members of one club about the whole school. What is the concern?",
+  "answers": [
+   "The sample may be unrepresentative",
+   "Every survey is useless",
+   "The club must be dishonest"
+  ],
+  "why": "A narrow sample may miss other pupils’ experiences."
+ },
+ {
+  "id": "curriculum.2.4",
+  "family": "curriculum.2.chemistry",
+  "band": 2,
+  "subject": "Chemistry",
+  "question": "A substance dissolves in water. Does that automatically make it safe to drink?",
+  "answers": [
+   "No; solubility does not establish safety",
+   "Yes, always",
+   "Only if the water looks clear"
+  ],
+  "why": "Appearance and solubility do not prove safety."
+ },
+ {
+  "id": "curriculum.2.5",
+  "family": "curriculum.2.digital life",
+  "band": 2,
+  "subject": "Digital life",
+  "question": "A message asks for your account password to award a prize. What should you do?",
+  "answers": [
+   "Verify through a trusted channel without sharing it",
+   "Send it before the offer expires",
+   "Post it publicly to ask for advice"
+  ],
+  "why": "A prize claim does not justify revealing a password."
+ },
+ {
+  "id": "curriculum.2.6",
+  "family": "curriculum.2.arguments",
+  "band": 2,
+  "subject": "Arguments",
+  "question": "Which supports the claim that a new timetable improved attendance?",
+  "answers": [
+   "Comparable attendance records before and after",
+   "One enthusiastic slogan",
+   "The timetable’s color"
+  ],
+  "why": "Comparable records support a claim more than presentation."
+ },
+ {
+  "id": "curriculum.2.7",
+  "family": "curriculum.2.physics",
+  "band": 2,
+  "subject": "Physics",
+  "question": "A cyclist brakes on a wet road. What should they expect?",
+  "answers": [
+   "Less grip and a longer stopping distance",
+   "Guaranteed instant stopping",
+   "Wet roads remove the need to brake"
+  ],
+  "why": "Reduced friction can increase stopping distance."
+ },
+ {
+  "id": "curriculum.2.8",
+  "family": "curriculum.2.literature",
+  "band": 2,
+  "subject": "Literature",
+  "question": "An unreliable narrator contradicts an earlier account. What should you examine?",
+  "answers": [
+   "Their motives and the other evidence",
+   "Only the final sentence",
+   "Whether the book has pictures"
+  ],
+  "why": "A contradiction can reveal viewpoint and motive."
+ },
+ {
+  "id": "curriculum.2.9",
+  "family": "curriculum.2.scheduling",
+  "band": 2,
+  "subject": "Scheduling",
+  "question": "Two exams share a week. What study plan is more useful?",
+  "answers": [
+   "Space revision and practice both subjects",
+   "Study only the easier one",
+   "Wait until both exams finish"
+  ],
+  "why": "Spaced practice prepares you for both deadlines."
+ },
+ {
+  "id": "curriculum.2.10",
+  "family": "curriculum.2.data",
+  "band": 2,
+  "subject": "Data",
+  "question": "Two trends rise together. What can you conclude immediately?",
+  "answers": [
+   "They correlate; causation needs more evidence",
+   "One certainly caused the other",
+   "Neither trend exists"
+  ],
+  "why": "Correlation alone does not establish cause."
+ },
+ {
+  "id": "curriculum.2.11",
+  "family": "curriculum.2.civics",
+  "band": 2,
+  "subject": "Civics",
+  "question": "A school rule affects only some pupils. What strengthens a review?",
+  "answers": [
+   "Hear affected pupils and assess evidence",
+   "Only ask those unaffected",
+   "Assume all effects are identical"
+  ],
+  "why": "A review needs the experiences of people affected."
+ },
+ {
+  "id": "curriculum.2.12",
+  "family": "curriculum.2.algebra",
+  "band": 2,
+  "subject": "Algebra",
+  "question": "If 3x equals 21, what is x?",
+  "answers": [
+   "Seven",
+   "Eighteen",
+   "Sixty-three"
+  ],
+  "why": "Divide both sides by three."
+ },
+ {
+  "id": "curriculum.2.13",
+  "family": "curriculum.2.geography",
+  "band": 2,
+  "subject": "Geography",
+  "question": "Two towns have different flood risk. Which evidence matters?",
+  "answers": [
+   "Elevation, drainage and flood records",
+   "Their names’ lengths",
+   "The number of tourist postcards"
+  ],
+  "why": "Physical conditions and records help explain risk."
+ },
+ {
+  "id": "curriculum.2.14",
+  "family": "curriculum.2.music",
+  "band": 2,
+  "subject": "Music",
+  "question": "Your group keeps rushing a difficult passage. What practice would help?",
+  "answers": [
+   "Slow the tempo and rebuild together",
+   "Play louder each time",
+   "Skip every rehearsal"
+  ],
+  "why": "Slower coordinated practice exposes timing problems."
+ },
+ {
+  "id": "curriculum.2.15",
+  "family": "curriculum.2.health",
+  "band": 2,
+  "subject": "Health",
+  "question": "A teammate has persistent pain after training. What is appropriate?",
+  "answers": [
+   "Report it and seek qualified assessment",
+   "Treat pain as proof of improvement",
+   "Promise a diagnosis from a rumor"
+  ],
+  "why": "Persistent pain deserves an appropriate assessment."
+ },
+ {
+  "id": "curriculum.3.0",
+  "family": "curriculum.3.finance",
+  "band": 3,
+  "subject": "Finance",
+  "question": "A loan has a low monthly payment but a much longer term. What should you compare?",
+  "answers": [
+   "Total repayment and terms",
+   "Only the first payment",
+   "The lender’s logo"
+  ],
+  "why": "A low monthly figure can hide a larger total cost."
+ },
+ {
+  "id": "curriculum.3.1",
+  "family": "curriculum.3.applications",
+  "band": 3,
+  "subject": "Applications",
+  "question": "A job advert requires a licence you do not have. What should you do?",
+  "answers": [
+   "Check the qualification pathway",
+   "Claim you already hold it",
+   "Assume enthusiasm replaces it"
+  ],
+  "why": "Regulated requirements need an actual pathway."
+ },
+ {
+  "id": "curriculum.3.2",
+  "family": "curriculum.3.research",
+  "band": 3,
+  "subject": "Research",
+  "question": "A study loses many participants before its final survey. What is a concern?",
+  "answers": [
+   "The remaining sample may be biased",
+   "The findings become certain",
+   "Missing participants count as agreement"
+  ],
+  "why": "Dropout can change who the result represents."
+ },
+ {
+  "id": "curriculum.3.3",
+  "family": "curriculum.3.civics",
+  "band": 3,
+  "subject": "Civics",
+  "question": "Your council budget cannot fund every proposal. What supports a defensible decision?",
+  "answers": [
+   "Compare costs, access and expected impact",
+   "Fund the loudest speech",
+   "Keep the costs secret"
+  ],
+  "why": "A clear budget explains priorities and tradeoffs."
+ },
+ {
+  "id": "curriculum.3.4",
+  "family": "curriculum.3.employment",
+  "band": 3,
+  "subject": "Employment",
+  "question": "An offer promises flexibility but gives no written hours or pay. What should you clarify?",
+  "answers": [
+   "The actual terms before accepting",
+   "Only the office decor",
+   "How impressive the title sounds"
+  ],
+  "why": "Pay, hours and conditions matter beyond a title."
+ },
+ {
+  "id": "curriculum.3.5",
+  "family": "curriculum.3.science",
+  "band": 3,
+  "subject": "Science",
+  "question": "A result cannot be reproduced by another team. What is the next step?",
+  "answers": [
+   "Review methods and test the finding",
+   "Hide the original method",
+   "Call replication unnecessary"
+  ],
+  "why": "Replication and method review help assess a finding."
+ },
+ {
+  "id": "curriculum.3.6",
+  "family": "curriculum.3.writing",
+  "band": 3,
+  "subject": "Writing",
+  "question": "An essay’s conclusion introduces its only evidence. What revision helps?",
+  "answers": [
+   "Develop the evidence in the argument",
+   "Remove every supporting paragraph",
+   "Make the title longer"
+  ],
+  "why": "The conclusion should follow a developed argument."
+ },
+ {
+  "id": "curriculum.3.7",
+  "family": "curriculum.3.statistics",
+  "band": 3,
+  "subject": "Statistics",
+  "question": "A screening result has false positives. What else matters when interpreting it?",
+  "answers": [
+   "Prevalence and confirmatory evidence",
+   "Only the headline accuracy",
+   "The color of the form"
+  ],
+  "why": "Base rates and confirmation affect interpretation."
+ },
+ {
+  "id": "curriculum.3.8",
+  "family": "curriculum.3.design",
+  "band": 3,
+  "subject": "Design",
+  "question": "An app works for its designers but confuses new users. What helps?",
+  "answers": [
+   "Observe representative users attempting tasks",
+   "Ask designers to praise it",
+   "Remove every label"
+  ],
+  "why": "Testing real tasks reveals usability problems."
+ },
+ {
+  "id": "curriculum.3.9",
+  "family": "curriculum.3.planning",
+  "band": 3,
+  "subject": "Planning",
+  "question": "A project depends on a supplier with uncertain delivery. What should the plan include?",
+  "answers": [
+   "A contingency and a decision deadline",
+   "An assumption that delay is impossible",
+   "A promise to finish yesterday"
+  ],
+  "why": "A contingency manages dependence on uncertain delivery."
+ },
+ {
+  "id": "curriculum.3.10",
+  "family": "curriculum.3.ethics",
+  "band": 3,
+  "subject": "Ethics",
+  "question": "A sponsor offers funding if unfavorable findings are removed. What is at stake?",
+  "answers": [
+   "Independence and honest reporting",
+   "Only the report’s length",
+   "Nothing if the sponsor pays"
+  ],
+  "why": "Funding pressure can compromise the integrity of findings."
+ },
+ {
+  "id": "curriculum.3.11",
+  "family": "curriculum.3.contracts",
+  "band": 3,
+  "subject": "Contracts",
+  "question": "Two agreements have equal pay but different notice and leave terms. What should you compare?",
+  "answers": [
+   "The full conditions against your needs",
+   "Only the pay headline",
+   "Which document uses a nicer font"
+  ],
+  "why": "Conditions can change the practical value of equal pay."
+ },
+ {
+  "id": "curriculum.3.12",
+  "family": "curriculum.3.history",
+  "band": 3,
+  "subject": "History",
+  "question": "A policy’s supporters and opponents describe different outcomes. What helps evaluate it?",
+  "answers": [
+   "Identify who benefited, costs and evidence",
+   "Count the longer speech",
+   "Ignore everyone affected"
+  ],
+  "why": "Effects can differ across groups and over time."
+ },
+ {
+  "id": "curriculum.3.13",
+  "family": "curriculum.3.probability",
+  "band": 3,
+  "subject": "Probability",
+  "question": "A venture offers a rare large payoff and frequent small losses. What should you evaluate?",
+  "answers": [
+   "Expected outcomes and affordable downside",
+   "Only the largest possible win",
+   "Assume persistence guarantees profit"
+  ],
+  "why": "Both probability and the size of gains or losses matter."
+ },
+ {
+  "id": "curriculum.3.14",
+  "family": "curriculum.3.education",
+  "band": 3,
+  "subject": "Education",
+  "question": "Two courses have different fees and placement records. What should guide comparison?",
+  "answers": [
+   "Accreditation, costs, outcomes and fit",
+   "Which brochure is brighter",
+   "The promise of instant success"
+  ],
+  "why": "A suitable pathway balances evidence, cost and personal goals."
+ },
+ {
+  "id": "curriculum.3.15",
+  "family": "curriculum.3.public speaking",
+  "band": 3,
+  "subject": "Public speaking",
+  "question": "Your audience challenges a weak point in your proposal. What is useful?",
+  "answers": [
+   "Address the limit and explain the revision",
+   "Repeat the slogan louder",
+   "Pretend the question was not asked"
+  ],
+  "why": "A reasoned revision can strengthen a proposal."
+ },
+ {
+  "id": "curriculum.connected.0",
+  "family": "curriculum.connected.0.Numbers",
+  "band": 0,
+  "subject": "Numbers",
+  "question": "Four children share eight counters equally. How many does each get?",
+  "answers": [
+   "Two",
+   "Four",
+   "Eight"
+  ],
+  "why": "Eight split into four equal groups gives two in each."
+ },
+ {
+  "id": "curriculum.connected.1",
+  "family": "curriculum.connected.0.Reading",
+  "band": 0,
+  "subject": "Reading",
+  "question": "A sign says the library closes at five. What should you do before visiting?",
+  "answers": [
+   "Check that I can arrive before five",
+   "Assume it stays open all evening",
+   "Ignore the closing time"
+  ],
+  "why": "Reading a time helps plan a useful visit."
+ },
+ {
+  "id": "curriculum.connected.2",
+  "family": "curriculum.connected.0.Safety",
+  "band": 0,
+  "subject": "Safety",
+  "question": "A toy has a small broken part that could hurt someone. What helps?",
+  "answers": [
+   "Ask an adult and stop using it",
+   "Hide the broken part",
+   "Offer it to a younger child"
+  ],
+  "why": "A trusted adult can help inspect and repair it safely."
+ },
+ {
+  "id": "curriculum.connected.3",
+  "family": "curriculum.connected.0.Nature",
+  "band": 0,
+  "subject": "Nature",
+  "question": "A seed needs water, but its pot is already soaked. What should I check?",
+  "answers": [
+   "Whether the soil needs more water",
+   "Pour water every few minutes",
+   "Remove all the soil"
+  ],
+  "why": "Care responds to what the plant actually needs."
+ },
+ {
+  "id": "curriculum.connected.4",
+  "family": "curriculum.connected.0.Listening",
+  "band": 0,
+  "subject": "Listening",
+  "question": "A classmate explains that loud games hurt their ears. What helps us play together?",
+  "answers": [
+   "Choose a quieter game together",
+   "Insist everyone enjoys the same noise",
+   "Speak even louder"
+  ],
+  "why": "Listening can make a shared activity accessible."
+ },
+ {
+  "id": "curriculum.connected.5",
+  "family": "curriculum.connected.0.Patterns",
+  "band": 0,
+  "subject": "Patterns",
+  "question": "The tiles go red, blue, red, blue. Which colour comes next?",
+  "answers": [
+   "Red",
+   "Green",
+   "Two blues"
+  ],
+  "why": "The repeated pair begins again with red."
+ },
+ {
+  "id": "curriculum.connected.6",
+  "family": "curriculum.connected.0.Fairness",
+  "band": 0,
+  "subject": "Fairness",
+  "question": "Two children want the same classroom tool. What is a fair plan?",
+  "answers": [
+   "Agree turns and a time to swap",
+   "Let the loudest child keep it",
+   "Hide it from both"
+  ],
+  "why": "A clear turn-taking plan lets both people take part."
+ },
+ {
+  "id": "curriculum.connected.7",
+  "family": "curriculum.connected.0.Time",
+  "band": 0,
+  "subject": "Time",
+  "question": "Practice starts after lunch. Which plan fits?",
+  "answers": [
+   "Finish lunch before going to practice",
+   "Start practice during breakfast",
+   "Assume practice happened yesterday"
+  ],
+  "why": "Time words help put the day in order."
+ },
+ {
+  "id": "curriculum.connected.8",
+  "family": "curriculum.connected.1.Fractions",
+  "band": 1,
+  "subject": "Fractions",
+  "question": "A recipe needs half a cup twice. What is the total?",
+  "answers": [
+   "One cup",
+   "Two cups",
+   "A quarter cup"
+  ],
+  "why": "Two halves make one whole."
+ },
+ {
+  "id": "curriculum.connected.9",
+  "family": "curriculum.connected.1.Maps",
+  "band": 1,
+  "subject": "Maps",
+  "question": "A map key marks a crossed path as closed. What should I do?",
+  "answers": [
+   "Find an open route",
+   "Treat every route as open",
+   "Remove the key"
+  ],
+  "why": "The key helps interpret current access."
+ },
+ {
+  "id": "curriculum.connected.10",
+  "family": "curriculum.connected.1.Measuring",
+  "band": 1,
+  "subject": "Measuring",
+  "question": "Two plants are measured with different units. What makes comparison fair?",
+  "answers": [
+   "Convert both measurements to the same unit",
+   "Compare only the written numbers",
+   "Choose the prettier plant"
+  ],
+  "why": "The same unit avoids a misleading comparison."
+ },
+ {
+  "id": "curriculum.connected.11",
+  "family": "curriculum.connected.1.Sources",
+  "band": 1,
+  "subject": "Sources",
+  "question": "Two books disagree about a date. What is a useful next step?",
+  "answers": [
+   "Check another reliable source",
+   "Choose the larger number",
+   "Ignore both without checking"
+  ],
+  "why": "Checking evidence can resolve a disagreement."
+ },
+ {
+  "id": "curriculum.connected.12",
+  "family": "curriculum.connected.1.Health",
+  "band": 1,
+  "subject": "Health",
+  "question": "A friend feels unwell during a school trip. What should I do?",
+  "answers": [
+   "Tell the responsible adult",
+   "Leave them behind",
+   "Offer an unknown medicine"
+  ],
+  "why": "The responsible adult can arrange appropriate help."
+ },
+ {
+  "id": "curriculum.connected.13",
+  "family": "curriculum.connected.1.Scheduling",
+  "band": 1,
+  "subject": "Scheduling",
+  "question": "A group task needs three short meetings. What helps?",
+  "answers": [
+   "Agree times that each member can manage",
+   "Schedule without asking anyone",
+   "Wait until the final minute"
+  ],
+  "why": "Shared availability matters when planning group work."
+ },
+ {
+  "id": "curriculum.connected.14",
+  "family": "curriculum.connected.1.Geometry",
+  "band": 1,
+  "subject": "Geometry",
+  "question": "A rectangle is twice as long as it is wide. What stays true?",
+  "answers": [
+   "The long side is two times the short side",
+   "All four sides are equal",
+   "It must be a triangle"
+  ],
+  "why": "The relationship between sides is part of the description."
+ },
+ {
+  "id": "curriculum.connected.15",
+  "family": "curriculum.connected.1.Environment",
+  "band": 1,
+  "subject": "Environment",
+  "question": "The school wants less food waste. What should it measure first?",
+  "answers": [
+   "How much edible food is thrown away",
+   "Only the colour of the bins",
+   "The number of posters"
+  ],
+  "why": "A useful baseline lets the school check improvement."
+ },
+ {
+  "id": "curriculum.connected.16",
+  "family": "curriculum.connected.2.Statistics",
+  "band": 2,
+  "subject": "Statistics",
+  "question": "One survey asks only members of a sports team about a school rule. What is the concern?",
+  "answers": [
+   "The sample may miss other pupils",
+   "Every pupil must have the same view",
+   "More decimal places remove bias"
+  ],
+  "why": "The sample should represent the people affected."
+ },
+ {
+  "id": "curriculum.connected.17",
+  "family": "curriculum.connected.2.Digital life",
+  "band": 2,
+  "subject": "Digital life",
+  "question": "A game message asks for my account password to award a prize. What is safest?",
+  "answers": [
+   "Do not share it; check official account guidance",
+   "Send it before the offer expires",
+   "Share a friend's password instead"
+  ],
+  "why": "A prize message does not establish a legitimate need for a password."
+ },
+ {
+  "id": "curriculum.connected.18",
+  "family": "curriculum.connected.2.Research",
+  "band": 2,
+  "subject": "Research",
+  "question": "A project uses another group's photograph. What must I check?",
+  "answers": [
+   "Permission and appropriate credit",
+   "Whether I can crop out their name",
+   "Only the file size"
+  ],
+  "why": "Using existing work needs permission and attribution where required."
+ },
+ {
+  "id": "curriculum.connected.19",
+  "family": "curriculum.connected.2.Probability",
+  "band": 2,
+  "subject": "Probability",
+  "question": "A fair coin lands heads three times. What does that establish about the next flip?",
+  "answers": [
+   "It is still uncertain",
+   "Tails is guaranteed",
+   "Heads can never happen again"
+  ],
+  "why": "Earlier flips do not guarantee the next independent outcome."
+ },
+ {
+  "id": "curriculum.connected.20",
+  "family": "curriculum.connected.2.Accessibility",
+  "band": 2,
+  "subject": "Accessibility",
+  "question": "A club meets upstairs and one pupil cannot use the stairs. What helps?",
+  "answers": [
+   "Agree an accessible meeting place",
+   "Ask them to watch later",
+   "Tell them to avoid joining"
+  ],
+  "why": "Access should be part of the shared plan."
+ },
+ {
+  "id": "curriculum.connected.21",
+  "family": "curriculum.connected.2.Evidence",
+  "band": 2,
+  "subject": "Evidence",
+  "question": "A claim changes several conditions at once and reports improvement. What is missing?",
+  "answers": [
+   "A way to identify which change mattered",
+   "A more exciting title",
+   "A larger logo"
+  ],
+  "why": "Controlling variables makes a causal claim easier to assess."
+ },
+ {
+  "id": "curriculum.connected.22",
+  "family": "curriculum.connected.2.Literature",
+  "band": 2,
+  "subject": "Literature",
+  "question": "A narrator gives an account that other characters contradict. What should I examine?",
+  "answers": [
+   "Evidence that the narrator may be unreliable",
+   "Only the first sentence",
+   "Assume contradictions are impossible"
+  ],
+  "why": "Contradictions can reveal the limits of the narrator's account."
+ },
+ {
+  "id": "curriculum.connected.23",
+  "family": "curriculum.connected.2.Civics",
+  "band": 2,
+  "subject": "Civics",
+  "question": "A council candidate promises a new facility without a cost estimate. What should voters ask?",
+  "answers": [
+   "How it will be funded and delivered",
+   "How loud the campaign music is",
+   "Whether the promise rhymes"
+  ],
+  "why": "Public promises need practical costs and delivery plans."
+ },
+ {
+  "id": "curriculum.connected.24",
+  "family": "curriculum.connected.3.Contracts",
+  "band": 3,
+  "subject": "Contracts",
+  "question": "An apprenticeship agreement lists hours differently from the advert. What is useful?",
+  "answers": [
+   "Clarify the written terms before accepting",
+   "Assume the advert overrides everything",
+   "Sign without reading"
+  ],
+  "why": "Clarifying terms prevents an avoidable misunderstanding."
+ },
+ {
+  "id": "curriculum.connected.25",
+  "family": "curriculum.connected.3.Budgeting",
+  "band": 3,
+  "subject": "Budgeting",
+  "question": "A monthly budget leaves no money for predictable travel costs. What needs changing?",
+  "answers": [
+   "Include travel before treating the remainder as spare cash",
+   "Ignore travel until the end",
+   "Count borrowed money as earnings"
+  ],
+  "why": "A realistic budget includes ordinary costs."
+ },
+ {
+  "id": "curriculum.connected.26",
+  "family": "curriculum.connected.3.Applications",
+  "band": 3,
+  "subject": "Applications",
+  "question": "A placement asks for a practical sample. What is strongest?",
+  "answers": [
+   "A relevant completed sample with honest credit",
+   "An unrelated certificate image",
+   "Someone else's sample under my name"
+  ],
+  "why": "Relevant evidence supports an application without inventing experience."
+ },
+ {
+  "id": "curriculum.connected.27",
+  "family": "curriculum.connected.3.Education",
+  "band": 3,
+  "subject": "Education",
+  "question": "Two courses have different entry requirements and costs. What should I compare?",
+  "answers": [
+   "Eligibility, total cost and useful outcomes",
+   "Only the course names",
+   "Only the advertising colours"
+  ],
+  "why": "A course decision benefits from a practical comparison."
+ },
+ {
+  "id": "curriculum.connected.28",
+  "family": "curriculum.connected.3.Employment",
+  "band": 3,
+  "subject": "Employment",
+  "question": "A first job offers a variable-hours schedule. What should I ask?",
+  "answers": [
+   "How hours are agreed and how reliable income will be",
+   "Whether every week is guaranteed to be identical",
+   "Only the uniform colour"
+  ],
+  "why": "Variable hours affect both planning and household income."
+ },
+ {
+  "id": "curriculum.connected.29",
+  "family": "curriculum.connected.3.Planning",
+  "band": 3,
+  "subject": "Planning",
+  "question": "A team has two weeks and four necessary tasks. What helps?",
+  "answers": [
+   "Set responsibilities and review progress before the deadline",
+   "Wait until the final evening",
+   "Assume one person will do everything"
+  ],
+  "why": "Responsibilities and early reviews make completion more realistic."
+ },
+ {
+  "id": "curriculum.connected.30",
+  "family": "curriculum.connected.3.Finance",
+  "band": 3,
+  "subject": "Finance",
+  "question": "A loan advertisement shows only the weekly payment. What else matters?",
+  "answers": [
+   "Total repayment, fees and duration",
+   "Only the colour of the bank logo",
+   "Whether the payment looks small"
+  ],
+  "why": "A small payment can still carry a large total cost."
+ },
+ {
+  "id": "curriculum.connected.31",
+  "family": "curriculum.connected.3.Public speaking",
+  "band": 3,
+  "subject": "Public speaking",
+  "question": "A presentation includes a result I cannot verify. What should I do?",
+  "answers": [
+   "State the uncertainty or remove the unsupported claim",
+   "Say it more confidently",
+   "Hide the source slide"
+  ],
+  "why": "A clear account distinguishes evidence from uncertainty."
+ }
+]

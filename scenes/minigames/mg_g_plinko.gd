@@ -84,12 +84,6 @@ func _drop() -> void:
 			right += 1
 	# fair binomial; luck adds a small chance to nudge one step toward the middle
 	var tab: Array = TABLES[risk]
-	if luck > 1.0 and (right == 0 or right == ROWS) and randf() < (luck - 1.0) * 0.05:
-		path[randi() % ROWS] = not path[randi() % ROWS]
-		right = 0
-		for pth in path:
-			if pth:
-				right += 1
 	var tw := create_tween()
 	var x := OX
 	var rr := 0

@@ -163,6 +163,7 @@ func trial(crime: String, min_years: int, max_years: int) -> void:
 	var yr := GameState.year_now()
 	var sm := GameState.stat("smarts") / 600.0
 	var evidence := clampf(32.0 + float(p.get("heat", 0)) * 0.32 + p.get("record", []).size() * 4.0 + Wanted.trial_bias() + (8.0 if max_years >= 10 else 0.0) + randf_range(-14.0, 18.0), 8.0, 96.0)
+	if Journey.modules["recovery"].begin_trial(crime,min_years,max_years,evidence): return
 	var evidence_penalty := (evidence - 50.0) / 180.0
 	var acq := Grit.d("acquit") / float(Places.law("police"))
 	if GameState.has_flag("hostile_witness"):
@@ -228,27 +229,4 @@ func use_jail_card() -> void:
 
 
 func sue(npc_id: String) -> void:
-	var p := GameState.player
-	var n := GameState.npc(npc_id)
-	if n.is_empty():
-		return
-	if int(p["age"]) < 18:
-		EventEngine.push_info("⚖️", "Lawsuit", "You must be 18 to file a lawsuit.")
-		return
-	var damages := clampi(int(int(n.get("money", 5000)) * 0.4), 1500, 250000)
-	var reasons := ["emotional distress", "breach of contract", "a property dispute", "defamation", "an unpaid debt"]
-	var why: String = reasons[randi() % reasons.size()]
-	var choices: Array = []
-	var tiers := [["Represent yourself (free)", 0.2], ["Hire a lawyer (%s)" % GameState.fmt_money(_lawyer_cost(1) / 2), 0.42], ["Hire a top firm (%s)" % GameState.fmt_money(_lawyer_cost(2) / 2), 0.62]]
-	for i in range(3):
-		var cost := _lawyer_cost(i) / 2
-		var ch := clampf(float(tiers[i][1]) + (GameState.stat("smarts") - 50) / 300.0, 0.05, 0.9)
-		var c := {"label": tiers[i][0], "outcomes": [
-			{"weight": ch, "text": "I won the lawsuit against %s and was awarded %s." % [n["first"], GameState.fmt_money(damages)], "effects": {"money": damages - cost, "happiness": 8}, "relationship": {"them": -60}},
-			{"weight": 1.0 - ch, "text": "I lost the lawsuit against %s and had to pay court costs." % n["first"], "effects": {"money": -cost - 1500, "happiness": -6}, "relationship": {"them": -40}},
-		]}
-		if cost > 0:
-			c["requires"] = {"money": cost}
-		choices.append(c)
-	choices.append({"label": "Drop it", "outcomes": [{"text": ""}]})
-	EventEngine.push_decision({"id": "_sue", "icon": "⚖️", "title": "Lawsuit", "text": "You're suing %s for %s, seeking %s." % [GameState.full_name(npc_id), why, GameState.fmt_money(damages)], "choices": choices}, {"them": npc_id})
+	Depth.start_claim(npc_id)

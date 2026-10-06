@@ -1,0 +1,142 @@
+{
+ "Aviation": [
+  ["Cabin count", "Your practice passenger count differs from the boarding list. What comes first?", "Reconcile the count before sign-off", "Use the larger number", "Copy yesterday's count", "A checked count matters more than a quick sign-off."],
+  ["Weather briefing", "A training flight's weather briefing is out of date. What should the team use?", "An updated briefing and instructor review", "The original forecast", "The shortest route regardless", "The exercise needs current conditions and qualified supervision."],
+  ["Handover note", "The simulator reports an intermittent fault. What belongs in the handover?", "Its symptoms, timing and unresolved status", "Only that the session ended", "A guess presented as a repair", "An honest fault record lets the next qualified person investigate."]
+ ],
+ "Beauty": [
+  ["Consultation", "A practice client describes a style using an unclear photo. What should you agree first?", "Length, finish and realistic limits", "The most expensive treatment", "Whatever is quickest", "A clear consultation prevents a mismatch before work starts."],
+  ["Colour worksheet", "The training colour chart lists a product restriction. What should your plan do?", "Respect the restriction and ask the instructor", "Ignore it for a brighter result", "Mix unrelated products", "Product limits remain part of a supervised practice plan."],
+  ["Service record", "A mannequin exercise did not match the planned finish. What should you record?", "The steps, result and needed adjustment", "A perfect result", "Only the product price", "Recording the actual result makes the next practice useful."]
+ ],
+ "Business": [
+  ["Customer brief", "A client wants both a low price and extra work. What belongs in your proposal?", "Separate scope, price and optional extras", "Unlimited work for the first price", "A price with no deliverables", "A clear scope makes the agreement workable."],
+  ["Cash forecast", "Your model earns a profit but customers pay two months later. What must you check?", "Cash available before bills fall due", "Only the profit total", "Only the customer count", "Profit and cash timing are different constraints."],
+  ["Project review", "A pilot service gained customers but missed its deadline. What is a useful review?", "Both demand and delivery capacity", "Demand alone", "The best testimonial alone", "A viable service needs customers and dependable delivery."]
+ ],
+ "Care": [
+  ["Daily preferences", "A supervised care exercise includes a person's usual routine. What should guide your plan?", "Their preferences and agreed support", "Your preferred timetable only", "The fastest identical routine for everyone", "Care planning starts with the person and their agreed needs."],
+  ["Visit handover", "A practice visit has an unfinished task. What should the next worker receive?", "A clear note of what remains", "A claim that everything is done", "No handover", "An unfinished task needs an honest handover."],
+  ["Support boundary", "The exercise asks you to do something outside your training. What is appropriate?", "Request qualified support", "Pretend to be qualified", "Hide the request", "Knowing your limits is part of reliable care."]
+ ],
+ "Design": [
+  ["Access brief", "A mock building entrance works for some visitors but excludes others. What should the brief include?", "Access needs before choosing the layout", "Decoration first and access later", "Only the cheapest doorway", "Access requirements shape a useful design from the start."],
+  ["Prototype feedback", "Three testers struggle at the same step. What should you change first?", "Investigate that step and retest", "Change the logo only", "Dismiss all three testers", "Repeated difficulty is evidence for a targeted design change."],
+  ["Revision control", "Two teams use different drawing revisions. What prevents a mismatched handover?", "One clearly dated approved revision", "Whichever file opens first", "An undated screenshot", "A shared revision record prevents teams building different designs."]
+ ],
+ "Education": [
+  ["Learning goal", "Your lesson has many activities but no clear goal. What should you add?", "An observable skill learners will practise", "More decoration", "A longer activity list", "A clear learning goal gives practice and feedback a purpose."],
+  ["Understanding check", "A learner gives the right answer but cannot explain it. What is useful next?", "A short explanation or worked example", "An automatic top grade", "No further feedback", "An explanation helps distinguish understanding from a lucky answer."],
+  ["Lesson adjustment", "Half the group finishes early and half needs help. What should your next plan include?", "Extension work and supported practice", "One faster pace for everyone", "Less feedback for everyone", "Different levels of support keep the shared goal accessible."]
+ ],
+ "Energy": [
+  ["Output log", "A training solar array produces less than the model predicts. What should you compare?", "Conditions and recorded output", "Only the panel colour", "Only last year's best day", "Comparable conditions make an output check meaningful."],
+  ["Maintenance brief", "The simulated service task requires an authorization you lack. What comes next?", "Arrange qualified supervision", "Skip authorization", "Claim the task is complete", "A training exercise does not replace authorization for real equipment."],
+  ["Efficiency report", "A proposed upgrade saves energy but has a high initial cost. What belongs in the report?", "Cost, savings and payback assumptions", "Savings without the cost", "The purchase price alone", "An honest comparison includes both cost and expected savings."]
+ ],
+ "Engineering": [
+  ["Requirements", "Your prototype meets one requirement and fails another. What should the review show?", "Both results against the agreed requirements", "Only the successful result", "A success claim with no measurements", "A prototype review should expose unresolved requirements."],
+  ["Test plan", "A component passes once but fails on a repeat run. What should you do?", "Record the variation and repeat controlled tests", "Discard the failure", "Average without recording conditions", "Repeatability and conditions matter when interpreting tests."],
+  ["Change request", "A late design change affects two connected parts. What must be checked?", "Both interfaces and the affected tests", "Only the changed part's appearance", "Only the delivery date", "Connected parts require a coordinated change review."]
+ ],
+ "Environment": [
+  ["Sampling plan", "Your mock river survey samples only one convenient point. What is missing?", "Representative sites and recorded conditions", "A better title", "A single larger sample at the same point", "A survey needs a defensible sampling plan."],
+  ["Waste audit", "The training waste totals do not match the collection records. What should you check?", "Categories, units and missing entries", "Only the largest bin", "The report cover", "Consistent units and complete entries make an audit usable."],
+  ["Public report", "A local project improves one measure but worsens another. What should you publish?", "Both effects and their limits", "Only the improvement", "A promise of zero impact", "Environmental trade-offs belong in the public record."]
+ ],
+ "Facilities": [
+  ["Work order", "A practice repair request says only 'broken'. What information is useful?", "Location, symptoms and priority", "The worker's favourite tool", "A completion date with no inspection", "A clear work order helps schedule the right response."],
+  ["Supply count", "Your training inventory includes unopened and partly used supplies. How should you count them?", "Record usable quantities separately", "Count every container as full", "Ignore partly used stock", "Usable quantities prevent false stock forecasts."],
+  ["Inspection record", "An inspection leaves one fault unresolved. What should the record say?", "Its status and the planned next step", "All clear", "Nothing about that fault", "An open fault needs a visible next step."]
+ ],
+ "Finance": [
+  ["Reconciliation", "Your mock bank balance differs from the ledger. What should you compare first?", "Dated transactions and outstanding items", "Only the final balance", "Only the biggest deposit", "Reconciliation follows the records instead of forcing a matching total."],
+  ["Forecast limits", "A forecast assumes every customer pays on time. What would improve it?", "A delayed-payment scenario", "More decimal places only", "Removing all assumptions", "A second scenario makes cash risk visible."],
+  ["Audit trail", "Someone edits an earlier expense in your practice accounts. What should remain?", "The original entry and dated correction", "Only the new total", "No change record", "A traceable correction preserves the audit trail."]
+ ],
+ "Food": [
+  ["Order check", "Your practice order has a stated dietary restriction. What must the plan respect?", "The restriction and verified ingredients", "Only the plate design", "Only the cheapest ingredient", "The stated restriction is part of the order requirements."],
+  ["Service timing", "Three dishes finish at different times in a simulated service. What helps?", "A coordinated preparation schedule", "Starting everything at once", "Ignoring the waiting dishes", "A schedule coordinates the service instead of relying on luck."],
+  ["Waste review", "Your training kitchen wastes more stock than expected. What should you review?", "Demand, portions and stock records", "Only the menu font", "Only the busiest hour", "Waste review needs both demand and usage records."]
+ ],
+ "Government": [
+  ["Application queue", "Two practice applications have different deadlines. How should the queue be organized?", "Recorded urgency and published rules", "Personal preference", "The applicant with the nicest letter", "A public queue should follow defensible rules."],
+  ["Consultation", "A draft service change misses a group it will affect. What should happen?", "Include their views before finalizing", "Publish without consultation", "Remove the impact section", "Affected people need a chance to inform the decision."],
+  ["Decision record", "Your mock committee rejects an application. What should its record contain?", "The reason and available review route", "Only 'rejected'", "An invented reason after the meeting", "A clear decision supports accountability and review."]
+ ],
+ "Healthcare": [
+  ["Training record", "Two simulated patient records have similar names. What comes first?", "Check the required identifiers with the supervisor", "Use the first record", "Choose by handwriting", "Reliable identification comes before working on a record."],
+  ["Scope of practice", "A classroom scenario asks for a decision beyond your qualification. What should you do?", "Refer to the qualified supervisor", "Invent a confident answer", "Record that approval was given", "Classroom evidence does not confer a clinical qualification."],
+  ["Care handover", "Your simulated shift ends before a planned review. What should be handed over?", "The pending review and relevant observations", "Only that your shift ended", "A claim that the review happened", "The next qualified team needs the actual pending work."]
+ ],
+ "Hospitality": [
+  ["Booking conflict", "Your practice bookings allocate one room twice. What should you do?", "Check availability and agree an honest alternative", "Promise the room to both guests", "Delete a booking without contact", "A booking conflict needs a verified and agreed solution."],
+  ["Guest request", "A guest asks for an adjustment outside the usual package. What should you clarify?", "Availability, cost and consent", "A hidden extra charge", "A promise without checking", "Clear terms prevent a service promise becoming a dispute."],
+  ["Shift briefing", "A later shift must finish a guest's unresolved request. What should your briefing include?", "The request, agreement and next step", "Only the guest's name", "A completed status", "A clear handover preserves the actual service commitment."]
+ ],
+ "Legal": [
+  ["Case chronology", "Two statements place an event on different dates. What should your practice timeline show?", "The discrepancy and its sources", "One date chosen at random", "A false agreement", "A useful chronology distinguishes evidence from assumptions."],
+  ["Document review", "A mock contract has an undefined payment term. What should you flag?", "The ambiguity and need for clarification", "Only the title", "A deadline you invent", "Unclear terms should be raised before agreement."],
+  ["Client update", "Your supervised case exercise has no decision yet. What should the update say?", "Current status and the pending next step", "A guaranteed victory", "That the case is finished", "An honest update separates progress from a promised outcome."]
+ ],
+ "Logistics": [
+  ["Delivery window", "A route model arrives after a customer's agreed window. What must you revise?", "The route or an agreed delivery time", "Only the map colours", "The recorded arrival without changing the route", "The plan must fit the actual service agreement."],
+  ["Stock mismatch", "Your mock warehouse count is lower than the system balance. What should you investigate?", "Receipts, dispatches and counting errors", "Only today's sales", "Only the purchase price", "Stock reconciliation needs the movement records."],
+  ["Capacity plan", "A proposed shipment exceeds vehicle capacity. What is workable?", "Split the load or arrange suitable capacity", "Ignore the limit", "Record a smaller load without changing it", "A delivery plan must respect capacity constraints."]
+ ],
+ "Media": [
+  ["Source check", "A practice article relies on an unnamed claim. What should happen before publication?", "Verify it and distinguish uncertainty", "Publish it as established fact", "Add an invented quotation", "Publication needs an honest account of source strength."],
+  ["Edit brief", "The editor requests a change that alters the speaker's meaning. What should you do?", "Raise the mismatch and preserve the meaning", "Make the change silently", "Remove all context", "An edit should not misrepresent its subject."],
+  ["Rights sheet", "Your mock release contains an image from an unknown source. What needs checking?", "Provenance and permission before release", "Only image size", "Only its filename", "The release record should establish where its assets came from."]
+ ],
+ "Military": [
+  ["Team briefing", "A training exercise assigns an unclear role. What should you request?", "The objective, role and reporting line", "An invented order", "Permission to ignore the team", "A clear briefing helps the exercise stay coordinated."],
+  ["Equipment register", "A practice equipment return is missing one recorded item. What belongs in the register?", "The discrepancy and follow-up", "A complete return claim", "No entry for the missing item", "The register must reflect the actual return."],
+  ["Debrief", "Your simulated team completed the task but missed a safety check. What should be reviewed?", "Both completion and the missed check", "Completion only", "The least popular team member", "A debrief should expose process failures as well as results."]
+ ],
+ "Office": [
+  ["Diary conflict", "Two practice meetings need the same room. What should you check?", "Availability and the participants' constraints", "The prettier invitation", "Only the first name on each list", "Scheduling needs actual availability."],
+  ["Message routing", "A mock caller needs a team you do not know. What should you do?", "Check the directory and confirm the handover", "Guess a random extension", "Claim the team is unavailable", "A checked handover is more useful than a confident guess."],
+  ["File correction", "A practice form has an incorrect address. How should it be corrected?", "Verify the address and record the correction", "Invent an address", "Delete the whole file", "Verified corrections preserve a usable office record."]
+ ],
+ "Public Safety": [
+  ["Incident brief", "A simulated incident report omits its location. What should you request first?", "The location and verified incident details", "A dramatic headline", "A guessed location", "A useful incident brief needs reliable facts."],
+  ["Team allocation", "A training plan assigns the same crew to two exercises at once. What must change?", "Capacity and the exercise schedule", "The crew name", "Only the report total", "A team cannot be allocated beyond its actual capacity."],
+  ["After-action review", "Your exercise ends with an unresolved concern. What should the review include?", "The concern and assigned follow-up", "An all-clear claim", "Only the successful stages", "An unresolved concern needs a recorded owner and next step."]
+ ],
+ "Recreation": [
+  ["Session plan", "Your practice activity has beginners and experienced participants. What helps?", "Clear levels and appropriate supervision", "The hardest version for everyone", "No briefing", "A session should fit the participants and supervision available."],
+  ["Attendance limits", "A mock activity has more bookings than supervised spaces. What should you do?", "Arrange capacity or agree another session", "Ignore the limit", "Change the count on paper only", "Supervised capacity is a real constraint."],
+  ["Activity review", "Feedback says the activity was enjoyable but hard to follow. What should improve?", "Instructions and pacing", "Only the poster", "Nothing because it was enjoyable", "Enjoyment and understandable instructions both matter."]
+ ],
+ "Retail": [
+  ["Shelf labels", "A practice item's shelf price differs from the system. What should you check?", "The current verified price and correction process", "The most profitable price", "A random discount", "A price discrepancy needs a checked correction."],
+  ["Stock rotation", "Your training shelves mix earlier and later deliveries. What should you use?", "The product's recorded stock-rotation rules", "The brightest packaging first", "Ignore dates and condition", "Rotation follows the product's actual stock requirements."],
+  ["Return record", "A mock return lacks the original receipt. What should you consult?", "The published return policy and available evidence", "Personal preference", "An invented purchase date", "A consistent return process uses policy and evidence."]
+ ],
+ "Science": [
+  ["Control sample", "Your experiment has no comparison condition. What should the design add?", "A suitable control and recorded variables", "A more dramatic title", "More copies of the same uncontrolled run", "A control helps interpret what caused the observed difference."],
+  ["Unexpected result", "One training result differs greatly from the others. What should you do?", "Keep the record and investigate conditions", "Delete it automatically", "Replace it with the average", "Unexpected observations need investigation rather than erasure."],
+  ["Research conclusion", "Your small study supports a limited finding. What should the conclusion say?", "The finding and limits of the evidence", "A universal guarantee", "A result not measured", "A defensible conclusion stays within its evidence."]
+ ],
+ "Security": [
+  ["Access log", "A practice visitor lacks the required authorization. What should you check?", "The access rules and authorized contact", "Only their confidence", "Only their clothing", "Access decisions follow authorization rather than appearances."],
+  ["Incident note", "Two witnesses disagree in a simulated incident. What should you record?", "Both accounts and what you observed", "One invented combined account", "Only the loudest witness", "A useful record separates accounts from direct observations."],
+  ["Shift handover", "Your practice patrol has one check still outstanding. What belongs in the handover?", "The unfinished check and next step", "An all-clear statement", "Only the shift time", "A handover should make unfinished work visible."]
+ ],
+ "Tech": [
+  ["Bug reproduction", "A mock app fails only after a particular sequence. What should the report include?", "The steps, expected result and actual result", "Only 'it is broken'", "A guessed cause with no steps", "Reproducible steps let another person investigate the same failure."],
+  ["Change testing", "A feature works alone but breaks an older workflow. What should be checked?", "The feature and the affected existing paths", "Only the new screen", "Only the launch icon", "Testing should include interactions with existing behavior."],
+  ["Release notes", "Your training release has a known unresolved defect. What should the notes state?", "Its effect and any verified workaround", "A claim that no defects remain", "Only the new feature list", "A release record should describe the actual delivered behavior."]
+ ],
+ "Trades": [
+  ["Work specification", "A simulated repair request has no measurements. What should you establish?", "The specification and supervised inspection", "A guessed fit", "The cheapest part regardless", "The exercise needs a measured specification."],
+  ["Parts compatibility", "A training replacement fits physically but has a different rating. What should you do?", "Check the specification with the instructor", "Use it because it fits", "Alter the record to match", "Physical fit alone does not establish suitability."],
+  ["Completion check", "Your mock repair has not been checked against its brief. What comes before sign-off?", "The required supervised checks", "A quick completion claim", "Only a photo of the part", "Sign-off needs evidence that the agreed checks were completed."]
+ ],
+ "Transport": [
+  ["Route estimate", "Your practice route ignores loading time. What should the estimate include?", "Loading, travel and agreed stops", "Travel time alone", "The shortest line on the map", "A delivery estimate includes the whole job."],
+  ["Vehicle availability", "A mock vehicle is scheduled for service during a delivery. What should you arrange?", "A suitable alternative or revised booking", "Both jobs at once", "A false availability entry", "Scheduling must reflect the vehicle's actual availability."],
+  ["Delivery record", "A simulated delivery reaches a different person than agreed. What should be verified?", "The approved recipient and delivery record", "Only the address number", "A made-up signature", "A delivery record needs a verified handover."]
+ ]
+}

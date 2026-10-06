@@ -1,0 +1,783 @@
+{
+  "pet": [
+    {
+      "text": "The vacuum has annexed the hallway. My bed is beside its noisy route.",
+      "options": [
+        "Choose a quiet retreat",
+        "Stay beside my familiar person",
+        "Investigate the noisy hallway"
+      ],
+      "quality": [
+        18,
+        16,
+        8
+      ],
+      "stress": [
+        -3,
+        0,
+        3
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "Training keeps running past the point where I can concentrate.",
+      "options": [
+        "Take a break and return calmly",
+        "Try one familiar cue",
+        "Keep repeating despite fatigue"
+      ],
+      "quality": [
+        17,
+        20,
+        5
+      ],
+      "stress": [
+        -2,
+        0,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "The household moves. The old blanket and an unfamiliar room are both waiting.",
+      "options": [
+        "Explore from a familiar safe place",
+        "Stay close to the household",
+        "Hide from every new routine"
+      ],
+      "quality": [
+        20,
+        18,
+        6
+      ],
+      "stress": [
+        -2,
+        -1,
+        2
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "prisoner": [
+    {
+      "text": "A workshop place overlaps with the group that has been protecting me.",
+      "options": [
+        "Keep the workshop and explain the limit",
+        "Arrange a smaller program commitment",
+        "Skip the program to keep the group"
+      ],
+      "quality": [
+        20,
+        17,
+        6
+      ],
+      "stress": [
+        3,
+        1,
+        -1
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A visitor cannot afford another journey this year.",
+      "options": [
+        "Agree on letters and a later visit",
+        "Ask the support worker about contact",
+        "Insist that they come anyway"
+      ],
+      "quality": [
+        18,
+        20,
+        4
+      ],
+      "stress": [
+        -1,
+        1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "Release planning needs a real address and appointments, not a promise that things will work out.",
+      "options": [
+        "Ask for a supported housing referral",
+        "Build a plan with a trusted contact",
+        "Leave with no arrangement"
+      ],
+      "quality": [
+        20,
+        18,
+        3
+      ],
+      "stress": [
+        1,
+        0,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "guard": [
+    {
+      "text": "The shift record omits an inmate concern that another officer dismissed.",
+      "options": [
+        "Record the concern and request a review",
+        "Ask a supervisor to witness the next check",
+        "Leave the omission alone"
+      ],
+      "quality": [
+        20,
+        17,
+        4
+      ],
+      "stress": [
+        3,
+        1,
+        -1
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A colleague offers a favour for overlooking a discrepancy in the count.",
+      "options": [
+        "Refuse and record the discrepancy",
+        "Request a second independent count",
+        "Accept the favour"
+      ],
+      "quality": [
+        20,
+        19,
+        -8
+      ],
+      "stress": [
+        4,
+        2,
+        -2
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A report exposes a failure in a team that has also supported me.",
+      "options": [
+        "Submit the dated facts through the review route",
+        "Request an independent review of the facts",
+        "Rewrite it to protect the team"
+      ],
+      "quality": [
+        20,
+        18,
+        -5
+      ],
+      "stress": [
+        4,
+        2,
+        -2
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "royal": [
+    {
+      "text": "A ceremony promises access to a service that the budget can only deliver in two districts.",
+      "options": [
+        "Fund the two districts and publish the limit",
+        "Reduce the ceremony and extend access later",
+        "Promise every district immediately"
+      ],
+      "quality": [
+        20,
+        18,
+        -5
+      ],
+      "stress": [
+        3,
+        2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "The palace schedule excludes residents who cannot travel to the capital.",
+      "options": [
+        "Hold a regional consultation",
+        "Fund a documented local delegation",
+        "Count the capital crowd as everyone"
+      ],
+      "quality": [
+        18,
+        20,
+        4
+      ],
+      "stress": [
+        2,
+        3,
+        -1
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "An heir asks what duties and unfinished promises actually come with the title.",
+      "options": [
+        "Keep a public duty and handover register",
+        "Share the duties with experienced staff",
+        "Give a ceremonial speech without records"
+      ],
+      "quality": [
+        20,
+        18,
+        5
+      ],
+      "stress": [
+        2,
+        1,
+        3
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "witch": [
+    {
+      "text": "A neighbour wants a spell to settle a dispute with someone who has not agreed to it.",
+      "options": [
+        "Offer ordinary mediation instead",
+        "Discuss a limited consensual alternative",
+        "Promise control over the other person"
+      ],
+      "quality": [
+        19,
+        20,
+        -6
+      ],
+      "stress": [
+        1,
+        2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "An apprentice misreads a harmless practice charm and wants to quit.",
+      "options": [
+        "Repeat a smaller supervised exercise",
+        "Pause training and review the notes",
+        "Humiliate them for the mistake"
+      ],
+      "quality": [
+        20,
+        17,
+        -4
+      ],
+      "stress": [
+        2,
+        -1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "My spell notes are useful, but some results are uncertain.",
+      "options": [
+        "Leave annotated limits for the next learner",
+        "Teach only the verified exercises",
+        "Publish every guess as a proven spell"
+      ],
+      "quality": [
+        20,
+        18,
+        -6
+      ],
+      "stress": [
+        2,
+        1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "vampire": [
+    {
+      "text": "A companion notices that every meeting happens after sunset.",
+      "options": [
+        "Explain the limits I can safely share",
+        "Agree on contact without disclosure",
+        "Invent another story each time"
+      ],
+      "quality": [
+        20,
+        16,
+        -3
+      ],
+      "stress": [
+        3,
+        1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "Decades away changed the place I still call home.",
+      "options": [
+        "Learn about the people here now",
+        "Reconnect with one surviving contact",
+        "Expect the town to stay as I remember"
+      ],
+      "quality": [
+        20,
+        18,
+        3
+      ],
+      "stress": [
+        2,
+        1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A powerful ally demands permanent loyalty with no room for refusal.",
+      "options": [
+        "Refuse the unrestricted pledge",
+        "Offer a specific limited agreement",
+        "Agree to every future demand"
+      ],
+      "quality": [
+        18,
+        20,
+        -8
+      ],
+      "stress": [
+        3,
+        2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "revenant": [
+    {
+      "text": "Someone remembers my ending differently from the story I told myself.",
+      "options": [
+        "Listen and record both memories",
+        "Keep a respectful boundary",
+        "Demand their memory match mine"
+      ],
+      "quality": [
+        20,
+        17,
+        -2
+      ],
+      "stress": [
+        3,
+        -1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "An unfinished promise involves someone who has already rebuilt their life.",
+      "options": [
+        "Ask whether help is still wanted",
+        "Offer a limited apology without a demand",
+        "Insist on restoring the old arrangement"
+      ],
+      "quality": [
+        20,
+        18,
+        -5
+      ],
+      "stress": [
+        2,
+        1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A second life cannot repair every part of the first.",
+      "options": [
+        "Keep a realistic plan for one remaining duty",
+        "Choose a new life and close the old promise honestly",
+        "Promise to undo everything"
+      ],
+      "quality": [
+        20,
+        19,
+        -4
+      ],
+      "stress": [
+        1,
+        -2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "super": [
+    {
+      "text": "The cameras follow a spectacular rescue while an unglamorous shelter still needs help.",
+      "options": [
+        "Return for the quieter work",
+        "Coordinate volunteers before leaving",
+        "Chase the next camera"
+      ],
+      "quality": [
+        20,
+        18,
+        5
+      ],
+      "stress": [
+        3,
+        1,
+        -1
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A rival offers victory if I ignore the damage it would cause.",
+      "options": [
+        "Refuse and choose a slower rescue",
+        "Ask for a safer joint plan",
+        "Take the quick victory"
+      ],
+      "quality": [
+        18,
+        20,
+        -6
+      ],
+      "stress": [
+        3,
+        2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "Residents ask for an account of the damage left by my intervention.",
+      "options": [
+        "Publish the damage and repair plan",
+        "Invite an independent review",
+        "Use my popularity to dismiss them"
+      ],
+      "quality": [
+        20,
+        19,
+        -4
+      ],
+      "stress": [
+        3,
+        2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "pirate": [
+    {
+      "text": "The crew wants different destinations, and supplies allow only one long voyage.",
+      "options": [
+        "Compare supplies and hold a crew vote",
+        "Choose a shorter voyage with a reserve",
+        "Promise every destination"
+      ],
+      "quality": [
+        20,
+        18,
+        -3
+      ],
+      "stress": [
+        2,
+        -1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "Ship repairs compete with the share promised to the crew.",
+      "options": [
+        "Agree on a repair reserve before dividing shares",
+        "Shorten the voyage and keep the agreement",
+        "Take the reserve without explaining"
+      ],
+      "quality": [
+        20,
+        18,
+        -6
+      ],
+      "stress": [
+        3,
+        1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "The voyage ends with less reward than the crew expected.",
+      "options": [
+        "Share according to the recorded agreement",
+        "Offer a voluntary deferred share with limits",
+        "Keep the reward and blame the crew"
+      ],
+      "quality": [
+        20,
+        18,
+        -8
+      ],
+      "stress": [
+        2,
+        3,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "colonist": [
+    {
+      "text": "Ration supplies cover the essential needs, but not every preferred meal.",
+      "options": [
+        "Publish equal essentials and limited extras",
+        "Ask residents about substitutions",
+        "Give the best supplies to the loudest group"
+      ],
+      "quality": [
+        20,
+        18,
+        -5
+      ],
+      "stress": [
+        2,
+        1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A maintenance task overlaps a long-awaited settlement celebration.",
+      "options": [
+        "Complete the essential repair and shorten the celebration",
+        "Share duties and preserve a smaller gathering",
+        "Delay the fault and hope"
+      ],
+      "quality": [
+        20,
+        19,
+        -5
+      ],
+      "stress": [
+        3,
+        2,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "The next arrivals need instructions that work after the original crew leaves.",
+      "options": [
+        "Train replacements and record limits",
+        "Keep a smaller supervised handover",
+        "Leave the opening speech as the only guide"
+      ],
+      "quality": [
+        20,
+        18,
+        3
+      ],
+      "stress": [
+        2,
+        1,
+        4
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "traveler": [
+    {
+      "text": "Knowledge from another era tempts me to promise a device this place cannot build.",
+      "options": [
+        "Work with locally available materials",
+        "Explain the idea without promising a working device",
+        "Guarantee an impossible machine"
+      ],
+      "quality": [
+        20,
+        18,
+        -6
+      ],
+      "stress": [
+        2,
+        1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "A local friend notices dates in my story that do not fit this era.",
+      "options": [
+        "Explain my limits without another invented date",
+        "Keep a clear boundary about my past",
+        "Add a bigger story to cover the mismatch"
+      ],
+      "quality": [
+        20,
+        17,
+        -4
+      ],
+      "stress": [
+        3,
+        1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "text": "Leaving this era would end a local commitment that someone relies on.",
+      "options": [
+        "Arrange a real handover before leaving",
+        "Explain an early departure and close the commitment",
+        "Disappear without a message"
+      ],
+      "quality": [
+        20,
+        18,
+        -6
+      ],
+      "stress": [
+        3,
+        1,
+        5
+      ],
+      "happiness": [
+        1,
+        2,
+        -1
+      ]
+    }
+  ]
+}

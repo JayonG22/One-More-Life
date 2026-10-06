@@ -412,6 +412,7 @@ func _sponsor(pid: String) -> void:
 
 
 func yearly() -> void:
+	if Lives.kind() in ["pirate","colonist"] or Lives.is_type("traveler") and Expansion.era_year() < 2004: return
 	var p := _p()
 	if socials().is_empty():
 		return

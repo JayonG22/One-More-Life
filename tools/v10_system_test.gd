@@ -142,7 +142,7 @@ func test_options_are_earned_not_given() -> void:
 
 	# A different history should produce a different menu, not a longer one.
 	var m := GameState.create_npc("mother", {"age": 62, "closeness": 50})
-	BondStats.apply(m, {"affection": 30.0, "respect": -40.0})
+	BondStats.apply(m, {"affection": 100.0, "respect": -100.0})
 	var mnames: Array = []
 	for r in Bonds.earned_rows(m, GameState.npc(m)):
 		mnames.append(str(r["name"]))

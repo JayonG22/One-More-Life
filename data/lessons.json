@@ -1,0 +1,1110 @@
+{
+ "Arithmetic": [
+  {
+   "q": "What is 7 + 8?",
+   "a": [
+    "15",
+    "14",
+    "16",
+    "78"
+   ],
+   "correct": 0,
+   "why": "The answer is 15."
+  },
+  {
+   "q": "What is 6 × 4?",
+   "a": [
+    "24",
+    "10",
+    "20",
+    "64"
+   ],
+   "correct": 0,
+   "why": "The answer is 24."
+  },
+  {
+   "q": "What is half of 18?",
+   "a": [
+    "9",
+    "8",
+    "6",
+    "12"
+   ],
+   "correct": 0,
+   "why": "The answer is 9."
+  },
+  {
+   "q": "What is 30 divided by 5?",
+   "a": [
+    "6",
+    "5",
+    "7",
+    "25"
+   ],
+   "correct": 0,
+   "why": "The answer is 6."
+  },
+  {
+   "q": "Which fraction equals 0.5?",
+   "a": [
+    "1/2",
+    "1/3",
+    "1/4",
+    "2/3"
+   ],
+   "correct": 0,
+   "why": "The answer is 1/2."
+  },
+  {
+   "q": "A $20 item is reduced by 25%. What is the price?",
+   "a": [
+    "$15",
+    "$5",
+    "$18",
+    "$25"
+   ],
+   "correct": 0,
+   "why": "The answer is $15."
+  },
+  {
+   "q": "Two plates hold four apples each. How many apples are there?",
+   "a": [
+    "Eight",
+    "Six",
+    "Four",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Two groups of four make eight.",
+   "min_age": 5
+  },
+  {
+   "q": "A pattern goes circle, square, circle, square. What comes next?",
+   "a": [
+    "Circle",
+    "Triangle",
+    "Two squares",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "The two shapes alternate.",
+   "min_age": 5
+  },
+  {
+   "q": "You spend three of your five tokens. How many remain?",
+   "a": [
+    "Two",
+    "Three",
+    "Eight",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Five minus three leaves two.",
+   "min_age": 5
+  },
+  {
+   "q": "A recipe needs half a cup. You make twice the recipe. How much?",
+   "a": [
+    "One cup",
+    "A quarter cup",
+    "Two cups",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Doubling one half gives one whole.",
+   "min_age": 9
+  },
+  {
+   "q": "Which shape has four equal sides and four right angles?",
+   "a": [
+    "A square",
+    "Any rectangle",
+    "A triangle",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A square has both equal sides and right angles.",
+   "min_age": 9
+  },
+  {
+   "q": "A shop gives a ten-percent discount on a 50-token item. What is the discount?",
+   "a": [
+    "Five tokens",
+    "Ten tokens",
+    "Forty-five tokens",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Ten percent of fifty is five; forty-five is the final price.",
+   "min_age": 9
+  },
+  {
+   "q": "A path is 300 centimeters long. How many meters?",
+   "a": [
+    "Three",
+    "Thirty",
+    "Three hundred",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "One hundred centimeters equal one meter.",
+   "min_age": 9
+  },
+  {
+   "q": "A fair coin landed heads three times. What about its next toss?",
+   "a": [
+    "Heads and tails are still equally likely",
+    "Tails is now guaranteed",
+    "Heads cannot happen again",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Independent fair tosses do not owe a particular next result.",
+   "min_age": 9
+  },
+  {
+   "q": "A few extremely high incomes inflate the average. Which measure may describe a typical income better?",
+   "a": [
+    "The median",
+    "The largest income",
+    "The total population",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "The median is less affected by extreme values.",
+   "min_age": 12
+  },
+  {
+   "q": "A monthly budget has income of 800 and expenses of 850. What is the balance?",
+   "a": [
+    "A deficit of 50",
+    "A surplus of 50",
+    "A balance of zero",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Expenses exceed income by fifty.",
+   "min_age": 12
+  },
+  {
+   "q": "If 3x equals 21, what is x?",
+   "a": [
+    "Seven",
+    "Eighteen",
+    "Sixty-three",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Divide both sides by three.",
+   "min_age": 12
+  },
+  {
+   "q": "A loan has a low monthly payment but a much longer term. What should you compare?",
+   "a": [
+    "Total repayment and terms",
+    "Only the first payment",
+    "The lender’s logo",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A low monthly figure can hide a larger total cost.",
+   "min_age": 15
+  },
+  {
+   "q": "A screening result has false positives. What else matters when interpreting it?",
+   "a": [
+    "Prevalence and confirmatory evidence",
+    "Only the headline accuracy",
+    "The color of the form",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Base rates and confirmation affect interpretation.",
+   "min_age": 15
+  },
+  {
+   "q": "A venture offers a rare large payoff and frequent small losses. What should you evaluate?",
+   "a": [
+    "Expected outcomes and affordable downside",
+    "Only the largest possible win",
+    "Assume persistence guarantees profit",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Both probability and the size of gains or losses matter.",
+   "min_age": 15
+  }
+ ],
+ "Reading": [
+  {
+   "q": "Which sentence is a question?",
+   "a": [
+    "Where is the book?",
+    "Here is the book.",
+    "Read the book.",
+    "What a book!"
+   ],
+   "correct": 0,
+   "why": "The answer is Where is the book?."
+  },
+  {
+   "q": "Which word means nearly the same as calm?",
+   "a": [
+    "Peaceful",
+    "Furious",
+    "Noisy",
+    "Hurried"
+   ],
+   "correct": 0,
+   "why": "The answer is Peaceful."
+  },
+  {
+   "q": "What does an author use evidence to support?",
+   "a": [
+    "A claim",
+    "A page number",
+    "A font",
+    "A margin"
+   ],
+   "correct": 0,
+   "why": "The answer is A claim."
+  },
+  {
+   "q": "A narrator says they may be mistaken. What should you do?",
+   "a": [
+    "Check their account against the evidence",
+    "Treat everything as certain",
+    "Ignore all other accounts",
+    "Assume the opposite is certain"
+   ],
+   "correct": 0,
+   "why": "The answer is Check their account against the evidence."
+  },
+  {
+   "q": "What distinguishes a summary from a quotation?",
+   "a": [
+    "A summary uses your own words",
+    "A summary must copy every word",
+    "A quotation changes the wording",
+    "They are identical"
+   ],
+   "correct": 0,
+   "why": "The answer is A summary uses your own words."
+  },
+  {
+   "q": "Which is a source you could verify?",
+   "a": [
+    "A named report with its date",
+    "Someone somewhere said it",
+    "A rumour with no origin",
+    "An unsupported guess"
+   ],
+   "correct": 0,
+   "why": "The answer is A named report with its date."
+  },
+  {
+   "q": "The sign says EXIT. What does it show?",
+   "a": [
+    "The way out",
+    "The lunch menu",
+    "A place to hide",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "An exit is a way out of a building.",
+   "min_age": 5
+  },
+  {
+   "q": "In the sentence The small dog barked, which word describes the dog?",
+   "a": [
+    "Small",
+    "Barked",
+    "The",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Small describes the dog; barked tells what it did.",
+   "min_age": 5
+  },
+  {
+   "q": "Two classmates disagree about yesterday’s rainfall. What could settle it?",
+   "a": [
+    "The recorded rain gauge measurement",
+    "Who speaks louder",
+    "A guess about tomorrow",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A measurement addresses this particular claim.",
+   "min_age": 9
+  },
+  {
+   "q": "Which detail helps a reader picture a noisy market?",
+   "a": [
+    "Stallholders called over rattling carts",
+    "It was a place",
+    "Many things happened",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Specific sounds make the scene concrete.",
+   "min_age": 9
+  },
+  {
+   "q": "A photograph is labeled ten years earlier than your report. What should you do?",
+   "a": [
+    "Explain its date and limits",
+    "Pretend it was taken yesterday",
+    "Remove the date",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A dated source can help if its limits are clear.",
+   "min_age": 9
+  },
+  {
+   "q": "A diary and a later textbook disagree. What is a useful next step?",
+   "a": [
+    "Compare their context and other evidence",
+    "Always believe the older source",
+    "Choose the shorter text",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Sources have different viewpoints and limits.",
+   "min_age": 9
+  },
+  {
+   "q": "A character says I am fine but keeps avoiding friends. What can you infer?",
+   "a": [
+    "Their words may hide how they feel",
+    "They must be lying about everything",
+    "They have no feelings",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Actions can suggest a feeling without proving every possible explanation.",
+   "min_age": 9
+  },
+  {
+   "q": "A survey asks only members of one club about the whole school. What is the concern?",
+   "a": [
+    "The sample may be unrepresentative",
+    "Every survey is useless",
+    "The club must be dishonest",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A narrow sample may miss other pupils’ experiences.",
+   "min_age": 12
+  },
+  {
+   "q": "Which supports the claim that a new timetable improved attendance?",
+   "a": [
+    "Comparable attendance records before and after",
+    "One enthusiastic slogan",
+    "The timetable’s color",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Comparable records support a claim more than presentation.",
+   "min_age": 12
+  },
+  {
+   "q": "An unreliable narrator contradicts an earlier account. What should you examine?",
+   "a": [
+    "Their motives and the other evidence",
+    "Only the final sentence",
+    "Whether the book has pictures",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A contradiction can reveal viewpoint and motive.",
+   "min_age": 12
+  },
+  {
+   "q": "A study loses many participants before its final survey. What is a concern?",
+   "a": [
+    "The remaining sample may be biased",
+    "The findings become certain",
+    "Missing participants count as agreement",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Dropout can change who the result represents.",
+   "min_age": 15
+  },
+  {
+   "q": "An essay’s conclusion introduces its only evidence. What revision helps?",
+   "a": [
+    "Develop the evidence in the argument",
+    "Remove every supporting paragraph",
+    "Make the title longer",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "The conclusion should follow a developed argument.",
+   "min_age": 15
+  },
+  {
+   "q": "A policy’s supporters and opponents describe different outcomes. What helps evaluate it?",
+   "a": [
+    "Identify who benefited, costs and evidence",
+    "Count the longer speech",
+    "Ignore everyone affected",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Effects can differ across groups and over time.",
+   "min_age": 15
+  }
+ ],
+ "Science": [
+  {
+   "q": "What does a thermometer measure?",
+   "a": [
+    "Temperature",
+    "Mass",
+    "Distance",
+    "Volume"
+   ],
+   "correct": 0,
+   "why": "The answer is Temperature."
+  },
+  {
+   "q": "What should a fair comparison keep consistent?",
+   "a": [
+    "Conditions other than the tested variable",
+    "Only the desired result",
+    "The conclusion no matter the data",
+    "Nothing"
+   ],
+   "correct": 0,
+   "why": "The answer is Conditions other than the tested variable."
+  },
+  {
+   "q": "What is evaporation?",
+   "a": [
+    "Liquid changing to gas",
+    "Gas changing to liquid",
+    "Liquid freezing",
+    "Solid melting"
+   ],
+   "correct": 0,
+   "why": "The answer is Liquid changing to gas."
+  },
+  {
+   "q": "Which is an observation rather than an explanation?",
+   "a": [
+    "The plant grew 2 centimetres",
+    "The plant wanted sunlight",
+    "The plant was lonely",
+    "The plant grew because it liked music"
+   ],
+   "correct": 0,
+   "why": "The answer is The plant grew 2 centimetres."
+  },
+  {
+   "q": "Why repeat a measurement?",
+   "a": [
+    "To check consistency and uncertainty",
+    "To guarantee the expected answer",
+    "To hide the first result",
+    "To eliminate every possible error"
+   ],
+   "correct": 0,
+   "why": "The answer is To check consistency and uncertainty."
+  },
+  {
+   "q": "What should you do with an unexpected result?",
+   "a": [
+    "Record it and investigate",
+    "Erase it",
+    "Change the question afterward",
+    "Report only expected results"
+   ],
+   "correct": 0,
+   "why": "The answer is Record it and investigate."
+  },
+  {
+   "q": "Which needs both water and light to grow?",
+   "a": [
+    "A bean plant",
+    "A toy car",
+    "A stone",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A bean plant needs water and light; too much water can still harm it.",
+   "min_age": 5
+  },
+  {
+   "q": "Ice left in a warm room becomes what?",
+   "a": [
+    "Liquid water",
+    "More ice",
+    "Sand",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Warmth melts ice into water.",
+   "min_age": 5
+  },
+  {
+   "q": "Your shadow gets longer late in the day. What changed?",
+   "a": [
+    "The angle of sunlight",
+    "Your shoes grew",
+    "The ground became taller",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "The Sun appears lower, changing the angle of the light.",
+   "min_age": 5
+  },
+  {
+   "q": "A pond loses most of its insects. What might happen to insect-eating fish?",
+   "a": [
+    "They may have less food",
+    "They no longer need food",
+    "They become plants",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Food-web changes can affect other species.",
+   "min_age": 9
+  },
+  {
+   "q": "You test two paper planes. Which comparison is fairer?",
+   "a": [
+    "Use the same launch point and method",
+    "Throw one from a balcony",
+    "Only count the better plane’s best flight",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Keep other conditions similar and compare several trials.",
+   "min_age": 9
+  },
+  {
+   "q": "Which helps reduce waste before recycling is needed?",
+   "a": [
+    "Reuse a working item",
+    "Replace it whenever packaging changes",
+    "Throw it away first",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Reuse avoids making some waste in the first place.",
+   "min_age": 9
+  },
+  {
+   "q": "After exercise, why can your breathing become faster?",
+   "a": [
+    "Your body needs more oxygen",
+    "Your lungs become smaller instantly",
+    "Breathing has no link to activity",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Activity increases the body’s demand for oxygen.",
+   "min_age": 12
+  },
+  {
+   "q": "A substance dissolves in water. Does that automatically make it safe to drink?",
+   "a": [
+    "No; solubility does not establish safety",
+    "Yes, always",
+    "Only if the water looks clear",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Appearance and solubility do not prove safety.",
+   "min_age": 12
+  },
+  {
+   "q": "A cyclist brakes on a wet road. What should they expect?",
+   "a": [
+    "Less grip and a longer stopping distance",
+    "Guaranteed instant stopping",
+    "Wet roads remove the need to brake",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Reduced friction can increase stopping distance.",
+   "min_age": 12
+  },
+  {
+   "q": "Two trends rise together. What can you conclude immediately?",
+   "a": [
+    "They correlate; causation needs more evidence",
+    "One certainly caused the other",
+    "Neither trend exists",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Correlation alone does not establish cause.",
+   "min_age": 12
+  },
+  {
+   "q": "Two towns have different flood risk. Which evidence matters?",
+   "a": [
+    "Elevation, drainage and flood records",
+    "Their names’ lengths",
+    "The number of tourist postcards",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Physical conditions and records help explain risk.",
+   "min_age": 12
+  },
+  {
+   "q": "A teammate has persistent pain after training. What is appropriate?",
+   "a": [
+    "Report it and seek qualified assessment",
+    "Treat pain as proof of improvement",
+    "Promise a diagnosis from a rumor",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Persistent pain deserves an appropriate assessment.",
+   "min_age": 12
+  },
+  {
+   "q": "A result cannot be reproduced by another team. What is the next step?",
+   "a": [
+    "Review methods and test the finding",
+    "Hide the original method",
+    "Call replication unnecessary",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Replication and method review help assess a finding.",
+   "min_age": 15
+  }
+ ],
+ "Civics": [
+  {
+   "q": "What is a public budget for?",
+   "a": [
+    "Planning income and spending",
+    "Guaranteeing unlimited money",
+    "Eliminating every trade-off",
+    "Replacing all elections"
+   ],
+   "correct": 0,
+   "why": "The answer is Planning income and spending."
+  },
+  {
+   "q": "What makes a source easier to assess?",
+   "a": [
+    "Knowing its evidence and origin",
+    "A loud headline",
+    "A flattering conclusion",
+    "No date or author"
+   ],
+   "correct": 0,
+   "why": "The answer is Knowing its evidence and origin."
+  },
+  {
+   "q": "Why compare policy alternatives?",
+   "a": [
+    "Their effects and costs may differ",
+    "All alternatives have identical effects",
+    "Comparison removes uncertainty",
+    "Popularity guarantees success"
+   ],
+   "correct": 0,
+   "why": "The answer is Their effects and costs may differ."
+  },
+  {
+   "q": "What is a conflict of interest?",
+   "a": [
+    "A personal interest that could affect a duty",
+    "Any disagreement",
+    "Any difficult question",
+    "A rule everyone likes"
+   ],
+   "correct": 0,
+   "why": "The answer is A personal interest that could affect a duty."
+  },
+  {
+   "q": "What is a petition?",
+   "a": [
+    "A request supported by signatories",
+    "A guaranteed law",
+    "A private invoice",
+    "An election result"
+   ],
+   "correct": 0,
+   "why": "The answer is A request supported by signatories."
+  },
+  {
+   "q": "How should a disputed claim be assessed?",
+   "a": [
+    "Compare evidence and acknowledge uncertainty",
+    "Count exclamation marks",
+    "Trust the angriest person",
+    "Pick the most exciting version"
+   ],
+   "correct": 0,
+   "why": "The answer is Compare evidence and acknowledge uncertainty."
+  },
+  {
+   "q": "Your class starts after breakfast and before lunch. When is it?",
+   "a": [
+    "Morning",
+    "Evening",
+    "Midnight",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Breakfast usually comes before the morning school session.",
+   "min_age": 5
+  },
+  {
+   "q": "The teacher asks for one red pencil and two blue ones. How many pencils?",
+   "a": [
+    "Three",
+    "One",
+    "Four",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "One plus two is three; listening to both instructions matters.",
+   "min_age": 5
+  },
+  {
+   "q": "A map key says a blue line is a river. What is the blue line?",
+   "a": [
+    "A river",
+    "A road",
+    "The school fence",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A map key explains its symbols.",
+   "min_age": 5
+  },
+  {
+   "q": "Your ball rolls into the road. What is the safest next step?",
+   "a": [
+    "Ask an adult for help",
+    "Run after it without looking",
+    "Ask a younger child to fetch it",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A lost ball can wait; traffic needs an adult and a safe crossing.",
+   "min_age": 5
+  },
+  {
+   "q": "Which tool would help measure the length of your desk?",
+   "a": [
+    "A ruler",
+    "A thermometer",
+    "A clock",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A ruler measures length.",
+   "min_age": 5
+  },
+  {
+   "q": "Four children want two swings. Which plan gives everyone a turn?",
+   "a": [
+    "Take timed turns in pairs",
+    "Let the tallest stay on",
+    "Hide one swing",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Timed turns share a limited resource.",
+   "min_age": 5
+  },
+  {
+   "q": "Which belongs with a spoon and fork?",
+   "a": [
+    "A knife",
+    "A sock",
+    "A flower",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "All three are utensils, even though they have different uses.",
+   "min_age": 5
+  },
+  {
+   "q": "Your friend did not hear the game rules. What helps them understand?",
+   "a": [
+    "Explain and let them ask questions",
+    "Speak faster",
+    "Say everyone else understands",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Clear instructions and questions help someone join in.",
+   "min_age": 5
+  },
+  {
+   "q": "A group has one hour and three tasks. What helps prevent forgotten work?",
+   "a": [
+    "Assign tasks and check progress",
+    "All start the same task",
+    "Leave the hardest task unnamed",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Responsibilities and a check-in make a plan workable.",
+   "min_age": 9
+  },
+  {
+   "q": "An advert calls a snack healthy but lists no details. What should you check?",
+   "a": [
+    "Its ingredients and nutrition information",
+    "The mascot’s smile",
+    "How often the advert appears",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "The claim needs information beyond presentation.",
+   "min_age": 9
+  },
+  {
+   "q": "A school notice is too small for a classmate to read. What could help?",
+   "a": [
+    "Provide a readable version",
+    "Ask them to guess",
+    "Remove all notices",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Changing the format can improve access without excluding someone.",
+   "min_age": 9
+  },
+  {
+   "q": "A message asks for your account password to award a prize. What should you do?",
+   "a": [
+    "Verify through a trusted channel without sharing it",
+    "Send it before the offer expires",
+    "Post it publicly to ask for advice",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A prize claim does not justify revealing a password.",
+   "min_age": 12
+  },
+  {
+   "q": "Two exams share a week. What study plan is more useful?",
+   "a": [
+    "Space revision and practice both subjects",
+    "Study only the easier one",
+    "Wait until both exams finish",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Spaced practice prepares you for both deadlines.",
+   "min_age": 12
+  },
+  {
+   "q": "A school rule affects only some pupils. What strengthens a review?",
+   "a": [
+    "Hear affected pupils and assess evidence",
+    "Only ask those unaffected",
+    "Assume all effects are identical",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A review needs the experiences of people affected.",
+   "min_age": 12
+  },
+  {
+   "q": "Your group keeps rushing a difficult passage. What practice would help?",
+   "a": [
+    "Slow the tempo and rebuild together",
+    "Play louder each time",
+    "Skip every rehearsal",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Slower coordinated practice exposes timing problems.",
+   "min_age": 12
+  },
+  {
+   "q": "A job advert requires a licence you do not have. What should you do?",
+   "a": [
+    "Check the qualification pathway",
+    "Claim you already hold it",
+    "Assume enthusiasm replaces it",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Regulated requirements need an actual pathway.",
+   "min_age": 15
+  },
+  {
+   "q": "Your council budget cannot fund every proposal. What supports a defensible decision?",
+   "a": [
+    "Compare costs, access and expected impact",
+    "Fund the loudest speech",
+    "Keep the costs secret",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A clear budget explains priorities and tradeoffs.",
+   "min_age": 15
+  },
+  {
+   "q": "An offer promises flexibility but gives no written hours or pay. What should you clarify?",
+   "a": [
+    "The actual terms before accepting",
+    "Only the office decor",
+    "How impressive the title sounds",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Pay, hours and conditions matter beyond a title.",
+   "min_age": 15
+  },
+  {
+   "q": "An app works for its designers but confuses new users. What helps?",
+   "a": [
+    "Observe representative users attempting tasks",
+    "Ask designers to praise it",
+    "Remove every label",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Testing real tasks reveals usability problems.",
+   "min_age": 15
+  },
+  {
+   "q": "A project depends on a supplier with uncertain delivery. What should the plan include?",
+   "a": [
+    "A contingency and a decision deadline",
+    "An assumption that delay is impossible",
+    "A promise to finish yesterday",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A contingency manages dependence on uncertain delivery.",
+   "min_age": 15
+  },
+  {
+   "q": "A sponsor offers funding if unfavorable findings are removed. What is at stake?",
+   "a": [
+    "Independence and honest reporting",
+    "Only the report’s length",
+    "Nothing if the sponsor pays",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Funding pressure can compromise the integrity of findings.",
+   "min_age": 15
+  },
+  {
+   "q": "Two agreements have equal pay but different notice and leave terms. What should you compare?",
+   "a": [
+    "The full conditions against your needs",
+    "Only the pay headline",
+    "Which document uses a nicer font",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "Conditions can change the practical value of equal pay.",
+   "min_age": 15
+  },
+  {
+   "q": "Two courses have different fees and placement records. What should guide comparison?",
+   "a": [
+    "Accreditation, costs, outcomes and fit",
+    "Which brochure is brighter",
+    "The promise of instant success",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A suitable pathway balances evidence, cost and personal goals.",
+   "min_age": 15
+  },
+  {
+   "q": "Your audience challenges a weak point in your proposal. What is useful?",
+   "a": [
+    "Address the limit and explain the revision",
+    "Repeat the slogan louder",
+    "Pretend the question was not asked",
+    "There is not enough information to choose any of these"
+   ],
+   "correct": 0,
+   "why": "A reasoned revision can strengthen a proposal.",
+   "min_age": 15
+  }
+ ],
+ "Memory": [
+  {
+   "q": "Which technique helps recall over time?",
+   "a": [
+    "Spaced practice",
+    "One exhausting session only",
+    "Never checking your answers",
+    "Only rereading headings"
+   ],
+   "correct": 0,
+   "why": "The answer is Spaced practice."
+  },
+  {
+   "q": "What is active recall?",
+   "a": [
+    "Trying to retrieve information before checking",
+    "Copying without thinking",
+    "Looking at answers immediately",
+    "Avoiding the topic"
+   ],
+   "correct": 0,
+   "why": "The answer is Trying to retrieve information before checking."
+  },
+  {
+   "q": "Why break a large task into steps?",
+   "a": [
+    "To make progress and errors easier to track",
+    "To remove all effort",
+    "To guarantee perfection",
+    "To skip difficult parts"
+   ],
+   "correct": 0,
+   "why": "The answer is To make progress and errors easier to track."
+  },
+  {
+   "q": "What does a useful practice log record?",
+   "a": [
+    "What worked and what needs practice",
+    "Only successes",
+    "Only how long the page is",
+    "Nothing concrete"
+   ],
+   "correct": 0,
+   "why": "The answer is What worked and what needs practice."
+  },
+  {
+   "q": "Which is a sensible response to a mistake?",
+   "a": [
+    "Check it and practise the weak step",
+    "Conceal it",
+    "Assume practice is pointless",
+    "Repeat it without checking"
+   ],
+   "correct": 0,
+   "why": "The answer is Check it and practise the weak step."
+  },
+  {
+   "q": "Why take breaks during demanding practice?",
+   "a": [
+    "To manage fatigue and attention",
+    "To erase progress",
+    "To avoid ever practising",
+    "To guarantee top marks"
+   ],
+   "correct": 0,
+   "why": "The answer is To manage fatigue and attention."
+  }
+ ]
+}

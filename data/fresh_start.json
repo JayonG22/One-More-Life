@@ -1,0 +1,430 @@
+{
+  "first_keys": [
+    {
+      "title": "The first grocery list",
+      "text": "The fridge contains a lemon, mustard and unreasonable optimism. A friend offers to split a proper shop.",
+      "choices": [
+        {
+          "label": "Cook a shared batch",
+          "result": "There is food for the week, and someone to complain about the dishes with.",
+          "cost": 45,
+          "effects": {
+            "health": 2,
+            "stress": -2
+          },
+          "bond": 5,
+          "skill": "Food"
+        },
+        {
+          "label": "Plan around what I have",
+          "result": "The lemon becomes an ingredient rather than a lifestyle.",
+          "cost": 0,
+          "effects": {
+            "smarts": 1,
+            "stress": 1
+          },
+          "bond": 1
+        },
+        {
+          "label": "Buy convenience for tonight",
+          "result": "A hot meal saves an exhausted evening, but costs more.",
+          "cost": 70,
+          "effects": {
+            "happiness": 3,
+            "stress": -3
+          },
+          "bond": 0
+        }
+      ]
+    },
+    {
+      "title": "A rattling window",
+      "text": "The flat loses heat. My friend knows a repair contact; the landlord needs a clear report.",
+      "choices": [
+        {
+          "label": "Document it and ask for repair",
+          "result": "A careful account makes the request harder to dismiss.",
+          "cost": 0,
+          "effects": {
+            "smarts": 1,
+            "stress": -1
+          },
+          "bond": 3,
+          "skill": "Education"
+        },
+        {
+          "label": "Arrange a modest repair",
+          "result": "I pay for a practical repair and keep its receipt.",
+          "cost": 120,
+          "effects": {
+            "health": 2,
+            "stress": -3
+          },
+          "bond": 4
+        },
+        {
+          "label": "Make do for now",
+          "result": "I keep the money, but the uncomfortable room takes a toll.",
+          "cost": 0,
+          "effects": {
+            "health": -2,
+            "stress": 3
+          },
+          "bond": 0
+        }
+      ]
+    },
+    {
+      "title": "The invitation",
+      "text": "Dinner with a friend falls on a night when I planned to prepare applications. Neither plan is silly.",
+      "choices": [
+        {
+          "label": "Share dinner, then shorten the application list",
+          "result": "We keep the connection and a realistic work plan.",
+          "cost": 25,
+          "effects": {
+            "happiness": 3,
+            "stress": 1
+          },
+          "bond": 6
+        },
+        {
+          "label": "Keep the work evening; propose another date",
+          "result": "My friend understands a specific alternative better than a vague excuse.",
+          "cost": 0,
+          "effects": {
+            "smarts": 2
+          },
+          "bond": 3
+        },
+        {
+          "label": "Stay home and rest",
+          "result": "The quiet helps; it does not maintain the friendship for me.",
+          "cost": 0,
+          "effects": {
+            "health": 2,
+            "stress": -3
+          },
+          "bond": -1
+        }
+      ]
+    },
+    {
+      "title": "Something that is mine",
+      "text": "The apartment still looks like a waiting room. I can afford one small change, not a showroom.",
+      "choices": [
+        {
+          "label": "Host a bring-your-own-chair evening",
+          "result": "The place acquires stories before it acquires matching furniture.",
+          "cost": 35,
+          "effects": {
+            "happiness": 4
+          },
+          "bond": 6
+        },
+        {
+          "label": "Buy one useful lamp",
+          "result": "A small useful purchase makes the evenings calmer.",
+          "cost": 60,
+          "effects": {
+            "happiness": 2,
+            "stress": -2
+          },
+          "bond": 1
+        },
+        {
+          "label": "Keep the money for the cushion",
+          "result": "An unspent lamp is not glamorous, but a buffer matters.",
+          "cost": 0,
+          "effects": {
+            "stress": -1
+          },
+          "bond": 0
+        }
+      ]
+    }
+  ],
+  "second_act": [
+    {
+      "title": "The blank line",
+      "text": "An application asks what I have done lately. I have more life experience than polished evidence.",
+      "choices": [
+        {
+          "label": "Build a small honest work sample",
+          "result": "A concrete example gives me something truthful to discuss.",
+          "cost": 40,
+          "effects": {
+            "smarts": 2,
+            "stress": 1
+          },
+          "bond": 1,
+          "skill": "Education"
+        },
+        {
+          "label": "Ask my friend to review the wording",
+          "result": "An outside reader spots a strength I had dismissed.",
+          "cost": 0,
+          "effects": {
+            "happiness": 2
+          },
+          "bond": 5
+        },
+        {
+          "label": "Send a shorter application now",
+          "result": "I avoid endless preparation, while accepting a thinner application.",
+          "cost": 0,
+          "effects": {
+            "stress": -2
+          },
+          "bond": 0
+        }
+      ]
+    },
+    {
+      "title": "A timetable with teeth",
+      "text": "Learning, applications and ordinary chores all want the same evenings.",
+      "choices": [
+        {
+          "label": "Protect a small regular learning slot",
+          "result": "A manageable schedule beats the heroic one I would abandon.",
+          "cost": 0,
+          "effects": {
+            "smarts": 2,
+            "stress": 1
+          },
+          "bond": 1,
+          "skill": "Education"
+        },
+        {
+          "label": "Pay for help with one household task",
+          "result": "Delegation buys breathing room, at a real cost.",
+          "cost": 85,
+          "effects": {
+            "stress": -4,
+            "health": 1
+          },
+          "bond": 2
+        },
+        {
+          "label": "Take a recovery week",
+          "result": "A pause is useful, but no qualification appears by magic.",
+          "cost": 0,
+          "effects": {
+            "health": 3,
+            "stress": -3
+          },
+          "bond": 0
+        }
+      ]
+    },
+    {
+      "title": "An introduction",
+      "text": "A friend offers an introduction, but cannot promise an employer will hire me.",
+      "choices": [
+        {
+          "label": "Prepare and accept the introduction",
+          "result": "We keep the promise small and the preparation specific.",
+          "cost": 25,
+          "effects": {
+            "smarts": 1,
+            "stress": 1
+          },
+          "bond": 6
+        },
+        {
+          "label": "Practise together before deciding",
+          "result": "The conversation improves without turning a friend into an employment agency.",
+          "cost": 0,
+          "effects": {
+            "happiness": 2
+          },
+          "bond": 5,
+          "skill": "Education"
+        },
+        {
+          "label": "Keep applying independently",
+          "result": "I preserve my independence and take the uncertainty with it.",
+          "cost": 0,
+          "effects": {
+            "stress": 1
+          },
+          "bond": 0
+        }
+      ]
+    },
+    {
+      "title": "The shape of success",
+      "text": "My friend asks what a good second act would actually look like. A higher salary is only one answer.",
+      "choices": [
+        {
+          "label": "Make room for work and people",
+          "result": "A sustainable aim includes a life outside the job title.",
+          "cost": 20,
+          "effects": {
+            "happiness": 3
+          },
+          "bond": 6
+        },
+        {
+          "label": "Keep learning without rushing the title",
+          "result": "The next skill can be useful before the next promotion.",
+          "cost": 0,
+          "effects": {
+            "smarts": 2,
+            "stress": -1
+          },
+          "bond": 2,
+          "skill": "Education"
+        },
+        {
+          "label": "Prioritise stability this year",
+          "result": "An ordinary steady year is allowed to count.",
+          "cost": 0,
+          "effects": {
+            "health": 2,
+            "stress": -2
+          },
+          "bond": 2
+        }
+      ]
+    }
+  ],
+  "small_world": [
+    {
+      "title": "The spare seat",
+      "text": "A familiar cafe has one spare chair and a notice for a local reading circle.",
+      "choices": [
+        {
+          "label": "Invite my friend and try one meeting",
+          "result": "A small invitation makes the place feel less anonymous.",
+          "cost": 20,
+          "effects": {
+            "happiness": 3
+          },
+          "bond": 6,
+          "skill": "Education"
+        },
+        {
+          "label": "Have a quiet catch-up instead",
+          "result": "Belonging does not require a club badge.",
+          "cost": 15,
+          "effects": {
+            "stress": -2
+          },
+          "bond": 6
+        },
+        {
+          "label": "Keep an evening to myself",
+          "result": "Solitude helps tonight; the connection waits for another day.",
+          "cost": 0,
+          "effects": {
+            "stress": -3
+          },
+          "bond": -1
+        }
+      ]
+    },
+    {
+      "title": "Too much volunteered",
+      "text": "A neighbourhood organiser assumes I can help every weekend. I cannot.",
+      "choices": [
+        {
+          "label": "Offer one specific shift",
+          "result": "A limited promise is more useful than an impossible one.",
+          "cost": 0,
+          "effects": {
+            "happiness": 2,
+            "stress": 1
+          },
+          "bond": 5
+        },
+        {
+          "label": "Contribute supplies instead of time",
+          "result": "The help has a budget and leaves my weekends intact.",
+          "cost": 60,
+          "effects": {
+            "stress": -2
+          },
+          "bond": 3
+        },
+        {
+          "label": "Say no and protect my energy",
+          "result": "I keep a boundary and lose this particular shared occasion.",
+          "cost": 0,
+          "effects": {
+            "health": 2
+          },
+          "bond": -1
+        }
+      ]
+    },
+    {
+      "title": "Different memories",
+      "text": "My friend and I remember an awkward evening differently. It is tempting to prove a winner.",
+      "choices": [
+        {
+          "label": "Ask what stayed with them",
+          "result": "I learn why the evening mattered, without agreeing on every detail.",
+          "cost": 0,
+          "effects": {
+            "stress": 1
+          },
+          "bond": 7
+        },
+        {
+          "label": "Take a walk and leave the dispute open",
+          "result": "We can keep each other without completing a courtroom argument.",
+          "cost": 10,
+          "effects": {
+            "health": 2,
+            "stress": -2
+          },
+          "bond": 5
+        },
+        {
+          "label": "Change the subject tonight",
+          "result": "The evening stays easy; the unresolved feeling stays too.",
+          "cost": 0,
+          "effects": {
+            "stress": -1
+          },
+          "bond": -2
+        }
+      ]
+    },
+    {
+      "title": "A tradition small enough to keep",
+      "text": "We want something regular, but nobody wants a second unpaid job as social coordinator.",
+      "choices": [
+        {
+          "label": "A monthly potluck with shared organising",
+          "result": "The routine belongs to everyone, not one exhausted host.",
+          "cost": 35,
+          "effects": {
+            "happiness": 4
+          },
+          "bond": 7
+        },
+        {
+          "label": "A casual walk when our weeks fit",
+          "result": "A flexible tradition makes room for changing lives.",
+          "cost": 0,
+          "effects": {
+            "health": 2,
+            "happiness": 2
+          },
+          "bond": 5
+        },
+        {
+          "label": "Keep spontaneous meetings",
+          "result": "There is less pressure and fewer dependable occasions.",
+          "cost": 0,
+          "effects": {
+            "stress": -2
+          },
+          "bond": 1
+        }
+      ]
+    }
+  ]
+}

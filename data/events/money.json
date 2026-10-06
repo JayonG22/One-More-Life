@@ -273,7 +273,8 @@
      "coworker"
     ]
    }
-  }
+  },
+  "available_from": 1995
  },
  {
   "id": "money.inheritance_dispute",
@@ -376,8 +377,7 @@
   "roles": {
    "rel": {
     "relation_any": [
-     "grandparent",
-     "auntuncle"
+     "grandparent"
     ]
    }
   }
@@ -1133,7 +1133,8 @@
     ]
    }
   ],
-  "weight": 5
+  "weight": 5,
+  "available_from": 1930
  },
  {
   "id": "money.island_party",
@@ -1295,7 +1296,8 @@
     ]
    }
   ],
-  "weight": 5
+  "weight": 5,
+  "available_from": 2004
  },
  {
   "id": "money.lottery_friend",

@@ -37,11 +37,12 @@ const PROFILES := {
 	"family":   ["affection", "trust", "respect", "resentment", "obligation"],
 	"social":   ["affection", "trust", "respect", "resentment", "obligation"],
 	"work":     ["trust", "respect", "resentment", "obligation"],
-	"hostile":  ["respect", "resentment", "obligation"],
+	"hostile":  ["trust", "respect", "resentment", "obligation"],
 	"animal":   ["affection", "trust"],
 }
 
 const RELATION_PROFILE := {
+	"principal":"work", "school_nurse":"social", "former_teacher":"work", "former_classmate":"social",
 	"partner": "romantic", "lover": "romantic", "crush": "romantic", "ex": "romantic",
 	"mother": "family", "father": "family", "stepparent": "family", "sibling": "family",
 	"stepsibling": "family", "child": "family", "stepchild": "family", "grandparent": "family",
@@ -78,6 +79,7 @@ func ensure(id: String) -> Dictionary:
 	if n.is_empty():
 		return {}
 	if n.has("bond") and n["bond"] is Dictionary:
+		if profile_for(str(n.get("relation","")))=="hostile" and not n["bond"].has("trust"): n["bond"]["trust"]=minf(25,float(n["bond"].get("respect",0))*0.5)
 		return n["bond"]
 	var seed_close := float(n.get("closeness", 50))
 	var b := {}

@@ -77,7 +77,11 @@ func _start(rent_mult: float = 1.0) -> void:
 	t["active"] = true
 	t["since"] = int(_p().get("age", 18))
 	t["rent"] = int(round(float(_market_rent()) * rent_mult / 100.0)) * 100
-	t["deposit"] = int(float(t["rent"]) / 12.0 * 1.5)
+	var deposit_due := int(float(t["rent"]) / 12.0 * 1.5)
+	t["deposit"] = mini(maxi(0,int(_p()["money"])),deposit_due)
+	_p()["money"] = int(_p()["money"])-int(t["deposit"])
+	t["deposit_paid"]=true
+	if int(t["deposit"])<deposit_due: GameState.add_log("The landlord accepted a reduced deposit of "+GameState.fmt_money(int(t["deposit"]))+"; no personal loan was created.")
 	t["kind"] = _roll_kind()
 	t["landlord"] = "%s %s" % [ContentDB.random_first(g, c), ContentDB.random_last(c)]
 	t["boiler_age"] = randi_range(1, 14)
@@ -96,7 +100,7 @@ func _end(reason: String) -> void:
 		return
 	var kd: Dictionary = LANDLORDS.get(str(t.get("kind", "fair")), LANDLORDS["fair"])
 	var back := int(float(t.get("deposit", 0)) * float(kd["deposit"]) * (1.0 - float(t.get("damp", 0)) / 250.0))
-	if int(t.get("deposit", 0)) > 0:
+	if t.get("deposit_paid",false) and int(t.get("deposit", 0)) > 0:
 		_p()["money"] = int(_p()["money"]) + back
 		if back < int(t.get("deposit", 0)) * 0.6:
 			GameState.add_log("My landlord kept most of the deposit: %s of %s came back." % [GameState.fmt_money(back), GameState.fmt_money(int(t["deposit"]))])
@@ -220,7 +224,7 @@ func menu() -> Dictionary:
 	info.append("Rent %s a year (%s a month)%s  ·  deposit held %s" % [GameState.fmt_money(annual_rent()), GameState.fmt_money(annual_rent() / 12), " shared with %d" % mates().size() if not mates().is_empty() else "", GameState.fmt_money(int(t["deposit"]))])
 	info.append("Boiler %d years old  ·  damp %d%%  ·  bills %s a year%s" % [int(t["boiler_age"]), int(t["damp"]), GameState.fmt_money(utilities()), "  ·  insulated" if bool(t.get("insulated", false)) else ""])
 	rows.append(_row("@hourglass", "Ask for repairs", "Damp and the boiler. Chance depends on the landlord", "repairs"))
-	rows.append(_row("@handshake", "Negotiate the rent", "Bring evidence. A reasonable landlord may listen", "negotiate"))
+	rows.append(_row("@handshake", "Negotiate the rent", "Once a year · bring evidence; no guaranteed reduction", "negotiate", null, not Journey.used("rent_negotiate")))
 	rows.append(_row("🧑‍🤝‍🧑", "Find a flatmate", "Halves the rent, and doubles the ways it can go wrong", "flatmate", null, mates().size() < 2))
 	rows.append(_row("🧥", "Draught-proof and insulate", "%s · lower bills, less damp" % GameState.fmt_money(Actions._cost(1200)), "insulate", null, not bool(t.get("insulated", false))))
 	rows.append(_row("@scroll", "Contents insurance", "%s a year · covers break-ins and fires" % GameState.fmt_money(Actions._cost(300)), "insure", null, not bool(t.get("insured", false))))
@@ -247,8 +251,10 @@ func act(key: String, arg) -> void:
 			else:
 				Actions._done("🛠️", "Repairs", "%s said it would be 'looked at'. Nothing happened, and I kept the emails." % str(t["landlord"]), {"stress": 4})
 		"negotiate":
+			if Journey.used("rent_negotiate"): return
 			if Actions._out_of_time():
 				return
+			Journey.mark("rent_negotiate")
 			var skill := GameState.stat("smarts") * 0.5 + 25.0 + (15.0 if str(t["kind"]) == "kind" else 0.0) - (10.0 if str(t["kind"]) == "grasping" else 0.0)
 			Minigames.play("haggle", {"subject": "the rent", "skill": skill, "difficulty": 1.0 + (0.2 if str(t["kind"]) == "grasping" else 0.0)},
 				func(score: float, detail: Dictionary) -> void: _rent_haggle_done(score, detail))
@@ -267,6 +273,7 @@ func act(key: String, arg) -> void:
 			t["damp"] = maxf(0.0, float(t["damp"]) - 20.0)
 			Actions._done("🧥", "Insulation", "Foam strips, a door snake and a heavy curtain. The flat stopped whistling.", {"stress": -2, "happiness": 1})
 		"insure":
+			if t.get("insured",false) or not Actions._can_pay(Actions._cost(300),"Insurance"): return
 			t["insured"] = true
 			_p()["money"] = int(_p()["money"]) - Actions._cost(300)
 			Actions._done("📄", "Contents insurance", "I read the small print and only partly understood it. I felt responsible.", {"stress": -2})

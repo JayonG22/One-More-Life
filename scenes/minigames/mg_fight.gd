@@ -22,9 +22,23 @@ var btn_high: Button
 var btn_low: Button
 var btn_strike: Button
 var learned := 0     # clean blocks so far; the first few telegraphs are slower
+var counter_mult := 1.0
+var guard_mult := 1.0
+var counter_cost := 8.0
+var move_name := "Counter"
 
 
 func build() -> void:
+	var move := clampi(int(params.get("move",0)),0,3)
+	var style := str(params.get("style","boxing"))
+	if params.has("move"):
+		counter_mult=[0.85,1.10,1.25,0.95][move]
+		counter_cost=[5.0,10.0,14.0,7.0][move]
+		guard_mult=0.82 if move==3 else 1.0
+		if style in ["judo","bjj"]: counter_mult*=1.08
+		if style=="taekwondo": counter_cost+=2.0
+		if style=="krav": guard_mult*=0.9
+		move_name=str(Depth.MOVES.get(style,Depth.MOVES["boxing"])[move])
 	opp_name = str(params.get("opponent", "The Challenger"))
 	make_status()
 	opp_l = label("🥊😠", 90)
@@ -51,7 +65,7 @@ func build() -> void:
 			0: btn_high = b
 			1: btn_low = b
 			_: btn_strike = b
-	var legend := label("W / ↑ block high   ·   S / ↓ block low   ·   Space strike, but only after a block lands", 15, true)
+	var legend := label("W / ↑ guard high · S / ↓ guard low · Space: "+move_name+" · counter costs %d stamina" % int(counter_cost), 15, true)
 	legend.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	place(legend, Vector2(0, 512), Vector2(W, 24))
 	var nl := label("You", 18, true)
@@ -109,11 +123,12 @@ func _strike() -> void:
 	if done:
 		return
 	if state == "counter":
-		var dmg := randf_range(12, 18) * (0.6 + 0.4 * stamina / 100.0)
+		if stamina<counter_cost: return
+		var dmg := randf_range(12, 18) * (0.6 + 0.4 * stamina / 100.0)*counter_mult
 		opp_hp = maxf(0.0, opp_hp - dmg)
-		stamina = maxf(0.0, stamina - 8)
+		stamina = maxf(0.0, stamina - counter_cost)
 		Fx.play("bad", 0.1)
-		call_l.text = "💥 Counter! -%d" % int(dmg)
+		call_l.text = "💥 %s! -%d" % [move_name,int(dmg)]
 		opp_l.text = "😵"
 		_to_idle()
 	elif state == "idle" or state == "tele":
@@ -136,7 +151,7 @@ func _strike() -> void:
 
 
 func _hit_me(msg: String) -> void:
-	var dmg := randf_range(10, 16) * difficulty
+	var dmg := randf_range(10, 16) * difficulty * guard_mult
 	me_hp = maxf(0.0, me_hp - dmg)
 	Fx.play("bad")
 	call_l.text = "😖 %s -%d" % [msg, int(dmg)]

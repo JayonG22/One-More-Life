@@ -1,0 +1,596 @@
+[
+  {
+    "id": "coping.stress.0",
+    "family": "coping.stress",
+    "topic": "stress",
+    "title": "The noisy morning",
+    "text": "Several small demands arrive at once, before the day has settled.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Choose one manageable task",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I gave one task enough attention instead of carrying the whole morning.",
+        "followup": "Looking back: I gave one task enough attention instead of carrying the whole morning."
+      },
+      {
+        "label": "Arrange practical help",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Paid practical help made the morning manageable.",
+        "followup": "Looking back: Paid practical help made the morning manageable."
+      },
+      {
+        "label": "Try to finish everything",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Trying to answer every demand left the morning tense.",
+        "followup": "Looking back: Trying to answer every demand left the morning tense."
+      }
+    ]
+  },
+  {
+    "id": "coping.stress.1",
+    "family": "coping.stress",
+    "topic": "stress",
+    "title": "The crowded calendar",
+    "text": "The calendar has room for every commitment only if nothing takes longer than planned.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Leave room between commitments",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I made room for ordinary delays.",
+        "followup": "Looking back: I made room for ordinary delays."
+      },
+      {
+        "label": "Pay to share a task",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Sharing a task reduced what the calendar demanded of me.",
+        "followup": "Looking back: Sharing a task reduced what the calendar demanded of me."
+      },
+      {
+        "label": "Promise the full calendar",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "The full calendar left no room for a difficult day.",
+        "followup": "Looking back: The full calendar left no room for a difficult day."
+      }
+    ]
+  },
+  {
+    "id": "coping.stress.2",
+    "family": "coping.stress",
+    "topic": "stress",
+    "title": "The changed plan",
+    "text": "A changed plan threatens to turn the whole day into catching up.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Make a smaller new plan",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I chose a smaller plan that matched the changed day.",
+        "followup": "Looking back: I chose a smaller plan that matched the changed day."
+      },
+      {
+        "label": "Ask for paid practical support",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Support gave the changed plan some breathing room.",
+        "followup": "Looking back: Support gave the changed plan some breathing room."
+      },
+      {
+        "label": "Keep chasing the original plan",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Chasing the old plan added strain to the new one.",
+        "followup": "Looking back: Chasing the old plan added strain to the new one."
+      }
+    ]
+  },
+  {
+    "id": "coping.stress.3",
+    "family": "coping.stress",
+    "topic": "stress",
+    "title": "The unfinished task",
+    "text": "An unfinished task keeps following you into time meant for rest.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Set a clear stopping point",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I set a stopping point without pretending the task was finished.",
+        "followup": "Looking back: I set a stopping point without pretending the task was finished."
+      },
+      {
+        "label": "Pay for help finishing it",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Paid help closed part of the task without consuming my rest.",
+        "followup": "Looking back: Paid help closed part of the task without consuming my rest."
+      },
+      {
+        "label": "Keep working through rest",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "The task followed me through the time I needed to recover.",
+        "followup": "Looking back: The task followed me through the time I needed to recover."
+      }
+    ]
+  },
+  {
+    "id": "coping.grief.0",
+    "family": "coping.grief",
+    "topic": "grief",
+    "title": "The empty place",
+    "text": "A familiar occasion makes {person}’s absence especially noticeable.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Make room for the memory",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I made room for the absence and what the person meant to me.",
+        "followup": "Looking back: I made room for the absence and what the person meant to me."
+      },
+      {
+        "label": "Arrange a supported remembrance",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "A supported remembrance let me share the difficult occasion.",
+        "followup": "Looking back: A supported remembrance let me share the difficult occasion."
+      },
+      {
+        "label": "Avoid acknowledging the absence",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Avoiding the absence made the occasion harder to face.",
+        "followup": "Looking back: Avoiding the absence made the occasion harder to face."
+      }
+    ]
+  },
+  {
+    "id": "coping.grief.1",
+    "family": "coping.grief",
+    "topic": "grief",
+    "title": "The ordinary reminder",
+    "text": "An ordinary detail unexpectedly brings {person} to mind.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Let the memory have a moment",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I let an ordinary reminder belong to my story.",
+        "followup": "Looking back: I let an ordinary reminder belong to my story."
+      },
+      {
+        "label": "Book help talking it through",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Talking the reminder through helped me carry it more gently.",
+        "followup": "Looking back: Talking the reminder through helped me carry it more gently."
+      },
+      {
+        "label": "Fill the moment with demands",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Filling the moment with demands kept the strain close.",
+        "followup": "Looking back: Filling the moment with demands kept the strain close."
+      }
+    ]
+  },
+  {
+    "id": "coping.grief.2",
+    "family": "coping.grief",
+    "topic": "grief",
+    "title": "The story worth keeping",
+    "text": "You consider how to keep a story about {person} without making every day a memorial.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Keep a simple personal memory",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I kept a simple memory without demanding constant remembrance.",
+        "followup": "Looking back: I kept a simple memory without demanding constant remembrance."
+      },
+      {
+        "label": "Arrange help sharing the story",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Support helped me share the story in a manageable way.",
+        "followup": "Looking back: Support helped me share the story in a manageable way."
+      },
+      {
+        "label": "Put every reminder away",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Putting every reminder away left the story harder to approach.",
+        "followup": "Looking back: Putting every reminder away left the story harder to approach."
+      }
+    ]
+  },
+  {
+    "id": "coping.grief.3",
+    "family": "coping.grief",
+    "topic": "grief",
+    "title": "The different anniversary",
+    "text": "This anniversary of losing {person} feels different from the previous one.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Allow a different way to remember",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I allowed the anniversary to have its own shape.",
+        "followup": "Looking back: I allowed the anniversary to have its own shape."
+      },
+      {
+        "label": "Arrange a supported day",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "A supported day gave the anniversary room without taking the whole week.",
+        "followup": "Looking back: A supported day gave the anniversary room without taking the whole week."
+      },
+      {
+        "label": "Demand that I feel nothing",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Demanding no feelings added pressure to the anniversary.",
+        "followup": "Looking back: Demanding no feelings added pressure to the anniversary."
+      }
+    ]
+  },
+  {
+    "id": "coping.loneliness.0",
+    "family": "coping.loneliness",
+    "topic": "loneliness",
+    "title": "The invitation gap",
+    "text": "There is space in your week for company, but reaching out feels awkward.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Plan a small reachable meeting",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I made a small plan for company that I could actually keep.",
+        "followup": "Looking back: I made a small plan for company that I could actually keep."
+      },
+      {
+        "label": "Join a paid supported group",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "A supported group gave connection a place in my week.",
+        "followup": "Looking back: A supported group gave connection a place in my week."
+      },
+      {
+        "label": "Leave the week empty",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Leaving the space empty kept the sense of isolation.",
+        "followup": "Looking back: Leaving the space empty kept the sense of isolation."
+      }
+    ]
+  },
+  {
+    "id": "coping.loneliness.1",
+    "family": "coping.loneliness",
+    "topic": "loneliness",
+    "title": "The unsent message",
+    "text": "An unsent message has become harder to send each time you return to it.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Send a simple honest message",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I made the first contact small enough to attempt.",
+        "followup": "Looking back: I made the first contact small enough to attempt."
+      },
+      {
+        "label": "Use a supported conversation",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Support helped me start the conversation I had avoided.",
+        "followup": "Looking back: Support helped me start the conversation I had avoided."
+      },
+      {
+        "label": "Keep postponing contact",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Postponing contact made the distance feel larger.",
+        "followup": "Looking back: Postponing contact made the distance feel larger."
+      }
+    ]
+  },
+  {
+    "id": "coping.loneliness.2",
+    "family": "coping.loneliness",
+    "topic": "loneliness",
+    "title": "The familiar room",
+    "text": "Being in a familiar room does not automatically make you feel connected.",
+    "min_age": 6,
+    "choices": [
+      {
+        "label": "Choose a manageable shared activity",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I chose a shared activity that gave company something to grow around.",
+        "followup": "Looking back: I chose a shared activity that gave company something to grow around."
+      },
+      {
+        "label": "Arrange a supported group activity",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "A supported activity made room for participation at my pace.",
+        "followup": "Looking back: A supported activity made room for participation at my pace."
+      },
+      {
+        "label": "Pretend company is unnecessary",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Pretending I needed no company left the room feeling distant.",
+        "followup": "Looking back: Pretending I needed no company left the room feeling distant."
+      }
+    ]
+  },
+  {
+    "id": "coping.loneliness.3",
+    "family": "coping.loneliness",
+    "topic": "loneliness",
+    "title": "The uneven friendship",
+    "text": "You want company without asking one friendship to meet every need.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Make a modest plan for contact",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I kept the friendship and made my expectations manageable.",
+        "followup": "Looking back: I kept the friendship and made my expectations manageable."
+      },
+      {
+        "label": "Use a group alongside friendship",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Group support widened connection without replacing the friendship.",
+        "followup": "Looking back: Group support widened connection without replacing the friendship."
+      },
+      {
+        "label": "Expect one person to fix everything",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Expecting one person to fix everything added pressure to connection.",
+        "followup": "Looking back: Expecting one person to fix everything added pressure to connection."
+      }
+    ]
+  },
+  {
+    "id": "coping.burnout.0",
+    "family": "coping.burnout",
+    "topic": "burnout",
+    "title": "The never-ending list",
+    "text": "Finishing one demand only seems to reveal the next one.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Set a smaller daily limit",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I set a smaller limit and kept room for recovery.",
+        "followup": "Looking back: I set a smaller limit and kept room for recovery."
+      },
+      {
+        "label": "Arrange help sharing demands",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Practical help shared the demands instead of just hiding them.",
+        "followup": "Looking back: Practical help shared the demands instead of just hiding them."
+      },
+      {
+        "label": "Push harder each day",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Pushing harder made each new demand feel heavier.",
+        "followup": "Looking back: Pushing harder made each new demand feel heavier."
+      }
+    ]
+  },
+  {
+    "id": "coping.burnout.1",
+    "family": "coping.burnout",
+    "topic": "burnout",
+    "title": "The late work request",
+    "text": "A late work request arrives after the shift should have ended.",
+    "min_age": 16,
+    "choices": [
+      {
+        "label": "Protect the end of the shift",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I protected the end of the shift with a clear handover.",
+        "followup": "Looking back: I protected the end of the shift with a clear handover."
+      },
+      {
+        "label": "Arrange practical work support",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Practical support reduced the load behind the late request.",
+        "followup": "Looking back: Practical support reduced the load behind the late request."
+      },
+      {
+        "label": "Remain available every evening",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Constant availability kept work inside the time meant for rest.",
+        "followup": "Looking back: Constant availability kept work inside the time meant for rest."
+      }
+    ],
+    "work_only": true
+  },
+  {
+    "id": "coping.burnout.2",
+    "family": "coping.burnout",
+    "topic": "burnout",
+    "title": "The study pile",
+    "text": "A pile of study tasks makes taking a break feel like losing ground.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Study a smaller realistic block",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I kept study manageable rather than making rest a failure.",
+        "followup": "Looking back: I kept study manageable rather than making rest a failure."
+      },
+      {
+        "label": "Arrange supported study time",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Supported study time reduced the load around the work.",
+        "followup": "Looking back: Supported study time reduced the load around the work."
+      },
+      {
+        "label": "Study through every break",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Studying through every break made concentration harder.",
+        "followup": "Looking back: Studying through every break made concentration harder."
+      }
+    ],
+    "school_only": true
+  },
+  {
+    "id": "coping.burnout.3",
+    "family": "coping.burnout",
+    "topic": "burnout",
+    "title": "The praised exhaustion",
+    "text": "Being praised for carrying so much makes a lighter workload feel like letting people down.",
+    "min_age": 12,
+    "choices": [
+      {
+        "label": "Keep a clear limit on demands",
+        "cost": 0,
+        "ease": 10,
+        "stress": -4,
+        "happy": 1,
+        "result": "I accepted the praise without offering every spare hour.",
+        "followup": "Looking back: I accepted the praise without offering every spare hour."
+      },
+      {
+        "label": "Arrange help with the workload",
+        "cost": 100,
+        "ease": 16,
+        "stress": -6,
+        "happy": 2,
+        "result": "Shared help made the workload less dependent on exhaustion.",
+        "followup": "Looking back: Shared help made the workload less dependent on exhaustion."
+      },
+      {
+        "label": "Accept every new demand",
+        "cost": 0,
+        "ease": -6,
+        "stress": 4,
+        "happy": -1,
+        "result": "Accepting every demand kept exhaustion inside the achievement.",
+        "followup": "Looking back: Accepting every demand kept exhaustion inside the achievement."
+      }
+    ]
+  }
+]

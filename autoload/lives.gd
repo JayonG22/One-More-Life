@@ -3,6 +3,7 @@ extends Node
 ## Life Paths: Royalty, Vampire, Revenant (Undead), Super (hero or villain), Witch.
 
 const TYPES := {
+	"tv": {"name":"Story Life", "icon":"🎬", "desc":"Original characters, branching choices and different endings."},
 	"human": {"name": "Human", "icon": "🧑", "desc": "An ordinary life. For now."},
 	"royal": {"name": "Royal", "icon": "👑", "desc": "Born into a royal house. The crown might be yours one day."},
 	"vampire": {"name": "Vampire", "icon": "🧛", "desc": "You'll be turned at 18. Ageless, and always thirsty."},
@@ -18,8 +19,10 @@ const TYPES := {
 }
 
 ## Modes that run their own year and their own events instead of the human ones.
-const SEPARATE := ["pet", "prisoner", "guard"]
+const SEPARATE := ["pet", "prisoner", "guard", "tv"]
 signal transformed(kind: String)
+
+const ROYAL_BIRTH_CHANCE := {"uk":0.006,"jp":0.003}
 
 const KINDS := ["royal_speech", "feed", "patrol", "heist", "nemesis", "brew", "revenge"]
 const POWERS := {
@@ -34,6 +37,8 @@ const ALIAS_B := ["Falcon", "Wraith", "Tempest", "Warden", "Comet", "Viper", "Se
 
 func life() -> Dictionary:
 	var p := GameState.player
+	if p.is_empty():
+		return {"type": "human"}
 	if not p.has("life") or not (p["life"] is Dictionary):
 		p["life"] = {"type": "human"}
 	return p["life"]
@@ -55,6 +60,7 @@ func separate() -> bool:
 func mode():
 	match kind():
 		"pet": return Pets
+		"tv": return TVLife
 		"prisoner", "guard": return Prison
 	return null
 
@@ -84,6 +90,7 @@ func title() -> String:
 	var g: String = GameState.player.get("gender", "male")
 	match kind():
 		"royal":
+			if l.get("noble",false): return str(l.get("noble_title","Noble"))
 			if l.get("crowned", false):
 				return "King" if g == "male" else ("Queen" if g == "female" else "Monarch")
 			if l.get("consort", false):
@@ -97,6 +104,7 @@ func title() -> String:
 		"super": return str(l.get("alias", "Masked Hero"))
 		"pirate", "colonist", "traveler": return Expansion.life_title()
 		"pet": return Pets.title()
+		"tv": return TVLife.title()
 		"prisoner", "guard": return Prison.title()
 	return ""
 
@@ -107,6 +115,11 @@ func apply_start(opts: Dictionary) -> void:
 	var p := GameState.player
 	p["life"] = {"type": "human"}
 	var path: String = opts.get("life_path", "human")
+	p["birth_class"]="Commoner"
+	if path=="human" and not opts.get("keep_family",false) and opts.get("random_royalty",true) and randf()<float(ROYAL_BIRTH_CHANCE.get(str(p["country"]),0)):
+		path="royal"
+		p["royal_birth_kind"]="noble" if str(p["country"])=="uk" and randf()<0.30 else "royal"
+	p["royal_rule_override"]=str(opts.get("succession_rule",""))
 	if path != "human":
 		GameState.counter("life_paths")
 	match path:
@@ -125,6 +138,8 @@ func apply_start(opts: Dictionary) -> void:
 		"pirate", "colonist", "traveler":
 			Expansion.setup_life(path, opts)
 			GameState.counter("life_" + path)
+		"tv":
+			TVLife.setup(opts)
 		"pet":
 			Pets.setup(opts)
 		"prisoner", "guard":
@@ -167,20 +182,30 @@ func become(t: String, opts: Dictionary = {}) -> void:
 func setup_royal(born: bool) -> void:
 	var p := GameState.player
 	var countries := {"uk": "the United Kingdom", "jp": "Japan"}
+	var rule := str(p.get("royal_rule_override",""))
+	if not rule in ["eldest_child","male_preference","male_only"]: rule="male_only" if p["country"]=="jp" else ("male_preference" if p["country"]=="uk" and int(p["born_year"])<2012 else "eldest_child")
 	p["life"] = {"type": "royal", "house": "House of " + str(p["last"]), "respect": 60, "line": 1, "crowned": false, "reign": 0, "decrees": 0, "consort": false, "realm": countries.get(p["country"], ContentDB.country(p["country"])["name"])}
+	life()["succession_rule"]=rule
+	life()["noble"]=p.get("royal_birth_kind","")=="noble"
+	if life()["noble"]: life()["noble_title"]=("Duke" if p["gender"]=="male" else "Duchess") if randf()<0.5 else ("Count" if p["gender"]=="male" else "Countess")
+	p["birth_class"]="Nobility" if life()["noble"] else "Royal family"
 	if not born:
 		return
 	var parents := [GameState.first_of("mother"), GameState.first_of("father")]
 	var mid: String = parents[randi() % 2] if parents[0] != "" and parents[1] != "" else (parents[0] if parents[0] != "" else parents[1])
+	if rule=="male_only" and parents[1]!="": mid=parents[1]
 	if mid != "":
 		var m: Dictionary = GameState.npcs[mid]
 		m["royal"] = true
-		m["monarch"] = true
+		m["monarch"] = not life().get("noble",false)
 		m["title"] = "King" if m["gender"] == "male" else "Queen"
+		if life().get("noble",false): m["title"]="Duke" if m["gender"]=="male" else "Duchess"
+		elif rule=="male_only" and m["gender"]!="male": m["title"]="Regent"
 		for other in parents:
 			if other != "" and other != mid:
 				GameState.npcs[other]["royal"] = true
 				GameState.npcs[other]["title"] = "Prince Consort" if GameState.npcs[other]["gender"] == "male" else "Queen Consort"
+				if life().get("noble",false): GameState.npcs[other]["title"]="Duke" if GameState.npcs[other]["gender"]=="male" else "Duchess"
 	var sibs := GameState.npcs_with("sibling")
 	sibs.sort_custom(func(a, b): return int(GameState.npcs[a]["age"]) > int(GameState.npcs[b]["age"]))
 	var line := 1
@@ -191,7 +216,11 @@ func setup_royal(born: bool) -> void:
 		s["title"] = "Prince" if s["gender"] == "male" else "Princess"
 		line += 1
 	life()["line"] = line
+	life()["birth_order"]=sibs.size()+1
+	_reline()
+	line=int(life()["line"])
 	p["fame"] = maxf(float(p.get("fame", 0)), 40.0)
+	GameState.add_log("My family uses %s succession; I was child number %d." % [rule.replace("_"," "),int(life()["birth_order"])])
 	GameState.add_milestone(0, "was born %s of the %s" % ["heir to the throne" if line == 1 else "a royal", life()["house"]])
 
 
@@ -200,9 +229,10 @@ func on_continue(old: Dictionary) -> void:
 	var p := GameState.player
 	match str(ol.get("type", "human")):
 		"royal":
-			p["life"] = {"type": "royal", "house": ol.get("house", "House of " + str(p["last"])), "respect": int(ol.get("respect", 60)), "line": 1, "crowned": false, "reign": 0, "decrees": 0, "consort": false, "realm": ol.get("realm", "the realm")}
+			p["life"] = {"type": "royal", "house": ol.get("house", "House of " + str(p["last"])), "respect": int(ol.get("respect", 60)), "line":int(p.get("inherited_royal_line",1)), "succession_rule":ol.get("succession_rule","eldest_child"), "noble":ol.get("noble",false), "noble_title":ol.get("noble_title","Noble"), "crowned": false, "reign": 0, "decrees": 0, "consort": false, "realm": ol.get("realm", "the realm")}
 			p["fame"] = maxf(float(p.get("fame", 0)), 40.0)
-			if ol.get("crowned", false):
+			_reline()
+			if ol.get("crowned", false) and int(life()["line"])==1 and not life().get("noble",false):
 				GameState.add_log("With my %s gone, the crown passes to me." % ("father" if old["gender"] == "male" else "mother"))
 		"witch":
 			if int(p["age"]) >= 13:
@@ -362,17 +392,29 @@ func monarch() -> String:
 
 func _reline() -> void:
 	var l := life()
+	var rule := str(l.get("succession_rule","eldest_child"))
 	var entries: Array = []
 	for id in royals():
-		entries.append([id, int(GameState.npcs[id]["line"])])
-	if not l.get("crowned", false) and not l.get("consort", false) and not l.get("abdicated", false):
-		entries.append(["me", int(l["line"])])
-	entries.sort_custom(func(a, b): return int(a[1]) < int(b[1]))
+		var n: Dictionary = GameState.npcs[id]
+		if rule=="male_only" and n["gender"]!="male":
+			n["line"]=999
+			continue
+		entries.append([id,int(n["line"]),0 if rule=="male_preference" and n["gender"]=="male" else 1])
+	if not l.get("crowned",false) and not l.get("consort",false) and not l.get("abdicated",false) and not l.get("noble",false):
+		if rule=="male_only" and GameState.player["gender"]!="male": l["line"]=999
+		else: entries.append(["me",int(l["line"]),0 if rule=="male_preference" and GameState.player["gender"]=="male" else 1])
+	entries.sort_custom(func(a,b): return int(a[2])<int(b[2]) if int(a[2])!=int(b[2]) else int(a[1])<int(b[1]))
 	for i in range(entries.size()):
-		if entries[i][0] == "me":
-			l["line"] = i + 1
-		else:
-			GameState.npcs[entries[i][0]]["line"] = i + 1
+		if entries[i][0]=="me": l["line"]=i+1
+		else: GameState.npcs[entries[i][0]]["line"]=i+1
+
+
+func royal_match() -> void:
+	if not is_type("royal") or int(GameState.player["age"])<18 or str(GameState.player["partner"])!="": return
+	var id := GameState.create_npc("partner",{"age":maxi(18,int(GameState.player["age"])+randi_range(-3,3)),"closeness":50})
+	GameState.player["partner"]=id
+	GameState.player["partner_status"]="dating"
+	GameState.add_log("I accepted an introduction to %s. A court recommendation is not a marriage agreement." % GameState.full_name(id))
 
 
 func _royal_yearly() -> void:
@@ -385,21 +427,31 @@ func _royal_yearly() -> void:
 			s["line"] = 50
 			s["title"] = "Prince" if s["gender"] == "male" else "Princess"
 	if not l.get("consort", false):
-		for cid in GameState.npcs_with("child"):
+		var child_line := 1
+		var children := GameState.npcs_with("child")
+		children.sort_custom(func(a,b): return int(GameState.npcs[a]["age"])>int(GameState.npcs[b]["age"]))
+		for cid in children:
 			var c: Dictionary = GameState.npcs[cid]
 			if not c.get("royal", false):
 				c["royal"] = true
 				c["title"] = "Prince" if c["gender"] == "male" else "Princess"
+			if l.get("crowned",false):
+				c["line"]=child_line
+				child_line+=1
 	var r := float(l["respect"])
 	r += float(p["karma"]) / 25.0 - 1.0
 	r = lerpf(r, 50.0, 0.04)
 	l["respect"] = clampf(r, 0.0, 100.0)
 	p["fame"] = maxf(float(p.get("fame", 0)), 35.0 if int(p["age"]) >= 10 else float(p.get("fame", 0)))
 	if int(p["age"]) >= 18:
-		var allowance := _cost(1500000 if l.get("crowned", false) else 180000)
+		var allowance := _cost(50000 if l.get("noble",false) else (1500000 if l.get("crowned", false) else 180000))
 		p["money"] = int(p["money"]) + allowance
 		p["last_income"] = int(p.get("last_income", 0))
 		GameState.add_log("The Crown paid me an allowance of %s." % GameState.fmt_money(allowance))
+	if int(p["age"])>=18 and int(p["age"])<=25 and str(p["partner"])=="" and not l.get("match_offered",false):
+		l["match_offered"]=true
+		EventEngine.push_decision({"id":"_royal_introduction","icon":"👑","title":"An introduction from the court","text":"The court has a suitable adult in mind. Some relatives call it duty; you can decide whether to meet them.","choices":[{"label":"Accept an introduction","outcomes":[{"text":"I agreed to a first meeting on my own terms.","royal_match":true}]},{"label":"Choose my own relationships","outcomes":[{"text":"I declined the introduction.","effects":{"happiness":3,"stress":2}}]}]})
+	if l.get("noble",false): return
 	if l.get("crowned", false):
 		l["reign"] = int(l["reign"]) + 1
 		if int(l["reign"]) == 25:
@@ -412,7 +464,7 @@ func _royal_yearly() -> void:
 		if int(l["line"]) == 1:
 			_coronation()
 		else:
-			var heirs := royals()
+			var heirs := royals().filter(func(id): return int(GameState.npcs[id].get("line",999))<999)
 			heirs.sort_custom(func(a, b): return int(GameState.npcs[a]["line"]) < int(GameState.npcs[b]["line"]))
 			if not heirs.is_empty():
 				var h: Dictionary = GameState.npcs[heirs[0]]
@@ -1306,8 +1358,10 @@ func status_lines() -> Array:
 			out.append(["Respect", float(l["respect"])])
 			if l.get("crowned", false):
 				out.append(["Reign: %d year%s · %d decrees" % [int(l["reign"]), "" if int(l["reign"]) == 1 else "s", int(l["decrees"])], ""])
+			elif l.get("noble",false):
+				out.append([str(l.get("noble_title","Noble"))+" · "+str(l.get("realm","the realm")),""])
 			elif not l.get("consort", false) and not l.get("abdicated", false):
-				out.append(["%s in line to the throne of %s" % [_ordinal(int(l["line"])), l.get("realm", "the realm")], ""])
+				out.append([("Not eligible under this house’s succession rule" if int(l["line"])>=999 else "%s in line to the throne of %s" % [_ordinal(int(l["line"])), l.get("realm", "the realm")]), ""])
 		"vampire":
 			out.append(["🧛 Turned at %d · looks %d forever" % [int(l["turned"]), int(l["turned"])], ""])
 			out.append(["Thirst", float(l["thirst"])])

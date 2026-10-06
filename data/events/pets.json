@@ -470,7 +470,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.owner_sad",
@@ -1522,7 +1523,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.storm_neighbour",
@@ -1828,7 +1830,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.teeth",
@@ -4884,7 +4887,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.horse_farrier",
@@ -5631,7 +5635,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 1890
  },
  {
   "id": "pl.street_butcher",
@@ -6766,7 +6771,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 5
+  "cooldown": 5,
+  "available_from": 1890
  },
  {
   "id": "pl.senior_stairs",
@@ -7508,7 +7514,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.f.thunder",
@@ -7606,7 +7613,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.f.gift",
@@ -8315,7 +8323,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1890
  },
  {
   "id": "pl.f.postie",
@@ -8952,7 +8961,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "arc.pet.1",
@@ -11194,7 +11204,8 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "pl.pc.stranger_hand",
@@ -11916,6 +11927,7 @@
    "o": {
     "relation": "owner"
    }
-  }
+  },
+  "available_from": 1890
  }
 ]

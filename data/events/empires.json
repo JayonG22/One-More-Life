@@ -267,7 +267,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 2004
  },
  {
   "id": "biz.buyout",
@@ -442,7 +443,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1930
  },
  {
   "id": "biz.strike",
@@ -947,7 +949,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1995
  },
  {
   "id": "biz.burnout",
@@ -2003,7 +2006,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1890
  },
  {
   "id": "cult.raid",
@@ -2198,7 +2202,8 @@
     ],
     "optional": true
    }
-  }
+  },
+  "available_from": 1995
  },
  {
   "id": "zoo.activist",
@@ -2886,7 +2891,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 2004
  },
  {
   "id": "zoo.inherit",

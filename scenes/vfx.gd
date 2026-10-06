@@ -89,13 +89,7 @@ static func bar_to(bar: ProgressBar, value: float, color: Color, flash: bool) ->
 		UIKit.set_bar_color(bar, color)
 		return
 	bar.create_tween().tween_property(bar, "value", value, 0.45).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	if flash:
-		UIKit.set_bar_color(bar, color.lightened(0.45))
-		var t := bar.create_tween()
-		t.tween_interval(0.18)
-		t.tween_callback(func(): UIKit.set_bar_color(bar, color))
-	else:
-		UIKit.set_bar_color(bar, color)
+	UIKit.set_bar_color(bar, color)
 
 
 ## A "+6" / "-4" that floats up and fades.
@@ -239,7 +233,9 @@ static func age_press(btn: Control, layer: Control) -> void:
 	if not _motion():
 		return
 	btn.pivot_offset = btn.size * 0.5
+	if btn.has_meta("age_tween") and btn.get_meta("age_tween").is_valid(): btn.get_meta("age_tween").kill()
 	var t := btn.create_tween()
+	btn.set_meta("age_tween", t)
 	t.tween_property(btn, "scale", Vector2(0.88, 0.88), 0.07).set_trans(Tween.TRANS_QUAD)
 	t.tween_property(btn, "scale", Vector2(1.10, 1.10), 0.13).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	t.tween_property(btn, "scale", Vector2.ONE, 0.16).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)

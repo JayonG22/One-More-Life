@@ -151,15 +151,15 @@ func _release(id: String) -> void:
 
 
 ## Total worth of everything here, for net worth and the obituary.
-func net_value() -> int:
-	var p := GameState.player
+func net_value(p: Dictionary = {}) -> int:
+	if p.is_empty(): p=GameState.player
 	var v := 0
 	var b: Dictionary = p.get("business", {})
 	if not b.is_empty():
 		v += int(float(b["value"]) * float(b["stake"])) - int(b.get("debt", 0))
 	var z: Dictionary = p.get("zoo", {})
 	if not z.is_empty():
-		v += zoo_value()
+		v += zoo_value(p)
 	return v
 
 
@@ -230,8 +230,11 @@ func start_business(ind_id: String) -> void:
 		nm = "%s %s" % [p["last"], ["Group", "& Co.", "Holdings", "Enterprises", "Brothers", "& Daughters", "& Sons", "Ltd"][randi() % 8]]
 	p["money"] = int(p["money"]) - cost
 	p["business"] = {"ind": ind_id, "name": nm, "founded": GameState.year_now(), "quality": 30.0 + float(e["edge"]) * 60.0,
+		"uid":FamilyChronicle.identity(p)+":business:"+str(GameState.get_counter("businesses")+1),
 		"marketing": 10.0, "staff": 2, "crew": [], "value": cost, "rev": 0, "profit": 0, "public": false, "stake": 1.0,
 		"price": 0.0, "symbol": "", "cooked": false, "debt": 0, "years": 0, "labor": false, "best": 0}
+	Journey.modules["operations"].st()
+	Journey.modules["operations"].supply.launch(p["business"],cost)
 	GameState.add_milestone(p["age"], "founded %s" % nm)
 	GameState.counter("businesses")
 	var text := "I founded %s, a %s, for %s." % [nm, ind["name"].to_lower(), GameState.fmt_money(cost)]
@@ -267,8 +270,8 @@ func biz_actions() -> Array:
 		out.append({"id": "b_ipo", "icon": "🔔", "name": "Go public (IPO)", "sub": "Sell 30% on the stock market"})
 	if b["public"]:
 		out.append({"id": "b_sell_shares", "icon": "📈", "name": "Sell 10% of your shares", "sub": "You own %d%%" % int(float(b["stake"]) * 100)})
-	out.append({"id": "b_sell", "icon": "🤝", "name": "Sell the company", "sub": "Worth about %s to you" % GameState.fmt_money(int(float(b["value"]) * float(b["stake"])) - int(b["debt"]))})
-	out.append({"id": "b_close", "icon": "🔒", "name": "Close the company", "sub": ""})
+	out.append({"id": "b_sell", "icon": "🤝", "name": "Sell the company", "sub": "1 time · buyer takes contracts · about %s to you" % GameState.fmt_money(int(float(b["value"]) * float(b["stake"])) - int(b["debt"]))})
+	out.append({"id": "b_close", "icon": "🔒", "name": "Close the company", "sub": "1 time · stock salvage · supplier cancellation fees"})
 	return out
 
 
@@ -391,13 +394,16 @@ func biz_action(aid: String) -> void:
 			if float(b["stake"]) < 0.3 and randf() < 0.5:
 				_board_ousts()
 		"b_sell":
+			if _t(): return
 			var price := int(float(b["value"]) * float(b["stake"]) * randf_range(0.85, 1.15)) - int(b["debt"])
 			p["money"] = int(p["money"]) + price
 			var nm: String = b["name"]
-			_close_business()
+			_transfer_sold_business(b)
+			_close_business(false)
 			GameState.add_milestone(p["age"], "sold %s" % nm)
 			_done("🤝", "Sold!", "I sold %s for %s." % [nm, GameState.fmt_money(price)], {"happiness": 8 if price > 0 else -8})
 		"b_close":
+			if _t(): return
 			var nm2: String = b["name"]
 			var debt := int(b["debt"])
 			p["money"] = int(p["money"]) - debt
@@ -421,13 +427,28 @@ func _board_ousts() -> void:
 	var payout := int(float(b["value"]) * float(b["stake"]))
 	p["money"] = int(p["money"]) + payout
 	var nm: String = b["name"]
-	_close_business()
+	_close_business(false)
 	GameState.add_milestone(p["age"], "was ousted from %s by the board" % nm)
 	_done("🪑", "Ousted!", "The board of %s voted me out of my own company. They bought out my shares for %s." % [nm, GameState.fmt_money(payout)], {"happiness": -15, "stress": 10})
 
 
-func _close_business() -> void:
+func _transfer_sold_business(company: Dictionary) -> void:
+	var operations=Journey.modules["operations"]
+	operations.remember_crew(company,GameState.npcs)
+	var packet := company.duplicate(true)
+	packet["country"]=GameState.player["country"]; packet["local_cost"]=Places.cost_mult()
+	var buyer := GameState.create_npc("friend",{"age":randi_range(30,60),"money":maxi(100000,int(company["value"])),"country":GameState.player["country"]})
+	GameState.npc(buyer)["business"]=packet
+	FamilyChronicle.remember(buyer,"Bought "+str(company["name"])+" with its stock, staff and supply contracts.","neutral")
+	GameState.add_log(GameState.full_name(buyer)+" now owns "+str(company["name"])+" and its supply obligations.")
+func _close_business(liquidate: bool = true) -> void:
 	var p := GameState.player
+	if liquidate and not p["business"].is_empty():
+		var receipt: Dictionary=Journey.modules["operations"].supply.liquidation(p["business"])
+		p["money"]=int(p["money"])+int(receipt["net"])
+		var fees := int(receipt["cancellation"])+int(receipt["customer_fee"])
+		if fees>0: Employment.record_expense("Company cancellation costs",fees)
+		GameState.add_log("Company exit: cash %s · stock salvage %s · supplier cancellation %s · customer fee %s." % [GameState.fmt_money(receipt["cash"]),GameState.fmt_money(receipt["salvage"]),GameState.fmt_money(receipt["cancellation"]),GameState.fmt_money(receipt["customer_fee"])])
 	for id in p["business"].get("crew", []):
 		_release(id)
 	p["business"] = {}
@@ -468,43 +489,56 @@ func fire_known(id: String) -> void:
 	_done("🔥", "Fired", "I fired %s from %s. It got awkward fast." % [n.get("first", "them"), b["name"]], {"stress": 5, "karma": -2})
 
 
+func business_numbers(b: Dictionary, fame: float, crew: int, cost: float, synergy: float, scene: float, extra_size: float) -> Dictionary:
+	var ind: Dictionary=INDUSTRIES[b["ind"]]
+	var mods: Dictionary=Journey.modules["operations"].modifiers(b)
+	var demand := 0.35+float(b["quality"])/100.0*0.8+float(b["marketing"])/100.0*0.5+fame/100.0*0.6
+	var size := 1.0+int(b["staff"])*0.2+crew*0.25+extra_size
+	var rev := int(float(ind["rev"])*demand*size*_mood_mult()*synergy*World.biz_mult(b["ind"])*scene*randf_range(1.0-float(ind["vol"]),1.0+float(ind["vol"]))*float(mods["revenue"])*cost)
+	var payroll := int(((0 if b["labor"] else int(b["staff"])*12000)+crew*12000)*cost*float(mods["payroll"]))
+	var interest := int(int(b["debt"])*0.07)
+	var margin := clampf(float(ind["margin"])+float(b["quality"])/400.0+float(mods["margin"]),0.01,0.70)
+	var supply=Journey.modules["operations"].supply
+	var inventory: Dictionary=supply.plan(b,rev,cost,margin,payroll,interest,GameState.year_now())
+	return {"rev":inventory["rev"],"payroll":payroll,"interest":interest,"profit":inventory["profit"],"draw":inventory["draw"],"inventory":inventory,"mods":mods}
+
+func settle_business(b: Dictionary, numbers: Dictionary, cost: float) -> void:
+	Journey.modules["operations"].supply.settle(b,numbers["inventory"])
+	b["years"]=int(b["years"])+1; b["rev"]=int(numbers["rev"]); b["profit"]=int(numbers["profit"]); b["best"]=maxi(int(b["best"]),int(numbers["profit"]))
+	b["quality"]=clampf(float(b["quality"])-randf_range(2.0,5.0)+float(numbers["mods"]["quality"]),5,100)
+	b["marketing"]=maxf(0,float(b["marketing"])*0.75)
+	var val := maxf(float(numbers["rev"])*0.5,float(numbers["profit"])*9.0)*(1.4 if b["cooked"] else 1.0)
+	b["value"]=int(maxf(float(INDUSTRIES[b["ind"]]["cost"])*cost*0.3,lerpf(float(b["value"]),val,0.6)))
+	if b["public"]: b["price"]=float(b["value"])/1000000.0
+
+
 func _business_yearly() -> void:
 	var p := GameState.player
 	var b: Dictionary = p["business"]
 	var ind: Dictionary = INDUSTRIES[b["ind"]]
-	b["years"] = int(b["years"]) + 1
+	if int(b.get("settled_year",-1))==GameState.year_now(): return
+	b["settled_year"]=GameState.year_now()
+	var operations=Journey.modules["operations"]
+	operations.yearly()
 	var alive_crew: Array = []
 	for id in b["crew"]:
 		if GameState.npcs.has(id) and GameState.npcs[id]["alive"]:
 			alive_crew.append(id)
 			GameState.change_closeness(id, 1)
 	b["crew"] = alive_crew
-	var demand := 0.35 + float(b["quality"]) / 100.0 * 0.8 + float(b["marketing"]) / 100.0 * 0.5 + float(p["fame"]) / 100.0 * 0.6
-	var size := 1.0 + int(b["staff"]) * 0.2 + alive_crew.size() * 0.25
-	if b["labor"] and not p["cult"].is_empty():
-		size += minf(4.0, float(p["cult"]["members"]) / 200.0)
-	var synergy := 1.0
-	if ind.get("career", "") != "" and Careers.has_career(ind["career"]):
-		synergy = 1.2
-	var rev := float(ind["rev"]) * demand * size * _mood_mult() * synergy * World.biz_mult(b["ind"]) * Places.scene_bonus(b["ind"]) * randf_range(1.0 - float(ind["vol"]), 1.0 + float(ind["vol"]))
-	rev = _cost(rev)
-	var payroll := 0 if b["labor"] else int(b["staff"]) * _staff_cost()
-	payroll += alive_crew.size() * _cost(12000)
-	var interest := int(int(b["debt"]) * 0.07)
-	var profit := int(rev * (float(ind["margin"]) + float(b["quality"]) / 400.0)) - payroll - interest
-	b["rev"] = int(rev)
-	b["profit"] = profit
-	b["best"] = maxi(int(b["best"]), profit)
-	b["quality"] = maxf(5.0, float(b["quality"]) - randf_range(2.0, 5.0))
-	b["marketing"] = maxf(0.0, float(b["marketing"]) * 0.75)
-	var val := maxf(rev * 0.5, float(profit) * 9.0) * (1.4 if b["cooked"] else 1.0)
-	b["value"] = int(maxf(_cost(ind["cost"]) * 0.3, lerpf(float(b["value"]), val, 0.6)))
-	if b["public"]:
-		var old_price := float(b["price"])
-		b["price"] = float(b["value"]) / 1000000.0
-		GameState.world.get("change", {})[b["symbol"]] = (float(b["price"]) - old_price) / maxf(0.01, old_price)
-	var draw := int(profit * float(b["stake"]) * (0.3 if b["public"] else 1.0))
+	operations.remember_crew(b,GameState.npcs)
+	var extra_size := minf(4.0,float(p["cult"]["members"])/200.0) if b["labor"] and not p["cult"].is_empty() else 0.0
+	var synergy := 1.2 if ind.get("career","")!="" and Careers.has_career(ind["career"]) else 1.0
+	var cost := float(ContentDB.country(p["country"]).get("cost",1.0))*Places.cost_mult()
+	var numbers := business_numbers(b,float(p["fame"]),alive_crew.size(),cost,synergy,Places.scene_bonus(b["ind"]),extra_size)
+	var old_price := float(b["price"])
+	settle_business(b,numbers,cost)
+	var rev := int(numbers["rev"]); var payroll := int(numbers["payroll"]); var interest := int(numbers["interest"]); var profit := int(numbers["profit"])
+	if b["public"]: GameState.world.get("change",{})[b["symbol"]]=(float(b["price"])-old_price)/maxf(0.01,old_price)
+
+	var draw := int(numbers["draw"])
 	p["money"] = int(p["money"]) + draw
+	operations.accounts(int(rev),payroll,interest,profit,draw,numbers["mods"])
 	if profit >= 0:
 		GameState.add_log("%s made %s in profit this year%s." % [b["name"], GameState.fmt_money(profit), "" if synergy == 1.0 else ", helped by my career"])
 	else:
@@ -1048,9 +1082,11 @@ func zoo_welfare() -> float:
 	return clampf(w, 0.0, 1.2)
 
 
-func zoo_value() -> int:
-	var z: Dictionary = GameState.player["zoo"]
-	var v := int(z["acres"]) * _cost(20000)
+func zoo_value(p: Dictionary = {}) -> int:
+	if p.is_empty(): p=GameState.player
+	var z: Dictionary = p["zoo"]
+	var price := int(20000 * float(ContentDB.country(p.get("country","us")).get("cost",1.0)) * Places.cost_mult(p))
+	var v := int(z["acres"]) * price
 	for k in z["animals"].keys():
 		v += int(ZOO_ANIMALS[k]["price"]) * int(z["animals"][k])
 	return v

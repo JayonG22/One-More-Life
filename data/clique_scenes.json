@@ -1,0 +1,1136 @@
+[
+ {
+  "id": "clique.jocks.bench",
+  "clique": "jocks",
+  "field": "Sports",
+  "title": "Bench time",
+  "text": "A teammate is angry about being benched and asks you to skip practice together.",
+  "choices": [
+   "Ask the coach for a development plan",
+   "Skip to prove loyalty",
+   "Offer to practise together later"
+  ],
+  "trust": [
+   2,
+   -2,
+   4
+  ],
+  "popularity": [
+   2,
+   1,
+   1
+  ],
+  "stress": [
+   1,
+   2,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   75,
+   15,
+   60
+  ],
+  "ends": [
+   "The coach sets training goals; your teammate has a route back.",
+   "Both absences are recorded. Loyalty has cost the team preparation.",
+   "Your teammate keeps attending and gains a practice partner."
+  ]
+ },
+ {
+  "id": "clique.jocks.credit",
+  "clique": "jocks",
+  "field": "Sports",
+  "title": "Who made the play?",
+  "text": "The group praises your winning shot, overlooking the classmate who created the opening.",
+  "choices": [
+   "Enjoy all the credit",
+   "Credit the pass in front of everyone",
+   "Thank the teammate privately"
+  ],
+  "trust": [
+   -4,
+   5,
+   2
+  ],
+  "popularity": [
+   3,
+   2,
+   1
+  ],
+  "stress": [
+   0,
+   1,
+   0
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   20,
+   80,
+   55
+  ],
+  "ends": [
+   "The teammate notices the omission and trusts you less.",
+   "The whole play gets recognised, including the assist.",
+   "Your teammate appreciates it, although the public story stays incomplete."
+  ]
+ },
+ {
+  "id": "clique.nerds.notes",
+  "clique": "nerds",
+  "field": "Tech",
+  "title": "Exam notes",
+  "text": "Your study group finds an answer sheet that may belong to tomorrow's test.",
+  "choices": [
+   "Practise the methods without copying",
+   "Share the answer sheet",
+   "Ask the teacher for a fair practice set"
+  ],
+  "trust": [
+   3,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   -1
+  ],
+  "stress": [
+   1,
+   3,
+   1
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   70,
+   10,
+   80
+  ],
+  "ends": [
+   "The group learns the methods; the leaked answers stay unused.",
+   "Your classmates now know you will share compromised work.",
+   "The teacher replaces the practice material and keeps the assessment fair."
+  ]
+ },
+ {
+  "id": "clique.nerds.explain",
+  "clique": "nerds",
+  "field": "Care",
+  "title": "Too fast",
+  "text": "A classmate stops asking questions because the study group rushes past every explanation.",
+  "choices": [
+   "Let them fall behind",
+   "Explain one example at their pace",
+   "Suggest a quieter study pair"
+  ],
+  "trust": [
+   -4,
+   4,
+   3
+  ],
+  "popularity": [
+   0,
+   1,
+   0
+  ],
+  "stress": [
+   0,
+   2,
+   0
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   15,
+   80,
+   65
+  ],
+  "ends": [
+   "The classmate withdraws; speed has replaced support.",
+   "They solve the next example themselves after patient practice.",
+   "A smaller group makes it easier for them to ask questions."
+  ]
+ },
+ {
+  "id": "clique.populars.photo",
+  "clique": "populars",
+  "field": "General",
+  "title": "The group photo",
+  "text": "Someone wants to post an unflattering photo of a classmate for laughs.",
+  "choices": [
+   "Ask permission before posting",
+   "Post it for attention",
+   "Keep the photo private"
+  ],
+  "trust": [
+   4,
+   -6,
+   3
+  ],
+  "popularity": [
+   1,
+   4,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   75,
+   10,
+   60
+  ],
+  "ends": [
+   "The classmate declines, and the group respects their answer.",
+   "The post gets attention at the cost of the classmate's trust.",
+   "The picture stays off the feed; nobody becomes the joke."
+  ]
+ },
+ {
+  "id": "clique.populars.party",
+  "clique": "populars",
+  "field": "General",
+  "title": "The guest list",
+  "text": "A friend suggests an expensive party that would leave several classmates unable to join.",
+  "choices": [
+   "Insist everyone pay the same",
+   "Choose a free meetup instead",
+   "Keep the party and add a free meetup"
+  ],
+  "trust": [
+   -3,
+   4,
+   2
+  ],
+  "popularity": [
+   2,
+   1,
+   2
+  ],
+  "stress": [
+   2,
+   0,
+   1
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   20,
+   80,
+   60
+  ],
+  "ends": [
+   "The price becomes a test of belonging; some classmates stay away.",
+   "The group meets without making money an entry requirement.",
+   "There are two chances to meet, though the expensive party still divides attendance."
+  ]
+ },
+ {
+  "id": "clique.goths.boundary",
+  "clique": "goths",
+  "field": "Arts",
+  "title": "A borrowed look",
+  "text": "A classmate copies your friend's handmade jacket and calls it their own idea.",
+  "choices": [
+   "Mock them in public",
+   "Explain the work and ask for credit",
+   "Offer to help make their own design"
+  ],
+  "trust": [
+   -3,
+   4,
+   3
+  ],
+  "popularity": [
+   1,
+   1,
+   0
+  ],
+  "stress": [
+   2,
+   1,
+   1
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   20,
+   80,
+   65
+  ],
+  "ends": [
+   "The argument gets louder while the original work remains uncredited.",
+   "Your friend's design gets its credit without a public pile-on.",
+   "A new design takes shape; your friend appreciates the care over copying."
+  ]
+ },
+ {
+  "id": "clique.goths.label",
+  "clique": "goths",
+  "field": "General",
+  "title": "More than a label",
+  "text": "A newcomer likes the music but worries that the group expects them to change their whole appearance.",
+  "choices": [
+   "Welcome them as they are",
+   "Demand a matching look",
+   "Let them try one meetup first"
+  ],
+  "trust": [
+   5,
+   -4,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   0,
+   2,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   55
+  ],
+  "ends": [
+   "The newcomer shares music without needing to become a copy of anyone.",
+   "The group becomes another place where belonging requires a costume.",
+   "They try the meetup with room to decide whether it suits them."
+  ]
+ },
+ {
+  "id": "clique.theater.understudy",
+  "clique": "theater",
+  "field": "Arts",
+  "title": "The understudy",
+  "text": "The lead loses their voice. Your friend wants to perform anyway rather than let the understudy go on.",
+  "choices": [
+   "Pressure the lead to perform",
+   "Support the understudy and the resting lead",
+   "Suggest a shortened performance"
+  ],
+  "trust": [
+   -4,
+   4,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   3,
+   1,
+   0
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   15,
+   80,
+   55
+  ],
+  "ends": [
+   "The pressure makes your friend feel expendable when they are unwell.",
+   "The understudy gets their chance and the lead keeps a place in the production.",
+   "The smaller performance protects the lead but gives the understudy less stage time."
+  ]
+ },
+ {
+  "id": "clique.theater.review",
+  "clique": "theater",
+  "field": "Arts",
+  "title": "A harsh review",
+  "text": "A rough audience comment reaches your friend just before rehearsal.",
+  "choices": [
+   "Give specific, private feedback",
+   "Pretend nothing needs work",
+   "Read the comment aloud for laughs"
+  ],
+  "trust": [
+   4,
+   1,
+   -6
+  ],
+  "popularity": [
+   1,
+   0,
+   2
+  ],
+  "stress": [
+   1,
+   0,
+   3
+  ],
+  "honest": [
+   true,
+   true,
+   false
+  ],
+  "quality": [
+   80,
+   40,
+   10
+  ],
+  "ends": [
+   "Your friend has one useful improvement to rehearse.",
+   "They feel reassured, but the weak scene stays unaddressed.",
+   "The rehearsal becomes humiliating; your friend remembers who made it worse."
+  ]
+ },
+ {
+  "id": "clique.skaters.spot",
+  "clique": "skaters",
+  "field": "Sports",
+  "title": "A locked spot",
+  "text": "The usual skating area is closed for repairs. Someone suggests jumping the barrier.",
+  "choices": [
+   "Find an open public spot",
+   "Follow them over the barrier",
+   "Spend the session maintaining boards"
+  ],
+  "trust": [
+   3,
+   -3,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   0,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   75,
+   15,
+   55
+  ],
+  "ends": [
+   "The group gets a session without entering the repair area.",
+   "The outing ends at the restricted area; your friend questions your judgement.",
+   "The boards are ready for next time, even without today's skating session."
+  ]
+ },
+ {
+  "id": "clique.skaters.clip",
+  "clique": "skaters",
+  "field": "Arts",
+  "title": "The fall clip",
+  "text": "A classmate's fall is the funniest part of a skating video, but they ask you to cut it.",
+  "choices": [
+   "Keep it for views",
+   "Remove it and use an agreed clip",
+   "Ask them to choose the edit"
+  ],
+  "trust": [
+   -5,
+   4,
+   5
+  ],
+  "popularity": [
+   3,
+   1,
+   0
+  ],
+  "stress": [
+   2,
+   0,
+   1
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   15,
+   70,
+   80
+  ],
+  "ends": [
+   "The views rise while your classmate's willingness to film with you falls.",
+   "The video uses an agreed clip and your classmate returns for the next session.",
+   "They choose a version they can laugh at too, with control over how they appear."
+  ]
+ },
+ {
+  "id": "clique.band.volume",
+  "clique": "band",
+  "field": "Arts",
+  "title": "Too loud",
+  "text": "One player's louder sound is drowning out your friend's part during a jam.",
+  "choices": [
+   "Balance the levels together",
+   "Turn yours up even louder",
+   "Take turns leading a song"
+  ],
+  "trust": [
+   4,
+   -3,
+   3
+  ],
+  "popularity": [
+   1,
+   1,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   20,
+   65
+  ],
+  "ends": [
+   "Every part can be heard, and the group finishes a coherent arrangement.",
+   "The volume contest buries the arrangement and strains the group.",
+   "Each player gets a clear lead while the rest practise supporting them."
+  ]
+ },
+ {
+  "id": "clique.band.cancel",
+  "clique": "band",
+  "field": "Arts",
+  "title": "A missing player",
+  "text": "Your friend cannot make the weekend rehearsal because of family duties.",
+  "choices": [
+   "Replace them without telling them",
+   "Send a recording and agree another slot",
+   "Rehearse only the parts you can"
+  ],
+  "trust": [
+   -5,
+   4,
+   2
+  ],
+  "popularity": [
+   1,
+   1,
+   0
+  ],
+  "stress": [
+   2,
+   1,
+   0
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   15,
+   80,
+   55
+  ],
+  "ends": [
+   "Your friend finds out they were replaced and stops relying on the group.",
+   "They practise from the recording and return knowing the revised plan.",
+   "The session stays useful, though the full arrangement waits until everyone is there."
+  ]
+ },
+ {
+  "id": "clique.gamers.team",
+  "clique": "gamers",
+  "field": "Tech",
+  "title": "The new teammate",
+  "text": "Your friend keeps losing matches while learning a new role, and the group wants to drop them.",
+  "choices": [
+   "Practise in a low-stakes lobby",
+   "Drop them without explanation",
+   "Offer a role they already know"
+  ],
+  "trust": [
+   5,
+   -5,
+   2
+  ],
+  "popularity": [
+   0,
+   2,
+   1
+  ],
+  "stress": [
+   1,
+   2,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   55
+  ],
+  "ends": [
+   "The friend learns without every mistake costing the ranked team.",
+   "The friend loses their place and knows the group would not help them learn.",
+   "The team stabilises, though learning the new role has to wait."
+  ]
+ },
+ {
+  "id": "clique.gamers.sleep",
+  "clique": "gamers",
+  "field": "General",
+  "title": "One more match",
+  "text": "A late tournament round would leave your friend exhausted for tomorrow's school assessment.",
+  "choices": [
+   "Push everyone to stay up",
+   "Leave on time and find a substitute",
+   "Reschedule a casual match"
+  ],
+  "trust": [
+   -3,
+   3,
+   4
+  ],
+  "popularity": [
+   2,
+   0,
+   1
+  ],
+  "stress": [
+   4,
+   0,
+   0
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   20,
+   65,
+   80
+  ],
+  "ends": [
+   "The group stays late; your friend remembers the pressure when they needed rest.",
+   "The tournament carries on without asking everyone to sacrifice tomorrow.",
+   "The friend keeps their study time, and the next meetup stays on the calendar."
+  ]
+ },
+ {
+  "id": "clique.artsy.wall",
+  "clique": "artsy",
+  "field": "Arts",
+  "title": "A shared wall",
+  "text": "Two friends want the same space in a small student exhibition.",
+  "choices": [
+   "Favour whoever is most popular",
+   "Agree a rotation and credit both",
+   "Curate a smaller joint piece"
+  ],
+  "trust": [
+   -4,
+   4,
+   3
+  ],
+  "popularity": [
+   2,
+   1,
+   0
+  ],
+  "stress": [
+   2,
+   1,
+   2
+  ],
+  "honest": [
+   false,
+   true,
+   true
+  ],
+  "quality": [
+   15,
+   80,
+   65
+  ],
+  "ends": [
+   "The display rewards status rather than the work, and your friend notices.",
+   "Both artists get an agreed display slot with their names attached.",
+   "The joint piece fits, though both artists have to compromise on scale."
+  ]
+ },
+ {
+  "id": "clique.artsy.materials",
+  "clique": "artsy",
+  "field": "Arts",
+  "title": "The last paints",
+  "text": "The group has enough donated paint for one shared piece or several tiny individual studies.",
+  "choices": [
+   "Agree a shared plan before using it",
+   "Keep the best colours for yourself",
+   "Split the supplies equally"
+  ],
+  "trust": [
+   4,
+   -5,
+   3
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   2,
+   1,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   10,
+   60
+  ],
+  "ends": [
+   "The group finishes one piece with agreed roles and credit.",
+   "Your studies use the best supplies while others cannot finish theirs.",
+   "Everyone gets a small study, though the group gives up the larger piece."
+  ]
+ },
+ {
+  "id": "clique.bookworms.shared",
+  "clique": "bookworms",
+  "field": "Arts",
+  "title": "The reading choice",
+  "text": "A friend wants the group to read a long book that several members cannot finish.",
+  "choices": [
+   "Offer a shorter shared selection",
+   "Mock the slower readers",
+   "Keep an optional longer reading"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.eco_kids.shared",
+  "clique": "eco_kids",
+  "field": "Care",
+  "title": "The cleanup route",
+  "text": "A classmate points out that the planned cleanup route is inaccessible.",
+  "choices": [
+   "Plan an accessible route",
+   "Exclude them",
+   "Give everyone a choice of roles"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.makers.shared",
+  "clique": "makers",
+  "field": "Tech",
+  "title": "A borrowed tool",
+  "text": "Your friend's tool comes back damaged after a group project.",
+  "choices": [
+   "Own the damage and arrange repair",
+   "Blame the friend",
+   "Ask the group to help replace it"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.quiet_kids.shared",
+  "clique": "quiet_kids",
+  "field": "General",
+  "title": "The lunch corner",
+  "text": "A classmate enjoys the group but needs quieter lunch breaks.",
+  "choices": [
+   "Agree a calm lunch spot",
+   "Demand they be louder",
+   "Offer smaller meetups"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.comedians.shared",
+  "clique": "comedians",
+  "field": "Arts",
+  "title": "A joke too far",
+  "text": "A joke about a classmate gets laughs but clearly upsets them.",
+  "choices": [
+   "Stop and apologise",
+   "Repeat it louder",
+   "Change the joke to something harmless"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.outdoors.shared",
+  "clique": "outdoors",
+  "field": "Sports",
+  "title": "The trail plan",
+  "text": "Your friend worries the proposed trail is too difficult for the group.",
+  "choices": [
+   "Choose a route everyone can manage",
+   "Pressure them to keep up",
+   "Offer a shorter joined route"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.fashionistas.shared",
+  "clique": "fashionistas",
+  "field": "Arts",
+  "title": "The outfit price",
+  "text": "The group suggests a matching outfit that your friend cannot afford.",
+  "choices": [
+   "Build looks from what everyone owns",
+   "Mock their budget",
+   "Make matching clothes optional"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.activists.shared",
+  "clique": "activists",
+  "field": "Politics",
+  "title": "The petition",
+  "text": "A classmate wants to sign but disagrees with one demand.",
+  "choices": [
+   "Discuss and clarify the demand",
+   "Pressure them to sign anyway",
+   "Let them support a narrower request"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ },
+ {
+  "id": "clique.achievers.shared",
+  "clique": "achievers",
+  "field": "General",
+  "title": "A missed deadline",
+  "text": "Your friend is struggling to keep up with the group's study timetable.",
+  "choices": [
+   "Offer a manageable plan",
+   "Call them lazy",
+   "Study together for one short session"
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "popularity": [
+   1,
+   2,
+   0
+  ],
+  "stress": [
+   1,
+   3,
+   0
+  ],
+  "honest": [
+   true,
+   false,
+   true
+  ],
+  "quality": [
+   80,
+   15,
+   60
+  ],
+  "ends": [
+   "Your friend remembers the practical support and stays involved.",
+   "The pressure damages your friend's trust in the group.",
+   "The compromise gives your friend a way to take part."
+  ]
+ }
+]

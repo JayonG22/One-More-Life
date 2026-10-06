@@ -56,6 +56,7 @@ func begin(l: Dictionary) -> void:
 		if GameState.npcs.has(cid):
 			GameState.npcs[cid]["work_role"] = keys[i2 % keys.size()]
 			ww["crew"].append(cid)
+	Employment.setup_team()
 
 
 func crew() -> Array:
@@ -115,9 +116,10 @@ func yearly() -> void:
 			"climber":
 				ww["politics"] = clampf(float(ww["politics"]) - 1.0, 0.0, 100.0)
 	# the union
+	j["union_dues_due"] = 0
 	if bool(ww["union"]):
 		j["salary"] = int(float(j["salary"]) * 1.01)
-		p["money"] = int(p["money"]) - int(float(j["salary"]) * 0.01)
+		j["union_dues_due"] = int(float(j["salary"]) * 0.01)
 	# the company
 	var h := float(ww["health"])
 	h += randf_range(-0.12, 0.10)
@@ -158,6 +160,7 @@ func _reference_on_leaving(good: bool) -> void:
 	var j: Dictionary = _p()["job"]
 	var boss: String = str(j.get("boss", ""))
 	var strength := clampf(float(j.get("perf", 50.0)) / 100.0 + (0.15 if boss != "" and GameState.npcs.has(boss) and int(GameState.npcs[boss]["closeness"]) > 55 else 0.0), 0.1, 1.0)
+	if bool(j.get("probation_passed",false)): strength=minf(1.0,strength+0.05)
 	if strength >= 0.45:
 		Market.st()["refs"].append({"who": boss, "strength": strength, "co": str(j.get("employer_name", ""))})
 
@@ -180,22 +183,29 @@ func menu() -> Dictionary:
 			var n: Dictionary = GameState.npcs[id]
 			var r: Dictionary = ROLES.get(str(n.get("work_role", "friend")), ROLES["friend"])
 			info.append("%s %s — %s. %s" % [n["first"], n["last"], str(r["name"]), str(r["desc"])])
-		rows.append({"icon": "@handshake", "name": "Join the union" if not bool(ww["union"]) else "Leave the union", "sub": "About 1% of pay. Better raises and a cushion", "act": "real:union", "arg": null, "on": true})
-		rows.append({"icon": "@heart", "name": "Take a colleague to lunch", "sub": "Costs a little and 1 time", "act": "real:lunch", "arg": null, "on": not crew().is_empty()})
+		var lunch_fee := Actions._cost(28)
+		var has_colleague := not crew().is_empty()
+		var lunch_ready := has_colleague and int(p["money"])>=lunch_fee
+		var lunch_sub := "No colleague available"
+		if has_colleague:
+			if lunch_ready:
+				lunch_sub="1 time · %s · builds trust" % GameState.fmt_money(lunch_fee)
+			else:
+				lunch_sub="Need cash · %s" % GameState.fmt_money(lunch_fee)
+		rows.append({"icon": "@handshake", "name": "Join the union" if not bool(ww["union"]) else "Leave the union", "sub": "End dues and union protections" if bool(ww["union"]) else "1% annual dues · lower layoff risk and longer severance", "act": "real:union", "arg": null, "on": true})
+		rows.append({"icon": "@heart", "name": "Take a colleague to lunch", "sub": lunch_sub, "act": "real:lunch", "arg": null, "on": lunch_ready})
 		rows.append({"icon": "@star", "name": "Play the politics", "sub": "Be seen. It can backfire", "act": "real:politics", "arg": null, "on": true})
-		rows.append({"icon": "@envelope", "name": "Resign, properly", "sub": "Leave on good terms and keep a reference", "act": "real:resign", "arg": null, "on": true})
-		rows.append({"icon": "@book", "name": "Retrain in another field", "sub": "%s · 2 time · a new field" % GameState.fmt_money(Actions._cost(4500)), "act": "real:retrain", "arg": null, "on": int(p["age"]) >= 22})
+		rows.append({"icon": "@envelope", "name": "Give notice", "sub": "A manager reference depends on your performance", "act": "real:resign", "arg": null, "on": true})
 	else:
 		var fl: Dictionary = p.get("freelance", {})
 		if fl.is_empty():
-			info.append("You are not employed. Openings are in Occupation → Full-Time Jobs.")
+			info.append("Not employed · openings are under Occupation → Find a job.")
 			rows.append({"icon": "🧑‍💻", "name": "Go freelance", "sub": "2+ years in a field. Variable income", "act": "real:freelance", "arg": null, "on": _best_field() != ""})
 		else:
 			info.append("Freelancing in %s  ·  %d clients  ·  rate %s" % [str(fl["field"]), int(fl["clients"]), GameState.fmt_money(int(fl["rate"]))])
 			rows.append({"icon": "📣", "name": "Pitch for new clients", "sub": "1 time · more clients, sometimes bigger ones", "act": "real:pitch", "arg": null, "on": true})
 			rows.append({"icon": "🧾", "name": "Wind it down", "sub": "Stop freelancing", "act": "real:stop_freelance", "arg": null, "on": true})
-		rows.append({"icon": "@book", "name": "Retrain in another field", "sub": "%s · 2 time" % GameState.fmt_money(Actions._cost(4500)), "act": "real:retrain", "arg": null, "on": int(p["age"]) >= 22})
-	return {"icon": "🏢", "title": "Workplace & career moves", "rows": rows, "info": info}
+	return {"icon": "🏢", "title": "Workplace & freelance", "rows": rows, "info": info}
 
 
 func _best_field() -> String:
@@ -217,9 +227,14 @@ func act(key: String, arg) -> void:
 			ww["union"] = not bool(ww["union"])
 			GameState.add_log("I %s the union." % ("joined" if ww["union"] else "left"))
 		"lunch":
-			if crew().is_empty() or not GameState.spend_time(1): return
-			var id: String = crew()[randi() % crew().size()]
+			var people := crew()
 			var fee := Actions._cost(28)
+			if people.is_empty(): return
+			if int(p["money"])<fee:
+				EventEngine.push_info("💸","Lunch","You need %s in cash before inviting a colleague." % GameState.fmt_money(fee))
+				return
+			if not GameState.spend_time(1): return
+			var id: String = people[randi() % people.size()]
 			p["money"] = int(p["money"]) - fee
 			GameState.change_closeness(id, 10)
 			var n: Dictionary = GameState.npcs[id]
@@ -241,17 +256,7 @@ func act(key: String, arg) -> void:
 			GameState.add_log("I gave two weeks' notice and left on good terms. I kept the card.")
 			GameState.apply_effects({"stress": -3, "happiness": 2})
 		"retrain":
-			var fee2 := Actions._cost(4500)
-			if not Actions._can_pay(fee2, "Retraining") or Actions._out_of_time(): return
-			var fields := ["Tech", "Healthcare", "Trades", "Care", "Education", "Business", "Design", "Finance"]
-			var cur := str(p["job"].get("field", "")) if GameState.has_job() else ""
-			fields = fields.filter(func(f): return f != cur)
-			var pick: String = fields[randi() % fields.size()]
-			p["money"] = int(p["money"]) - fee2
-			Market.add_experience(pick, 2)
-			GameState.apply_effects({"smarts": 2, "stress": 4})
-			GameState.add_log("I spent evenings and a few weekends retraining for %s. By the end I could talk about it without bluffing." % pick)
-			EventEngine.push_info("📚", "Retrained", "I'm not an expert, but I can be taken seriously in %s now." % pick, {"smarts": 2})
+			EventEngine.push_info("🧰","Choose training","Open Work & independence → Training. Choose a field, complete practical units and pass its assessment.")
 		"freelance":
 			var f := _best_field()
 			if f == "": return
@@ -288,7 +293,8 @@ func freelance_yearly() -> void:
 	var paperwork := Actions._cost(600)
 	var net := gross - tax - paperwork
 	p["money"] = int(p["money"]) + net
-	p["last_income"] = gross
+	Employment.record_income("Freelance net income",net)
+	p["last_income"] = net
 	GameState.add_log("Freelancing brought in %s before tax, %s after tax and the accountant." % [GameState.fmt_money(gross), GameState.fmt_money(net)])
 	GameState.apply_effects({"stress": 2.5 if late else 1.0})
 

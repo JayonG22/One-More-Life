@@ -32,6 +32,32 @@ const SOURCES := {
 }
 const MAX_PETS := 6
 
+var breed_catalog: Dictionary = {}
+
+func breeds(species: String) -> Array:
+	if breed_catalog.is_empty():
+		var parsed = JSON.parse_string(FileAccess.get_file_as_string("res://data/animal_breeds.json"))
+		if parsed is Dictionary: breed_catalog=parsed
+	return breed_catalog.get(species,[{"name":"Mixed","price":1.0,"upkeep":1.0,"blurb":"A companion with their own personality."}])
+
+func breed_info(species: String, name: String) -> Dictionary:
+	for spec in breeds(species):
+		if spec["name"]==name: return spec
+	return {}
+
+func available_slots() -> int:
+	var living := 0
+	for id in pets():
+		if GameState.npc(id).get("alive",false): living+=1
+	return maxi(0,MAX_PETS-living)
+
+func purchase_price(species: String, source: String, breed: String = "") -> int:
+	if not KINDS.has(species): return -1
+	var kind: Dictionary=KINDS[species]
+	var spec: Dictionary=breed_info(species,breed)
+	var scale := float(spec.get("price",1.0)) if source!="shelter" else 1.0
+	return Actions._cost(int(round(float(kind["adopt"] if source=="shelter" else kind["buy"])*scale*(2 if source=="breeder" else 1))))
+
 
 func icon(species: String) -> String:
 	return str(KINDS.get(species, {"icon": "🐾"})["icon"])
@@ -53,15 +79,18 @@ func ensure(id: String) -> Dictionary:
 	if not n.has("care") or not (n["care"] is Dictionary):
 		n["care"] = {"fed": 75.0, "tended": true, "source": "event", "since": int(_p().get("age", 0)), "ill": "", "walks": 0}
 	Ambition.ensure_pet(id)
+	if not n.has("breed"):
+		n["breed"]=str(breeds(str(n.get("species","dog")))[0]["name"])
 	return n
 
 
 ## Brings an animal home. Returns its id. `source` is any key of SOURCES.
-func acquire(species: String, source: String = "event", name: String = "", age: int = -1) -> String:
+func acquire(species: String, source: String = "event", name: String = "", age: int = -1, breed: String = "") -> String:
 	var kind: Dictionary = KINDS.get(species, KINDS["dog"])
 	var a := age if age >= 0 else randi_range(0, 3)
 	var id := GameState.create_npc("pet", {"species": species, "first": name if name != "" else ContentDB.random_pet_name(), "last": "", "age": a, "closeness": 60 if source in ["shop", "breeder"] else 55})
 	var n := ensure(id)
+	n["breed"] = breed if not breed_info(species,breed).is_empty() else str(breeds(species).pick_random()["name"])
 	n["care"]["source"] = source
 	n["care"]["since"] = int(_p().get("age", 0))
 	GameState.add_milestone(int(_p().get("age", 0)), "%s %s the %s" % [str(SOURCES.get(source, "took in")), str(n["first"]), str(kind["name"]).to_lower()])
@@ -78,7 +107,7 @@ func gain(spec) -> String:
 		source = str(spec.get("source", "event"))
 	elif spec is String:
 		species = str(spec)
-	if pets().size() >= MAX_PETS:
+	if available_slots()<=0:
 		GameState.add_log("There was no more room in the house for another animal.")
 		return ""
 	if species == "any":
@@ -101,7 +130,7 @@ func yearly() -> void:
 		var sp := str(n.get("species", "dog"))
 		var kind: Dictionary = KINDS.get(sp, KINDS["dog"])
 		# feeding: the household pays for the animal without being asked
-		var cost := Actions._cost(int(kind["upkeep"]))
+		var cost := Actions._cost(int(round(float(kind["upkeep"])*float(breed_info(sp,str(n.get("breed",""))).get("upkeep",1.0)))))
 		if int(p["money"]) >= cost or int(p["age"]) < 18:
 			if int(p["age"]) >= 18:
 				p["money"] = int(p["money"]) - cost
@@ -203,7 +232,7 @@ func status_line(id: String) -> String:
 	if n.is_empty():
 		return ""
 	var c: Dictionary = n["care"]
-	var bits: Array = []
+	var bits: Array = [str(n["breed"])]
 	var src := str(SOURCES.get(str(c.get("source", "event")), "came into your life"))
 	bits.append(src.substr(0, 1).to_upper() + src.substr(1) + " at %d" % int(c.get("since", 0)))
 	if str(c.get("ill", "")) != "":
@@ -217,6 +246,17 @@ func menu(key: String) -> Dictionary:
 	var rows: Array = []
 	var money := int(_p().get("money", 0))
 	var age := int(_p().get("age", 0))
+	if key.begins_with("breeds:"):
+		var source := key.get_slice(":",1)
+		var species := key.get_slice(":",2)
+		if not KINDS.has(species) or source not in ["shop","shelter","breeder"]: return {"title":"Animals","rows":[]}
+		var kind: Dictionary=KINDS[species]
+		var minimum := maxi(int(kind.get("min_age",8)),18 if source=="breeder" else 8)
+		for breed in breeds(species):
+			var price := purchase_price(species,source,str(breed["name"]))
+			var upkeep := Actions._cost(int(round(float(kind["upkeep"])*float(breed["upkeep"]))))
+			rows.append({"icon":kind["icon"],"name":breed["name"],"sub":"%s · %s/year · %s" % [GameState.fmt_money(price),GameState.fmt_money(upkeep),"Age %d+" % minimum if age<minimum else "No room" if available_slots()<=0 else breed["blurb"]],"act":"comp:get","arg":[species,source,price,breed["name"]],"on":age>=minimum and available_slots()>0 and money>=price})
+		return {"icon":kind["icon"],"title":str(kind["name"])+" varieties","rows":rows,"info":["Choose a breed. Each pet has its own personality. Shelter fees are the same for every breed."]}
 	match key:
 		"", "root":
 			rows.append({"icon": "🏠", "name": "Animal shelter", "sub": "Adopt. Cheaper, and someone needs you", "menu": "comp:shelter", "on": age >= 8})
@@ -241,9 +281,9 @@ func menu(key: String) -> Dictionary:
 				var why := ""
 				if age < min_age:
 					why = " · %d+" % min_age
-				elif pets().size() >= MAX_PETS:
+				elif available_slots()<=0:
 					why = " · no room"
-				rows.append({"icon": str(k["icon"]), "name": "%s (%s)" % [str(k["name"]), GameState.fmt_money(price)], "sub": str(k["blurb"]) + why, "act": "comp:get", "arg": [sp, key, price], "on": money >= price and why == ""})
+				rows.append({"icon":str(k["icon"]),"name":k["name"],"sub":"%d breeds / varieties · %s" % [breeds(sp).size(),str(k["blurb"])+why],"menu":"comp:breeds:"+key+":"+sp,"on":why==""})
 			if key == "shop":
 				rows.append({"icon": "🍖", "name": "Treats and toys", "sub": GameState.fmt_money(Actions._cost(30)), "act": "comp:treats", "arg": null, "on": money >= Actions._cost(30) and not pets().is_empty()})
 			return {"icon": {"shelter": "🏠", "shop": "🛍️", "breeder": "🧬"}[key], "title": {"shelter": "Animal shelter", "shop": "Pet shop", "breeder": "Breeder"}[key], "rows": rows, "info": ["Food costs money every year, and an animal that is not fed, walked and visited gets thin and sad."]}
@@ -255,16 +295,19 @@ func act(key: String, arg) -> void:
 		"get":
 			var spec: Array = arg
 			var sp := str(spec[0])
-			var price := int(spec[2])
-			if int(_p()["money"]) < price:
-				return
 			var src: String = str(spec[1])
+			if not KINDS.has(sp) or src not in ["shop","shelter","breeder"]: return
+			var breed := str(spec[3]) if spec.size()>3 else ""
+			if breed!="" and breed_info(sp,breed).is_empty(): return
+			var minimum := maxi(int(KINDS[sp].get("min_age",8)),18 if src=="breeder" else 8)
+			var price := purchase_price(sp,src,breed)
+			if int(_p()["age"])<minimum or available_slots()<=0 or int(_p()["money"])<price: return
 			_p()["money"] = int(_p()["money"]) - price
-			var id := acquire(sp, src)
+			var id := acquire(sp,src,"",-1,breed)
 			var n := GameState.npc(id)
 			if src == "breeder":
 				n["pet_profile"]["pedigree"] = randi_range(65, 98)
-			EventEngine.push_info(icon(sp), "Welcome home, %s" % n["first"], "%s the %s is yours. %s" % [n["first"], str(KINDS[sp]["name"]).to_lower(), str(KINDS[sp]["blurb"])], {"happiness": 8})
+			EventEngine.push_info(icon(sp), "Welcome home, %s" % n["first"], "%s the %s is yours. %s" % [n["first"], str(n["breed"]), str(KINDS[sp]["blurb"])], {"happiness": 8})
 			GameState.apply_effects({"happiness": 8})
 		"treats":
 			var c := Actions._cost(30)

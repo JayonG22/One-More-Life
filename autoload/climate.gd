@@ -89,10 +89,26 @@ func year_temp(season: String) -> float:
 
 
 func season_now() -> String:
-	# A life advances a year at a time, so "this year's weather" is described by
-	# the season that most shaped it rather than a calendar month.
-	var i := randi() % SEASONS.size()
-	return SEASONS[i]
+	return str(snapshot()["season"])
+
+
+func snapshot() -> Dictionary:
+	var p := _p()
+	var stamp := "%s:%s:%d" % [str(p.get("country", "")), str(p.get("region", "")), int(p.get("age", 0))]
+	var saved: Dictionary = p.get("weather_year", {})
+	if str(saved.get("stamp", "")) == stamp: return saved
+	var season: String = SEASONS[randi() % SEASONS.size()]
+	var temp := year_temp(season)
+	var wet := randf() < float(climate()["rain"])
+	var weather := "mild"
+	if temp >= 33.0: weather = "heat"
+	elif temp <= 0.0: weather = "snow"
+	elif wet: weather = "rain"
+	elif temp < 10.0: weather = "cold"
+	elif float(climate()["rain"]) <= 0.25: weather = "dry"
+	saved = {"stamp": stamp, "season": season, "temperature": temp, "weather": weather}
+	p["weather_year"] = saved
+	return saved
 
 
 func describe() -> String:
@@ -112,6 +128,7 @@ func yearly() -> void:
 		return
 	var c := climate()
 	var cid := climate_id()
+	var current := snapshot()
 
 	# Heating and cooling are a real, boring, unavoidable cost of place.
 	var extreme := maxf(absf(float(c["winter"]) - 16.0), absf(float(c["summer"]) - 22.0))
@@ -125,42 +142,15 @@ func yearly() -> void:
 		return
 
 	var season := season_now()
-	var t := year_temp(season)
-	match cid:
-		"arid", "semi_arid":
-			if season == "summer" and randf() < 0.55:
-				_heat(t + 4.0)
-				return
-		"cold_continental", "continental":
-			if season == "winter" and randf() < 0.5:
-				_cold(t - 4.0)
-				return
-		"monsoon", "tropical":
-			if randf() < 0.45:
-				_wet()
-				return
-		"oceanic":
-			if randf() < 0.4:
-				_grey()
-				return
-		"mediterranean":
-			if season == "summer" and randf() < 0.3:
-				_heat(t + 3.0)
-				return
-	# The fallback has to respect what this climate actually does. A desert should
-	# not be reporting long wet seasons, and 4 degrees is not a lovely spring.
-	if t >= 33.0:
-		_heat(t)
-	elif t <= 0.0:
-		_cold(t)
-	elif randf() < float(c["rain"]) * 0.8:
-		_wet()
-	elif t >= 15.0 and t <= 27.0:
-		_mild(t, season)
-	elif t < 10.0:
-		_cold(t)
-	else:
-		_dry(t, season)
+	var t := float(current["temperature"])
+	match str(current["weather"]):
+		"heat": _heat(t)
+		"cold", "snow": _cold(t)
+		"rain": _wet()
+		"dry": _dry(t, season)
+		_:
+			if t >= 15.0 and t <= 27.0: _mild(t, season)
+			else: _dry(t, season)
 
 
 func _heat(t: float) -> void:

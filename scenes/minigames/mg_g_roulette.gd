@@ -48,12 +48,6 @@ func _spin() -> void:
 	spinning = true
 	spin_btn.visible = false
 	var n := randi() % 37
-	if not _wins(n) and randf() < (luck - 1.0) * 0.04:
-		for k in range(37):
-			var cand := (n + k) % 37
-			if _wins(cand):
-				n = cand
-				break
 	target = n
 	var idx := ORDER.find(n)
 	var seg := TAU / 37.0

@@ -92,7 +92,7 @@ func on_death(id: String) -> void:
 	var n: Dictionary = GameState.npcs[id]
 	if int(n["closeness"]) < 30:
 		return
-	if not n["relation"] in ["mother", "father", "sibling", "grandparent", "auntuncle", "best_friend", "friend", "child", "partner", "coworker"]:
+	if not n["relation"] in ["mother", "father", "sibling", "grandparent", "best_friend", "friend", "child", "partner", "coworker"]:
 		return
 	st()["invites"].append({"kind": "funeral", "who": id, "far": randf() < 0.4, "travel": Actions._cost(randi_range(300, 1200)) if randf() < 0.4 else 0, "made": int(_p()["age"])})
 
@@ -118,7 +118,7 @@ func yearly() -> void:
 	if age < 14:
 		return
 	# the invitations this year
-	var kin := _candidates(["friend", "best_friend", "sibling", "auntuncle", "cousin"])
+	var kin := _candidates(["friend", "best_friend", "sibling"])
 	if not kin.is_empty() and randf() < 0.45:
 		var id2: String = kin[randi() % kin.size()]
 		_add_invite("birthday", id2, false)

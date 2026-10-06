@@ -1,0 +1,2603 @@
+[
+  {
+    "id": "mature.intimacy",
+    "icon": "🌙",
+    "title": "The conversation before the door closes",
+    "text": "You and {partner.first}, both adults, have a quiet evening alone. Desire is easy to name; boundaries and expectations take more courage.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "intimacy"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "has_partner": true
+    },
+    "choices": [
+      {
+        "label": "Talk honestly about what you both want",
+        "outcomes": [
+          {
+            "text": "We agreed on what felt right. The night stayed private, and we felt closer.",
+            "effects": {
+              "happiness": 5,
+              "stress": -3
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 8
+            },
+            "schedule": {
+              "event": "mature.intimacy.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_intimacy"
+            ]
+          },
+          {
+            "text": "We wanted different things. We stopped, talked, and kept each other’s trust.",
+            "effects": {
+              "happiness": 1
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 5
+            },
+            "schedule": {
+              "event": "mature.intimacy.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_intimacy"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Take things slowly",
+        "outcomes": [
+          {
+            "text": "We shared an unhurried evening without pushing further. Nobody had to prove anything.",
+            "effects": {
+              "happiness": 3,
+              "stress": -2
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 4
+            },
+            "schedule": {
+              "event": "mature.intimacy.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_intimacy"
+            ]
+          },
+          {
+            "text": "It was a little awkward, but we laughed and agreed to talk again.",
+            "effects": {
+              "happiness": 2
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 2
+            },
+            "schedule": {
+              "event": "mature.intimacy.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_intimacy"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Say you would rather stop tonight",
+        "outcomes": [
+          {
+            "text": "My boundary was respected. The evening ended gently.",
+            "effects": {
+              "stress": -4
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 3
+            },
+            "schedule": {
+              "event": "mature.intimacy.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_intimacy"
+            ]
+          },
+          {
+            "text": "Disappointment was real, but stopping was still the right choice for me.",
+            "effects": {
+              "happiness": -1,
+              "stress": -1
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 1
+            },
+            "schedule": {
+              "event": "mature.intimacy.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_intimacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "roles": {
+      "partner": {
+        "relation_any": [
+          "partner",
+          "spouse"
+        ],
+        "min_age": 18
+      }
+    }
+  },
+  {
+    "id": "mature.intimacy.echo",
+    "icon": "🌙",
+    "title": "What we remember about that night",
+    "text": "The private evening is long past. What remains is how you made room for each other’s boundaries.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "intimacy"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_intimacy"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Ask how they felt",
+        "outcomes": [
+          {
+            "text": "We found words for something we had both carried quietly.",
+            "effects": {
+              "happiness": 3,
+              "stress": -2
+            },
+            "weight": 1
+          },
+          {
+            "text": "The conversation was difficult, but it made the next one easier.",
+            "effects": {
+              "stress": 1,
+              "smarts": 1
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Make time for connection again",
+        "outcomes": [
+          {
+            "text": "We protected an evening from the rest of our responsibilities.",
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            },
+            "weight": 1
+          },
+          {
+            "text": "Life interrupted our plans. We made another date instead of blaming each other.",
+            "effects": {
+              "happiness": 1
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Reconsider what you need",
+        "outcomes": [
+          {
+            "text": "I understood my own boundaries more clearly.",
+            "effects": {
+              "stress": -3,
+              "smarts": 1
+            },
+            "weight": 1
+          },
+          {
+            "text": "I realised a conversation I had avoided was still waiting.",
+            "effects": {
+              "stress": 3
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.affair",
+    "icon": "💔",
+    "title": "A message you should not answer",
+    "text": "An adult acquaintance sends a flirtatious invitation. You have a partner. There is no misunderstanding about what is being offered.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "affair"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "has_partner": true
+    },
+    "choices": [
+      {
+        "label": "Decline and keep the boundary",
+        "outcomes": [
+          {
+            "text": "I declined. The invitation stopped there.",
+            "effects": {
+              "karma": 3,
+              "stress": -2
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.affair.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_affair"
+            ]
+          },
+          {
+            "text": "They called me boring. I could live with that.",
+            "effects": {
+              "karma": 3,
+              "happiness": -1
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.affair.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_affair"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Talk to your partner before doing anything",
+        "outcomes": [
+          {
+            "text": "We had a hard conversation about what was missing between us.",
+            "effects": {
+              "stress": 4,
+              "karma": 2
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.affair.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_affair"
+            ]
+          },
+          {
+            "text": "Honesty exposed problems we could no longer pretend away.",
+            "effects": {
+              "happiness": -3,
+              "stress": 5
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.affair.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_affair"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Begin a secret consensual affair",
+        "outcomes": [
+          {
+            "text": "The thrill was real. So was the lie I carried home.",
+            "effects": {
+              "happiness": 6,
+              "stress": 12,
+              "karma": -10
+            },
+            "weight": 1,
+            "flags": [
+              "mature_affair_betrayal",
+              "mature_affair"
+            ],
+            "schedule": {
+              "event": "mature.affair.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "We crossed the boundary, and my partner learned about it soon after.",
+            "effects": {
+              "happiness": -8,
+              "stress": 18,
+              "karma": -12
+            },
+            "weight": 1,
+            "flags": [
+              "mature_affair_betrayal",
+              "mature_affair"
+            ],
+            "schedule": {
+              "event": "mature.affair.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.affair.echo",
+    "icon": "💔",
+    "title": "The invitation leaves a mark",
+    "text": "That invitation changed how you think about loyalty. The consequences did not end with deleting a message.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "affair"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_affair"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Face the conversation you owe",
+        "outcomes": [
+          {
+            "text": "I took responsibility for my choices instead of arguing about how they looked.",
+            "effects": {
+              "stress": 5,
+              "karma": 4
+            },
+            "weight": 1
+          },
+          {
+            "text": "There was no quick forgiveness. I accepted that repair takes time.",
+            "effects": {
+              "happiness": -4,
+              "stress": 5,
+              "karma": 3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Invest in the relationship you want",
+        "outcomes": [
+          {
+            "text": "Counselling and time helped me become more honest.",
+            "effects": {
+              "money": -300,
+              "stress": -4,
+              "karma": 2
+            },
+            "weight": 1
+          },
+          {
+            "text": "Money did not solve the tension, but the work gave us a place to start.",
+            "effects": {
+              "money": -300,
+              "stress": 1
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Keep avoiding the subject",
+        "outcomes": [
+          {
+            "text": "Silence made every disagreement feel larger.",
+            "effects": {
+              "stress": 8,
+              "happiness": -4
+            },
+            "weight": 1
+          },
+          {
+            "text": "The old uncertainty followed me into a new argument.",
+            "effects": {
+              "stress": 6,
+              "karma": -2
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.health",
+    "icon": "🩺",
+    "title": "A message after a private night",
+    "text": "Someone you were intimate with as an adult says they may have a sexually transmitted infection. They ask you to get tested. Nothing about the message is a diagnosis.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "health"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ]
+    },
+    "choices": [
+      {
+        "label": "Arrange a confidential clinical appointment",
+        "outcomes": [
+          {
+            "text": "I got professional advice and a plan for testing. Uncertainty was easier with help.",
+            "effects": {
+              "money": -120,
+              "stress": -2,
+              "health": 2
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.health.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_health"
+            ]
+          },
+          {
+            "text": "The appointment did not answer everything immediately. I followed the clinician’s plan.",
+            "effects": {
+              "money": -120,
+              "stress": 3,
+              "health": 1
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.health.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_health"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Tell current adult partners and seek advice",
+        "outcomes": [
+          {
+            "text": "The conversation was uncomfortable, but we could make informed choices together.",
+            "effects": {
+              "stress": 4,
+              "karma": 4,
+              "health": 1
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.health.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_health"
+            ]
+          },
+          {
+            "text": "Someone was frightened. We chose facts and clinical advice over blame.",
+            "effects": {
+              "stress": 6,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.health.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_health"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Ignore the message",
+        "outcomes": [
+          {
+            "text": "I avoided an awkward appointment and kept worrying.",
+            "effects": {
+              "stress": 9,
+              "karma": -3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.health.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_health"
+            ]
+          },
+          {
+            "text": "Delaying care made the uncertainty harder to manage.",
+            "effects": {
+              "health": -4,
+              "stress": 10,
+              "karma": -4
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.health.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_health"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.health.echo",
+    "icon": "🩺",
+    "title": "Care is a continuing choice",
+    "text": "The private health concern is no longer new. Follow-through and honest communication still matter.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "health"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_health"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Follow up with a clinician",
+        "outcomes": [
+          {
+            "text": "I completed the recommended follow-up and felt steadier.",
+            "effects": {
+              "money": -100,
+              "health": 3,
+              "stress": -5
+            },
+            "weight": 1
+          },
+          {
+            "text": "I needed another visit. Having a plan helped.",
+            "effects": {
+              "money": -100,
+              "health": 1,
+              "stress": -2
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Check in with the people affected",
+        "outcomes": [
+          {
+            "text": "We spoke respectfully about boundaries and care.",
+            "effects": {
+              "karma": 3,
+              "stress": -3
+            },
+            "weight": 1
+          },
+          {
+            "text": "The conversation was difficult, but nobody was left guessing.",
+            "effects": {
+              "karma": 2,
+              "stress": 2
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Keep putting it off",
+        "outcomes": [
+          {
+            "text": "The worry stayed with me longer than I expected.",
+            "effects": {
+              "stress": 7
+            },
+            "weight": 1
+          },
+          {
+            "text": "I eventually had to face the concern I had avoided.",
+            "effects": {
+              "stress": 8,
+              "health": -2
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.murder_offer",
+    "icon": "🕯️",
+    "title": "A price on someone’s life",
+    "text": "A criminal contact offers money if you help arrange the murder of an adult rival. They speak about a person as if they were a business expense.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "murder_offer"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ]
+    },
+    "choices": [
+      {
+        "label": "Refuse and leave",
+        "outcomes": [
+          {
+            "text": "I walked away. The contact stopped calling.",
+            "effects": {
+              "stress": 5,
+              "karma": 5
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.murder_offer.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_murder_offer"
+            ]
+          },
+          {
+            "text": "Refusing cost me the contact’s trust. Keeping it would have cost more.",
+            "effects": {
+              "stress": 8,
+              "karma": 5
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.murder_offer.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_murder_offer"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Seek legal help and report the threat",
+        "outcomes": [
+          {
+            "text": "I gave a statement with legal support. An investigation began.",
+            "effects": {
+              "money": -1000,
+              "stress": 10,
+              "karma": 8
+            },
+            "weight": 1,
+            "flags": [
+              "mature_reported_threat",
+              "mature_murder_offer"
+            ],
+            "schedule": {
+              "event": "mature.murder_offer.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "Reporting brought difficult questions, but the intended victim received a warning.",
+            "effects": {
+              "money": -1000,
+              "stress": 12,
+              "karma": 8
+            },
+            "weight": 1,
+            "flags": [
+              "mature_reported_threat",
+              "mature_murder_offer"
+            ],
+            "schedule": {
+              "event": "mature.murder_offer.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "label": "Agree to participate",
+        "outcomes": [
+          {
+            "text": "A person died because of the decision I made. Investigators traced my involvement; I was convicted.",
+            "effects": {
+              "money": -15000,
+              "stress": 30,
+              "karma": -50
+            },
+            "weight": 1,
+            "jail": [
+              18,
+              25
+            ],
+            "flags": [
+              "mature_homicide_conviction",
+              "mature_murder_offer"
+            ],
+            "crime": "conspiracy to murder",
+            "schedule": {
+              "event": "mature.murder_offer.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The plan was intercepted. I was convicted for my role in the attempted murder.",
+            "effects": {
+              "money": -8000,
+              "stress": 25,
+              "karma": -35
+            },
+            "weight": 1,
+            "jail": [
+              10,
+              18
+            ],
+            "flags": [
+              "mature_homicide_conviction",
+              "mature_murder_offer"
+            ],
+            "crime": "conspiracy to murder",
+            "schedule": {
+              "event": "mature.murder_offer.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.murder_offer.echo",
+    "icon": "🕯️",
+    "title": "The offer that will not stay in the past",
+    "text": "The murder plot changed lives. Whether you refused, reported it, or participated, its shadow remains.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "murder_offer"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_murder_offer"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Cooperate with the continuing inquiry",
+        "outcomes": [
+          {
+            "text": "I gave a truthful account. It did not erase what happened.",
+            "effects": {
+              "stress": 8,
+              "karma": 5
+            },
+            "weight": 1
+          },
+          {
+            "text": "The interview reopened old fear. I answered with legal support.",
+            "effects": {
+              "money": -500,
+              "stress": 10,
+              "karma": 3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Seek support and face your responsibility",
+        "outcomes": [
+          {
+            "text": "I began the slow work of living honestly with my choices.",
+            "effects": {
+              "stress": -5,
+              "karma": 3
+            },
+            "weight": 1
+          },
+          {
+            "text": "Support helped me function. It did not turn the past into something harmless.",
+            "effects": {
+              "stress": -2,
+              "happiness": -3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Pretend it has nothing to do with you",
+        "outcomes": [
+          {
+            "text": "Denial made it harder to speak honestly to anyone.",
+            "effects": {
+              "stress": 12,
+              "karma": -5
+            },
+            "weight": 1
+          },
+          {
+            "text": "A new question pulled me straight back into the memory.",
+            "effects": {
+              "stress": 10,
+              "happiness": -5
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.witness",
+    "icon": "⚖️",
+    "title": "What you saw after midnight",
+    "text": "You witness the aftermath of a fatal attack on an adult outside a club. A familiar adult asks you to say they were somewhere else.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "witness"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ]
+    },
+    "choices": [
+      {
+        "label": "Give a truthful witness statement",
+        "outcomes": [
+          {
+            "text": "I described only what I knew. My statement became part of the investigation.",
+            "effects": {
+              "stress": 8,
+              "karma": 8
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.witness.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_witness"
+            ]
+          },
+          {
+            "text": "I corrected a detail rather than guessing. The investigators needed honesty, not a perfect story.",
+            "effects": {
+              "stress": 10,
+              "karma": 7
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.witness.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_witness"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Get a lawyer before making a statement",
+        "outcomes": [
+          {
+            "text": "Legal advice helped me separate facts from fear.",
+            "effects": {
+              "money": -700,
+              "stress": 5,
+              "smarts": 1
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.witness.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_witness"
+            ]
+          },
+          {
+            "text": "The waiting was miserable, but I gave a careful statement with support.",
+            "effects": {
+              "money": -700,
+              "stress": 8,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.witness.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_witness"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Give the false alibi",
+        "outcomes": [
+          {
+            "text": "My lie was contradicted by other evidence. I was convicted of obstructing the investigation.",
+            "effects": {
+              "stress": 18,
+              "karma": -20
+            },
+            "weight": 1,
+            "jail": [
+              2,
+              5
+            ],
+            "crime": "obstruction of justice",
+            "schedule": {
+              "event": "mature.witness.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_witness"
+            ]
+          },
+          {
+            "text": "The lie held for now. I knew an innocent person might bear the cost.",
+            "effects": {
+              "stress": 15,
+              "karma": -25
+            },
+            "weight": 1,
+            "flags": [
+              "mature_false_alibi",
+              "mature_witness"
+            ],
+            "schedule": {
+              "event": "mature.witness.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.witness.echo",
+    "icon": "⚖️",
+    "title": "The statement is read aloud",
+    "text": "The fatal attack has become a court case. Someone reads the statement you gave, and your choices return in public.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "witness"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_witness"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Clarify the truth with legal support",
+        "outcomes": [
+          {
+            "text": "I corrected the record. It was painful and necessary.",
+            "effects": {
+              "money": -500,
+              "stress": 8,
+              "karma": 5
+            },
+            "weight": 1
+          },
+          {
+            "text": "The court questioned every change. I kept to what I actually knew.",
+            "effects": {
+              "stress": 10,
+              "karma": 4
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Support the people harmed",
+        "outcomes": [
+          {
+            "text": "I offered practical help without making their grief about me.",
+            "effects": {
+              "money": -200,
+              "karma": 4,
+              "happiness": -2
+            },
+            "weight": 1
+          },
+          {
+            "text": "They wanted distance. I respected it.",
+            "effects": {
+              "karma": 2,
+              "happiness": -3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Avoid every reminder",
+        "outcomes": [
+          {
+            "text": "The case stayed on the news. Avoidance was not an ending.",
+            "effects": {
+              "stress": 8
+            },
+            "weight": 1
+          },
+          {
+            "text": "I could stop reading, but I could not stop remembering.",
+            "effects": {
+              "stress": 10,
+              "happiness": -4
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.blackmail",
+    "icon": "📱",
+    "title": "Pay up, or everyone finds out",
+    "text": "Someone threatens to publish private, consensual adult messages unless you pay. Their demand is an act of exploitation, not a debt you owe.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "blackmail"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ]
+    },
+    "choices": [
+      {
+        "label": "Seek support and report the threat",
+        "outcomes": [
+          {
+            "text": "I asked for help and preserved what I could safely share with investigators.",
+            "effects": {
+              "stress": 6,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.blackmail.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_blackmail"
+            ]
+          },
+          {
+            "text": "The process was slow. Having someone on my side made it bearable.",
+            "effects": {
+              "stress": 8,
+              "happiness": 1
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.blackmail.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_blackmail"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Tell the people who could be affected",
+        "outcomes": [
+          {
+            "text": "A painful conversation took some power away from the threat.",
+            "effects": {
+              "stress": 10,
+              "karma": 4
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.blackmail.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_blackmail"
+            ]
+          },
+          {
+            "text": "Not everyone reacted kindly. I still had support from someone I trusted.",
+            "effects": {
+              "stress": 12,
+              "happiness": -3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.blackmail.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_blackmail"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Pay the demand",
+        "outcomes": [
+          {
+            "text": "I paid $2,000. The demand returned with a larger number.",
+            "effects": {
+              "money": -2000,
+              "stress": 12
+            },
+            "weight": 1,
+            "flags": [
+              "mature_blackmail_paid",
+              "mature_blackmail"
+            ],
+            "schedule": {
+              "event": "mature.blackmail.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The messages stopped for now. I had bought uncertainty, not safety.",
+            "effects": {
+              "money": -2000,
+              "stress": 8
+            },
+            "weight": 1,
+            "flags": [
+              "mature_blackmail_paid",
+              "mature_blackmail"
+            ],
+            "schedule": {
+              "event": "mature.blackmail.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.blackmail.echo",
+    "icon": "📱",
+    "title": "The threat comes back",
+    "text": "A reminder of the extortion arrives. You have another chance to choose support over isolation.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "blackmail"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_blackmail"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Ask for professional help",
+        "outcomes": [
+          {
+            "text": "I made a supported plan instead of answering alone.",
+            "effects": {
+              "money": -300,
+              "stress": -4
+            },
+            "weight": 1
+          },
+          {
+            "text": "The problem was not instantly solved, but I had a clear next step.",
+            "effects": {
+              "money": -300,
+              "stress": -2
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Lean on someone you trust",
+        "outcomes": [
+          {
+            "text": "I was believed. That mattered more than a clever reply.",
+            "effects": {
+              "happiness": 3,
+              "stress": -5
+            },
+            "weight": 1
+          },
+          {
+            "text": "Talking was hard. Keeping the secret had been harder.",
+            "effects": {
+              "stress": -3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Keep dealing with it alone",
+        "outcomes": [
+          {
+            "text": "Every notification made me flinch.",
+            "effects": {
+              "stress": 9,
+              "happiness": -3
+            },
+            "weight": 1
+          },
+          {
+            "text": "I spent another year arranging my life around someone else’s threat.",
+            "effects": {
+              "stress": 10,
+              "happiness": -4
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.corruption",
+    "icon": "💼",
+    "title": "An envelope without a receipt",
+    "text": "A supplier offers a private payment if you steer a contract their way. They call it appreciation. The contract team calls it a conflict of interest.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "corruption"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "employed": true
+    },
+    "choices": [
+      {
+        "label": "Refuse and disclose the approach",
+        "outcomes": [
+          {
+            "text": "I reported the offer. The review delayed the project but protected the process.",
+            "effects": {
+              "job_perf": 3,
+              "stress": 5,
+              "karma": 5
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.corruption.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_corruption"
+            ]
+          },
+          {
+            "text": "Someone complained that I made trouble. I kept a clear record of my decision.",
+            "effects": {
+              "job_perf": -1,
+              "stress": 6,
+              "karma": 5
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.corruption.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_corruption"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Withdraw from the decision",
+        "outcomes": [
+          {
+            "text": "I handed the decision to an independent colleague.",
+            "effects": {
+              "job_perf": 1,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.corruption.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_corruption"
+            ]
+          },
+          {
+            "text": "The supplier tried again elsewhere. My withdrawal did not end the concern.",
+            "effects": {
+              "stress": 4,
+              "karma": 2
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.corruption.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_corruption"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Accept the private payment",
+        "outcomes": [
+          {
+            "text": "The $5,000 felt easy until the audit began.",
+            "effects": {
+              "money": 5000,
+              "stress": 12,
+              "karma": -15
+            },
+            "weight": 1,
+            "flags": [
+              "mature_bribe_accepted",
+              "mature_corruption"
+            ],
+            "schedule": {
+              "event": "mature.corruption.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The offer was part of an investigation. I was convicted of bribery.",
+            "effects": {
+              "money": -4000,
+              "job_perf": -20,
+              "stress": 18,
+              "karma": -15
+            },
+            "weight": 1,
+            "jail": [
+              1,
+              3
+            ],
+            "flags": [
+              "mature_bribe_accepted",
+              "mature_corruption"
+            ],
+            "crime": "bribery",
+            "schedule": {
+              "event": "mature.corruption.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.corruption.echo",
+    "icon": "💼",
+    "title": "The audit asks one more question",
+    "text": "The contract is being reviewed. The question is no longer whether the project looked successful, but who benefited.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "corruption"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_corruption"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Cooperate truthfully",
+        "outcomes": [
+          {
+            "text": "I answered directly and accepted scrutiny.",
+            "effects": {
+              "stress": 6,
+              "karma": 4
+            },
+            "weight": 1
+          },
+          {
+            "text": "Cooperation exposed a decision I regretted. I stopped making excuses.",
+            "effects": {
+              "stress": 9,
+              "karma": 3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Get independent legal advice",
+        "outcomes": [
+          {
+            "text": "Advice helped me respond carefully and honestly.",
+            "effects": {
+              "money": -700,
+              "stress": -2
+            },
+            "weight": 1
+          },
+          {
+            "text": "There was no painless route through the review.",
+            "effects": {
+              "money": -700,
+              "stress": 4
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Blame a colleague",
+        "outcomes": [
+          {
+            "text": "The accusation damaged my credibility when the records contradicted it.",
+            "effects": {
+              "job_perf": -8,
+              "stress": 10,
+              "karma": -8
+            },
+            "weight": 1
+          },
+          {
+            "text": "I kept my position for now, but people stopped trusting me.",
+            "effects": {
+              "job_perf": -5,
+              "happiness": -4,
+              "karma": -10
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.open_relationship",
+    "icon": "💬",
+    "title": "Different rules, honest answers",
+    "text": "Your adult partner asks whether a consensually non-monogamous relationship could work for you both. An honest no is as valid as an honest yes.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "open_relationship"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "has_partner": true
+    },
+    "choices": [
+      {
+        "label": "Discuss boundaries and decide together",
+        "outcomes": [
+          {
+            "text": "We agreed on rules, check-ins and the freedom to change our minds.",
+            "effects": {
+              "happiness": 3,
+              "stress": 2
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 5
+            },
+            "schedule": {
+              "event": "mature.open_relationship.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_open_relationship"
+            ]
+          },
+          {
+            "text": "The discussion showed that we needed different things. We chose not to rush.",
+            "effects": {
+              "stress": 4
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 2
+            },
+            "schedule": {
+              "event": "mature.open_relationship.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_open_relationship"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Say you want monogamy",
+        "outcomes": [
+          {
+            "text": "I stated what I needed. My partner respected the answer.",
+            "effects": {
+              "stress": -2
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 4
+            },
+            "schedule": {
+              "event": "mature.open_relationship.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_open_relationship"
+            ]
+          },
+          {
+            "text": "Our needs differed. We had a difficult but honest conversation.",
+            "effects": {
+              "happiness": -3,
+              "stress": 5
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": -2
+            },
+            "schedule": {
+              "event": "mature.open_relationship.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_open_relationship"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Ask for time to think",
+        "outcomes": [
+          {
+            "text": "We paused the decision and talked without pressure.",
+            "effects": {
+              "stress": -1
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 3
+            },
+            "schedule": {
+              "event": "mature.open_relationship.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_open_relationship"
+            ]
+          },
+          {
+            "text": "Uncertainty was uncomfortable, but I refused to promise what I did not mean.",
+            "effects": {
+              "stress": 3
+            },
+            "weight": 1,
+            "relationship": {
+              "partner": 1
+            },
+            "schedule": {
+              "event": "mature.open_relationship.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_open_relationship"
+            ]
+          }
+        ]
+      }
+    ],
+    "roles": {
+      "partner": {
+        "relation_any": [
+          "partner",
+          "spouse"
+        ],
+        "min_age": 18
+      }
+    }
+  },
+  {
+    "id": "mature.open_relationship.echo",
+    "icon": "💬",
+    "title": "Checking the agreement",
+    "text": "Whatever relationship rules you chose, they only work when everyone can speak freely about them.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "open_relationship"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_open_relationship"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Check whether the agreement still works",
+        "outcomes": [
+          {
+            "text": "We adjusted expectations before resentment grew.",
+            "effects": {
+              "stress": -3,
+              "happiness": 2
+            },
+            "weight": 1
+          },
+          {
+            "text": "A boundary had changed. We took it seriously.",
+            "effects": {
+              "stress": 3,
+              "karma": 2
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Name an uncomfortable feeling",
+        "outcomes": [
+          {
+            "text": "Naming jealousy made it easier to discuss without accusation.",
+            "effects": {
+              "stress": -2,
+              "smarts": 1
+            },
+            "weight": 1
+          },
+          {
+            "text": "There was no easy answer, but the feeling was heard.",
+            "effects": {
+              "stress": 2,
+              "happiness": 1
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Pretend you are fine",
+        "outcomes": [
+          {
+            "text": "Resentment seeped into unrelated arguments.",
+            "effects": {
+              "stress": 7,
+              "happiness": -3
+            },
+            "weight": 1
+          },
+          {
+            "text": "I realised silence had become its own decision.",
+            "effects": {
+              "stress": 5,
+              "happiness": -2
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.desperation",
+    "icon": "🧾",
+    "title": "A bill with no good answer",
+    "text": "A friend needs urgent help with a debt. A fixer offers to erase it if you help conceal money from an illegal operation.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "desperation"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ]
+    },
+    "choices": [
+      {
+        "label": "Look for lawful support",
+        "outcomes": [
+          {
+            "text": "A slow payment plan gave my friend room to breathe.",
+            "effects": {
+              "money": -300,
+              "stress": 4,
+              "karma": 4
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.desperation.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_desperation"
+            ]
+          },
+          {
+            "text": "There was no immediate rescue. I helped with the practical work anyway.",
+            "effects": {
+              "money": -300,
+              "stress": 7,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.desperation.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_desperation"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Refuse the scheme but stay beside your friend",
+        "outcomes": [
+          {
+            "text": "I could not fix the debt, but I did not abandon them.",
+            "effects": {
+              "happiness": 1,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.desperation.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_desperation"
+            ]
+          },
+          {
+            "text": "They were angry. Later, they understood why I had refused.",
+            "effects": {
+              "happiness": -2,
+              "stress": 3,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.desperation.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_desperation"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Take the fixer’s deal",
+        "outcomes": [
+          {
+            "text": "The debt disappeared. A new obligation to the fixer took its place.",
+            "effects": {
+              "money": 2500,
+              "stress": 14,
+              "karma": -12
+            },
+            "weight": 1,
+            "flags": [
+              "mature_fixer_debt",
+              "mature_desperation"
+            ],
+            "schedule": {
+              "event": "mature.desperation.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "text": "The transaction was investigated. I was convicted of money laundering.",
+            "effects": {
+              "money": -3000,
+              "stress": 18,
+              "karma": -15
+            },
+            "weight": 1,
+            "jail": [
+              2,
+              4
+            ],
+            "flags": [
+              "mature_fixer_debt",
+              "mature_desperation"
+            ],
+            "crime": "money laundering",
+            "schedule": {
+              "event": "mature.desperation.echo",
+              "years": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.desperation.echo",
+    "icon": "🧾",
+    "title": "The price of the favour",
+    "text": "Your friend’s crisis changed the limits you thought you had. The favour still has a price, even if the bill looks different now.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "desperation"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_desperation"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Find a lawful way forward",
+        "outcomes": [
+          {
+            "text": "I began unpicking obligations with professional help.",
+            "effects": {
+              "money": -400,
+              "stress": -3,
+              "karma": 3
+            },
+            "weight": 1
+          },
+          {
+            "text": "The route was slow, but it stopped adding new lies.",
+            "effects": {
+              "money": -400,
+              "stress": 1,
+              "karma": 3
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Talk honestly with your friend",
+        "outcomes": [
+          {
+            "text": "We stopped treating the problem as a secret test of loyalty.",
+            "effects": {
+              "stress": -3,
+              "happiness": 2
+            },
+            "weight": 1
+          },
+          {
+            "text": "Honesty changed the friendship. It was overdue.",
+            "effects": {
+              "stress": 3,
+              "karma": 2
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Keep accepting the obligations",
+        "outcomes": [
+          {
+            "text": "Every favour made the next refusal harder.",
+            "effects": {
+              "stress": 10,
+              "karma": -5
+            },
+            "weight": 1
+          },
+          {
+            "text": "I had become useful to people who did not care what it cost me.",
+            "effects": {
+              "stress": 12,
+              "happiness": -4,
+              "karma": -5
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.work_boundary",
+    "icon": "🚪",
+    "title": "Opportunity with a condition attached",
+    "text": "A senior colleague implies an adult promotion opportunity depends on private sexual attention. This is pressure from someone with power, not a genuine choice of equal partners.",
+    "mature": true,
+    "once": true,
+    "themes": [
+      "mature",
+      "work_boundary"
+    ],
+    "weight": 0.7,
+    "conditions": {
+      "age": [
+        18,
+        100
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "employed": true
+    },
+    "choices": [
+      {
+        "label": "Refuse and seek independent support",
+        "outcomes": [
+          {
+            "text": "I refused and spoke to an independent adviser. The process was stressful, but I was not alone.",
+            "effects": {
+              "stress": 8,
+              "karma": 4
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.work_boundary.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_work_boundary"
+            ]
+          },
+          {
+            "text": "Refusing made work awkward. Support helped me plan the next step.",
+            "effects": {
+              "stress": 10,
+              "job_perf": -2,
+              "karma": 4
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.work_boundary.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_work_boundary"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Report the conduct",
+        "outcomes": [
+          {
+            "text": "An inquiry began. I was asked difficult questions with support available.",
+            "effects": {
+              "stress": 12,
+              "karma": 6
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.work_boundary.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_work_boundary"
+            ]
+          },
+          {
+            "text": "The organisation handled it badly. I looked for advice beyond the workplace.",
+            "effects": {
+              "stress": 16,
+              "happiness": -4,
+              "karma": 5
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.work_boundary.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_work_boundary"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Seek another role and protect your boundaries",
+        "outcomes": [
+          {
+            "text": "I chose distance from the pressure and began applying elsewhere.",
+            "effects": {
+              "stress": 5,
+              "job_perf": -1
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.work_boundary.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_work_boundary"
+            ]
+          },
+          {
+            "text": "Leaving the opportunity hurt. Keeping my boundaries mattered more.",
+            "effects": {
+              "happiness": -3,
+              "stress": 4,
+              "karma": 3
+            },
+            "weight": 1,
+            "schedule": {
+              "event": "mature.work_boundary.echo",
+              "years": [
+                1,
+                3
+              ]
+            },
+            "flags": [
+              "mature_work_boundary"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mature.work_boundary.echo",
+    "icon": "🚪",
+    "title": "What a safe workplace would mean",
+    "text": "The pressure at work made you reconsider who gets to set the conditions of opportunity.",
+    "mature": true,
+    "followup_only": true,
+    "required": true,
+    "themes": [
+      "mature",
+      "work_boundary"
+    ],
+    "conditions": {
+      "age": [
+        18,
+        150
+      ],
+      "life": [
+        "human",
+        "royal",
+        "vampire",
+        "witch",
+        "super",
+        "revenant"
+      ],
+      "flags": [
+        "mature_work_boundary"
+      ],
+      "prison_any": true
+    },
+    "choices": [
+      {
+        "label": "Follow up with independent support",
+        "outcomes": [
+          {
+            "text": "I found people who took the concern seriously.",
+            "effects": {
+              "stress": -4,
+              "happiness": 2
+            },
+            "weight": 1
+          },
+          {
+            "text": "Progress was slow. I kept control of what I chose to share.",
+            "effects": {
+              "stress": -1
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Support someone facing similar pressure",
+        "outcomes": [
+          {
+            "text": "I listened without telling them what they had to do.",
+            "effects": {
+              "karma": 4,
+              "happiness": 2
+            },
+            "weight": 1
+          },
+          {
+            "text": "I helped them find independent advice and respected their choices.",
+            "effects": {
+              "karma": 3,
+              "stress": 1
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "label": "Focus on rebuilding your own life",
+        "outcomes": [
+          {
+            "text": "A healthier routine gave me some room back.",
+            "effects": {
+              "stress": -5,
+              "health": 2
+            },
+            "weight": 1
+          },
+          {
+            "text": "Recovery was uneven, but I could make choices for myself again.",
+            "effects": {
+              "stress": -2,
+              "happiness": 1
+            },
+            "weight": 1
+          }
+        ]
+      }
+    ]
+  }
+]

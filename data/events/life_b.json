@@ -531,7 +531,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "alc.hangover",
@@ -3231,7 +3232,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "risk.house_fire",
@@ -3361,7 +3363,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1985
  },
  {
   "id": "risk.swim_current",
@@ -4910,7 +4913,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "bad.shoplift_dare",
@@ -5155,7 +5159,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "bad.credit_binge",
@@ -5284,7 +5289,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1985
  },
  {
   "id": "bad.tell_secret",
@@ -6008,7 +6014,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 2004
  },
  {
   "id": "bad.pyramid_scheme",
@@ -6129,7 +6136,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "bad.loan_friend",
@@ -6372,7 +6380,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "bad.cheat_partner",
@@ -6615,7 +6624,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "bad.sell_pass",
@@ -6857,7 +6867,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "good.learn_skill",
@@ -6976,7 +6987,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "good.save_habit",
@@ -7574,7 +7586,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 2004
  },
  {
   "id": "good.therapy_start",
@@ -7936,7 +7949,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "good.kind_stranger",
@@ -8422,7 +8436,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "good.forgive",
@@ -9382,7 +9397,8 @@
   ],
   "weight": 1.0,
   "cooldown": 12,
-  "once": true
+  "once": true,
+  "available_from": 1995
  },
  {
   "id": "turn.stranded_airport",
@@ -9502,7 +9518,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "turn.lottery_win",
@@ -10227,7 +10244,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 2004
  },
  {
   "id": "turn.storm_power_cut",

@@ -2143,7 +2143,8 @@
     ]
    }
   },
-  "cooldown": 3
+  "cooldown": 3,
+  "available_from": 1985
  },
  {
   "id": "kid.first_phone",
@@ -3841,7 +3842,8 @@
     ]
    }
   },
-  "once": true
+  "once": true,
+  "available_from": 1890
  },
  {
   "id": "adult.jury",
@@ -4126,7 +4128,8 @@
     ]
    }
   },
-  "cooldown": 4
+  "cooldown": 4,
+  "available_from": 1890
  },
  {
   "id": "adult.wrong_number",
@@ -4761,7 +4764,8 @@
    }
   ],
   "weight": 5,
-  "cooldown": 2
+  "cooldown": 2,
+  "available_from": 1930
  },
  {
   "id": "adult.celebrity_sighting",
@@ -4918,7 +4922,8 @@
    }
   ],
   "weight": 2,
-  "cooldown": 4
+  "cooldown": 4,
+  "available_from": 2004
  },
  {
   "id": "adult.found_wallet.b",
@@ -5003,7 +5008,8 @@
    }
   ],
   "weight": 4,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1930
  },
  {
   "id": "adult.neighbor_feud",
@@ -5374,7 +5380,8 @@
    }
   ],
   "weight": 4,
-  "cooldown": 4
+  "cooldown": 4,
+  "available_from": 1995
  },
  {
   "id": "adult.reunion",
@@ -6602,7 +6609,8 @@
    }
   ],
   "weight": 4,
-  "cooldown": 3
+  "cooldown": 3,
+  "available_from": 1890
  },
  {
   "id": "adult.surprise_party",
@@ -7030,7 +7038,8 @@
     "relation": "father"
    }
   },
-  "cooldown": 4
+  "cooldown": 4,
+  "available_from": 1995
  },
  {
   "id": "fam.sibling_secret",
@@ -8619,7 +8628,8 @@
     "relation": "pet"
    }
   },
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 2004
  },
  {
   "id": "elder.tech.b",
@@ -8693,7 +8703,8 @@
    }
   ],
   "weight": 4,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 2004
  },
  {
   "id": "elder.bingo",
@@ -9046,7 +9057,8 @@
    }
   ],
   "weight": 4,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "elder.fall.b",
@@ -9289,7 +9301,8 @@
    }
   ],
   "weight": 4,
-  "cooldown": 3
+  "cooldown": 3,
+  "available_from": 2004
  },
  {
   "id": "money.bill_shock",
@@ -9694,7 +9707,8 @@
    }
   ],
   "weight": 2,
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 1930
  },
  {
   "id": "cameo.athlete",
@@ -9851,7 +9865,8 @@
    }
   ],
   "weight": 2,
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 1995
  },
  {
   "id": "cameo.tech",
@@ -9928,6 +9943,7 @@
    }
   ],
   "weight": 2,
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 2004
  }
 ]

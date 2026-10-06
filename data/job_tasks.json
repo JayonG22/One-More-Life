@@ -1,0 +1,2092 @@
+{
+ "pt_cashier": [
+  {
+   "name": "Balance the till",
+   "question": "The closing total differs from the receipt count. What do you do?",
+   "answers": [
+    "Recount and record the discrepancy",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Recount and record the discrepancy. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Handle a return",
+   "question": "The receipt is for a different item. What do you do?",
+   "answers": [
+    "Check the transaction before refunding",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Check the transaction before refunding. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_burger": [
+  {
+   "name": "Manage the grill queue",
+   "question": "A new order arrives while an earlier meal waits. What do you do?",
+   "answers": [
+    "Finish safe orders in their proper sequence",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Finish safe orders in their proper sequence. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check the allergen ticket",
+   "question": "A customer flags an allergy on a substituted meal. What do you do?",
+   "answers": [
+    "Follow the flagged preparation procedure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Follow the flagged preparation procedure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_lifeguard": [
+  {
+   "name": "Watch the busy pool",
+   "question": "One swimmer disappears behind the crowd. What do you do?",
+   "answers": [
+    "Alert the team and follow the rescue procedure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Alert the team and follow the rescue procedure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check the pool opening",
+   "question": "The emergency equipment check is incomplete. What do you do?",
+   "answers": [
+    "Complete the check before opening",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete the check before opening. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_babysitter": [
+  {
+   "name": "Plan the evening",
+   "question": "Bedtime conflicts with a child's game. What do you do?",
+   "answers": [
+    "Offer a clear calm transition",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Offer a clear calm transition. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Contact the parents",
+   "question": "A child feels unwell and the instructions are unclear. What do you do?",
+   "answers": [
+    "Use the agreed contact and safety plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Use the agreed contact and safety plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_dogwalker": [
+  {
+   "name": "Manage the walking group",
+   "question": "Two dogs keep pulling toward each other. What do you do?",
+   "answers": [
+    "Give them space and adjust the group",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Give them space and adjust the group. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Read the owner notes",
+   "question": "One dog has a restricted route. What do you do?",
+   "answers": [
+    "Follow its individual walking instructions",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Follow its individual walking instructions. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_tutor": [
+  {
+   "name": "Explain a fraction",
+   "question": "Your student memorises an answer without understanding. What do you do?",
+   "answers": [
+    "Use a worked example and ask them to explain",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Use a worked example and ask them to explain. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Plan revision",
+   "question": "Every session repeats the same easy topic. What do you do?",
+   "answers": [
+    "Practise the weakest topic in small steps",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Practise the weakest topic in small steps. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_barista": [
+  {
+   "name": "Prepare the morning queue",
+   "question": "Several drinks look identical but have different milk. What do you do?",
+   "answers": [
+    "Label and verify the orders",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Label and verify the orders. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Adjust the espresso",
+   "question": "The first shot tastes wrong after a grind change. What do you do?",
+   "answers": [
+    "Test and adjust before serving the queue",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Test and adjust before serving the queue. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_stocker": [
+  {
+   "name": "Rotate the stock",
+   "question": "New stock sits in front of older dated items. What do you do?",
+   "answers": [
+    "Rotate by date and check damaged packs",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Rotate by date and check damaged packs. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Count a delivery",
+   "question": "The shipment count differs from the manifest. What do you do?",
+   "answers": [
+    "Recount and report the mismatch",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Recount and report the mismatch. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pt_delivery": [
+  {
+   "name": "Plan the delivery route",
+   "question": "A promised shortcut is closed. What do you do?",
+   "answers": [
+    "Replan and communicate the delay",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Replan and communicate the delay. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Confirm the handover",
+   "question": "The address matches but the recipient is unclear. What do you do?",
+   "answers": [
+    "Verify the delivery instructions",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the delivery instructions. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "retail": [
+  {
+   "name": "Merchandise a promotion",
+   "question": "The discount signage disagrees with the till. What do you do?",
+   "answers": [
+    "Check the promotion and correct the mismatch",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Check the promotion and correct the mismatch. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Coach a sales colleague",
+   "question": "A colleague pressures a customer into an unsuitable item. What do you do?",
+   "answers": [
+    "Clarify the customer's needs and the policy",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Clarify the customer's needs and the policy. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "fastfood": [
+  {
+   "name": "Coordinate the rush",
+   "question": "The packing station falls behind the kitchen. What do you do?",
+   "answers": [
+    "Rebalance the stations and verify orders",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Rebalance the stations and verify orders. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Close the shift",
+   "question": "The closing checklist is unfinished. What do you do?",
+   "answers": [
+    "Complete and document the required checks",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete and document the required checks. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "warehouse": [
+  {
+   "name": "Plan a picking batch",
+   "question": "Heavy goods are scheduled above fragile goods. What do you do?",
+   "answers": [
+    "Reorder the safe picking sequence",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Reorder the safe picking sequence. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Investigate a stock variance",
+   "question": "The location count disagrees with the system. What do you do?",
+   "answers": [
+    "Recount and reconcile the location",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Recount and reconcile the location. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "trucker": [
+  {
+   "name": "Plan the haul",
+   "question": "A delay threatens the route and rest schedule. What do you do?",
+   "answers": [
+    "Replan within the permitted rest schedule",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Replan within the permitted rest schedule. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check the load manifest",
+   "question": "A package count differs from the paperwork. What do you do?",
+   "answers": [
+    "Resolve and record the discrepancy before departure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve and record the discrepancy before departure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "janitor": [
+  {
+   "name": "Respond to a spill",
+   "question": "A crowded corridor has a slippery patch. What do you do?",
+   "answers": [
+    "Secure the area and use the specified clean-up procedure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Secure the area and use the specified clean-up procedure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Schedule deep cleaning",
+   "question": "Two rooms need different cleaning products. What do you do?",
+   "answers": [
+    "Check the surface instructions and separate supplies",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Check the surface instructions and separate supplies. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "security": [
+  {
+   "name": "Review an access alert",
+   "question": "A visitor's badge does not match the booking. What do you do?",
+   "answers": [
+    "Verify access without escalating unnecessarily",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify access without escalating unnecessarily. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Write an incident log",
+   "question": "Two witnesses describe the same event differently. What do you do?",
+   "answers": [
+    "Record each account and its limits",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Record each account and its limits. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "receptionist": [
+  {
+   "name": "Manage appointment conflicts",
+   "question": "Two clients have the same slot. What do you do?",
+   "answers": [
+    "Verify bookings and offer a clear resolution",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify bookings and offer a clear resolution. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Route a confidential call",
+   "question": "A caller requests private details about a colleague. What do you do?",
+   "answers": [
+    "Verify the request and follow privacy rules",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the request and follow privacy rules. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "electrician": [
+  {
+   "name": "Review a circuit plan",
+   "question": "A drawing and the approved specification disagree. What do you do?",
+   "answers": [
+    "Stop and resolve the approved specification",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Stop and resolve the approved specification. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Document an inspection",
+   "question": "A required inspection entry is missing. What do you do?",
+   "answers": [
+    "Arrange the check and record the result",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Arrange the check and record the result. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "plumber": [
+  {
+   "name": "Scope a leak visit",
+   "question": "A repair quote assumes a cause not yet checked. What do you do?",
+   "answers": [
+    "Assess the fault before committing the scope",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Assess the fault before committing the scope. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check the handover",
+   "question": "The test record is incomplete after repair. What do you do?",
+   "answers": [
+    "Complete the specified checks and explain the result",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete the specified checks and explain the result. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "mechanic": [
+  {
+   "name": "Diagnose a reported noise",
+   "question": "A suggested replacement has no diagnostic evidence. What do you do?",
+   "answers": [
+    "Test the reported fault before ordering parts",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Test the reported fault before ordering parts. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Explain a repair estimate",
+   "question": "The estimate includes an optional repair. What do you do?",
+   "answers": [
+    "Separate essential and optional work clearly",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Separate essential and optional work clearly. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "carpenter": [
+  {
+   "name": "Check a measured cut",
+   "question": "The plan dimension differs from the site measurement. What do you do?",
+   "answers": [
+    "Verify the measurement before cutting",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the measurement before cutting. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Plan a material order",
+   "question": "The order ignores the planned offcuts. What do you do?",
+   "answers": [
+    "Calculate usable material before ordering",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Calculate usable material before ordering. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "hairstylist": [
+  {
+   "name": "Consult on a colour change",
+   "question": "The requested result conflicts with the hair history. What do you do?",
+   "answers": [
+    "Discuss limits and perform the required consultation",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Discuss limits and perform the required consultation. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Plan the salon queue",
+   "question": "A long appointment overlaps another booking. What do you do?",
+   "answers": [
+    "Adjust the schedule and communicate honestly",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Adjust the schedule and communicate honestly. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "line_cook": [
+  {
+   "name": "Coordinate the pass",
+   "question": "A hot plate is ready before the rest of its table. What do you do?",
+   "answers": [
+    "Coordinate the timing with the station",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Coordinate the timing with the station. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Handle a changed ticket",
+   "question": "An ingredient substitution conflicts with an allergy note. What do you do?",
+   "answers": [
+    "Verify the flagged ticket before preparation",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the flagged ticket before preparation. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "firefighter": [
+  {
+   "name": "Review the crew briefing",
+   "question": "The assignment omits a known access hazard. What do you do?",
+   "answers": [
+    "Clarify roles and the hazard before deployment",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Clarify roles and the hazard before deployment. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check equipment readiness",
+   "question": "A routine equipment check found a fault. What do you do?",
+   "answers": [
+    "Report it and use the approved replacement plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Report it and use the approved replacement plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "mail": [
+  {
+   "name": "Sort an uncertain address",
+   "question": "Two similar street names appear on the envelope. What do you do?",
+   "answers": [
+    "Verify the delivery route",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the delivery route. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Record an undeliverable item",
+   "question": "An item cannot be safely handed over. What do you do?",
+   "answers": [
+    "Follow the documented return procedure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Follow the documented return procedure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "flight_attendant": [
+  {
+   "name": "Brief the cabin crew",
+   "question": "The passenger support notes have changed. What do you do?",
+   "answers": [
+    "Confirm assignments and the updated notes",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Confirm assignments and the updated notes. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Resolve a seat conflict",
+   "question": "Two passengers present conflicting seat information. What do you do?",
+   "answers": [
+    "Verify the manifest and explain the resolution",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the manifest and explain the resolution. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "developer": [
+  {
+   "name": "Investigate a regression",
+   "question": "A patch fixes one bug but breaks a tested flow. What do you do?",
+   "answers": [
+    "Reproduce and add a regression check before release",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Reproduce and add a regression check before release. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a code change",
+   "question": "A new feature logs private customer information. What do you do?",
+   "answers": [
+    "Remove unnecessary data and review access",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Remove unnecessary data and review access. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "game_dev": [
+  {
+   "name": "Tune a difficulty spike",
+   "question": "Players fail before learning the mechanic. What do you do?",
+   "answers": [
+    "Adjust teaching cues and test the difficulty curve",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Adjust teaching cues and test the difficulty curve. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a save bug",
+   "question": "A reward is lost when a session is interrupted. What do you do?",
+   "answers": [
+    "Make the save transition safe and test recovery",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Make the save transition safe and test recovery. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "nurse": [
+  {
+   "name": "Coordinate a handover",
+   "question": "The written handover misses a change in condition. What do you do?",
+   "answers": [
+    "Verify and escalate the discrepancy through the team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify and escalate the discrepancy through the team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a care record",
+   "question": "A required observation has not been entered. What do you do?",
+   "answers": [
+    "Check the record and arrange the required follow-up",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Check the record and arrange the required follow-up. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "teacher": [
+  {
+   "name": "Plan a lesson",
+   "question": "Several pupils struggle with the first example. What do you do?",
+   "answers": [
+    "Use an alternative explanation and check understanding",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Use an alternative explanation and check understanding. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Assess an assignment",
+   "question": "One impressive answer gives no working or explanation. What do you do?",
+   "answers": [
+    "Assess the rubric and ask for the reasoning",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Assess the rubric and ask for the reasoning. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "police": [
+  {
+   "name": "Review a witness account",
+   "question": "An account contains an unverified assumption. What do you do?",
+   "answers": [
+    "Separate observed facts from inference",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Separate observed facts from inference. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Handle a scene record",
+   "question": "The record lacks the time and origin of an exhibit. What do you do?",
+   "answers": [
+    "Complete the documented chain of custody",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete the documented chain of custody. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "accountant": [
+  {
+   "name": "Reconcile an account",
+   "question": "The ledger and bank statement disagree. What do you do?",
+   "answers": [
+    "Trace the entries and record the reconciliation",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Trace the entries and record the reconciliation. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review an expense claim",
+   "question": "A claim includes no supporting receipt. What do you do?",
+   "answers": [
+    "Request the evidence and apply the policy",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Request the evidence and apply the policy. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "marketing": [
+  {
+   "name": "Evaluate a campaign",
+   "question": "Clicks rose but useful conversions fell. What do you do?",
+   "answers": [
+    "Measure the goal and test the audience assumptions",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Measure the goal and test the audience assumptions. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check advertising copy",
+   "question": "The headline promises an unsupported result. What do you do?",
+   "answers": [
+    "Use supported claims and revise the copy",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Use supported claims and revise the copy. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "analyst": [
+  {
+   "name": "Stress-test a forecast",
+   "question": "The return estimate assumes costs never rise. What do you do?",
+   "answers": [
+    "Test a range of costs and assumptions",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Test a range of costs and assumptions. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Explain portfolio risk",
+   "question": "A client asks whether a gain is guaranteed. What do you do?",
+   "answers": [
+    "Explain uncertainty and downside scenarios",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Explain uncertainty and downside scenarios. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "engineer": [
+  {
+   "name": "Review a design tolerance",
+   "question": "A component is outside the agreed specification. What do you do?",
+   "answers": [
+    "Investigate and resolve the specification mismatch",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Investigate and resolve the specification mismatch. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Document a design change",
+   "question": "A late change bypasses review. What do you do?",
+   "answers": [
+    "Request the required review and update the record",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Request the required review and update the record. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "architect": [
+  {
+   "name": "Review a client brief",
+   "question": "The requested layout conflicts with an access requirement. What do you do?",
+   "answers": [
+    "Resolve access and explain the design trade-off",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve access and explain the design trade-off. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Coordinate a drawing revision",
+   "question": "Two contractors use different plan revisions. What do you do?",
+   "answers": [
+    "Confirm the issued revision and notify the team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Confirm the issued revision and notify the team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "designer": [
+  {
+   "name": "Present visual concepts",
+   "question": "The most striking draft obscures the important text. What do you do?",
+   "answers": [
+    "Improve readability while preserving the brief",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Improve readability while preserving the brief. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Prepare artwork for delivery",
+   "question": "A file uses missing fonts and low-resolution assets. What do you do?",
+   "answers": [
+    "Verify the delivery assets and specifications",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the delivery assets and specifications. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "journalist": [
+  {
+   "name": "Verify a source claim",
+   "question": "A dramatic claim relies on one anonymous account. What do you do?",
+   "answers": [
+    "Seek corroboration and state what remains unverified",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Seek corroboration and state what remains unverified. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Edit a correction",
+   "question": "A published number was wrong. What do you do?",
+   "answers": [
+    "Publish a clear correction with the verified figure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Publish a clear correction with the verified figure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "counselor": [
+  {
+   "name": "Plan a follow-up",
+   "question": "The client says the current approach is not helping. What do you do?",
+   "answers": [
+    "Review goals collaboratively and the appropriate support plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Review goals collaboratively and the appropriate support plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Protect session privacy",
+   "question": "A colleague asks for unnecessary session details. What do you do?",
+   "answers": [
+    "Share only what the agreed rules require",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Share only what the agreed rules require. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "lab_tech": [
+  {
+   "name": "Validate a sample batch",
+   "question": "A control result is outside the accepted range. What do you do?",
+   "answers": [
+    "Investigate the control before reporting the batch",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Investigate the control before reporting the batch. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Record sample provenance",
+   "question": "A sample label and request form disagree. What do you do?",
+   "answers": [
+    "Resolve identity using the documented procedure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve identity using the documented procedure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "chef": [
+  {
+   "name": "Design a service menu",
+   "question": "Two elaborate dishes compete for the same station. What do you do?",
+   "answers": [
+    "Balance the menu around service capacity",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Balance the menu around service capacity. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review ingredient waste",
+   "question": "One popular special produces excessive unused stock. What do you do?",
+   "answers": [
+    "Adjust the batch and ordering plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Adjust the batch and ordering plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "music_teacher": [
+  {
+   "name": "Guide an ensemble",
+   "question": "The group speeds up whenever the passage gets harder. What do you do?",
+   "answers": [
+    "Slow the passage and rebuild shared timing",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Slow the passage and rebuild shared timing. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Assess a performance",
+   "question": "One missed note hides otherwise strong progress. What do you do?",
+   "answers": [
+    "Give specific feedback on technique and recovery",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Give specific feedback on technique and recovery. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "paralegal": [
+  {
+   "name": "Assemble a case bundle",
+   "question": "Two exhibits have conflicting dates. What do you do?",
+   "answers": [
+    "Verify provenance and flag the conflict",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify provenance and flag the conflict. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Track a filing deadline",
+   "question": "A form is missing just before submission. What do you do?",
+   "answers": [
+    "Escalate and complete the approved filing plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Escalate and complete the approved filing plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "probation": [
+  {
+   "name": "Review a support plan",
+   "question": "A missed meeting coincides with a transport problem. What do you do?",
+   "answers": [
+    "Verify the reason and revise the feasible plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify the reason and revise the feasible plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Record a compliance concern",
+   "question": "The evidence is incomplete. What do you do?",
+   "answers": [
+    "Document facts and use the required review process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Document facts and use the required review process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "civil_servant": [
+  {
+   "name": "Draft a policy brief",
+   "question": "The proposal helps one group but overlooks another. What do you do?",
+   "answers": [
+    "Assess the affected groups and alternatives",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Assess the affected groups and alternatives. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review consultation responses",
+   "question": "Only supportive comments were summarised. What do you do?",
+   "answers": [
+    "Report the range of evidence fairly",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Report the range of evidence fairly. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "lawyer": [
+  {
+   "name": "Prepare a disputed claim",
+   "question": "A key exhibit does not prove what the client believes. What do you do?",
+   "answers": [
+    "Explain its limits and build supported arguments",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Explain its limits and build supported arguments. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Negotiate a settlement",
+   "question": "A larger demand could cost more than the disputed loss. What do you do?",
+   "answers": [
+    "Compare the realistic outcomes and costs",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Compare the realistic outcomes and costs. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "doctor": [
+  {
+   "name": "Review a case handover",
+   "question": "A new symptom conflicts with the initial assumption. What do you do?",
+   "answers": [
+    "Reassess through the clinical team and documented process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Reassess through the clinical team and documented process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Explain treatment choices",
+   "question": "The patient does not understand the available options. What do you do?",
+   "answers": [
+    "Explain benefits limits and alternatives clearly",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Explain benefits limits and alternatives clearly. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "dentist": [
+  {
+   "name": "Plan a consultation",
+   "question": "The patient asks for treatment before assessment. What do you do?",
+   "answers": [
+    "Complete the assessment and explain options",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete the assessment and explain options. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review an appointment record",
+   "question": "The documented follow-up is missing. What do you do?",
+   "answers": [
+    "Check the record and arrange the required follow-up",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Check the record and arrange the required follow-up. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pharmacist": [
+  {
+   "name": "Resolve a prescription query",
+   "question": "The written instruction is unclear. What do you do?",
+   "answers": [
+    "Clarify through the authorised professional channel",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Clarify through the authorised professional channel. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review stock rotation",
+   "question": "A batch is near its expiry date. What do you do?",
+   "answers": [
+    "Check dates and follow the disposal and ordering policy",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Check dates and follow the disposal and ordering policy. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "vet": [
+  {
+   "name": "Assess a reported change",
+   "question": "The owner describes a change not present in the notes. What do you do?",
+   "answers": [
+    "Record the history and arrange the appropriate assessment",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Record the history and arrange the appropriate assessment. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Discuss a care plan",
+   "question": "The owner cannot manage the proposed schedule. What do you do?",
+   "answers": [
+    "Discuss a feasible plan and its limits",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Discuss a feasible plan and its limits. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "executive": [
+  {
+   "name": "Allocate a constrained budget",
+   "question": "Every department requests its full increase. What do you do?",
+   "answers": [
+    "Compare priorities and measurable trade-offs",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Compare priorities and measurable trade-offs. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a strategic proposal",
+   "question": "The projected gain omits implementation costs. What do you do?",
+   "answers": [
+    "Include costs and test downside scenarios",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Include costs and test downside scenarios. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "professor": [
+  {
+   "name": "Design an assessment",
+   "question": "The test measures memorisation but the module teaches reasoning. What do you do?",
+   "answers": [
+    "Align questions with the learning goals",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Align questions with the learning goals. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a research submission",
+   "question": "The result omits an inconvenient observation. What do you do?",
+   "answers": [
+    "Require a transparent account of all relevant results",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Require a transparent account of all relevant results. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "scientist": [
+  {
+   "name": "Plan a replication",
+   "question": "A promising result came from a tiny sample. What do you do?",
+   "answers": [
+    "Define the test and uncertainty before repeating it",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Define the test and uncertainty before repeating it. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Report a negative result",
+   "question": "The expected effect did not appear. What do you do?",
+   "answers": [
+    "Report methods and findings without changing the question",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Report methods and findings without changing the question. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "army": [
+  {
+   "name": "Coordinate a training exercise",
+   "question": "A team member missed the updated briefing. What do you do?",
+   "answers": [
+    "Confirm understanding and the approved safe plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Confirm understanding and the approved safe plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review equipment allocation",
+   "question": "The load list misses a required item. What do you do?",
+   "answers": [
+    "Resolve the inventory before the exercise",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve the inventory before the exercise. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "navy": [
+  {
+   "name": "Plan a watch handover",
+   "question": "A logged equipment issue is absent from the briefing. What do you do?",
+   "answers": [
+    "Clarify the status and watch responsibilities",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Clarify the status and watch responsibilities. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Coordinate a deck exercise",
+   "question": "Weather changes invalidate the approved setup. What do you do?",
+   "answers": [
+    "Pause and revise through the responsible team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Pause and revise through the responsible team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "air_force": [
+  {
+   "name": "Review a sortie briefing",
+   "question": "A briefing uses an outdated weather report. What do you do?",
+   "answers": [
+    "Confirm current approved information",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Confirm current approved information. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Track maintenance readiness",
+   "question": "A required sign-off is missing. What do you do?",
+   "answers": [
+    "Resolve readiness through the maintenance team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve readiness through the maintenance team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "pilot": [
+  {
+   "name": "Review the departure plan",
+   "question": "A delay changes the fuel and weather assumptions. What do you do?",
+   "answers": [
+    "Recalculate through the approved planning process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Recalculate through the approved planning process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Manage a crew briefing",
+   "question": "A crew member flags an unresolved concern. What do you do?",
+   "answers": [
+    "Resolve the concern before proceeding",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve the concern before proceeding. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "data_analyst": [
+  {
+   "name": "Clean a dashboard dataset",
+   "question": "Duplicate rows inflate the headline total. What do you do?",
+   "answers": [
+    "Trace and remove duplicates with a documented rule",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Trace and remove duplicates with a documented rule. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Present a comparison",
+   "question": "Two charts use different time windows. What do you do?",
+   "answers": [
+    "Align the periods and explain remaining limitations",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Align the periods and explain remaining limitations. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "cybersecurity": [
+  {
+   "name": "Triage an alert",
+   "question": "An alert looks serious but its origin is uncertain. What do you do?",
+   "answers": [
+    "Validate scope and follow the incident process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Validate scope and follow the incident process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review account access",
+   "question": "A former worker still has unnecessary access. What do you do?",
+   "answers": [
+    "Remove access through the documented procedure",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Remove access through the documented procedure. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "ux_research": [
+  {
+   "name": "Plan an interview study",
+   "question": "The participant pool excludes less confident users. What do you do?",
+   "answers": [
+    "Broaden recruitment around the research question",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Broaden recruitment around the research question. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Synthesise user feedback",
+   "question": "A vivid anecdote conflicts with most observations. What do you do?",
+   "answers": [
+    "Report the pattern and the exception separately",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Report the pattern and the exception separately. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "technical_writer": [
+  {
+   "name": "Test a setup guide",
+   "question": "A newcomer cannot follow a hidden prerequisite. What do you do?",
+   "answers": [
+    "Add the prerequisite and test the complete flow",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Add the prerequisite and test the complete flow. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a reference page",
+   "question": "Two pages describe the same option differently. What do you do?",
+   "answers": [
+    "Verify behaviour and reconcile the descriptions",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify behaviour and reconcile the descriptions. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "game_producer": [
+  {
+   "name": "Plan a milestone",
+   "question": "The schedule assumes every task finishes without delay. What do you do?",
+   "answers": [
+    "Build dependencies and a realistic contingency",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Build dependencies and a realistic contingency. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Triage a release blocker",
+   "question": "A crash competes with an optional cosmetic feature. What do you do?",
+   "answers": [
+    "Prioritise the blocker and communicate scope",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Prioritise the blocker and communicate scope. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "renewable_tech": [
+  {
+   "name": "Review a site worksheet",
+   "question": "The plan omits a documented site constraint. What do you do?",
+   "answers": [
+    "Resolve the site survey before scheduling",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve the site survey before scheduling. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check a commissioning record",
+   "question": "A required test is missing. What do you do?",
+   "answers": [
+    "Complete the approved test and record the result",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete the approved test and record the result. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "urban_planner": [
+  {
+   "name": "Review a neighbourhood proposal",
+   "question": "A new route leaves an existing access need uncovered. What do you do?",
+   "answers": [
+    "Assess access and compare the alternatives",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Assess access and compare the alternatives. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Summarise a public hearing",
+   "question": "The loudest speakers differ from the wider feedback. What do you do?",
+   "answers": [
+    "Report the full range of responses",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Report the full range of responses. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "environment_officer": [
+  {
+   "name": "Review a monitoring sample",
+   "question": "The location was recorded incorrectly. What do you do?",
+   "answers": [
+    "Resolve provenance before interpretation",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve provenance before interpretation. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Plan a community programme",
+   "question": "The proposal has no measurable baseline. What do you do?",
+   "answers": [
+    "Define the baseline and reporting plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Define the baseline and reporting plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "food_scientist": [
+  {
+   "name": "Review a product trial",
+   "question": "A sensory improvement changes a specified ingredient. What do you do?",
+   "answers": [
+    "Review the constraints before approving the change",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Review the constraints before approving the change. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check a quality batch",
+   "question": "The sample result is inconsistent with the control. What do you do?",
+   "answers": [
+    "Investigate and repeat through the approved process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Investigate and repeat through the approved process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "community_worker": [
+  {
+   "name": "Build a support referral",
+   "question": "A referral ignores the person's transport limits. What do you do?",
+   "answers": [
+    "Match the service to feasible access",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Match the service to feasible access. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a case handover",
+   "question": "A promised appointment was never confirmed. What do you do?",
+   "answers": [
+    "Verify and coordinate the follow-up",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify and coordinate the follow-up. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "care_assistant": [
+  {
+   "name": "Coordinate a daily visit",
+   "question": "The person's preferences differ from the old plan. What do you do?",
+   "answers": [
+    "Confirm preferences within the agreed care plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Confirm preferences within the agreed care plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Report a change in needs",
+   "question": "A new concern is absent from the handover. What do you do?",
+   "answers": [
+    "Record and escalate through the care team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Record and escalate through the care team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "logistics_planner": [
+  {
+   "name": "Replan a dispatch",
+   "question": "A late vehicle breaks several delivery windows. What do you do?",
+   "answers": [
+    "Compare feasible routes and notify customers",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Compare feasible routes and notify customers. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review warehouse capacity",
+   "question": "The plan sends everything through an overloaded depot. What do you do?",
+   "answers": [
+    "Rebalance capacity and test the schedule",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Rebalance capacity and test the schedule. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "event_coordinator": [
+  {
+   "name": "Resolve a supplier delay",
+   "question": "A missing supplier threatens the opening. What do you do?",
+   "answers": [
+    "Activate a feasible backup and inform the team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Activate a feasible backup and inform the team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Plan accessible arrivals",
+   "question": "The arrival plan misses a requested access arrangement. What do you do?",
+   "answers": [
+    "Confirm the arrangement and the route",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Confirm the arrangement and the route. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "archivist": [
+  {
+   "name": "Describe a collection",
+   "question": "A source date is uncertain. What do you do?",
+   "answers": [
+    "Record uncertainty and the supporting evidence",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Record uncertainty and the supporting evidence. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review preservation access",
+   "question": "A fragile item is requested for frequent handling. What do you do?",
+   "answers": [
+    "Offer a suitable access copy and preservation plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Offer a suitable access copy and preservation plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "sound_engineer": [
+  {
+   "name": "Balance a recording mix",
+   "question": "The vocal is buried under the instruments. What do you do?",
+   "answers": [
+    "Rebalance around the intended focal part",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Rebalance around the intended focal part. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Check a live sound setup",
+   "question": "A channel clips during the sound check. What do you do?",
+   "answers": [
+    "Set appropriate levels before the performance",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Set appropriate levels before the performance. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "compliance": [
+  {
+   "name": "Review a proposed process",
+   "question": "The workflow bypasses a required approval. What do you do?",
+   "answers": [
+    "Resolve the control before implementation",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Resolve the control before implementation. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Investigate a record gap",
+   "question": "An audit trail has unexplained missing entries. What do you do?",
+   "answers": [
+    "Preserve and investigate the evidence",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Preserve and investigate the evidence. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "museum_educator": [
+  {
+   "name": "Design a visitor activity",
+   "question": "The display assumes knowledge younger visitors lack. What do you do?",
+   "answers": [
+    "Provide a clear entry point and varied activities",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Provide a clear entry point and varied activities. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Discuss a contested object",
+   "question": "A label presents a disputed history as settled. What do you do?",
+   "answers": [
+    "Explain the evidence and the contested interpretation",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Explain the evidence and the contested interpretation. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "tour_guide": [
+  {
+   "name": "Adjust an itinerary",
+   "question": "An advertised stop is unexpectedly closed. What do you do?",
+   "answers": [
+    "Offer a feasible alternative and explain the change",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Offer a feasible alternative and explain the change. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Handle a mixed group",
+   "question": "Some visitors cannot keep the planned walking pace. What do you do?",
+   "answers": [
+    "Adjust the pace and access plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Adjust the pace and access plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "farm_manager": [
+  {
+   "name": "Plan the seasonal work",
+   "question": "The weather forecast conflicts with the original schedule. What do you do?",
+   "answers": [
+    "Compare workable windows and revise the plan",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Compare workable windows and revise the plan. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review resource use",
+   "question": "The budget assumes supplies are unlimited. What do you do?",
+   "answers": [
+    "Measure usage and prioritise the constrained resources",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Measure usage and prioritise the constrained resources. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "biomedical_engineer": [
+  {
+   "name": "Investigate a device report",
+   "question": "A reported fault cannot yet be reproduced. What do you do?",
+   "answers": [
+    "Document the conditions and follow the testing process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Document the conditions and follow the testing process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a service release",
+   "question": "The required verification record is incomplete. What do you do?",
+   "answers": [
+    "Complete verification before returning the equipment",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Complete verification before returning the equipment. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "public_defender": [
+  {
+   "name": "Prepare a client conference",
+   "question": "The client misunderstands the available outcomes. What do you do?",
+   "answers": [
+    "Explain options and check understanding",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Explain options and check understanding. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review prosecution disclosure",
+   "question": "A statement contains an unsupported inference. What do you do?",
+   "answers": [
+    "Separate the facts and challenge the unsupported claim",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Separate the facts and challenge the unsupported claim. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "insurance_analyst": [
+  {
+   "name": "Assess a disputed claim",
+   "question": "A loss estimate is missing its supporting documents. What do you do?",
+   "answers": [
+    "Request the evidence and apply the stated policy",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Request the evidence and apply the stated policy. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Model a risk adjustment",
+   "question": "The proposed rate ignores a change in the dataset. What do you do?",
+   "answers": [
+    "Validate the data and test the revised assumptions",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Validate the data and test the revised assumptions. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "special_education": [
+  {
+   "name": "Adapt a classroom task",
+   "question": "The task format prevents a pupil showing their understanding. What do you do?",
+   "answers": [
+    "Adjust access while preserving the learning goal",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Adjust access while preserving the learning goal. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review individual progress",
+   "question": "The progress measure ignores an agreed accommodation. What do you do?",
+   "answers": [
+    "Apply the agreed measure and review the support",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Apply the agreed measure and review the support. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "community_nurse": [
+  {
+   "name": "Plan a home visit",
+   "question": "A patient cannot access the proposed follow-up. What do you do?",
+   "answers": [
+    "Coordinate a feasible follow-up with the care team",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Coordinate a feasible follow-up with the care team. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Review a home handover",
+   "question": "A change in condition is missing from the notes. What do you do?",
+   "answers": [
+    "Verify and escalate through the agreed process",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Verify and escalate through the agreed process. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "family_role": [
+  {
+   "name": "Learn the inherited role",
+   "question": "An old routine no longer fits the workplace. What do you do?",
+   "answers": [
+    "Ask about current responsibilities and practise them",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Ask about current responsibilities and practise them. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  },
+  {
+   "name": "Improve the family workplace",
+   "question": "A recurring handover problem is blamed on tradition. What do you do?",
+   "answers": [
+    "Document the problem and agree a tested improvement",
+    "Continue without resolving it and hope the next shift handles it",
+    "Conceal the problem so the result looks better"
+   ],
+   "feedback": "Document the problem and agree a tested improvement. Resolving the actual task builds performance; ignoring or concealing the problem damages it."
+  }
+ ],
+ "appliance_repair": [
+  {
+   "name": "Diagnose a faulty washer",
+   "question": "A washer stops midway through a cycle. What do you do?",
+   "answers": [
+    "Check the fault report and isolate the cause",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Check the fault report and isolate the cause. Quality and clear records matter."
+  },
+  {
+   "name": "Quote a repair",
+   "question": "A replacement part costs more than expected. What do you do?",
+   "answers": [
+    "Explain the revised price before fitting it",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Explain the revised price before fitting it. Quality and clear records matter."
+  }
+ ],
+ "bike_repair": [
+  {
+   "name": "Inspect a returned bike",
+   "question": "A customer reports uneven braking after a service. What do you do?",
+   "answers": [
+    "Inspect and correct the brake setup before handover",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Inspect and correct the brake setup before handover. Quality and clear records matter."
+  },
+  {
+   "name": "Plan a rebuild",
+   "question": "A commuter bike needs several worn parts. What do you do?",
+   "answers": [
+    "Agree a parts list and prioritise safe operation",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Agree a parts list and prioritise safe operation. Quality and clear records matter."
+  }
+ ],
+ "dispatch_support": [
+  {
+   "name": "Replan deliveries",
+   "question": "A vehicle breaks down before the last route. What do you do?",
+   "answers": [
+    "Reassign urgent loads within the remaining capacity",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Reassign urgent loads within the remaining capacity. Quality and clear records matter."
+  },
+  {
+   "name": "Reconcile a shipment",
+   "question": "The signed delivery count differs from the manifest. What do you do?",
+   "answers": [
+    "Compare the records and trace the missing parcel",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Compare the records and trace the missing parcel. Quality and clear records matter."
+  }
+ ],
+ "repair_support": [
+  {
+   "name": "Recover a device",
+   "question": "A client cannot open important files after an update. What do you do?",
+   "answers": [
+    "Confirm backups before testing a recovery",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Confirm backups before testing a recovery. Quality and clear records matter."
+  },
+  {
+   "name": "Set up a replacement",
+   "question": "A replacement laptop must work with older equipment. What do you do?",
+   "answers": [
+    "Check compatibility and demonstrate the setup",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Check compatibility and demonstrate the setup. Quality and clear records matter."
+  }
+ ],
+ "recycling_operator": [
+  {
+   "name": "Sort a mixed load",
+   "question": "A mixed collection includes items outside the accepted stream. What do you do?",
+   "answers": [
+    "Separate the load and document rejected materials",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Separate the load and document rejected materials. Quality and clear records matter."
+  },
+  {
+   "name": "Handle a blocked route",
+   "question": "A collection route is unavailable this morning. What do you do?",
+   "answers": [
+    "Agree an alternative and notify affected customers",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Agree an alternative and notify affected customers. Quality and clear records matter."
+  }
+ ],
+ "grounds_keeper": [
+  {
+   "name": "Plan seasonal care",
+   "question": "Several public paths need attention before a busy weekend. What do you do?",
+   "answers": [
+    "Prioritise accessible routes and record the work",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Prioritise accessible routes and record the work. Quality and clear records matter."
+  },
+  {
+   "name": "Check equipment",
+   "question": "A tool behaves differently during the morning check. What do you do?",
+   "answers": [
+    "Withdraw it from use and arrange an inspection",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Withdraw it from use and arrange an inspection. Quality and clear records matter."
+  }
+ ],
+ "print_technician": [
+  {
+   "name": "Check a proof",
+   "question": "A brochure proof differs from the approved colours. What do you do?",
+   "answers": [
+    "Compare the proof and confirm corrections before the run",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Compare the proof and confirm corrections before the run. Quality and clear records matter."
+  },
+  {
+   "name": "Schedule a print run",
+   "question": "Two clients need the same machine before closing. What do you do?",
+   "answers": [
+    "Agree priorities and give realistic collection times",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Agree priorities and give realistic collection times. Quality and clear records matter."
+  }
+ ],
+ "venue_service": [
+  {
+   "name": "Prepare a venue",
+   "question": "The seating plan differs from the ticket allocations. What do you do?",
+   "answers": [
+    "Reconcile the plan and keep access routes clear",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Reconcile the plan and keep access routes clear. Quality and clear records matter."
+  },
+  {
+   "name": "Handle a late change",
+   "question": "A booking grows shortly before the event. What do you do?",
+   "answers": [
+    "Confirm capacity and costs before accepting the change",
+    "Skip the check to finish sooner",
+    "Hide the issue from the next person"
+   ],
+   "feedback": "Confirm capacity and costs before accepting the change. Quality and clear records matter."
+  }
+ ],
+ "baker": [
+  {
+   "name": "A proofing schedule",
+   "question": "A large order competes with the daily bread schedule.",
+   "answers": [
+    "Plan batches around the available proving space",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Plan batches around the available proving space. Records, boundaries and a clear scope matter."
+  },
+  {
+   "name": "A changed ingredient",
+   "question": "A supplier substitution changes a labelled pastry.",
+   "answers": [
+    "Check the label and agreed recipe before selling",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Check the label and agreed recipe before selling. Records, boundaries and a clear scope matter."
+  }
+ ],
+ "mortician": [
+  {
+   "name": "A family arrangement",
+   "question": "Relatives disagree about the ceremony and its cost.",
+   "answers": [
+    "Record the authorised wishes and a clear quote",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Record the authorised wishes and a clear quote. Records, boundaries and a clear scope matter."
+  },
+  {
+   "name": "A documentation hold",
+   "question": "An important release document has not arrived.",
+   "answers": [
+    "Verify the required records before proceeding",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Verify the required records before proceeding. Records, boundaries and a clear scope matter."
+  }
+ ],
+ "exorcist": [
+  {
+   "name": "A haunted-house report",
+   "question": "A frightened owner reports footsteps in an empty room.",
+   "answers": [
+    "Document the reports and check ordinary causes first",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Document the reports and check ordinary causes first. Records, boundaries and a clear scope matter."
+  },
+  {
+   "name": "A public séance request",
+   "question": "A client wants a dramatic public ceremony after a private loss.",
+   "answers": [
+    "Agree privacy boundaries and avoid guaranteed claims",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Agree privacy boundaries and avoid guaranteed claims. Records, boundaries and a clear scope matter."
+  }
+ ],
+ "marines": [
+  {
+   "name": "An amphibious drill",
+   "question": "The training schedule changes before a supervised landing drill.",
+   "answers": [
+    "Rebrief participants and verify the authorised plan",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Rebrief participants and verify the authorised plan. Records, boundaries and a clear scope matter."
+  },
+  {
+   "name": "An endurance handover",
+   "question": "A trainee reports fatigue before the next exercise.",
+   "answers": [
+    "Record the concern and review the safe training load",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Record the concern and review the safe training load. Records, boundaries and a clear scope matter."
+  }
+ ],
+ "coast_guard": [
+  {
+   "name": "A rescue exercise window",
+   "question": "Conditions change before a supervised rescue exercise.",
+   "answers": [
+    "Review the conditions and authorised exercise limits",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Review the conditions and authorised exercise limits. Records, boundaries and a clear scope matter."
+  },
+  {
+   "name": "A vessel inspection queue",
+   "question": "A harbour queue grows while inspection records need checking.",
+   "answers": [
+    "Finish the required checks and explain the queue",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Finish the required checks and explain the queue. Records, boundaries and a clear scope matter."
+  }
+ ],
+ "adult_performer": [
+  {
+   "name": "A contract boundary",
+   "question": "An adult production agreement includes work outside your agreed limits.",
+   "answers": [
+    "Record the boundaries and refuse unagreed work",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Record the boundaries and refuse unagreed work. Records, boundaries and a clear scope matter."
+  },
+  {
+   "name": "A private record request",
+   "question": "A promoter asks to publish private information about an adult colleague.",
+   "answers": [
+    "Protect their privacy and seek explicit permission",
+    "Proceed without resolving the recorded concern",
+    "Mark the check complete despite missing evidence"
+   ],
+   "feedback": "Protect their privacy and seek explicit permission. Records, boundaries and a clear scope matter."
+  }
+ ]
+}

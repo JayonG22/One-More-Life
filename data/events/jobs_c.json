@@ -319,7 +319,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 2004
  },
  {
   "id": "job.marketing_2",
@@ -398,7 +399,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "job.analyst_1",
@@ -925,7 +927,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "job.architect_2",
@@ -3011,7 +3014,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "job.doctor_1",
@@ -3134,7 +3138,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "job.doctor_2",
@@ -3735,7 +3740,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "job.vet_2",
@@ -3939,7 +3945,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "job.executive_2",

@@ -30,7 +30,7 @@ const ACTIVITY_GROUPS := [
 	]},
 	{"id": "edu", "name": "Education", "icon": "🎓", "sub": "Library, courses, lessons", "items": [
 		{"id": "library", "name": "Library", "icon": "📚", "min": 5, "sub": "Study and smarts"},
-		{"id": "course", "name": "Online course", "icon": "💻", "min": 16, "sub": "$200 · smarts"},
+		{"id": "course", "name": "Practical courses", "icon": "💻", "min": 16, "sub": "$200 · skills for your chosen field", "menu": "market:training"},
 		{"id": "instrument", "name": "Music lessons", "icon": "🎸", "min": 6, "sub": "$120 · happiness"},
 		{"id": "voice", "name": "Voice lessons", "icon": "🎙️", "min": 8, "sub": "$80 · singers and actors", "act": "daily:voice"},
 		{"id": "acting", "name": "Acting lessons", "icon": "🎭", "min": 8, "sub": "$80 · for the stage and screen", "act": "daily:acting"},
@@ -41,11 +41,12 @@ const ACTIVITY_GROUPS := [
 		{"id": "adoption", "name": "Adoption", "icon": "🏠", "min": 21, "sub": "Give a child a home", "menu": "daily:adoption"},
 	]},
 	{"id": "shopping", "name": "Shopping", "icon": "🛍️", "sub": "Jewelers, electronics, boats, novelties", "items": [
-		{"id": "shop", "name": "Go shopping", "icon": "🛍️", "min": 8, "sub": "12 stores", "menu": "shop:root"},
+		{"id": "shop", "name": "Go shopping", "icon": "🛍️", "min": 8, "sub": "Stores, models, homes, transport and animals", "menu": "shop:root"},
 		{"id": "animals", "name": "Animals", "icon": "🐾", "min": 8, "sub": "Shelter, pet shop, breeder", "menu": "comp:root"},
 		{"id": "mystuff", "name": "Your stuff", "icon": "🎒", "min": 0, "sub": "What you own and what it does", "menu": "shop:mine"},
 	]},
 	{"id": "crime", "name": "Crime", "icon": "🥷", "sub": "Shoplift, steal, rob", "items": [
+		{"id":"murder","name":"Murder","icon":"🥷","min":18,"sub":"Non-graphic · lasting death and legal consequences","panel":true},
 		{"id": "shoplift", "name": "Shoplift", "icon": "🛍️", "min": 12, "sub": "Low risk, low reward"},
 		{"id": "pickpocket", "name": "Pickpocket", "icon": "👛", "min": 14, "sub": "Quick hands"},
 		{"id": "burglary", "name": "Burglary", "icon": "🏠", "min": 16, "sub": "Minigame · break into a house"},
@@ -64,7 +65,7 @@ const ACTIVITY_GROUPS := [
 		{"id": "loans", "name": "Borrow money", "icon": "🏦", "min": 18, "sub": "Four lenders, and what each one will lend you", "panel": true},
 	]},
 	{"id": "health", "name": "Health & Looks", "icon": "🏥", "sub": "Doctors, salon, surgery, therapy", "items": [
-		{"id": "doctors", "name": "Doctors", "icon": "🩺", "min": 0, "sub": "GP, ER, psychiatrist, eyes, back…", "menu": "daily:doctor"},
+		{"id": "doctors", "name": "Health & support", "icon": "🩺", "min": 0, "sub": "Appointments, care plans and family help", "menu": "journey:wellbeing"},
 		{"id": "care_pathway", "name": "Getting care", "icon": "@hospital", "min": 6, "sub": "GP, referrals, waiting lists, medication, eyes and teeth", "menu": "real:care"},
 		{"id": "body_years", "name": "Your body over time", "icon": "@pulse", "min": 6, "sub": "Movement, sleep, diet and what the years add up to", "menu": "real:body"},
 		{"id": "medical_record", "name": "Medical record", "icon": "🫀", "min": 0, "sub": "Symptoms, diagnoses, injuries and chronic care", "menu": "exp:medical"},
@@ -73,7 +74,7 @@ const ACTIVITY_GROUPS := [
 		{"id": "surgeries", "name": "Plastic surgery", "icon": "💉", "min": 18, "sub": "Nose, face, lipo, veneers…", "menu": "daily:surgery"},
 		{"id": "therapy", "name": "Therapy", "icon": "🛋️", "min": 10, "sub": "$120 · stress"},
 		{"id": "treat", "name": "Treat an old injury", "icon": "🩼", "min": 16, "sub": "$15,000 · surgery or long therapy for a scar"},
-		{"id": "rehab", "name": "Rehab", "icon": "🏥", "min": 14, "sub": "$8,000 · 4 time · break a habit"},
+		{"id": "rehab", "name": "Recovery & support", "icon": "🌱", "min": 14, "sub": "Plans, sessions, aftercare" , "menu": "journey:resilience"},
 	]},
 	{"id": "outdoors", "name": "Outdoors", "icon": "🌲", "sub": "Camping, hiking, fishing, caves", "items": [
 		{"id": "camp", "name": "Camping", "icon": "🏕️", "min": 6, "sub": "Bring someone along", "panel": true},
@@ -282,6 +283,7 @@ func hang_out_with_all() -> void:
 		return
 	_clear_dur()
 	var names: Array = []
+	Lifestyle.note("social")
 	for id in people:
 		GameState.change_closeness(id, randi_range(3, 7))
 		if names.size() < 4:
@@ -334,6 +336,10 @@ const HARD_CAP := {"party": 3, "surgery": 2, "dentist": 2}
 ## do_activity_for().
 func do_activity(id: String) -> void:
 	if DURATIONS.has(id) and not GameState.in_prison():
+		var previous: Dictionary = GameState.player.get("activity_lengths",{})
+		if not GameState.settings.get("ask_activity_length",true) and previous.has(id):
+			do_activity_for(id,int(previous[id]))
+			return
 		_ask_duration(id)
 		return
 	_clear_dur()
@@ -376,7 +382,15 @@ func _ask_duration(id: String) -> void:
 
 
 func do_activity_for(id: String, index: int = -1) -> void:
+	if not Lives.separate() and id in ["doctor","dentist","therapy"]:
+		_clear_dur()
+		if id=="doctor": Care.gp_visit()
+		elif id=="dentist": Care.dentist()
+		else: Expansion.mental_action("therapy")
+		return
 	if index >= 0 and DURATIONS.has(id):
+		if not GameState.player.has("activity_lengths"): GameState.player["activity_lengths"]={}
+		GameState.player["activity_lengths"][id]=clampi(index,0,(DURATIONS[id] as Array).size()-1)
 		var o: Array = DURATIONS[id][clampi(index, 0, (DURATIONS[id] as Array).size() - 1)]
 		dur_label = str(o[0])
 		dur_time = int(o[1])
@@ -391,11 +405,13 @@ func do_activity_for(id: String, index: int = -1) -> void:
 		EventEngine.push_info("🌍", "Not possible right now", wb)
 		return
 	var tl0 := int(p["time_left"])
+	var log_before := int(GameState.log_years[-1]["lines"].size()) if not GameState.log_years.is_empty() else 0
 	if REPEAT.has(id):
 		var r: Array = REPEAT[id]
 		Careers.rep_begin(id, int(r[0]), r[1], ("\n\n" + r[2]) if r[2] != "" else "")
 	_do_activity(id)
 	if int(p["time_left"]) != tl0:
+		if not GameState.log_years.is_empty() and GameState.log_years[-1]["lines"].size()>log_before: Lifestyle.note(id)
 		Destiny.on_activity(id)
 		# Counted, so "spent enough time on this" can be a real prerequisite in
 		# the Become a... menu rather than a flag set by one visit.
@@ -996,7 +1012,7 @@ func _emigrate() -> void:
 		if c["id"] == p["country"]:
 			continue
 		var fee := 0 if Meta.has_mod("golden_passport") else 2500
-		var ok := (0.85 if p["record"].is_empty() else 0.35) - Wanted.hiring_penalty()
+		var ok := clampf((0.85 if p["record"].is_empty() else 0.35) - Wanted.hiring_penalty()+Journey.modules["places"].migration_bonus(str(c["id"])),0.05,0.95)
 		if Meta.has_mod("golden_passport"):
 			ok = 1.0
 		choices.append({"label": "%s %s" % [c.get("flag", ""), c["name"]], "requires": {"money": fee}, "outcomes": [
@@ -1017,6 +1033,7 @@ func finish_emigration(country_id: String) -> void:
 		Law.trial("attempting to flee the country", 1, 4)
 		return
 	p["country"] = country_id
+	Journey.modules["places"].arrived(country_id)
 	p["region"] = Places.random_region(country_id)
 	var kept: Array = []
 	var lost: Array = []
@@ -1038,6 +1055,8 @@ func finish_emigration(country_id: String) -> void:
 		p["house_value"] = 0
 		p["mortgage"] = 0
 		p["mortgage_payment"] = 0
+	p.erase("house_uid")
+	p["house_model"]=""
 	p["housing"] = "apartment"
 	GameState.job_listings.clear()
 
@@ -1062,7 +1081,7 @@ func person_actions(id: String) -> Array:
 		out.append({"id": "compliment", "name": "Compliment", "icon": "🌟"})
 	if age >= 10:
 		out.append({"id": "gift", "name": "Give a gift ($100)", "icon": "🎁"})
-	if rel in ["mother", "father", "grandparent", "auntuncle"] and age >= 6:
+	if rel in ["mother", "father", "grandparent"] and age >= 6:
 		out.append({"id": "ask_money", "name": "Ask for money", "icon": "💵"})
 	if rel == "partner":
 		out.append({"id": "date_night", "name": "Date night ($150)", "icon": "🍷"})
@@ -1233,13 +1252,13 @@ func mark_married() -> void:
 # ---------------------------------------------------------------- school
 
 func study_harder() -> void:
-	if _out_of_time(): return
-	GameState.player["education"]["studied"] = true
-	_done("📝", "Study", "I studied harder this year.", {"school": 8, "smarts": 1, "stress": 3})
+	var subjects: Array=Journey.modules["campus"].subjects()
+	if not subjects.is_empty(): Journey.modules["campus"].class_work(str(subjects[0]["subject"]),true)
 
 
 func skip_class() -> void:
-	if _out_of_time(): return
+	if not GameState.in_school() or _out_of_time(): return
+	Journey.modules["campus"].st()["attendance"]=maxf(0,float(Journey.modules["campus"].st()["attendance"])-8)
 	if randf() < 0.3:
 		_done("🏃", "Skipping class", "I skipped class and got caught. Detention.", {"school": -8, "happiness": -3})
 	else:
@@ -1258,11 +1277,28 @@ func can_enroll(level: String) -> String:
 		return ""
 	if level == "bachelor" and not e["hs_graduated"]:
 		return "You need a high school diploma."
-	if level == "graduate" and GameState.edu_level() == "high_school":
-		return "You need a bachelor's degree first."
-	if level == "graduate" and GameState.edu_level() == "none":
+	if level == "graduate" and GameState.edu_level() not in ["bachelor","graduate"]:
 		return "You need a bachelor's degree first."
 	return ""
+
+
+func enrollment_chance(major_id: String) -> float:
+	var m := ContentDB.major(major_id)
+	if m.is_empty(): return 0.0
+	if Meta.has_mod("golden_diploma"): return 1.0
+	var chance := 0.9
+	if str(m.get("level", "")) == "bachelor":
+		var g := GameState.gpa()
+		if g < 1.5: chance = 0.25
+		elif g < 2.5: chance = 0.55
+		elif g < 3.2: chance = 0.8
+		var school_bonus := 0.0
+		for field in Market.MAJOR_FIELDS.get(major_id, []):
+			school_bonus = maxf(school_bonus, Journey.modules["school"].career_bonus(str(field)))
+		chance = minf(0.97, chance + Daily.extracurricular_bonus() + school_bonus)
+	else:
+		chance = clampf(GameState.stat("smarts") / 100.0 + 0.15, 0.1, 0.95)
+	return chance
 
 
 func enroll(major_id: String) -> void:
@@ -1273,17 +1309,7 @@ func enroll(major_id: String) -> void:
 		EventEngine.push_info("🎓", "University", why)
 		return
 	var g := GameState.gpa()
-	var chance := 0.9
-	if m["level"] == "bachelor":
-		if g < 1.5: chance = 0.25
-		elif g < 2.5: chance = 0.55
-		elif g < 3.2: chance = 0.8
-	else:
-		chance = clampf(GameState.stat("smarts") / 100.0 + 0.15, 0.1, 0.95)
-	if m["level"] == "bachelor":
-		chance = minf(0.97, chance + Daily.extracurricular_bonus())
-	if Meta.has_mod("golden_diploma"):
-		chance = 1.0
+	var chance := enrollment_chance(major_id)
 	if randf() > chance:
 		_done("📭", "Application", "My application to study %s was rejected." % m["name"], {"happiness": -6})
 		return
@@ -1294,30 +1320,115 @@ func enroll(major_id: String) -> void:
 		if sch < 1.0 and Daily._ss()["captain"] and randf() < 0.5:
 			sch = minf(1.0, sch + 0.5)
 	p["education"]["uni"] = {"major": major_id, "level": m["level"], "years": int(m["years"]), "year": 0, "performance": 55.0, "scholarship": sch}
+	if m["level"]=="bachelor":
+		var credit := college_credit(major_id)
+		p["education"]["uni"]["year"]=credit
+		p["education"]["uni"]["college_credit"]=credit
 	if p["housing"] == "parents" and m["level"] == "bachelor":
 		p["housing"] = "dorm"
 	var extra := ""
-	if sch >= 1.0: extra = " I got a full scholarship!"
-	elif sch > 0.0: extra = " I got a half scholarship."
+	if int(p["education"]["uni"].get("college_credit",0))>0: extra=" College study credited %d year(s)." % p["education"]["uni"]["college_credit"]
+	if sch >= 1.0: extra += " I got a full scholarship!"
+	elif sch > 0.0: extra += " I got a half scholarship."
 	GameState.add_milestone(p["age"], "started studying %s" % m["name"])
 	_done("🎓", "Accepted!", "I was accepted to study %s.%s" % [m["name"], extra], {"happiness": 10})
 
 
+func college_credit(major_id: String) -> int:
+	var target := ContentDB.major(major_id)
+	if target.get("level","")!="bachelor": return 0
+	var credit := 0
+	for diploma in GameState.player.get("education",{}).get("degrees",[]):
+		if diploma.get("level","")!="associate": continue
+		# Recognition is explicit: this regional route does not silently confer
+		# transferable regulated qualifications in every country or era.
+		if str(diploma.get("country",""))!=str(GameState.player["country"]) and not diploma.get("recognized_countries",[]).has(str(GameState.player["country"])): continue
+		var related: bool=Market.MAJOR_FIELDS.get(major_id,[]).has(str(diploma.get("field","")))
+		credit=maxi(credit,2 if related else 1)
+	return mini(credit,maxi(0,int(target["years"])-1))
+
+
+func major_change_preview(major_id: String) -> Dictionary:
+	var target := ContentDB.major(major_id)
+	var uni: Dictionary=GameState.player.get("education",{}).get("uni",{})
+	if uni.is_empty() or target.is_empty() or target.get("level","")!="bachelor" or uni.get("level","")!="bachelor" or str(uni["major"])==major_id: return {}
+	var old_fields: Array=Market.MAJOR_FIELDS.get(str(uni["major"]),[])
+	var new_fields: Array=Market.MAJOR_FIELDS.get(major_id,[])
+	var related: bool=old_fields.any(func(field): return new_fields.has(field))
+	var completed := maxi(0,int(uni.get("year",0)))
+	# General study transfers at most one year. Related subjects also retain
+	# some specialist study, but a new degree always requires further work.
+	var credit := int(floor(completed*0.75)) if related else mini(1,completed)
+	credit=clampi(credit,0,maxi(0,int(target["years"])-1))
+	return {"major":major_id,"credit":credit,"lost":maxi(0,completed-credit),"remaining":int(target["years"])-credit,"fee":_cost(500),"related":related}
+
+
+func change_major(major_id: String) -> void:
+	var preview := major_change_preview(major_id)
+	if preview.is_empty() or not Journey.pay("major_change",1,int(preview["fee"]),18): return
+	var e: Dictionary=GameState.player["education"]
+	var old: Dictionary=e["uni"].duplicate(true)
+	if not e.has("study_changes"): e["study_changes"]=[]
+	e["study_changes"].push_front({"year":GameState.year_now(),"from":old["major"],"to":major_id,"completed":old["year"],"credit":preview["credit"],"fee":preview["fee"]})
+	if e["study_changes"].size()>32: e["study_changes"].resize(32)
+	var target := ContentDB.major(major_id)
+	e["uni"]["major"]=major_id; e["uni"]["years"]=int(target["years"]); e["uni"]["year"]=int(preview["credit"])
+	# Performance, scholarship, already-paid tuition and outstanding loans
+	# belong to the same student. Changing subject neither refunds nor clears them.
+	Employment.record_expense("Change of major",int(preview["fee"]))
+	GameState.add_milestone(GameState.player["age"],"changed major to "+str(target["name"]))
+	_done("🎓","New study direction","%s · %d year(s) credited · %d remaining. Existing tuition debt stays due." % [target["name"],preview["credit"],preview["remaining"]],{"stress":2})
+
+
 func drop_out() -> void:
 	var p := GameState.player
-	if not GameState.in_university():
+	if not GameState.in_university() or Journey.blocked(18)!="":
 		return
 	var m := ContentDB.major(p["education"]["uni"]["major"])
+	var e: Dictionary=p["education"]
+	if not e.has("interrupted_study"): e["interrupted_study"]=[]
+	e["interrupted_study"].push_front({"left":GameState.year_now(),"state":"open","course":e["uni"].duplicate(true)})
+	if e["interrupted_study"].size()>32: e["interrupted_study"].resize(32)
 	p["education"]["uni"] = {}
 	if p["housing"] == "dorm":
 		p["housing"] = "parents"
 	GameState.add_milestone(p["age"], "dropped out of %s" % m.get("name", "university"))
-	_done("🚪", "Dropped out", "I dropped out of %s." % m.get("name", "university"), {"happiness": -3, "stress": -8})
+	_done("🚪", "Study interrupted", "I left %s. Completed years stay in my study record; I can apply to return later. Existing loans remain due." % m.get("name", "university"), {"happiness": -3, "stress": -8})
+
+
+func study_return_reason(index: int) -> String:
+	var records: Array=GameState.player.get("education",{}).get("interrupted_study",[])
+	if index<0 or index>=records.size() or records[index].get("state","")!="open": return "No interrupted course"
+	var course: Dictionary=records[index].get("course",{})
+	if course.is_empty() or ContentDB.major(str(course.get("major",""))).is_empty(): return "Course unavailable"
+	if GameState.year_now()<=int(records[index]["left"]): return "Return from next year"
+	var why := can_enroll(str(course["level"]))
+	if why!="": return why
+	why=Journey.blocked(18)
+	if why!="": return why
+	if Journey.used("study_return"): return "One return per year"
+	if int(GameState.player["money"])<_cost(300): return "Needs "+GameState.fmt_money(_cost(300))
+	if int(GameState.player["time_left"])<1: return "Needs 1 time"
+	return ""
+
+
+func return_to_study(index: int) -> void:
+	if study_return_reason(index)!="" or not Journey.pay("study_return",1,_cost(300),18): return
+	var e: Dictionary=GameState.player["education"]
+	var record: Dictionary=e["interrupted_study"][index]
+	e["uni"]=record["course"].duplicate(true)
+	# A scholarship from an interrupted course is not a promise of fresh funding.
+	e["uni"]["scholarship"]=0.0
+	record["state"]="returned"; record["returned"]=GameState.year_now()
+	Employment.record_expense("Return to study",_cost(300))
+	var major := ContentDB.major(str(e["uni"]["major"]))
+	_done("🎓","Back to study","%s · %d completed year(s) retained. Grades and loans remain. The former scholarship has ended." % [major["name"],e["uni"]["year"]])
 
 
 # ---------------------------------------------------------------- jobs
 
 func job_requirement(jd: Dictionary) -> String:
+	if jd.get("mature",false) and not GameState.settings.get("mature_arcs",true): return "Enable mature career content in Settings"
 	var era_why := Expansion.era_job_block(jd)
 	if era_why != "":
 		return era_why
@@ -1329,15 +1440,16 @@ func job_requirement(jd: Dictionary) -> String:
 		return ""
 	if jd.has("license") and not Law.has_license(jd["license"]):
 		return Law.LICENSES[jd["license"]]["name"]
-	var order := ["none", "high_school", "bachelor", "graduate"]
+	var order := ["none", "high_school", "associate", "bachelor", "graduate"]
 	var need: String = jd.get("edu", "none")
 	if Meta.has_mod("golden_diploma"):
 		need = "none"
 		if not p["record"].is_empty() and jd.get("clean_record", false):
 			return "Clean criminal record"
 		return ""
-	if order.find(GameState.edu_level()) < order.find(need):
-		return {"high_school": "High school diploma", "bachelor": "Bachelor's degree", "graduate": "Graduate degree"}[need]
+	var vocational := bool(jd.get("vocational_entry",false)) and need in ["none","high_school"] and Employment.has_certificate(str(jd.get("field","")))
+	if not vocational and order.find(GameState.edu_level()) < order.find(need):
+		return {"high_school": "High school diploma", "associate":"Associate diploma", "bachelor": "Bachelor's degree", "graduate": "Graduate degree"}[need]
 	var majors: Array = jd.get("majors", [])
 	if not majors.is_empty():
 		var ok := false
@@ -1356,12 +1468,13 @@ func job_requirement(jd: Dictionary) -> String:
 
 func listings(kind: String) -> Array:
 	var p := GameState.player
-	var key := "%s_%d" % [kind, int(p["age"])]
+	var key := "%s_%d_%s_%s" % [kind, int(p["age"]), str(p["country"]), str(p.get("region", ""))]
 	if GameState.job_listings.has(key):
 		return GameState.job_listings[key]
 	var eligible: Array = []
 	var locked: Array = []
 	for jd in ContentDB.jobs:
+		if jd.get("inherited_only", false): continue
 		var field: String = jd.get("field", "")
 		if kind == "part" and not jd.get("part_time", false):
 			continue
@@ -1376,12 +1489,16 @@ func listings(kind: String) -> Array:
 			eligible.append(jd["id"])
 		elif int(p["age"]) >= int(jd.get("min_age", 18)) - 2:
 			locked.append(jd["id"])
-	eligible.shuffle()
-	locked.shuffle()
 	var slots := int(round((9 if kind == "full" else 6) * clampf(1.25 - Places.unemployment() * 4.0, 0.35, 1.2)))
-	var out: Array = eligible.slice(0, maxi(2, slots))
-	out.append_array(locked.slice(0, 3))
-	GameState.job_listings.clear()
+	var out: Array = []
+	for group in [eligible, locked]:
+		var pool: Array = []
+		for jid in group: pool.append({"id": jid, "weight": Market.listing_weight(ContentDB.job(str(jid)))})
+		var count := maxi(2, slots) if group == eligible else 3
+		for _i in range(mini(count, pool.size())):
+			var pick := EventEngine._weighted_pick(pool, "weight")
+			pool.erase(pick)
+			out.append(pick["id"])
 	GameState.job_listings[key] = out
 	return out
 
@@ -1449,6 +1566,8 @@ func hire(job_id: String) -> void:
 		"part_time": jd.get("part_time", false),
 		"worked_hard": false,
 	}
+	Employment.on_hire()
+	Workplace.begin({"boss":Market.BOSSES.keys().pick_random(),"culture":Market.CULTURES.keys().pick_random(),"health":0.7})
 	GameState.job_listings.clear()
 	if not jd.get("part_time", false) and GameState.get_counter("full_jobs") == 0:
 		GameState.add_milestone(age, "started working as %s" % jd["ranks"][0])
@@ -1463,6 +1582,7 @@ func lose_job(reason: String) -> void:
 		return
 	var j: Dictionary = p["job"]
 	p["job_history"].append(j["title"])
+	Employment.on_leave(reason)
 	Workforce.on_leave(reason, int(j.get("salary", 0)), int(j.get("years", 0)))
 	var title: String = j["title"]
 	for id in [j.get("boss", "")] + Array(j.get("coworkers", [])):
@@ -1591,31 +1711,49 @@ func move_home() -> void:
 	_done("🏠", "Moving home", "I moved back in with my family.", {"happiness": -3, "stress": -3})
 
 
-func house_price() -> int:
-	return _cost(GameState.HOUSE_PRICE)
+const HOME_MODELS := {
+	"studio": {"name": "Pocket studio", "multiplier": 0.45, "icon": "flat_small", "sub": "Compact city base"},
+	"terrace": {"name": "Brick terrace", "multiplier": 0.8, "icon": "terrace", "sub": "Connected streets, modest footprint"},
+	"bungalow": {"name": "Garden bungalow", "multiplier": 1.0, "icon": "bungalow", "sub": "Single floor, small garden"},
+	"family": {"name": "Family detached", "multiplier": 1.4, "icon": "house_large", "sub": "Room for a growing household"},
+	"villa": {"name": "Coastal villa", "multiplier": 3.2, "icon": "villa", "sub": "Space and a sea-view premium"},
+	"mansion": {"name": "Hilltop mansion", "multiplier": 10.0, "icon": "mansion", "sub": "A substantial long-term commitment"},
+	"estate": {"name": "Country estate", "multiplier": 32.0, "icon": "estate", "sub": "Grounds, wings and a considerable mortgage"},
+}
 
+func house_price(model: String = "") -> int:
+	return _cost(int(GameState.HOUSE_PRICE*float(HOME_MODELS.get(model,{"multiplier":1.0})["multiplier"])))
 
-func buy_house() -> void:
+func house_purchase_reason(model: String) -> String:
+	if model!="" and not HOME_MODELS.has(model): return "Home unavailable"
 	var p := GameState.player
-	var price := house_price()
+	var price := house_price(model)
+	var down := int(price*0.2)
+	if int(p["age"])<18: return "Age 18+"
+	if p["housing"]=="house": return "Sell your current home first"
+	if int(p["money"])<down: return "Needs %s down" % GameState.fmt_money(down)
+	if not GameState.has_job() and not p["retired"] and int(p["money"])<price: return "Needs income for a mortgage"
+	if not Grit.credit_ok() and int(p["money"])<price: return "Mortgage needs credit %d+" % int(Grit.d("credit_min"))
+	return ""
+
+
+func buy_house(model: String = "") -> void:
+	var p := GameState.player
+	var why := house_purchase_reason(model)
+	if why!="":
+		EventEngine.push_info("🏡","Home",why+".")
+		return
+	var price := house_price(model)
 	var down := int(price * 0.2)
-	if int(p["age"]) < 18:
-		return
-	if p["housing"] == "house":
-		EventEngine.push_info("🏡", "House", "You already own a house.")
-		return
 	if not _can_pay(down, "Buy a house"): return
-	if not GameState.has_job() and not p["retired"] and int(p["money"]) < price:
-		EventEngine.push_info("🏦", "Mortgage denied", "The bank won't approve a mortgage without income.")
-		return
-	if not Grit.credit_ok() and int(p["money"]) < price:
-		EventEngine.push_info("💳", "Mortgage denied", "Your credit score is %d (%s). The bank needs at least %d." % [Grit.credit(), Grit.credit_label(), int(Grit.d("credit_min"))])
-		return
 	p["money"] = int(p["money"]) - down
 	var owed := int((price - down) * 1.35)
 	p["mortgage"] = owed
 	p["mortgage_payment"] = int(owed / float(GameState.MORTGAGE_YEARS))
 	p["house_value"] = price
+	p["house_model"] = model
+	p["house_uid"] = Journey.uid()+":"+str(Time.get_ticks_usec())
+	p["home"]={}
 	p["housing"] = "house"
 	GameState.add_milestone(p["age"], "bought a house")
 	_done("🏡", "New home", "I bought a house for %s with a %s down payment." % [GameState.fmt_money(price), GameState.fmt_money(down)], {"happiness": 12, "stress": 4})
@@ -1629,6 +1767,8 @@ func sell_house() -> void:
 	var net := value - int(p["mortgage"])
 	p["money"] = int(p["money"]) + net
 	p["house_value"] = 0
+	p.erase("house_model")
+	p.erase("house_uid")
 	p["mortgage"] = 0
 	p["mortgage_payment"] = 0
 	p["housing"] = "apartment"
@@ -1640,22 +1780,34 @@ func buy_car(kind: String) -> void:
 	if int(p["age"]) < 16:
 		EventEngine.push_info("🚗", "Cars", "You're too young to drive.")
 		return
+	if not GameState.CARS.has(kind): return
+	if str(p.get("car",""))==kind:
+		EventEngine.push_info("🚗","Cars","You already own this model.")
+		return
 	var c: Dictionary = GameState.CARS[kind]
 	var price := _cost(int(c["price"]))
+	var trade := Holdings.resale() if str(p.get("car",""))!="" else 0
+	var net_due := price-trade
+	var due := maxi(0,net_due)
 	if not Law.has_license("driver"):
 		EventEngine.push_info("🚗", "Cars", "You need a driver's license first. Get one under Activities → Legal → Licenses.")
 		return
-	if not _can_pay(price, "Buy a car"): return
-	if p["car"] != "":
-		p["money"] = int(p["money"]) + int(_cost(int(GameState.CARS[p["car"]]["price"])) * 0.5)
+	if int(p["money"])<net_due:
+		EventEngine.push_info("💸","Buy a car","After the trade-in, you need "+GameState.fmt_money(due)+" in cash.")
+		return
+	if trade>0: p["money"] = int(p["money"]) + trade
 	p["car"] = kind
-	_done("🚗", "New wheels", "I bought a %s for %s." % [c["name"].to_lower(), GameState.fmt_money(price)], {"money": -price, "happiness": int(c["happiness"])})
+	Holdings.new_car(kind,price)
+	var detail := "Listed %s · trade-in %s · paid %s" % [GameState.fmt_money(price),GameState.fmt_money(trade),GameState.fmt_money(due)]
+	if net_due<0: detail+=" · cash back "+GameState.fmt_money(-net_due)
+	_done("🚗", "New wheels", "I bought a %s. %s." % [c["name"].to_lower(),detail], {"money": -price, "happiness": int(c["happiness"])})
 
 
 func sell_car() -> void:
 	var p := GameState.player
 	if p["car"] == "":
 		return
-	var value := int(_cost(int(GameState.CARS[p["car"]]["price"])) * 0.5)
+	var value := Holdings.resale()
 	p["car"] = ""
+	p.erase("car_record")
 	_done("🚗", "Sold", "I sold my car for %s." % GameState.fmt_money(value), {"money": value})

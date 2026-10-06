@@ -88,9 +88,6 @@ func _spin() -> void:
 		if randf() < 0.02:
 			s = GIFT
 		final_syms.append(s)
-	if randf() < (luck - 1.0) * 0.05:
-		final_syms[0] = final_syms[1]
-		final_syms[2] = final_syms[1]
 	stop_at = [0.9, 1.6, 2.4]
 	# the tease: a pair showing slows the last reel
 	if final_syms[0] == final_syms[1]:
@@ -102,7 +99,7 @@ func _spin() -> void:
 
 
 func _respin() -> void:
-	if spinning or done or respun:
+	if spinning or done or respun or cash_now() < bet * 2:
 		return
 	extra_stake = bet
 	respun = true
@@ -116,8 +113,6 @@ func _respin() -> void:
 		odd = 1
 	var s := _roll_sym()
 	final_syms[odd] = s
-	if randf() < (luck - 1.0) * 0.05:
-		final_syms[odd] = final_syms[1] if odd != 1 else final_syms[0]
 	stopped = [true, true, true]
 	stopped[odd] = false
 	stop_at = [0.0, 0.0, 0.0]
@@ -182,7 +177,7 @@ func _evaluate() -> void:
 		mult = 1.0 if not respun else 0.0
 		msg_l.text = "A pair…" if not respun else "No luck."
 		# a pair offers the respin once
-		if not respun and money_now >= int(bet * 2.0):
+		if not respun and cash_now() >= int(bet * 2.0):
 			respin_btn.visible = true
 			respin_btn.disabled = false
 			spin_btn.visible = false

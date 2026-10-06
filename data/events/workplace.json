@@ -830,7 +830,8 @@
    "boss": {
     "relation": "boss"
    }
-  }
+  },
+  "available_from": 1995
  },
  {
   "id": "wk.office_romance",

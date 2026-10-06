@@ -1,0 +1,1992 @@
+[
+  {
+    "id": "v09.school.shared_credit",
+    "family": "v09.school.credit",
+    "remember_relationship": true,
+    "icon": "📚",
+    "title": "Whose work was it?",
+    "text": "A classmate wants the display to list only their name, though you did half the work.",
+    "conditions": {
+      "age": [
+        9,
+        17
+      ],
+      "in_school": true
+    },
+    "roles": {
+      "them": {
+        "relation": "classmate"
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "List both contributions",
+        "outcomes": [
+          {
+            "text": "We listed what each of us had done. It was fair, if a little awkward.",
+            "weight": 2,
+            "effects": {
+              "school": 2,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 8
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "We made room for both names, then argued about whose section looked better.",
+            "weight": 1,
+            "effects": {
+              "school": 1,
+              "stress": 3
+            },
+            "relationship": {
+              "them": -3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask the teacher to set clear roles",
+        "outcomes": [
+          {
+            "text": "The teacher helped us divide the work. The presentation improved; my classmate stayed annoyed.",
+            "weight": 2,
+            "effects": {
+              "school": 3,
+              "stress": 2
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          },
+          {
+            "text": "The teacher asked us to solve it together. We did, slowly.",
+            "weight": 1,
+            "effects": {
+              "school": 1,
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let it go this time",
+        "outcomes": [
+          {
+            "text": "I let the display go forward. The grade was fine; the credit still bothered me.",
+            "weight": 2,
+            "effects": {
+              "school": 1,
+              "stress": 2
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "My classmate thanked me, then never mentioned the work again.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2
+            },
+            "relationship": {
+              "them": -9
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.work.covering_shift",
+    "family": "v09.work.coverage",
+    "remember_relationship": true,
+    "icon": "🗓️",
+    "title": "Can you cover?",
+    "text": "A coworker needs a shift covered at short notice. Your own week is already full.",
+    "conditions": {
+      "age": [
+        16,
+        70
+      ],
+      "employed": true
+    },
+    "roles": {
+      "them": {
+        "relation": "coworker"
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Cover, with a clear swap",
+        "outcomes": [
+          {
+            "text": "We agreed on a shift swap. It cost a free evening, but the arrangement was fair.",
+            "weight": 2,
+            "effects": {
+              "stress": 4,
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "I covered the shift. We never settled the promised swap, and I was tired for days.",
+            "weight": 1,
+            "effects": {
+              "stress": 8,
+              "health": -1
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Say no and explain why",
+        "outcomes": [
+          {
+            "text": "I explained what I could manage. My coworker was disappointed, but understood.",
+            "weight": 2,
+            "effects": {
+              "stress": -2
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "They took the refusal personally. We were civil at work and distant outside it.",
+            "weight": 1,
+            "effects": {
+              "stress": 3
+            },
+            "relationship": {
+              "them": -8
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask the manager to arrange coverage",
+        "outcomes": [
+          {
+            "text": "The manager found cover and changed the rota. Neither of us had to rescue the schedule alone.",
+            "weight": 2,
+            "effects": {
+              "stress": -1,
+              "smarts": 1
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The manager found cover, though my coworker wished I had handled it privately.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "relationship": {
+              "them": -4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.parenting.club_cost",
+    "family": "v09.parenting.expectations",
+    "remember_relationship": true,
+    "icon": "🎒",
+    "title": "The club costs more this year",
+    "text": "Your child wants to stay in an activity, but the new fees strain the household budget.",
+    "conditions": {
+      "age": [
+        25,
+        80
+      ],
+      "has_children": true
+    },
+    "roles": {
+      "them": {
+        "relation": "child",
+        "min_age": 6,
+        "max_age": 17
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Review the budget together",
+        "outcomes": [
+          {
+            "text": "We worked through the numbers and found a smaller plan the household could manage.",
+            "weight": 2,
+            "effects": {
+              "stress": 2,
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 9
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The numbers were worse than I expected. We agreed to revisit it after payday.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Pay the {money:350} fee",
+        "requires": {
+          "money": 350
+        },
+        "outcomes": [
+          {
+            "text": "My child stayed in the club. I had to trim another part of the household budget.",
+            "weight": 2,
+            "effects": {
+              "money": -350,
+              "happiness": 4
+            },
+            "relationship": {
+              "them": 11
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The fee was still a stretch. I paid it and worried about the next bill.",
+            "weight": 1,
+            "effects": {
+              "money": -350,
+              "stress": 5
+            },
+            "relationship": {
+              "them": 6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Try the {money:80} community group",
+        "requires": {
+          "money": 80
+        },
+        "outcomes": [
+          {
+            "text": "We found a community group with a smaller fee. It was different, but still theirs.",
+            "weight": 2,
+            "effects": {
+              "money": -80,
+              "happiness": 3
+            },
+            "relationship": {
+              "them": 7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The alternative did not fit. My child felt I had decided before listening.",
+            "weight": 1,
+            "effects": {
+              "money": -80,
+              "stress": 3
+            },
+            "relationship": {
+              "them": -6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.friend_across_distance",
+    "family": "v09.relationship.friend_checkin",
+    "remember_relationship": true,
+    "icon": "📨",
+    "title": "A friend checks in",
+    "text": "A close friend writes that keeping in touch has felt one-sided lately.",
+    "conditions": {
+      "age": [
+        16,
+        100
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation_any": [
+          "friend",
+          "best_friend"
+        ],
+        "min_close": 60
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Make a realistic plan to call",
+        "outcomes": [
+          {
+            "text": "We picked a time that worked for both of us. It was small, and we kept it.",
+            "weight": 2,
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            },
+            "relationship": {
+              "them": 22
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "We made a plan, then both weeks filled up. At least we were honest about it.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": 5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Apologize and listen",
+        "outcomes": [
+          {
+            "text": "I listened without defending myself. We talked about what each of us could manage.",
+            "weight": 2,
+            "effects": {
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 16
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The apology helped, but the distance had already changed the friendship.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2
+            },
+            "relationship": {
+              "them": 4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Let the friendship change",
+        "outcomes": [
+          {
+            "text": "We wished each other well. The friendship mattered, even as it became quieter.",
+            "weight": 2,
+            "effects": {
+              "stress": -2
+            },
+            "relationship": {
+              "them": -3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          },
+          {
+            "text": "My silence answered for me. I missed them more than I expected.",
+            "weight": 1,
+            "effects": {
+              "happiness": -5,
+              "stress": 3
+            },
+            "relationship": {
+              "them": -14
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.mechanic.second_check",
+    "family": "v09.work.mechanic",
+    "remember_relationship": true,
+    "icon": "🔧",
+    "title": "The second diagnosis",
+    "text": "A repair is nearly finished when {them.first} spots a sound neither of you can place.",
+    "conditions": {
+      "age": [
+        18,
+        70
+      ],
+      "employed": true,
+      "job_id": "mechanic"
+    },
+    "roles": {
+      "them": {
+        "relation": "coworker",
+        "or_new": true
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Check the work order together",
+        "outcomes": [
+          {
+            "text": "We traced the sound to a loose bracket and recorded the repair before handing the vehicle back.",
+            "weight": 2,
+            "stat_bonus": {
+              "smarts": 0.25
+            },
+            "effects": {
+              "job_perf": 3,
+              "smarts": 1
+            },
+            "relationship": {
+              "them": 5
+            },
+            "bond_role": "them",
+            "bond": {
+              "trust": 4,
+              "respect": 2
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.mechanic.second_check",
+              "role": "them",
+              "quality": 85
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The check found nothing urgent. We documented the uncertainty and booked another inspection.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask a senior technician to review it",
+        "outcomes": [
+          {
+            "text": "The senior technician found a missed step. We corrected it and added it to the checklist.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 2,
+              "stress": -1
+            },
+            "relationship": {
+              "them": 4
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.mechanic.second_check",
+              "role": "them",
+              "quality": 75
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The review backed our first diagnosis. The extra check took time, but gave us a clear record.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Close the ticket and move on",
+        "outcomes": [
+          {
+            "text": "The repair passed a short check, though {them.first} was uneasy about the thin notes.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -2,
+              "stress": 2
+            },
+            "relationship": {
+              "them": -4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.care.handover",
+    "family": "v09.work.care",
+    "remember_relationship": true,
+    "icon": "🩺",
+    "title": "A careful handover",
+    "text": "At shift change, {them.first} is interrupted before they can finish passing on the day’s notes.",
+    "conditions": {
+      "age": [
+        18,
+        70
+      ],
+      "employed": true,
+      "job_id": [
+        "nurse",
+        "community_nurse",
+        "care_assistant"
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation": "coworker",
+        "or_new": true
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Finish the handover before leaving",
+        "outcomes": [
+          {
+            "text": "We took a few more minutes to check the notes and make sure the next shift knew what remained open.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 3,
+              "stress": 2
+            },
+            "relationship": {
+              "them": 5
+            },
+            "bond_role": "them",
+            "bond": {
+              "trust": 4,
+              "respect": 2
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.care.handover",
+              "role": "them",
+              "quality": 85
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "We completed the notes, though the late finish made the trip home harder.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 2,
+              "health": -1,
+              "stress": 3
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask the supervisor to rebalance the shift",
+        "outcomes": [
+          {
+            "text": "The supervisor assigned a second person to the remaining work. The handover was complete without one person carrying it all.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 2,
+              "stress": -1
+            },
+            "relationship": {
+              "them": 4
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.care.handover",
+              "role": "them",
+              "quality": 80
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "There was no extra cover. We agreed what could safely wait and recorded it clearly.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Leave when your shift ends",
+        "outcomes": [
+          {
+            "text": "I left on time. The unfinished handover came back as a difficult conversation at the next shift.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -2,
+              "stress": -1
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.teacher.lesson_plan",
+    "family": "v09.work.education",
+    "remember_relationship": true,
+    "icon": "🧑‍🏫",
+    "title": "A lesson that missed",
+    "text": "A class struggled with a lesson you prepared. {them.first} offers to compare notes before the next one.",
+    "conditions": {
+      "age": [
+        18,
+        70
+      ],
+      "employed": true,
+      "job_id": [
+        "teacher",
+        "music_teacher",
+        "special_education",
+        "professor",
+        "museum_educator"
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation": "coworker",
+        "or_new": true
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Compare the lesson and revise one section",
+        "outcomes": [
+          {
+            "text": "We found where the instructions lost the class and built in a short practice example.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 3,
+              "smarts": 1
+            },
+            "relationship": {
+              "them": 5
+            },
+            "bond_role": "them",
+            "bond": {
+              "trust": 3,
+              "respect": 3
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.teacher.lesson_plan",
+              "role": "them",
+              "quality": 85
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The revised plan helped some students, though the whole unit still needs work.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask the class what was unclear",
+        "outcomes": [
+          {
+            "text": "Their feedback was specific. I changed the examples and explained why.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 2,
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 3
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.teacher.lesson_plan",
+              "role": "them",
+              "quality": 75
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The feedback was mixed. I kept what worked and scheduled another review.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Blame the class for not trying",
+        "outcomes": [
+          {
+            "text": "The complaint was easy. The next lesson went just as poorly, and {them.first} stopped offering help.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "stress": 3
+            },
+            "relationship": {
+              "them": -7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.digital.review",
+    "family": "v09.work.digital",
+    "remember_relationship": true,
+    "icon": "💻",
+    "title": "One more review",
+    "text": "A deadline is close when {them.first} asks you to look at a change that affects several other parts of the project.",
+    "conditions": {
+      "age": [
+        18,
+        70
+      ],
+      "employed": true,
+      "job_id": [
+        "developer",
+        "game_dev",
+        "data_analyst",
+        "cybersecurity",
+        "ux_research",
+        "technical_writer",
+        "game_producer"
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation": "coworker",
+        "or_new": true
+      }
+    },
+    "once": true,
+    "choices": [
+      {
+        "label": "Review the risky parts together",
+        "outcomes": [
+          {
+            "text": "We caught a mismatch before it reached the rest of the team and wrote down what still needed review.",
+            "weight": 2,
+            "stat_bonus": {
+              "smarts": 0.25
+            },
+            "effects": {
+              "job_perf": 3,
+              "smarts": 1
+            },
+            "relationship": {
+              "them": 5
+            },
+            "bond_role": "them",
+            "bond": {
+              "trust": 4,
+              "respect": 2
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.digital.review",
+              "role": "them",
+              "quality": 85
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The change passed review, but only after we trimmed its scope to fit the deadline.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": -1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Record the risk and ask for more time",
+        "outcomes": [
+          {
+            "text": "The deadline moved. It was awkward to explain, but the team approved the extra review time.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 2,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 4
+            },
+            "pathway": {
+              "domain": "work",
+              "source": "v09.digital.review",
+              "role": "them",
+              "quality": 75
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The date stayed fixed, so we agreed which parts would wait for the next release.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": -1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Send it without another look",
+        "outcomes": [
+          {
+            "text": "The delivery was quick. A review request came back the next morning, and {them.first} had to explain the missed check too.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -3,
+              "stress": 3
+            },
+            "relationship": {
+              "them": -6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.siblings.borrowed_project",
+    "family": "v09.siblings",
+    "remember_relationship": true,
+    "once": true,
+    "icon": "🧩",
+    "title": "Borrowed without asking",
+    "text": "{them.first} borrowed pieces from your project and forgot to put them back.",
+    "conditions": {
+      "age": [
+        6,
+        14
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation": "sibling",
+        "min_age": 4,
+        "max_age": 15
+      }
+    },
+    "choices": [
+      {
+        "label": "Rebuild it together",
+        "outcomes": [
+          {
+            "text": "We sorted the pieces and rebuilt a smaller version. My sibling learned why asking matters.",
+            "weight": 2,
+            "effects": {
+              "smarts": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 3,
+                "stress": -2
+              }
+            }
+          },
+          {
+            "text": "We found most of the pieces. The missing part stayed annoying, but we stopped blaming each other.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 1,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask a parent to help us agree",
+        "outcomes": [
+          {
+            "text": "We agreed which things we could share and which needed permission. The rule worked both ways.",
+            "weight": 2,
+            "effects": {
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The rule was clear. My sibling felt embarrassed about needing an adult to settle it.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": -2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Hide their favourite things",
+        "outcomes": [
+          {
+            "text": "I hid their things. Now we both guarded our rooms instead of playing together.",
+            "weight": 2,
+            "effects": {
+              "stress": 3,
+              "happiness": -2
+            },
+            "relationship": {
+              "them": -7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -4,
+                "stress": 4
+              }
+            }
+          },
+          {
+            "text": "They found the hiding place and returned my pieces, but the argument lasted longer than the project.",
+            "weight": 1,
+            "effects": {
+              "stress": 4
+            },
+            "relationship": {
+              "them": -4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 3
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.parents.first_independence",
+    "family": "v09.parents",
+    "remember_relationship": true,
+    "once": true,
+    "icon": "🔑",
+    "title": "Home later than planned",
+    "text": "You stayed out later than agreed. {them.first} was waiting up, worried.",
+    "conditions": {
+      "age": [
+        14,
+        19
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation_any": [
+          "mother",
+          "father",
+          "stepmother",
+          "stepfather"
+        ],
+        "min_age": 25
+      }
+    },
+    "choices": [
+      {
+        "label": "Explain and agree a check-in",
+        "outcomes": [
+          {
+            "text": "We agreed on one message when plans change. More freedom came with a clear responsibility.",
+            "weight": 2,
+            "effects": {
+              "stress": -2
+            },
+            "relationship": {
+              "them": 8
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 3,
+                "stress": -5
+              }
+            }
+          },
+          {
+            "text": "We agreed on messages, though the old curfew stayed for now. Trust needed more than tonight.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 1,
+                "stress": -2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask what they were afraid of",
+        "outcomes": [
+          {
+            "text": "Their worry made more sense once I listened. We planned a safer way home together.",
+            "weight": 2,
+            "effects": {
+              "smarts": 1
+            },
+            "relationship": {
+              "them": 6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -4
+              }
+            }
+          },
+          {
+            "text": "The conversation was tense. We took a break and agreed to discuss it when rested.",
+            "weight": 1,
+            "effects": {
+              "stress": 2
+            },
+            "relationship": {
+              "them": 1
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 0,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Say it is none of their business",
+        "outcomes": [
+          {
+            "text": "The argument ended with tighter rules and less trust on both sides.",
+            "weight": 2,
+            "effects": {
+              "stress": 5
+            },
+            "relationship": {
+              "them": -9
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -4,
+                "stress": 5
+              }
+            }
+          },
+          {
+            "text": "They stopped asking for details. The silence felt less like freedom than I expected.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 3
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.friendship.constant_messages",
+    "family": "v09.friendship",
+    "remember_relationship": true,
+    "once": true,
+    "icon": "📱",
+    "title": "Always available?",
+    "text": "{them.first} sends messages late every night. You care, but you need sleep too.",
+    "conditions": {
+      "age": [
+        16,
+        100
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation_any": [
+          "friend",
+          "best_friend"
+        ],
+        "min_age": 16
+      }
+    },
+    "choices": [
+      {
+        "label": "Set a time we can both manage",
+        "outcomes": [
+          {
+            "text": "We chose a regular check-in. I slept better, and they knew when I would listen.",
+            "weight": 2,
+            "effects": {
+              "health": 1,
+              "stress": -3
+            },
+            "relationship": {
+              "them": 6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 3,
+                "stress": -3
+              }
+            }
+          },
+          {
+            "text": "They felt rejected at first. A shorter daytime call helped explain that the friendship still mattered.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 1,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask what support they need",
+        "outcomes": [
+          {
+            "text": "They needed more support than one friend could give. We talked about other people they could reach.",
+            "weight": 2,
+            "effects": {
+              "smarts": 1,
+              "stress": 1
+            },
+            "relationship": {
+              "them": 7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -3
+              }
+            }
+          },
+          {
+            "text": "They were not ready to explain. I offered company without promising to answer all night.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 1,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Reply all night anyway",
+        "outcomes": [
+          {
+            "text": "They felt heard, but I arrived exhausted the next morning. Caring needed a more sustainable plan.",
+            "weight": 2,
+            "effects": {
+              "health": -2,
+              "stress": 4
+            },
+            "relationship": {
+              "them": 4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 3,
+                "stress": -2
+              }
+            }
+          },
+          {
+            "text": "Sleep loss made me snap at a harmless message. We both wished I had set a limit sooner.",
+            "weight": 1,
+            "effects": {
+              "health": -2,
+              "stress": 5
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -3,
+                "stress": 3
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.laterlife.weekday_friend",
+    "family": "v09.laterlife",
+    "remember_relationship": true,
+    "once": true,
+    "icon": "☕",
+    "title": "A quieter weekday",
+    "text": "{them.first} suggests a regular weekday visit. Your routines have changed with age.",
+    "conditions": {
+      "age": [
+        60,
+        100
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation_any": [
+          "friend",
+          "best_friend"
+        ],
+        "min_age": 55
+      }
+    },
+    "choices": [
+      {
+        "label": "Plan a short regular visit",
+        "outcomes": [
+          {
+            "text": "A small recurring visit gave both weeks a familiar shape. Neither of us had to host a whole occasion.",
+            "weight": 2,
+            "effects": {
+              "happiness": 4,
+              "stress": -2
+            },
+            "relationship": {
+              "them": 7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 4,
+                "stress": -3
+              }
+            }
+          },
+          {
+            "text": "Travel tired us more than expected. We kept the friendship and shortened the visit.",
+            "weight": 1,
+            "effects": {
+              "health": -1,
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Invite them for a simple lunch",
+        "outcomes": [
+          {
+            "text": "We used what was already in the kitchen and caught up without making it a production.",
+            "weight": 2,
+            "effects": {
+              "happiness": 3
+            },
+            "relationship": {
+              "them": 6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 3,
+                "stress": -2
+              }
+            }
+          },
+          {
+            "text": "Our schedules missed each other. A phone call still made the afternoon feel less empty.",
+            "weight": 1,
+            "effects": {
+              "happiness": 1
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 1,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Keep the week to myself",
+        "outcomes": [
+          {
+            "text": "I explained that I needed quiet. We agreed that declining one visit was not ending the friendship.",
+            "weight": 2,
+            "effects": {
+              "stress": -3
+            },
+            "relationship": {
+              "them": 1
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 0,
+                "stress": 0
+              }
+            }
+          },
+          {
+            "text": "I left the invitation unanswered. They stopped suggesting dates, and I missed the company.",
+            "weight": 1,
+            "effects": {
+              "happiness": -3
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.home.shared_purchase",
+    "family": "v09.home",
+    "remember_relationship": true,
+    "once": true,
+    "icon": "🛋️",
+    "title": "Do we both want this?",
+    "text": "{them.first} wants a household purchase you do not think you need. It is time to discuss the budget.",
+    "conditions": {
+      "age": [
+        18,
+        100
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation": "partner",
+        "min_age": 18
+      }
+    },
+    "choices": [
+      {
+        "label": "Agree a shared spending limit",
+        "outcomes": [
+          {
+            "text": "We chose a limit and checked what each of us valued. The conversation mattered more than the item.",
+            "weight": 2,
+            "effects": {
+              "smarts": 1,
+              "stress": -2
+            },
+            "relationship": {
+              "them": 7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 3,
+                "stress": -3
+              }
+            }
+          },
+          {
+            "text": "We agreed on the limit but not the purchase. We paused it instead of quietly buying it anyway.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 0,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Try what we already own first",
+        "outcomes": [
+          {
+            "text": "We rearranged what we had. It worked well enough to save the purchase for another year.",
+            "weight": 2,
+            "effects": {
+              "happiness": 2
+            },
+            "relationship": {
+              "them": 4
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -1
+              }
+            }
+          },
+          {
+            "text": "The old item really was worn out. I admitted it and we planned rather than argued.",
+            "weight": 1,
+            "effects": {
+              "stress": 1
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 1,
+                "stress": -1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Dismiss it without listening",
+        "outcomes": [
+          {
+            "text": "The item was never the whole point. My partner felt excluded from a decision about our shared home.",
+            "weight": 2,
+            "effects": {
+              "stress": 4
+            },
+            "relationship": {
+              "them": -8
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -4,
+                "stress": 4
+              }
+            }
+          },
+          {
+            "text": "We dropped the purchase, but the next budget conversation carried the same resentment.",
+            "weight": 1,
+            "effects": {
+              "happiness": -2
+            },
+            "relationship": {
+              "them": -5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -2,
+                "stress": 3
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v09.work.kitchen_allergy",
+    "family": "v09.work",
+    "remember_relationship": true,
+    "once": true,
+    "icon": "🍳",
+    "title": "The changed order",
+    "text": "During a busy service, {them.first} notices that an allergy note was lost from an order.",
+    "conditions": {
+      "age": [
+        18,
+        70
+      ],
+      "employed": true,
+      "job_id": [
+        "chef"
+      ]
+    },
+    "roles": {
+      "them": {
+        "relation": "coworker",
+        "min_age": 18
+      }
+    },
+    "choices": [
+      {
+        "label": "Pause and remake it safely",
+        "outcomes": [
+          {
+            "text": "We checked the note, remade the dish and told the serving team. The delay protected the guest.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 3,
+              "stress": 2
+            },
+            "relationship": {
+              "them": 6
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -2
+              }
+            }
+          },
+          {
+            "text": "The safe replacement took longer than promised. We explained the delay and kept the kitchen informed.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 3
+            },
+            "relationship": {
+              "them": 3
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 0,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Ask the shift lead to coordinate",
+        "outcomes": [
+          {
+            "text": "The shift lead separated the preparation and corrected the ticket process. Everyone knew the next step.",
+            "weight": 2,
+            "effects": {
+              "job_perf": 2,
+              "smarts": 1
+            },
+            "relationship": {
+              "them": 5
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 2,
+                "stress": -2
+              }
+            }
+          },
+          {
+            "text": "The lead was busy too. We held the order until someone could check it properly.",
+            "weight": 1,
+            "effects": {
+              "job_perf": 1,
+              "stress": 2
+            },
+            "relationship": {
+              "them": 2
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": 0,
+                "stress": 1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Send it and hope it is fine",
+        "outcomes": [
+          {
+            "text": "My coworker stopped the dish before it left. I had to explain why I ignored the warning.",
+            "weight": 2,
+            "effects": {
+              "job_perf": -5,
+              "stress": 6
+            },
+            "relationship": {
+              "them": -10
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -4,
+                "stress": 5
+              }
+            }
+          },
+          {
+            "text": "The serving team caught the missing note. Service stopped while the kitchen reviewed what went wrong.",
+            "weight": 1,
+            "effects": {
+              "job_perf": -4,
+              "stress": 5
+            },
+            "relationship": {
+              "them": -7
+            },
+            "npc_effects": {
+              "them": {
+                "happiness": -3,
+                "stress": 4
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

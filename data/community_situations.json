@@ -1,0 +1,621 @@
+[
+ {
+  "id": "community.principal.support",
+  "family": "community.principal",
+  "context": "principal",
+  "title": "A missed class",
+  "text": "{name} asks why you missed part of the day.",
+  "choices": [
+   "Explain and agree a catch-up plan",
+   "Ask for help with the timetable",
+   "Blame another student"
+  ],
+  "ends": [
+   "{name} records the plan; you return with a clearer schedule.",
+   "{name} helps arrange the day without promising a free pass.",
+   "The false blame damages your standing with {name}."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -5,
+    "resentment": 3
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -2
+   },
+   {
+    "happiness": 2,
+    "stress": -1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 2,
+    "stress": 1
+   },
+   {
+    "school": 1,
+    "stress": -1
+   },
+   {
+    "school": -3,
+    "karma": -2
+   }
+  ],
+  "min_age": 3,
+  "attendance": [
+   3,
+   1,
+   -3
+  ]
+ },
+ {
+  "id": "community.school_nurse.support",
+  "family": "community.school_nurse",
+  "context": "school_nurse",
+  "title": "Feeling worn out",
+  "text": "{name} notices you are tired during school.",
+  "choices": [
+   "Explain how you feel",
+   "Ask for a short rest",
+   "Pretend to be ill to avoid every class"
+  ],
+  "ends": [
+   "{name} helps you arrange appropriate support and return to class.",
+   "A short supervised rest helps without skipping the whole day.",
+   "{name} notices the story changing; trust falls."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -5,
+    "resentment": 3
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -2
+   },
+   {
+    "happiness": 2,
+    "stress": -1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 2,
+    "stress": 1
+   },
+   {
+    "school": 1,
+    "stress": -1
+   },
+   {
+    "school": -3,
+    "karma": -2
+   }
+  ],
+  "min_age": 3,
+  "attendance": [
+   3,
+   1,
+   -3
+  ]
+ },
+ {
+  "id": "community.teacher.support",
+  "family": "community.teacher",
+  "context": "teacher",
+  "title": "A difficult lesson",
+  "text": "{name} sees that you are stuck on today's task.",
+  "choices": [
+   "Ask for an example",
+   "Request a smaller practice step",
+   "Copy someone else's work"
+  ],
+  "ends": [
+   "{name} explains an example and notices your effort.",
+   "A smaller step gives you a workable place to start.",
+   "The copied work leaves the misunderstanding unresolved."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -5,
+    "resentment": 3
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -2
+   },
+   {
+    "happiness": 2,
+    "stress": -1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 2,
+    "stress": 1
+   },
+   {
+    "school": 1,
+    "stress": -1
+   },
+   {
+    "school": -3,
+    "karma": -2
+   }
+  ],
+  "min_age": 3,
+  "attendance": [
+   3,
+   1,
+   -3
+  ]
+ },
+ {
+  "id": "community.classmate.support",
+  "family": "community.classmate",
+  "context": "classmate",
+  "title": "A place in the activity",
+  "text": "{name} cannot keep up with the group's activity.",
+  "choices": [
+   "Adapt the activity together",
+   "Help them choose another role",
+   "Tell them to leave"
+  ],
+  "ends": [
+   "{name} participates and feels included.",
+   "{name} finds a useful role without pretending the difficulty disappeared.",
+   "{name} feels rejected and remembers your response."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -5,
+    "resentment": 3
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -2
+   },
+   {
+    "happiness": 2,
+    "stress": -1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 2,
+    "stress": 1
+   },
+   {
+    "school": 1,
+    "stress": -1
+   },
+   {
+    "school": -3,
+    "karma": -2
+   }
+  ],
+  "min_age": 3,
+  "attendance": [
+   3,
+   1,
+   -3
+  ]
+ },
+ {
+  "id": "community.principal.voice",
+  "family": "community.principal",
+  "context": "principal",
+  "title": "The school proposal",
+  "text": "{name} has time to consider one change to school life.",
+  "choices": [
+   "Present a realistic improvement",
+   "Ask classmates for their priorities",
+   "Demand special treatment"
+  ],
+  "ends": [
+   "{name} adds a costed proposal to the school agenda.",
+   "{name} hears a proposal backed by classmates' needs.",
+   "{name} rejects the request for a personal exception."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -6,
+    "resentment": 4
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 1,
+    "happiness": 2
+   },
+   {
+    "school": 0.5
+   },
+   {
+    "school": -2,
+    "stress": 2
+   }
+  ],
+  "min_age": 6,
+  "attendance": [
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "id": "community.school_nurse.voice",
+  "family": "community.school_nurse",
+  "context": "school_nurse",
+  "title": "A friend needs support",
+  "text": "{name} asks you to help a classmate find appropriate support.",
+  "choices": [
+   "Respect their privacy and get help",
+   "Let the classmate speak for themselves",
+   "Tell everyone their private concern"
+  ],
+  "ends": [
+   "{name} can support the classmate without a public spectacle.",
+   "The classmate keeps control over what they share.",
+   "The disclosure makes it harder for the classmate to trust you."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -6,
+    "resentment": 4
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 1,
+    "happiness": 2
+   },
+   {
+    "school": 0.5
+   },
+   {
+    "school": -2,
+    "stress": 2
+   }
+  ],
+  "min_age": 6,
+  "attendance": [
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "id": "community.teacher.voice",
+  "family": "community.teacher",
+  "context": "teacher",
+  "title": "Fair credit",
+  "text": "{name} asks how the shared assignment was divided.",
+  "choices": [
+   "Credit each person's work",
+   "Explain only your contribution",
+   "Claim you did everything"
+  ],
+  "ends": [
+   "{name} recognises the whole team's work.",
+   "{name} records your part and asks the others about theirs.",
+   "The claim conflicts with the team's account."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -6,
+    "resentment": 4
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 1,
+    "happiness": 2
+   },
+   {
+    "school": 0.5
+   },
+   {
+    "school": -2,
+    "stress": 2
+   }
+  ],
+  "min_age": 6,
+  "attendance": [
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "id": "community.classmate.voice",
+  "family": "community.classmate",
+  "context": "classmate",
+  "title": "A quiet disagreement",
+  "text": "{name} disagrees with your idea for the shared project.",
+  "choices": [
+   "Listen and test both ideas",
+   "Agree a smaller compromise",
+   "Insult their ability"
+  ],
+  "ends": [
+   "You and {name} compare the ideas without ending the friendship.",
+   "The compromise keeps the project moving.",
+   "{name} withdraws from the conversation and trusts you less."
+  ],
+  "bonds": [
+   {
+    "trust": 4,
+    "respect": 2
+   },
+   {
+    "trust": 2
+   },
+   {
+    "trust": -6,
+    "resentment": 4
+   }
+  ],
+  "npc": [
+   {
+    "happiness": 3,
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "happiness": -4,
+    "stress": 3
+   }
+  ],
+  "player": [
+   {
+    "school": 1,
+    "happiness": 2
+   },
+   {
+    "school": 0.5
+   },
+   {
+    "school": -2,
+    "stress": 2
+   }
+  ],
+  "min_age": 6,
+  "attendance": [
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "id": "community.preschool.share",
+  "family": "community.classmate.preschool",
+  "context": "classmate",
+  "levels": ["preschool"],
+  "min_age": 3,
+  "max_age": 4,
+  "title": "One turn each",
+  "text": "{name} reaches for the blocks you were using.",
+  "choices": ["Build something together", "Take turns with a timer", "Keep all the blocks"],
+  "ends": ["You made a lopsided tower together and named it.", "The turns were fair, even when waiting felt long.", "{name} found something else to do. The quiet felt less friendly."],
+  "bonds": [{"trust": 4, "affection": 3}, {"trust": 3}, {"trust": -4, "resentment": 2}],
+  "npc": [{"happiness": 4, "stress": -2}, {"happiness": 2}, {"happiness": -3, "stress": 2}],
+  "player": [{"happiness": 2, "stress": -1}, {"happiness": 1}, {"happiness": -2, "stress": 2}],
+  "attendance": [0, 0, 0]
+ },
+ {
+  "id": "community.kindergarten.helper",
+  "family": "community.classmate.kindergarten",
+  "context": "classmate",
+  "levels": ["kindergarten"],
+  "min_age": 5,
+  "max_age": 5,
+  "title": "The picture-day nerves",
+  "text": "{name} is worried about speaking in front of the class.",
+  "choices": ["Practise together", "Ask the teacher to help", "Tell them nobody will notice"],
+  "ends": ["You practised quietly. {name} still felt nervous, but tried.", "The teacher offered a smaller first step.", "{name} looked away. The words did not make the worry smaller."],
+  "bonds": [{"trust": 4, "affection": 2}, {"trust": 3}, {"trust": -3, "resentment": 2}],
+  "npc": [{"happiness": 3, "stress": -3}, {"happiness": 2, "stress": -2}, {"happiness": -3, "stress": 3}],
+  "player": [{"happiness": 2, "stress": -1}, {"school": 0.5}, {"happiness": -1, "stress": 2}],
+  "attendance": [0, 1, 0]
+ },
+ {
+  "id": "community.elementary.reading",
+  "family": "community.classmate.elementary",
+  "context": "classmate",
+  "levels": ["elementary"],
+  "min_age": 6,
+  "max_age": 10,
+  "title": "A book read twice",
+  "text": "{name} asks you not to tell anyone they are behind on the class reading.",
+  "choices": ["Read together after class", "Ask the teacher for a book they like", "Make a joke about it"],
+  "ends": ["You took turns with the pages. {name} finished the chapter.", "The teacher found another book at the right level.", "The joke travelled farther than you meant it to."],
+  "bonds": [{"trust": 5, "affection": 2}, {"trust": 3}, {"trust": -7, "resentment": 4}],
+  "npc": [{"happiness": 3, "stress": -2}, {"happiness": 2, "stress": -1}, {"happiness": -5, "stress": 3}],
+  "player": [{"smarts": 0.5, "happiness": 2}, {"school": 0.5}, {"karma": -1, "stress": 2}],
+  "attendance": [0, 1, 0]
+ },
+ {
+  "id": "community.middle.group_chat",
+  "family": "community.classmate.middle",
+  "context": "classmate",
+  "levels": ["middle"],
+  "min_age": 11,
+  "max_age": 13,
+  "title": "Left out of the chat",
+  "text": "{name} has been excluded from a class group chat after a disagreement.",
+  "choices": ["Ask what happened before taking sides", "Invite them to work with you", "Forward the screenshots"],
+  "ends": ["You heard both accounts and stopped the rumour growing.", "The assignment got done. The group chat stayed awkward.", "The screenshots spread, and now everyone has a version of the story."],
+  "bonds": [{"trust": 4, "respect": 2}, {"trust": 3, "affection": 2}, {"trust": -8, "resentment": 5}],
+  "npc": [{"happiness": 3, "stress": -2}, {"happiness": 2, "stress": -1}, {"happiness": -6, "stress": 4}],
+  "player": [{"smarts": 0.5}, {"school": 1, "stress": 1}, {"popularity": 2, "stress": 4}],
+  "attendance": [0, 1, 0]
+ },
+ {
+  "id": "community.high.study_group",
+  "family": "community.classmate.high",
+  "context": "classmate",
+  "levels": ["high"],
+  "min_age": 14,
+  "max_age": 17,
+  "title": "The study group has a price",
+  "text": "{name} wants to trade answers before a major exam. You have both been struggling.",
+  "choices": ["Make a revision plan instead", "Ask the teacher for a review session", "Share the answer key"],
+  "ends": ["You divided the topics and tested each other honestly.", "The teacher set aside time to revisit the hardest questions.", "You both got answers, but neither learned where the marks came from."],
+  "bonds": [{"trust": 4, "respect": 2}, {"trust": 2}, {"trust": 3, "respect": -3}],
+  "npc": [{"happiness": 2, "stress": -2}, {"happiness": 1, "stress": -1}, {"happiness": 3, "stress": -1}],
+  "player": [{"school": 1.5, "stress": 1}, {"school": 1, "stress": -1}, {"school": -1, "karma": -2}],
+  "attendance": [0, 1, 0],
+  "pathways": [{"field": "Education", "quality": 82}, {"field": "Education", "quality": 72}, {"field": "Education", "quality": 32, "honest": false}]
+ },
+ {
+  "id": "community.college.project_scope",
+  "family": "community.classmate.college",
+  "context": "classmate",
+  "levels": ["college"],
+  "min_age": 18,
+  "max_age": 120,
+  "title": "The project is too large",
+  "text": "{name} wants to expand the group assignment just before the submission date.",
+  "choices": ["Set a smaller scope and share the work", "Ask the lecturer to mediate", "Agree, then leave them to finish it"],
+  "ends": ["You delivered a smaller project with both names and clear roles.", "The lecturer helped you reset the brief and deadline.", "{name} finished the extra work alone and remembers who agreed to help."],
+  "bonds": [{"trust": 5, "respect": 2}, {"trust": 3}, {"trust": -8, "resentment": 5}],
+  "npc": [{"happiness": 3, "stress": -2}, {"happiness": 1, "stress": -1}, {"happiness": -5, "stress": 4}],
+  "player": [{"school": 1, "stress": 1}, {"school": 0.5, "stress": -1}, {"school": -1, "stress": 3}],
+  "attendance": [0, 0, 0],
+  "pathways": [{"field": "General", "quality": 82}, {"field": "General", "quality": 70}, {"field": "General", "quality": 30, "honest": false}]
+ },
+ {
+  "id": "community.high.teacher_deadline",
+  "family": "community.teacher.high",
+  "context": "teacher",
+  "levels": ["high"],
+  "min_age": 14,
+  "max_age": 17,
+  "title": "The missed deadline",
+  "text": "{name} asks whether you need help after a second late assignment.",
+  "choices": ["Show the unfinished work and ask for a plan", "Request one extra day", "Say it is finished when it is not"],
+  "ends": ["{name} split the work into steps and checked in next week.", "The short extension helped, but the next deadline stayed firm.", "The missing pages were obvious. Trust and marks both took a hit."],
+  "bonds": [{"trust": 5, "respect": 2}, {"trust": 2}, {"trust": -7, "resentment": 4}],
+  "npc": [{"happiness": 2, "stress": -2}, {"happiness": 1}, {"happiness": -4, "stress": 4}],
+  "player": [{"school": 1, "stress": -1}, {"school": 0.5, "stress": 1}, {"school": -2, "karma": -1, "stress": 3}],
+  "attendance": [0, 0, 0],
+  "pathways": [{"field": "Education", "quality": 85}, {"field": "Education", "quality": 68}, {"field": "Education", "quality": 25, "honest": false}]
+ }
+]

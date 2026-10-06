@@ -1,0 +1,1362 @@
+[
+ {
+  "id": "harbour_echoes",
+  "name": "Mara Bell",
+  "gender": "nonbinary",
+  "category": "Original",
+  "show": "Harbour of Echoes",
+  "icon": "🕯️",
+  "original": true,
+  "theme": "crime",
+  "age": 24,
+  "coverage": "An original branching campaign: recurring cast, remembered choices and three alternate endings.",
+  "chapters": [
+   {
+    "title": "The offer",
+    "period": "Chapter 1",
+    "text": "A harbour clerk leaves Mara a ledger before vanishing. Dockworker Len says the numbers describe people, not just cargo.",
+    "choices": [
+     {
+      "label": "Listen to the people involved",
+      "next": 1,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the tempting shortcut",
+      "next": 2,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "People and limits",
+    "period": "Chapter 2",
+    "text": "Len offers introductions to the families named in the ledger. An accountant, Ivo, will help if their names stay private.",
+    "choices": [
+     {
+      "label": "Agree limits and share responsibility",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Promise more than I can know",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shortcut",
+    "period": "Chapter 3",
+    "text": "A publisher offers Mara money for an accusation before the records have been checked. The money would solve her rent problem.",
+    "choices": [
+     {
+      "label": "Slow down and verify the offer",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the private advantage",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A decision with a cost",
+    "period": "Chapter 4",
+    "text": "The ledger points to a relief fund that never reached the harbour. A council hearing is coming, and so is another storm.",
+    "choices": [
+     {
+      "label": "Build an open, workable plan",
+      "next": 4,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Negotiate a narrower private deal",
+      "next": 5,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shared plan",
+    "period": "Chapter 5",
+    "text": "Residents offer testimony, but some need protection from public attention. Mara must decide what evidence can be shared responsibly.",
+    "choices": [
+     {
+      "label": "Record consent, access and the missing work",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Hide the inconvenient limits",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The private bargain",
+    "period": "Chapter 6",
+    "text": "The fund director offers a quiet settlement in exchange for silence. Ivo refuses to be anyone's invented alibi.",
+    "choices": [
+     {
+      "label": "Negotiate safeguards and publish the terms",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Accept the advantage without safeguards",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The handover",
+    "period": "Chapter 7",
+    "text": "At the hearing, Len asks Mara to distinguish what she knows from what she suspects. The city needs an answer it can act on.",
+    "choices": [
+     {
+      "label": "Give an honest handover",
+      "next": {
+       "flag": "trust",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep the advantage and the secret",
+      "next": 9,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A shared future",
+    "period": "Chapter 8",
+    "text": "The relief fund is reopened under public scrutiny. Mara has no triumphant headline; she has named people who can finally collect what was owed.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "An unfinished future",
+    "period": "Chapter 9",
+    "text": "The hearing brings a partial remedy. Some records remain sealed, and Mara keeps working with Len rather than pretending every wrong was solved.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "A costly victory",
+    "period": "Chapter 10",
+    "text": "The accusation became a spectacle. Mara kept the payment, lost the witnesses' trust, and now owns a story whose missing facts follow her.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   }
+  ]
+ },
+ {
+  "id": "last_greenhouse",
+  "name": "Tavi Sol",
+  "gender": "nonbinary",
+  "category": "Original",
+  "show": "The Last Greenhouse",
+  "icon": "🌱",
+  "original": true,
+  "theme": "",
+  "age": 24,
+  "coverage": "An original branching campaign: recurring cast, remembered choices and three alternate endings.",
+  "chapters": [
+   {
+    "title": "The offer",
+    "period": "Chapter 1",
+    "text": "A dust storm isolates Tavi's greenhouse from the settlement. Engineer Rue and cook Nemi disagree over who should receive the remaining crop.",
+    "choices": [
+     {
+      "label": "Listen to the people involved",
+      "next": 1,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the tempting shortcut",
+      "next": 2,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "People and limits",
+    "period": "Chapter 2",
+    "text": "Rue brings a repair plan with a hard limit: enough power for one working section, not the whole greenhouse.",
+    "choices": [
+     {
+      "label": "Agree limits and share responsibility",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Promise more than I can know",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shortcut",
+    "period": "Chapter 3",
+    "text": "A sponsor offers a new system if Tavi gives its staff first access to the crop. The offer is real; so are the people excluded by it.",
+    "choices": [
+     {
+      "label": "Slow down and verify the offer",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the private advantage",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A decision with a cost",
+    "period": "Chapter 4",
+    "text": "The settlement votes on priorities while the seeds are still viable. Nemi asks for a plan that explains scarcity without disguising favouritism.",
+    "choices": [
+     {
+      "label": "Build an open, workable plan",
+      "next": 4,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Negotiate a narrower private deal",
+      "next": 5,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shared plan",
+    "period": "Chapter 5",
+    "text": "The shared plan needs rotations, training and accessible work. One volunteer can no longer lift the equipment they used to handle.",
+    "choices": [
+     {
+      "label": "Record consent, access and the missing work",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Hide the inconvenient limits",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The private bargain",
+    "period": "Chapter 6",
+    "text": "The sponsor wants control of the next harvest. Rue asks whether a smaller independent greenhouse would be a better promise.",
+    "choices": [
+     {
+      "label": "Negotiate safeguards and publish the terms",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Accept the advantage without safeguards",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The handover",
+    "period": "Chapter 7",
+    "text": "The first crop returns. Tavi must name the collaborators and decide how the next generation will learn to maintain it.",
+    "choices": [
+     {
+      "label": "Give an honest handover",
+      "next": {
+       "flag": "trust",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep the advantage and the secret",
+      "next": 9,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A shared future",
+    "period": "Chapter 8",
+    "text": "The greenhouse belongs to a working cooperative. It is smaller than the old vision and stronger than a promise no one could maintain.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "An unfinished future",
+    "period": "Chapter 9",
+    "text": "Tavi accepts a limited partnership with a public access agreement. Rue stays wary, and the settlement keeps reviewing the terms.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "A costly victory",
+    "period": "Chapter 10",
+    "text": "The crop survives behind a private gate. Tavi saved the greenhouse and made the settlement's hunger someone else's unanswered concern.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   }
+  ]
+ },
+ {
+  "id": "borrowed_crown",
+  "name": "Oren Vale",
+  "gender": "nonbinary",
+  "category": "Original",
+  "show": "The Borrowed Crown",
+  "icon": "👑",
+  "original": true,
+  "theme": "",
+  "age": 24,
+  "coverage": "An original branching campaign: recurring cast, remembered choices and three alternate endings.",
+  "chapters": [
+   {
+    "title": "The offer",
+    "period": "Chapter 1",
+    "text": "Oren is asked to serve as regent while the heir recovers. Archivist Sera presents an oath that promises service, not permanent possession of power.",
+    "choices": [
+     {
+      "label": "Listen to the people involved",
+      "next": 1,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the tempting shortcut",
+      "next": 2,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "People and limits",
+    "period": "Chapter 2",
+    "text": "Sera proposes open petitions with accessible routes for people who cannot travel to court. The treasurer warns that court spectacle is cheaper.",
+    "choices": [
+     {
+      "label": "Agree limits and share responsibility",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Promise more than I can know",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shortcut",
+    "period": "Chapter 3",
+    "text": "A noble coalition offers Oren a comfortable reign if petitions remain private. Their support would be useful and conditional.",
+    "choices": [
+     {
+      "label": "Slow down and verify the offer",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the private advantage",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A decision with a cost",
+    "period": "Chapter 4",
+    "text": "A town bridge fails. Builders, merchants and carers disagree about who should receive the first limited funds.",
+    "choices": [
+     {
+      "label": "Build an open, workable plan",
+      "next": 4,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Negotiate a narrower private deal",
+      "next": 5,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shared plan",
+    "period": "Chapter 5",
+    "text": "The public plan will require fewer banquets and an honest report about what the crown cannot yet repair.",
+    "choices": [
+     {
+      "label": "Record consent, access and the missing work",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Hide the inconvenient limits",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The private bargain",
+    "period": "Chapter 6",
+    "text": "The coalition offers to fund the bridge in exchange for control of its tolls. The heir asks who will live with the agreement after Oren leaves.",
+    "choices": [
+     {
+      "label": "Negotiate safeguards and publish the terms",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Accept the advantage without safeguards",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The handover",
+    "period": "Chapter 7",
+    "text": "The heir can return. Oren must hand over a readable account of promises, money, collaborators and unfinished work.",
+    "choices": [
+     {
+      "label": "Give an honest handover",
+      "next": {
+       "flag": "trust",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep the advantage and the secret",
+      "next": 9,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A shared future",
+    "period": "Chapter 8",
+    "text": "Oren returns the crown with a public record and a modest repaired bridge. The oath became a practice rather than a flattering story.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "An unfinished future",
+    "period": "Chapter 9",
+    "text": "The crown returns with a negotiated toll limit and public review. The town gets a bridge and a continuing argument worth having.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "A costly victory",
+    "period": "Chapter 10",
+    "text": "Oren keeps the title but loses the open petitions. Power remains; the people whose needs justified it can no longer reach the room.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   }
+  ]
+ },
+ {
+  "id": "second_first_day",
+  "name": "Jules Reed",
+  "gender": "nonbinary",
+  "category": "Original",
+  "show": "Second First Day",
+  "icon": "⌛",
+  "original": true,
+  "theme": "",
+  "age": 24,
+  "coverage": "An original branching campaign: recurring cast, remembered choices and three alternate endings.",
+  "chapters": [
+   {
+    "title": "The offer",
+    "period": "Chapter 1",
+    "text": "Jules wakes on a familiar first day at a job they left ten years ago. Friend Mina remembers none of the future Jules carries.",
+    "choices": [
+     {
+      "label": "Listen to the people involved",
+      "next": 1,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the tempting shortcut",
+      "next": 2,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "People and limits",
+    "period": "Chapter 2",
+    "text": "Mina offers a slow introduction to the team. Jules could use old knowledge carefully without promising certainty they do not have.",
+    "choices": [
+     {
+      "label": "Agree limits and share responsibility",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Promise more than I can know",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shortcut",
+    "period": "Chapter 3",
+    "text": "A manager wants Jules to predict a market shift and claim it as expertise. The offer brings status and a fragile invented explanation.",
+    "choices": [
+     {
+      "label": "Slow down and verify the offer",
+      "next": 3,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Take the private advantage",
+      "next": 3,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A decision with a cost",
+    "period": "Chapter 4",
+    "text": "A former mistake approaches in an unfamiliar form. Jules cannot know whether changing one decision will produce the future they expect.",
+    "choices": [
+     {
+      "label": "Build an open, workable plan",
+      "next": 4,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Negotiate a narrower private deal",
+      "next": 5,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shared plan",
+    "period": "Chapter 5",
+    "text": "Jules can share the concern as a possibility and ask the people involved what they want. Mina reminds them that care is not control.",
+    "choices": [
+     {
+      "label": "Record consent, access and the missing work",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Hide the inconvenient limits",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The private bargain",
+    "period": "Chapter 6",
+    "text": "The manager offers secrecy in exchange for a rapid promotion. Jules would gain influence over people who never agreed to become an experiment.",
+    "choices": [
+     {
+      "label": "Negotiate safeguards and publish the terms",
+      "next": 6,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Accept the advantage without safeguards",
+      "next": 6,
+      "flags": {
+       "pressure": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The handover",
+    "period": "Chapter 7",
+    "text": "The day finally moves beyond the memory. Jules must choose whether to keep living through borrowed certainty or build a life with the people actually here.",
+    "choices": [
+     {
+      "label": "Give an honest handover",
+      "next": {
+       "flag": "trust",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep the advantage and the secret",
+      "next": 9,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A shared future",
+    "period": "Chapter 8",
+    "text": "Jules lets the old future go. Mina remains a friend, the team makes its own choices, and a second first day becomes an ordinary next day.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "An unfinished future",
+    "period": "Chapter 9",
+    "text": "Jules keeps a private notebook of possibilities. Some relationships survive, some change, and the future refuses to become a guaranteed result.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "A costly victory",
+    "period": "Chapter 10",
+    "text": "Jules gets the promotion and loses the honest explanation. The future changes anyway; control was never the certainty it seemed.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   }
+  ]
+ },
+ {
+  "id": "small_hours",
+  "name": "Robin Vale",
+  "gender": "nonbinary",
+  "category": "Original",
+  "show": "Small Hours",
+  "icon": "☕",
+  "original": true,
+  "theme": "",
+  "age": 29,
+  "coverage": "An original night-shift drama: a recurring cafe crew, competing needs and three alternate endings.",
+  "chapters": [
+   {
+    "title": "The last open door",
+    "period": "The last open door",
+    "text": "Robin takes over a tiny late-night cafe. Cook Deni wants predictable hours. Driver Sol wants the only warm room left open after midnight.",
+    "choices": [
+     {
+      "label": "Ask what the place needs to be",
+      "next": 1,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Plan a profitable late service first",
+      "next": 2,
+      "flags": {
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The shared table",
+    "period": "The shared table",
+    "text": "Deni proposes closing one quiet night each week. Sol says that is the night drivers most need somewhere to wait.",
+    "choices": [
+     {
+      "label": "Try rotating nights and review together",
+      "next": 3,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Protect one dependable night off",
+      "next": 4,
+      "flags": {
+       "crew": 1,
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The queue",
+    "period": "The queue",
+    "text": "A delivery platform brings orders and fees. Sol waits while Deni handles food for strangers who never enter the room.",
+    "choices": [
+     {
+      "label": "Limit deliveries to what the kitchen can manage",
+      "next": 3,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Take the volume and discuss a paid extra shift",
+      "next": 4,
+      "flags": {
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The locked drawer",
+    "period": "The locked drawer",
+    "text": "Sol finds an old notebook of customer tabs. Some are debts; some were quietly forgiven. Robin cannot tell which from a number alone.",
+    "choices": [
+     {
+      "label": "Ask before turning memories into invoices",
+      "next": 5,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Separate current accounts from old stories",
+      "next": 6,
+      "flags": {
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The extra shift",
+    "period": "The extra shift",
+    "text": "Deni will work later for better pay, but asks what happens when a tired person makes a mistake.",
+    "choices": [
+     {
+      "label": "Build a shorter menu and a relief plan",
+      "next": 5,
+      "flags": {
+       "crew": 1,
+       "margin": 1
+      }
+     },
+     {
+      "label": "Pay the shift and accept a narrower safety margin",
+      "next": 6,
+      "flags": {
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "An empty bus stop",
+    "period": "An empty bus stop",
+    "text": "A cancelled bus strands six people. Hosting them costs time and heat; turning them away protects a crew already past closing.",
+    "choices": [
+     {
+      "label": "Offer a limited warm wait and share the work",
+      "next": 7,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Help them find transport, then close",
+      "next": 8,
+      "flags": {
+       "crew": 1,
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The deposit",
+    "period": "The deposit",
+    "text": "The landlord offers a longer lease with a larger deposit. Sol suggests a regular drivers table. Deni wants Robin to stop promising every kind of cafe at once.",
+    "choices": [
+     {
+      "label": "Choose the drivers table and a smaller menu",
+      "next": 7,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Choose a shorter lease and a profitable core",
+      "next": 8,
+      "flags": {
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The meeting before dawn",
+    "period": "The meeting before dawn",
+    "text": "The crew agrees the cafe cannot serve everyone all night. The question is whether Robin has made room for a plan they can actually keep.",
+    "choices": [
+     {
+      "label": "Share the decision and the responsibilities",
+      "next": {
+       "flag": "crew",
+       "min": 4,
+       "then": 9,
+       "else": 10
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep control and a tighter business plan",
+      "next": 11,
+      "flags": {
+       "margin": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The first quiet morning",
+    "period": "The first quiet morning",
+    "text": "A viable plan means some customers lose their old routine. Robin has to explain a change instead of disguising it as a miracle.",
+    "choices": [
+     {
+      "label": "Keep a smaller service with honest limits",
+      "next": 10,
+      "flags": {}
+     },
+     {
+      "label": "Build a cooperative plan with the crew",
+      "next": {
+       "flag": "crew",
+       "min": 3,
+       "then": 9,
+       "else": 10
+      },
+      "flags": {}
+     },
+     {
+      "label": "Expand the most profitable service",
+      "next": 11,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A light kept on",
+    "period": "A light kept on",
+    "text": "Deni has a real night off. Sol still has a table on the nights they agreed. Robin leaves a rota anyone can read: the cafe survives because the promise has edges.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "A smaller good thing",
+    "period": "A smaller good thing",
+    "text": "The cafe closes earlier. Not every old customer stays, but the crew can keep the work going. Robin learns that a smaller useful place is still a place worth keeping.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "The busy window",
+    "period": "The busy window",
+    "text": "Orders pour through the pickup window. The cafe earns enough to remain open, while Deni and Sol make new arrangements elsewhere. Robin has a business and a different kind of silence.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   }
+  ]
+ },
+ {
+  "id": "borrowed_house",
+  "name": "Ellis Reed",
+  "gender": "female",
+  "category": "Original",
+  "show": "The Borrowed House",
+  "icon": "🗝️",
+  "original": true,
+  "theme": "loss",
+  "age": 37,
+  "coverage": "An original family mystery: an inherited house, conflicting memories and three alternate resolutions.",
+  "chapters": [
+   {
+    "title": "A key and three letters",
+    "period": "A key and three letters",
+    "text": "Ellis inherits a small house. Brother Kit thinks it should be sold. Former neighbour June has a letter saying she once paid for its roof.",
+    "choices": [
+     {
+      "label": "Hear Kit and June before deciding",
+      "next": 1,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Inventory the house and its records first",
+      "next": 2,
+      "flags": {
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The guest room",
+    "period": "The guest room",
+    "text": "Kit remembers being sent away from this room. June remembers it sheltering her child. The same house has held very different stories.",
+    "choices": [
+     {
+      "label": "Keep both accounts in the record",
+      "next": 3,
+      "flags": {
+       "trust": 1,
+       "record": 1
+      }
+     },
+     {
+      "label": "Ask for documents before discussing money",
+      "next": 4,
+      "flags": {
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The roof receipt",
+    "period": "The roof receipt",
+    "text": "The receipt shows June paid, but a note says the payment was a gift. Neither detail establishes what was promised later.",
+    "choices": [
+     {
+      "label": "Show the note to June and ask",
+      "next": 3,
+      "flags": {
+       "trust": 1,
+       "record": 1
+      }
+     },
+     {
+      "label": "Keep the financial question separate for now",
+      "next": 4,
+      "flags": {
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The second letter",
+    "period": "The second letter",
+    "text": "A letter mentions an arrangement to repay June if the house sold. Kit says their parent later changed their mind. There is no signed revision.",
+    "choices": [
+     {
+      "label": "Invite a mediated family conversation",
+      "next": 5,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Seek a careful independent reading of the records",
+      "next": 6,
+      "flags": {
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The valuation",
+    "period": "The valuation",
+    "text": "The house is worth less than the family imagined. Repair costs matter. A quick sale can fund independence; keeping it can preserve a room someone still needs.",
+    "choices": [
+     {
+      "label": "Make the actual costs visible",
+      "next": 5,
+      "flags": {
+       "record": 1,
+       "trust": 1
+      }
+     },
+     {
+      "label": "Ask for a simple sale estimate",
+      "next": 6,
+      "flags": {
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A room with a cost",
+    "period": "A room with a cost",
+    "text": "June would like to stay temporarily. Kit needs cash to move. Ellis cannot meet both needs by pretending the roof fixes itself.",
+    "choices": [
+     {
+      "label": "Offer a dated stay with shared costs",
+      "next": 7,
+      "flags": {
+       "trust": 1
+      }
+     },
+     {
+      "label": "Sell and discuss a voluntary contribution",
+      "next": 8,
+      "flags": {
+       "trust": 1,
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "What the house cannot decide",
+    "period": "What the house cannot decide",
+    "text": "An adviser explains the uncertain records; nobody can turn a missing agreement into a certain memory. The family must choose how much certainty to claim.",
+    "choices": [
+     {
+      "label": "Keep the uncertainty visible in our agreement",
+      "next": 7,
+      "flags": {
+       "record": 1,
+       "trust": 1
+      }
+     },
+     {
+      "label": "Proceed with a sale on the documented position",
+      "next": 8,
+      "flags": {
+       "record": 1
+      }
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The kitchen table",
+    "period": "The kitchen table",
+    "text": "Ellis, Kit and June meet beside a list of costs. Whether this becomes a workable arrangement depends on who has actually been heard.",
+    "choices": [
+     {
+      "label": "Make a limited shared plan",
+      "next": {
+       "flag": "trust",
+       "min": 4,
+       "then": 9,
+       "else": 10
+      },
+      "flags": {}
+     },
+     {
+      "label": "Close the house and keep the records",
+      "next": 11,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "The moving van",
+    "period": "The moving van",
+    "text": "The house is being emptied. Ellis finds a child's drawing beneath a drawer: another memory, not another title deed.",
+    "choices": [
+     {
+      "label": "Share what we can, then let the house go",
+      "next": {
+       "flag": "trust",
+       "min": 3,
+       "then": 10,
+       "else": 11
+      },
+      "flags": {}
+     },
+     {
+      "label": "Leave a complete archive with the family",
+      "next": 10,
+      "flags": {
+       "record": 1
+      }
+     },
+     {
+      "label": "Keep the settlement private",
+      "next": 11,
+      "flags": {}
+     }
+    ],
+    "ending": false
+   },
+   {
+    "title": "A home with an agreement",
+    "period": "A home with an agreement",
+    "text": "June has a temporary room, Kit has a clear share of costs and future plans, and Ellis has fewer romantic promises. The arrangement is imperfect enough to be real.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "The stories we kept",
+    "period": "The stories we kept",
+    "text": "The house is sold or reduced to a manageable arrangement. The family keeps a readable account of the money and the conflicting memories. Losing a building does not require losing every person.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   },
+   {
+    "title": "The key in a drawer",
+    "period": "The key in a drawer",
+    "text": "The settlement ends the immediate argument. Kit and June take different roads, while Ellis keeps a box of letters that does not explain itself. A closed account is not always a closed story.",
+    "choices": [
+     {
+      "label": "Keep this ending",
+      "next": -1,
+      "flags": {}
+     }
+    ],
+    "ending": true
+   }
+  ]
+ }
+]

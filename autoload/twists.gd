@@ -5,7 +5,7 @@ extends Node
 func yearly() -> void:
 	var p := GameState.player
 	var age: int = p["age"]
-	if age < 6 or not GameState.is_alive():
+	if age < 6 or not GameState.is_alive() or age - int(p.get("last_twist_age", -10)) < 5:
 		return
 	var base := 0.012 if age < 12 else (0.025 if age < 18 else (0.045 if age < 70 else 0.03))
 	if GameState.get_counter("twists") == 0 and age >= 25:
@@ -37,5 +37,6 @@ func fire(force_id: String = "") -> bool:
 				var inst = EventEngine.pending.pop_back()
 				EventEngine.pending.push_front(inst)
 			GameState.counter("twists")
+			GameState.player["last_twist_age"] = int(GameState.player["age"])
 			return true
 	return false

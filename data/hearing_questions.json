@@ -1,0 +1,209 @@
+[
+  [
+    "A dated invoice contradicts one witness about where a transaction occurred.",
+    [
+      "Compare the invoice with the witness timeline",
+      "Treat one discrepancy as a complete defence",
+      "Discard the invoice without checking"
+    ],
+    0
+  ],
+  [
+    "The exhibit is a copy and its source is not established.",
+    [
+      "Ask about the source and what it actually proves",
+      "Call every copy fake",
+      "Invent an original that was never recorded"
+    ],
+    0
+  ],
+  [
+    "Two accounts agree on one fact but conflict on another.",
+    [
+      "Separate the agreed fact from the disputed fact",
+      "Pretend they disagree about everything",
+      "Use only the account I prefer"
+    ],
+    0
+  ],
+  [
+    "The accused has been asked a question with an unclear time period.",
+    [
+      "Ask which date and event the question concerns",
+      "Answer for a different year",
+      "Assume the broadest possible allegation"
+    ],
+    0
+  ],
+  [
+    "A witness describes something learned from someone else.",
+    [
+      "Ask what they personally observed",
+      "Treat secondhand detail as direct observation",
+      "Tell the witness what to say"
+    ],
+    0
+  ],
+  [
+    "The proposed plea changes one charge but leaves another in place.",
+    [
+      "Request a clear account of both consequences",
+      "Assume every charge disappears",
+      "Decide from the headline alone"
+    ],
+    0
+  ],
+  [
+    "The document contains a mistaken name alongside an identifiable record.",
+    [
+      "Ask whether the error changes the relevant evidence",
+      "Declare every fact void",
+      "Silently correct the record myself"
+    ],
+    0
+  ],
+  [
+    "A request for compensation lists costs unrelated to the recorded event.",
+    [
+      "Review each cost against the claimed harm",
+      "Deny every cost regardless of evidence",
+      "Agree to everything without checking"
+    ],
+    0
+  ],
+  [
+    "A statement from an unavailable person cannot be clarified at the hearing.",
+    [
+      "Ask the court to review its reliability and limits",
+      "Claim to know their unspoken intent",
+      "Replace it with a rumour"
+    ],
+    0
+  ],
+  [
+    "A witness changes an earlier detail during questioning.",
+    [
+      "Compare both accounts and ask for the reason",
+      "Assume a change proves the whole case",
+      "Threaten them for changing it"
+    ],
+    0
+  ],
+  [
+    "A hearing summary leaves out a question that was answered on the record.",
+    [
+      "Request the specific recorded correction",
+      "Invent an answer that helps me",
+      "Ignore the omission and complain later"
+    ],
+    0
+  ],
+  [
+    "An appeal needs a specific ground from the hearing.",
+    [
+      "Identify the recorded factual or procedural issue",
+      "Repeat that I dislike the result",
+      "Offer popularity as a substitute for grounds"
+    ],
+    0
+  ],
+  [
+    "An expert explains a finding with uncertainty.",
+    [
+      "Keep the stated uncertainty in the account",
+      "Describe it as absolute proof",
+      "Dismiss it because it is not certain"
+    ],
+    0
+  ],
+  [
+    "The sentence proposal includes an obligation after release.",
+    [
+      "Ask how the supervision requirement works",
+      "Assume release cancels every obligation",
+      "Promise compliance without knowing the dates"
+    ],
+    0
+  ],
+  [
+    "A character reference describes reliability but did not witness the incident.",
+    [
+      "Use it within its limits",
+      "Present it as an eyewitness account",
+      "Treat friendship as proof of innocence"
+    ],
+    0
+  ],
+  [
+    "A timestamp uses a different time zone from the witness account.",
+    [
+      "Check both time zones before comparing",
+      "Treat the difference as automatic proof",
+      "Ignore the timestamp"
+    ],
+    0
+  ],
+  [
+    "A witness corrects one detail in their earlier statement.",
+    [
+      "Examine the correction and what remains consistent",
+      "Reject everything the witness ever said",
+      "Hide the correction"
+    ],
+    0
+  ],
+  [
+    "A missing page is referenced in the exhibit index.",
+    [
+      "Ask for the complete record",
+      "Guess what the missing page says",
+      "Treat the index as the missing evidence"
+    ],
+    0
+  ],
+  [
+    "A digital record shows access but not who used the account.",
+    [
+      "Separate account access from the identity claim",
+      "Assume the account holder performed every action",
+      "Invent another account user"
+    ],
+    0
+  ],
+  [
+    "A damaged item was examined after several people handled it.",
+    [
+      "Ask how its condition was documented",
+      "Claim all physical evidence is meaningless",
+      "Name a handler without evidence"
+    ],
+    0
+  ],
+  [
+    "An estimate is presented as an exact measurement.",
+    [
+      "Ask about uncertainty and the method",
+      "Treat every estimate as a lie",
+      "Replace it with a more convenient number"
+    ],
+    0
+  ],
+  [
+    "The same story is repeated by people who share one source.",
+    [
+      "Check whether the accounts are independent",
+      "Count each repetition as separate proof",
+      "Threaten the original source"
+    ],
+    0
+  ],
+  [
+    "A witness describes what they inferred rather than what they saw.",
+    [
+      "Separate observation from inference",
+      "Treat an inference as direct observation",
+      "Dismiss the witness without a question"
+    ],
+    0
+  ]
+]

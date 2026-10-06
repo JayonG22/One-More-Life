@@ -215,11 +215,9 @@ func _work_menu() -> Dictionary:
 		return {"icon":"💼","title":"Professional Life","info":["You are not currently employed."],"rows":[]}
 	var id := str(_p()["job"].get("id", ""))
 	var rows: Array = []
-	rows.append(_sub("📈","Career Development","Projects, mentors, rivals, skills and professional network","career_story"))
 	if id == "police": rows.append(_sub("🕵️","Police & Detective Work","Patrol, cases, evidence and internal affairs","police"))
 	if id in ["doctor","nurse"]: rows.append(_sub("🏥","Clinical Practice","Patients, diagnosis, specialties and malpractice","medicine"))
-	rows.append(_sub("⚖️","Justice Record","Cases, probation, parole and appeals","justice"))
-	return {"icon":"💼","title":"Professional Life","info":["Your institution remembers what you do here. Reputation, mistakes and relationships can follow you for years."],"rows":rows}
+	return {"icon":"💼","title":"Specialist Duties","info":["Role-specific work and case management."],"rows":rows}
 
 
 func _police_menu() -> Dictionary:
@@ -323,7 +321,7 @@ func _pet_menu(id: String) -> Dictionary:
 	var n := GameState.npc(id)
 	var pp: Dictionary = n["pet_profile"]
 	var tricks := ", ".join(pp["tricks"]) if not pp["tricks"].is_empty() else "none yet"
-	var info := ["%s the %s · age %d · %s" % [n["first"],str(n.get("species","pet")),int(n["age"]),pp["temperament"]], "Training %d%% · health %d%% · closeness %d%%" % [int(pp["training"]),int(pp["health"]),int(n["closeness"])], "Tricks: %s · %d show title%s" % [tricks,int(pp["titles"]),"" if int(pp["titles"]) == 1 else "s"]]
+	var info := ["%s the %s · age %d · %s" % [n["first"],str(n.get("breed",n.get("species","pet"))),int(n["age"]),pp["temperament"]], "Training %d%% · health %d%% · closeness %d%%" % [int(pp["training"]),int(pp["health"]),int(n["closeness"])], "Tricks: %s · %d show title%s" % [tricks,int(pp["titles"]),"" if int(pp["titles"]) == 1 else "s"]]
 	var breed_ok := int(n["age"]) >= 2 and int(n["age"]) <= 10 and int(_p()["age"]) - int(pp["bred_age"]) >= 2 and str(n.get("species","")) in ["dog","cat"]
 	var rows := [
 		_row("🎓","Train", "Teach behavior and tricks","pet_train",id),
@@ -399,15 +397,15 @@ func _career_story_menu() -> Dictionary:
 	var cs: Dictionary = j["career_story"]
 	var mentor_name := "none yet" if str(cs["mentor"]) == "" else GameState.full_name(str(cs["mentor"]))
 	var rival_name := "none yet" if str(cs["rival"]) == "" else GameState.full_name(str(cs["rival"]))
-	var info := ["%s · professional reputation %d%% · network %d%%" % [j["title"],int(cs["reputation"]),int(cs["network"])], "%d major project%s · mentor: %s · rival: %s" % [int(cs["projects"]),"" if int(cs["projects"]) == 1 else "s",mentor_name,rival_name]]
+	var info := ["%s · professional reputation %d%% · network %d%%" % [j["title"],int(cs["reputation"]),int(cs["network"])], "%d initiative%s · mentor: %s · rival: %s" % [int(cs["projects"]),"" if int(cs["projects"]) == 1 else "s",mentor_name,rival_name]]
 	var rows := [
-		_row("📊","Lead a major project","Higher risk than Work Harder; success builds a real career story","career_project"),
+		_row("📊","Lead an internal initiative","1 time · one-step work challenge","career_project"),
 		_row("🤝","Build your network","Meet people in the field; opportunities can surface years later","career_network"),
-		_row("🧭","Find or meet your mentor","Advice, sponsorship and sometimes disagreement","career_mentor"),
+		_row("🧭","Career mentor","Advice and sponsorship; duty coaching is under Duties & team","career_mentor"),
 		_row("⚔️","Deal with your professional rival","Compete, reconcile or let the work speak","career_rival"),
-		_row("📚","Professional training","Spend time and money building durable skill","career_train"),
+		_row("📚","Short skill course","1 time · %s · builds career skill, not a certificate" % GameState.fmt_money(Actions._cost(900)),"career_train"),
 	]
-	return {"icon":"📈","title":"Career Development","info":info,"rows":rows}
+	return {"icon":"📈","title":"Professional development","info":info,"rows":rows}
 
 
 func career_project() -> void:
@@ -938,7 +936,7 @@ func pet_breed(id:String) -> void:
 	var count:=randi_range(1,3); pp["bred_age"]=int(_p()["age"]); pp["litter"]=int(pp["litter"])+count; _p()["ambition"]["pets"]["litters"] = int(_p()["ambition"]["pets"]["litters"])+1; GameState.counter("pet_litters")
 	var names:Array=[]
 	for i in range(count):
-		var kid:=GameState.create_npc("pet",{"species":n.get("species","pet"),"first":ContentDB.random_pet_name(),"last":"","age":0,"closeness":55}); ensure_pet(kid); GameState.npcs[kid]["pet_profile"]["pedigree"] = int((float(pp["pedigree"])+randf_range(25,90))/2.0); names.append(GameState.npc(kid)["first"])
+		var kid:=GameState.create_npc("pet",{"species":n.get("species","pet"),"first":ContentDB.random_pet_name(),"last":"","age":0,"closeness":55}); ensure_pet(kid); Companions.ensure(kid); GameState.npcs[kid]["breed"] = str(Companions.breeds(str(n.get("species","dog")))[0]["name"]); GameState.npcs[kid]["pet_profile"]["pedigree"] = int((float(pp["pedigree"])+randf_range(25,90))/2.0); names.append(GameState.npc(kid)["first"])
 	_done("🐾","A litter","%s became the parent of %d little %ss: %s. They are real pets now, with their own health and temperaments." % [n["first"],count,str(n.get("species","pet")),", ".join(names)],{"happiness":8,"stress":5})
 
 
@@ -1390,4 +1388,3 @@ func outcome(data:Dictionary,roles:Dictionary={}) -> void:
 			js["probation"] = maxi(0, int(js["probation"]) + int(data.get("value",0)))
 		"court_case":
 			record_case(str(data.get("crime", "case")), str(data.get("result", "recorded")), int(data.get("years", 0)), float(data.get("evidence", 0.0)), int(data.get("lawyer", 0)))
-

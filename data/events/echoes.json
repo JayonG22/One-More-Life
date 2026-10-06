@@ -142,7 +142,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 2004
  },
  {
   "id": "echo.tenant",
@@ -796,7 +797,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1890
  },
  {
   "id": "echo.rival",
@@ -1372,7 +1374,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1890
  },
  {
   "id": "echo.politicalmemory",
@@ -1810,7 +1813,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1995
  },
  {
   "id": "echo.parent",
@@ -3120,7 +3124,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1995
  },
  {
   "id": "echo.trip",
@@ -3476,7 +3481,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1995
  },
  {
   "id": "echo.last_drink",
@@ -4021,7 +4027,8 @@
    }
   ],
   "weight": 1,
-  "followup_only": true
+  "followup_only": true,
+  "available_from": 1890
  },
  {
   "id": "echo.the_gift_kept",

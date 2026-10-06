@@ -1,0 +1,370 @@
+{
+ "Aviation": {
+  "name": "Aviation training",
+  "jobs": [
+   "flight_attendant",
+   "pilot"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Beauty": {
+  "name": "Beauty training",
+  "jobs": [
+   "hairstylist"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Business": {
+  "name": "Business training",
+  "jobs": [
+   "marketing",
+   "executive"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Care": {
+  "name": "Care training",
+  "jobs": [
+   "pt_babysitter",
+   "pt_dogwalker",
+   "community_worker",
+   "care_assistant"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Design": {
+  "name": "Design training",
+  "jobs": [
+   "architect",
+   "designer",
+   "ux_research",
+   "print_technician"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Education": {
+  "name": "Education training",
+  "jobs": [
+   "pt_tutor",
+   "teacher",
+   "music_teacher",
+   "professor",
+   "museum_educator",
+   "special_education"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Energy": {
+  "name": "Energy training",
+  "jobs": [
+   "renewable_tech"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Engineering": {
+  "name": "Engineering training",
+  "jobs": [
+   "engineer",
+   "biomedical_engineer"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Environment": {
+  "name": "Environment training",
+  "jobs": [
+   "environment_officer",
+   "farm_manager",
+   "recycling_operator"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Facilities": {
+  "name": "Facilities training",
+  "jobs": [
+   "janitor",
+   "grounds_keeper"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Finance": {
+  "name": "Finance training",
+  "jobs": [
+   "accountant",
+   "analyst",
+   "compliance",
+   "insurance_analyst"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Food": {
+  "name": "Food training",
+  "jobs": [
+   "pt_burger",
+   "pt_barista",
+   "fastfood",
+   "line_cook",
+   "chef"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Government": {
+  "name": "Government training",
+  "jobs": [
+   "mail",
+   "probation",
+   "civil_servant",
+   "urban_planner"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Healthcare": {
+  "name": "Healthcare training",
+  "jobs": [
+   "nurse",
+   "counselor",
+   "doctor",
+   "dentist",
+   "pharmacist",
+   "vet",
+   "community_nurse"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Hospitality": {
+  "name": "Hospitality training",
+  "jobs": [
+   "event_coordinator",
+   "tour_guide",
+   "venue_service"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Legal": {
+  "name": "Legal training",
+  "jobs": [
+   "paralegal",
+   "lawyer",
+   "public_defender"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Logistics": {
+  "name": "Logistics training",
+  "jobs": [
+   "warehouse",
+   "logistics_planner",
+   "dispatch_support"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Media": {
+  "name": "Media training",
+  "jobs": [
+   "journalist",
+   "technical_writer",
+   "archivist",
+   "sound_engineer"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Military": {
+  "name": "Military training",
+  "jobs": [
+   "army",
+   "navy",
+   "air_force"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Office": {
+  "name": "Office training",
+  "jobs": [
+   "receptionist"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Public Safety": {
+  "name": "Public Safety training",
+  "jobs": [
+   "firefighter",
+   "police"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Recreation": {
+  "name": "Recreation training",
+  "jobs": [
+   "pt_lifeguard"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Retail": {
+  "name": "Retail training",
+  "jobs": [
+   "pt_cashier",
+   "pt_stocker",
+   "retail"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Science": {
+  "name": "Science training",
+  "jobs": [
+   "lab_tech",
+   "scientist",
+   "food_scientist"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Security": {
+  "name": "Security training",
+  "jobs": [
+   "security"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Tech": {
+  "name": "Tech training",
+  "jobs": [
+   "developer",
+   "game_dev",
+   "data_analyst",
+   "cybersecurity",
+   "game_producer",
+   "repair_support"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Trades": {
+  "name": "Trades training",
+  "jobs": [
+   "electrician",
+   "plumber",
+   "mechanic",
+   "carpenter",
+   "appliance_repair",
+   "bike_repair"
+  ],
+  "apprentice": true,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ },
+ "Transport": {
+  "name": "Transport training",
+  "jobs": [
+   "pt_delivery",
+   "trucker"
+  ],
+  "apprentice": false,
+  "specialties": [
+   "Specialist",
+   "Team lead"
+  ]
+ }
+}

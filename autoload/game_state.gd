@@ -17,6 +17,14 @@ const HOUSING := {
 }
 
 const CARS := {
+	"city": {"name": "Toyoda Pocket · compact", "price": 13500, "upkeep": 1400, "happiness": 4, "icon": "hatchback"},
+	"hybrid": {"name": "Hondah Harmony · hybrid", "price": 28500, "upkeep": 1800, "happiness": 5, "icon": "sedan"},
+	"electric": {"name": "Teslah Whisper · electric", "price": 44000, "upkeep": 2100, "happiness": 6, "icon": "electric"},
+	"wagon": {"name": "Volvroom Long Weekend · wagon", "price": 38000, "upkeep": 2600, "happiness": 6, "icon": "wagon"},
+	"suv": {"name": "Land Roamer Trail · SUV", "price": 57000, "upkeep": 3800, "happiness": 7, "icon": "suv"},
+	"pickup": {"name": "Fjord Workhorse · pickup", "price": 41000, "upkeep": 3300, "happiness": 5, "icon": "pickup"},
+	"roadster": {"name": "Mazdah Sunbeam · roadster", "price": 49000, "upkeep": 3000, "happiness": 7, "icon": "sports"},
+	"luxury": {"name": "Brrcedes Velvet · limousine", "price": 160000, "upkeep": 8500, "happiness": 10, "icon": "limo"},
 	"used": {"name": "Used hatchback", "price": 8000, "upkeep": 1500, "happiness": 3},
 	"new": {"name": "New sedan", "price": 32000, "upkeep": 2500, "happiness": 5},
 	"sports": {"name": "Sports car", "price": 95000, "upkeep": 6000, "happiness": 9},
@@ -35,7 +43,7 @@ var milestones: Array = []
 var interacted: Dictionary = {}
 var job_listings: Dictionary = {}
 var next_npc_id: int = 1
-var settings: Dictionary = {"theme": "dark", "celeb_theme": true, "units": "metric", "mg_pace": "relaxed"}
+var settings: Dictionary = {"theme": "ink", "celeb_theme": true, "units": "metric", "mg_pace": "relaxed"}
 var world: Dictionary = {}
 
 const PLAYER_DEFAULTS := {
@@ -73,6 +81,8 @@ func ensure_defaults() -> void:
 		player["career"].erase("heat")
 	if world.is_empty():
 		Finance.init_world()
+	else:
+		Finance.ensure_market()
 
 
 func has_life() -> bool:
@@ -84,6 +94,7 @@ func is_alive() -> bool:
 
 
 func emit_changed() -> void:
+	Childhood.protect()
 	changed.emit()
 
 
@@ -98,6 +109,8 @@ func hidden(k: String) -> float:
 
 
 func new_life(opts: Dictionary) -> void:
+	EventEngine.pending.clear()
+	EventEngine.displayed.clear()
 	npcs.clear()
 	log_years.clear()
 	flags.clear()
@@ -199,6 +212,8 @@ func new_life(opts: Dictionary) -> void:
 	if not opts.get("keep_family", false) or Lives.separate():
 		Legacy.on_new_life()
 		Goals.apply_mantel()
+	LifeCourse.state()
+	if Journey.modules.has("wellbeing"): Journey.modules["wellbeing"].st()
 	changed.emit()
 
 
@@ -270,6 +285,8 @@ func create_npc(relation: String, opts: Dictionary = {}) -> String:
 		"happiness": int(opts.get("happiness", randi_range(35, 90))),
 	}
 	npcs[id] = n
+	for key in ["person_uid","parent_uids","parent_id","education","job","record","illness","prison"]:
+		if opts.has(key): n[key] = opts[key].duplicate(true) if opts[key] is Dictionary or opts[key] is Array else opts[key]
 	return id
 
 
@@ -356,6 +373,10 @@ func _relation_base(id: String) -> String:
 		"best_friend": return "Best Friend"
 		"rival": return "Rival"
 		"teacher": return "Teacher"
+		"principal": return "Principal"
+		"school_nurse": return "School nurse"
+		"former_classmate": return "Former classmate"
+		"former_teacher": return "Former teacher"
 		"boss": return "Boss"
 		"coworker": return "Coworker"
 		"classmate": return "Classmate"
@@ -392,8 +413,10 @@ func edu_level() -> String:
 	for d in e["degrees"]:
 		if d["level"] == "graduate":
 			return "graduate"
-	if not e["degrees"].is_empty():
-		return "bachelor"
+	for d in e["degrees"]:
+		if d["level"]=="bachelor": return "bachelor"
+	for d in e["degrees"]:
+		if d["level"]=="associate": return "associate"
 	if e["hs_graduated"]:
 		return "high_school"
 	return "none"
@@ -439,10 +462,14 @@ func net_worth() -> int:
 	var w: int = int(player["money"]) - int(player["loan"]) - int(player["mortgage"]) - Lending.total_owed()
 	w += int(player["house_value"])
 	if player["car"] != "":
-		w += int(CARS[player["car"]]["price"] * 0.5)
+		w += Holdings.resale()
 	w += int(player.get("savings", 0))
+	if Journey.modules.has("funds"): w+=Journey.modules["funds"].value(FamilyChronicle.identity(player))
 	w += Finance.investments_value() + Finance.properties_value() + Finance.possessions_value()
 	w += Empires.net_value()
+	w += Ventures.value()
+	for company in player.get("ambition",{}).get("enterprise",{}).get("portfolio",[]): w+=int(float(company.get("value",0))*float(company.get("stake",0)))-int(company.get("debt",0))
+	w -= int(player.get("student_debt",0))
 	return w
 
 
@@ -509,7 +536,7 @@ func change_stat(key: String, delta: float) -> int:
 	return int(round(after)) - before
 
 
-func apply_effects(effects: Dictionary) -> Dictionary:
+func apply_effects(effects: Dictionary, household_costs: bool = false) -> Dictionary:
 	var shown := {}
 	for k in effects.keys():
 		var v = effects[k]
@@ -532,6 +559,8 @@ func apply_effects(effects: Dictionary) -> Dictionary:
 		elif k == "karma":
 			player["karma"] = clampi(int(player["karma"]) + int(v), -100, 100)
 		elif k == "money":
+			if int(v)<0 and household_costs and Childhood.supported():
+				Childhood.cover(-int(v),"event costs"); continue
 			player["money"] = int(player["money"]) + int(v)
 			if int(v) != 0:
 				shown["money"] = int(v)
@@ -611,6 +640,8 @@ func clear_flag(f: String) -> void:
 
 
 func begin_year() -> void:
+	job_listings.clear()
+	if player.has("market"): player["market"]["open"] = {}
 	player["age"] = int(player["age"]) + 1
 	player["time_left"] = TIME_PER_YEAR
 	player["education"]["studied"] = false
@@ -872,9 +903,10 @@ func first_of_any(relation: String) -> String:
 
 
 func finalize_death(cause: String) -> Dictionary:
+	Novelty.close_person(player,"this life ended")
 	player["alive"] = false
 	player["cause"] = cause
-	if not (Prison.active() and str(Prison.L().get("outcome", "")) != ""):
+	if not Lives.is_type("tv") and not (Prison.active() and str(Prison.L().get("outcome", "")) != ""):
 		add_log("I died of %s at age %d." % [cause, int(player["age"])])
 	player["ribbon"] = compute_ribbon()
 	var entry := {
@@ -899,6 +931,7 @@ func finalize_death(cause: String) -> Dictionary:
 	if Lives.separate():
 		var ex: Dictionary = Lives.mode().entry_extra()
 		entry["mode"] = ex
+		if Lives.is_type("tv"): entry["age"]=Lives.life().get("journal",[]).size()
 		if Pets.active():
 			entry["pet"] = ex
 			entry["net_worth"] = 0
@@ -936,33 +969,27 @@ const ESTATE_TAX := {"us": [0.40, 13000000], "uk": [0.40, 325000], "de": [0.30, 
 
 
 func continue_as(child_id: String) -> void:
+	if is_alive(): return
+	if world.get("estate_register",{}).get(FamilyChronicle.identity(player),{}).get("status","")=="executed": return
+	if not npcs.has(child_id) or not npcs[child_id].get("alive", false) or npcs[child_id].get("relation", "") != "child": return
+	FamilyChronicle.sync()
 	var old := player.duplicate(true)
 	var old_npcs := npcs.duplicate(true)
-	var child: Dictionary = old_npcs[child_id]
+	var old_to_new := {child_id:"player"}
 	var living_children: Array = npcs_with("child").filter(func(x): return not npcs[x].get("disowned", false))
-	var estate: int = maxi(0, net_worth() - Finance.properties_value() - Finance.possessions_value())
-	var tx: Array = ESTATE_TAX.get(str(old["country"]), [0.0, 0])
-	var estate_tax := int(maxi(0, estate - int(tx[1])) * float(tx[0]))
-	var net_estate := int((estate - estate_tax) * 0.95)
-	var will: String = str(old.get("will", "equal"))
-	var share := 0
-	var sibs := maxi(1, living_children.size())
-	if will == "charity":
-		share = 0
-	elif will.begins_with("heir:"):
-		share = int(net_estate * 0.3 / sibs) + (int(net_estate * 0.7) if will.substr(5) == child_id else 0)
-	elif living_children.has(child_id):
-		share = int(net_estate / sibs)
+	var allocation := Estate.prepare(old,old_npcs,child_id)
+	if allocation.is_empty(): return
+	var child: Dictionary = old_npcs[child_id]
+	var share := int(allocation["cash"])
+	var estate_tax := int(world["estate_register"][old["person_uid"]]["tax"])
+	var will := str(old.get("will","equal"))
+	var sibs := maxi(1,living_children.size())
 	var heir_kids: Array = []
 	for oid in old_npcs.keys():
 		if str(old_npcs[oid].get("parent_id", "")) == child_id and old_npcs[oid]["relation"] == "grandchild":
 			heir_kids.append(oid)
-	var heir_props: Array = old.get("properties", []).duplicate(true)
-	var heir_items: Array = old.get("possessions", []).duplicate(true)
-	for it in heir_items:
-		it["heirloom"] = true
-	for pr in heir_props:
-		pr["tenant"] = ""
+	var heir_props: Array=allocation["properties"]
+	var heir_items: Array=allocation["items"]
 	npcs.clear()
 	next_npc_id = 1
 	var inherit_traits: Array = []
@@ -995,12 +1022,12 @@ func continue_as(child_id: String) -> void:
 	player["possessions"] = heir_items
 	var old_ambition: Dictionary = old.get("ambition", {})
 	var old_enterprise: Dictionary = old_ambition.get("enterprise", {})
-	if str(old_enterprise.get("succession", "")) == child_id:
-		player["ambition"]["enterprise"] = old_enterprise.duplicate(true)
-		player["ambition"]["enterprise"]["succession"] = ""
 	log_years.clear()
 	milestones.clear()
 	player["age"] = age
+	player["person_uid"] = child["person_uid"]
+	player["parent_uids"] = child.get("parent_uids",[]).duplicate()
+	player["personal_history"] = child.get("personal_history",[]).duplicate(true)
 	player["face"] = child.get("face", 0)
 	var oldav: Dictionary = old.get("avatar", {})
 	var kidav := Avatar.random(str(player["gender"]))
@@ -1013,13 +1040,27 @@ func continue_as(child_id: String) -> void:
 	var parent_rel := "father" if old["gender"] == "male" else "mother"
 	if old["gender"] == "nonbinary":
 		parent_rel = "mother" if randf() < 0.5 else "father"
-	create_npc(parent_rel, {"first": old["first"], "last": old["last"], "gender": old["gender"], "age": old["age"], "closeness": child.get("closeness", 70)})
+	create_npc(parent_rel, {"first": old["first"], "last": old["last"], "gender": old["gender"], "age": old["age"], "closeness": child.get("closeness", 70),"money":old["money"],"health":old["stats"]["health"],"happiness":old["stats"]["happiness"],"smarts":old["stats"]["smarts"],"looks":old["stats"]["looks"]})
 	npcs[npcs.keys()[-1]]["alive"] = false
+	npcs[npcs.keys()[-1]]["person_uid"] = old["person_uid"]
+	npcs[npcs.keys()[-1]]["parent_uids"] = old.get("parent_uids",[]).duplicate()
+	var remembered_parent: Dictionary = npcs[npcs.keys()[-1]]
+	for key in ["education","record","personal_history","illness"]:
+		if old.has(key): remembered_parent[key] = old[key].duplicate(true) if old[key] is Dictionary or old[key] is Array else old[key]
+	remembered_parent["job"] = old["job"].duplicate(true)
+	remembered_parent["job"]["key"] = "employee" if not old["job"].is_empty() else "none"
+	remembered_parent["job"]["title"] = old["job"].get("title","Unemployed")
 	if old["partner"] != "" and old_npcs.has(old["partner"]) and old["partner_status"] == "married":
 		var sp: Dictionary = old_npcs[old["partner"]]
 		var sp_rel := "mother" if parent_rel == "father" else "father"
 		var id := create_npc(sp_rel, {"first": sp["first"], "last": sp["last"], "gender": sp["gender"], "age": sp["age"], "closeness": 70})
 		npcs[id]["alive"] = sp["alive"]
+		npcs[id]["person_uid"] = sp["person_uid"]
+		npcs[id]["parent_uids"] = sp.get("parent_uids",[]).duplicate()
+		old_to_new[old["partner"]] = id
+		npcs[id].merge(sp.duplicate(true),true)
+		npcs[id]["id"] = id
+		npcs[id]["relation"] = sp_rel
 	if child.get("married", false) and str(child.get("spouse", "")) != "":
 		var nm: PackedStringArray = str(child["spouse"]).split(" ", false, 1)
 		var spid := create_npc("partner", {"first": nm[0], "last": nm[1] if nm.size() > 1 else child["last"], "gender": child.get("spouse_gender", "female"), "age": maxi(18, age + randi_range(-3, 3)), "closeness": 70})
@@ -1030,7 +1071,7 @@ func continue_as(child_id: String) -> void:
 	var feuds: Array = []
 	for oid in old_npcs.keys():
 		var o: Dictionary = old_npcs[oid]
-		if oid == child_id:
+		if old_to_new.has(oid):
 			continue
 		var rel := ""
 		match o["relation"]:
@@ -1041,8 +1082,14 @@ func continue_as(child_id: String) -> void:
 			"niece_nephew": rel = "cousin"
 			"grandchild": rel = "child" if heir_kids.has(oid) else "niece_nephew"
 			"pet": rel = "pet" if o["alive"] and int(o.get("age", 0)) < 12 else ""
+		if rel=="" and not old.get("business",{}).is_empty() and old["business"].get("crew",[]).has(oid): rel="family_friend"
 		if rel == "" and o["alive"] and int(o.get("grudge", 0)) >= 50 and o.get("species", "human") == "human":
 			var fid := create_npc("rival", {"first": o["first"], "last": o["last"], "gender": o["gender"], "age": o["age"], "closeness": 5})
+			old_to_new[oid] = fid
+			npcs[fid].merge(o.duplicate(true),true)
+			npcs[fid]["id"] = fid
+			npcs[fid]["relation"] = "rival"
+			npcs[fid]["closeness"] = 5
 			npcs[fid]["grudge"] = int(int(o["grudge"]) * 0.6)
 			npcs[fid]["feud"] = true
 			feuds.append(o["first"] + " " + o["last"])
@@ -1052,9 +1099,17 @@ func continue_as(child_id: String) -> void:
 		if not o["alive"] and rel in ["cousin", "niece_nephew", "stepsibling", "pet"]:
 			continue
 		var opts := {"first": o["first"], "last": o["last"], "gender": o["gender"], "age": o["age"], "closeness": maxi(30, int(o["closeness"]) - 10)}
+		for key in ["person_uid","parent_uids","parent_id","education","job","record","illness","prison"]:
+			if o.has(key): opts[key] = o[key]
 		if rel == "pet":
 			opts["species"] = o.get("species", "dog")
 		var nid := create_npc(rel, opts)
+		old_to_new[oid] = nid
+		var close := int(npcs[nid]["closeness"])
+		npcs[nid].merge(o.duplicate(true),true)
+		npcs[nid]["id"] = nid
+		npcs[nid]["relation"] = rel
+		npcs[nid]["closeness"] = close
 		npcs[nid]["alive"] = o["alive"]
 		npcs[nid]["face"] = o.get("face", 0)
 		if rel == "pet" and o.has("pet_profile"):
@@ -1066,11 +1121,6 @@ func continue_as(child_id: String) -> void:
 		elif rel == "sibling" and will.begins_with("heir:") and will.substr(5) == child_id:
 			npcs[nid]["closeness"] = maxi(0, int(npcs[nid]["closeness"]) - 15)
 			npcs[nid]["grudge"] = 20
-	if old["housing"] == "house" and age >= 18:
-		player["housing"] = "house"
-		player["house_value"] = old["house_value"]
-		player["mortgage"] = old["mortgage"]
-		player["mortgage_payment"] = old["mortgage_payment"]
 	if age >= 18:
 		player["education"]["hs_graduated"] = true
 		player["education"]["stage"] = "graduated"
@@ -1080,6 +1130,26 @@ func continue_as(child_id: String) -> void:
 		player["education"]["stage"] = "secondary"
 	elif age >= 5:
 		player["education"]["stage"] = "primary"
+	# Restore the heir's recorded life before applying the estate transaction.
+	var saved_child: Dictionary=child.get("playable_player",{})
+	for key in ["journey","employment","depth","market","professional_skills","medical","care","debts","lending_year","finances_year","loan_serial","loan_record","credit","habits","education","avatar","stats","career","business","ambition","licenses","retired","record","illness","savings","student_debt","car","car_record","transit","novelty","household","childhood_budget","housing","house_value","mortgage","mortgage_payment","house_uid","house_model","home","loan","stocks","crypto","tenancy"]:
+		if saved_child.has(key): player[key]=saved_child[key].duplicate(true) if saved_child[key] is Dictionary or saved_child[key] is Array else saved_child[key]
+	for key in ["upbringing_style","upbringing","journey","professional_skills","education","avatar","business","medical","care","debts","lending_year","finances_year","loan_serial","loan_record","credit","habits"]:
+		if child.has(key): player[key]=child[key].duplicate(true) if child[key] is Dictionary or child[key] is Array else child[key]
+	if child.has("ambition"):
+		player["ambition"].merge(child["ambition"].duplicate(true),true)
+	player["possessions"]=child.get("possessions",saved_child.get("possessions",[])).duplicate(true)
+	player["properties"]=child.get("properties",saved_child.get("properties",[])).duplicate(true)
+	player["money"]=share
+	for key in ["health","happiness","smarts","looks","stress"]:
+		if child.has(key): player["stats"][key]=float(child[key])
+	if child.has("avatar"): player["avatar"]=child["avatar"].duplicate(true)
+	if not saved_child.get("job",{}).is_empty():
+		player["job"]=saved_child["job"].duplicate(true)
+		player["job"]["boss"]=""; player["job"]["coworkers"]=[]
+	Journey.modules["operations"].rebind()
+	Estate.restore_home(player,allocation["home"])
+	Journey.modules["heritage"].record_inheritance(old,child,share,heir_items)
 	log_years.append({"age": age, "lines": []})
 	add_log("I carried on the family line as %s %s, age %d." % [player["first"], player["last"], age])
 	if share > 0:
@@ -1096,7 +1166,32 @@ func continue_as(child_id: String) -> void:
 		add_log("I inherited the family heirlooms: %s." % ", ".join(heir_items.map(func(i): return i["name"])))
 	if not feuds.is_empty():
 		add_log("I inherited a family feud with %s." % ", ".join(feuds))
+	# Inheritance adds to the child's recorded life rather than rerolling it.
+	player["money"] = int(player["money"]) + int(child.get("money", 0))
+	for key in ["health", "happiness", "smarts", "looks", "stress"]:
+		if child.has(key): player["stats"][key] = float(child[key])
+	if child.has("education"): player["education"].merge(child["education"].duplicate(true), true)
+	elif child.has("school"):
+		player["education"]["performance"] = float(child["school"])
+		player["education"]["hs_graduated"] = age >= 18 and float(child["school"]) >= 45
+	if child.has("avatar"): player["avatar"] = child["avatar"].duplicate(true)
+	if child.has("job") and age >= 18 and saved_child.get("job",{}).is_empty():
+		var work: Dictionary = child["job"]
+		if not str(work.get("key", "none")) in ["none", "student", "retired"]:
+			var job_id := str(work.get("id", "family_role"))
+			if ContentDB.job(job_id).is_empty(): job_id = "family_role"
+			var jd := ContentDB.job(job_id)
+			player["job"] = {"id": job_id, "title":work.get("title",jd["ranks"][0]),"field":jd.get("field","General"),"salary":int(work.get("salary",jd["salary"])),"rank":0,"perf":float(child.get("job_perf",55)),"years":int(child.get("job_years",0)),"years_in_rank":0,"boss":"","coworkers":[],"part_time":false,"worked_hard":false}
+	player["inherited_royal_line"]=int(child.get("line",1))
 	Lives.on_continue(old)
+	for n in npcs.values():
+		for link in ["parent_id","spouse_id"]:
+			if not n.has(link): continue
+			var old_id := str(n[link])
+			if old_to_new.has(old_id): n[link] = old_to_new[old_id]
+			else: n.erase(link)
+	Journey.modules["coping"].lost(str(remembered_parent["id"]),false)
+	FamilyChronicle.sync()
 	add_milestone(age, "took over the family legacy after losing %s %s" % [pron(player["gender"], "his"), relation_word(parent_rel)])
 	changed.emit()
 
@@ -1108,6 +1203,7 @@ func relation_word(rel: String) -> String:
 # ---------------------------------------------------------------- save data
 
 func to_dict() -> Dictionary:
+	FamilyChronicle.sync()
 	return {
 		"version": 1,
 		"player": player,
@@ -1120,28 +1216,47 @@ func to_dict() -> Dictionary:
 		"job_listings": job_listings,
 		"next_npc_id": next_npc_id,
 		"world": world,
+		"pending_events": EventEngine.pending.duplicate(true),
+		"displayed_event": EventEngine.displayed.duplicate(true),
 	}
 
 
 func from_dict(d: Dictionary) -> void:
-	player = d.get("player", {})
-	npcs = d.get("npcs", {})
-	log_years = d.get("log_years", [])
-	flags = d.get("flags", {})
-	followups = d.get("followups", [])
-	event_history = d.get("event_history", {})
-	milestones = d.get("milestones", [])
-	job_listings = d.get("job_listings", {})
+	EventEngine.pending = d.get("pending_events",[]).duplicate(true)
+	EventEngine.displayed.clear()
+	var displayed: Dictionary = d.get("displayed_event",{})
+	if not displayed.is_empty() and not displayed.get("info",false): EventEngine.pending.push_front(displayed.duplicate(true))
+	# The loaded game owns its mutable state. Migration and subsequent play
+	# must not alter a cached backup, historical life or caller's save snapshot.
+	player = d.get("player", {}).duplicate(true)
+	npcs = d.get("npcs", {}).duplicate(true)
+	log_years = d.get("log_years", []).duplicate(true)
+	flags = d.get("flags", {}).duplicate(true)
+	followups = d.get("followups", []).duplicate(true)
+	event_history = d.get("event_history", {}).duplicate(true)
+	milestones = d.get("milestones", []).duplicate(true)
+	job_listings = d.get("job_listings", {}).duplicate(true)
 	next_npc_id = int(d.get("next_npc_id", 1))
-	world = d.get("world", {})
+	world = d.get("world", {}).duplicate(true)
 	interacted.clear()
 	ensure_defaults()
 	_fix_numbers()
+	TVLife.migrate_retired()
+	Childhood.protect()
+	if player.get("creator",{}).get("project",{}).has("mixing"):
+		player["creator"]["project"]["mixing"] = false
+	Ventures.migrate()
+	# Depth prompts already represented in the saved queue must not be duplicated.
+	if not EventEngine.pending.any(func(it): return str(it.get("def",{}).get("id",""))=="_depth"): Depth.restore()
+	Employment.restore()
+	Journey.restore()
+	FamilyChronicle.sync()
+	if has_life() and Journey.modules.has("wellbeing"): Journey.modules["wellbeing"].st()
 	changed.emit()
 
 
 func _fix_numbers() -> void:
-	for k in ["age", "money", "karma", "time_left", "prison", "prison_total", "generation", "born_year", "loan", "mortgage", "mortgage_payment", "house_value", "face", "pension", "origin"]:
+	for k in ["age", "money", "karma", "time_left", "prison", "prison_total", "generation", "born_year", "loan", "mortgage", "mortgage_payment", "house_value", "face", "pension"]:
 		if player.has(k):
 			player[k] = int(player[k])
 	for id in npcs.keys():

@@ -1,0 +1,290 @@
+[
+  {
+    "id": "recovery.pressure.gambling.0",
+    "family": "recovery.pressure.gambling",
+    "habit": "gambling",
+    "title": "The result notification",
+    "text": "A result notification arrives just as you were putting the phone away.",
+    "results": [
+      "I let the notification pass and kept the pause in my plan.",
+      "The notification became another betting session.",
+      "A support conversation helped me leave the notification unopened."
+    ]
+  },
+  {
+    "id": "recovery.pressure.gambling.1",
+    "family": "recovery.pressure.gambling",
+    "habit": "gambling",
+    "title": "The losing streak",
+    "text": "Recent losses make a promised fresh start feel tempting.",
+    "results": [
+      "I accepted the loss instead of treating another bet as recovery.",
+      "Trying to recover earlier losses added a new loss.",
+      "Talking through the losses helped me keep them separate from today's decision."
+    ]
+  },
+  {
+    "id": "recovery.pressure.gambling.2",
+    "family": "recovery.pressure.gambling",
+    "habit": "gambling",
+    "title": "The familiar invitation",
+    "text": "Someone mentions a gambling night you used to look forward to.",
+    "results": [
+      "I declined that invitation while keeping room for other company.",
+      "The familiar invitation brought me back to the tables.",
+      "Support helped me arrange company away from the gambling night."
+    ]
+  },
+  {
+    "id": "recovery.pressure.gambling.3",
+    "family": "recovery.pressure.gambling",
+    "habit": "gambling",
+    "title": "The empty evening",
+    "text": "An unplanned evening brings the familiar pull of a wager.",
+    "results": [
+      "I let the empty evening stay empty instead of filling it with a bet.",
+      "The spare evening turned into another gambling bill.",
+      "A check-in helped me choose a different use for the evening."
+    ]
+  },
+  {
+    "id": "recovery.pressure.shopping.0",
+    "family": "recovery.pressure.shopping",
+    "habit": "shopping",
+    "title": "The saved basket",
+    "text": "A saved shopping basket reappears after a difficult day.",
+    "results": [
+      "I left the basket unfinished and let the difficult day settle.",
+      "The saved basket became another purchase I had not planned.",
+      "Talking through the day helped me leave the basket alone."
+    ]
+  },
+  {
+    "id": "recovery.pressure.shopping.1",
+    "family": "recovery.pressure.shopping",
+    "habit": "shopping",
+    "title": "The limited offer",
+    "text": "An offer is about to expire, and waiting suddenly feels costly.",
+    "results": [
+      "I allowed the offer to expire without turning urgency into a purchase.",
+      "The deadline persuaded me to buy things I had not needed before it appeared.",
+      "Support helped me separate the offer's deadline from my own needs."
+    ]
+  },
+  {
+    "id": "recovery.pressure.shopping.2",
+    "family": "recovery.pressure.shopping",
+    "habit": "shopping",
+    "title": "The delivery trail",
+    "text": "Several parcels remind you how quickly small purchases accumulate.",
+    "results": [
+      "I paused the next order after looking at what had already arrived.",
+      "More parcels added to the spending I had been avoiding looking at.",
+      "A check-in made the accumulated spending easier to face without another order."
+    ]
+  },
+  {
+    "id": "recovery.pressure.shopping.3",
+    "family": "recovery.pressure.shopping",
+    "habit": "shopping",
+    "title": "The comparison spiral",
+    "text": "Looking at other people's purchases makes your own life feel smaller.",
+    "results": [
+      "I stepped away from the comparison without buying a different identity.",
+      "Comparison led to purchases that did not fix how I felt.",
+      "Support helped me talk about the comparison rather than answer it with a purchase."
+    ]
+  },
+  {
+    "id": "recovery.pressure.workaholic.0",
+    "family": "recovery.pressure.workaholic",
+    "habit": "workaholic",
+    "title": "The unfinished shift",
+    "text": "The shift has ended, but an unfinished task keeps you at the desk.",
+    "results": [
+      "I left a clear handover and let the shift end.",
+      "The handover became another night of unpaid strain.",
+      "A check-in helped me agree a stopping point."
+    ]
+  },
+  {
+    "id": "recovery.pressure.workaholic.1",
+    "family": "recovery.pressure.workaholic",
+    "habit": "workaholic",
+    "title": "The family date",
+    "text": "A family date clashes with work you could postpone.",
+    "results": [
+      "I protected the family date and rescheduled the work.",
+      "Work took the family date and strained trust.",
+      "Support helped me share a realistic schedule with my family."
+    ]
+  },
+  {
+    "id": "recovery.pressure.workaholic.2",
+    "family": "recovery.pressure.workaholic",
+    "habit": "workaholic",
+    "title": "The praise trap",
+    "text": "Praise for always being available makes saying no feel dangerous.",
+    "results": [
+      "I accepted the praise without promising every evening.",
+      "I traded more rest for being the person who never says no.",
+      "Talking it through helped me separate my worth from constant availability."
+    ]
+  },
+  {
+    "id": "recovery.pressure.workaholic.3",
+    "family": "recovery.pressure.workaholic",
+    "habit": "workaholic",
+    "title": "The silent weekend",
+    "text": "A quiet weekend leaves you reaching for work out of habit.",
+    "results": [
+      "I let the weekend be useful without turning it into another shift.",
+      "The weekend disappeared into work and exhaustion.",
+      "A support call helped me make room for life outside work."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drinking.0",
+    "family": "recovery.pressure.drinking",
+    "habit": "drinking",
+    "title": "The familiar round",
+    "text": "An ordinary gathering turns into a familiar offer of another drink.",
+    "results": [
+      "I kept my boundary and stayed for the company.",
+      "Another round brought back the familiar costs and fatigue.",
+      "A check-in helped me stay with the gathering without another round."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drinking.1",
+    "family": "recovery.pressure.drinking",
+    "habit": "drinking",
+    "title": "The hard evening",
+    "text": "After a hard evening, the old routine feels like the easiest comfort.",
+    "results": [
+      "I let the difficult evening pass without returning to that routine.",
+      "The old comfort added expense and wear to a difficult evening.",
+      "Support helped me find company through the hard evening."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drinking.2",
+    "family": "recovery.pressure.drinking",
+    "habit": "drinking",
+    "title": "The celebration toast",
+    "text": "A celebration puts an unwanted drink in front of you.",
+    "results": [
+      "I joined the celebration while keeping my own boundary.",
+      "The toast became an evening beyond what I had planned.",
+      "Someone helped me keep the celebration separate from drinking."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drinking.3",
+    "family": "recovery.pressure.drinking",
+    "habit": "drinking",
+    "title": "The cupboard reminder",
+    "text": "A familiar bottle remains in the cupboard after an earlier gathering.",
+    "results": [
+      "I stepped away from the reminder and kept my plan.",
+      "The reminder became another night of drinking.",
+      "A check-in helped me change the routine around that reminder."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drugs.0",
+    "family": "recovery.pressure.drugs",
+    "habit": "drugs",
+    "title": "The old contact",
+    "text": "An old contact gets back in touch after a stressful week.",
+    "results": [
+      "I left the contact unanswered and kept my boundary.",
+      "The contact renewed spending and harm I had been trying to leave behind.",
+      "Support helped me get through the contact without accepting the offer."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drugs.1",
+    "family": "recovery.pressure.drugs",
+    "habit": "drugs",
+    "title": "The difficult morning",
+    "text": "A difficult morning makes an old escape feel immediate.",
+    "results": [
+      "I stayed with the morning and let the urge pass.",
+      "The escape added expense and health strain to the morning.",
+      "A support conversation gave the morning a different direction."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drugs.2",
+    "family": "recovery.pressure.drugs",
+    "habit": "drugs",
+    "title": "The familiar place",
+    "text": "Returning to a familiar place brings back a routine you are trying to change.",
+    "results": [
+      "I changed the visit and kept the routine from restarting.",
+      "The place brought back the familiar costs and strain.",
+      "Support helped me find a different way to spend the visit."
+    ]
+  },
+  {
+    "id": "recovery.pressure.drugs.3",
+    "family": "recovery.pressure.drugs",
+    "habit": "drugs",
+    "title": "The unanswered worry",
+    "text": "A worry you have avoided returns when you are alone.",
+    "results": [
+      "I faced the worry without returning to the old escape.",
+      "Avoiding the worry brought back the habit and its consequences.",
+      "A check-in helped me name the worry and stay with my recovery."
+    ]
+  },
+  {
+    "id": "recovery.pressure.partying.0",
+    "family": "recovery.pressure.partying",
+    "habit": "partying",
+    "title": "The afterparty",
+    "text": "An invitation arrives just as the evening could reasonably end.",
+    "results": [
+      "I ended the evening before it became another lost night.",
+      "The afterparty took money, rest and the following morning.",
+      "Support helped me make a plan for going home."
+    ]
+  },
+  {
+    "id": "recovery.pressure.partying.1",
+    "family": "recovery.pressure.partying",
+    "habit": "partying",
+    "title": "The weekend invitation",
+    "text": "A crowded weekend calendar makes rest feel like missing out.",
+    "results": [
+      "I kept one evening for rest without abandoning my friends.",
+      "The packed weekend left more bills and exhaustion.",
+      "A check-in helped me keep company and rest in the same plan."
+    ]
+  },
+  {
+    "id": "recovery.pressure.partying.2",
+    "family": "recovery.pressure.partying",
+    "habit": "partying",
+    "title": "The last-minute guest list",
+    "text": "A last-minute guest list makes an ordinary night feel like a rare chance.",
+    "results": [
+      "I let the guest list pass and protected the next day.",
+      "The rare chance became another familiar recovery day.",
+      "Support helped me judge the invitation against the week I actually needed."
+    ]
+  },
+  {
+    "id": "recovery.pressure.partying.3",
+    "family": "recovery.pressure.partying",
+    "habit": "partying",
+    "title": "The quiet group chat",
+    "text": "A quiet group chat makes you want to organise another late night.",
+    "results": [
+      "I suggested company that did not cost another sleepless night.",
+      "Another late night added spending and fatigue to the week.",
+      "A check-in helped me choose a calmer way to see people."
+    ]
+  }
+]

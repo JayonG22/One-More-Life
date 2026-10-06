@@ -1,0 +1,30 @@
+[
+  {
+    "id": "v091.school.graduation_echo",
+    "icon": "📜",
+    "title": "The names on the program",
+    "text": "An old graduation program turns up with {teacher.first} and {classmate.first} beside your name. The day was shared with them, whatever came after.",
+    "conditions": {},
+    "family": "school.graduation",
+    "themes": ["school", "social", "life"],
+    "choices": [
+      {
+        "label": "Keep it with my school record",
+        "outcomes": [
+          {"text": "I tucked the program beside my report cards. One chapter ended; the people in it stayed part of my story.", "weight": 1, "effects": {"happiness": 2, "smarts": 1}}
+        ]
+      },
+      {
+        "label": "Cheer for someone at their next big day",
+        "outcomes": [
+          {"text": "I remembered who showed up for me, and made sure to show up for someone else.", "weight": 1, "effects": {"happiness": 2, "karma": 2}}
+        ]
+      }
+    ],
+    "roles": {
+      "teacher": {"bound": true, "allow_dead": true},
+      "classmate": {"bound": true, "allow_dead": true}
+    },
+    "followup_only": true
+  }
+]

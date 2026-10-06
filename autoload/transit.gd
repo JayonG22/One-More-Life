@@ -42,7 +42,7 @@ func st() -> Dictionary:
 
 
 func transit_score() -> float:
-	return float(Places.region().get("transit", 0.5))
+	return minf(1,float(Places.region().get("transit",0.5))+mini(3,int(Journey.modules["places"].institution()["transit"]))*0.05)
 
 
 func has_car() -> bool:
@@ -61,7 +61,7 @@ func available(mode: String) -> bool:
 		"walk", "bike": return true
 		"bus": return transit_score() >= 0.25
 		"train": return transit_score() >= 0.6
-		"drive": return has_car() and int(_p().get("age", 0)) >= 16
+		"drive": return has_car() and Holdings.drivable() and Law.has_license("driver") and int(_p().get("age", 0)) >= 16
 		"remote": return GameState.has_job() and int(_p().get("age", 0)) >= 18 and (Phrases.tech_level() >= 2) and _remote_job()
 	return false
 
@@ -70,7 +70,7 @@ func available(mode: String) -> bool:
 func reach_mode() -> String:
 	if int(_p().get("travel_pass", -9)) == int(_p().get("age", 0)):
 		return "drive"
-	if has_car() and int(_p().get("age", 0)) >= 16:
+	if available("drive"):
 		return "drive"
 	if available("train"):
 		return "train"
@@ -117,7 +117,7 @@ func _remote_job() -> bool:
 func base_minutes() -> int:
 	var sprawl := 1.0 - transit_score()
 	var school_bonus := 0.5 if not GameState.has_job() else 1.0
-	return int(round((18.0 + 42.0 * sprawl) * school_bonus))
+	return int(round((18.0 + 42.0 * sprawl) * school_bonus * Holdings.commute_factor()))
 
 
 func minutes(mode: String) -> int:
@@ -208,7 +208,10 @@ func yearly() -> void:
 	var s := st()
 	if s.is_empty() or GameState.in_prison():
 		return
-	s["serviced"] = false
+	if int(s.get("last_year",-1))==GameState.year_now(): return
+	s["last_year"]=GameState.year_now()
+	Holdings.yearly_vehicle({},current()=="drive")
+	Holdings.home_yearly()
 	s["commute_min"] = 0
 	# crashes drop off the record after a few clean years
 	var keep: Array = []
@@ -241,8 +244,9 @@ func yearly() -> void:
 				GameState.change_stat("health", -0.5)
 		if mins >= 60 and m != "remote":
 			GameState.add_log("My commute is %d minutes each way. I've started to think of it as a second job." % mins)
-	if has_car() and int(_p()["age"]) >= 16:
+	if available("drive"):
 		_drive_year()
+	s["serviced"]=false
 
 
 func _drive_year() -> void:
@@ -257,11 +261,13 @@ func _drive_year() -> void:
 		s["fines"] = int(s.get("fines", 0)) + 1
 		GameState.add_log("I was pulled over with no insurance. The fine was %s and the officer wrote down my name twice." % GameState.fmt_money(fine))
 	# breakdowns
-	var bp := 0.03 if bool(s.get("serviced", false)) else 0.11
+	var bp := breakdown_chance()
 	if randf() < bp:
 		var cost := Actions._cost(randi_range(600, 2400))
 		_p()["money"] = int(_p()["money"]) - cost
 		GameState.apply_effects({"stress": 4})
+		Holdings.car()["condition"]=minf(100,float(Holdings.car()["condition"])+20)
+		if commuting() and current()=="drive": GameState.apply_effects({"job_perf":-2 if GameState.has_job() else 0,"school":-2 if GameState.in_school() or GameState.in_university() else 0})
 		GameState.add_log("The car broke down on the way home. The garage found three other things while they had it, and the bill was %s." % GameState.fmt_money(cost))
 	# crashes
 	var cp := 0.03
@@ -275,6 +281,11 @@ func _drive_year() -> void:
 		var r := randf()
 		crash("minor" if r < 0.68 else ("moderate" if r < 0.94 else "severe"))
 
+
+func breakdown_chance() -> float:
+	if not has_car(): return 0.0
+	var r := Holdings.car()
+	return clampf((0.02 if st().get("serviced",false) else 0.05)+(100-float(r["condition"]))/250.0+mini(250000,int(r["mileage"]))/2500000.0,0.02,0.5)
 
 func crash(severity: String) -> void:
 	var s := st()
@@ -314,6 +325,7 @@ func crash(severity: String) -> void:
 		_: txt = "The crash happened very fast and then very slowly. The car was written off."
 	if severity == "severe":
 		p["car"] = ""
+		p.erase("car_record")
 		if randf() < 0.08 and GameState.stat("health") < 60.0:
 			EventEngine.kill("a car crash")
 			return
@@ -367,12 +379,7 @@ func act(key: String, arg) -> void:
 		"cover":
 			s["cover"] = str(arg)
 		"service":
-			var fee := Actions._cost(450)
-			if not Actions._can_pay(fee, "Car service"):
-				return
-			_p()["money"] = int(_p()["money"]) - fee
-			s["serviced"] = true
-			EventEngine.push_info("🔧", "Service", "The mechanic showed me a filter the colour of tar. I felt looked after.")
+			Holdings.service()
 
 
 func tag(t: String) -> bool:

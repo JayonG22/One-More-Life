@@ -233,7 +233,8 @@
   "edu": "high_school",
   "min_age": 18,
   "stress": 4,
-  "icon": "🔌"
+  "icon": "🔌",
+  "vocational_entry": true
  },
  {
   "id": "plumber",
@@ -248,7 +249,8 @@
   "edu": "high_school",
   "min_age": 18,
   "stress": 4,
-  "icon": "🔧"
+  "icon": "🔧",
+  "vocational_entry": true
  },
  {
   "id": "mechanic",
@@ -263,7 +265,8 @@
   "edu": "high_school",
   "min_age": 18,
   "stress": 4,
-  "icon": "🔩"
+  "icon": "🔩",
+  "vocational_entry": true
  },
  {
   "id": "carpenter",
@@ -278,7 +281,8 @@
   "edu": "high_school",
   "min_age": 18,
   "stress": 4,
-  "icon": "🪚"
+  "icon": "🪚",
+  "vocational_entry": true
  },
  {
   "id": "hairstylist",
@@ -293,7 +297,8 @@
   "edu": "high_school",
   "min_age": 18,
   "stress": 3,
-  "icon": "💇"
+  "icon": "💇",
+  "vocational_entry": true
  },
  {
   "id": "line_cook",
@@ -938,5 +943,714 @@
   "license": "pilot",
   "clean_record": true,
   "icon": "✈️"
+ },
+ {
+  "id": "data_analyst",
+  "field": "Tech",
+  "salary": 52000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Junior Data Analyst",
+   "Data Analyst",
+   "Analytics Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "computer_science",
+   "economics"
+  ],
+  "era_min": 1960,
+  "local_scenes": [
+   "tech",
+   "studio"
+  ]
+ },
+ {
+  "id": "cybersecurity",
+  "field": "Tech",
+  "salary": 57000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Security Analyst",
+   "Incident Responder",
+   "Security Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "computer_science"
+  ],
+  "era_min": 1980,
+  "local_scenes": [
+   "tech",
+   "studio"
+  ]
+ },
+ {
+  "id": "ux_research",
+  "field": "Design",
+  "salary": 49000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "UX Research Assistant",
+   "UX Researcher",
+   "Research Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "psychology",
+   "graphic_design"
+  ]
+ },
+ {
+  "id": "technical_writer",
+  "field": "Media",
+  "salary": 45000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Junior Technical Writer",
+   "Technical Writer",
+   "Documentation Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "english",
+   "communications",
+   "computer_science"
+  ]
+ },
+ {
+  "id": "game_producer",
+  "field": "Tech",
+  "salary": 51000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Associate Producer",
+   "Game Producer",
+   "Production Director"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "game_dev",
+   "business",
+   "communications"
+  ],
+  "local_scenes": [
+   "tech",
+   "studio"
+  ]
+ },
+ {
+  "id": "renewable_tech",
+  "field": "Energy",
+  "salary": 34000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Solar Installation Assistant",
+   "Renewable Technician",
+   "Site Supervisor"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "engineering"
+  ],
+  "local_scenes": [
+   "construction"
+  ],
+  "vocational_entry": true
+ },
+ {
+  "id": "urban_planner",
+  "field": "Government",
+  "salary": 48000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Planning Assistant",
+   "Urban Planner",
+   "Planning Director"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "architecture",
+   "political_science",
+   "economics"
+  ]
+ },
+ {
+  "id": "environment_officer",
+  "field": "Environment",
+  "salary": 41000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Environmental Assistant",
+   "Environmental Officer",
+   "Programme Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "biology",
+   "engineering"
+  ]
+ },
+ {
+  "id": "food_scientist",
+  "field": "Science",
+  "salary": 47000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Food Lab Assistant",
+   "Food Scientist",
+   "Quality Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "biology",
+   "culinary"
+  ]
+ },
+ {
+  "id": "community_worker",
+  "field": "Care",
+  "salary": 33000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Community Support Worker",
+   "Case Coordinator",
+   "Service Manager"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "psychology",
+   "criminal_justice",
+   "education"
+  ]
+ },
+ {
+  "id": "care_assistant",
+  "field": "Care",
+  "salary": 27000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Care Assistant",
+   "Senior Care Assistant",
+   "Care Team Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "nursing",
+   "psychology"
+  ],
+  "vocational_entry": true
+ },
+ {
+  "id": "logistics_planner",
+  "field": "Logistics",
+  "salary": 39000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Dispatch Assistant",
+   "Logistics Planner",
+   "Operations Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "business",
+   "engineering"
+  ],
+  "era_min": 1920,
+  "vocational_entry": true
+ },
+ {
+  "id": "event_coordinator",
+  "field": "Hospitality",
+  "salary": 32000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Event Assistant",
+   "Event Coordinator",
+   "Venue Manager"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "business",
+   "communications"
+  ],
+  "local_scenes": [
+   "restaurant"
+  ],
+  "vocational_entry": true
+ },
+ {
+  "id": "archivist",
+  "field": "Media",
+  "salary": 38000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Archives Assistant",
+   "Archivist",
+   "Collections Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "english",
+   "political_science"
+  ]
+ },
+ {
+  "id": "sound_engineer",
+  "field": "Media",
+  "salary": 35000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Audio Assistant",
+   "Sound Engineer",
+   "Studio Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "music",
+   "engineering"
+  ],
+  "vocational_entry": true
+ },
+ {
+  "id": "compliance",
+  "field": "Finance",
+  "salary": 50000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Compliance Associate",
+   "Compliance Analyst",
+   "Compliance Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "accounting",
+   "law",
+   "economics",
+   "criminal_justice"
+  ],
+  "era_min": 1930
+ },
+ {
+  "id": "museum_educator",
+  "field": "Education",
+  "salary": 35000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Museum Learning Assistant",
+   "Museum Educator",
+   "Learning Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "education",
+   "english",
+   "biology"
+  ]
+ },
+ {
+  "id": "tour_guide",
+  "field": "Hospitality",
+  "salary": 28000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Tour Assistant",
+   "Tour Guide",
+   "Tour Operations Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "communications",
+   "english"
+  ],
+  "local_scenes": [
+   "restaurant"
+  ],
+  "vocational_entry": true
+ },
+ {
+  "id": "farm_manager",
+  "field": "Environment",
+  "salary": 36000,
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Farm Operations Assistant",
+   "Farm Manager",
+   "Regional Farm Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "biology",
+   "business"
+  ],
+  "vocational_entry": true
+ },
+ {
+  "id": "biomedical_engineer",
+  "field": "Engineering",
+  "salary": 61000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Junior Biomedical Engineer",
+   "Biomedical Engineer",
+   "Clinical Engineering Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "engineering",
+   "biology"
+  ],
+  "majors": [
+   "engineering",
+   "biology"
+  ],
+  "era_min": 1950,
+  "local_scenes": [
+   "construction"
+  ]
+ },
+ {
+  "id": "public_defender",
+  "field": "Legal",
+  "salary": 59000,
+  "edu": "graduate",
+  "min_age": 22,
+  "stress": 4,
+  "ranks": [
+   "Assistant Public Defender",
+   "Public Defender",
+   "Supervising Defender"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "law"
+  ],
+  "majors": [
+   "law"
+  ]
+ },
+ {
+  "id": "insurance_analyst",
+  "field": "Finance",
+  "salary": 44000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Claims Analyst",
+   "Risk Analyst",
+   "Underwriting Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "economics",
+   "accounting",
+   "business"
+  ]
+ },
+ {
+  "id": "special_education",
+  "field": "Education",
+  "salary": 40000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Learning Support Teacher",
+   "Special Education Teacher",
+   "Inclusion Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "education"
+  ],
+  "majors": [
+   "education"
+  ],
+  "era_min": 1900
+ },
+ {
+  "id": "community_nurse",
+  "field": "Healthcare",
+  "salary": 44000,
+  "edu": "bachelor",
+  "min_age": 18,
+  "stress": 4,
+  "ranks": [
+   "Community Nurse",
+   "Senior Community Nurse",
+   "Community Nursing Lead"
+  ],
+  "icon": "🧰",
+  "preferred_majors": [
+   "nursing"
+  ],
+  "majors": [
+   "nursing"
+  ]
+ },
+ {
+  "id": "family_role",
+  "field": "General",
+  "salary": 35000,
+  "ranks": [
+   "Existing role",
+   "Experienced role",
+   "Senior role"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "💼",
+  "inherited_only": true
+ },
+ {
+  "id": "appliance_repair",
+  "field": "Trades",
+  "salary": 26000,
+  "ranks": [
+   "Repair Trainee",
+   "Appliance Technician",
+   "Repair Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "🔧",
+  "vocational_entry": true
+ },
+ {
+  "id": "bike_repair",
+  "field": "Trades",
+  "salary": 23000,
+  "ranks": [
+   "Workshop Assistant",
+   "Cycle Mechanic",
+   "Workshop Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "🚲",
+  "vocational_entry": true
+ },
+ {
+  "id": "dispatch_support",
+  "field": "Logistics",
+  "salary": 25000,
+  "ranks": [
+   "Dispatch Trainee",
+   "Dispatch Coordinator",
+   "Operations Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "📦",
+  "vocational_entry": true
+ },
+ {
+  "id": "repair_support",
+  "field": "Tech",
+  "salary": 27000,
+  "ranks": [
+   "Support Trainee",
+   "Device Support Technician",
+   "Support Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "💻",
+  "vocational_entry": true
+ },
+ {
+  "id": "recycling_operator",
+  "field": "Environment",
+  "salary": 24000,
+  "ranks": [
+   "Sorting Assistant",
+   "Recovery Technician",
+   "Site Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "♻️",
+  "vocational_entry": true
+ },
+ {
+  "id": "grounds_keeper",
+  "field": "Facilities",
+  "salary": 23500,
+  "ranks": [
+   "Grounds Assistant",
+   "Groundskeeper",
+   "Grounds Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "🌿",
+  "vocational_entry": true
+ },
+ {
+  "id": "print_technician",
+  "field": "Design",
+  "salary": 25500,
+  "ranks": [
+   "Print Assistant",
+   "Print Technician",
+   "Production Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "🖨️",
+  "vocational_entry": true
+ },
+ {
+  "id": "venue_service",
+  "field": "Hospitality",
+  "salary": 24000,
+  "ranks": [
+   "Venue Assistant",
+   "Event Service Coordinator",
+   "Venue Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 3,
+  "icon": "🎟️",
+  "vocational_entry": true
+ },
+ {
+  "id": "baker",
+  "field": "Food",
+  "salary": 29000,
+  "ranks": [
+   "Bakery Assistant",
+   "Baker",
+   "Head Baker"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "🍞"
+ },
+ {
+  "id": "mortician",
+  "field": "Care",
+  "salary": 38000,
+  "ranks": [
+   "Funeral Assistant",
+   "Mortician",
+   "Funeral Director"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "⚱️"
+ },
+ {
+  "id": "exorcist",
+  "field": "General",
+  "salary": 26000,
+  "ranks": [
+   "Paranormal Investigator",
+   "Exorcist",
+   "Investigation Lead"
+  ],
+  "edu": "none",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "👻"
+ },
+ {
+  "id": "marines",
+  "field": "Military",
+  "salary": 34000,
+  "ranks": [
+   "Marine Recruit",
+   "Lance Corporal",
+   "Sergeant",
+   "Training Officer",
+   "Commanding Officer"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "🎖️"
+ },
+ {
+  "id": "coast_guard",
+  "field": "Military",
+  "salary": 34000,
+  "ranks": [
+   "Coastal Recruit",
+   "Rescue Crew",
+   "Petty Officer",
+   "Station Officer",
+   "Station Commander"
+  ],
+  "edu": "high_school",
+  "min_age": 18,
+  "stress": 5,
+  "icon": "🛟"
+ },
+ {
+  "id": "adult_performer",
+  "field": "Media",
+  "salary": 34000,
+  "ranks": [
+   "Adult Performer",
+   "Established Performer",
+   "Studio Coordinator"
+  ],
+  "edu": "high_school",
+  "min_age": 21,
+  "stress": 5,
+  "icon": "🎭",
+  "mature": true
  }
 ]

@@ -8,14 +8,17 @@ const ILLNESSES_YOUNG := ["the flu", "bronchitis", "a stomach bug", "chickenpox"
 const ILLNESSES_ADULT := ["the flu", "bronchitis", "migraines", "back pain", "high blood pressure", "insomnia", "pneumonia"]
 const ILLNESSES_OLD := ["arthritis", "high blood pressure", "heart disease", "pneumonia", "diabetes", "failing eyesight"]
 const SERIOUS := ["high blood pressure", "heart disease", "pneumonia", "diabetes", "arthritis", "cancer"]
-const AGENCY_RELATIONS := ["sibling", "friend", "best_friend", "partner", "rival", "coworker", "boss", "mother", "father", "child", "neighbor", "ex", "grandparent", "auntuncle"]
+const AGENCY_RELATIONS := ["sibling", "friend", "best_friend", "partner", "rival", "coworker", "boss", "mother", "father", "child", "neighbor", "ex", "grandparent"]
 
 var pending: Array = []
+var displayed: Dictionary = {}
 var _token_re := RegEx.new()
+var _money_token_re := RegEx.new()
 
 
 func _ready() -> void:
 	_token_re.compile("\\{([a-z_]+)\\.([a-zA-Z]+)\\}")
+	_money_token_re.compile("\\{money:([0-9]+)\\}")
 
 
 func has_pending() -> bool:
@@ -25,31 +28,58 @@ func has_pending() -> bool:
 func pop_next() -> Dictionary:
 	if pending.is_empty():
 		return {}
-	return pending.pop_front()
+	var it: Dictionary = pending.pop_front()
+	displayed = it.duplicate(true)
+	if it.has("def"):
+		Director.note(it["def"])
+		if not Meta.meta.has("recent"): Meta.meta["recent"] = {}
+		Meta.meta["recent"][it["def"]["id"]] = Goals.stat_total("lives")
+	return it
 
 
 # ---------------------------------------------------------------- the year
 
+func progress() -> void:
+	if Journey.busy(): return
+	if not GameState.is_alive() or has_pending() or displayed.has("def"): return
+	if LifeCourse.monthly_mode():
+		if LifeCourse.advance_month():
+			Goals.check()
+			GameState.emit_changed()
+			SaveManager.save_game()
+			if has_pending(): event_queued.emit()
+			return
+	age_up()
+
+
 func age_up() -> void:
 	if not GameState.is_alive():
+		return
+	if Lives.is_type("tv"):
+		TVLife.advance()
 		return
 	if Lives.separate():
 		_age_up_separate()
 		return
+	Childhood.protect()
 	pending.clear()
 	Items.snapshot()
+	FamilyChronicle.before_year()
 	GameState.begin_year()
+	LifeCourse.yearly()
 	_run_routines()
+	Lifestyle.advance(false)
 	_yearly_body()
 	_yearly_npcs()
 	_yearly_school()
+	Employment.yearly()
 	_yearly_job()
 	Careers.yearly()
 	Finance.yearly()
 	Empires.yearly()
+	Ventures.yearly()
 	Web.yearly()
 	Grit.yearly()
-	Lending.yearly()
 	Fights.yearly()
 	Lives.yearly()
 	World.yearly()
@@ -59,9 +89,13 @@ func age_up() -> void:
 	Workforce.yearly()
 	Romance.yearly()
 	NpcWorld.yearly()
+	Lore.yearly()
 	Daily.yearly()
+	Depth.yearly()
+	Insight.yearly()
 	Shop.yearly()
 	Social.yearly()
+	Creator.yearly()
 	Dealer.yearly()
 	Expansion.yearly()
 	Ambition.yearly()
@@ -70,7 +104,14 @@ func age_up() -> void:
 	Wanted.yearly()
 	Decline.yearly()
 	Real.yearly()
+	Household.yearly()
+	FamilyChronicle.yearly()
+	Journey.yearly()
 	_yearly_finances()
+	Employment.after_finances()
+	Journey.modules["funds"].settle_active_after_finances()
+	Stewardship.finish_year()
+	Journey.modules["fresh"].after_finances()
 	_yearly_prison()
 	var cause := _death_check()
 	if cause != "":
@@ -109,6 +150,7 @@ func _age_up_separate() -> void:
 	_random_events()
 	Goals.bump("years")
 	Goals.check()
+	Director.curate()
 	GameState.emit_changed()
 	year_done.emit()
 	SaveManager.save_game()
@@ -141,6 +183,8 @@ func _run_routines() -> void:
 			for id in GameState.npcs_with(rel):
 				GameState.change_closeness(id, 3)
 		done.append("family time")
+	for habit in done:
+		Lifestyle.note({"studying":"library","meditation":"meditate","daily walks":"walk","family time":"social"}.get(habit,habit))
 	if not done.is_empty():
 		GameState.add_log("I kept up my routines: %s." % ", ".join(done))
 
@@ -166,7 +210,8 @@ func _yearly_body() -> void:
 		GameState.add_log("I've been under a lot of stress lately.")
 	if p["housing"] == "homeless":
 		GameState.apply_effects({"health": -5, "happiness": -5, "stress": 5})
-	if p["illness"] != "":
+	var recorded_illness: bool=Care.course().recorded_illness()
+	if p["illness"] != "" and not recorded_illness:
 		var serious: bool = SERIOUS.has(p["illness"])
 		if randf() < (0.2 if serious else 0.65):
 			GameState.add_log("I finally got over %s." % p["illness"])
@@ -174,13 +219,13 @@ func _yearly_body() -> void:
 		else:
 			GameState.apply_effects({"health": -3 if serious else -2, "happiness": -2})
 			GameState.add_log("I'm still dealing with %s." % p["illness"])
-	elif Lives.no_healing():
+	elif recorded_illness or Lives.no_healing():
 		pass
 	elif age < 45 and GameState.stat("health") < 85:
 		GameState.change_stat("health", 2.0 * Grit.d("heal"))
 	elif age < 65 and GameState.stat("health") < 70:
 		GameState.change_stat("health", 0.8 * Grit.d("heal"))
-	if p["illness"] == "" and age >= 3:
+	if p["illness"] == "" and age >= 3 and not recorded_illness:
 		var chance := 0.04 + age * 0.0012
 		if p["illness"] == "" and randf() < chance:
 			var pool := ILLNESSES_YOUNG if age < 18 else (ILLNESSES_ADULT if age < 60 else ILLNESSES_OLD)
@@ -203,7 +248,7 @@ func _yearly_npcs() -> void:
 		n["age"] = int(n["age"]) + 1
 		var decay := 3
 		match n["relation"]:
-			"mother", "father", "sibling", "grandparent", "auntuncle", "child":
+			"mother", "father", "sibling", "grandparent", "child":
 				decay = 1 if Grit.has_boon("family_ties") else 2
 			"friend", "best_friend":
 				decay = 4
@@ -265,8 +310,10 @@ func _have_baby() -> void:
 	elif roll < 0.07:
 		count = 2
 	var named: Array = []
+	var parent_uids: Array = [FamilyChronicle.identity(p)]
+	if GameState.npcs.has(str(p.get("partner",""))): parent_uids.append(FamilyChronicle.identity(GameState.npcs[p["partner"]]))
 	for i in range(count):
-		var cid := GameState.create_npc("child", {"age": 0, "last": p["last"], "closeness": 90})
+		var cid := GameState.create_npc("child", {"age": 0, "last": p["last"], "closeness": 90,"parent_uids":parent_uids})
 		named.append(GameState.npcs[cid]["first"])
 	if count == 1:
 		GameState.add_log("I became a parent! We named the baby %s." % named[0])
@@ -318,9 +365,14 @@ func _npc_stats_drift(n: Dictionary) -> void:
 
 
 func _npc_died(id: String) -> void:
+	if GameState.npc(id).get("death_settled",false): return
+	GameState.npc(id)["death_settled"]=true
+	Journey.modules["coping"].lost(id)
+	Novelty.close_person(GameState.npc(id).get("playable_player",{}),"this person's life ended")
 	var p := GameState.player
 	var n: Dictionary = GameState.npcs[id]
 	n["alive"] = false
+	var full_estate := Estate.settle_inactive(id)
 	var rel := GameState.relation_label(id).to_lower()
 	var close: int = n["closeness"]
 	var hit := -int(close / 6.0)
@@ -339,7 +391,7 @@ func _npc_died(id: String) -> void:
 		p["partner"] = ""
 		p["partner_status"] = ""
 		GameState.set_flag("widowed")
-		if int(n["money"]) > 0:
+		if not full_estate and int(n["money"]) > 0:
 			p["money"] = int(p["money"]) + int(n["money"])
 
 
@@ -351,16 +403,17 @@ func _yearly_school() -> void:
 		return
 	if age == 5 and e["stage"] == "none":
 		e["stage"] = "primary"
-		GameState.add_log("I started elementary school.")
+		GameState.add_log("I started kindergarten.")
 		return
 	if age == 12 and e["stage"] == "primary":
 		e["stage"] = "secondary"
-		GameState.add_log("I started high school.")
+		GameState.add_log("My secondary-school record continues through middle and high school.")
 	if GameState.in_school():
 		_update_performance(e, "performance")
+		e["performance"]=clampf(float(e["performance"])+(float(Journey.modules["campus"].st()["attendance"])-95.0)*0.12,0,100)
 		var letter := grade_letter(float(e["performance"]))
 		e["grade"] = letter
-		if e["stage"] == "secondary":
+		if e["stage"] == "secondary" and age>=14:
 			e["gpa_sum"] = float(e["gpa_sum"]) + grade_points(letter)
 			e["gpa_years"] = int(e["gpa_years"]) + 1
 		GameState.change_stat("smarts", randf_range(0.2, 1.2))
@@ -373,6 +426,15 @@ func _yearly_school() -> void:
 			GameState.add_milestone(age, "graduated from high school")
 			GameState.apply_effects({"happiness": 8})
 			push_info("🎓", "Graduation Day", "You graduated from high school with a %.1f GPA.\n\nOpen Occupation → Education to apply to university, or Full-Time Jobs to start working." % GameState.gpa())
+			# This is a transition scene, not a random school encounter. Queue it
+			# immediately and keep the classroom people who were actually there.
+			var campus = Journey.modules["campus"]
+			var graduation_roles: Dictionary = {}
+			var teacher_id: String = str(campus.homeroom_teacher())
+			if teacher_id != "": graduation_roles["teacher"] = teacher_id
+			var classmates: Array = campus.members("classmate")
+			if not classmates.is_empty(): graduation_roles["classmate"] = str(classmates.pick_random())
+			GameState.followups.append({"event":"sch.graduation","age":age,"roles":graduation_roles,"retries":0})
 		else:
 			e["stage"] = "dropout"
 			GameState.add_log("My grades were too low to graduate high school.")
@@ -388,7 +450,10 @@ func _yearly_school() -> void:
 			else:
 				p["loan"] = int(p["loan"]) + tuition
 		_update_performance(u, "performance")
+		u["performance"]=clampf(float(u["performance"])+(float(Journey.modules["campus"].st()["attendance"])-95.0)*0.12,0,100)
 		u["year"] = int(u["year"]) + 1
+		if float(u["performance"]) >= 45.0:
+			for field in Market.MAJOR_FIELDS.get(str(u["major"]), []): Market.learn(str(field))
 		if float(u["performance"]) < 18 and randf() < 0.5:
 			GameState.add_log("I was expelled from university for failing grades.")
 			GameState.add_milestone(age, "was expelled from university")
@@ -396,6 +461,16 @@ func _yearly_school() -> void:
 			e["uni"] = {}
 			if p["housing"] == "dorm":
 				p["housing"] = "parents"
+			return
+		if int(u["year"]) >= int(u["years"]) and float(u["performance"])<45:
+			u["resits"]=int(u.get("resits",0))+1
+			if int(u["resits"])<=2:
+				u["year"]=int(u["years"])-1
+				GameState.add_log("My final grades were below the passing standard. I need a repeat year before earning this qualification.")
+			else:
+				GameState.add_log("I left my course without the qualification after repeated unsuccessful final assessments.")
+				e["uni"]={}
+				if p["housing"]=="dorm": p["housing"]="parents"
 			return
 		if int(u["year"]) >= int(u["years"]):
 			var m := ContentDB.major(u["major"])
@@ -413,7 +488,7 @@ func _yearly_school() -> void:
 
 func _update_performance(d: Dictionary, key: String) -> void:
 	var perf := float(d.get(key, 50.0))
-	var smarts := GameState.stat("smarts")
+	var smarts := Aptitude.score("education")
 	perf += (smarts - perf) * 0.25 + randf_range(-8.0, 8.0) + (GameState.hidden("discipline") - 50.0) * 0.08
 	if GameState.player["education"]["studied"]:
 		perf += 8
@@ -450,7 +525,7 @@ func _yearly_job() -> void:
 	var jd := ContentDB.job(j["id"])
 	j["years"] = int(j["years"]) + 1
 	j["years_in_rank"] = int(j["years_in_rank"]) + 1
-	var perf := float(j["perf"]) + randf_range(-7.0, 5.0) + (GameState.stat("happiness") - 50.0) * 0.05 + (GameState.hidden("discipline") - 50.0) * 0.05
+	var perf := float(j["perf"]) + randf_range(-7.0,5.0)+(Aptitude.score("work")-50.0)*0.16+(GameState.hidden("discipline")-50.0)*0.05
 	if j.get("worked_hard", false):
 		perf += 10
 	if GameState.has_trait("Ambitious"):
@@ -464,43 +539,74 @@ func _yearly_job() -> void:
 
 func _yearly_finances() -> void:
 	var p := GameState.player
+	var year := GameState.year_now()
+	if not GameState.is_alive() or int(p.get("finances_year",-1))>=year: return
+	p["finances_year"]=year
 	var age: int = p["age"]
 	var c := ContentDB.country(p["country"])
 	var cost: float = c.get("cost", 1.0)
 	var income := 0
 	var expenses := 0
+	var bill_lines := {}
+	var booked := Employment.take_income()
+	income += int(booked["amount"])
+	var income_sources: Dictionary=booked["sources"].duplicate(true)
+	var already_paid := 0
+	for category in booked.get("paid_expenses",{}): already_paid+=int(booked["paid_expenses"][category])
 	if GameState.has_job():
-		income += int(int(p["job"]["salary"]) * (1.0 - Places.tax()))
+		var wages := int(int(p["job"]["salary"]) * Employment.pay_factor() * (1.0 - Places.tax()))
+		income += wages
+		income_sources["Work pay"]=wages
+		var union_dues := int(p["job"].get("union_dues_due",0))
+		if union_dues>0: bill_lines["Union dues"]=union_dues
 	if p["retired"]:
-		income += int(p["pension"])
-	if age >= 18 and not GameState.in_prison():
+		var pension := int(p["pension"])
+		income += pension
+		if pension>0: income_sources["Pension"]=pension
+	if not Childhood.supported() and not GameState.in_prison():
 		match p["housing"]:
-			"parents": expenses += int(2500 * cost)
-			"dorm": expenses += int(6000 * cost)
-			"apartment": expenses += int((11000 + Tenancy.annual_rent()) * cost)
-			"house": expenses += int(11000 * cost)
+			"parents": bill_lines["Living costs at home"]=int(2500*cost)
+			"dorm": bill_lines["Dorm and living costs"]=int(6000*cost)
+			"apartment":
+				bill_lines["Living costs"]=int(11000*cost)
+				bill_lines["My rent share"]=int(Tenancy.annual_rent()*cost)
+			"house": bill_lines["Living costs"]=int(11000*cost)
 		if int(p["mortgage"]) > 0:
 			var pay := mini(int(p["mortgage"]), int(p["mortgage_payment"]))
 			p["mortgage"] = int(p["mortgage"]) - pay
-			expenses += pay
+			bill_lines["Mortgage payment"]=pay
 			if int(p["mortgage"]) == 0:
 				GameState.add_log("I paid off my mortgage!")
 				GameState.add_milestone(age, "paid off the house")
 		if p["car"] != "":
-			expenses += int(GameState.CARS[p["car"]]["upkeep"] * cost)
-		expenses += int(Real.extra_costs() * cost)
-		for cid in GameState.npcs_with("child"):
+			bill_lines["Vehicle upkeep"]=int(GameState.CARS[p["car"]]["upkeep"]*cost)
+		bill_lines["Transport, utilities and keeping in touch"]=int(Real.extra_costs()*cost)
+		bill_lines["Household service"]=int(Household.service_cost()*cost)
+		for cid in GameState.npcs_with("child")+GameState.npcs_with("stepchild"):
 			if int(GameState.npcs[cid]["age"]) < 18:
-				expenses += int(7000 * cost)
+				bill_lines["Dependent support"]=int(bill_lines.get("Dependent support",0))+int(7000*cost*Journey.modules["people"].support_factor(cid))
 		if int(p["loan"]) > 0 and income > 0:
 			var lp := mini(int(p["loan"]), maxi(1500, int(p["loan"]) / 8))
 			p["loan"] = int(p["loan"]) - lp
-			expenses += lp
-	expenses = int(expenses * Grit.d("cost") * World.cost_mult() * Places.cost_mult())
-	p["money"] = int(p["money"]) + income - expenses
+			bill_lines["Education loan repayment"]=lp
+	for category in bill_lines:
+		if category not in ["Mortgage payment","Education loan repayment","Union dues"]: bill_lines[category]=int(int(bill_lines[category])*Grit.d("cost")*World.cost_mult()*Places.cost_mult())
+		expenses+=int(bill_lines[category])
+	for category in booked.get("paid_expenses",{}):
+		bill_lines[category]=int(bill_lines.get(category,0))+int(booked["paid_expenses"][category])
+	expenses+=already_paid
+	p["household_ledger"]={"year":GameState.year_now(),"income":income,"expenses":expenses,"lines":bill_lines,"income_sources":income_sources}
+	p["money"] = int(p["money"]) + income - expenses - int(booked["amount"]) + already_paid
+	Childhood.protect()
 	if GameState.in_university() and int(p["money"]) < 0:
 		p["loan"] = int(p["loan"]) - int(p["money"])
 		p["money"] = 0
+	# Only the negative-cash increase attributable to current recurring home
+	# bills is eligible for reserve cover. Older debt and student-loan financing
+	# do not manufacture a second household reimbursement allowance.
+	var home_bills: int = Journey.modules["funds"].bill_cost(bill_lines)
+	var negative_cash := maxi(0,-int(p["money"]))
+	p["household_ledger"]["reserve_shortfall"]=maxi(0,negative_cash-maxi(0,negative_cash-int(home_bills)))
 	p["last_income"] = income
 	p["last_expenses"] = expenses
 	if income > 0 and expenses > 0:
@@ -568,7 +674,8 @@ func _death_check() -> String:
 		GameState.add_log("I collapsed and was rushed to the hospital. The doctors pulled me through, barely.")
 		var bill := int(Actions._cost(45000) * Places.healthcare_mult())
 		if bill > 0:
-			p["money"] = int(p["money"]) - bill
+			if Childhood.supported(): Childhood.cover(bill,"hospital care")
+			else: p["money"] = int(p["money"]) - bill
 			GameState.add_log("The hospital bill came to %s." % GameState.fmt_money(bill))
 		Grit.scar_chance("weak_heart", 0.35)
 		GameState.add_milestone(age, "survived a health scare")
@@ -611,6 +718,7 @@ You didn't. Don't waste it." % cause)
 	p["life"]["can_rise"] = Lives.can_rise() and cause not in ["peace at last", "walking into the sunrise", "crumbling to dust"]
 	pending.clear()
 	var entry := GameState.finalize_death(cause)
+	displayed.clear()
 	Meta.record_death(entry)
 	Legacy.record(entry)
 	Goals.on_death()
@@ -637,7 +745,9 @@ func _due_followups() -> void:
 		var roles_alive := true
 		for r in f["roles"].keys():
 			var id: String = f["roles"][r]
-			if not GameState.npcs.has(id) or not GameState.npcs[id]["alive"]:
+			var spec: Dictionary = def.get("roles",{}).get(r,{})
+			var remember_dead: bool = spec.get("bound",false) and spec.get("allow_dead",false)
+			if not GameState.npcs.has(id) or (not GameState.npcs[id]["alive"] and not remember_dead):
 				roles_alive = false
 		if not roles_alive:
 			continue
@@ -651,6 +761,7 @@ func _due_followups() -> void:
 
 
 func _random_events() -> void:
+	if LifeCourse.monthly_mode(): return
 	var count := Director.random_count()
 	var pool: Array = []
 	var recent: Dictionary = Meta.meta.get("recent", {})
@@ -669,7 +780,12 @@ func _random_events() -> void:
 	var guard := 0
 	while picked < count and not pool.is_empty() and guard < 30:
 		guard += 1
-		var entry := _weighted_pick(pool, "w")
+		var fresh_defs := Novelty.prefer(pool.map(func(e): return e["def"]))
+		var fresh_pool := pool.filter(func(e): return fresh_defs.has(e["def"]))
+		var focus_pool: Array = fresh_pool.filter(func(e): return Context.focus(e["def"]))
+		var entry := _weighted_pick(focus_pool if picked == 0 and not focus_pool.is_empty() else fresh_pool, "w")
+		if entry.is_empty():
+			break
 		pool.erase(entry)
 		if _enqueue(entry["def"], {}):
 			picked += 1
@@ -706,17 +822,25 @@ func _npc_agency() -> void:
 			pool.append(def)
 	if pool.is_empty():
 		return
-	_enqueue(_weighted_pick(pool, "weight"), {"them": id})
+	_enqueue(_weighted_pick(Novelty.prefer(pool), "weight"), {"them": id})
 
 
 func _eligible(def: Dictionary, followup: bool) -> bool:
+	if not followup and not Journey.modules["identity"].definition_allowed(def): return false
 	var p := GameState.player
 	var cond: Dictionary = def.get("conditions", {})
 	var age: int = p["age"]
+	if def.get("mature", false):
+		if age < 18: return false
+		if not followup and not GameState.settings.get("mature_arcs", true): return false
+	if not Context.world_matches(def) or not Context.matches(cond.get("context", {})):
+		return false
 	# A separate mode only ever sees the events written for it.
 	if Lives.separate() and not cond.has("life"):
 		return false
 	if not followup:
+		if Novelty.optional(def) and not Novelty.eligible(def): return false
+		if Director.repeated(def): return false
 		if cond.has("age"):
 			var r: Array = cond["age"]
 			if age < int(r[0]) or age > int(r[1]):
@@ -725,11 +849,11 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 		if hist != null:
 			if def.get("once", false):
 				return false
-			if age - int(hist) < int(def.get("cooldown", 5)):
+			if age - int(hist) < maxi(5, int(def.get("cooldown", 5))):
 				return false
 		if cond.has("chance") and randf() > float(cond["chance"]):
 			return false
-	if bool(cond.get("prison", false)) != GameState.in_prison():
+	if not cond.get("prison_any", false) and bool(cond.get("prison", false)) != GameState.in_prison():
 		return false
 	for f in cond.get("flags", []):
 		if not GameState.has_flag(f):
@@ -754,6 +878,14 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 				return false
 		elif str(want_job) != jid:
 			return false
+	if cond.has("job_id"):
+		var current_job_id: String = str(p.get("job", {}).get("id", "")) if p.get("job", {}) is Dictionary else ""
+		var required_job = cond["job_id"]
+		if required_job is Array:
+			if not Array(required_job).has(current_job_id):
+				return false
+		elif str(required_job) != current_job_id:
+			return false
 	if cond.has("habit_active"):
 		for hid in Array(cond["habit_active"]):
 			if not Grit.active_habits().has(str(hid)):
@@ -768,10 +900,20 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 				return false
 	if cond.has("in_school") and bool(cond["in_school"]) != GameState.in_school():
 		return false
+	if cond.has("hs_graduated") and bool(cond["hs_graduated"]) != bool(p.get("education", {}).get("hs_graduated", false)):
+		return false
 	if cond.has("university") and bool(cond["university"]) != GameState.in_university():
 		return false
 	if cond.has("has_partner") and bool(cond["has_partner"]) != (p["partner"] != ""):
 		return false
+	if cond.has("relationship_agreement"):
+		var partner_id := str(p.get("partner", ""))
+		if partner_id=="" or not GameState.npcs.has(partner_id) or not GameState.npc(partner_id).get("alive",false): return false
+		var agreement: String=Journey.modules["identity"].agreement_for(partner_id)
+		var expected = cond["relationship_agreement"]
+		if expected is Array:
+			if not Array(expected).has(agreement): return false
+		elif str(expected)!=agreement: return false
 	if cond.has("married") and bool(cond["married"]) != (p["partner_status"] == "married"):
 		return false
 	if cond.has("has_children") and bool(cond["has_children"]) != (not GameState.npcs_with("child").is_empty()):
@@ -913,6 +1055,8 @@ func _eligible(def: Dictionary, followup: bool) -> bool:
 
 
 func _weighted_pick(list: Array, key: String) -> Dictionary:
+	if list.is_empty():
+		return {}
 	var total := 0.0
 	for d in list:
 		total += float(d.get(key, 1.0))
@@ -930,6 +1074,13 @@ func _build_roles(def: Dictionary, preset: Dictionary) -> Dictionary:
 	var to_create: Array = []
 	for role in specs.keys():
 		var spec: Dictionary = specs[role]
+		# A delayed family memory belongs to the original person, even after
+		# death or a change of relationship. Never substitute another relative.
+		if spec.get("bound", false):
+			if preset.has(role) and GameState.npcs.has(preset[role]) and (GameState.npcs[preset[role]]["alive"] or spec.get("allow_dead",false)):
+				roles[role] = preset[role]
+				continue
+			return {"__fail":true}
 		if preset.has(role) and GameState.npcs.has(preset[role]) and GameState.npcs[preset[role]]["alive"]:
 			roles[role] = preset[role]
 			continue
@@ -961,15 +1112,25 @@ func _build_roles(def: Dictionary, preset: Dictionary) -> Dictionary:
 				return {"__fail": true}
 			continue
 		var rels: Array = spec.get("relation_any", [spec.get("relation", "")])
-		var id := GameState.random_of(rels)
+		var constrained := spec.has("min_age") or spec.has("max_age") or spec.has("min_close") or spec.has("max_close")
+		var id := ""
+		if constrained:
+			var eligible_people: Array = []
+			for candidate_id in GameState.npcs.keys():
+				var candidate: Dictionary = GameState.npcs[candidate_id]
+				if not candidate.get("alive", false) or not rels.has(str(candidate.get("relation", ""))): continue
+				if spec.has("min_age") and int(candidate.get("age", 0)) < int(spec["min_age"]): continue
+				if spec.has("max_age") and int(candidate.get("age", 0)) > int(spec["max_age"]): continue
+				if spec.has("min_close") and float(candidate.get("closeness", 0)) < float(spec["min_close"]): continue
+				if spec.has("max_close") and float(candidate.get("closeness", 100)) > float(spec["max_close"]): continue
+				eligible_people.append(str(candidate_id))
+			if not eligible_people.is_empty(): id = str(eligible_people.pick_random())
+		else:
+			id = GameState.random_of(rels)
 		if id == "":
 			if spec.get("or_new", false):
 				to_create.append(role)
 				continue
-			return {"__fail": true}
-		if spec.has("min_age") and int(GameState.npcs[id]["age"]) < int(spec["min_age"]):
-			return {"__fail": true}
-		if spec.has("max_age") and int(GameState.npcs[id]["age"]) > int(spec["max_age"]):
 			return {"__fail": true}
 		roles[role] = id
 	for role in preset.keys():
@@ -1009,19 +1170,17 @@ func _enqueue(def0: Dictionary, preset: Dictionary) -> bool:
 		return false
 	var created: Array = roles.get("__created", [])
 	roles.erase("__created")
+	var previous_age = GameState.event_history.get(def["id"], null)
 	GameState.event_history[def["id"]] = GameState.player["age"]
-	Director.note(def)
-	if not Meta.meta.has("recent"):
-		Meta.meta["recent"] = {}
-	Meta.meta["recent"][def["id"]] = Goals.stat_total("lives")
 	if not def.has("choices"):
+		Director.note(def)
 		if def.has("outcomes"):
 			_apply_outcome(_pick_outcome(def["outcomes"]), roles, def)
 		else:
-			GameState.apply_effects(def.get("effects", {}))
+			GameState.apply_effects(def.get("effects", {}),true)
 			GameState.add_log(tokens(def.get("text", ""), roles))
 		return true
-	pending.append({"def": def, "roles": roles, "created": created})
+	pending.append({"def": def, "roles": roles, "created": created, "previous_age": previous_age})
 	return true
 
 
@@ -1030,6 +1189,8 @@ func _enqueue(def0: Dictionary, preset: Dictionary) -> bool:
 func choice_state(choice: Dictionary, roles: Dictionary = {}) -> Dictionary:
 	var req: Dictionary = choice.get("requires", {})
 	var p := GameState.player
+	if req.has("time") and int(p["time_left"]) < int(req["time"]):
+		return {"visible":true,"enabled":false,"reason":"Needs %d time" % int(req["time"])}
 	if req.has("role") and not roles.has(req["role"]):
 		return {"visible": false, "enabled": false, "reason": ""}
 	if req.has("trait") and not GameState.has_trait(req["trait"]):
@@ -1052,11 +1213,15 @@ func choice_state(choice: Dictionary, roles: Dictionary = {}) -> Dictionary:
 
 
 func resolve(inst: Dictionary, index: int) -> Dictionary:
+	displayed.clear()
 	var def: Dictionary = inst["def"]
 	var choice: Dictionary = def["choices"][index]
-	var outcome := _pick_outcome(choice.get("outcomes", [{"text": ""}]), str(choice.get("travel", "")))
 	var roles: Dictionary = inst.get("roles", {})
+	var before := Insight.snapshot(roles.values())
+	Depth.remember(def,index,inst.get("roles",{}))
+	var outcome := _pick_outcome(choice.get("outcomes", [{"text": ""}]), str(choice.get("travel", "")))
 	var fr := Friction.apply(choice, outcome, def)
+	if outcome.has("tv_reflection"): TVLife.reflect(outcome["tv_reflection"])
 	var res := _apply_outcome(outcome, roles, def, fr)
 	if def.get("discard_unkept", false):
 		var created: Array = inst.get("created", [])
@@ -1069,6 +1234,9 @@ func resolve(inst: Dictionary, index: int) -> Dictionary:
 			if not keeps.has(r) and created.has(roles[r]) and GameState.npcs.has(roles[r]):
 				GameState.npcs.erase(roles[r])
 	GameState.emit_changed()
+	Insight.record(before, tokens(str(def.get("title","Decision")), roles), str(res.get("text", "")), roles.values())
+	Insight.remember_choice(def,index)
+	SaveManager.save_game()
 	return res
 
 
@@ -1153,6 +1321,8 @@ func _signals(o: Dictionary, before: Dictionary) -> Array:
 
 
 func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dictionary = {}) -> Dictionary:
+	if o.get("restore_checkpoint",false):
+		return {"text":"Checkpoint restored." if SaveManager.restore_checkpoint() else "Checkpoint could not be restored; current progress was kept.","changes":{},"signals":[]}
 	var p := GameState.player
 	var _before := _snapshot()
 	var raw = o.get("text", "")
@@ -1164,16 +1334,48 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 	var eff: Dictionary = Friction.scale_effects(o.get("effects", {}), scale)
 	for k in fr.get("effects", {}).keys():
 		eff[k] = float(eff.get(k, 0.0)) + float(fr["effects"][k])
-	var changes := GameState.apply_effects(eff)
+	var changes := GameState.apply_effects(eff,not str(def.get("id", "")).begins_with("_"))
 	if band != "clean" and str(fr.get("note", "")) != "":
 		text = (text + " " if text != "" else "") + str(fr["note"])
-	# Outcomes can move the bond stats directly, which is how a romance beat says
-	# "this built trust" rather than only moving one closeness number.
+	# Personal effects belong to the named person, independently of the bond.
+	for person_role in o.get("npc_effects", {}).keys():
+		var person_id := str(roles.get(person_role, ""))
+		if not GameState.npcs.has(person_id): continue
+		var person: Dictionary = GameState.npcs[person_id]
+		if not person.get("alive", false): continue
+		var personal_effects: Dictionary = o["npc_effects"][person_role]
+		for stat in personal_effects.keys():
+			if stat not in ["happiness", "stress", "health", "smarts"]: continue
+			var delta := float(personal_effects[stat])
+			if band == "backfire" and delta > 0.0 and stat != "stress": delta = -maxf(1.0, delta / 3.0)
+			elif band == "snag": delta *= 0.6
+			person[stat] = clampf(float(person.get(stat, 20.0 if stat == "stress" else 60.0)) + delta, 0.0, 100.0)
+	# Track actual changes to relationship bonds and closeness together. This keeps
+	# consequential scenes in NPC memory even when the authored choice changes
+	# trust or resentment without moving the headline closeness number.
+	var relationship_records: Dictionary = {}
 	if o.has("bond"):
 		var btarget := str(o.get("bond_role", "p"))
 		if roles.has(btarget):
+			var person_id := str(roles[btarget])
 			for bk in (o["bond"] as Dictionary).keys():
-				BondStats.nudge(str(roles[btarget]), str(bk), float(o["bond"][bk]))
+				var stat := str(bk)
+				var delta := float(o["bond"][bk])
+				var favorable := (stat == "resentment" and delta < 0.0) or (stat not in ["resentment", "obligation"] and delta > 0.0)
+				# Friction changes the bond in the same direction as the visible
+				# relationship outcome; a backfire cannot quietly grant full trust.
+				if favorable and band == "backfire":
+					delta = maxf(1.0, absf(delta) / 3.0) if stat == "resentment" else -maxf(1.0, delta / 3.0)
+				elif favorable and band == "snag":
+					delta *= 0.6
+				var before_bond := BondStats.get_stat(person_id, stat)
+				BondStats.nudge(person_id, stat, delta)
+				var actual := BondStats.get_stat(person_id, stat) - before_bond
+				if absf(actual) > 0.001 and GameState.npcs.has(person_id):
+					var entry: Dictionary = relationship_records.get(person_id, {"impact":0.0,"tone":0.0})
+					entry["impact"] = float(entry["impact"]) + absf(actual)
+					if stat != "obligation": entry["tone"] = float(entry["tone"]) + (actual * -1.0 if stat == "resentment" else actual)
+					relationship_records[person_id] = entry
 	for role in o.get("relationship", {}).keys():
 		if roles.has(role):
 			var d := int(o["relationship"][role])
@@ -1182,9 +1384,33 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 				d = -maxi(1, d / 3)
 			elif band == "snag" and d > 0:
 				d = maxi(1, int(d * 0.6))
-			GameState.change_closeness(roles[role], d)
-			if absi(d) >= 15 and str(o.get("text", "")).length() > 12:
-				Bonds.remember(roles[role], tokens(str(o["text"]), roles).substr(0, 140), d > 0, true)
+			var person_id := str(roles[role])
+			var before_close := int(GameState.npc(person_id).get("closeness", 50)) if GameState.npcs.has(person_id) else 0
+			GameState.change_closeness(person_id, d)
+			if GameState.npcs.has(person_id):
+				var actual_close := int(GameState.npc(person_id).get("closeness", 50)) - before_close
+				if actual_close != 0:
+					var entry: Dictionary = relationship_records.get(person_id, {"impact":0.0,"tone":0.0})
+					entry["impact"] = float(entry["impact"]) + absf(float(actual_close))
+					entry["tone"] = float(entry["tone"]) + actual_close
+					relationship_records[person_id] = entry
+	# One concise memory per affected person. Small incidental changes remain
+	# quiet; substantial choices persist as memories and, for larger shifts, threads.
+	var remember_relationship := bool(def.get("remember_relationship", false))
+	if text.length() > 12:
+		for person_id0 in relationship_records:
+			var person_id := str(person_id0)
+			var entry: Dictionary = relationship_records[person_id]
+			var impact := int(round(float(entry["impact"])))
+			if impact < 8 and not remember_relationship: continue
+			var memory := text.substr(0, 220)
+			var tone := float(entry["tone"])
+			Bonds.remember(person_id, memory.substr(0, 140), tone >= 0.0, true)
+			if (impact >= 20 or remember_relationship) and not o.has("thread") and not Lives.separate():
+				var person_name := str(GameState.npcs[person_id].get("first", "them"))
+				var thread_title := "A turning point with " if impact >= 20 else "A moment with "
+				LifeThreads.remember("relationship", thread_title + person_name,
+					memory, person_id, clampi(50 + impact, 55, 90), ["relationship", str(def.get("id", "choice"))])
 	for f in o.get("flags", []):
 		GameState.set_flag(f)
 	for f in o.get("unflags", []):
@@ -1225,6 +1451,8 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Minigames.play(pl["id"], pl.get("params", {}), Callable(Careers, "resolve_play").bind(pl))
 	if o.has("real"):
 		Real.apply(o["real"])
+	if o.has("family_memory"):
+		FamilyChronicle.outcome(o["family_memory"],roles)
 	if o.has("market"):
 		Market.outcome(o["market"])
 	if o.has("arc"):
@@ -1247,6 +1475,11 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Empires.outcome(o["empire"])
 	if o.has("become"):
 		Become.outcome(o["become"])
+	if o.get("royal_match",false): Lives.royal_match()
+	if o.has("venue_sale"):
+		Ventures.sell(str(o["venue_sale"]))
+	if o.has("creator_license"):
+		Creator.license_track(o["creator_license"])
 	if o.has("world_start"):
 		World.begin(str(o["world_start"]))
 	if o.has("family_bonus"):
@@ -1255,10 +1488,34 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		Bonds.family_bonus(-12)
 	if o.has("npc_owes") and roles.has("them") and GameState.npcs.has(roles["them"]):
 		GameState.npcs[roles["them"]]["owes"] = int(GameState.npcs[roles["them"]].get("owes", 0)) + int(o["npc_owes"])
+	if o.has("story"):
+		Novelty.story_outcome(o["story"])
 	if o.has("thread"):
 		LifeThreads.from_outcome(o["thread"], roles)
 	if o.has("thread_effect"):
 		LifeThreads.outcome(o["thread_effect"])
+	if o.has("depth"):
+		Depth.outcome(o["depth"])
+	if o.has("journey"):
+		Journey.outcome(o["journey"])
+	if o.has("tv_branch"):
+		TVLife.branch(o["tv_branch"])
+	if o.has("employment"):
+		Employment.outcome(o["employment"])
+	if o.has("pathway") and o["pathway"] is Dictionary:
+		var pathway: Dictionary = o["pathway"]
+		var witness := str(roles.get(str(pathway.get("role", "")), ""))
+		var path_field := str(pathway.get("field", p.get("job", {}).get("field", "General")))
+		var path_quality := float(pathway.get("quality", 60.0)) * scale
+		if band == "backfire": path_quality = minf(path_quality, 45.0)
+		Journey.modules["pathways"].record(
+			str(pathway.get("domain", "work")),
+			str(pathway.get("source", def.get("id", "decision"))),
+			path_field,
+			clampf(path_quality, 0.0, 100.0),
+			bool(pathway.get("honest", true)),
+			witness
+		)
 	if o.has("ambition"):
 		Ambition.outcome(o["ambition"], roles)
 	if o.has("routine_toggle"):
@@ -1304,8 +1561,10 @@ func _apply_outcome(o: Dictionary, roles: Dictionary, def: Dictionary, fr: Dicti
 		changes["money"] = int(changes.get("money", 0)) - int(o["fine"])
 	if o.has("illness"):
 		p["illness"] = o["illness"]
+		if not Lives.separate(): Care.course().adopt_legacy()
 	if o.get("cure", false):
-		p["illness"] = ""
+		if not Lives.separate(): Care.course().event_recovery()
+		else: p["illness"] = ""
 	if o.has("milestone"):
 		GameState.add_milestone(p["age"], tokens(o["milestone"], roles))
 	for k in o.get("counter", {}).keys():
@@ -1382,6 +1641,8 @@ func tokens(text: String, roles: Dictionary) -> String:
 		else:
 			val = "someone"
 		out = out.replace(m.get_string(0), val)
+	for money_match in _money_token_re.search_all(out):
+		out = out.replace(money_match.get_string(0), GameState.fmt_money(int(money_match.get_string(1))))
 	out = out.replace("{country}", ContentDB.country(p["country"])["name"])
 	if out.find("{celeb") != -1 or out.find("{city}") != -1:
 		out = out.replace("{city}", str(Places.region().get("city", "town")))

@@ -2,13 +2,26 @@ extends Node
 
 signal theme_changed
 
-const ORDER := ["dark", "light", "celebrity", "vampire", "undead", "villain", "superhero", "royal", "witch"]
+const ORDER := ["ink", "dark", "light", "celebrity", "vampire", "undead", "villain", "superhero", "royal", "witch"]
 const LABELS := {
-	"dark": "Dark", "light": "Light", "celebrity": "Celebrity", "vampire": "Vampire",
-	"undead": "Undead", "villain": "Villain", "superhero": "Superhero", "royal": "Royal", "witch": "Witch",
+	"ink": "Fieldnotes",
+	"dark": "Dark", "light": "Twilight", "celebrity": "Celebrity", "vampire": "Vampire",
+	"undead": "Undead", "villain": "Villain", "superhero": "Superhero", "royal": "Royal", "witch": "Witch", "custody": "In Custody",
 }
 
 const PALETTES := {
+	"custody": {
+		"bg": "171c20", "surface": "252c32", "surface2": "303940", "border": "59656e",
+		"text": "e8ecee", "dim": "a9b3ba", "accent": "cfad72", "accent_text": "171c20",
+		"primary": "8496a3", "primary_text": "151b1d", "event_bg": "303940", "event_text": "e8ecee",
+		"good": "89a998", "warn": "cfad72", "bad": "d38d84", "track": "39434c", "gold": "cfad72", "border_w": 2,
+	},
+	"ink": {
+		"bg": "151b1d", "surface": "20282a", "surface2": "283236", "border": "405051",
+		"text": "f2eee4", "dim": "b0b6b0", "accent": "e7b36b", "accent_text": "151b1d",
+		"primary": "6eaaa1", "primary_text": "111c1b", "event_bg": "283236", "event_text": "f2eee4",
+		"good": "82b59b", "warn": "e7b36b", "bad": "df897d", "track": "313b3d", "gold": "e7b36b", "border_w": 1,
+	},
 	"dark": {
 		"bg": "0b1424", "surface": "13213a", "surface2": "1a2b48", "border": "263b5e",
 		"text": "eef3fb", "dim": "8fa3c2", "accent": "2ec4b6", "accent_text": "ffffff",
@@ -16,10 +29,10 @@ const PALETTES := {
 		"good": "34c759", "warn": "f5b82e", "bad": "ef4b4b", "track": "22324f", "gold": "f2c14e", "border_w": 1,
 	},
 	"light": {
-		"bg": "eef2f7", "surface": "ffffff", "surface2": "f3f6fa", "border": "d7dfea",
-		"text": "1b2433", "dim": "6b7a90", "accent": "1fa89a", "accent_text": "ffffff",
-		"primary": "1f6fe0", "primary_text": "ffffff", "event_bg": "ffffff", "event_text": "1b2433",
-		"good": "2fb350", "warn": "e8a317", "bad": "e04545", "track": "e3e9f1", "gold": "e0a82e", "border_w": 1,
+		"bg": "141b25", "surface": "1c2531", "surface2": "263140", "border": "435062",
+		"text": "e2e7ed", "dim": "a7b3c2", "accent": "83aaa5", "accent_text": "ffffff",
+		"primary": "88a6c8", "primary_text": "ffffff", "event_bg": "1c2531", "event_text": "e2e7ed",
+		"good": "2fb350", "warn": "e8a317", "bad": "e04545", "track": "303d4d", "gold": "c5b58c", "border_w": 1,
 	},
 	"celebrity": {
 		"bg": "0c0907", "surface": "1a130d", "surface2": "241a11", "border": "c9a34e",
@@ -58,14 +71,14 @@ const PALETTES := {
 		"good": "5fd38a", "warn": "e2b44a", "bad": "e0587a", "track": "2f2447", "gold": "c9a5ff", "border_w": 1,
 	},
 	"superhero": {
-		"bg": "dcecfb", "surface": "ffffff", "surface2": "fff7d6", "border": "142445",
-		"text": "0f1a30", "dim": "43557a", "accent": "e23a2e", "accent_text": "ffffff",
-		"primary": "1747c2", "primary_text": "ffffff", "event_bg": "fffdf2", "event_text": "0f1a30",
-		"good": "20a84a", "warn": "f4c20d", "bad": "e23a2e", "track": "d3def0", "gold": "f4c20d", "border_w": 3,
+		"bg": "111a27", "surface": "1b2637", "surface2": "263246", "border": "435470",
+		"text": "e3e9f2", "dim": "a9b6c9", "accent": "c58e85", "accent_text": "ffffff",
+		"primary": "8ca7cf", "primary_text": "ffffff", "event_bg": "1b2637", "event_text": "e3e9f2",
+		"good": "20a84a", "warn": "f4c20d", "bad": "e23a2e", "track": "303d51", "gold": "c6b98d", "border_w": 3,
 	},
 }
 
-var current := "dark"
+var current := "ink"
 var theme: Theme
 var font_regular: Font
 var font_bold: Font
@@ -109,6 +122,8 @@ func c(key: String) -> Color:
 	var v = PALETTES[current].get(key, "ff00ff")
 	if v is String:
 		var col := Color("#" + v)
+		if key in ["accent","primary","good","warn","bad","gold"]:
+			col = Color.from_hsv(col.h,minf(col.s,0.58),col.v,col.a)
 		if high_contrast and key == "dim":
 			# secondary text is the first thing to fail a contrast check
 			return col.lerp(Color("#" + str(PALETTES[current].get("text", "ffffff"))), 0.6)
@@ -170,9 +185,17 @@ func _button_set(t: Theme, type: String, bg: Color, fg: Color, radius: int, bord
 	t.set_color("font_disabled_color", type, Color(fg, 0.45))
 
 
+func _corners(box: StyleBoxFlat, tl: int, tr: int, br: int, bl: int) -> StyleBoxFlat:
+	box.corner_radius_top_left = tl
+	box.corner_radius_top_right = tr
+	box.corner_radius_bottom_right = br
+	box.corner_radius_bottom_left = bl
+	return box
+
+
 func build() -> Theme:
 	var t := Theme.new()
-	var bw: int = PALETTES[current].get("border_w", 1) + (1 if high_contrast else 0)
+	var bw: int = 1 if high_contrast else 0
 	t.default_font = font_regular
 	t.default_font_size = 18
 
@@ -200,7 +223,7 @@ func build() -> Theme:
 	t.set_type_variation("EventText", "Label")
 	t.set_color("font_color", "EventText", c("event_text"))
 	t.set_type_variation("EventTitle", "Label")
-	t.set_color("font_color", "EventTitle", c("primary"))
+	t.set_color("font_color", "EventTitle", c("text"))
 	t.set_font("font", "EventTitle", font_bold)
 	t.set_font_size("font_size", "EventTitle", 28)
 	t.set_type_variation("Emoji", "Label")
@@ -211,26 +234,30 @@ func build() -> Theme:
 	t.set_type_variation("Screen", "PanelContainer")
 	t.set_stylebox("panel", "Screen", _box(c("bg"), 0, Color.TRANSPARENT, 0, 16, 16))
 	t.set_type_variation("Card", "PanelContainer")
-	t.set_stylebox("panel", "Card", _box(c("surface"), 16, c("border"), bw, 18, 16))
+	t.set_stylebox("panel", "Card", _corners(_box(c("surface"), 24, c("border"), bw, 18, 16), 28, 28, 28, 12))
+	t.set_type_variation("HubPanel", "PanelContainer")
+	t.set_stylebox("panel", "HubPanel", _corners(_box(c("surface"), 28, c("border"), bw, 22, 20), 36, 36, 18, 36))
 	t.set_type_variation("Inset", "PanelContainer")
-	t.set_stylebox("panel", "Inset", _box(c("surface2"), 12, c("border"), bw, 14, 12))
+	t.set_stylebox("panel", "Inset", _box(c("surface"), 12, c("border"), bw, 14, 12))
 	t.set_type_variation("Chip", "PanelContainer")
 	t.set_stylebox("panel", "Chip", _box(c("surface2"), 14, c("border"), bw, 10, 4))
 	t.set_type_variation("EventCard", "PanelContainer")
-	t.set_stylebox("panel", "EventCard", _box(c("event_bg"), 16, c("border"), 0, 28, 26))
+	t.set_stylebox("panel", "EventCard", _corners(_box(c("event_bg"), 28, c("border"), 0, 28, 26), 36, 14, 36, 14))
 	t.set_type_variation("EventFrame", "PanelContainer")
-	var frame := _box(c("surface"), 20, c("border"), bw + 1, 14, 14)
+	var frame := _corners(_box(c("surface"), 28, Color.TRANSPARENT, 0, 22, 20), 34, 16, 28, 34)
 	frame.shadow_color = Color(0, 0, 0, 0.45)
-	frame.shadow_size = 24
+	frame.shadow_size = 0
 	t.set_stylebox("panel", "EventFrame", frame)
+	t.set_type_variation("EventIcon", "PanelContainer")
+	t.set_stylebox("panel", "EventIcon", _corners(_box(c("surface2"), 22, Color.TRANSPARENT, 0, 10, 8), 24, 12, 24, 12))
 	t.set_type_variation("Portrait", "PanelContainer")
-	t.set_stylebox("panel", "Portrait", _box(c("surface2"), 60, c("border"), 2, 6, 4))
+	t.set_stylebox("panel", "Portrait", _box(c("surface2"), 60, c("border"), bw, 6, 4))
 	t.set_type_variation("Halo", "PanelContainer")
-	t.set_stylebox("panel", "Halo", _box(c("gold"), 90, c("gold").lightened(0.3), 4, 10, 8))
+	t.set_stylebox("panel", "Halo", _box(c("surface").lerp(c("gold"), 0.12), 90, c("gold"), bw, 10, 8))
 	t.set_type_variation("Banner", "PanelContainer")
-	t.set_stylebox("panel", "Banner", _box(c("gold"), 8, c("gold").darkened(0.25), 2, 20, 8))
+	t.set_stylebox("panel", "Banner", _box(c("surface").lerp(c("gold"), 0.15), 8, c("gold"), bw, 20, 8))
 	t.set_type_variation("Tomb", "PanelContainer")
-	var tomb := _box(Color("#8a8f99") if current != "undead" else Color("#6f7a63"), 18, Color("#5c616b"), 3, 24, 24)
+	var tomb := _box(c("surface2").lerp(Color("#6f7a63"), 0.12), 18, c("border"), bw, 24, 24)
 	tomb.corner_radius_top_left = 150
 	tomb.corner_radius_top_right = 150
 	tomb.content_margin_top = 56
@@ -241,16 +268,33 @@ func build() -> Theme:
 	_button_set(t, "Button", c("surface2"), c("text"), 10, c("border"), bw)
 	t.set_font_size("font_size", "Button", 18)
 	t.set_type_variation("Row", "Button")
-	_button_set(t, "Row", c("surface2"), c("text"), 12, c("border"), bw, 16, 12)
+	_button_set(t, "Row", c("surface2"), c("text"), 18, c("border"), bw, 16, 12)
+	for role in ["NavigationRow", "BulkRow"]:
+		t.set_type_variation(role,"Button")
+		var fill := c("surface2").lerp(c("accent"),0.12) if role=="BulkRow" else c("surface")
+		if fill.get_luminance()>0.22: fill=fill.darkened(1.0-0.22/fill.get_luminance())
+		_button_set(t,role,fill,c("text"),20,c("border"),bw,16,12)
+		for state in ["normal","hover","pressed","disabled","focus"]:
+			var style: StyleBoxFlat=t.get_stylebox(state,role)
+			_corners(style,28,12,28,12) if role=="BulkRow" else _corners(style,12,24,24,12)
+	for tile in [["LifeTileHuman", [32, 16, 32, 16]], ["LifeTilePet", [32, 32, 14, 32]], ["LifeTileStory", [14, 32, 32, 32]], ["LifeTilePrison", [28, 14, 28, 14]]]:
+		t.set_type_variation(tile[0], "Button")
+		_button_set(t, tile[0], c("surface2"), c("text"), 24, c("border"), bw, 16, 12)
+		for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+			var box: StyleBoxFlat = t.get_stylebox(state, tile[0])
+			_corners(box, tile[1][0], tile[1][1], tile[1][2], tile[1][3])
 	t.set_type_variation("Primary", "Button")
-	_button_set(t, "Primary", c("primary"), c("primary_text"), 10, c("primary").darkened(0.2), 1, 16, 12)
+	t.set_type_variation("ChoiceRow", "Button")
+	_button_set(t, "ChoiceRow", c("surface2"), c("text"), 18, Color.TRANSPARENT, 0, 16, 12)
+	t.set_font("font", "ChoiceRow", font_bold)
+	_button_set(t, "Primary", c("surface2").lerp(c("primary"), 0.18), c("text"), 10, c("primary"), bw, 16, 12)
 	t.set_type_variation("Accent", "Button")
-	_button_set(t, "Accent", c("accent"), c("accent_text"), 12, c("accent").darkened(0.2), 1, 18, 12)
+	_button_set(t, "Accent", c("surface2").lerp(c("accent"), 0.18), c("text"), 12, c("accent"), bw, 18, 12)
 	t.set_font("font", "Accent", font_bold)
 	t.set_font_size("font_size", "Accent", 22)
 	t.set_type_variation("AgeButton", "Button")
-	var age_bg := c("accent")
-	_button_set(t, "AgeButton", age_bg, c("accent_text"), 70, age_bg.lightened(0.35), 5, 10, 10)
+	var age_bg := c("surface2").lerp(c("accent"), 0.22)
+	_button_set(t, "AgeButton", age_bg, c("text"), 12, c("accent"), bw, 10, 10)
 	t.set_font("font", "AgeButton", font_bold)
 	t.set_font_size("font_size", "AgeButton", 30)
 	t.set_type_variation("Flat", "Button")
@@ -265,8 +309,8 @@ func build() -> Theme:
 	t.set_font_size("font_size", "Tab", 15)
 	t.set_type_variation("Toggle", "Button")
 	_button_set(t, "Toggle", c("surface2"), c("text"), 12, c("border"), bw, 12, 10)
-	t.set_stylebox("pressed", "Toggle", _box(c("primary"), 12, c("primary").lightened(0.2), 2, 12, 10))
-	t.set_color("font_pressed_color", "Toggle", c("primary_text"))
+	t.set_stylebox("pressed", "Toggle", _box(c("surface2").lerp(c("primary"), 0.18), 12, c("primary"), bw, 12, 10))
+	t.set_color("font_pressed_color", "Toggle", c("text"))
 
 	t.set_stylebox("background", "ProgressBar", _box(c("track"), 8, Color.TRANSPARENT, 0, 0, 0))
 	t.set_stylebox("fill", "ProgressBar", _box(c("accent"), 8, Color.TRANSPARENT, 0, 0, 0))
@@ -294,4 +338,10 @@ func build() -> Theme:
 	sep.thickness = 1
 	t.set_stylebox("separator", "HSeparator", sep)
 	t.set_constant("separation", "HSeparator", 12)
+
+	t.set_stylebox("panel", "TabContainer", _box(c("surface"), 0, Color.TRANSPARENT, 0, 0, 12))
+	t.set_stylebox("tab_selected", "TabContainer", _box(c("surface2"), 8, Color.TRANSPARENT, 0, 16, 10))
+	t.set_stylebox("tab_unselected", "TabContainer", _box(Color.TRANSPARENT, 8, Color.TRANSPARENT, 0, 16, 10))
+	t.set_color("font_selected_color", "TabContainer", c("text"))
+	t.set_color("font_unselected_color", "TabContainer", c("dim"))
 	return t

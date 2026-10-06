@@ -20,6 +20,8 @@ const SYSTEMS := {
 }
 
 
+func course(): return Journey.modules["wellbeing"]
+
 func _p() -> Dictionary:
 	return GameState.player
 
@@ -32,6 +34,8 @@ func st() -> Dictionary:
 		Expansion.ensure()
 	if not p.has("care") or not (p["care"] is Dictionary):
 		p["care"] = {"referral": {}, "misdx": "", "second": 0, "meds": {}, "vision": 100.0, "aid": "none", "teeth": 100.0, "dentist_age": -99, "crowns": 0, "dentures": false, "gp": 0, "waited": 0, "physio": 0, "hearing": 100.0, "hearing_aid": false}
+	for pair in [["last_year",-1],["hidden",""],["referral",{}],["meds",{}],["misdx",""],["second",0],["gp",0],["waited",0],["physio",0],["vision",100.0],["aid","none"],["teeth",100.0],["dentist_age",-99],["crowns",0],["dentures",false],["hearing",100.0],["hearing_aid",false]]:
+		if not p["care"].has(pair[0]): p["care"][pair[0]]=pair[1].duplicate(true) if pair[1] is Dictionary else pair[1]
 	return p["care"]
 
 
@@ -41,7 +45,9 @@ func system() -> String:
 
 
 func fee(kind: String) -> int:
-	return Actions._cost(int(SYSTEMS[system()][kind]))
+	if kind=="gp" and Web.contact(["doctor","nurse"],50)!="": return 0
+	var local := mini(3,int(Journey.modules["places"].institution()["clinic"]))
+	return Actions._cost(int(int(SYSTEMS[system()][kind])*(1.0-local*0.05)))
 
 
 # ------------------------------------------------------------------ the pathway
@@ -49,19 +55,32 @@ func fee(kind: String) -> int:
 func gp_visit() -> void:
 	var s := st()
 	var med: Dictionary = _p()["medical"]
-	if not Actions._can_pay(fee("gp"), "GP") or Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - fee("gp")
+	if not course().pay_visit("GP",fee("gp"),1): return
+	var contact := Web.contact(["doctor","nurse"],50)
+	if contact!="": GameState.change_closeness(contact,3)
+	course().adopt_legacy()
+	med["last_checkup"]=int(_p()["age"])
+	_p()["last_checkup_age"]=int(_p()["age"])
+	for id in med["conditions"]: course().reviewed(str(id),"GP review")
 	s["gp"] = int(s["gp"]) + 1
 	var pending := str(med.get("pending", ""))
+	if not s["referral"].is_empty():
+		Actions._done("📋","Referral review","The existing specialist referral keeps its place in the queue.",{"stress":-1})
+		return
 	if pending == "":
+		if med["conditions"].is_empty() and str(_p().get("illness",""))!="":
+			var legacy := str(_p()["illness"])
+			var cleared: bool=course().roll("Previous illness recovery")<0.75
+			if cleared: _p()["illness"]=""
+			course().record("Previous illness review",legacy+" · "+("cleared" if cleared else "needs follow-up"))
+			Actions._done("🩺","GP review",legacy+" · "+("recovered" if cleared else "follow-up needed"),{"health":5 if cleared else 1}); return
 		if not s["referral"].is_empty():
 			Actions._done("🩺", "GP", "I asked after my referral. The receptionist said it was 'in the system'.", {"stress": 1})
 		else:
 			Actions._done("🩺", "GP", "The GP listened, checked my blood pressure and told me to keep doing whatever I was doing. It was five minutes and felt like fifty.", {"stress": -2, "health": 1})
 		return
 	# a symptom is on the table
-	var r := randf()
+	var r: float=course().roll("GP diagnosis")
 	var dismiss := 0.22 - float(mini(int(s["gp"]), 4)) * 0.04
 	if Expansion.CONDITIONS.has(pending) and int(Expansion.CONDITIONS[pending]["severity"]) >= 3:
 		dismiss += 0.08
@@ -78,11 +97,12 @@ func gp_visit() -> void:
 func refer() -> void:
 	var s := st()
 	var med: Dictionary = _p()["medical"]
-	if str(med.get("pending", "")) == "":
+	if str(med.get("pending", "")) == "" or not s["referral"].is_empty():
 		return
 	var w: Array = SYSTEMS[system()]["wait"]
-	var wait := randi_range(int(w[0]), int(w[1]))
+	var wait := int(w[0])+int(course().roll("referral wait")*(int(w[1])-int(w[0])+1))
 	s["referral"] = {"for": str(med["pending"]), "wait": wait, "made": int(_p()["age"])}
+	course().record("Referral","Specialist · "+str(med["pending"])+" · wait "+str(wait))
 	if wait <= 0:
 		GameState.add_log("The GP referred me and there was a slot the following week.")
 		_specialist(false)
@@ -96,23 +116,31 @@ func pay_to_skip() -> void:
 	if s["referral"].is_empty():
 		return
 	var priv := Actions._cost(int(SYSTEMS["private"]["spec"]))
-	if not Actions._can_pay(priv, "Private specialist"):
-		return
-	_p()["money"] = int(_p()["money"]) - priv
+	if not course().pay_visit("Specialist",priv,1): return
 	_specialist(true)
 
 
 func _specialist(paid: bool) -> void:
 	var s := st()
 	var med: Dictionary = _p()["medical"]
-	var pending := str(med.get("pending", ""))
+	var pending := str(s["referral"].get("for",med.get("pending", "")))
+	if not paid and not course().pay_visit("Specialist",fee("spec"),1,true):
+		s["referral"]["wait"]=1
+		course().record("Appointment delayed","Specialist needs time and "+GameState.fmt_money(fee("spec")))
+		return
 	s["referral"] = {}
+	if pending!="" and pending!=str(med.get("pending","")):
+		if med["conditions"].has(pending): course().reviewed(pending,"Scheduled review")
+		course().record("Specialist review","The referral target was reviewed; unrelated symptoms remain pending.")
+		EventEngine.push_info("🏥","Specialist review","The existing referral was reviewed. New symptoms need their own assessment.")
+		return
+	if pending!="" and not Expansion.CONDITIONS.has(pending): pending=""
 	if pending == "":
 		EventEngine.push_info("🏥", "Specialist", "By the time my appointment came round the symptoms had gone. The specialist found nothing, and I felt a little fraudulent.", {"stress": -2})
 		return
 	if not paid and system() != "private":
 		s["waited"] = int(s["waited"]) + 1
-	if randf() < 0.08 and int(Expansion.CONDITIONS.get(pending, {"severity": 1})["severity"]) >= 2:
+	if course().roll("Specialist diagnosis:"+pending) < 0.08 and int(Expansion.CONDITIONS.get(pending, {"severity": 1})["severity"]) >= 2:
 		# the wrong answer, delivered with confidence
 		var wrong := "viral" if pending != "viral" else "migraine"
 		s["misdx"] = wrong
@@ -122,6 +150,8 @@ func _specialist(paid: bool) -> void:
 		GameState.add_log("I was told it was %s. I took the tablets and the symptoms stayed." % str(Expansion.CONDITIONS[wrong]["name"]))
 		EventEngine.push_info("🏥", "A diagnosis", "The specialist was sure it was %s, and gave me a leaflet. I wanted to believe them. A second opinion might be worth the money." % str(Expansion.CONDITIONS[wrong]["name"]), {"stress": 2})
 		s["hidden"] = pending
+		Expansion._sync_primary_illness()
+		course().record("Diagnosis",str(Expansion.CONDITIONS[wrong]["name"])+" · second opinion available")
 		return
 	_diagnose(pending, true)
 
@@ -129,7 +159,9 @@ func _specialist(paid: bool) -> void:
 func _diagnose(id: String, specialist: bool) -> void:
 	var med: Dictionary = _p()["medical"]
 	var d: Dictionary = Expansion.CONDITIONS[id]
-	med["conditions"][id] = {"years": 0, "treated": 0, "controlled": false, "flares": 0}
+	if not med["conditions"].has(id): med["conditions"][id] = {"years": 0, "treated": 0, "controlled": false, "flares": 0}
+	course().record("Diagnosis",str(d["name"]))
+	course().reviewed(id,"Specialist" if specialist else "GP")
 	med["pending"] = ""
 	med["symptoms"] = []
 	_p()["illness"] = d["name"]
@@ -144,9 +176,8 @@ func second_opinion() -> void:
 	var cost := Actions._cost(int(SYSTEMS["private"]["spec"]) / 2 + 200)
 	if str(s.get("misdx", "")) == "" and med["conditions"].is_empty():
 		return
-	if not Actions._can_pay(cost, "Second opinion") or Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - cost
+	if not course().pay_visit("Second opinion",cost,1): return
+	for id in med["conditions"]: course().reviewed(str(id),"Second opinion")
 	s["second"] = int(s["second"]) + 1
 	if str(s.get("misdx", "")) != "":
 		var wrong := str(s["misdx"])
@@ -155,6 +186,9 @@ func second_opinion() -> void:
 		if truth != "" and Expansion.CONDITIONS.has(truth):
 			med["conditions"][truth] = {"years": 0, "treated": 0, "controlled": false, "flares": 0}
 			_p()["illness"] = Expansion.CONDITIONS[truth]["name"]
+		if truth!="" and Expansion.CONDITIONS.has(truth): course().reviewed(truth,"Corrected diagnosis")
+		course().record("Correction",wrong+" replaced by "+truth)
+		s["meds"].erase(wrong)
 		s["misdx"] = ""
 		s["hidden"] = ""
 		GameState.add_log("A second doctor looked at the same scans and said something different. They were right.")
@@ -168,14 +202,16 @@ func second_opinion() -> void:
 func meds_cost() -> int:
 	var total := 0
 	for id in st().get("meds", {}).keys():
-		if bool(st()["meds"][id]):
+		if bool(st()["meds"][id]) and _p()["medical"]["conditions"].has(id) and Expansion.CONDITIONS.get(id,{}).get("chronic",false):
 			total += Actions._cost(240 * int(Expansion.CONDITIONS.get(id, {"severity": 1})["severity"])) if system() != "free" else Actions._cost(60)
 	return total
 
 
 func toggle_meds(id: String) -> void:
 	var s := st()
+	if not _p()["medical"]["conditions"].has(id) or not Expansion.CONDITIONS.get(id,{}).get("chronic",false) or Journey.blocked(0,false,true)!="": return
 	s["meds"][id] = not bool(s["meds"].get(id, false))
+	course().record("Prescription",id+" · "+("started" if s["meds"][id] else "stopped"))
 	GameState.add_log("I %s taking medication for my %s." % ["started" if s["meds"][id] else "stopped", str(Expansion.CONDITIONS.get(id, {"name": id})["name"])])
 
 
@@ -186,31 +222,28 @@ func physio() -> void:
 	var cost := Actions._cost(120)
 	if system() == "free":
 		cost = 0
-	if not Actions._can_pay(cost, "Physiotherapy") or Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - cost
+	if not course().pay_visit("Physiotherapy",cost,1): return
 	var id: String = med["injuries"].keys()[0]
 	med["injuries"][id]["left"] = maxi(0, int(med["injuries"][id]["left"]) - 1)
 	st()["physio"] = int(st()["physio"]) + 1
+	if int(med["injuries"][id]["left"])==0:
+		med["injuries"].erase(id); course().record("Rehab complete",id)
 	Actions._done("🤸", "Physiotherapy", "I did the exercises on the sheet every morning for a month. They were dull, and they worked.", {"health": 2, "stress": -1})
 
 
 func test_eyes() -> void:
 	var s := st()
 	var cost := Actions._cost(0 if system() == "free" else 55)
-	if not Actions._can_pay(cost, "Eye test"):
-		return
-	_p()["money"] = int(_p()["money"]) - cost
+	if not course().pay_visit("Eye test",cost,1): return
 	EventEngine.push_info("👓", "Eye test", "The optician clicked lenses into a frame. 'Better, or worse?' I'm now told my eyes are %s." % ("fine" if vision() >= 75 else ("starting to slip" if vision() >= 50 else "quite bad")), {})
 
 
 func buy_aid(kind: String) -> void:
 	var s := st()
+	if kind not in ["glasses","contacts","laser"] or str(s["aid"])==kind: return
 	var price: int = {"glasses": 160, "contacts": 320, "laser": 2900}[kind]
 	var cost := Actions._cost(price)
-	if not Actions._can_pay(cost, "Eyes"):
-		return
-	_p()["money"] = int(_p()["money"]) - cost
+	if not course().pay_visit("Vision aid",cost,1): return
 	s["aid"] = kind
 	if kind == "laser":
 		s["vision"] = minf(100.0, float(s["vision"]) + 28.0)
@@ -226,9 +259,7 @@ func vision() -> float:
 func dentist() -> void:
 	var s := st()
 	var cost := Actions._cost(0 if system() == "free" else 85)
-	if not Actions._can_pay(cost, "Dentist") or Actions._out_of_time():
-		return
-	_p()["money"] = int(_p()["money"]) - cost
+	if not course().pay_visit("Dentist",cost,1): return
 	s["dentist_age"] = int(_p()["age"])
 	var before := float(s["teeth"])
 	s["teeth"] = minf(100.0, float(s["teeth"]) + 14.0)
@@ -238,9 +269,8 @@ func dentist() -> void:
 func crown() -> void:
 	var s := st()
 	var cost := Actions._cost(900 if system() != "free" else 250)
-	if float(s["teeth"]) > 55.0 or not Actions._can_pay(cost, "Dental work"):
+	if float(s["teeth"]) > 55.0 or not course().pay_visit("Dental work",cost,1):
 		return
-	_p()["money"] = int(_p()["money"]) - cost
 	s["teeth"] = minf(100.0, float(s["teeth"]) + 30.0)
 	s["crowns"] = int(s["crowns"]) + 1
 	Actions._done("🦷", "Dental work", "A crown, three appointments and a long-running quarrel with the receptionist about the bill.", {"health": 1, "stress": 2})
@@ -252,6 +282,8 @@ func yearly() -> void:
 		return
 	var p := _p()
 	var age := int(p["age"])
+	if int(s["last_year"])==GameState.year_now(): return
+	s["last_year"]=GameState.year_now()
 	# the waiting list moves, slowly
 	if not s["referral"].is_empty():
 		s["referral"]["wait"] = int(s["referral"]["wait"]) - 1
@@ -275,7 +307,8 @@ func yearly() -> void:
 			GameState.apply_effects({"health": -1.2})
 			if randf() < 0.12:
 				GameState.add_log("I've let the prescription lapse for my %s, and my body noticed before I did." % str(d.get("name", id)))
-	p["money"] = int(p["money"]) - meds_cost()
+	course().charge(meds_cost(),"Prescriptions")
+	if meds_cost()>0: course().record("Annual prescription", "Ongoing medication",meds_cost())
 	# eyes, ears and teeth go quietly
 	var drift := 0.25 if age < 40 else (1.0 if age < 60 else 1.8)
 	s["vision"] = maxf(0.0, float(s["vision"]) - drift * (0.5 if str(s["aid"]) == "laser" else 1.0))
@@ -295,7 +328,8 @@ func yearly() -> void:
 		GameState.apply_effects({"happiness": -1.0})
 		if randf() < 0.3:
 			var bill := Actions._cost(240)
-			p["money"] = int(p["money"]) - bill
+			course().charge(bill,"Emergency dental care")
+			course().record("Emergency dental care","Urgent tooth care",bill)
 			GameState.add_log("A tooth gave up in the night. The emergency appointment cost %s." % GameState.fmt_money(bill))
 			GameState.apply_effects({"stress": 3, "happiness": -2})
 	if float(s["teeth"]) < 18.0 and not bool(s["dentures"]) and age >= 50:
@@ -310,9 +344,8 @@ func yearly() -> void:
 func hearing_aid() -> void:
 	var s := st()
 	var cost := Actions._cost(1800 if system() != "free" else 300)
-	if bool(s["hearing_aid"]) or not Actions._can_pay(cost, "Hearing aid"):
+	if bool(s["hearing_aid"]) or not course().pay_visit("Hearing aid",cost,1):
 		return
-	_p()["money"] = int(_p()["money"]) - cost
 	s["hearing_aid"] = true
 	s["hearing"] = minf(100.0, float(s["hearing"]) + 30.0)
 	Actions._done("👂", "Hearing", "The first morning I heard the birds again, and cried over the kettle.", {"happiness": 6})
@@ -321,9 +354,8 @@ func hearing_aid() -> void:
 func dentures() -> void:
 	var s := st()
 	var cost := Actions._cost(1600 if system() != "free" else 400)
-	if bool(s["dentures"]) or not Actions._can_pay(cost, "Dentures"):
+	if bool(s["dentures"]) or not course().pay_visit("Dentures",cost,1):
 		return
-	_p()["money"] = int(_p()["money"]) - cost
 	s["dentures"] = true
 	s["teeth"] = maxf(float(s["teeth"]), 70.0)
 	Actions._done("🦷", "Dentures", "They felt like a stranger's in my mouth for a month. By spring I'd forgotten.", {"happiness": 3, "looks": 1})
@@ -332,13 +364,15 @@ func dentures() -> void:
 # ------------------------------------------------------------------ menu
 
 func _row(icon: String, name: String, sub: String, act: String, arg = null, on: bool = true) -> Dictionary:
+	var key := str({"gp":"GP","skip":"Specialist","second":"Second opinion","physio":"Physiotherapy","eyes":"Eye test","aid":"Vision aid","dentist":"Dentist","crown":"Dental work","hearing":"Hearing aid","dentures":"Dentures"}.get(act,""))
+	if key!="" and course().used(key): on=false; sub="Already done this period"
 	return {"icon": icon, "name": name, "sub": sub, "act": "real:" + act, "arg": arg, "on": on}
 
 
 func menu() -> Dictionary:
 	var s := st()
 	var med: Dictionary = _p()["medical"]
-	var rows: Array = []
+	var rows: Array = [{"icon":"🌿","name":"Health & support","sub":"Care history, routines and family help","menu":"journey:wellbeing"}]
 	var info: Array = []
 	info.append("You live in %s. GP visits cost %s here; specialists %s." % [str(SYSTEMS[system()]["label"]), GameState.fmt_money(fee("gp")), GameState.fmt_money(fee("spec"))])
 	if not s["referral"].is_empty():
@@ -347,17 +381,17 @@ func menu() -> Dictionary:
 		info.append("Something about your diagnosis doesn't feel right.")
 	info.append("Eyes %d%%  ·  teeth %d%%  ·  hearing %d%%" % [int(vision()), int(s["teeth"]), int(s["hearing"])])
 	rows.append(_row("@pulse", "See your GP", "%s · describe a symptom, ask for a referral" % GameState.fmt_money(fee("gp")), "gp"))
-	rows.append(_row("@hospital", "Pay to see a specialist privately", "%s · skips the waiting list" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]))), "skip", null, not s["referral"].is_empty()))
-	rows.append(_row("@handshake", "Get a second opinion", "%s · when something doesn't add up" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]) / 2 + 200)), "second", null, str(s.get("misdx", "")) != "" or not med["conditions"].is_empty()))
+	rows.append(_row("@hospital", "Private specialist", "%s · skips the waiting list" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]))), "skip", null, not s["referral"].is_empty()))
+	rows.append(_row("@handshake", "Second opinion", "%s · when something doesn't add up" % GameState.fmt_money(Actions._cost(int(SYSTEMS["private"]["spec"]) / 2 + 200)), "second", null, str(s.get("misdx", "")) != "" or not med["conditions"].is_empty()))
 	for id in med["conditions"].keys():
 		var d: Dictionary = Expansion.CONDITIONS.get(id, {"name": id, "chronic": false})
 		if bool(d.get("chronic", false)):
 			var on: bool = bool(s["meds"].get(id, false))
-			rows.append(_row("@pill", "%s — medication %s" % [str(d["name"]).capitalize(), "ON" if on else "off"], "Tap to %s. Skipping it has a price that arrives late" % ("stop" if on else "start"), "meds", id))
+			rows.append(_row("@pill", "%s — medication %s" % [str(d["name"]).capitalize(), "ON" if on else "off"], "Tap to %s · annual prescription cost applies" % ("stop" if on else "start"), "meds", id))
 	rows.append(_row("@gym", "Physiotherapy", "%s · speeds up an injury's recovery" % GameState.fmt_money(Actions._cost(120) if system() != "free" else 0), "physio", null, not med["injuries"].is_empty()))
-	rows.append(_row("@eye", "Eye test", "Find out how your eyes are really doing", "eyes"))
+	rows.append(_row("@eye", "Eye test", GameState.fmt_money(Actions._cost(0 if system()=="free" else 55))+" · 1 time · vision assessment", "eyes"))
 	for k in ["glasses", "contacts", "laser"]:
-		rows.append(_row("@eye", {"glasses": "Get glasses", "contacts": "Get contact lenses", "laser": "Laser surgery"}[k], "Helps now%s" % (" and keeps helping" if k == "laser" else ""), "aid", k, str(s["aid"]) != k))
+		rows.append(_row("@eye", {"glasses": "Get glasses", "contacts": "Get contact lenses", "laser": "Laser surgery"}[k], GameState.fmt_money(Actions._cost({"glasses":160,"contacts":320,"laser":2900}[k]))+" · 1 time · vision support", "aid", k, str(s["aid"]) != k))
 	rows.append(_row("@tooth", "Dentist", "A check-up, and a scolding if you've earned it", "dentist"))
 	rows.append(_row("@tooth", "Crown or major dental work", "For teeth that have had enough", "crown", null, float(s["teeth"]) <= 55.0))
 	rows.append(_row("@tooth", "Dentures", "When there isn't much left to save", "dentures", null, float(s["teeth"]) <= 25.0 and int(_p()["age"]) >= 45 and not bool(s["dentures"])))

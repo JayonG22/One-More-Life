@@ -1,40 +1,53 @@
 # One More Life
 
-A text-driven life simulator built with Godot. Grow up, build relationships,
-choose a career, manage money, and see how decisions shape the life you leave behind.
+A dark, text-driven life simulator about growing up, building relationships,
+choosing a path, and living with the choices that follow.
 
-**Development status:** the public source identifies itself as **v0.25.0**.
-There are currently no downloadable GitHub releases. A separate v0.26.0 preview
-has been prepared locally; its new features are not included in this branch.
+## Development status
+
+The current work is **v0.92 — People & Relationships**. v0.90 and v0.91 are
+unsigned interim Windows review packages; the current relationship work is still
+in progress. v0.90–v0.99 are substantial local review checkpoints; **v1.0**
+remains the final consolidated release after the accepted scope and owner-led
+release gates are complete.
+
+The project is already a native Windows application. It is an unsigned local
+development build, not a public v1.0 release. Gameplay acceptance remains with
+the owner. See the [current coverage](docs/releases/V0.92-COVERAGE.md),
+[accepted roadmap status](docs/ACCEPTANCE-STATUS.md), and
+[closeout board](docs/FEATURE-CLOSEOUT-BOARD.md).
 
 ## Play from source
 
-1. Download this repository or clone it.
+1. Download or clone this repository.
 2. Install [Godot 4.4.1](https://godotengine.org/download/archive/4.4.1-stable/).
-3. Import `project.godot`, let the initial import finish, then press **F5**.
+3. Open `project.godot`, wait for the import to finish, then press **F5**.
 
-Start with **Human Life**, **Pets Life**, or **Prison Life**. Human Life follows
-school, work, family and personal ambitions. Pets Life explores life through an
-animal's needs and household. Prison Life offers prisoner and guard stories.
+The game has four modes: Human Life, Pets Life, Prison Life, and Story Life.
+Settings include sound, interface size, contrast, and motion controls. The
+[player guide](docs/PLAYER-GUIDE.md) covers controls and saved lives.
 
-Use **Settings** to adjust sound, interface size, contrast and motion.
-See the [player guide](docs/PLAYER-GUIDE.md) for controls and saves.
-If a packaged build is published later, use its own release instructions.
+## Project guides
 
-## Explore the project
-
-| Looking for | Go to |
+| Guide | Contents |
 | --- | --- |
-| Controls, saves and the basic game loop | [Player guide](docs/PLAYER-GUIDE.md) |
-| Build instructions, tests and content authoring | [Development guide](docs/DEVELOPMENT.md) |
-| Next priorities for deeper lives | [Roadmap](ROADMAP.md) |
-| Fonts, engine, audio and attribution | [Credits](CREDITS.md) |
-| Publishing gaps, licensing and third-party references | [Release readiness](docs/RELEASE-READINESS.md) |
-| Previous updates and historical plans | [Version history](docs/history/CHANGELOG.md) |
-| Custom art plans and the emoji inventory | [Art documentation](docs/art/README.md) |
+| [Player guide](docs/PLAYER-GUIDE.md) | Controls, saves, and the game loop |
+| [Development guide](docs/DEVELOPMENT.md) | Builds, checks, and content authoring |
+| [Roadmap](ROADMAP.md) | Approved scope and release gates |
+| [Prior-update closeout board](docs/FEATURE-CLOSEOUT-BOARD.md) | Partial features being finished before new scope |
+| [v0.90 coverage](docs/releases/V0.90-COVERAGE.md) | Earlier local review checkpoint and its limits |
+| [v0.91 coverage](docs/releases/V0.91-COVERAGE.md) | Interim school/career checkpoint; broader acceptance remains open |
+| [v0.92 coverage](docs/releases/V0.92-COVERAGE.md) | Relationship continuity work in progress |
+| [Depth and replayability](docs/DEPTH-AND-REPLAYABILITY.md) | Approved refinements and long-term content principles |
+| [Credits](CREDITS.md) | Engine, fonts, sound, and attribution |
+| [Release readiness](docs/RELEASE-READINESS.md) | Licensing and publication gaps |
+| [Version history](docs/history/CHANGELOG.md) | Historical changes |
+| [Art documentation](docs/art/README.md) | Original art direction and icon inventory |
 
-The game includes fictional crime, gambling, imprisonment, illness and death.
-Its financial, legal and health systems are game mechanics.
+The game includes fictional crime, gambling, murder, adult sexual themes,
+illness, suicide, imprisonment, and death. Sexual scenes and suicide are
+non-graphic; sexual narratives involve adults. Legal, health, and financial
+systems are fictional game mechanics.
 
-The repository does not currently include a project-wide licence. The engine
-and bundled fonts have their own licences; see [credits](CREDITS.md).
+There is no project-wide license yet. Engine assets and bundled fonts retain
+their own licenses; see [credits](CREDITS.md) before reuse or redistribution.

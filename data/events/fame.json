@@ -313,7 +313,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1995
  },
  {
   "id": "fame.talk_show",
@@ -728,7 +729,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 2004
  },
  {
   "id": "fame.memoir",

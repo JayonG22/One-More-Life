@@ -1,0 +1,979 @@
+[
+  {
+    "id": "pathways.school.0",
+    "family": "pathways.school.0",
+    "domain": "school",
+    "repair": false,
+    "title": "Shared prototype",
+    "text": "{name} wants to submit our prototype to a regional exhibition. One part still fails.",
+    "answers": [
+      "Test it together and credit both",
+      "Enter the smaller classroom round",
+      "Hide the failed test"
+    ],
+    "endings": [
+      "The tested project earns a shared place. We keep the working notes.",
+      "The classroom presentation finishes honestly, without the regional claim.",
+      "The failed component is found; the shared entry is withdrawn."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Tech"
+    ]
+  },
+  {
+    "id": "pathways.school.1",
+    "family": "pathways.school.1",
+    "domain": "school",
+    "repair": false,
+    "title": "Share the project",
+    "text": "{name} invites me to explain our project to younger pupils.",
+    "answers": [
+      "Prepare a useful demonstration",
+      "Send the notes and decline the visit",
+      "Promise an impressive result I cannot show"
+    ],
+    "endings": [
+      "The demonstration helps the younger group; the school keeps the notes.",
+      "The notes are used, and my honest limit is respected.",
+      "The unsupported promise leaves the pupils without the promised demonstration."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.school.2",
+    "family": "pathways.school.2",
+    "domain": "school",
+    "repair": false,
+    "title": "Different schedules",
+    "text": "{name} has care duties and cannot attend our usual study group.",
+    "answers": [
+      "Agree a short flexible session",
+      "Share notes without a meeting",
+      "Insist on the old schedule"
+    ],
+    "endings": [
+      "The smaller sessions work. Their responsibilities are respected.",
+      "The notes help without creating another obligation.",
+      "They leave the group; the fixed schedule excluded them."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.school.3",
+    "family": "pathways.school.3",
+    "domain": "school",
+    "repair": true,
+    "title": "Missing credit",
+    "text": "{name} says their work disappeared from our final presentation.",
+    "answers": [
+      "Check drafts and correct the credits",
+      "Record our disagreement honestly",
+      "Claim their contribution never existed"
+    ],
+    "endings": [
+      "The corrected record restores shared credit; trust starts recovering.",
+      "The disagreement is preserved without another false claim.",
+      "The dated drafts contradict me; the disputed credit stays on record."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.school.4",
+    "family": "pathways.school.4",
+    "domain": "school",
+    "repair": true,
+    "title": "Uneven teamwork",
+    "text": "{name} carried more work than I did. The final result did not pass its check.",
+    "answers": [
+      "Redo my part with clear limits",
+      "Accept the result and thank them",
+      "Blame them for the whole result"
+    ],
+    "endings": [
+      "The revised piece passes its practical check, with both contributions recorded.",
+      "The failed result stays, but I acknowledge their effort.",
+      "The blame ends the collaboration without fixing the work."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.school.5",
+    "family": "pathways.school.5",
+    "domain": "school",
+    "repair": true,
+    "title": "Council follow-through",
+    "text": "{name} asks what happened to the school promise we could not deliver.",
+    "answers": [
+      "Explain the gap and finish one useful part",
+      "Publish the unfinished record",
+      "Claim the promise was fulfilled"
+    ],
+    "endings": [
+      "One practical part is delivered. The original shortfall is still acknowledged.",
+      "The school keeps an honest account of the unfinished promise.",
+      "The claim is checked against the missing service; confidence falls."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Politics"
+    ]
+  },
+  {
+    "id": "pathways.work.0",
+    "family": "pathways.work.0",
+    "domain": "work",
+    "repair": false,
+    "title": "A second opinion",
+    "text": "{name} asks me to review a similar job before they hand it over.",
+    "answers": [
+      "Check the actual records together",
+      "Explain that I cannot review it now",
+      "Sign off without checking"
+    ],
+    "endings": [
+      "The review catches an error. We keep a useful working relationship.",
+      "They find another reviewer; my limits were clear.",
+      "The unchecked error reaches the client, who questions both signatures."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.work.1",
+    "family": "pathways.work.1",
+    "domain": "work",
+    "repair": false,
+    "title": "New colleague",
+    "text": "{name} is helping a new colleague who has not used this equipment.",
+    "answers": [
+      "Demonstrate one safe task",
+      "Share the written procedure",
+      "Tell them to learn by guessing"
+    ],
+    "endings": [
+      "The supervised task passes its check; the colleague can repeat it safely.",
+      "The procedure gives them a clear next step without invented training.",
+      "The guessed process fails; proper supervision is still required."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.work.2",
+    "family": "pathways.work.2",
+    "domain": "work",
+    "repair": false,
+    "title": "A realistic referral",
+    "text": "{name} knows a team seeking someone with my field experience.",
+    "answers": [
+      "Prepare evidence and discuss the role",
+      "Decline while keeping the contact",
+      "Invent qualifications for the referral"
+    ],
+    "endings": [
+      "The evidence supports a limited referral. Hiring requirements still apply.",
+      "The opportunity passes without damaging the relationship.",
+      "The false qualifications are discovered; the referral is withdrawn."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.work.3",
+    "family": "pathways.work.3",
+    "domain": "work",
+    "repair": true,
+    "title": "A returned assignment",
+    "text": "{name} returns work that failed a specific handover requirement.",
+    "answers": [
+      "Review the fault and correct my part",
+      "Accept the return and explain capacity",
+      "Hide the fault in a new summary"
+    ],
+    "endings": [
+      "The corrected piece is accepted after review; the original fault stays recorded.",
+      "The team reallocates the work with an honest account of the delay.",
+      "The hidden fault causes another return and less trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.work.4",
+    "family": "pathways.work.4",
+    "domain": "work",
+    "repair": true,
+    "title": "Unfair credit",
+    "text": "{name} asks why my handover claimed the team work as mine.",
+    "answers": [
+      "Correct the credit in writing",
+      "Acknowledge the dispute",
+      "Repeat the sole-credit claim"
+    ],
+    "endings": [
+      "The correction names each contribution and starts rebuilding trust.",
+      "The unresolved credit dispute stays documented.",
+      "The contradictory team records weaken my next claims."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.work.5",
+    "family": "pathways.work.5",
+    "domain": "work",
+    "repair": true,
+    "title": "An overpromise",
+    "text": "{name} relied on a deadline I could not meet.",
+    "answers": [
+      "Agree a smaller verifiable deliverable",
+      "State clearly that I cannot take it",
+      "Promise the same deadline again"
+    ],
+    "endings": [
+      "A smaller checked delivery closes the revised commitment.",
+      "The team finds another route; no replacement promise was invented.",
+      "The repeated deadline is missed and confidence drops again."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.enterprise.0",
+    "family": "pathways.enterprise.0",
+    "domain": "enterprise",
+    "repair": false,
+    "title": "Repeat customer",
+    "text": "{name} wants a repeat order with a larger scope.",
+    "answers": [
+      "Test capacity before agreeing",
+      "Offer only the original scope",
+      "Promise every extra without checking"
+    ],
+    "endings": [
+      "The checked scope is usable, and the client can recommend the work.",
+      "The client accepts the limit or shops elsewhere without a false promise.",
+      "The unsupported extras fail their check; the recommendation is withheld."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Business"
+    ]
+  },
+  {
+    "id": "pathways.enterprise.1",
+    "family": "pathways.enterprise.1",
+    "domain": "enterprise",
+    "repair": false,
+    "title": "Accessible service",
+    "text": "{name} says the delivered public project still misses one access need.",
+    "answers": [
+      "Review the need with them",
+      "Publish the remaining limitation",
+      "Advertise complete access without a check"
+    ],
+    "endings": [
+      "The practical review produces a usable adjustment and a trusted contact.",
+      "The limitation is public, with no claim that it has been fixed.",
+      "The claimed access fails in practice and public confidence falls."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Politics"
+    ]
+  },
+  {
+    "id": "pathways.enterprise.2",
+    "family": "pathways.enterprise.2",
+    "domain": "enterprise",
+    "repair": false,
+    "title": "A collaborator returns",
+    "text": "{name} wants to use our credited release as the basis of a new collaboration.",
+    "answers": [
+      "Agree roles and review the existing work",
+      "Decline but keep the credits intact",
+      "Remove their credit to attract a sponsor"
+    ],
+    "endings": [
+      "The clear roles and reviewed sample support another opportunity.",
+      "The credited work remains, without a new commitment.",
+      "The missing credit ends the collaboration and damages trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Arts"
+    ]
+  },
+  {
+    "id": "pathways.enterprise.3",
+    "family": "pathways.enterprise.3",
+    "domain": "enterprise",
+    "repair": true,
+    "title": "Supplier complaint",
+    "text": "{name} says the cheap batch did not meet the agreed standard.",
+    "answers": [
+      "Inspect the batch and publish the limits",
+      "Stop offering the affected item",
+      "Deny the fault without inspection"
+    ],
+    "endings": [
+      "The checked correction closes the complaint; the faulty batch remains recorded.",
+      "The item is withdrawn with an honest explanation.",
+      "The unchecked denial brings a further complaint."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Business"
+    ]
+  },
+  {
+    "id": "pathways.enterprise.4",
+    "family": "pathways.enterprise.4",
+    "domain": "enterprise",
+    "repair": true,
+    "title": "Unclear invoice",
+    "text": "{name} disputes an extra that was not in the agreed scope.",
+    "answers": [
+      "Compare the scope and correct the record",
+      "Drop the extra claim without a new promise",
+      "Insist the extra was always agreed"
+    ],
+    "endings": [
+      "The written scope resolves the dispute and rebuilds a little trust.",
+      "The unsupported claim is dropped; no new revenue is invented.",
+      "The old agreement contradicts me and the client declines a referral."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Business",
+      "Arts"
+    ]
+  },
+  {
+    "id": "pathways.enterprise.5",
+    "family": "pathways.enterprise.5",
+    "domain": "enterprise",
+    "repair": true,
+    "title": "Public accountability",
+    "text": "{name} asks for evidence behind a claimed community result.",
+    "answers": [
+      "Publish the actual result and remaining gap",
+      "Withdraw the completion claim",
+      "Repeat the claim without evidence"
+    ],
+    "endings": [
+      "The reviewed account identifies useful work and the unresolved gap.",
+      "The unsupported claim is withdrawn from the public record.",
+      "The missing evidence damages confidence in later commitments."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": [
+      "Politics"
+    ]
+  },
+  {
+    "id": "pathways.people.0",
+    "family": "pathways.people.0",
+    "domain": "people",
+    "repair": false,
+    "title": "Help that lasts",
+    "text": "{name} used my help to take a small step toward their own goal.",
+    "answers": [
+      "Ask what next step they want",
+      "Celebrate without offering more",
+      "Take credit for their whole achievement"
+    ],
+    "endings": [
+      "Their chosen next step works. They remember the practical help.",
+      "Their achievement is celebrated without a new obligation.",
+      "They feel their own effort was dismissed and pull back."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.people.1",
+    "family": "pathways.people.1",
+    "domain": "people",
+    "repair": false,
+    "title": "Changing needs",
+    "text": "{name} appreciated my visit, but now needs a quieter routine.",
+    "answers": [
+      "Agree a short visit on their terms",
+      "Respect the need for space",
+      "Turn up without asking"
+    ],
+    "endings": [
+      "The agreed routine makes contact easier and preserves their choice.",
+      "The space is respected; no visit was promised.",
+      "The uninvited visit crosses their stated boundary."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.people.2",
+    "family": "pathways.people.2",
+    "domain": "people",
+    "repair": false,
+    "title": "Returning a favour",
+    "text": "{name} wants to help me, but their time is limited.",
+    "answers": [
+      "Agree one realistic shared task",
+      "Thank them and decline",
+      "Demand more than they offered"
+    ],
+    "endings": [
+      "The bounded task finishes and both people keep agency.",
+      "The offer is acknowledged without another obligation.",
+      "The demand turns a generous offer into resentment."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.people.3",
+    "family": "pathways.people.3",
+    "domain": "people",
+    "repair": true,
+    "title": "A missed promise",
+    "text": "{name} remembers the practical help I promised but did not give.",
+    "answers": [
+      "Acknowledge it and agree a smaller task",
+      "Apologise without another promise",
+      "Pretend the promise never happened"
+    ],
+    "endings": [
+      "The smaller task is completed; the original broken promise is still remembered.",
+      "The apology is recorded, without instant forgiveness.",
+      "Denying the promise deepens the disagreement."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.people.4",
+    "family": "pathways.people.4",
+    "domain": "people",
+    "repair": true,
+    "title": "An overdue explanation",
+    "text": "{name} wants to know why I stopped answering during a difficult week.",
+    "answers": [
+      "Explain my limits and listen",
+      "Say I cannot reconnect now",
+      "Blame them for needing support"
+    ],
+    "endings": [
+      "The conversation makes a limited reconnection possible.",
+      "The limit is clear, with no invented reconciliation.",
+      "The blame adds to the earlier hurt and weakens trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.people.5",
+    "family": "pathways.people.5",
+    "domain": "people",
+    "repair": true,
+    "title": "Repair without shortcuts",
+    "text": "{name} is willing to try a small shared task after our disagreement.",
+    "answers": [
+      "Agree duties and check the result",
+      "Decline respectfully",
+      "Promise cooperation then avoid my part"
+    ],
+    "endings": [
+      "The completed task is one step in rebuilding trust, not automatic forgiveness.",
+      "The task does not begin; the respectful limit remains.",
+      "The avoided duty repeats the old problem and reduces trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted.",
+    "fields": []
+  },
+  {
+    "id": "pathways.school.expanded.0",
+    "family": "pathways.school.expanded.0",
+    "domain": "school",
+    "repair": false,
+    "fields": [],
+    "title": "A useful handover",
+    "text": "{name} asks how the next class can continue our project.",
+    "answers": [
+      "Prepare instructions and a small demonstration",
+      "Leave the existing notes as they are",
+      "Claim no one else can do the work"
+    ],
+    "endings": [
+      "The next group can use the handover and knows what still needs checking.",
+      "The original notes remain available without another commitment.",
+      "The gatekeeping claim leaves the next group without useful support."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.school.expanded.1",
+    "family": "pathways.school.expanded.1",
+    "domain": "school",
+    "repair": false,
+    "fields": [],
+    "title": "A changed group",
+    "text": "{name} has joined a different club but still wants to share ideas.",
+    "answers": [
+      "Agree a small exchange between groups",
+      "Keep contact without a new project",
+      "Demand they leave the other club"
+    ],
+    "endings": [
+      "The exchange connects the groups without taking away anyone's choice.",
+      "The friendship continues without another club obligation.",
+      "The demand damages the friendship and the possible collaboration."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.school.expanded.2",
+    "family": "pathways.school.expanded.2",
+    "domain": "school",
+    "repair": false,
+    "fields": [],
+    "title": "Borrowed materials",
+    "text": "{name} wants our group to share limited materials with another class.",
+    "answers": [
+      "Plan fair turns and check what each group needs",
+      "Keep to the original allocation",
+      "Promise the same materials to both at once"
+    ],
+    "endings": [
+      "The turn-taking plan gives both groups useful access.",
+      "The original allocation is explained without an extra promise.",
+      "The conflicting promises leave one group waiting without materials."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.school.expanded.3",
+    "family": "pathways.school.expanded.3",
+    "domain": "school",
+    "repair": true,
+    "fields": [],
+    "title": "Lost working notes",
+    "text": "{name} cannot find the notes needed to explain our result.",
+    "answers": [
+      "Reconstruct only the evidence we can verify",
+      "Label the missing evidence honestly",
+      "Invent a cleaner set of results"
+    ],
+    "endings": [
+      "The limited reconstruction explains what we know and what is missing.",
+      "The record shows its limits without fabricated evidence.",
+      "The invented results are challenged and reduce trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.school.expanded.4",
+    "family": "pathways.school.expanded.4",
+    "domain": "school",
+    "repair": true,
+    "fields": [],
+    "title": "A member left out",
+    "text": "{name} says one member was excluded from our final decision.",
+    "answers": [
+      "Hear their concerns and revise one practical part",
+      "Acknowledge the exclusion without a new promise",
+      "Say they were never part of the group"
+    ],
+    "endings": [
+      "The revised part includes the member's practical needs; the earlier exclusion remains recorded.",
+      "The exclusion is acknowledged without instant repair.",
+      "Denying their participation deepens the disagreement."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.school.expanded.5",
+    "family": "pathways.school.expanded.5",
+    "domain": "school",
+    "repair": true,
+    "fields": [],
+    "title": "Too many commitments",
+    "text": "{name} says my overlapping activities left our shared work unfinished.",
+    "answers": [
+      "Agree one manageable piece and finish it",
+      "Admit I cannot take another piece",
+      "Accept more duties to look committed"
+    ],
+    "endings": [
+      "The limited piece is completed and shows a more realistic commitment.",
+      "The capacity limit is clear, allowing the group to plan around it.",
+      "The extra duties repeat the missed commitments."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.work.expanded.0",
+    "family": "pathways.work.expanded.0",
+    "domain": "work",
+    "repair": false,
+    "fields": [],
+    "title": "A useful procedure",
+    "text": "{name} asks whether our checked process can become a short team guide.",
+    "answers": [
+      "Test the guide with someone new",
+      "Share the notes without claiming a tested guide",
+      "Publish an untested shortcut"
+    ],
+    "endings": [
+      "The tested guide helps the team repeat the work and keeps its limits clear.",
+      "The working notes are shared with an honest description.",
+      "The shortcut fails a check and the team withdraws the guide."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.work.expanded.1",
+    "family": "pathways.work.expanded.1",
+    "domain": "work",
+    "repair": false,
+    "fields": [],
+    "title": "Different working hours",
+    "text": "{name} needs a handover that fits their changed hours.",
+    "answers": [
+      "Agree a brief written handover",
+      "State the hours I can manage",
+      "Promise to be available at every hour"
+    ],
+    "endings": [
+      "The written handover works without either person being constantly available.",
+      "The limits let the team arrange another handover.",
+      "The constant-availability promise fails and causes another delay."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.work.expanded.2",
+    "family": "pathways.work.expanded.2",
+    "domain": "work",
+    "repair": false,
+    "fields": [],
+    "title": "A second placement",
+    "text": "{name} knows a short supervised placement relevant to my work.",
+    "answers": [
+      "Check the duties and prepare an honest sample",
+      "Decline the placement without inventing a reason",
+      "Claim experience I do not have"
+    ],
+    "endings": [
+      "The checked sample supports a supervised opportunity; qualifications still apply.",
+      "The placement passes without an extra obligation.",
+      "The unsupported experience claim is found and the opportunity closes."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.work.expanded.3",
+    "family": "pathways.work.expanded.3",
+    "domain": "work",
+    "repair": true,
+    "fields": [],
+    "title": "A confusing handover",
+    "text": "{name} says the last summary left an important responsibility unclear.",
+    "answers": [
+      "Agree who owns each remaining duty",
+      "Acknowledge the unclear record",
+      "Claim every duty belonged to someone else"
+    ],
+    "endings": [
+      "The revised handover assigns the remaining duties and closes the confusion.",
+      "The unclear handover stays documented without a fresh false claim.",
+      "The blanket denial contradicts the earlier records and weakens trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.work.expanded.4",
+    "family": "pathways.work.expanded.4",
+    "domain": "work",
+    "repair": true,
+    "fields": [],
+    "title": "A failed check",
+    "text": "{name} wants to understand why my work passed my own review but failed the team check.",
+    "answers": [
+      "Compare the two checks and correct the gap",
+      "Accept that a new review is needed",
+      "Dismiss the team check without evidence"
+    ],
+    "endings": [
+      "The compared checks reveal a gap and the corrected review is useful.",
+      "A further review is arranged without a claim that the work is fixed.",
+      "The dismissed check returns as a documented fault."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.work.expanded.5",
+    "family": "pathways.work.expanded.5",
+    "domain": "work",
+    "repair": true,
+    "fields": [],
+    "title": "A missing explanation",
+    "text": "{name} asks why the scope changed without an updated record.",
+    "answers": [
+      "Write down the change and obtain agreement",
+      "Withdraw the extra scope",
+      "Say the old agreement included everything"
+    ],
+    "endings": [
+      "The revised agreement gives the team a shared understanding of the work.",
+      "The extra scope is withdrawn without a new obligation.",
+      "The contradictory scope claim causes another disagreement."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.enterprise.expanded.0",
+    "family": "pathways.enterprise.expanded.0",
+    "domain": "enterprise",
+    "repair": false,
+    "fields": [],
+    "title": "A clear next brief",
+    "text": "{name} wants to discuss what a future commitment would actually cover.",
+    "answers": [
+      "Review needs and write a limited brief",
+      "Keep the discussion exploratory",
+      "Treat the discussion as a guaranteed deal"
+    ],
+    "endings": [
+      "The limited brief gives both sides a usable starting point, not guaranteed revenue.",
+      "The discussion ends honestly without a contract being invented.",
+      "The claimed deal is rejected because nothing was agreed."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.enterprise.expanded.1",
+    "family": "pathways.enterprise.expanded.1",
+    "domain": "enterprise",
+    "repair": false,
+    "fields": [],
+    "title": "A change in capacity",
+    "text": "{name} can contribute, but their availability has changed.",
+    "answers": [
+      "Agree duties that fit their actual capacity",
+      "Pause the discussion without a promise",
+      "Promise their time to someone else"
+    ],
+    "endings": [
+      "The limited duties fit real capacity and preserve the working relationship.",
+      "The discussion pauses without another commitment.",
+      "The unsupported promise crosses their limits and damages trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.enterprise.expanded.2",
+    "family": "pathways.enterprise.expanded.2",
+    "domain": "enterprise",
+    "repair": false,
+    "fields": [],
+    "title": "A record worth keeping",
+    "text": "{name} wants our useful work recorded for whoever follows.",
+    "answers": [
+      "Check the record and preserve shared credit",
+      "Keep the current record without a new claim",
+      "Remove their role from the history"
+    ],
+    "endings": [
+      "The checked record keeps useful work, limits and shared credit together.",
+      "The existing record remains without another claim.",
+      "The removed credit damages the relationship and is disputed."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.enterprise.expanded.3",
+    "family": "pathways.enterprise.expanded.3",
+    "domain": "enterprise",
+    "repair": true,
+    "fields": [],
+    "title": "Conflicting records",
+    "text": "{name} has a version of our commitment that differs from mine.",
+    "answers": [
+      "Compare dated records and clarify the gap",
+      "Acknowledge that the agreement is disputed",
+      "Insist my memory overrides every record"
+    ],
+    "endings": [
+      "The dated comparison resolves a practical gap while keeping the dispute visible.",
+      "The unresolved agreement is recorded honestly.",
+      "The unsupported insistence prolongs the dispute and reduces trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.enterprise.expanded.4",
+    "family": "pathways.enterprise.expanded.4",
+    "domain": "enterprise",
+    "repair": true,
+    "fields": [],
+    "title": "An unagreed change",
+    "text": "{name} objects to a change made after they agreed their role.",
+    "answers": [
+      "Review the change and obtain new agreement",
+      "Undo my unsupported claim about their role",
+      "Tell them the change was always agreed"
+    ],
+    "endings": [
+      "The revised role reflects a new agreement instead of a hidden assumption.",
+      "The unsupported role claim is withdrawn.",
+      "The old record contradicts the claim and the relationship weakens."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.enterprise.expanded.5",
+    "family": "pathways.enterprise.expanded.5",
+    "domain": "enterprise",
+    "repair": true,
+    "fields": [],
+    "title": "A correction to publish",
+    "text": "{name} asks us to correct an inaccurate public account of our work.",
+    "answers": [
+      "Publish a clear correction and verify the facts",
+      "Withdraw the inaccurate statement",
+      "Quietly repeat the old account elsewhere"
+    ],
+    "endings": [
+      "The verified correction repairs part of the record without erasing the original error.",
+      "The inaccurate statement is withdrawn without a replacement claim.",
+      "Repeating the error is noticed and undermines later claims."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.people.expanded.0",
+    "family": "pathways.people.expanded.0",
+    "domain": "people",
+    "repair": false,
+    "fields": [],
+    "title": "Their own choice",
+    "text": "{name} found an option I had not suggested for their personal goal.",
+    "answers": [
+      "Ask what support they want for their choice",
+      "Celebrate without joining the plan",
+      "Insist my original suggestion was better"
+    ],
+    "endings": [
+      "Their chosen approach works, and the support keeps their agency intact.",
+      "Their choice is celebrated without a new commitment.",
+      "The insistence turns support into pressure and weakens trust."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.people.expanded.1",
+    "family": "pathways.people.expanded.1",
+    "domain": "people",
+    "repair": false,
+    "fields": [],
+    "title": "A quieter celebration",
+    "text": "{name} wants to celebrate progress without a large gathering.",
+    "answers": [
+      "Agree a small celebration on their terms",
+      "Send a thoughtful message",
+      "Arrange a big surprise after they declined one"
+    ],
+    "endings": [
+      "The small celebration fits their needs and strengthens the bond.",
+      "The message acknowledges their progress without extra demands.",
+      "The unwanted gathering ignores their stated preference."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.people.expanded.2",
+    "family": "pathways.people.expanded.2",
+    "domain": "people",
+    "repair": false,
+    "fields": [],
+    "title": "Sharing the load",
+    "text": "{name} says our shared routine has become uneven.",
+    "answers": [
+      "Agree a fair limited split and review it",
+      "Explain what I can no longer manage",
+      "Promise a fair split then avoid my part"
+    ],
+    "endings": [
+      "The reviewed split makes the routine more sustainable for both people.",
+      "The honest capacity limit lets them make another plan.",
+      "The avoided duties repeat the imbalance and cause resentment."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.people.expanded.3",
+    "family": "pathways.people.expanded.3",
+    "domain": "people",
+    "repair": true,
+    "fields": [],
+    "title": "A private matter",
+    "text": "{name} says I shared something they expected me to keep private.",
+    "answers": [
+      "Acknowledge it and agree clearer boundaries",
+      "Apologise without asking for instant trust",
+      "Tell them they should not care"
+    ],
+    "endings": [
+      "The new boundary is respected; rebuilding trust still takes time.",
+      "The apology is recorded without instant forgiveness.",
+      "Dismissing the concern damages trust further."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.people.expanded.4",
+    "family": "pathways.people.expanded.4",
+    "domain": "people",
+    "repair": true,
+    "fields": [],
+    "title": "An unwanted favour",
+    "text": "{name} says my attempt to help created more work for them.",
+    "answers": [
+      "Ask what would actually help and do one limited task",
+      "Stop the unwanted help and acknowledge the effect",
+      "Insist they should be grateful"
+    ],
+    "endings": [
+      "The agreed task helps on their terms rather than adding another burden.",
+      "The unwanted help stops, with its effect acknowledged.",
+      "The demand for gratitude ignores the burden and increases resentment."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  },
+  {
+    "id": "pathways.people.expanded.5",
+    "family": "pathways.people.expanded.5",
+    "domain": "people",
+    "repair": true,
+    "fields": [],
+    "title": "A promise too large",
+    "text": "{name} says my generous offer was much larger than I could fulfil.",
+    "answers": [
+      "Agree one realistic part and complete it",
+      "Withdraw the offer honestly",
+      "Make an even larger offer instead"
+    ],
+    "endings": [
+      "The realistic part is completed; the earlier overpromise remains remembered.",
+      "The unsupported offer is withdrawn without a replacement promise.",
+      "The larger offer repeats the same problem and weakens confidence."
+    ],
+    "partial": "The practical attempt needs more work. My honest effort is remembered, but no skill or support reward was granted."
+  }
+]

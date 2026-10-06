@@ -31,13 +31,13 @@ func _w() -> Dictionary:
 
 
 func active(id: String) -> bool:
-	return int(_w()["events"].get(id, 0)) > 0
+	return setting_allows(id) and int(_w()["events"].get(id, 0)) > 0
 
 
 func active_list() -> Array:
 	var out: Array = []
 	for id in _w()["events"].keys():
-		if int(_w()["events"][id]) > 0:
+		if active(str(id)):
 			out.append(id)
 	return out
 
@@ -154,6 +154,9 @@ func yearly() -> void:
 	var p := GameState.player
 	var w := _w()
 	for id in w["events"].keys():
+		if not setting_allows(str(id)):
+			w["events"].erase(id)
+			continue
 		if int(w["events"][id]) <= 0:
 			continue
 		w["events"][id] = int(w["events"][id]) - 1
@@ -163,7 +166,7 @@ func yearly() -> void:
 	if randf() < 0.4:
 		var pool: Array = []
 		for id in EVENTS.keys():
-			if active(id):
+			if active(id) or not setting_allows(str(id)):
 				continue
 			var blocked := false
 			for other in EVENTS[id].get("not", []):
@@ -179,6 +182,7 @@ func yearly() -> void:
 
 
 func _start(id: String) -> void:
+	if not setting_allows(id): return
 	var e: Dictionary = EVENTS[id]
 	_w()["events"][id] = randi_range(int(e["years"][0]), int(e["years"][1]))
 	GameState.counter("world_" + id)
@@ -290,7 +294,7 @@ func _billionaire_yearly() -> void:
 	if b.get("media", false):
 		GameState.apply_effects({"heat": -5})
 	if randf() < 0.15:
-		var envious := GameState.random_of(["sibling", "friend", "auntuncle", "coworker"])
+		var envious := GameState.random_of(["sibling", "friend", "coworker"])
 		if envious != "":
 			Grit.grudge(envious, 30)
 			GameState.add_log("%s has been saying I think I'm better than everyone now." % GameState.full_name(envious))
@@ -618,3 +622,15 @@ func _pay(cost: int) -> bool:
 
 func offshore_value() -> int:
 	return int(_bb().get("offshore", 0))
+
+
+## World headlines follow the actual setting too, including existing shocks
+## carried across a jump. A nineteenth-century life cannot have crypto mania.
+func setting_allows(id: String) -> bool:
+	if Lives.separate(): return false
+	if Lives.kind() == "pirate": return id in ["war","boom","recession","pandemic"]
+	if Lives.kind() == "colonist": return id in ["medicine","tech","pandemic","boom","recession"]
+	if Lives.kind() == "traveler":
+		var earliest := {"tech":2010,"crypto":2009,"space":1957,"medicine":1930,"sports":1930,"housing":1900,"climate":1980}
+		return Expansion.era_year() >= int(earliest.get(id,0))
+	return true

@@ -5163,5 +5163,89 @@
   ],
   "v": 20,
   "hidden": true
+ },
+ {
+  "id": "development_smile",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "A Smile Back",
+  "desc": "Experience the first social smile in infancy.",
+  "req": {
+   "development_smile": 1
+  },
+  "v": 30
+ },
+ {
+  "id": "development_roll",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "A New Angle",
+  "desc": "Experience the first roll over in infancy.",
+  "req": {
+   "development_roll": 1
+  },
+  "v": 30
+ },
+ {
+  "id": "development_sit",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "Sitting Pretty",
+  "desc": "Experience the first unsupported sitting in infancy.",
+  "req": {
+   "development_sit": 1
+  },
+  "v": 30
+ },
+ {
+  "id": "development_tooth",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "One Tiny Tooth",
+  "desc": "Experience the first tooth in infancy.",
+  "req": {
+   "development_tooth": 1
+  },
+  "v": 30
+ },
+ {
+  "id": "development_stand",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "Furniture Explorer",
+  "desc": "Experience the first supported stand in infancy.",
+  "req": {
+   "development_stand": 1
+  },
+  "v": 30
+ },
+ {
+  "id": "development_word",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "Word Gets Around",
+  "desc": "Experience the first word in infancy.",
+  "req": {
+   "development_word": 1
+  },
+  "v": 30
+ },
+ {
+  "id": "development_walk",
+  "cat": "life",
+  "tier": "bronze",
+  "icon": "👶",
+  "name": "Small Steps, Big World",
+  "desc": "Experience the first independent steps in infancy.",
+  "req": {
+   "development_walk": 1
+  },
+  "v": 30
  }
 ]

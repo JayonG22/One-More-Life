@@ -1,0 +1,47 @@
+[
+ {
+  "id": "bookworms",
+  "icon": "📚",
+  "name": "Bookworms"
+ },
+ {
+  "id": "eco_kids",
+  "icon": "♻️",
+  "name": "Eco kids"
+ },
+ {
+  "id": "makers",
+  "icon": "🛠️",
+  "name": "Makers"
+ },
+ {
+  "id": "quiet_kids",
+  "icon": "🤫",
+  "name": "Quiet kids"
+ },
+ {
+  "id": "comedians",
+  "icon": "😄",
+  "name": "Class comedians"
+ },
+ {
+  "id": "outdoors",
+  "icon": "🏕️",
+  "name": "Outdoor kids"
+ },
+ {
+  "id": "fashionistas",
+  "icon": "👗",
+  "name": "Style crowd"
+ },
+ {
+  "id": "activists",
+  "icon": "📣",
+  "name": "Student activists"
+ },
+ {
+  "id": "achievers",
+  "icon": "🎯",
+  "name": "High achievers"
+ }
+]

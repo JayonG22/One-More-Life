@@ -58,12 +58,12 @@ const TRIPS := [
 	["camping", "🏕️", "Camping road trip", 400, 1, {"happiness": 8, "stress": -9, "health": 2}],
 	["island", "🏝️", "Luxury island retreat", 12000, 2, {"happiness": 18, "stress": -18, "looks": 2}],
 ]
-const CLIQUES := {
+var CLIQUES := {
 	"jocks": ["🏈", "Jocks", "health", 60], "nerds": ["🤓", "Nerds", "smarts", 65], "populars": ["💅", "Popular kids", "looks", 70],
 	"goths": ["🖤", "Goths", "", 0], "theater": ["🎭", "Theater kids", "", 0], "skaters": ["🛹", "Skaters", "health", 45],
 	"band": ["🎺", "Band kids", "", 0], "gamers": ["🎮", "Gamers", "", 0], "artsy": ["🎨", "Art kids", "", 0],
 }
-const SCHOOL_CLUBS := [
+var SCHOOL_CLUBS := [
 	["chess", "♟️", "Chess club", {"smarts": 2}], ["drama", "🎭", "Drama club", {"happiness": 2, "looks": 1}],
 	["robotics", "🤖", "Robotics team", {"smarts": 3}], ["debate", "🗣️", "Debate team", {"smarts": 2}],
 	["art", "🎨", "Art club", {"happiness": 2}], ["band", "🎺", "School band", {"happiness": 2}],
@@ -78,6 +78,17 @@ const SPORTS := [
 const HORSE_A := ["Midnight", "Thunder", "Lucky", "Silver", "Golden", "Wild", "Dancing", "Iron", "Rocket", "Velvet", "Crimson", "Sleepy"]
 const HORSE_B := ["Express", "Dream", "Comet", "Lady", "Duke", "Bandit", "Echo", "Biscuit", "Fury", "Whisper", "Legend", "Pancake"]
 const SLOTS := ["🍒", "🍋", "🔔", "⭐", "💎", "7️⃣"]
+
+func _ready() -> void:
+	for c in ContentDB._load_json("res://data/school_club_catalog.json",[]):
+		SCHOOL_CLUBS.append([c["id"],c["icon"],c["name"],{"happiness":1}])
+	for c in ContentDB._load_json("res://data/school_clique_catalog.json",[]):
+		CLIQUES[c["id"]]=[c["icon"],c["name"],"",0]
+
+func club_age(id: String) -> int:
+	for c in ContentDB._load_json("res://data/school_club_catalog.json",[]):
+		if c["id"]==id: return int(c["min_age"])
+	return 5 if id in ["art","band","drama","volunteer"] else 8 if id in ["chess","science"] else 11
 
 
 func _p() -> Dictionary:
@@ -127,6 +138,10 @@ func menu(key: String) -> Dictionary:
 				var md: Array = MARTIAL[d]
 				var rank := int(m.get(d, {}).get("belt", -1))
 				rows.append(_row(md[0], md[1], ("Not started" if rank < 0 else "%s belt · %d%% to next" % [BELTS[mini(rank, BELTS.size() - 1)], int(m[d].get("prog", 0))]) + " · " + _money(_cost(int(md[2]))) + " a class", "martial", d))
+				if rank>=0:
+					rows.append(_row("🥊","Supervised sparring · "+str(md[1]),"Choose an unlocked move, then play the bout","martial_spar",d,Depth.available("martial:"+str(d)+"true")))
+					rows.append(_row("🥋","Belt assessment · "+str(md[1]),"100% preparation and a 65% challenge result required","martial_test",d,int(m[d].get("prog",0))>=100 and int(m[d].get("belt",0))<BELTS.size()-1 and Depth.available("martial:"+str(d)+"false")))
+			if not m.is_empty(): rows.append({"icon":"🥊","name":"Tactical sparring","sub":"Read an opponent and practice counters","menu":"journey:skills:martial"})
 			return {"icon": "🥋", "title": "Martial arts", "rows": rows, "info": ["Belts make you better in fights, muggings and street scraps. Train a few times a year; each belt takes longer."]}
 		"diet":
 			var rows2: Array = []
@@ -198,7 +213,7 @@ func menu(key: String) -> Dictionary:
 				rows10.append(_sub(g[1], g[2], g[3], "bet:" + g[0], age >= 18))
 			rows10.append(_sub("🏇", "Horse races", "Six horses, real odds, real form", "horses", age >= 18))
 			rows10.append({"icon":"🎲", "name":"More tables", "sub":"Baccarat, craps, video poker, keno, poker tournaments and Sic Bo", "menu":"exp:casino", "on":age >= 18})
-			return {"icon": "🎰", "title": "Casino", "rows": rows10, "info": ["House edge is small but real. Luck charms and lucky heirlooms help a little."]}
+			return {"icon": "🎰", "title": "Casino", "rows": rows10, "info": ["Payouts include the returned stake. Roulette uses a fair 37-pocket wheel. Each round is independent; a streak does not change the next odds."]}
 		"bet":
 			var rows11: Array = []
 			for amt in [10, 100, 1000, 10000, 100000]:
@@ -209,7 +224,8 @@ func menu(key: String) -> Dictionary:
 						rows11.append(_row("💵", "Bet %s" % _money(amt), "", "casino", [a1, amt, ""]))
 			if rows11.is_empty():
 				rows11.append({"icon": "💸", "name": "You need at least $10", "sub": "", "on": false})
-			return {"icon": "🎲", "title": a1.capitalize(), "rows": rows11}
+			var wager := {"menu": "daily:roulette:%d"} if a1 == "roulette" else {"act": "daily:casino", "arg": [a1, 0, ""], "amount_index": 1}
+			return {"icon": "🎲", "title": a1.capitalize(), "rows": rows11, "wager": wager}
 		"roulette":
 			var amt2 := int(a1)
 			var rows12: Array = []
@@ -229,7 +245,7 @@ func menu(key: String) -> Dictionary:
 			for amt3 in [10, 100, 1000, 10000, 100000]:
 				if int(p["money"]) >= amt3:
 					rows14.append(_row("💵", "Bet %s" % _money(amt3), "", "horse", [idx, amt3]))
-			return {"icon": "🐎", "title": _race()["horses"][idx]["name"], "rows": rows14}
+			return {"icon": "🐎", "title": _race()["horses"][idx]["name"], "rows": rows14, "wager": {"act": "daily:horse", "arg": [idx, 0], "amount_index": 1}}
 		"lottery":
 			var lot := lottery()
 			var luck := Shop.luck()
@@ -282,6 +298,7 @@ func menu(key: String) -> Dictionary:
 				rows18.append(_row("👑", "Leave most of it to %s" % cn["first"] + ("  ✓" if mine else ""), "70% to them, the rest shared", "will", "heir:" + cid, not mine))
 			rows18.append(_row("🎗️", "Leave it all to charity" + ("  ✓" if cur2 == "charity" else ""), "Karma now, a furious family later", "will", "charity", cur2 != "charity"))
 			return {"icon": "📜", "title": "Will & testament", "rows": rows18}
+		"depth": return Depth.school_menu()
 		"school":
 			return _school_menu()
 		"cliques":
@@ -292,6 +309,7 @@ func menu(key: String) -> Dictionary:
 				var req := "" if str(cd[2]) == "" else "Needs %s %d+" % [cd[2], int(cd[3])]
 				rows19.append(_row(cd[0], cd[1] + ("  ✓" if ss["clique"] == c2 else ""), req if req != "" else "Anyone can try", "clique", c2, ss["clique"] != c2))
 			if ss["clique"] != "":
+				rows19.append(_row("👥","Meet your clique","1 time · people and choices","depth",["clique",ss["clique"]]))
 				rows19.append(_row("🚶", "Leave your clique", "Go solo", "clique", ""))
 			return {"icon": "👥", "title": "Cliques", "rows": rows19}
 		"clubs":
@@ -299,7 +317,9 @@ func menu(key: String) -> Dictionary:
 			var ss2 := _ss()
 			for c3 in SCHOOL_CLUBS:
 				var inn: bool = ss2["clubs"].has(c3[0])
-				rows20.append(_row(c3[1], c3[2] + ("  ✓" if inn else ""), "Leave" if inn else "Join (max 2)", "club_join", c3[0], inn or ss2["clubs"].size() < 2))
+				var eligible: bool=int(p["age"])>=club_age(str(c3[0]))
+				rows20.append(_row(c3[1], c3[2] + ("  ✓" if inn else ""), "Leave" if inn else "Age "+str(club_age(str(c3[0])))+"+" if not eligible else "Join · up to 4 clubs", "club_join", c3[0], inn or eligible and ss2["clubs"].size() < 4))
+				if inn: rows20.append(_row(c3[1],"Practise "+str(c3[2]),"1 time · distinct task and classmates","depth",["club",c3[0]],eligible))
 			return {"icon": "🏫", "title": "Clubs", "rows": rows20}
 		"sports":
 			var rows21: Array = []
@@ -342,27 +362,7 @@ func _big(v: int) -> String:
 
 
 func _school_menu() -> Dictionary:
-	var p := _p()
-	var ss := _ss()
-	var rows: Array = []
-	var in_hs: bool = GameState.in_school() and int(p["age"]) >= 11
-	rows.append({"icon": "⭐", "name": "Popularity: %d%%" % int(ss["popularity"]), "sub": ("Clique: %s" % CLIQUES[ss["clique"]][1]) if ss["clique"] != "" else "Not in a clique", "on": false})
-	if int(p["age"]) >= 11:
-		rows.append(_sub("👥", "Cliques", "Jocks, nerds, goths, theater kids…", "cliques"))
-		rows.append(_sub("🏫", "Clubs", "%d joined · chess, drama, robotics, debate…" % ss["clubs"].size(), "clubs"))
-		rows.append(_sub("🏆", "Sports teams", "On the %s team" % ss["sport"] if ss["sport"] != "" else "Try out for a team", "sports"))
-	rows.append(_row("🧑‍🏫", "Visit the principal", "Complain, confess, or charm", "principal"))
-	rows.append(_row("🩹", "Go to the school nurse", "Get out of class", "nurse"))
-	if int(p["age"]) >= 10:
-		rows.append(_row("📝", "Cheat on a test", "Grades up, if you don't get caught", "cheat"))
-		rows.append(_row("🎤", "Enter the talent show", "Sing, dance, magic, stand-up", "talent"))
-	if in_hs and int(p["age"]) >= 13:
-		rows.append(_row("🗳️", "Run for class president", "Popularity helps", "president"))
-		rows.append(_row("💃", "Go to the school dance", "Ask someone, or go with friends", "dance"))
-	if in_hs and int(p["age"]) >= 16 and not ss["prom"]:
-		rows.append(_row("👑", "Prom", "Once in a lifetime. Maybe king or queen", "prom"))
-	return {"icon": "🏫", "title": "School life", "rows": rows}
-
+	return Journey.modules["campus"].menu("day")
 
 func _adoption_menu() -> Dictionary:
 	var p := _p()
@@ -408,6 +408,9 @@ func act(key: String, arg = null) -> void:
 	var p := _p()
 	match key:
 		"martial": _martial(str(arg))
+		"martial_spar": Depth.martial(str(arg),true)
+		"martial_test": Depth.martial(str(arg),false)
+		"depth": Depth.school_activity(str(arg[0]),str(arg[1]))
 		"diet":
 			p["diet"] = str(arg)
 			Actions._done(DIETS[arg][0], "New diet", "I switched to a %s diet." % str(DIETS[arg][1]).to_lower(), {})
@@ -466,7 +469,7 @@ func act(key: String, arg = null) -> void:
 		"pray":
 			if Actions._out_of_time(): return
 			var r := randf()
-			if r < 0.05 and _p()["illness"] != "":
+			if r < 0.05 and _p()["illness"] != "" and not Care.course().recorded_illness():
 				var ill: String = p["illness"]
 				p["illness"] = ""
 				Actions._done("🙏", "Prayer", "I prayed. The next morning, the %s was gone. The doctors can't explain it." % ill, {"happiness": 10, "karma": 2})
@@ -492,16 +495,8 @@ func _martial(d: String) -> void:
 	s["prog"] = int(s["prog"]) + maxi(8, gain)
 	var txt := "I trained %s." % str(md[1]).to_lower()
 	var fx := {"money": -fee, "health": 2, "stress": -3}
-	if int(s["prog"]) >= 100:
-		s["prog"] = 0
-		s["belt"] = mini(BELTS.size() - 1, int(s["belt"]) + 1)
-		txt += " I passed my belt test: %s belt!" % BELTS[int(s["belt"])]
-		fx["happiness"] = 6
-		GameState.counter("belts_earned")
-		if int(s["belt"]) == 7:
-			GameState.add_milestone(p["age"], "earned a black belt in %s" % str(md[1]).to_lower())
-	else:
-		txt += " %d%% of the way to my next belt." % int(s["prog"])
+	s["prog"] = mini(100,int(s["prog"]))
+	txt += " %d%% ready for assessment. Pass the supervised belt challenge to advance." % int(s["prog"])
 	Actions._done(md[0], str(md[1]), txt, fx)
 
 
@@ -521,6 +516,7 @@ func _salon(s: String) -> void:
 	var fee := _cost(int(d[3]))
 	if Actions._out_of_time(): return
 	if not Actions._can_pay(fee, str(d[2])): return
+	Lifestyle.note("spa")
 	var fx: Dictionary = (d[4] as Dictionary).duplicate()
 	fx["money"] = -fee
 	var txt := str(d[5])
@@ -581,6 +577,13 @@ func _surgery(s: String) -> void:
 
 
 func _doctor(k: String) -> void:
+	if not Lives.separate():
+		match k:
+			"gp": Care.gp_visit(); return
+			"dentist": Care.dentist(); return
+			"er": Expansion.checkup("er"); return
+			"psych": Expansion.mental_action("psychiatry"); return
+			"eyes": Care.test_eyes(); return
 	var p := _p()
 	match k:
 		"gp":
@@ -628,7 +631,7 @@ func _doctor(k: String) -> void:
 		"alt":
 			if Actions._out_of_time(): return
 			if not Actions._can_pay(_cost(150), "Alternative medicine"): return
-			if p["illness"] != "" and randf() < 0.08:
+			if p["illness"] != "" and not Care.course().recorded_illness() and randf() < 0.08:
 				p["illness"] = ""
 				Actions._done("🌿", "Alternative medicine", "Herbal tea, crystals and chanting. And somehow I'm better?", {"money": -_cost(150), "health": 5})
 			else:
@@ -637,7 +640,7 @@ func _doctor(k: String) -> void:
 			if Actions._out_of_time(): return
 			if not Actions._can_pay(_cost(400), "Witch doctor"): return
 			var r := randf()
-			if p["illness"] != "" and r < 0.06:
+			if p["illness"] != "" and not Care.course().recorded_illness() and r < 0.06:
 				p["illness"] = ""
 				Actions._done("🪬", "Witch doctor", "A chicken, a chant and something I drank. The illness is gone.", {"money": -_cost(400), "health": 10})
 			elif r < 0.2:
@@ -750,6 +753,7 @@ func _movie(g: String) -> void:
 	if Actions._out_of_time(): return
 	var fee := _cost(15)
 	if not Actions._can_pay(fee, "Movie"): return
+	Lifestyle.note("movie")
 	var d: Array = []
 	for x in MOVIES:
 		if x[0] == g:
@@ -916,6 +920,7 @@ func _race() -> Dictionary:
 
 
 func _gamble_ok(amt: int) -> bool:
+	if amt < 10 or amt > 1000000000 or int(_p().get("age", 0)) < 18: return false
 	if Actions._out_of_time(): return false
 	if not Actions._can_pay(amt, "Bet"):
 		GameState.player["time_left"] = int(GameState.player["time_left"]) + 1
@@ -946,7 +951,7 @@ func _casino(game: String, amt: int, choice: String) -> void:
 		return
 	if not _gamble_ok(amt): return
 	if GAMBLE_GAMES.has(game):
-		Minigames.play("g_" + game, {"bet": amt, "luck": Shop.luck(), "choice": choice, "money": int(_p()["money"]), "skill": 50, "difficulty": 1.0}, Callable(self, "_gamble_done").bind(game, amt, choice))
+		Minigames.play("g_" + game, {"bet": amt, "luck": 1.0, "choice": choice, "money": int(_p()["money"]), "skill": 50, "difficulty": 1.0}, Callable(self, "_gamble_done").bind(game, amt, choice))
 		return
 	_casino_roll(game, amt, choice)
 
@@ -962,7 +967,7 @@ func _gamble_done(_score: float, detail: Dictionary, game: String, amt: int, cho
 
 
 func _casino_roll(game: String, amt: int, choice: String) -> void:
-	var luck := Shop.luck()
+	var luck := 1.0
 	match game:
 		"rocket":
 			var cp := maxf(1.0, 0.92 / maxf(0.0001, 1.0 - randf()))
@@ -1314,6 +1319,7 @@ func _rename(which: String, nm: String) -> void:
 # ---------------------------------------------------------------- school life
 
 func _clique(c: String) -> void:
+	if not (GameState.in_school() or GameState.in_university()) or int(_p()["age"])<11 or (c!="" and not CLIQUES.has(c)): return
 	var ss := _ss()
 	if c == "":
 		ss["clique"] = ""
@@ -1339,11 +1345,12 @@ func _clique(c: String) -> void:
 
 func _club_join(c: String) -> void:
 	var ss := _ss()
+	if not (GameState.in_school() or GameState.in_university()) or not SCHOOL_CLUBS.any(func(row): return row[0]==c): return
 	if ss["clubs"].has(c):
 		ss["clubs"].erase(c)
 		Actions._done("🏫", "Clubs", "I quit the %s." % _club_name(c).to_lower(), {})
 		return
-	if ss["clubs"].size() >= 2: return
+	if int(_p()["age"])<club_age(c) or ss["clubs"].size() >= 4: return
 	if Actions._out_of_time(): return
 	ss["clubs"].append(c)
 	GameState.counter("clubs_joined")
@@ -1395,6 +1402,13 @@ func _sport(s: String) -> void:
 
 
 func _school_act(k: String) -> void:
+	if k in ["principal","nurse"]:
+		var people: Array=Journey.modules["campus"].members("principal" if k=="principal" else "school_nurse")
+		if not people.is_empty(): Journey.modules["campus"].situation(str(people[0]))
+		return
+	if k in ["talent","president"]:
+		Depth.school_activity(k,"music" if k=="talent" else "")
+		return
 	var p := _p()
 	var ss := _ss()
 	if Actions._out_of_time(): return
@@ -1421,25 +1435,9 @@ func _school_act(k: String) -> void:
 					GameState.change_closeness(par, -8)
 				Actions._done("📝", "Cheating", "The teacher caught me cheating. Zero on the test, and a call home.", {"school": -12, "happiness": -8})
 		"talent":
-			var act2 := _pick(["sang a ballad", "did a magic act", "did stand-up", "danced", "played the %s" % _pick(["piano", "guitar", "violin", "kazoo"])])
-			var sk := GameState.stat("looks") / 200.0 + float(p.get("talent_voice", 0)) * 0.05 + float(p.get("talent_acting", 0)) * 0.04 + (0.1 if Shop.has_tag("instrument") else 0.0) + randf() * 0.5
-			if sk >= 0.7:
-				ss["popularity"] = clampf(float(ss["popularity"]) + 12.0, 0.0, 100.0)
-				GameState.counter("talent_wins")
-				Actions._done("🎤", "Talent show", "I %s at the talent show and won first place!" % act2, {"happiness": 12, "fame": 1})
-			elif sk >= 0.4:
-				Actions._done("🎤", "Talent show", "I %s at the talent show. Polite applause." % act2, {"happiness": 3})
-			else:
-				ss["popularity"] = clampf(float(ss["popularity"]) - 8.0, 0.0, 100.0)
-				Actions._done("🎤", "Talent show", "I %s at the talent show. Someone recorded it. It's everywhere now." % act2, {"happiness": -10})
+			Depth.school_activity("talent","music")
 		"president":
-			var ch := float(ss["popularity"]) / 110.0 + (0.1 if GameState.has_trait("Charmer") else 0.0)
-			if randf() < ch:
-				GameState.set_flag("class_president")
-				GameState.add_milestone(p["age"], "was elected class president")
-				Actions._done("🗳️", "Election", "I won! Class president. My first act: longer lunches.", {"happiness": 10, "popularity": 8})
-			else:
-				Actions._done("🗳️", "Election", "I lost to someone who promised a vending machine in every hallway.", {"happiness": -5})
+			Depth.school_activity("president","")
 		"dance":
 			var crush := ""
 			for id in GameState.npcs.keys():

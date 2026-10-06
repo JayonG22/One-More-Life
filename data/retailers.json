@@ -1,0 +1,186 @@
+{
+  "best_byte": {
+    "name": "Best Byte",
+    "icon": "💻",
+    "sub": "Value tech · phones, computers, consoles",
+    "category": "electronics",
+    "brand": "byte",
+    "indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      9
+    ],
+    "multiplier": 0.85,
+    "models": [
+      "Pocket Ping",
+      "Homework Hero",
+      "Tower Goblin",
+      "PlayBox",
+      "Streambean",
+      "CouchVision"
+    ]
+  },
+  "samswoon": {
+    "name": "Samswoon Studio",
+    "icon": "📱",
+    "sub": "Premium screens, cameras and connected gadgets",
+    "category": "electronics",
+    "brand": "swoon",
+    "indices": [
+      1,
+      2,
+      6,
+      7,
+      8,
+      9
+    ],
+    "multiplier": 1.2,
+    "models": [
+      "Comet S",
+      "Foldbook Pro",
+      "Focus One",
+      "Orbit VR",
+      "Cloud Scout",
+      "Wallscape 4K"
+    ]
+  },
+  "guccish": {
+    "name": "Guccish Gallery",
+    "icon": "👜",
+    "sub": "Statement outfits, handbags and occasionwear",
+    "category": "fashion",
+    "brand": "guccish",
+    "indices": [
+      2,
+      4,
+      7
+    ],
+    "multiplier": 1.6,
+    "models": [
+      "Afterparty",
+      "Mischief Tote",
+      "Last Dance"
+    ]
+  },
+  "prance": {
+    "name": "Prance & Co.",
+    "icon": "👟",
+    "sub": "Everyday tailoring, shoes and sunwear",
+    "category": "fashion",
+    "brand": "prance",
+    "indices": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "multiplier": 0.9,
+    "models": [
+      "Weekender",
+      "Nine to Fine",
+      "Shade Parade",
+      "Sole Mates"
+    ]
+  },
+  "decathlawn": {
+    "name": "Decathlawn",
+    "icon": "🚲",
+    "sub": "Outdoor, watersport and camping essentials",
+    "category": "sports",
+    "brand": "lawn",
+    "indices": [
+      0,
+      2,
+      6,
+      8,
+      11
+    ],
+    "multiplier": 0.85,
+    "models": [
+      "Trailhopper",
+      "Reel Deal",
+      "Deep Breather",
+      "Wave Goodbye",
+      "Kickflip Kid"
+    ]
+  },
+  "sportify": {
+    "name": "Sportif-ish",
+    "icon": "🥊",
+    "sub": "Training, boxing and specialist equipment",
+    "category": "sports",
+    "brand": "sport",
+    "indices": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "multiplier": 1.15,
+    "models": [
+      "Iron Nest",
+      "Cast Master",
+      "Arrowhead",
+      "Ranger",
+      "Fairway Friend",
+      "Punchline"
+    ]
+  },
+  "string_theory": {
+    "name": "String Theory Music",
+    "icon": "🎸",
+    "sub": "Instruments, microphones and performance gear",
+    "category": "music",
+    "brand": "strings",
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "multiplier": 1.05,
+    "models": [
+      "Buzz Budget",
+      "Tiny Troubadour",
+      "Campfire Classic",
+      "Thunderplug",
+      "Key Companion",
+      "Neighbour Alarm",
+      "Velvet Bow",
+      "Midnight Brass",
+      "Beat Bureau",
+      "Loudmouth"
+    ]
+  },
+  "barns_novels": {
+    "name": "Barns & Novels",
+    "icon": "📚",
+    "sub": "Reference, self-help and practical learning",
+    "category": "books",
+    "brand": "novels",
+    "indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "multiplier": 0.95,
+    "models": [
+      "Everything-ish",
+      "Better-ish You",
+      "Dinner Rescue",
+      "Hello Wallet"
+    ]
+  }
+}

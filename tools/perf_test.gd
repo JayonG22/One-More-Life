@@ -17,6 +17,12 @@ func _drain() -> void:
 		var choices: Array = inst["def"].get("choices", [])
 		var opts: Array = []
 		for ci in range(choices.size()):
+			# This is an ageless performance fixture. A random narrative choice must
+			# not cure vampirism and replace centuries of work with a human lifespan.
+			var cures := false
+			for outcome in choices[ci].get("outcomes", []):
+				if str(outcome.get("life", "")) == "cure_vampire": cures = true
+			if cures: continue
 			var st := EventEngine.choice_state(choices[ci], inst.get("roles", {}))
 			if st["visible"] and st["enabled"]:
 				opts.append(ci)
@@ -34,6 +40,9 @@ func _ready() -> void:
 	Meta.meta["recent"] = {}
 	SaveManager.begin_new_life()
 	GameState.new_life({"gender": "female", "country": "us", "life_path": "vampire"})
+	# A starting path is only a destiny invitation; random choices can decline
+	# the transformation. Start as the actual immortal this fixture measures.
+	Lives.become("vampire")
 	var first_ms := 0.0
 	var last_ms := 0.0
 	var total_ms := 0.0

@@ -1,6 +1,8 @@
 extends Minigame
 
 const SHOTS := {
+	"track":["🏃","Finish-line surge",false],"swimming":["🏊","Final-length surge",false],
+	"volleyball":["🏐","Decisive return",false],"cheer":["📣","Routine timing",false],"wrestling":["🤼","Late escape",false],
 	"soccer": ["⚽", "Penalty kick", true], "hockey": ["🏒", "Shootout", true], "basketball": ["🏀", "Free throw", false],
 	"football": ["🏈", "Field goal", false], "baseball": ["⚾", "Swing", false], "tennis": ["🎾", "Serve", false],
 	"boxing": ["🥊", "Knockout punch", false], "golf": ["⛳", "Putt", false], "hunt": ["🦌", "Steady your aim", false],

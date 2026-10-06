@@ -20,7 +20,7 @@ func yearly() -> void:
 
 ## Extra yearly costs that these systems own (before the country multiplier).
 func extra_costs() -> int:
-	return Transit.costs() + Keeping.costs() + Tenancy.utilities()
+	return Transit.costs() + Keeping.costs() + Tenancy.utilities() + Holdings.home_costs()
 
 
 func menu(key: String) -> Dictionary:

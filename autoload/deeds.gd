@@ -34,7 +34,7 @@ func _give_item(name: String, value: int, note: String) -> void:
 	var p := _p()
 	if not p.has("possessions"):
 		p["possessions"] = []
-	p["possessions"].append({"name": name, "value": maxi(1, value), "kind": "gift", "note": note})
+	p["possessions"].append({"name": name, "value": maxi(1, value), "kind": "gift", "note": note, "icon":"🎁", "cat":"Gifts", "bought":0, "vol":0.0, "story":note})
 
 
 func _lose_item() -> String:

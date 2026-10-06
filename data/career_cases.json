@@ -1,0 +1,4999 @@
+[
+ {
+  "id": "workcase.pt_cashier",
+  "family": "workcase.pt_cashier",
+  "job": "pt_cashier",
+  "name": "The understaffed checkout",
+  "question": "Your queue grows while a new colleague struggles with returns.",
+  "answers": [
+   "Coach them while the queue waits",
+   "Request another cashier",
+   "Keep your lane moving and review returns later"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the understaffed checkout. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_burger",
+  "family": "workcase.pt_burger",
+  "job": "pt_burger",
+  "name": "The missing station",
+  "question": "A colleague is absent during the lunch rush. You cannot run every station equally well.",
+  "answers": [
+   "Reduce the menu temporarily",
+   "Ask the manager for cover",
+   "Keep the full menu and accept slower orders"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the missing station. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_lifeguard",
+  "family": "workcase.pt_lifeguard",
+  "job": "pt_lifeguard",
+  "name": "The busy lesson",
+  "question": "A swimming lesson and public session share the pool. Visibility has become poor.",
+  "answers": [
+   "Reduce the public capacity",
+   "Request another qualified lifeguard",
+   "Move the lesson to a separate lane"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the busy lesson. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_babysitter",
+  "family": "workcase.pt_babysitter",
+  "job": "pt_babysitter",
+  "name": "The bedtime negotiation",
+  "question": "One child wants company; another needs quiet. The parents' bedtime plan assumes both sleep together.",
+  "answers": [
+   "Stagger bedtime and stay longer",
+   "Call the parents to agree a change",
+   "Keep the routine with separate quiet activities"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the bedtime negotiation. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_dogwalker",
+  "family": "workcase.pt_dogwalker",
+  "job": "pt_dogwalker",
+  "name": "The mismatched pack",
+  "question": "Two dogs in today's group have very different walking pace and temperament.",
+  "answers": [
+   "Split the route into smaller walks",
+   "Arrange experienced cover for one dog",
+   "Take a shorter route with more rest stops"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the mismatched pack. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_tutor",
+  "family": "workcase.pt_tutor",
+  "job": "pt_tutor",
+  "name": "Before the exam",
+  "question": "Your pupil can imitate solutions but struggles to explain them. Their exam is close.",
+  "answers": [
+   "Rebuild the underlying ideas",
+   "Recommend additional specialist support",
+   "Practice likely question formats first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited before the exam. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_barista",
+  "family": "workcase.pt_barista",
+  "job": "pt_barista",
+  "name": "The broken grinder",
+  "question": "One grinder fails during a busy morning; the remaining one makes each order slower.",
+  "answers": [
+   "Offer a smaller drinks menu",
+   "Arrange repair and temporary equipment",
+   "Keep the full menu with longer waits"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the broken grinder. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_stocker",
+  "family": "workcase.pt_stocker",
+  "job": "pt_stocker",
+  "name": "The late delivery",
+  "question": "A delivery arrives near the end of your night shift. Only part of the stock can be shelved now.",
+  "answers": [
+   "Prioritize essentials and document the rest",
+   "Request paid cover for the remainder",
+   "Finish the delivery by extending your shift"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the late delivery. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pt_delivery",
+  "family": "workcase.pt_delivery",
+  "job": "pt_delivery",
+  "name": "The awkward route",
+  "question": "The planned route reaches a customer after their access window closes.",
+  "answers": [
+   "Replan the route and notify other customers",
+   "Ask dispatch to split the route",
+   "Offer a later delivery window"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the awkward route. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.retail",
+  "family": "workcase.retail",
+  "job": "retail",
+  "name": "The uncertain customer",
+  "question": "A customer needs durable equipment but your best commission comes from a premium model.",
+  "answers": [
+   "Recommend the durable midrange choice",
+   "Arrange a demonstration of both",
+   "Sell the premium model with its limits explained"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the uncertain customer. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.fastfood",
+  "family": "workcase.fastfood",
+  "job": "fastfood",
+  "name": "A new ordering system",
+  "question": "The new ordering screen confuses customers and creates remakes during your shift.",
+  "answers": [
+   "Provide help at the ordering screen",
+   "Ask for a staffed ordering station",
+   "Keep the screen and improve the instructions"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited a new ordering system. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.warehouse",
+  "family": "workcase.warehouse",
+  "job": "warehouse",
+  "name": "The damaged aisle",
+  "question": "A shelving fault blocks popular stock. Orders still need to leave today.",
+  "answers": [
+   "Reroute picking and delay some orders",
+   "Request maintenance and temporary storage",
+   "Prioritize unaffected orders first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the damaged aisle. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.trucker",
+  "family": "workcase.trucker",
+  "job": "trucker",
+  "name": "The delivery window",
+  "question": "Traffic makes the delivery window unlikely. A detour is legal but adds fuel and hours.",
+  "answers": [
+   "Notify dispatch and preserve the planned route",
+   "Take the longer detour",
+   "Negotiate a later slot with the customer"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the delivery window. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.janitor",
+  "family": "workcase.janitor",
+  "job": "janitor",
+  "name": "After the event",
+  "question": "An event leaves more cleaning than one shift can finish. Rooms are needed tomorrow.",
+  "answers": [
+   "Prioritize occupied rooms",
+   "Request a second cleaning team",
+   "Extend your shift to finish every room"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited after the event. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.security",
+  "family": "workcase.security",
+  "job": "security",
+  "name": "Two entrances",
+  "question": "An event opens an extra entrance without increasing security staff.",
+  "answers": [
+   "Limit access to the staffed entrance",
+   "Request additional trained staff",
+   "Redeploy patrols and accept less coverage elsewhere"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited two entrances. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.receptionist",
+  "family": "workcase.receptionist",
+  "job": "receptionist",
+  "name": "The crowded waiting room",
+  "question": "Appointments run late and two visitors need private assistance.",
+  "answers": [
+   "Explain delays and arrange a private queue",
+   "Ask the manager for temporary cover",
+   "Reschedule nonurgent appointments"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the crowded waiting room. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.electrician",
+  "family": "workcase.electrician",
+  "job": "electrician",
+  "name": "The older wiring",
+  "question": "A renovation reveals older wiring than the initial quotation anticipated.",
+  "answers": [
+   "Stop affected work and revise the scope",
+   "Bring in an experienced colleague",
+   "Stage the safe work over additional visits"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the older wiring. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.plumber",
+  "family": "workcase.plumber",
+  "job": "plumber",
+  "name": "The hidden leak",
+  "question": "The visible leak is easy to repair, but inspection suggests damage behind a wall.",
+  "answers": [
+   "Investigate before quoting the full repair",
+   "Arrange a specialist inspection",
+   "Repair the leak now and schedule monitoring"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the hidden leak. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.mechanic",
+  "family": "workcase.mechanic",
+  "job": "mechanic",
+  "name": "The repeated fault",
+  "question": "A customer's car has an intermittent fault that does not appear during your first test.",
+  "answers": [
+   "Spend longer reproducing the fault",
+   "Use specialist diagnostic equipment",
+   "Agree staged diagnosis with the customer"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the repeated fault. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.carpenter",
+  "family": "workcase.carpenter",
+  "job": "carpenter",
+  "name": "The scarce timber",
+  "question": "Your specified timber is delayed. A substitute changes appearance and cost.",
+  "answers": [
+   "Wait and renegotiate the date",
+   "Source matching timber at a higher price",
+   "Offer the customer a documented substitute"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the scarce timber. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.hairstylist",
+  "family": "workcase.hairstylist",
+  "job": "hairstylist",
+  "name": "The ambitious appointment",
+  "question": "A client wants a major restyle within a short appointment and fixed budget.",
+  "answers": [
+   "Agree a simpler style today",
+   "Book a longer specialist appointment",
+   "Split the restyle across two visits"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the ambitious appointment. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.line_cook",
+  "family": "workcase.line_cook",
+  "job": "line_cook",
+  "name": "The changed service",
+  "question": "A supplier substitution changes preparation time on a popular dish.",
+  "answers": [
+   "Adapt the menu and explain the change",
+   "Ask for another approved ingredient",
+   "Keep the dish with a longer preparation time"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the changed service. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.firefighter",
+  "family": "workcase.firefighter",
+  "job": "firefighter",
+  "name": "The training allocation",
+  "question": "Your crew has limited training time for equipment familiarization and rescue drills.",
+  "answers": [
+   "Prioritize the less familiar equipment",
+   "Arrange an additional supervised session",
+   "Split the time between both topics"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the training allocation. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.mail",
+  "family": "workcase.mail",
+  "job": "mail",
+  "name": "The inaccessible address",
+  "question": "A regular delivery point is temporarily inaccessible. Several households depend on it.",
+  "answers": [
+   "Arrange a safe collection point",
+   "Request a revised delivery arrangement",
+   "Schedule a later delivery attempt"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the inaccessible address. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.flight_attendant",
+  "family": "workcase.flight_attendant",
+  "job": "flight_attendant",
+  "name": "The delayed connection",
+  "question": "A cabin full of passengers worries about missed connections after a delay.",
+  "answers": [
+   "Gather verified information and explain options",
+   "Coordinate individual help with ground staff",
+   "Focus first on passengers needing assistance"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the delayed connection. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.developer",
+  "family": "workcase.developer",
+  "job": "developer",
+  "name": "The unstable release",
+  "question": "A release fixes an urgent bug but introduces uncertainty in a less tested component.",
+  "answers": [
+   "Delay and run targeted tests",
+   "Pair with a specialist for a narrower fix",
+   "Release to a limited group and monitor closely"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the unstable release. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.game_dev",
+  "family": "workcase.game_dev",
+  "job": "game_dev",
+  "name": "The promising mechanic",
+  "question": "A prototype is fun in short sessions but repetitive after longer play.",
+  "answers": [
+   "Rework progression before adding features",
+   "Run paid player sessions",
+   "Ship a smaller polished slice for feedback"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the promising mechanic. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.nurse",
+  "family": "workcase.nurse",
+  "job": "nurse",
+  "name": "The discharge plan",
+  "question": "A patient is medically ready to leave but uncertain about the care plan at home.",
+  "answers": [
+   "Spend longer teaching the plan",
+   "Coordinate a follow-up support visit",
+   "Ask the team to review discharge timing"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the discharge plan. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.teacher",
+  "family": "workcase.teacher",
+  "job": "teacher",
+  "name": "The uneven class",
+  "question": "Your class contains confident pupils and several who struggle with the current unit.",
+  "answers": [
+   "Differentiate work within the lesson",
+   "Request targeted support sessions",
+   "Slow the whole class for a stronger foundation"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the uneven class. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.police",
+  "family": "workcase.police",
+  "job": "police",
+  "name": "The neighborhood patrol",
+  "question": "Residents ask for reassurance patrols while recorded incidents need follow-up work.",
+  "answers": [
+   "Protect time for the investigations",
+   "Request a community partnership patrol",
+   "Split shifts between visibility and follow-up"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the neighborhood patrol. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.accountant",
+  "family": "workcase.accountant",
+  "job": "accountant",
+  "name": "The reporting deadline",
+  "question": "A client supplies incomplete records near a reporting deadline.",
+  "answers": [
+   "Request an extension and reconcile the gaps",
+   "Bring in temporary qualified help",
+   "Submit the supported portion with clear limitations"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the reporting deadline. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.marketing",
+  "family": "workcase.marketing",
+  "job": "marketing",
+  "name": "The mixed audience",
+  "question": "A campaign performs well with current customers but poorly with younger prospects.",
+  "answers": [
+   "Refine the message using current evidence",
+   "Commission a broader audience study",
+   "Run separate small campaigns and compare"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the mixed audience. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.analyst",
+  "family": "workcase.analyst",
+  "job": "analyst",
+  "name": "The uncertain forecast",
+  "question": "Your investment model depends heavily on an optimistic growth assumption.",
+  "answers": [
+   "Present a range of scenarios",
+   "Commission further sector research",
+   "Use a conservative central forecast"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the uncertain forecast. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.engineer",
+  "family": "workcase.engineer",
+  "job": "engineer",
+  "name": "The late design change",
+  "question": "A late requirement changes your design's load assumptions and delivery date.",
+  "answers": [
+   "Revise the design and move the deadline",
+   "Request an independent technical review",
+   "Offer a smaller compliant scope first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the late design change. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.architect",
+  "family": "workcase.architect",
+  "job": "architect",
+  "name": "The altered site",
+  "question": "A survey reveals a site restriction after the client approves the concept.",
+  "answers": [
+   "Redesign around the restriction",
+   "Arrange specialist planning advice",
+   "Reduce the first phase and preserve expansion options"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the altered site. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.designer",
+  "family": "workcase.designer",
+  "job": "designer",
+  "name": "The conflicting brief",
+  "question": "Two stakeholders want different visual directions and neither controls the whole brief.",
+  "answers": [
+   "Prototype both within a smaller scope",
+   "Hold a facilitated approval session",
+   "Choose the better-supported direction and document it"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the conflicting brief. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.journalist",
+  "family": "workcase.journalist",
+  "job": "journalist",
+  "name": "The unfinished investigation",
+  "question": "You have a strong lead but one important claim remains unverified near publication.",
+  "answers": [
+   "Delay to verify the claim",
+   "Seek a second reporter's help",
+   "Publish only the independently supported findings"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the unfinished investigation. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.counselor",
+  "family": "workcase.counselor",
+  "job": "counselor",
+  "name": "The waiting list",
+  "question": "Demand rises beyond your available appointments. Different clients need different levels of support.",
+  "answers": [
+   "Adjust appointment frequency by assessed need",
+   "Coordinate appropriate referral options",
+   "Protect current continuity and extend the waitlist"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the waiting list. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.lab_tech",
+  "family": "workcase.lab_tech",
+  "job": "lab_tech",
+  "name": "The inconsistent samples",
+  "question": "Two valid runs disagree. Another batch is due today.",
+  "answers": [
+   "Repeat the affected controls",
+   "Ask a senior colleague to review the method",
+   "Hold the affected results and process the other batch"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the inconsistent samples. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.chef",
+  "family": "workcase.chef",
+  "job": "chef",
+  "name": "The changing menu",
+  "question": "A seasonal ingredient becomes unavailable just before a booked service.",
+  "answers": [
+   "Create a smaller substitute menu",
+   "Source an equivalent at higher cost",
+   "Offer guests a choice of revised dishes"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the changing menu. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.music_teacher",
+  "family": "workcase.music_teacher",
+  "job": "music_teacher",
+  "name": "Before the recital",
+  "question": "A pupil has an ambitious solo but inconsistent timing. The recital is close.",
+  "answers": [
+   "Simplify the arrangement and rehearse",
+   "Arrange an extra coached session",
+   "Keep the solo with a supporting accompanist"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited before the recital. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.paralegal",
+  "family": "workcase.paralegal",
+  "job": "paralegal",
+  "name": "The document surge",
+  "question": "A new disclosure bundle arrives just before your team's filing deadline.",
+  "answers": [
+   "Prioritize the material issues with the lawyer",
+   "Request another reviewer",
+   "Seek an agreed extension for the new material"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the document surge. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.probation",
+  "family": "workcase.probation",
+  "job": "probation",
+  "name": "The fragile placement",
+  "question": "A supervised person's new job conflicts with an existing appointment schedule.",
+  "answers": [
+   "Rearrange appointments within the rules",
+   "Coordinate a formal schedule review",
+   "Preserve the schedule and help seek alternate shifts"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the fragile placement. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.civil_servant",
+  "family": "workcase.civil_servant",
+  "job": "civil_servant",
+  "name": "The rushed briefing",
+  "question": "A minister requests a quick briefing on a policy with incomplete cost estimates.",
+  "answers": [
+   "State the uncertainty and offer a provisional brief",
+   "Request more time for cost analysis",
+   "Present a limited option with better evidence"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the rushed briefing. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.lawyer",
+  "family": "workcase.lawyer",
+  "job": "lawyer",
+  "name": "The settlement offer",
+  "question": "A client receives a modest settlement offer before an expensive contested hearing.",
+  "answers": [
+   "Explain both risks and negotiate further",
+   "Invest in additional case preparation",
+   "Recommend the offer based on the current evidence"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the settlement offer. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.doctor",
+  "family": "workcase.doctor",
+  "job": "doctor",
+  "name": "The follow-up gap",
+  "question": "A treatment plan is appropriate, but access to follow-up care is uncertain.",
+  "answers": [
+   "Coordinate an accessible follow-up plan",
+   "Consult a specialist about alternatives",
+   "Choose a suitable plan needing fewer visits"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the follow-up gap. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.dentist",
+  "family": "workcase.dentist",
+  "job": "dentist",
+  "name": "The staged treatment",
+  "question": "A patient needs several treatments but cannot manage their cost all at once.",
+  "answers": [
+   "Prioritize urgent treatment in stages",
+   "Explore available support or payment arrangements",
+   "Offer a simpler clinically suitable plan"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the staged treatment. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pharmacist",
+  "family": "workcase.pharmacist",
+  "job": "pharmacist",
+  "name": "The supply shortage",
+  "question": "A prescribed product is delayed. Patients need continuity of treatment.",
+  "answers": [
+   "Coordinate approved alternatives with prescribers",
+   "Find stock through another licensed pharmacy",
+   "Arrange staged dispensing when appropriate"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the supply shortage. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.vet",
+  "family": "workcase.vet",
+  "job": "vet",
+  "name": "The difficult estimate",
+  "question": "A pet's treatment has several appropriate options with different costs and burdens.",
+  "answers": [
+   "Discuss a staged treatment plan",
+   "Seek specialist advice with the owner",
+   "Choose a suitable conservative plan with monitoring"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the difficult estimate. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.executive",
+  "family": "workcase.executive",
+  "job": "executive",
+  "name": "The stretched team",
+  "question": "Growth targets exceed what the current team can sustain without frequent overtime.",
+  "answers": [
+   "Reduce the target and protect retention",
+   "Fund additional staff capacity",
+   "Accept a short expansion push with a review date"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the stretched team. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.professor",
+  "family": "workcase.professor",
+  "job": "professor",
+  "name": "The supervision load",
+  "question": "More students request supervision than you can responsibly support.",
+  "answers": [
+   "Limit places and refer students elsewhere",
+   "Arrange co-supervision with colleagues",
+   "Reduce another commitment to take more students"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the supervision load. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.scientist",
+  "family": "workcase.scientist",
+  "job": "scientist",
+  "name": "The unexpected finding",
+  "question": "A surprising result may open a new research direction but needs replication.",
+  "answers": [
+   "Replicate before changing the project",
+   "Seek a collaborating laboratory",
+   "Publish the limited result with clear uncertainty"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the unexpected finding. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.army",
+  "family": "workcase.army",
+  "job": "army",
+  "name": "The maintenance backlog",
+  "question": "Your unit's maintenance and training demands compete for a limited exercise window.",
+  "answers": [
+   "Prioritize readiness inspections",
+   "Request additional maintenance support",
+   "Reduce the exercise scope to preserve both"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the maintenance backlog. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.navy",
+  "family": "workcase.navy",
+  "job": "navy",
+  "name": "The watch roster",
+  "question": "A training exercise and watch duties put pressure on the same small team.",
+  "answers": [
+   "Revise the roster to protect rest",
+   "Request additional qualified cover",
+   "Reduce the training scope this rotation"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the watch roster. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.air_force",
+  "family": "workcase.air_force",
+  "job": "air_force",
+  "name": "The training slot",
+  "question": "A scarce training slot overlaps with planned equipment servicing.",
+  "answers": [
+   "Keep servicing and reschedule training",
+   "Coordinate an alternative qualified crew",
+   "Take a shorter training slot after checks"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the training slot. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.pilot",
+  "family": "workcase.pilot",
+  "job": "pilot",
+  "name": "The deteriorating forecast",
+  "question": "Forecast conditions make the planned journey less reliable, though operations remain possible within limits.",
+  "answers": [
+   "Delay and reassess conditions",
+   "Plan an alternate route with extra fuel",
+   "Proceed with a conservative diversion plan"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the deteriorating forecast. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.data_analyst",
+  "family": "workcase.data_analyst",
+  "job": "data_analyst",
+  "name": "The missing segment",
+  "question": "Customer data excludes a group central to your team's decision.",
+  "answers": [
+   "Limit the claim to the observed sample",
+   "Collect a representative supplementary sample",
+   "Model the gap with explicit uncertainty"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the missing segment. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.cybersecurity",
+  "family": "workcase.cybersecurity",
+  "job": "cybersecurity",
+  "name": "The uncertain alert",
+  "question": "An unusual login may be legitimate, but could indicate a compromised account.",
+  "answers": [
+   "Investigate and temporarily restrict access",
+   "Escalate to an incident specialist",
+   "Increase monitoring while verifying the user"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the uncertain alert. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.ux_research",
+  "family": "workcase.ux_research",
+  "job": "ux_research",
+  "name": "The unrepresented users",
+  "question": "Your usability sample excludes people who use assistive technology.",
+  "answers": [
+   "Recruit a more representative sample",
+   "Commission an accessibility specialist review",
+   "Restrict conclusions and test an interim revision"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the unrepresented users. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.technical_writer",
+  "family": "workcase.technical_writer",
+  "job": "technical_writer",
+  "name": "The moving specification",
+  "question": "A product changes while its user guide is being finalized.",
+  "answers": [
+   "Update essential instructions before release",
+   "Arrange engineering review of affected sections",
+   "Publish a smaller guide with a clear revision schedule"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the moving specification. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.game_producer",
+  "family": "workcase.game_producer",
+  "job": "game_producer",
+  "name": "The slipped milestone",
+  "question": "A feature slips while the team prepares a public demo.",
+  "answers": [
+   "Reduce the demo scope",
+   "Secure short-term production support",
+   "Move the demo and protect the full scope"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the slipped milestone. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.renewable_tech",
+  "family": "workcase.renewable_tech",
+  "job": "renewable_tech",
+  "name": "The awkward roof",
+  "question": "A planned solar installation has less usable space than the initial survey suggested.",
+  "answers": [
+   "Redesign for a smaller suitable system",
+   "Arrange a more detailed site assessment",
+   "Phase the installation around the usable area"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the awkward roof. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.urban_planner",
+  "family": "workcase.urban_planner",
+  "job": "urban_planner",
+  "name": "The contested proposal",
+  "question": "A development adds housing but strains transport capacity and meets local opposition.",
+  "answers": [
+   "Revise density alongside transport needs",
+   "Commission a fuller impact review",
+   "Propose a staged approval with conditions"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the contested proposal. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.environment_officer",
+  "family": "workcase.environment_officer",
+  "job": "environment_officer",
+  "name": "The uncertain source",
+  "question": "Monitoring finds pollution, but the source is not yet established.",
+  "answers": [
+   "Increase targeted sampling",
+   "Coordinate a specialist investigation",
+   "Issue an evidence-limited preliminary report"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the uncertain source. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.food_scientist",
+  "family": "workcase.food_scientist",
+  "job": "food_scientist",
+  "name": "The texture change",
+  "question": "A cheaper ingredient keeps the product safe but changes texture and customer response.",
+  "answers": [
+   "Reformulate and run further trials",
+   "Commission a consumer comparison",
+   "Offer it as a distinct lower-cost product"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the texture change. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.community_worker",
+  "family": "workcase.community_worker",
+  "job": "community_worker",
+  "name": "The thin service",
+  "question": "A community program serves fewer people than expected because opening hours conflict with work.",
+  "answers": [
+   "Change the schedule and measure uptake",
+   "Partner with another local service",
+   "Keep the hours and offer targeted appointments"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the thin service. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.care_assistant",
+  "family": "workcase.care_assistant",
+  "job": "care_assistant",
+  "name": "The rushed visit",
+  "question": "A person's support needs have increased beyond the time allocated to your visit.",
+  "answers": [
+   "Report the need and revise the care allocation",
+   "Arrange appropriate team support",
+   "Prioritize essential agreed care and document unmet needs"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the rushed visit. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.logistics_planner",
+  "family": "workcase.logistics_planner",
+  "job": "logistics_planner",
+  "name": "The uneven loads",
+  "question": "A new delivery contract leaves some routes overloaded and others underused.",
+  "answers": [
+   "Rebalance routes and revise estimates",
+   "Arrange additional contracted capacity",
+   "Stage the new contract over several days"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the uneven loads. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.event_coordinator",
+  "family": "workcase.event_coordinator",
+  "job": "event_coordinator",
+  "name": "The weather change",
+  "question": "An outdoor event faces uncertain weather and limited indoor capacity.",
+  "answers": [
+   "Reduce attendance and move indoors",
+   "Hire suitable temporary shelter",
+   "Delay the event to another date"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the weather change. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.archivist",
+  "family": "workcase.archivist",
+  "job": "archivist",
+  "name": "The fragile collection",
+  "question": "A popular collection needs conservation before more handling.",
+  "answers": [
+   "Limit handling and improve digital access",
+   "Arrange specialist conservation",
+   "Stage access around a slower preservation schedule"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the fragile collection. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.sound_engineer",
+  "family": "workcase.sound_engineer",
+  "job": "sound_engineer",
+  "name": "The unfamiliar room",
+  "question": "A venue's acoustics differ from the rehearsal space and setup time is short.",
+  "answers": [
+   "Simplify the mix and test essentials",
+   "Arrange extra setup support",
+   "Revise the performance layout for the room"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the unfamiliar room. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.compliance",
+  "family": "workcase.compliance",
+  "job": "compliance",
+  "name": "The ambiguous process",
+  "question": "A new process fits one rule but creates uncertainty under another.",
+  "answers": [
+   "Pause the affected element for review",
+   "Seek specialist interpretation",
+   "Allow a limited documented trial with oversight"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the ambiguous process. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.museum_educator",
+  "family": "workcase.museum_educator",
+  "job": "museum_educator",
+  "name": "The visiting groups",
+  "question": "Two school groups have different access needs and arrive in the same time slot.",
+  "answers": [
+   "Adapt a shared session with flexible stations",
+   "Request another educator",
+   "Stagger shorter sessions with each group"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the visiting groups. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.tour_guide",
+  "family": "workcase.tour_guide",
+  "job": "tour_guide",
+  "name": "The closed attraction",
+  "question": "A featured attraction closes unexpectedly before today's tour.",
+  "answers": [
+   "Offer a revised route with an explanation",
+   "Arrange access to an alternate attraction",
+   "Shorten the tour and offer a partial refund"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the closed attraction. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.farm_manager",
+  "family": "workcase.farm_manager",
+  "job": "farm_manager",
+  "name": "The dry season",
+  "question": "Limited water must support established crops and a planned expansion.",
+  "answers": [
+   "Protect established crops and delay expansion",
+   "Invest in suitable water efficiency measures",
+   "Reduce planted area and diversify the crop mix"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the dry season. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.biomedical_engineer",
+  "family": "workcase.biomedical_engineer",
+  "job": "biomedical_engineer",
+  "name": "The prototype handoff",
+  "question": "A promising device prototype needs stronger usability evidence before clinical evaluation.",
+  "answers": [
+   "Revise the interface and test again",
+   "Arrange an independent usability study",
+   "Limit the next evaluation to the supported functions"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the prototype handoff. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.public_defender",
+  "family": "workcase.public_defender",
+  "job": "public_defender",
+  "name": "The overloaded docket",
+  "question": "Several clients have hearings close together and different urgent needs.",
+  "answers": [
+   "Prioritize urgency and request reasonable extensions",
+   "Seek qualified co-counsel support",
+   "Narrow preparation to each case's strongest issues"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the overloaded docket. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.insurance_analyst",
+  "family": "workcase.insurance_analyst",
+  "job": "insurance_analyst",
+  "name": "The borderline claim",
+  "question": "A claim includes covered losses and uncertain additional expenses.",
+  "answers": [
+   "Separate supported costs and request evidence",
+   "Arrange an independent assessment",
+   "Offer a provisional supported payment"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the borderline claim. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.special_education",
+  "family": "workcase.special_education",
+  "job": "special_education",
+  "name": "The changing support plan",
+  "question": "A pupil's established support works in lessons but not during group activities.",
+  "answers": [
+   "Adapt group tasks with the pupil's input",
+   "Coordinate a multidisciplinary review",
+   "Introduce a smaller supported group first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the changing support plan. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.community_nurse",
+  "family": "workcase.community_nurse",
+  "job": "community_nurse",
+  "name": "The scattered visits",
+  "question": "Your patients live far apart, leaving less time for care and documentation.",
+  "answers": [
+   "Reorganize the visit schedule",
+   "Coordinate additional local support",
+   "Use appropriate remote follow-up for some visits"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the scattered visits. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.family_role",
+  "family": "workcase.family_role",
+  "job": "family_role",
+  "name": "The inherited responsibility",
+  "question": "Your family's existing work role has expectations that exceed your current experience.",
+  "answers": [
+   "Learn the foundations at a slower pace",
+   "Bring in an experienced mentor",
+   "Narrow your responsibilities while you build skill"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the inherited responsibility. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.appliance_repair",
+  "family": "workcase.appliance_repair",
+  "job": "appliance_repair",
+  "name": "The obsolete part",
+  "question": "A repair needs a discontinued part. A replacement appliance would cost much more.",
+  "answers": [
+   "Search for an appropriate sourced part",
+   "Arrange specialist repair advice",
+   "Offer a replacement comparison with the limits explained"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the obsolete part. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.bike_repair",
+  "family": "workcase.bike_repair",
+  "job": "bike_repair",
+  "name": "The commuter's deadline",
+  "question": "A customer needs their bicycle tomorrow, but its full service requires more time.",
+  "answers": [
+   "Complete essential safe repairs first",
+   "Arrange qualified workshop cover",
+   "Offer a later full service with a temporary bike"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the commuter's deadline. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.dispatch_support",
+  "family": "workcase.dispatch_support",
+  "job": "dispatch_support",
+  "name": "The conflicting updates",
+  "question": "Two sources give different arrival estimates for a critical delivery.",
+  "answers": [
+   "Verify both and revise the estimate",
+   "Escalate to a dispatcher with route access",
+   "Give a conservative range and update regularly"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the conflicting updates. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.repair_support",
+  "family": "workcase.repair_support",
+  "job": "repair_support",
+  "name": "The recurring ticket",
+  "question": "A customer's device problem returns after the standard fix.",
+  "answers": [
+   "Investigate the underlying pattern",
+   "Escalate with a detailed diagnostic record",
+   "Arrange a monitored workaround while testing"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the recurring ticket. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.recycling_operator",
+  "family": "workcase.recycling_operator",
+  "job": "recycling_operator",
+  "name": "The contaminated load",
+  "question": "A mixed load increases sorting time and threatens the recovery rate.",
+  "answers": [
+   "Separate the recoverable material carefully",
+   "Request additional approved sorting capacity",
+   "Reject the contaminated portion and document why"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the contaminated load. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.grounds_keeper",
+  "family": "workcase.grounds_keeper",
+  "job": "grounds_keeper",
+  "name": "The damaged lawn",
+  "question": "A heavily used public lawn needs recovery, but closing it removes local recreation space.",
+  "answers": [
+   "Rotate closures across smaller areas",
+   "Fund a faster restoration plan",
+   "Protect key patches and redirect activities"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the damaged lawn. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.print_technician",
+  "family": "workcase.print_technician",
+  "job": "print_technician",
+  "name": "The color mismatch",
+  "question": "A client's approved screen proof differs from the first printed sample.",
+  "answers": [
+   "Produce a corrected physical proof",
+   "Arrange calibrated specialist review",
+   "Offer a revised print specification with the difference explained"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the color mismatch. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workcase.venue_service",
+  "family": "workcase.venue_service",
+  "job": "venue_service",
+  "name": "The overlapping bookings",
+  "question": "Two venue bookings overlap in setup time and need different room arrangements.",
+  "answers": [
+   "Renegotiate setup windows",
+   "Arrange an additional setup crew",
+   "Offer one booking a suitable alternate room"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan worked. The team accepted its narrower scope or slower timing.",
+    "partial": "The plan limited the problem, although some work remained delayed."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The extra support resolved the problem. Its cost was recorded rather than treated as free help.",
+    "partial": "The support helped, but coordination still left unfinished work."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The compromise met the immediate need, with its limitations documented.",
+    "partial": "The compromise left a gap that needed a later review."
+   }
+  ],
+  "closure": "The next review revisited the overlapping bookings. Documented follow-through affected your professional reputation."
+ },
+ {
+  "id": "workfield.0",
+  "family": "workfield.Retail",
+  "job": "*",
+  "field": "Retail",
+  "name": "The product recall",
+  "question": "A recalled product appears in both your shop's display and recent sales records.",
+  "answers": [
+   "Remove affected stock and contact customers",
+   "Ask for a dedicated recall team",
+   "Close the affected department while records are checked"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the product recall, although the effort increased fatigue.",
+    "partial": "You made progress on the product recall, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the product recall. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the product recall. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the product recall manageable, with a smaller immediate result.",
+    "partial": "The compromise in the product recall left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the product recall against the approach you recorded."
+ },
+ {
+  "id": "workfield.1",
+  "family": "workfield.Food",
+  "job": "*",
+  "field": "Food",
+  "name": "The crowded special",
+  "question": "A successful special creates more demand than the kitchen can prepare at the promised pace.",
+  "answers": [
+   "Limit orders and explain the wait",
+   "Arrange qualified preparation support",
+   "Replace the special with a simpler dish"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the crowded special, although the effort increased fatigue.",
+    "partial": "You made progress on the crowded special, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the crowded special. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the crowded special. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the crowded special manageable, with a smaller immediate result.",
+    "partial": "The compromise in the crowded special left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the crowded special against the approach you recorded."
+ },
+ {
+  "id": "workfield.2",
+  "family": "workfield.Recreation",
+  "job": "*",
+  "field": "Recreation",
+  "name": "The mixed-ability session",
+  "question": "A popular recreation session now includes people with very different support needs.",
+  "answers": [
+   "Adapt stations and the session pace",
+   "Request additional qualified supervision",
+   "Reduce group size and add a later session"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the mixed-ability session, although the effort increased fatigue.",
+    "partial": "You made progress on the mixed-ability session, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the mixed-ability session. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the mixed-ability session. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the mixed-ability session manageable, with a smaller immediate result.",
+    "partial": "The compromise in the mixed-ability session left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the mixed-ability session against the approach you recorded."
+ },
+ {
+  "id": "workfield.3",
+  "family": "workfield.Care",
+  "job": "*",
+  "field": "Care",
+  "name": "The support handoff",
+  "question": "A person you support will move to another service, and continuity depends on a good handoff.",
+  "answers": [
+   "Prepare a detailed agreed handoff",
+   "Arrange a joint meeting with the next service",
+   "Focus the handoff on urgent needs first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the support handoff, although the effort increased fatigue.",
+    "partial": "You made progress on the support handoff, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the support handoff. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the support handoff. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the support handoff manageable, with a smaller immediate result.",
+    "partial": "The compromise in the support handoff left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the support handoff against the approach you recorded."
+ },
+ {
+  "id": "workfield.4",
+  "family": "workfield.Education",
+  "job": "*",
+  "field": "Education",
+  "name": "The disrupted assessment",
+  "question": "Several learners miss an assessment for different legitimate reasons.",
+  "answers": [
+   "Arrange comparable alternative assessments",
+   "Request support to assess them individually",
+   "Use a documented combination of existing evidence"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the disrupted assessment, although the effort increased fatigue.",
+    "partial": "You made progress on the disrupted assessment, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the disrupted assessment. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the disrupted assessment. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the disrupted assessment manageable, with a smaller immediate result.",
+    "partial": "The compromise in the disrupted assessment left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the disrupted assessment against the approach you recorded."
+ },
+ {
+  "id": "workfield.5",
+  "family": "workfield.Transport",
+  "job": "*",
+  "field": "Transport",
+  "name": "The timetable squeeze",
+  "question": "A revised timetable reduces recovery time between journeys.",
+  "answers": [
+   "Revise the schedule around realistic journey times",
+   "Request reserve operating capacity",
+   "Reduce the number of journeys during the transition"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the timetable squeeze, although the effort increased fatigue.",
+    "partial": "You made progress on the timetable squeeze, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the timetable squeeze. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the timetable squeeze. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the timetable squeeze manageable, with a smaller immediate result.",
+    "partial": "The compromise in the timetable squeeze left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the timetable squeeze against the approach you recorded."
+ },
+ {
+  "id": "workfield.6",
+  "family": "workfield.Logistics",
+  "job": "*",
+  "field": "Logistics",
+  "name": "The peak-season promise",
+  "question": "A customer wants peak-season capacity before your available resources are confirmed.",
+  "answers": [
+   "Commit to a smaller verified allocation",
+   "Arrange approved additional capacity",
+   "Offer phased delivery with clear limits"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the peak-season promise, although the effort increased fatigue.",
+    "partial": "You made progress on the peak-season promise, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the peak-season promise. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the peak-season promise. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the peak-season promise manageable, with a smaller immediate result.",
+    "partial": "The compromise in the peak-season promise left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the peak-season promise against the approach you recorded."
+ },
+ {
+  "id": "workfield.7",
+  "family": "workfield.Facilities",
+  "job": "*",
+  "field": "Facilities",
+  "name": "The competing repairs",
+  "question": "Two maintenance requests compete for the same available work window.",
+  "answers": [
+   "Prioritize the highest-impact repair",
+   "Coordinate additional approved maintenance help",
+   "Stage both repairs over separate windows"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the competing repairs, although the effort increased fatigue.",
+    "partial": "You made progress on the competing repairs, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the competing repairs. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the competing repairs. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the competing repairs manageable, with a smaller immediate result.",
+    "partial": "The compromise in the competing repairs left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the competing repairs against the approach you recorded."
+ },
+ {
+  "id": "workfield.8",
+  "family": "workfield.Security",
+  "job": "*",
+  "field": "Security",
+  "name": "The changed event plan",
+  "question": "A venue's revised event layout changes how visitors enter and leave.",
+  "answers": [
+   "Review staffing against the new layout",
+   "Request an additional trained team",
+   "Reduce the event footprint to match available cover"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the changed event plan, although the effort increased fatigue.",
+    "partial": "You made progress on the changed event plan, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the changed event plan. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the changed event plan. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the changed event plan manageable, with a smaller immediate result.",
+    "partial": "The compromise in the changed event plan left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the changed event plan against the approach you recorded."
+ },
+ {
+  "id": "workfield.9",
+  "family": "workfield.Office",
+  "job": "*",
+  "field": "Office",
+  "name": "The shared backlog",
+  "question": "Several teams send urgent requests to your office at once.",
+  "answers": [
+   "Agree a priority queue with the teams",
+   "Request temporary administrative support",
+   "Return incomplete requests before processing"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the shared backlog, although the effort increased fatigue.",
+    "partial": "You made progress on the shared backlog, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the shared backlog. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the shared backlog. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the shared backlog manageable, with a smaller immediate result.",
+    "partial": "The compromise in the shared backlog left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the shared backlog against the approach you recorded."
+ },
+ {
+  "id": "workfield.10",
+  "family": "workfield.Trades",
+  "job": "*",
+  "field": "Trades",
+  "name": "The changed quotation",
+  "question": "A customer's requested change alters materials, time and the original quotation.",
+  "answers": [
+   "Requote the change before proceeding",
+   "Arrange a specialist estimate",
+   "Offer a smaller change within the original scope"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the changed quotation, although the effort increased fatigue.",
+    "partial": "You made progress on the changed quotation, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the changed quotation. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the changed quotation. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the changed quotation manageable, with a smaller immediate result.",
+    "partial": "The compromise in the changed quotation left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the changed quotation against the approach you recorded."
+ },
+ {
+  "id": "workfield.11",
+  "family": "workfield.Beauty",
+  "job": "*",
+  "field": "Beauty",
+  "name": "The overlapping appointments",
+  "question": "A longer-than-expected appointment clashes with another client's booking.",
+  "answers": [
+   "Explain and rearrange the later booking",
+   "Ask another qualified stylist for help",
+   "Split the longer service into a second visit"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the overlapping appointments, although the effort increased fatigue.",
+    "partial": "You made progress on the overlapping appointments, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the overlapping appointments. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the overlapping appointments. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the overlapping appointments manageable, with a smaller immediate result.",
+    "partial": "The compromise in the overlapping appointments left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the overlapping appointments against the approach you recorded."
+ },
+ {
+  "id": "workfield.12",
+  "family": "workfield.Public Safety",
+  "job": "*",
+  "field": "Public Safety",
+  "name": "The readiness exercise",
+  "question": "Your service has time for one full exercise before a busy period.",
+  "answers": [
+   "Prioritize the least rehearsed response",
+   "Coordinate an additional supervised drill",
+   "Run shorter exercises across several scenarios"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the readiness exercise, although the effort increased fatigue.",
+    "partial": "You made progress on the readiness exercise, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the readiness exercise. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the readiness exercise. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the readiness exercise manageable, with a smaller immediate result.",
+    "partial": "The compromise in the readiness exercise left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the readiness exercise against the approach you recorded."
+ },
+ {
+  "id": "workfield.13",
+  "family": "workfield.Government",
+  "job": "*",
+  "field": "Government",
+  "name": "The inaccessible service",
+  "question": "Feedback shows that a public service's process is difficult for some residents to use.",
+  "answers": [
+   "Revise the process with affected residents",
+   "Arrange a specialist access review",
+   "Offer assisted appointments while changes are tested"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the inaccessible service, although the effort increased fatigue.",
+    "partial": "You made progress on the inaccessible service, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the inaccessible service. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the inaccessible service. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the inaccessible service manageable, with a smaller immediate result.",
+    "partial": "The compromise in the inaccessible service left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the inaccessible service against the approach you recorded."
+ },
+ {
+  "id": "workfield.14",
+  "family": "workfield.Aviation",
+  "job": "*",
+  "field": "Aviation",
+  "name": "The short turnaround",
+  "question": "A delayed arrival compresses preparation time for the next scheduled departure.",
+  "answers": [
+   "Revise the departure estimate around required checks",
+   "Coordinate additional qualified ground support",
+   "Reduce nonessential service work for this turnaround"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the short turnaround, although the effort increased fatigue.",
+    "partial": "You made progress on the short turnaround, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the short turnaround. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the short turnaround. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the short turnaround manageable, with a smaller immediate result.",
+    "partial": "The compromise in the short turnaround left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the short turnaround against the approach you recorded."
+ },
+ {
+  "id": "workfield.15",
+  "family": "workfield.Tech",
+  "job": "*",
+  "field": "Tech",
+  "name": "The undocumented dependency",
+  "question": "A system depends on a tool that its original maintainer no longer supports.",
+  "answers": [
+   "Replace the dependency in stages",
+   "Seek experienced migration support",
+   "Isolate it and document a limited transition plan"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the undocumented dependency, although the effort increased fatigue.",
+    "partial": "You made progress on the undocumented dependency, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the undocumented dependency. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the undocumented dependency. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the undocumented dependency manageable, with a smaller immediate result.",
+    "partial": "The compromise in the undocumented dependency left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the undocumented dependency against the approach you recorded."
+ },
+ {
+  "id": "workfield.16",
+  "family": "workfield.Healthcare",
+  "job": "*",
+  "field": "Healthcare",
+  "name": "The fragmented appointment",
+  "question": "A person receives separate advice from several services and is confused about the plan.",
+  "answers": [
+   "Coordinate a clear agreed care summary",
+   "Arrange a multidisciplinary review",
+   "Clarify the immediate priorities and follow-up contacts"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the fragmented appointment, although the effort increased fatigue.",
+    "partial": "You made progress on the fragmented appointment, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the fragmented appointment. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the fragmented appointment. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the fragmented appointment manageable, with a smaller immediate result.",
+    "partial": "The compromise in the fragmented appointment left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the fragmented appointment against the approach you recorded."
+ },
+ {
+  "id": "workfield.17",
+  "family": "workfield.Finance",
+  "job": "*",
+  "field": "Finance",
+  "name": "The changed risk profile",
+  "question": "A client's circumstances change after a financial recommendation was prepared.",
+  "answers": [
+   "Reassess suitability before proceeding",
+   "Arrange an independent specialist review",
+   "Limit the recommendation to supported low-risk elements"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the changed risk profile, although the effort increased fatigue.",
+    "partial": "You made progress on the changed risk profile, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the changed risk profile. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the changed risk profile. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the changed risk profile manageable, with a smaller immediate result.",
+    "partial": "The compromise in the changed risk profile left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the changed risk profile against the approach you recorded."
+ },
+ {
+  "id": "workfield.18",
+  "family": "workfield.Business",
+  "job": "*",
+  "field": "Business",
+  "name": "The disputed target",
+  "question": "A growth target rewards new sales while ignoring the cost of keeping existing customers.",
+  "answers": [
+   "Revise targets around retention and cost",
+   "Commission a customer and cost review",
+   "Run a limited trial before changing all targets"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the disputed target, although the effort increased fatigue.",
+    "partial": "You made progress on the disputed target, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the disputed target. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the disputed target. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the disputed target manageable, with a smaller immediate result.",
+    "partial": "The compromise in the disputed target left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the disputed target against the approach you recorded."
+ },
+ {
+  "id": "workfield.19",
+  "family": "workfield.Engineering",
+  "job": "*",
+  "field": "Engineering",
+  "name": "The supplier substitution",
+  "question": "A supplier proposes a substitute component with different documented properties.",
+  "answers": [
+   "Reassess compatibility and the design",
+   "Arrange an independent component review",
+   "Keep the original specification and revise timing"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the supplier substitution, although the effort increased fatigue.",
+    "partial": "You made progress on the supplier substitution, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the supplier substitution. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the supplier substitution. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the supplier substitution manageable, with a smaller immediate result.",
+    "partial": "The compromise in the supplier substitution left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the supplier substitution against the approach you recorded."
+ },
+ {
+  "id": "workfield.20",
+  "family": "workfield.Design",
+  "job": "*",
+  "field": "Design",
+  "name": "The late accessibility finding",
+  "question": "Testing finds an access problem after the visual direction is approved.",
+  "answers": [
+   "Revise the affected interactions",
+   "Arrange specialist accessibility support",
+   "Reduce the first release to the accessible functions"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the late accessibility finding, although the effort increased fatigue.",
+    "partial": "You made progress on the late accessibility finding, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the late accessibility finding. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the late accessibility finding. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the late accessibility finding manageable, with a smaller immediate result.",
+    "partial": "The compromise in the late accessibility finding left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the late accessibility finding against the approach you recorded."
+ },
+ {
+  "id": "workfield.21",
+  "family": "workfield.Media",
+  "job": "*",
+  "field": "Media",
+  "name": "The unclear permission",
+  "question": "A useful image or recording arrives without clear usage permission.",
+  "answers": [
+   "Verify permission before use",
+   "Source an alternative with established rights",
+   "Revise the piece to work without it"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the unclear permission, although the effort increased fatigue.",
+    "partial": "You made progress on the unclear permission, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the unclear permission. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the unclear permission. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the unclear permission manageable, with a smaller immediate result.",
+    "partial": "The compromise in the unclear permission left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the unclear permission against the approach you recorded."
+ },
+ {
+  "id": "workfield.22",
+  "family": "workfield.Science",
+  "job": "*",
+  "field": "Science",
+  "name": "The costly replication",
+  "question": "A promising finding needs replication that exceeds the remaining project budget.",
+  "answers": [
+   "Narrow the replication to its key claim",
+   "Seek a funded collaborating team",
+   "Report the supported findings and defer the new claim"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the costly replication, although the effort increased fatigue.",
+    "partial": "You made progress on the costly replication, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the costly replication. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the costly replication. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the costly replication manageable, with a smaller immediate result.",
+    "partial": "The compromise in the costly replication left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the costly replication against the approach you recorded."
+ },
+ {
+  "id": "workfield.23",
+  "family": "workfield.Legal",
+  "job": "*",
+  "field": "Legal",
+  "name": "The conflicting dates",
+  "question": "An important record conflicts with a witness's account of the timeline.",
+  "answers": [
+   "Reconcile the evidence before relying on it",
+   "Arrange another qualified evidence review",
+   "Limit the argument to the undisputed facts"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the conflicting dates, although the effort increased fatigue.",
+    "partial": "You made progress on the conflicting dates, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the conflicting dates. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the conflicting dates. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the conflicting dates manageable, with a smaller immediate result.",
+    "partial": "The compromise in the conflicting dates left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the conflicting dates against the approach you recorded."
+ },
+ {
+  "id": "workfield.24",
+  "family": "workfield.Military",
+  "job": "*",
+  "field": "Military",
+  "name": "The unfamiliar equipment",
+  "question": "Your team receives unfamiliar equipment before a scheduled exercise.",
+  "answers": [
+   "Train on essential functions before deployment",
+   "Request experienced instructors",
+   "Reduce the exercise scope to established capabilities"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the unfamiliar equipment, although the effort increased fatigue.",
+    "partial": "You made progress on the unfamiliar equipment, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the unfamiliar equipment. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the unfamiliar equipment. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the unfamiliar equipment manageable, with a smaller immediate result.",
+    "partial": "The compromise in the unfamiliar equipment left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the unfamiliar equipment against the approach you recorded."
+ },
+ {
+  "id": "workfield.25",
+  "family": "workfield.Energy",
+  "job": "*",
+  "field": "Energy",
+  "name": "The uncertain output",
+  "question": "A customer's expected energy savings differ from the site's measured conditions.",
+  "answers": [
+   "Recalculate expected performance",
+   "Arrange a fuller independent site assessment",
+   "Offer a smaller suitable installation first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the uncertain output, although the effort increased fatigue.",
+    "partial": "You made progress on the uncertain output, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the uncertain output. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the uncertain output. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the uncertain output manageable, with a smaller immediate result.",
+    "partial": "The compromise in the uncertain output left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the uncertain output against the approach you recorded."
+ },
+ {
+  "id": "workfield.26",
+  "family": "workfield.Environment",
+  "job": "*",
+  "field": "Environment",
+  "name": "The seasonal conflict",
+  "question": "A planned operation overlaps with a period important to local habitat.",
+  "answers": [
+   "Revise timing around the habitat needs",
+   "Arrange specialist ecological assessment",
+   "Reduce the affected operation and monitor its effects"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the seasonal conflict, although the effort increased fatigue.",
+    "partial": "You made progress on the seasonal conflict, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the seasonal conflict. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the seasonal conflict. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the seasonal conflict manageable, with a smaller immediate result.",
+    "partial": "The compromise in the seasonal conflict left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the seasonal conflict against the approach you recorded."
+ },
+ {
+  "id": "workfield.27",
+  "family": "workfield.Hospitality",
+  "job": "*",
+  "field": "Hospitality",
+  "name": "The changed group needs",
+  "question": "A booked group arrives with access requirements absent from the original booking.",
+  "answers": [
+   "Adapt the service with the group's input",
+   "Arrange additional suitable support",
+   "Offer a smaller fully accessible service"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the changed group needs, although the effort increased fatigue.",
+    "partial": "You made progress on the changed group needs, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the changed group needs. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the changed group needs. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the changed group needs manageable, with a smaller immediate result.",
+    "partial": "The compromise in the changed group needs left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the changed group needs against the approach you recorded."
+ },
+ {
+  "id": "workfield.28",
+  "family": "workfield.General",
+  "job": "*",
+  "field": "General",
+  "name": "The unclear responsibility",
+  "question": "Two people believe the other is responsible for an important task.",
+  "answers": [
+   "Clarify ownership and complete the essentials",
+   "Ask for an experienced coordinator",
+   "Reduce the task to a clearly assigned first step"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your focused work resolved the unclear responsibility, although the effort increased fatigue.",
+    "partial": "You made progress on the unclear responsibility, but the revised scope still needed review."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The coordinated support resolved the unclear responsibility. Your professional contacts had contributed time and expertise.",
+    "partial": "Support exposed the remaining limits in the unclear responsibility. The team still needed a revised plan."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The documented compromise made the unclear responsibility manageable, with a smaller immediate result.",
+    "partial": "The compromise in the unclear responsibility left some needs unmet. The next review would account for them."
+   }
+  ],
+  "closure": "The later review checked the outcome of the unclear responsibility against the approach you recorded."
+ },
+ {
+  "id": "workcase.baker.0",
+  "family": "workcase.baker",
+  "job": "baker",
+  "name": "A proofing schedule",
+  "question": "A large order competes with the daily bread schedule.",
+  "answers": [
+   "Plan batches around the available proving space",
+   "Ask the second shift to share the ovens",
+   "Run a smaller agreed order"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a proofing schedule. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.baker.1",
+  "family": "workcase.baker",
+  "job": "baker",
+  "name": "A changed ingredient",
+  "question": "A supplier substitution changes a labelled pastry.",
+  "answers": [
+   "Check the label and agreed recipe before selling",
+   "Ask the supervisor to confirm the ingredient record",
+   "Offer an unchanged recipe instead"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a changed ingredient. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.mortician.0",
+  "family": "workcase.mortician",
+  "job": "mortician",
+  "name": "A family arrangement",
+  "question": "Relatives disagree about the ceremony and its cost.",
+  "answers": [
+   "Record the authorised wishes and a clear quote",
+   "Arrange a joint family planning meeting",
+   "Offer a smaller ceremony within the budget"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a family arrangement. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.mortician.1",
+  "family": "workcase.mortician",
+  "job": "mortician",
+  "name": "A documentation hold",
+  "question": "An important release document has not arrived.",
+  "answers": [
+   "Verify the required records before proceeding",
+   "Ask the responsible office to clarify the record",
+   "Explain the delay and reschedule"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a documentation hold. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.exorcist.0",
+  "family": "workcase.exorcist",
+  "job": "exorcist",
+  "name": "A haunted-house report",
+  "question": "A frightened owner reports footsteps in an empty room.",
+  "answers": [
+   "Document the reports and check ordinary causes first",
+   "Ask a trusted specialist to review the records",
+   "Offer observation without promising a result"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a haunted-house report. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.exorcist.1",
+  "family": "workcase.exorcist",
+  "job": "exorcist",
+  "name": "A public séance request",
+  "question": "A client wants a dramatic public ceremony after a private loss.",
+  "answers": [
+   "Agree privacy boundaries and avoid guaranteed claims",
+   "Invite a colleague to review the proposed event",
+   "Offer a quiet supervised visit"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a public séance request. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.marines.0",
+  "family": "workcase.marines",
+  "job": "marines",
+  "name": "An amphibious drill",
+  "question": "The training schedule changes before a supervised landing drill.",
+  "answers": [
+   "Rebrief participants and verify the authorised plan",
+   "Request a supervisor readiness check",
+   "Reduce the drill to the prepared stages"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited an amphibious drill. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.marines.1",
+  "family": "workcase.marines",
+  "job": "marines",
+  "name": "An endurance handover",
+  "question": "A trainee reports fatigue before the next exercise.",
+  "answers": [
+   "Record the concern and review the safe training load",
+   "Ask the training team to revise the rota",
+   "Switch to a lighter supervised exercise"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited an endurance handover. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.coast_guard.0",
+  "family": "workcase.coast_guard",
+  "job": "coast_guard",
+  "name": "A rescue exercise window",
+  "question": "Conditions change before a supervised rescue exercise.",
+  "answers": [
+   "Review the conditions and authorised exercise limits",
+   "Request an instructor readiness review",
+   "Use a shore-based rehearsal"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a rescue exercise window. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.coast_guard.1",
+  "family": "workcase.coast_guard",
+  "job": "coast_guard",
+  "name": "A vessel inspection queue",
+  "question": "A harbour queue grows while inspection records need checking.",
+  "answers": [
+   "Finish the required checks and explain the queue",
+   "Request another qualified inspection team",
+   "Schedule fewer inspections with clear priorities"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a vessel inspection queue. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.adult_performer.0",
+  "family": "workcase.adult_performer",
+  "job": "adult_performer",
+  "name": "A contract boundary",
+  "question": "An adult production agreement includes work outside your agreed limits.",
+  "answers": [
+   "Record the boundaries and refuse unagreed work",
+   "Ask an independent representative to review the contract",
+   "Decline the booking and keep the boundary"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a contract boundary. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.adult_performer.1",
+  "family": "workcase.adult_performer",
+  "job": "adult_performer",
+  "name": "A private record request",
+  "question": "A promoter asks to publish private information about an adult colleague.",
+  "answers": [
+   "Protect their privacy and seek explicit permission",
+   "Request an independent privacy review",
+   "Use a version with no private information"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The documented approach resolved the concern.",
+    "partial": "Some checks remained open."
+   },
+   {
+    "chance": 0.8,
+    "performance": 5,
+    "stress": -1,
+    "success": "The independent review helped close the concern.",
+    "partial": "The review left work for a later handover."
+   },
+   {
+    "chance": 0.58,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller agreed scope was completed.",
+    "partial": "The limited plan still left unresolved work."
+   }
+  ],
+  "closure": "The later review revisited a private record request. The recorded result affected professional trust."
+ },
+ {
+  "id": "workcase.v87.mechanic",
+  "family": "workcase.mechanic",
+  "job": "mechanic",
+  "name": "The intermittent fault",
+  "question": "A car behaves normally in the workshop, but its owner reports stalling on longer trips.",
+  "answers": [
+   "Log a longer diagnostic run",
+   "Ask another technician to review it",
+   "Agree on a staged diagnosis"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The longer run captured the fault. The repair plan now had evidence instead of a guess.",
+    "partial": "The fault stayed hidden. You recorded the checks rather than claiming a repair."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "A second technician found an overlooked clue in the history. The owner approved the next check.",
+    "partial": "The second review ruled out one cause, but the vehicle still needed investigation."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "The owner agreed to a limited first inspection and a clear return appointment.",
+    "partial": "The first inspection was inconclusive. You explained its limits and kept the next appointment."
+   }
+  ],
+  "closure": "The vehicle record kept the diagnostic evidence and the limits of the earlier inspection."
+ },
+ {
+  "id": "workcase.v87.electrician",
+  "family": "workcase.electrician",
+  "job": "electrician",
+  "name": "The overloaded circuit",
+  "question": "A customer wants more equipment on a circuit whose existing load is already high.",
+  "answers": [
+   "Measure the loads and revise the plan",
+   "Arrange a qualified second review",
+   "Limit the installation to safe capacity"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Your measurements supported a safer circuit plan. The customer accepted the extra work.",
+    "partial": "The measurements exposed more work than expected. You paused the plan rather than guessing."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "The review confirmed the load limits and a compliant route forward.",
+    "partial": "The reviewer requested another inspection before approving the expansion."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "A smaller installation met the present need within the recorded capacity.",
+    "partial": "The smaller scope disappointed the customer, but you documented why it was necessary."
+   }
+  ],
+  "closure": "The next inspection checked the documented load limits and the work actually authorized."
+ },
+ {
+  "id": "workcase.v87.carpenter",
+  "family": "workcase.carpenter",
+  "job": "carpenter",
+  "name": "The unexpected timber",
+  "question": "Delivered timber differs from the specification, and the installation date is near.",
+  "answers": [
+   "Revise the cutting plan after checking it",
+   "Request a supplier replacement",
+   "Complete only the suitable sections"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The revised plan used suitable pieces without hiding the substitution.",
+    "partial": "The check found too few suitable pieces. You recorded what still needed replacing."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "The supplier replaced the disputed pieces. The team adjusted the installation schedule.",
+    "partial": "The replacement arrived late, leaving part of the installation unfinished."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "You finished the suitable sections and agreed a return date for the rest.",
+    "partial": "The staged work kept moving, but the customer needed another visit to finish it."
+   }
+  ],
+  "closure": "The handover compared the agreed specification, substitutions and outstanding sections."
+ },
+ {
+  "id": "workcase.v87.teacher",
+  "family": "workcase.teacher",
+  "job": "teacher",
+  "name": "The uneven group project",
+  "question": "One pupil has done most of a group assignment while others struggle to contribute.",
+  "answers": [
+   "Check contributions and reshape roles",
+   "Ask a colleague to co-plan support",
+   "Assess the individual evidence first"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "Clearer roles gave each pupil a task they could demonstrate. The group resumed work.",
+    "partial": "The new roles helped, but some pupils still needed separate support."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "A colleague helped build smaller tasks and a fair way to assess each contribution.",
+    "partial": "The joint plan took longer to arrange. You recorded the interim support."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "Individual evidence made the grade fairer without pretending the group worked evenly.",
+    "partial": "The individual review clarified the grades, but the group still needed help working together."
+   }
+  ],
+  "closure": "The later review used actual contributions rather than a single group label."
+ },
+ {
+  "id": "workcase.v87.nurse",
+  "family": "workcase.nurse",
+  "job": "nurse",
+  "name": "The unclear discharge plan",
+  "question": "A patient is due to leave, but the written plan and the handover describe different support arrangements.",
+  "answers": [
+   "Reconcile the records before discharge",
+   "Request the discharge team review",
+   "Pause departure until clarification"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The records and the handover agreed. The patient knew who would provide the arranged support.",
+    "partial": "The records still conflicted. You documented the unresolved point and escalated it."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "The discharge team confirmed the plan and corrected the handover.",
+    "partial": "The team needed more time to confirm support; the departure was rescheduled."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "The pause prevented an unsupported departure. The plan was clarified later that day.",
+    "partial": "The pause frustrated the patient, but you explained which arrangement was still unconfirmed."
+   }
+  ],
+  "closure": "The follow-up checked the documented support plan, not just whether the bed was freed."
+ },
+ {
+  "id": "workcase.v87.chef",
+  "family": "workcase.chef",
+  "job": "chef",
+  "name": "The late delivery",
+  "question": "A key ingredient fails to arrive before service. Several booked meals depend on it.",
+  "answers": [
+   "Create and disclose a substitute dish",
+   "Coordinate alternatives with the team",
+   "Offer a smaller menu tonight"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The replacement dish worked, with ingredients and allergen information clearly updated.",
+    "partial": "The first replacement was not ready in time. You disclosed the delay and adjusted orders."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "Kitchen and serving staff agreed on substitutions before orders were taken.",
+    "partial": "Coordination took time; some guests changed their orders after hearing the options."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "The smaller menu let the team serve the available dishes reliably.",
+    "partial": "The reduced choice disappointed guests, though no missing ingredient was concealed."
+   }
+  ],
+  "closure": "The service review checked the updated menu and communication across kitchen and floor staff."
+ },
+ {
+  "id": "workcase.v87.developer",
+  "family": "workcase.developer",
+  "job": "developer",
+  "name": "The incompatible dependency",
+  "question": "A dependency update breaks an integration just before a planned release.",
+  "answers": [
+   "Reproduce and isolate the mismatch",
+   "Request an integration review",
+   "Hold the update and document the risk"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "A small reproducible case led to a focused fix and a clearer integration check.",
+    "partial": "The mismatch remained. You kept the release blocked rather than reporting a false fix."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "The review found a version assumption that the original change had missed.",
+    "partial": "The review narrowed the problem, but another integration still needed checking."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "The existing version stayed in place with a recorded upgrade task and known risks.",
+    "partial": "Holding the version avoided the new failure, but the delayed update needed a follow-up."
+   }
+  ],
+  "closure": "The next review revisited the version decision and the integration evidence."
+ },
+ {
+  "id": "workcase.v87.accountant",
+  "family": "workcase.accountant",
+  "job": "accountant",
+  "name": "The disputed expense",
+  "question": "A department submits an expense with an unclear business purpose near the reporting deadline.",
+  "answers": [
+   "Trace the evidence before classifying it",
+   "Ask for a documented departmental review",
+   "Hold it as unresolved in the report"
+  ],
+  "approaches": [
+   {
+    "chance": 0.66,
+    "performance": 4,
+    "stress": 3,
+    "success": "The evidence established the purpose and the expense was classified with a clear record.",
+    "partial": "The evidence remained incomplete. You recorded the gap instead of inventing a purpose."
+   },
+   {
+    "chance": 0.78,
+    "performance": 5,
+    "stress": -1,
+    "success": "The department supplied the missing explanation and approval trail.",
+    "partial": "The review arrived after the cutoff. You recorded the timing and outstanding decision."
+   },
+   {
+    "chance": 0.6,
+    "performance": 3,
+    "stress": 1,
+    "success": "The report identified the unresolved item clearly, avoiding a misleading final classification.",
+    "partial": "The unresolved item required another review, but its uncertainty remained visible."
+   }
+  ],
+  "closure": "The next accounting review followed the evidence and the unresolved-item record."
+ }
+]

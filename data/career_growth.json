@@ -1,0 +1,272 @@
+[
+ {
+  "id": "career.growth.1",
+  "family": "career.growth.leadership",
+  "route": "leadership",
+  "title": "Shared workload",
+  "text": "A teammate is overloaded while others wait for assignments.",
+  "options": [
+   {
+    "label": "Rebalance together",
+    "chance": 0.68,
+    "trust": 5,
+    "respect": 0,
+    "stress": 2,
+    "perf": 1,
+    "npc_stress": -5,
+    "now": "You agree a fairer task split.",
+    "success": "The new split reduces missed handovers.",
+    "failure": "Uneven experience leaves gaps in the new split."
+   },
+   {
+    "label": "Take the difficult tasks",
+    "chance": 0.75,
+    "trust": 3,
+    "respect": 0,
+    "stress": 7,
+    "perf": 2,
+    "npc_stress": -7,
+    "now": "You take the backlog yourself.",
+    "success": "The backlog clears, but the team still relies on you.",
+    "failure": "Your own workload becomes the next bottleneck."
+   },
+   {
+    "label": "Keep current targets",
+    "chance": 0.34,
+    "trust": -5,
+    "respect": 0,
+    "stress": 0,
+    "perf": 2,
+    "npc_stress": 6,
+    "now": "Targets stay unchanged.",
+    "success": "The team catches up without a new rota.",
+    "failure": "Missed handovers expose the overload."
+   }
+  ]
+ },
+ {
+  "id": "career.growth.2",
+  "family": "career.growth.leadership",
+  "route": "leadership",
+  "title": "Whose idea?",
+  "text": "A colleague says their idea was presented without credit.",
+  "options": [
+   {
+    "label": "Correct the record",
+    "chance": 0.74,
+    "trust": 7,
+    "respect": 0,
+    "stress": 2,
+    "perf": -1,
+    "npc_stress": -3,
+    "now": "You name the original contributor.",
+    "success": "Shared credit brings the colleague back into planning.",
+    "failure": "The correction helps trust, but the dispute still slows work."
+   },
+   {
+    "label": "Arrange a private talk",
+    "chance": 0.6,
+    "trust": 3,
+    "respect": 0,
+    "stress": 3,
+    "perf": 0,
+    "npc_stress": -2,
+    "now": "You hear both accounts before reporting back.",
+    "success": "A clear agreement settles future credit.",
+    "failure": "Without a public correction, the complaint persists."
+   },
+   {
+    "label": "Focus on the result",
+    "chance": 0.31,
+    "trust": -7,
+    "respect": 0,
+    "stress": -1,
+    "perf": 2,
+    "npc_stress": 5,
+    "now": "You leave the credit unchanged.",
+    "success": "The project proceeds, though trust remains strained.",
+    "failure": "The colleague stops sharing useful suggestions."
+   }
+  ]
+ },
+ {
+  "id": "career.growth.3",
+  "family": "career.growth.leadership",
+  "route": "leadership",
+  "title": "First delegation",
+  "text": "A teammate wants to lead a task they have not handled before.",
+  "options": [
+   {
+    "label": "Delegate with checkpoints",
+    "chance": 0.7,
+    "trust": 5,
+    "respect": 0,
+    "stress": 3,
+    "perf": 0,
+    "npc_stress": -2,
+    "now": "You agree two checkpoints and a clear handover.",
+    "success": "The colleague completes the task with useful feedback.",
+    "failure": "A checkpoint catches mistakes, but delivery needs rework."
+   },
+   {
+    "label": "Let them own it",
+    "chance": 0.5,
+    "trust": 6,
+    "respect": 0,
+    "stress": 0,
+    "perf": 1,
+    "npc_stress": 3,
+    "now": "They get the whole task and its responsibility.",
+    "success": "They develop confidence and deliver independently.",
+    "failure": "A missed warning turns into a late handover."
+   },
+   {
+    "label": "Keep it yourself",
+    "chance": 0.8,
+    "trust": -4,
+    "respect": 0,
+    "stress": 6,
+    "perf": 1,
+    "npc_stress": 0,
+    "now": "You keep control of the task.",
+    "success": "Delivery is sound, but the colleague gains no experience.",
+    "failure": "Your crowded schedule delays the task."
+   }
+  ]
+ },
+ {
+  "id": "career.growth.4",
+  "family": "career.growth.specialist",
+  "route": "specialist",
+  "title": "An unusual fault",
+  "text": "A colleague brings a problem the standard checklist cannot explain.",
+  "options": [
+   {
+    "label": "Trace the cause together",
+    "chance": 0.73,
+    "trust": 4,
+    "respect": 0,
+    "stress": 4,
+    "perf": 0,
+    "npc_stress": -3,
+    "now": "You compare evidence before changing the work.",
+    "success": "You identify the underlying fault and document it.",
+    "failure": "The evidence rules out several causes, but the fault remains."
+   },
+   {
+    "label": "Try a controlled change",
+    "chance": 0.55,
+    "trust": 2,
+    "respect": 0,
+    "stress": 2,
+    "perf": 1,
+    "npc_stress": 1,
+    "now": "You isolate one variable and record the result.",
+    "success": "The controlled change reveals a useful fix.",
+    "failure": "The change fails and needs to be reversed."
+   },
+   {
+    "label": "Use the usual workaround",
+    "chance": 0.38,
+    "trust": -2,
+    "respect": 0,
+    "stress": -1,
+    "perf": 2,
+    "npc_stress": 3,
+    "now": "You apply the familiar workaround.",
+    "success": "The workaround holds under normal demand.",
+    "failure": "The hidden fault returns under pressure."
+   }
+  ]
+ },
+ {
+  "id": "career.growth.5",
+  "family": "career.growth.specialist",
+  "route": "specialist",
+  "title": "Quality at speed",
+  "text": "A colleague asks which checks can be shortened for a deadline.",
+  "options": [
+   {
+    "label": "Keep the critical checks",
+    "chance": 0.76,
+    "trust": 3,
+    "respect": 0,
+    "stress": 4,
+    "perf": -1,
+    "npc_stress": -1,
+    "now": "You protect key checks and trim low-risk repetition.",
+    "success": "The work passes review without a preventable defect.",
+    "failure": "The important checks hold, but the deadline slips."
+   },
+   {
+    "label": "Ask for more time",
+    "chance": 0.64,
+    "trust": 5,
+    "respect": 0,
+    "stress": 2,
+    "perf": -2,
+    "npc_stress": -4,
+    "now": "You explain the evidence behind an extension.",
+    "success": "The extra time produces a stronger handover.",
+    "failure": "The extension is refused; the work needs a smaller scope."
+   },
+   {
+    "label": "Use a small sample",
+    "chance": 0.39,
+    "trust": -3,
+    "respect": 0,
+    "stress": -1,
+    "perf": 3,
+    "npc_stress": 3,
+    "now": "You note the reduced sample in the handover.",
+    "success": "The sample catches the main issue this time.",
+    "failure": "A missed defect needs a costly internal correction."
+   }
+  ]
+ },
+ {
+  "id": "career.growth.6",
+  "family": "career.growth.specialist",
+  "route": "specialist",
+  "title": "Teach the method",
+  "text": "A colleague wants to learn a difficult part of your work.",
+  "options": [
+   {
+    "label": "Guide a practice attempt",
+    "chance": 0.75,
+    "trust": 6,
+    "respect": 0,
+    "stress": 4,
+    "perf": -1,
+    "npc_stress": -3,
+    "now": "You demonstrate, then let them try with feedback.",
+    "success": "The colleague can use the method without constant help.",
+    "failure": "They still need supervised practice."
+   },
+   {
+    "label": "Write a short guide",
+    "chance": 0.59,
+    "trust": 3,
+    "respect": 0,
+    "stress": 2,
+    "perf": 0,
+    "npc_stress": -1,
+    "now": "You record the steps and the common failure signs.",
+    "success": "The guide improves repeat work and handovers.",
+    "failure": "The guide misses a situation that needs judgment."
+   },
+   {
+    "label": "Demonstrate once",
+    "chance": 0.4,
+    "trust": 1,
+    "respect": 0,
+    "stress": 0,
+    "perf": 1,
+    "npc_stress": 2,
+    "now": "They watch one quick demonstration.",
+    "success": "They pick up the essentials from the demonstration.",
+    "failure": "Watching alone leaves important gaps."
+   }
+  ]
+ }
+]

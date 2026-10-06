@@ -1,0 +1,248 @@
+{
+  "dog": [
+    {
+      "name": "Mixed-breed",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "Every dog has its own personality."
+    },
+    {
+      "name": "Labrador Retriever",
+      "price": 1.2,
+      "upkeep": 1.2,
+      "blurb": "Big paws, bigger appetite."
+    },
+    {
+      "name": "Border Collie",
+      "price": 1.3,
+      "upkeep": 1.1,
+      "blurb": "A bright companion for an active home."
+    },
+    {
+      "name": "Dachshund",
+      "price": 1.1,
+      "upkeep": 0.9,
+      "blurb": "A small silhouette with a large opinion."
+    },
+    {
+      "name": "Shiba Inu",
+      "price": 1.5,
+      "upkeep": 1.0,
+      "blurb": "Independent flair and a curled tail."
+    },
+    {
+      "name": "Standard Poodle",
+      "price": 1.4,
+      "upkeep": 1.3,
+      "blurb": "Regular grooming belongs in the budget."
+    }
+  ],
+  "cat": [
+    {
+      "name": "Domestic Shorthair",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "An individual, not a pedigree requirement."
+    },
+    {
+      "name": "Maine Coon",
+      "price": 1.6,
+      "upkeep": 1.3,
+      "blurb": "Large paws and a larger food budget."
+    },
+    {
+      "name": "Siamese",
+      "price": 1.3,
+      "upkeep": 1.0,
+      "blurb": "A conversational housemate."
+    },
+    {
+      "name": "Ragdoll",
+      "price": 1.5,
+      "upkeep": 1.2,
+      "blurb": "A long coat needs regular attention."
+    },
+    {
+      "name": "Bengal",
+      "price": 1.8,
+      "upkeep": 1.2,
+      "blurb": "Spotted coat, plenty of enrichment."
+    }
+  ],
+  "rabbit": [
+    {
+      "name": "Mixed rabbit",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "Quiet company and space to explore."
+    },
+    {
+      "name": "Holland Lop",
+      "price": 1.2,
+      "upkeep": 1.0,
+      "blurb": "Compact companion with floppy ears."
+    },
+    {
+      "name": "Flemish Giant",
+      "price": 1.5,
+      "upkeep": 1.5,
+      "blurb": "A bigger enclosure and food budget."
+    }
+  ],
+  "parrot": [
+    {
+      "name": "Budgerigar",
+      "price": 0.3,
+      "upkeep": 0.6,
+      "blurb": "Small bird, substantial social needs."
+    },
+    {
+      "name": "Cockatiel",
+      "price": 0.6,
+      "upkeep": 0.8,
+      "blurb": "A crest and a favourite tune."
+    },
+    {
+      "name": "African Grey",
+      "price": 1.6,
+      "upkeep": 1.3,
+      "blurb": "Enrichment and company matter."
+    },
+    {
+      "name": "Macaw",
+      "price": 2.2,
+      "upkeep": 1.7,
+      "blurb": "A large companion and a long commitment."
+    }
+  ],
+  "hamster": [
+    {
+      "name": "Syrian hamster",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "A solitary little night explorer."
+    },
+    {
+      "name": "Dwarf hamster",
+      "price": 0.9,
+      "upkeep": 0.9,
+      "blurb": "Tiny paws, spacious habitat."
+    }
+  ],
+  "guinea_pig": [
+    {
+      "name": "American guinea pig",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "Smooth coat and an enthusiastic squeak."
+    },
+    {
+      "name": "Abyssinian guinea pig",
+      "price": 1.2,
+      "upkeep": 1.1,
+      "blurb": "Rosettes and an unruly hairdo."
+    },
+    {
+      "name": "Peruvian guinea pig",
+      "price": 1.4,
+      "upkeep": 1.2,
+      "blurb": "A long coat needs grooming."
+    }
+  ],
+  "goldfish": [
+    {
+      "name": "Common goldfish",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "A proper tank, not a tiny bowl."
+    },
+    {
+      "name": "Fantail goldfish",
+      "price": 1.6,
+      "upkeep": 1.2,
+      "blurb": "Flowing fins and space to swim."
+    }
+  ],
+  "turtle": [
+    {
+      "name": "Musk turtle",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "An aquatic habitat and careful upkeep."
+    },
+    {
+      "name": "Map turtle",
+      "price": 1.3,
+      "upkeep": 1.2,
+      "blurb": "A patterned shell and a basking spot."
+    }
+  ],
+  "ferret": [
+    {
+      "name": "Sable ferret",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "A masked explorer."
+    },
+    {
+      "name": "Albino ferret",
+      "price": 1.1,
+      "upkeep": 1.0,
+      "blurb": "A pale coat and the same mischief."
+    }
+  ],
+  "lizard": [
+    {
+      "name": "Leopard gecko",
+      "price": 0.8,
+      "upkeep": 0.8,
+      "blurb": "A compact reptile with specialised care."
+    },
+    {
+      "name": "Bearded dragon",
+      "price": 1.4,
+      "upkeep": 1.4,
+      "blurb": "More space and a bigger setup."
+    }
+  ],
+  "snake": [
+    {
+      "name": "Corn snake",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "A patterned, quiet companion."
+    },
+    {
+      "name": "Ball python",
+      "price": 1.5,
+      "upkeep": 1.3,
+      "blurb": "Careful habitat conditions matter."
+    }
+  ],
+  "horse": [
+    {
+      "name": "Mixed horse",
+      "price": 1.0,
+      "upkeep": 1.0,
+      "blurb": "Pasture, exercise and regular care."
+    },
+    {
+      "name": "Arabian",
+      "price": 1.6,
+      "upkeep": 1.2,
+      "blurb": "A light frame and considerable presence."
+    },
+    {
+      "name": "Quarter Horse",
+      "price": 1.4,
+      "upkeep": 1.1,
+      "blurb": "A versatile stable companion."
+    },
+    {
+      "name": "Shire",
+      "price": 2.0,
+      "upkeep": 1.8,
+      "blurb": "A gentle giant with a giant budget."
+    }
+  ]
+}

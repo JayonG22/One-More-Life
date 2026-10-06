@@ -63,6 +63,7 @@ func business() -> void:
 	if b["cooked"]:
 		lines.append(U.lbl("📒 The books are cooked. Heat rises every year.", "Dim", 14, true))
 	m._add(m._info_card(lines))
+	m._add(U.row("🏪", "Company operations", "Products, supply, prices, staff and customer orders", func(): m.MP.open("journey:operations")))
 	m._add(U.section("Run the company"))
 	for a in Empires.biz_actions():
 		var aid: String = a["id"]
@@ -74,7 +75,7 @@ func business() -> void:
 		if n.is_empty():
 			continue
 		var cid: String = id
-		m._add(U.row(U.npc_face(n), "Fire %s" % GameState.full_name(id), GameState.relation_label(id), m._act(func(): Empires.fire_known(cid)), true, false))
+		m._add(U.row(U.npc_icon(n), "Fire %s" % GameState.full_name(id), GameState.relation_label(id), m._act(func(): Empires.fire_known(cid)), true, false))
 
 
 ## Lists people you know for hiring, cult invites or zookeeper jobs.
@@ -117,7 +118,7 @@ func pick_person(kind: String) -> void:
 		var wrapped := func():
 			cb.call()
 			m._panel_back()
-		m._add(U.row(U.npc_face(n), "%s (%s)" % [GameState.full_name(id), GameState.relation_label(id)], _person_sub(id), m._act(wrapped), true, false, h))
+		m._add(U.row(U.npc_icon(n), "%s (%s)" % [GameState.full_name(id), GameState.relation_label(id)], _person_sub(id), m._act(wrapped), true, false, h))
 
 
 # ================================================================ black market
@@ -275,7 +276,7 @@ func camping() -> void:
 	for id in Empires.outdoor_companions():
 		var n := GameState.npc(id)
 		var nid: String = id
-		m._add(U.row(U.npc_face(n), "%s (%s)" % [GameState.full_name(id), GameState.relation_label(id)], "", m._act(func(): Empires.outdoor("camp", nid); m._panel_back()), true, false))
+		m._add(U.row(U.npc_icon(n), "%s (%s)" % [GameState.full_name(id), GameState.relation_label(id)], "", m._act(func(): Empires.outdoor("camp", nid); m._panel_back()), true, false))
 
 
 func journal() -> void:

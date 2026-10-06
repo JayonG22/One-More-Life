@@ -73,7 +73,7 @@ func _show_question() -> void:
 	sign_box.visible = not current_sign.is_empty()
 	sign_box.queue_redraw()
 	q_label.position.y = 202.0 if sign_box.visible else 150.0
-	progress.text = "Question %d of %d   ·   %d correct so far   ·   every answer must be right" % [idx + 1, needed, correct]
+	progress.text = "Question %d of %d   ·   %d correct so far   ·   %s" % [idx + 1, needed, correct,"graded practice" if params.get("graded",false) else "every answer must be right"]
 	q_label.text = str(q.get("q", ""))
 	var opts: Array = q.get("a", [])
 	for i in range(buttons.size()):
@@ -118,7 +118,7 @@ func _finish_paper() -> void:
 	# Pass is everything correct. A theory test you can fail a question on is not
 	# a test — and the player was shown the right answer either way.
 	var passed := correct >= needed
-	finish(1.0 if passed else float(correct) / maxf(1.0, float(needed)) * 0.6,
+	finish(float(correct)/maxf(1.0,float(needed)) if params.get("graded",false) else (1.0 if passed else float(correct) / maxf(1.0, float(needed)) * 0.6),
 		{"correct": correct, "asked": needed, "wrong": wrong, "passed": passed})
 
 

@@ -524,7 +524,8 @@
    "x": {
     "from": "exotic_pet"
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "bm.forger_busted",
@@ -1481,7 +1482,8 @@
    }
   ],
   "weight": 2,
-  "once": true
+  "once": true,
+  "available_from": 1957
  },
  {
   "id": "web.doctor_friend",
@@ -1770,7 +1772,8 @@
     ],
     "min_close": 25
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "web.journalist_scoop",
@@ -2580,7 +2583,8 @@
     ],
     "min_close": 25
    }
-  }
+  },
+  "available_from": 1903
  },
  {
   "id": "web.firefighter",
@@ -2875,7 +2879,8 @@
     ],
     "min_close": 25
    }
-  }
+  },
+  "available_from": 1890
  },
  {
   "id": "x.athlete_gym",

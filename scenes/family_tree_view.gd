@@ -23,11 +23,9 @@ func setup() -> void:
 	var p := GameState.player
 	title_text = "The %s Family" % str(p.get("last", ""))
 	rows = [
-		{"title": "Grandparents", "ids": GameState.npcs_with("grandparent", false)},
-		{"title": "Parents, aunts and uncles", "ids": GameState.npcs_with("mother", false) + GameState.npcs_with("father", false) + GameState.npcs_with("stepparent", false) + GameState.npcs_with("auntuncle", false)},
+		{"title": "Parents", "ids": GameState.npcs_with("mother", false) + GameState.npcs_with("father", false) + GameState.npcs_with("stepparent", false)},
 		{"title": "You, your siblings and your partner", "ids": ["__me"] + GameState.npcs_with("partner", false) + GameState.npcs_with("sibling", false) + GameState.npcs_with("stepsibling", false)},
 		{"title": "Children", "ids": GameState.npcs_with("child", false) + GameState.npcs_with("stepchild", false)},
-		{"title": "Grandchildren", "ids": GameState.npcs_with("grandchild", false)},
 	]
 	rows = rows.filter(func(r): return not (r["ids"] as Array).is_empty())
 	_layout()
@@ -130,11 +128,14 @@ func _make_node(id: String) -> void:
 	v.alignment = BoxContainer.ALIGNMENT_CENTER
 	v.add_theme_constant_override("separation", 1)
 	card.add_child(v)
-	var portrait := UIKit.lbl(face, "Emoji", 40)
-	portrait.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	if not alive:
-		portrait.modulate = Color(0.7, 0.62, 0.5, 0.85)
-	v.add_child(portrait)
+	var subject: Dictionary=p if id=="__me" else GameState.npc(id)
+	if subject.get("species","human")=="human":
+		var portrait := AvatarView.new(); portrait.custom_minimum_size=Vector2(54,54); portrait.size_flags_horizontal=Control.SIZE_SHRINK_CENTER
+		portrait.setup(Avatar.for_player() if id=="__me" else Avatar.appearance(subject),age,str(subject.get("gender","nonbinary")),false,subject)
+		v.add_child(portrait)
+	else:
+		var portrait := UIKit.lbl(face,"Emoji",40); portrait.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER; v.add_child(portrait)
+
 	var nm := UIKit.lbl(name1, "Bold", 14)
 	nm.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	nm.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

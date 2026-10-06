@@ -1,0 +1,194 @@
+[
+ {
+  "id": "astronomy",
+  "icon": "🔭",
+  "name": "Astronomy club",
+  "field": "Tech",
+  "game": "evidence",
+  "min_age": 11
+ },
+ {
+  "id": "coding",
+  "icon": "💻",
+  "name": "Coding club",
+  "field": "Tech",
+  "game": "docking",
+  "min_age": 11
+ },
+ {
+  "id": "chemistry",
+  "icon": "🧪",
+  "name": "Chemistry club",
+  "field": "Tech",
+  "game": "evidence",
+  "min_age": 11
+ },
+ {
+  "id": "ecology",
+  "icon": "🌿",
+  "name": "Ecology club",
+  "field": "Tech",
+  "game": "evidence",
+  "min_age": 8
+ },
+ {
+  "id": "engineering",
+  "icon": "⚙️",
+  "name": "Engineering club",
+  "field": "Tech",
+  "game": "docking",
+  "min_age": 11
+ },
+ {
+  "id": "mathematics",
+  "icon": "➗",
+  "name": "Mathematics club",
+  "field": "Tech",
+  "game": "evidence",
+  "min_age": 8
+ },
+ {
+  "id": "languages",
+  "icon": "🗣️",
+  "name": "Language club",
+  "field": "Arts",
+  "game": "memory",
+  "min_age": 8
+ },
+ {
+  "id": "photography",
+  "icon": "📷",
+  "name": "Photography club",
+  "field": "Arts",
+  "game": "onset",
+  "min_age": 8
+ },
+ {
+  "id": "film",
+  "icon": "🎥",
+  "name": "Film club",
+  "field": "Arts",
+  "game": "onset",
+  "min_age": 11
+ },
+ {
+  "id": "creative_writing",
+  "icon": "✒️",
+  "name": "Creative writing club",
+  "field": "Arts",
+  "game": "memory",
+  "min_age": 8
+ },
+ {
+  "id": "poetry",
+  "icon": "📜",
+  "name": "Poetry circle",
+  "field": "Arts",
+  "game": "memory",
+  "min_age": 8
+ },
+ {
+  "id": "choir",
+  "icon": "🎶",
+  "name": "School choir",
+  "field": "Arts",
+  "game": "rhythm",
+  "min_age": 6
+ },
+ {
+  "id": "orchestra",
+  "icon": "🎻",
+  "name": "School orchestra",
+  "field": "Arts",
+  "game": "rhythm",
+  "min_age": 8
+ },
+ {
+  "id": "dance_club",
+  "icon": "💃",
+  "name": "Dance club",
+  "field": "Arts",
+  "game": "memory",
+  "min_age": 6
+ },
+ {
+  "id": "crafts",
+  "icon": "🧶",
+  "name": "Craft club",
+  "field": "Arts",
+  "game": "onset",
+  "min_age": 5
+ },
+ {
+  "id": "cooking",
+  "icon": "🍳",
+  "name": "Cooking club",
+  "field": "Care",
+  "game": "memory",
+  "min_age": 8
+ },
+ {
+  "id": "gardening",
+  "icon": "🌻",
+  "name": "Gardening club",
+  "field": "Care",
+  "game": "evidence",
+  "min_age": 5
+ },
+ {
+  "id": "animal_care",
+  "icon": "🐾",
+  "name": "Animal care club",
+  "field": "Care",
+  "game": "evidence",
+  "min_age": 8
+ },
+ {
+  "id": "first_aid",
+  "icon": "🩹",
+  "name": "First aid club",
+  "field": "Care",
+  "game": "memory",
+  "min_age": 11
+ },
+ {
+  "id": "journalism",
+  "icon": "📰",
+  "name": "Student newspaper",
+  "field": "Politics",
+  "game": "evidence",
+  "min_age": 11
+ },
+ {
+  "id": "model_un",
+  "icon": "🌐",
+  "name": "Model UN",
+  "field": "Politics",
+  "game": "debate",
+  "min_age": 11
+ },
+ {
+  "id": "history_club",
+  "icon": "🏺",
+  "name": "History club",
+  "field": "Politics",
+  "game": "evidence",
+  "min_age": 8
+ },
+ {
+  "id": "entrepreneurs",
+  "icon": "💡",
+  "name": "Enterprise club",
+  "field": "Business",
+  "game": "debate",
+  "min_age": 11
+ },
+ {
+  "id": "board_games",
+  "icon": "🎲",
+  "name": "Board game club",
+  "field": "General",
+  "game": "memory",
+  "min_age": 5
+ }
+]

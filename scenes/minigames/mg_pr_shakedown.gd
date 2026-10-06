@@ -62,7 +62,7 @@ func build() -> void:
 	for k in range(items.size()):
 		var it: Array = items[k]["it"]
 		var b := Button.new()
-		b.text = "%s %s\n%s" % [it[0], it[1], it[2]]
+		b.text = "%s %s [%s]\n%s" % [it[0], it[1], str(k + 1) if k < 9 else ["0", "-", "="][k - 9], it[2]]
 		b.theme_type_variation = "Row"
 		b.toggle_mode = false
 		b.focus_mode = Control.FOCUS_NONE
@@ -124,4 +124,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and not event.echo and event.keycode >= KEY_1 and event.keycode <= KEY_9:
 		_toggle(event.keycode - KEY_1)
+		get_viewport().set_input_as_handled()
+
+	elif key_pressed(event, [KEY_0, KEY_MINUS, KEY_EQUAL]):
+		_toggle({KEY_0: 9, KEY_MINUS: 10, KEY_EQUAL: 11}[event.keycode])
 		get_viewport().set_input_as_handled()

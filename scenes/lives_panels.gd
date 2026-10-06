@@ -78,7 +78,7 @@ func pick(aid: String, title: String) -> void:
 		var cb := func():
 			Lives.act(aid, nid)
 			m._panel_back()
-		m._add(U.row(U.npc_face(n), "%s (%s)" % [GameState.full_name(id), GameState.relation_label(id)], "Age %d" % int(n["age"]), m._act(cb), true, false, h))
+		m._add(U.row(U.npc_icon(n), "%s (%s)" % [GameState.full_name(id), GameState.relation_label(id)], "Age %d" % int(n["age"]), m._act(cb), true, false, h))
 
 
 func world_panel() -> void:

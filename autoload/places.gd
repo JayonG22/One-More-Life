@@ -104,8 +104,8 @@ func regions(country: String) -> Array:
 	return REGIONS.get(country, [])
 
 
-func region() -> Dictionary:
-	var p := GameState.player
+func region(p: Dictionary = {}) -> Dictionary:
+	if p.is_empty(): p=GameState.player
 	var list := regions(p.get("country", "us"))
 	if list.is_empty():
 		return {"id": "", "name": "", "city": ContentDB.country(p.get("country", "us"))["name"], "cost": 1.0, "pay": 1.0, "crime": 1.0, "hazard": "flood", "scene": [], "blurb": ""}
@@ -133,8 +133,8 @@ func place_name() -> String:
 	return "%s, %s" % [r["city"], r["name"]]
 
 
-func cost_mult() -> float:
-	return float(region().get("cost", 1.0))
+func cost_mult(p: Dictionary = {}) -> float:
+	return float(region(p).get("cost", 1.0))
 
 
 func housing_mult() -> float:
@@ -335,15 +335,18 @@ func maybe_death_row(max_years: int) -> bool:
 
 func relocate(rid: String) -> void:
 	var p := GameState.player
-	if Actions._out_of_time(): return
+	if int(p["age"])<18 or rid==str(p.get("region","")) or not regions(str(p["country"])).any(func(r): return r["id"]==rid): return
 	var fee := Actions._cost(3000)
 	if int(p["money"]) < fee:
 		EventEngine.push_info("💸", "Moving", "Moving costs %s." % GameState.fmt_money(fee))
 		return
+	if Actions._out_of_time(): return
 	p["money"] = int(p["money"]) - fee
 	if p["housing"] == "house":
 		p["money"] = int(p["money"]) + int(p["house_value"]) - int(p["mortgage"])
 		p["house_value"] = 0
+		p["house_model"]=""
+		p.erase("house_uid")
 		p["mortgage"] = 0
 		p["mortgage_payment"] = 0
 	if p["housing"] in ["house", "parents"] and int(p["age"]) >= 18:
@@ -351,7 +354,7 @@ func relocate(rid: String) -> void:
 	p["region"] = rid
 	GameState.counter("relocations")
 	GameState.job_listings.clear()
-	var lost := GameState.has_job() and randf() < 0.6
+	var lost := GameState.has_job() and randf() < (0.35 if Journey.modules["places"].prepared(rid) else 0.6)
 	if lost:
 		Actions.lose_job("moved")
 	for id in GameState.npcs.keys():

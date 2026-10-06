@@ -9,11 +9,27 @@ const STOCKS := {
 	"PXW": {"name": "Pixelwave Media", "sector": "Media", "icon": "📺", "start": 31.0, "vol": 0.24},
 	"GGF": {"name": "Golden Grain Foods", "sector": "Food", "icon": "🌾", "start": 47.0, "vol": 0.10},
 	"IVB": {"name": "Ironvault Bank", "sector": "Banking", "icon": "🏦", "start": 73.0, "vol": 0.15},
+	"RLY": {"name": "Relay Freight", "sector": "Logistics", "icon": "🚚", "start": 38.0, "vol": 0.20},
+	"BLD": {"name": "Buildwell Homes", "sector": "Trades", "icon": "🏗️", "start": 62.0, "vol": 0.25},
+	"WTR": {"name": "Clearwater Utilities", "sector": "Energy", "icon": "💧", "start": 44.0, "vol": 0.09},
+	"SKY": {"name": "Skybridge Air", "sector": "Aviation", "icon": "✈️", "start": 29.0, "vol": 0.30},
+	"TRV": {"name": "Trailhead Hotels", "sector": "Hospitality", "icon": "🛎️", "start": 36.0, "vol": 0.26},
+	"EDU": {"name": "Learning Lantern", "sector": "Education", "icon": "📚", "start": 51.0, "vol": 0.14},
+	"AGR": {"name": "Fieldstone Agriculture", "sector": "Environment", "icon": "🌱", "start": 34.0, "vol": 0.18},
+	"SEC": {"name": "Shieldline Security", "sector": "Tech", "icon": "🔐", "start": 76.0, "vol": 0.32},
+	"BIO": {"name": "Juniper Biolabs", "sector": "Science", "icon": "🧬", "start": 18.0, "vol": 0.40},
+	"TEL": {"name": "Signal Coast", "sector": "Tech", "icon": "📡", "start": 58.0, "vol": 0.13},
+	"IDX": {"name": "Broad Market Fund", "sector": "Diversified fund", "icon": "🧺", "start": 100.0, "vol": 0.13},
+	"BND": {"name": "Harbor Bond Fund", "sector": "Bond fund", "icon": "📜", "start": 100.0, "vol": 0.05},
 }
 const CRYPTO := {
 	"BYC": {"name": "Bytecoin", "icon": "🪙", "start": 30000.0, "vol": 0.6},
 	"LMN": {"name": "Lumen", "icon": "💠", "start": 1800.0, "vol": 0.75},
 	"MFS": {"name": "Moonfish", "icon": "🐟", "start": 0.05, "vol": 1.2},
+	"ARC": {"name": "Arc Ledger", "icon": "🌐", "start": 210.0, "vol": 0.65},
+	"MNT": {"name": "Mint Mesh", "icon": "🕸️", "start": 8.0, "vol": 0.85},
+	"PUP": {"name": "Pup Parade", "icon": "🐕", "start": 0.012, "vol": 1.25},
+	"VLT": {"name": "Vault Link", "icon": "🔗", "start": 54.0, "vol": 0.70},
 }
 const PROPERTY_TYPES := [
 	{"type": "Studio condo", "icon": "🏢", "base": 140000, "rent": 11000},
@@ -57,8 +73,37 @@ func init_world() -> void:
 	for c in CRYPTO.keys():
 		w["crypto"][c] = CRYPTO[c]["start"] * randf_range(0.6, 1.4)
 		w["change"][c] = 0.0
+	w["price_history"] = {}
+	w["market_news"] = {}
 	w["market_mood"] = "steady"
 	w["listings"] = {}
+	ensure_market()
+
+
+## Add newly listed assets to old saves without resetting existing prices.
+func ensure_market() -> void:
+	var w := GameState.world
+	for key in ["stocks", "crypto", "change", "price_history", "market_news"]:
+		if not w.has(key): w[key] = {}
+	for pair in [["stocks", STOCKS], ["crypto", CRYPTO]]:
+		for sym in pair[1].keys():
+			if not w[pair[0]].has(sym): w[pair[0]][sym] = float(pair[1][sym]["start"])
+			if not w["change"].has(sym): w["change"][sym] = 0.0
+			if not w["price_history"].has(sym):
+				w["price_history"][sym] = [{"year": GameState.year_now(), "price": float(w[pair[0]][sym])}]
+
+
+func history(sym: String) -> Array:
+	ensure_market()
+	return GameState.world["price_history"].get(sym, []).duplicate(true)
+
+
+func _record_price(sym: String, price: float) -> void:
+	var points: Array = GameState.world["price_history"][sym]
+	var yr := GameState.year_now()
+	if not points.is_empty() and int(points[-1]["year"]) == yr: points[-1]["price"] = price
+	else: points.append({"year": yr, "price": price})
+	while points.size() > 24: points.pop_front()
 
 
 # ---------------------------------------------------------------- yearly
@@ -74,6 +119,7 @@ func yearly() -> void:
 
 
 func _yearly_market() -> void:
+	ensure_market()
 	var w := GameState.world
 	var roll := randf()
 	var mood := "steady"
@@ -88,10 +134,16 @@ func _yearly_market() -> void:
 	w["market_mood"] = mood
 	var owns_any: bool = not GameState.player["stocks"].is_empty() or not GameState.player["crypto"].is_empty()
 	for s in STOCKS.keys():
-		var ch := randfn(0.07, float(STOCKS[s]["vol"])) + shock
+		var sector := str(STOCKS[s]["sector"])
+		var field := str({"Health": "Healthcare", "Banking": "Finance", "Auto": "Engineering"}.get(sector, sector))
+		var exposure := Workforce.climate(field)
+		var drift := 0.035 if s == "BND" else 0.06
+		var ch := randfn(drift, float(STOCKS[s]["vol"])) + shock * (0.15 if s == "BND" else 1.0) + exposure
 		ch = clampf(ch, -0.75, 1.5)
 		w["stocks"][s] = maxf(0.5, float(w["stocks"][s]) * (1.0 + ch))
 		w["change"][s] = ch
+		_record_price(str(s), float(w["stocks"][s]))
+		w["market_news"][s] = ("Sector demand fell; the broader market moved too." if exposure < -0.03 else ("Sector demand strengthened." if exposure > 0.03 else "Company results and wider market sentiment moved the price."))
 	for c in CRYPTO.keys():
 		var ch2 := randfn(0.15, float(CRYPTO[c]["vol"])) + shock * 1.5
 		if c == "MFS" and randf() < 0.05:
@@ -99,6 +151,8 @@ func _yearly_market() -> void:
 		ch2 = clampf(ch2, -0.97, 6.0)
 		w["crypto"][c] = maxf(0.0001, float(w["crypto"][c]) * (1.0 + ch2))
 		w["change"][c] = ch2
+		_record_price(str(c), float(w["crypto"][c]))
+		w["market_news"][c] = "Speculation and liquidity drove the price. It can lose most of its value."
 	if mood == "crash":
 		GameState.add_log("The stock market crashed this year." + (" My portfolio took a beating." if owns_any else ""))
 		if owns_any:
@@ -114,6 +168,7 @@ func _yearly_properties() -> void:
 	for pr in p["properties"]:
 		pr["value"] = int(int(pr["value"]) * (1.0 + randfn(0.03, 0.05)))
 		pr["condition"] = maxf(0.0, float(pr["condition"]) - randf_range(4.0, 10.0))
+		if Holdings.is_primary(pr): continue
 		var tid: String = pr.get("tenant", "")
 		if tid != "" and GameState.npcs.has(tid) and GameState.npcs[tid]["alive"]:
 			var t: Dictionary = GameState.npcs[tid]
@@ -133,6 +188,7 @@ func _yearly_properties() -> void:
 		income -= upkeep
 	if not p["properties"].is_empty():
 		p["money"] = int(p["money"]) + income
+		Employment.record_income("Rental income after upkeep",income)
 		GameState.add_log("My properties brought in %s after upkeep." % GameState.fmt_money(income))
 
 
@@ -146,9 +202,9 @@ func _yearly_possessions() -> void:
 
 # ---------------------------------------------------------------- values
 
-func investments_value() -> int:
+func investments_value(p: Dictionary = {}) -> int:
 	var w := GameState.world
-	var p := GameState.player
+	if p.is_empty(): p=GameState.player
 	if w.is_empty() or p.is_empty():
 		return 0
 	var v := 0.0
@@ -170,6 +226,7 @@ func possessions_value() -> int:
 	var v := 0
 	for it in GameState.player.get("possessions", []):
 		v += int(it["value"])
+	for it in GameState.player.get("journey",{}).get("collection",{}).get("items",[]): v+=int(it.get("value",0))
 	return v
 
 
@@ -189,6 +246,15 @@ static func fmt_price(v: float) -> String:
 
 # ---------------------------------------------------------------- actions
 
+## Internal account movements belong in the household ledger, but are not bills.
+## Positive amounts leave cash for another owned account; negative amounts return.
+func record_transfer(name: String, amount: int) -> void:
+	if amount==0: return
+	var ledger: Dictionary=GameState.player.get("household_ledger",{})
+	if int(ledger.get("year",-1))!=GameState.year_now(): return
+	if not ledger.has("transfers"): ledger["transfers"]={}
+	ledger["transfers"][name]=int(ledger["transfers"].get(name,0))+amount
+
 func deposit(amount: int) -> void:
 	var p := GameState.player
 	amount = mini(amount, int(p["money"]))
@@ -197,6 +263,7 @@ func deposit(amount: int) -> void:
 		return
 	p["money"] = int(p["money"]) - amount
 	p["savings"] = int(p["savings"]) + amount
+	record_transfer("Personal savings",amount)
 	EventEngine.push_info("🏦", "Savings", "I deposited %s into savings. It earns 2.5%% a year." % GameState.fmt_money(amount))
 
 
@@ -207,10 +274,13 @@ func withdraw(amount: int) -> void:
 		return
 	p["savings"] = int(p["savings"]) - amount
 	p["money"] = int(p["money"]) + amount
+	record_transfer("Personal savings",-amount)
 	EventEngine.push_info("🏦", "Savings", "I withdrew %s from savings." % GameState.fmt_money(amount))
 
 
 func buy(kind: String, sym: String, dollars: int) -> void:
+	ensure_market()
+	if dollars <= 0 or not (STOCKS if kind == "stock" else CRYPTO).has(sym) or not kind in ["stock", "crypto"]: return
 	var p := GameState.player
 	if int(p["age"]) < 18:
 		EventEngine.push_info("📈", "Investing", "You need to be 18 to open a brokerage account.")
@@ -228,15 +298,23 @@ func buy(kind: String, sym: String, dollars: int) -> void:
 
 
 func sell_all(kind: String, sym: String) -> void:
+	sell_fraction(kind, sym, 1.0)
+
+
+func sell_fraction(kind: String, sym: String, fraction: float) -> void:
+	ensure_market()
+	if not kind in ["stock", "crypto"] or fraction <= 0.0 or fraction > 1.0 or not (STOCKS if kind == "stock" else CRYPTO).has(sym): return
 	var p := GameState.player
 	var table: Dictionary = p["stocks" if kind == "stock" else "crypto"]
 	if not table.has(sym):
 		return
-	var value := holding_value(kind, sym)
-	table.erase(sym)
+	var units := float(table[sym]) * fraction
+	var value := int(units * float(GameState.world["stocks" if kind == "stock" else "crypto"][sym]))
+	if fraction == 1.0: table.erase(sym)
+	else: table[sym] = float(table[sym]) - units
 	p["money"] = int(p["money"]) + value
 	var nm: String = (STOCKS if kind == "stock" else CRYPTO)[sym]["name"]
-	EventEngine.push_info("💵", nm, "I sold all my %s for %s." % [nm, GameState.fmt_money(value)])
+	EventEngine.push_info("💵", nm, "I sold %d%% of my %s for %s." % [int(fraction * 100.0), nm, GameState.fmt_money(value)])
 
 
 func listings() -> Array:
@@ -281,6 +359,7 @@ func buy_property(idx: int) -> void:
 
 
 func find_tenant(pr: Dictionary, announce: bool = true) -> void:
+	if Holdings.is_primary(pr): return
 	if int(pr["rent"]) <= 0:
 		if announce:
 			EventEngine.push_info(str(pr.get("emoji", "🏠")), pr["type"], "This isn't a rental. Enjoy it yourself.")
@@ -334,6 +413,8 @@ func evict(pr: Dictionary) -> void:
 
 func sell_property(idx: int) -> void:
 	var p := GameState.player
+	if idx<0 or idx>=p["properties"].size(): return
+	var primary := Holdings.primary_index()
 	var pr: Dictionary = p["properties"][idx]
 	var price := int(int(pr["value"]) * randf_range(0.92, 1.12))
 	var tid: String = pr.get("tenant", "")
@@ -341,6 +422,9 @@ func sell_property(idx: int) -> void:
 		GameState.npcs[tid]["relation"] = "former_tenant"
 	p["money"] = int(p["money"]) + price
 	p["properties"].remove_at(idx)
+	if primary==idx:
+		p["housing"]="apartment"; p["house_value"]=0; p["home"]={}; p.erase("house_uid"); p.erase("house_model")
+	elif primary>idx: p["home"]["primary_property"]=primary-1
 	GameState.add_log("I sold my %s for %s." % [pr["type"].to_lower(), GameState.fmt_money(price)])
 	EventEngine.push_info("💲", "Property sold", "I sold my %s for %s." % [pr["type"].to_lower(), GameState.fmt_money(price)])
 

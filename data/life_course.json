@@ -1,0 +1,3266 @@
+[
+ {
+  "id": "_course_baby_0",
+  "min": 0,
+  "max": 1,
+  "icon": "📖",
+  "title": "A familiar voice",
+  "text": "A voice I knew reached me through a room full of noise.",
+  "choices": [
+   {
+    "label": "Reach toward the voice",
+    "outcomes": [
+     {
+      "text": "Reach toward the voice.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Listen quietly",
+    "outcomes": [
+     {
+      "text": "Listen quietly.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_baby_1",
+  "min": 0,
+  "max": 1,
+  "icon": "📖",
+  "title": "The disappearing face",
+  "text": "Someone hid their face behind their hands. Apparently this was top-tier comedy.",
+  "choices": [
+   {
+    "label": "Join the giggles",
+    "outcomes": [
+     {
+      "text": "Join the giggles.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Study the mystery",
+    "outcomes": [
+     {
+      "text": "Study the mystery.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_baby_2",
+  "min": 0,
+  "max": 1,
+  "icon": "📖",
+  "title": "A stubborn sock",
+  "text": "One sock escaped again. My feet were winning their first argument with clothing.",
+  "choices": [
+   {
+    "label": "Kick triumphantly",
+    "outcomes": [
+     {
+      "text": "Kick triumphantly.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let someone put it back",
+    "outcomes": [
+     {
+      "text": "Let someone put it back.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_baby_3",
+  "min": 0,
+  "max": 1,
+  "icon": "📖",
+  "title": "A new texture",
+  "text": "A soft cloth and a crinkly toy were equally important scientific discoveries.",
+  "choices": [
+   {
+    "label": "Explore the toy",
+    "outcomes": [
+     {
+      "text": "Explore the toy.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the familiar cloth",
+    "outcomes": [
+     {
+      "text": "Keep the familiar cloth.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_baby_4",
+  "min": 0,
+  "max": 1,
+  "icon": "📖",
+  "title": "The great nap debate",
+  "text": "I was tired. I was also absolutely certain I had more urgent business.",
+  "choices": [
+   {
+    "label": "Settle into a cuddle",
+    "outcomes": [
+     {
+      "text": "Settle into a cuddle.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Watch the room a little longer",
+    "outcomes": [
+     {
+      "text": "Watch the room a little longer.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_baby_5",
+  "min": 0,
+  "max": 1,
+  "icon": "📖",
+  "title": "Tiny orchestra",
+  "text": "A rattle made noise whenever I moved it. My first concert had no interval.",
+  "choices": [
+   {
+    "label": "Shake along",
+    "outcomes": [
+     {
+      "text": "Shake along.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Listen to someone sing",
+    "outcomes": [
+     {
+      "text": "Listen to someone sing.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_toddler_0",
+  "min": 2,
+  "max": 4,
+  "icon": "📖",
+  "title": "Mine, apparently",
+  "text": "I claimed a toy so passionately that another child began to cry.",
+  "choices": [
+   {
+    "label": "Take turns with help",
+    "outcomes": [
+     {
+      "text": "Take turns with help.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Choose another toy",
+    "outcomes": [
+     {
+      "text": "Choose another toy.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_toddler_1",
+  "min": 2,
+  "max": 4,
+  "icon": "📖",
+  "title": "The puddle expedition",
+  "text": "A puddle looked much more interesting than the path around it.",
+  "choices": [
+   {
+    "label": "Explore with a grown-up",
+    "outcomes": [
+     {
+      "text": "Explore with a grown-up.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Inspect it from dry ground",
+    "outcomes": [
+     {
+      "text": "Inspect it from dry ground.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_toddler_2",
+  "min": 2,
+  "max": 4,
+  "icon": "📖",
+  "title": "A towering problem",
+  "text": "My block tower collapsed. The blocks declined to apologize.",
+  "choices": [
+   {
+    "label": "Build a wider base",
+    "outcomes": [
+     {
+      "text": "Build a wider base.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try a smaller tower",
+    "outcomes": [
+     {
+      "text": "Try a smaller tower.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_toddler_3",
+  "min": 2,
+  "max": 4,
+  "icon": "📖",
+  "title": "No means something",
+  "text": "I discovered the power of saying no. The adults seemed already familiar with it.",
+  "choices": [
+   {
+    "label": "Explain with a few words",
+    "outcomes": [
+     {
+      "text": "Explain with a few words.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Accept help calming down",
+    "outcomes": [
+     {
+      "text": "Accept help calming down.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_toddler_4",
+  "min": 2,
+  "max": 4,
+  "icon": "📖",
+  "title": "The bedtime invention",
+  "text": "I invented an extra bedtime ritual and lobbied for its immediate adoption.",
+  "choices": [
+   {
+    "label": "Ask for a story",
+    "outcomes": [
+     {
+      "text": "Ask for a story.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Choose a comforting routine",
+    "outcomes": [
+     {
+      "text": "Choose a comforting routine.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_toddler_5",
+  "min": 2,
+  "max": 4,
+  "icon": "📖",
+  "title": "A new caregiver",
+  "text": "Someone unfamiliar was looking after me while my usual grown-up was away.",
+  "choices": [
+   {
+    "label": "Show them my favorite toy",
+    "outcomes": [
+     {
+      "text": "Show them my favorite toy.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Stay close until comfortable",
+    "outcomes": [
+     {
+      "text": "Stay close until comfortable.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_0",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "The playground rule",
+  "text": "A playground game had a rule nobody could explain clearly.",
+  "choices": [
+   {
+    "label": "Ask everyone to agree",
+    "outcomes": [
+     {
+      "text": "Ask everyone to agree.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invent a simpler game",
+    "outcomes": [
+     {
+      "text": "Invent a simpler game.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_1",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "A library card",
+  "text": "A library shelf held more worlds than I could carry home.",
+  "choices": [
+   {
+    "label": "Pick a challenging book",
+    "outcomes": [
+     {
+      "text": "Pick a challenging book.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Choose a book to share",
+    "outcomes": [
+     {
+      "text": "Choose a book to share.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_2",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "Shoelace diplomacy",
+  "text": "My shoes and their laces had developed a complicated relationship.",
+  "choices": [
+   {
+    "label": "Practice patiently",
+    "outcomes": [
+     {
+      "text": "Practice patiently.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask someone to show me again",
+    "outcomes": [
+     {
+      "text": "Ask someone to show me again.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_3",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "The lunchbox swap",
+  "text": "Someone offered to swap lunches. Neither of us was a qualified negotiator.",
+  "choices": [
+   {
+    "label": "Share a little",
+    "outcomes": [
+     {
+      "text": "Share a little.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep my lunch politely",
+    "outcomes": [
+     {
+      "text": "Keep my lunch politely.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_4",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "An imaginary shop",
+  "text": "We opened a pretend shop with very real arguments about prices.",
+  "choices": [
+   {
+    "label": "Keep the pretend accounts",
+    "outcomes": [
+     {
+      "text": "Keep the pretend accounts.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Design the window display",
+    "outcomes": [
+     {
+      "text": "Design the window display.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_5",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "A classroom question",
+  "text": "I had a question but worried everyone else already knew the answer.",
+  "choices": [
+   {
+    "label": "Raise my hand",
+    "outcomes": [
+     {
+      "text": "Raise my hand.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask after the lesson",
+    "outcomes": [
+     {
+      "text": "Ask after the lesson.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_6",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "A rainy afternoon",
+  "text": "Outdoor plans fell through and the afternoon stretched ahead.",
+  "choices": [
+   {
+    "label": "Make an indoor obstacle course",
+    "outcomes": [
+     {
+      "text": "Make an indoor obstacle course.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Draw a strange new creature",
+    "outcomes": [
+     {
+      "text": "Draw a strange new creature.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_early_7",
+  "min": 5,
+  "max": 8,
+  "icon": "📖",
+  "title": "Being the new kid",
+  "text": "A new child stood alone while everyone else rushed to play.",
+  "choices": [
+   {
+    "label": "Invite them over",
+    "outcomes": [
+     {
+      "text": "Invite them over.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask what they like first",
+    "outcomes": [
+     {
+      "text": "Ask what they like first.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_0",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "The group project",
+  "text": "Our project had four names on it and only one person doing the work.",
+  "choices": [
+   {
+    "label": "Agree on smaller tasks",
+    "outcomes": [
+     {
+      "text": "Agree on smaller tasks.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask the teacher for guidance",
+    "outcomes": [
+     {
+      "text": "Ask the teacher for guidance.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_1",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "A club tryout",
+  "text": "A club opened tryouts. Enthusiasm and experience were not the same thing.",
+  "choices": [
+   {
+    "label": "Try and learn from it",
+    "outcomes": [
+     {
+      "text": "Try and learn from it.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Practice before next time",
+    "outcomes": [
+     {
+      "text": "Practice before next time.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_2",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "Pocket-money planning",
+  "text": "My pocket money could buy one exciting thing or several useful ones.",
+  "choices": [
+   {
+    "label": "Save toward the big thing",
+    "outcomes": [
+     {
+      "text": "Save toward the big thing.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a small spending plan",
+    "outcomes": [
+     {
+      "text": "Make a small spending plan.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_3",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "A changing friendship",
+  "text": "My closest friend wanted to spend more time with someone else.",
+  "choices": [
+   {
+    "label": "Talk about how it feels",
+    "outcomes": [
+     {
+      "text": "Talk about how it feels.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make space for other friendships",
+    "outcomes": [
+     {
+      "text": "Make space for other friendships.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_4",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "The science fair",
+  "text": "My experiment produced an unexpected result and a surprisingly sticky table.",
+  "choices": [
+   {
+    "label": "Explain what happened honestly",
+    "outcomes": [
+     {
+      "text": "Explain what happened honestly.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Repeat a smaller experiment",
+    "outcomes": [
+     {
+      "text": "Repeat a smaller experiment.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_5",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "The school photo",
+  "text": "Everyone had opinions about the school photo. Mine included a difficult fringe.",
+  "choices": [
+   {
+    "label": "Laugh about it",
+    "outcomes": [
+     {
+      "text": "Laugh about it.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it as a time capsule",
+    "outcomes": [
+     {
+      "text": "Keep it as a time capsule.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_6",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "A family expectation",
+  "text": "Someone assumed I would love an activity because they loved it.",
+  "choices": [
+   {
+    "label": "Say what interests me",
+    "outcomes": [
+     {
+      "text": "Say what interests me.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give it a fair trial",
+    "outcomes": [
+     {
+      "text": "Give it a fair trial.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_preteen_7",
+  "min": 9,
+  "max": 12,
+  "icon": "📖",
+  "title": "The first online boundary",
+  "text": "A stranger wanted to know more about me online.",
+  "choices": [
+   {
+    "label": "Ask a trusted adult",
+    "outcomes": [
+     {
+      "text": "Ask a trusted adult.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep my details private",
+    "outcomes": [
+     {
+      "text": "Keep my details private.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_0",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "Exam week",
+  "text": "Revision, sleep and seeing friends all competed for the same evenings.",
+  "choices": [
+   {
+    "label": "Build a manageable revision plan",
+    "outcomes": [
+     {
+      "text": "Build a manageable revision plan.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Protect sleep and ask for help",
+    "outcomes": [
+     {
+      "text": "Protect sleep and ask for help.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_1",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "A rumor in the corridor",
+  "text": "A rumor spread faster than the truth could walk.",
+  "choices": [
+   {
+    "label": "Challenge it calmly",
+    "outcomes": [
+     {
+      "text": "Challenge it calmly.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Check in privately with its target",
+    "outcomes": [
+     {
+      "text": "Check in privately with its target.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_2",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "A first responsibility",
+  "text": "I was trusted with an important errand and a very specific list.",
+  "choices": [
+   {
+    "label": "Plan the route carefully",
+    "outcomes": [
+     {
+      "text": "Plan the route carefully.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask about the unclear parts",
+    "outcomes": [
+     {
+      "text": "Ask about the unclear parts.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_3",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "Trying a new look",
+  "text": "A new look felt exciting until I imagined everyone's reaction.",
+  "choices": [
+   {
+    "label": "Wear it confidently",
+    "outcomes": [
+     {
+      "text": "Wear it confidently.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try it with trusted friends first",
+    "outcomes": [
+     {
+      "text": "Try it with trusted friends first.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_4",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "The team setback",
+  "text": "Our team lost badly. Nobody wanted to discuss practice.",
+  "choices": [
+   {
+    "label": "Suggest one thing to improve",
+    "outcomes": [
+     {
+      "text": "Suggest one thing to improve.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give everyone a breather",
+    "outcomes": [
+     {
+      "text": "Give everyone a breather.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_5",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "The future form",
+  "text": "A form asked what I wanted to be. It left little space for uncertainty.",
+  "choices": [
+   {
+    "label": "Explore several routes",
+    "outcomes": [
+     {
+      "text": "Explore several routes.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Talk to someone doing the work",
+    "outcomes": [
+     {
+      "text": "Talk to someone doing the work.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_6",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "A friend under pressure",
+  "text": "A friend was carrying more pressure than they wanted to admit.",
+  "choices": [
+   {
+    "label": "Listen without fixing everything",
+    "outcomes": [
+     {
+      "text": "Listen without fixing everything.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help them find trusted support",
+    "outcomes": [
+     {
+      "text": "Help them find trusted support.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_teen_7",
+  "min": 13,
+  "max": 17,
+  "icon": "📖",
+  "title": "The quiet weekend",
+  "text": "Everyone seemed to have enormous weekend plans except me.",
+  "choices": [
+   {
+    "label": "Make a small plan I actually like",
+    "outcomes": [
+     {
+      "text": "Make a small plan I actually like.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Enjoy a proper quiet break",
+    "outcomes": [
+     {
+      "text": "Enjoy a proper quiet break.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_0",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "The first grocery budget",
+  "text": "Independence included discovering that groceries did not buy themselves.",
+  "choices": [
+   {
+    "label": "Plan inexpensive meals",
+    "outcomes": [
+     {
+      "text": "Plan inexpensive meals.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Learn a few flexible recipes",
+    "outcomes": [
+     {
+      "text": "Learn a few flexible recipes.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_1",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "A shared kitchen",
+  "text": "The shared kitchen had become an archaeological site of unwashed mugs.",
+  "choices": [
+   {
+    "label": "Agree on a practical rota",
+    "outcomes": [
+     {
+      "text": "Agree on a practical rota.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Clean my part and start a calm conversation",
+    "outcomes": [
+     {
+      "text": "Clean my part and start a calm conversation.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_2",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "A possible mentor",
+  "text": "Someone offered useful advice without pretending my life was theirs.",
+  "choices": [
+   {
+    "label": "Ask specific questions",
+    "outcomes": [
+     {
+      "text": "Ask specific questions.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try one suggestion and reflect",
+    "outcomes": [
+     {
+      "text": "Try one suggestion and reflect.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_3",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "The deposit dilemma",
+  "text": "A tempting opportunity needed money upfront and vague promises afterward.",
+  "choices": [
+   {
+    "label": "Read every condition",
+    "outcomes": [
+     {
+      "text": "Read every condition.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Walk away until I understand it",
+    "outcomes": [
+     {
+      "text": "Walk away until I understand it.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_4",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "An old school reunion",
+  "text": "People from school seemed both familiar and unexpectedly different.",
+  "choices": [
+   {
+    "label": "Ask about their lives now",
+    "outcomes": [
+     {
+      "text": "Ask about their lives now.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep the visit brief and warm",
+    "outcomes": [
+     {
+      "text": "Keep the visit brief and warm.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_5",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "A different city",
+  "text": "A city visit made my current routine feel smaller than usual.",
+  "choices": [
+   {
+    "label": "Research a realistic move",
+    "outcomes": [
+     {
+      "text": "Research a realistic move.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Bring one new idea home",
+    "outcomes": [
+     {
+      "text": "Bring one new idea home.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_6",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "A first professional mistake",
+  "text": "I made a mistake in a responsibility I had worked hard to earn.",
+  "choices": [
+   {
+    "label": "Own it and propose a fix",
+    "outcomes": [
+     {
+      "text": "Own it and propose a fix.",
+      "effects": {
+       "smarts": 1,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for help before it grows",
+    "outcomes": [
+     {
+      "text": "Ask for help before it grows.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_young_7",
+  "min": 18,
+  "max": 24,
+  "icon": "📖",
+  "title": "The overfull calendar",
+  "text": "I had said yes so often that my calendar no longer resembled my intentions.",
+  "choices": [
+   {
+    "label": "Cancel one commitment kindly",
+    "outcomes": [
+     {
+      "text": "Cancel one commitment kindly.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Plan a quieter next week",
+    "outcomes": [
+     {
+      "text": "Plan a quieter next week.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_0",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A practical repair",
+  "text": "Something ordinary broke at exactly the least convenient time.",
+  "choices": [
+   {
+    "label": "Learn a safe basic fix",
+    "outcomes": [
+     {
+      "text": "Learn a safe basic fix.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Budget for qualified help",
+    "outcomes": [
+     {
+      "text": "Budget for qualified help.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_1",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A friendship appointment",
+  "text": "Catching up now required planning instead of simply appearing.",
+  "choices": [
+   {
+    "label": "Arrange a regular low-cost meetup",
+    "outcomes": [
+     {
+      "text": "Arrange a regular low-cost meetup.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a thoughtful message today",
+    "outcomes": [
+     {
+      "text": "Send a thoughtful message today.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_2",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "The tempting subscription",
+  "text": "A free trial quietly became another annual expense.",
+  "choices": [
+   {
+    "label": "Review recurring bills",
+    "outcomes": [
+     {
+      "text": "Review recurring bills.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep only the service I use",
+    "outcomes": [
+     {
+      "text": "Keep only the service I use.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_3",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A community invitation",
+  "text": "A local project needed people who could show up consistently.",
+  "choices": [
+   {
+    "label": "Offer a manageable commitment",
+    "outcomes": [
+     {
+      "text": "Offer a manageable commitment.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help once without promising too much",
+    "outcomes": [
+     {
+      "text": "Help once without promising too much.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_4",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A private ambition",
+  "text": "An old ambition returned while I was doing something very mundane.",
+  "choices": [
+   {
+    "label": "Take one practical first step",
+    "outcomes": [
+     {
+      "text": "Take one practical first step.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Research it before committing",
+    "outcomes": [
+     {
+      "text": "Research it before committing.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_5",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A complicated apology",
+  "text": "I owed an apology but kept rehearsing an explanation instead.",
+  "choices": [
+   {
+    "label": "Apologize plainly",
+    "outcomes": [
+     {
+      "text": "Apologize plainly.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write it carefully before talking",
+    "outcomes": [
+     {
+      "text": "Write it carefully before talking.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_6",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "The energy budget",
+  "text": "I could finish everything or feel reasonably human. Apparently both was ambitious.",
+  "choices": [
+   {
+    "label": "Protect one restful evening",
+    "outcomes": [
+     {
+      "text": "Protect one restful evening.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Rearrange the least urgent task",
+    "outcomes": [
+     {
+      "text": "Rearrange the least urgent task.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_7",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A skill outside work",
+  "text": "A class promised the pleasure of being a beginner again.",
+  "choices": [
+   {
+    "label": "Join and accept being awkward",
+    "outcomes": [
+     {
+      "text": "Join and accept being awkward.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Borrow equipment and try at home",
+    "outcomes": [
+     {
+      "text": "Borrow equipment and try at home.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_8",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "The comparison trap",
+  "text": "Someone else's highlight reel made my ordinary day feel inadequate.",
+  "choices": [
+   {
+    "label": "Notice what matters in my own life",
+    "outcomes": [
+     {
+      "text": "Notice what matters in my own life.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take a break from scrolling",
+    "outcomes": [
+     {
+      "text": "Take a break from scrolling.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_adult_9",
+  "min": 25,
+  "max": 39,
+  "icon": "📖",
+  "title": "A long conversation",
+  "text": "A conversation with someone older changed how I understood an old family story.",
+  "choices": [
+   {
+    "label": "Ask thoughtful questions",
+    "outcomes": [
+     {
+      "text": "Ask thoughtful questions.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write down what I learned",
+    "outcomes": [
+     {
+      "text": "Write down what I learned.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_0",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "A changing priority",
+  "text": "A goal I once chased no longer felt like mine.",
+  "choices": [
+   {
+    "label": "Choose a smaller meaningful direction",
+    "outcomes": [
+     {
+      "text": "Choose a smaller meaningful direction.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Give myself time before deciding",
+    "outcomes": [
+     {
+      "text": "Give myself time before deciding.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_1",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "The practical check-in",
+  "text": "My habits had drifted while responsibilities accumulated.",
+  "choices": [
+   {
+    "label": "Review sleep and movement",
+    "outcomes": [
+     {
+      "text": "Review sleep and movement.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Schedule a routine health check",
+    "outcomes": [
+     {
+      "text": "Schedule a routine health check.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_2",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "A younger person's question",
+  "text": "A younger person asked how I had figured everything out. An optimistic assumption.",
+  "choices": [
+   {
+    "label": "Share a useful mistake",
+    "outcomes": [
+     {
+      "text": "Share a useful mistake.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Listen to what they actually need",
+    "outcomes": [
+     {
+      "text": "Listen to what they actually need.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_3",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "The project drawer",
+  "text": "An unfinished personal project waited in a drawer.",
+  "choices": [
+   {
+    "label": "Finish a small useful part",
+    "outcomes": [
+     {
+      "text": "Finish a small useful part.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Release it without guilt",
+    "outcomes": [
+     {
+      "text": "Release it without guilt.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_4",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "A difficult boundary",
+  "text": "Someone treated my availability as unlimited.",
+  "choices": [
+   {
+    "label": "Set a clear kind boundary",
+    "outcomes": [
+     {
+      "text": "Set a clear kind boundary.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer one realistic alternative",
+    "outcomes": [
+     {
+      "text": "Offer one realistic alternative.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_5",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "A household reset",
+  "text": "Things owned for years were taking more space than usefulness.",
+  "choices": [
+   {
+    "label": "Sort one room thoughtfully",
+    "outcomes": [
+     {
+      "text": "Sort one room thoughtfully.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Repair what still serves me",
+    "outcomes": [
+     {
+      "text": "Repair what still serves me.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_6",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "An unexpected invitation",
+  "text": "I was invited to something outside my usual crowd.",
+  "choices": [
+   {
+    "label": "Go with an open mind",
+    "outcomes": [
+     {
+      "text": "Go with an open mind.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Suggest a smaller meeting first",
+    "outcomes": [
+     {
+      "text": "Suggest a smaller meeting first.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_7",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "A physical hobby",
+  "text": "A physical hobby appealed to me more than another evening on the sofa.",
+  "choices": [
+   {
+    "label": "Start gently and build up",
+    "outcomes": [
+     {
+      "text": "Start gently and build up.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask about an adapted version",
+    "outcomes": [
+     {
+      "text": "Ask about an adapted version.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_8",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "Learning differently",
+  "text": "An old learning method wasn't working for a new challenge.",
+  "choices": [
+   {
+    "label": "Try a practical demonstration",
+    "outcomes": [
+     {
+      "text": "Try a practical demonstration.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Break the subject into small sessions",
+    "outcomes": [
+     {
+      "text": "Break the subject into small sessions.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_middle_9",
+  "min": 40,
+  "max": 54,
+  "icon": "📖",
+  "title": "A familiar place changed",
+  "text": "A familiar neighborhood had changed while I was busy living elsewhere.",
+  "choices": [
+   {
+    "label": "Explore what is there now",
+    "outcomes": [
+     {
+      "text": "Explore what is there now.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Reconnect with one old acquaintance",
+    "outcomes": [
+     {
+      "text": "Reconnect with one old acquaintance.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_0",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "The next chapter budget",
+  "text": "A quieter future required numbers, not just a nice mental picture.",
+  "choices": [
+   {
+    "label": "Review savings and ongoing costs",
+    "outcomes": [
+     {
+      "text": "Review savings and ongoing costs.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Seek a realistic planning conversation",
+    "outcomes": [
+     {
+      "text": "Seek a realistic planning conversation.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_1",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "A care conversation",
+  "text": "Someone close needed support, but everyone's assumptions differed.",
+  "choices": [
+   {
+    "label": "Discuss what help is actually wanted",
+    "outcomes": [
+     {
+      "text": "Discuss what help is actually wanted.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Set a manageable support schedule",
+    "outcomes": [
+     {
+      "text": "Set a manageable support schedule.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_2",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "An old skill returned",
+  "text": "A skill I hadn't used in years returned more quickly than expected.",
+  "choices": [
+   {
+    "label": "Practice for enjoyment",
+    "outcomes": [
+     {
+      "text": "Practice for enjoyment.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share it with a beginner",
+    "outcomes": [
+     {
+      "text": "Share it with a beginner.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_3",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "A comfortable pace",
+  "text": "I noticed I enjoyed an activity more when I stopped rushing it.",
+  "choices": [
+   {
+    "label": "Choose a sustainable pace",
+    "outcomes": [
+     {
+      "text": "Choose a sustainable pace.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try a shorter version more often",
+    "outcomes": [
+     {
+      "text": "Try a shorter version more often.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_4",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "A work-life question",
+  "text": "People asked what came next as if a single answer was compulsory.",
+  "choices": [
+   {
+    "label": "Explore flexible options",
+    "outcomes": [
+     {
+      "text": "Explore flexible options.",
+      "effects": {
+       "smarts": 1,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Say I'm still considering it",
+    "outcomes": [
+     {
+      "text": "Say I'm still considering it.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_5",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "The folder of memories",
+  "text": "A box of papers held both important records and very old receipts.",
+  "choices": [
+   {
+    "label": "Organize what others may need",
+    "outcomes": [
+     {
+      "text": "Organize what others may need.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a small memory album",
+    "outcomes": [
+     {
+      "text": "Make a small memory album.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_6",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "A new local routine",
+  "text": "A small local routine made the week feel less anonymous.",
+  "choices": [
+   {
+    "label": "Become a regular",
+    "outcomes": [
+     {
+      "text": "Become a regular.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invite someone to join occasionally",
+    "outcomes": [
+     {
+      "text": "Invite someone to join occasionally.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_later_7",
+  "min": 55,
+  "max": 64,
+  "icon": "📖",
+  "title": "Making room",
+  "text": "I wanted space for an interest that had always lost to responsibilities.",
+  "choices": [
+   {
+    "label": "Protect a weekly hour",
+    "outcomes": [
+     {
+      "text": "Protect a weekly hour.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Try a short course first",
+    "outcomes": [
+     {
+      "text": "Try a short course first.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_0",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "An unhurried morning",
+  "text": "A morning without immediate demands felt unfamiliar.",
+  "choices": [
+   {
+    "label": "Create a pleasant small routine",
+    "outcomes": [
+     {
+      "text": "Create a pleasant small routine.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Leave it delightfully unplanned",
+    "outcomes": [
+     {
+      "text": "Leave it delightfully unplanned.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_1",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "The useful experience",
+  "text": "A community group could use something I had learned over many years.",
+  "choices": [
+   {
+    "label": "Volunteer at a sustainable pace",
+    "outcomes": [
+     {
+      "text": "Volunteer at a sustainable pace.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer advice without taking over",
+    "outcomes": [
+     {
+      "text": "Offer advice without taking over.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_2",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A travel adjustment",
+  "text": "A trip looked appealing, but the old pace looked exhausting.",
+  "choices": [
+   {
+    "label": "Plan a comfortable version",
+    "outcomes": [
+     {
+      "text": "Plan a comfortable version.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Explore somewhere nearer",
+    "outcomes": [
+     {
+      "text": "Explore somewhere nearer.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_3",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A family recipe",
+  "text": "Someone asked for a recipe I had always made from memory.",
+  "choices": [
+   {
+    "label": "Write down the actual steps",
+    "outcomes": [
+     {
+      "text": "Write down the actual steps.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Cook it together",
+    "outcomes": [
+     {
+      "text": "Cook it together.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_4",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "The paperwork afternoon",
+  "text": "Important paperwork had become a collection of different-colored folders.",
+  "choices": [
+   {
+    "label": "Put key records in one place",
+    "outcomes": [
+     {
+      "text": "Put key records in one place.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask someone trusted to help organize",
+    "outcomes": [
+     {
+      "text": "Ask someone trusted to help organize.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_5",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A different friendship",
+  "text": "A new friendship grew around an unexpectedly shared interest.",
+  "choices": [
+   {
+    "label": "Arrange another meeting",
+    "outcomes": [
+     {
+      "text": "Arrange another meeting.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep enjoying the shared activity",
+    "outcomes": [
+     {
+      "text": "Keep enjoying the shared activity.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_6",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A meaningful keepsake",
+  "text": "A keepsake mattered far more than its price.",
+  "choices": [
+   {
+    "label": "Record its story",
+    "outcomes": [
+     {
+      "text": "Record its story.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share why it matters with someone",
+    "outcomes": [
+     {
+      "text": "Share why it matters with someone.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_7",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A routine checkup",
+  "text": "A routine checkup reminded me that feeling well and checking in both matter.",
+  "choices": [
+   {
+    "label": "Ask clear questions",
+    "outcomes": [
+     {
+      "text": "Ask clear questions.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Follow up on the practical advice",
+    "outcomes": [
+     {
+      "text": "Follow up on the practical advice.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_8",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A small celebration",
+  "text": "A modest achievement deserved a celebration despite having no official certificate.",
+  "choices": [
+   {
+    "label": "Invite a few people",
+    "outcomes": [
+     {
+      "text": "Invite a few people.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Mark it quietly in my own way",
+    "outcomes": [
+     {
+      "text": "Mark it quietly in my own way.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_senior_9",
+  "min": 65,
+  "max": 79,
+  "icon": "📖",
+  "title": "A new technology",
+  "text": "A new service promised convenience after several screens of inconvenience.",
+  "choices": [
+   {
+    "label": "Learn it one step at a time",
+    "outcomes": [
+     {
+      "text": "Learn it one step at a time.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for a patient demonstration",
+    "outcomes": [
+     {
+      "text": "Ask for a patient demonstration.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_0",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "The preferred pace",
+  "text": "Other people kept choosing a pace for me without asking.",
+  "choices": [
+   {
+    "label": "Explain what works for me",
+    "outcomes": [
+     {
+      "text": "Explain what works for me.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Suggest a shorter shared activity",
+    "outcomes": [
+     {
+      "text": "Suggest a shorter shared activity.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_1",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "A memory worth keeping",
+  "text": "A memory returned with a detail I hadn't considered in years.",
+  "choices": [
+   {
+    "label": "Record the story in my own words",
+    "outcomes": [
+     {
+      "text": "Record the story in my own words.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Tell it to someone who asks",
+    "outcomes": [
+     {
+      "text": "Tell it to someone who asks.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_2",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "A helpful adaptation",
+  "text": "A small change could make a familiar activity easier.",
+  "choices": [
+   {
+    "label": "Try the practical adaptation",
+    "outcomes": [
+     {
+      "text": "Try the practical adaptation.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask for alternatives before choosing",
+    "outcomes": [
+     {
+      "text": "Ask for alternatives before choosing.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_3",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "A familiar voice",
+  "text": "A familiar voice on the phone made an ordinary day feel larger.",
+  "choices": [
+   {
+    "label": "Arrange a regular conversation",
+    "outcomes": [
+     {
+      "text": "Arrange a regular conversation.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Send a note about what it meant",
+    "outcomes": [
+     {
+      "text": "Send a note about what it meant.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_4",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "The unfinished list",
+  "text": "My old list contained both meaningful wishes and someone else's expectations.",
+  "choices": [
+   {
+    "label": "Choose one meaningful wish",
+    "outcomes": [
+     {
+      "text": "Choose one meaningful wish.",
+      "effects": {
+       "smarts": 2,
+       "stress": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Discard what no longer belongs to me",
+    "outcomes": [
+     {
+      "text": "Discard what no longer belongs to me.",
+      "effects": {
+       "smarts": 1,
+       "stress": -1
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_5",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "A quiet contribution",
+  "text": "A small act could still make someone else's day easier.",
+  "choices": [
+   {
+    "label": "Offer the help I can comfortably give",
+    "outcomes": [
+     {
+      "text": "Offer the help I can comfortably give.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Share useful knowledge instead",
+    "outcomes": [
+     {
+      "text": "Share useful knowledge instead.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_6",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "The garden window",
+  "text": "Life outside the window changed a little each day.",
+  "choices": [
+   {
+    "label": "Follow the changes with interest",
+    "outcomes": [
+     {
+      "text": "Follow the changes with interest.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invite someone to notice them with me",
+    "outcomes": [
+     {
+      "text": "Invite someone to notice them with me.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_7",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "A comfort conversation",
+  "text": "People guessed what would make me comfortable instead of asking.",
+  "choices": [
+   {
+    "label": "State my preferences clearly",
+    "outcomes": [
+     {
+      "text": "State my preferences clearly.",
+      "effects": {
+       "happiness": 3,
+       "stress": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write them down for those helping",
+    "outcomes": [
+     {
+      "text": "Write them down for those helping.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_8",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "An ordinary good day",
+  "text": "Nothing dramatic happened. That was part of what made it good.",
+  "choices": [
+   {
+    "label": "Enjoy a familiar pleasure",
+    "outcomes": [
+     {
+      "text": "Enjoy a familiar pleasure.",
+      "effects": {
+       "health": 2,
+       "stress": -1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Spend time with someone kind",
+    "outcomes": [
+     {
+      "text": "Spend time with someone kind.",
+      "effects": {
+       "health": 1,
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_elder_9",
+  "min": 80,
+  "max": 130,
+  "icon": "📖",
+  "title": "A new page",
+  "text": "Someone assumed I had nothing new left to try.",
+  "choices": [
+   {
+    "label": "Try a small new interest",
+    "outcomes": [
+     {
+      "text": "Try a small new interest.",
+      "effects": {
+       "happiness": 3,
+       "smarts": 1
+      }
+     }
+    ]
+   },
+   {
+    "label": "Show them something they never knew about me",
+    "outcomes": [
+     {
+      "text": "Show them something they never knew about me.",
+      "effects": {
+       "happiness": 2,
+       "stress": -2
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_prison_0",
+  "min": 18,
+  "max": 130,
+  "prison": true,
+  "icon": "📖",
+  "title": "A letter home",
+  "text": "There was room in a letter for something more honest than saying everything was fine.",
+  "choices": [
+   {
+    "label": "Take a thoughtful first step",
+    "outcomes": [
+     {
+      "text": "I used the moment thoughtfully.",
+      "effects": {
+       "smarts": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take time to reflect",
+    "outcomes": [
+     {
+      "text": "I gave myself time to reflect.",
+      "effects": {
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_prison_1",
+  "min": 18,
+  "max": 130,
+  "prison": true,
+  "icon": "📖",
+  "title": "The library cart",
+  "text": "A library cart arrived with a book outside my usual interests.",
+  "choices": [
+   {
+    "label": "Take a thoughtful first step",
+    "outcomes": [
+     {
+      "text": "I used the moment thoughtfully.",
+      "effects": {
+       "smarts": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take time to reflect",
+    "outcomes": [
+     {
+      "text": "I gave myself time to reflect.",
+      "effects": {
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_prison_2",
+  "min": 18,
+  "max": 130,
+  "prison": true,
+  "icon": "📖",
+  "title": "A quieter hour",
+  "text": "A quieter hour offered a chance to choose a useful routine.",
+  "choices": [
+   {
+    "label": "Take a thoughtful first step",
+    "outcomes": [
+     {
+      "text": "I used the moment thoughtfully.",
+      "effects": {
+       "smarts": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take time to reflect",
+    "outcomes": [
+     {
+      "text": "I gave myself time to reflect.",
+      "effects": {
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "_course_prison_3",
+  "min": 18,
+  "max": 130,
+  "prison": true,
+  "icon": "📖",
+  "title": "The next conversation",
+  "text": "I could ask for help without promising that every problem was already solved.",
+  "choices": [
+   {
+    "label": "Take a thoughtful first step",
+    "outcomes": [
+     {
+      "text": "I used the moment thoughtfully.",
+      "effects": {
+       "smarts": 1,
+       "happiness": 2
+      }
+     }
+    ]
+   },
+   {
+    "label": "Take time to reflect",
+    "outcomes": [
+     {
+      "text": "I gave myself time to reflect.",
+      "effects": {
+       "stress": -3
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

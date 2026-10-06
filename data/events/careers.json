@@ -569,7 +569,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1890
  },
  {
   "id": "actor.stunt",
@@ -919,7 +920,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1995
  },
  {
   "id": "music.bandmate_quit",
@@ -1113,7 +1115,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 2004
  },
  {
   "id": "music.festival",
@@ -1203,7 +1206,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1890
  },
  {
   "id": "music.reunion",
@@ -1781,7 +1785,8 @@
    }
   },
   "discard_unkept": true,
-  "weight": 6
+  "weight": 6,
+  "available_from": 2004
  },
  {
   "id": "sport.doping",
@@ -2199,7 +2204,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 1890
  },
  {
   "id": "sport.olympics",
@@ -2318,7 +2324,8 @@
    }
   ],
   "once": true,
-  "weight": 6
+  "weight": 6,
+  "available_from": 1930
  },
  {
   "id": "sport.coach_offer",
@@ -2616,7 +2623,8 @@
     ]
    }
   ],
-  "weight": 6
+  "weight": 6,
+  "available_from": 2004
  },
  {
   "id": "politics.bribe_scandal",

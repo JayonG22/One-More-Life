@@ -131,7 +131,7 @@ const PATHS := {
 	},
 	"casino": {
 		"kind": "empire", "icon": "🎲", "name": "Own a Casino",
-		"blurb": "The house edge is the only guaranteed income in the world.",
+		"blurb": "Run the floor, pay your staff and keep the lights on. Profit is not guaranteed.",
 		"how": "A licence is the hard part, and licences go to people with clean records and deep pockets.",
 		"need": {"age": 21, "money": 2000000, "crimes_max": 0},
 		"odds": 0.45, "cost": 1500000, "time": 5, "empire": "casino",
@@ -167,11 +167,11 @@ const PATHS := {
 	},
 	"luxury": {
 		"kind": "empire", "icon": "🛥️", "name": "The Luxury Life",
-		"blurb": "Not a job. A way of spending the money that makes more of it, mostly.",
+		"blurb": "A private society, new contacts and community grants. Annual dues apply.",
 		"how": "It simply costs a great deal, and it is noticed.",
 		"need": {"age": 21, "money": 5000000},
 		"odds": 0.9, "cost": 2500000, "time": 3, "empire": "luxury",
-		"yes": "The house, the boat and the membership. I have joined something and I am not sure what.",
+		"yes": "The Velvet Society accepted my membership. Gatherings and community grants are open; annual dues apply. Property and boats are separate purchases.",
 		"no": "The broker looked at my accounts properly and politely withdrew.",
 	},
 	"outdoor": {
@@ -229,6 +229,9 @@ func check(id: String) -> Array:
 	var need: Dictionary = d.get("need", {})
 	var lines: Array = []
 	var met := true
+	if (id=="casino" and Ventures.book().has("casino")) or (id=="luxury" and p.has("luxury_club")):
+		met = false
+		lines.append([false, "Already owned or enrolled; manage it under Venues & ventures"])
 
 	for key in need.keys():
 		var want = need[key]
@@ -434,10 +437,12 @@ func _start_empire(which: String) -> void:
 			GameState.add_log("Activities → Travel & Luck → Zoo. The licence is in my name.")
 		"casino":
 			GameState.set_flag("owns_casino")
-			GameState.add_log("The casino is mine. The floor takes its cut every single night.")
+			Ventures.acquire("casino",true)
+			GameState.add_log("Occupation → Business → Venues & ventures opens the casino accounts.")
 		"luxury":
 			GameState.set_flag("luxury_life")
-			GameState.add_log("I live differently now, and everybody can see it.")
+			Ventures.start_luxury()
+			GameState.add_log("The Velvet Society opens under Occupation → Business → Venues & ventures.")
 		"outdoor":
 			GameState.set_flag("outdoor_life")
 			GameState.add_log("I live a long way from anybody now, on purpose.")

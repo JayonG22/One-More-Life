@@ -12,6 +12,26 @@ static func fm() -> int:
 	return Control.FOCUS_ALL if kb_mode else Control.FOCUS_NONE
 
 
+static func amount_row(title: String, available: int, cb: Callable, minimum: int = 1) -> VBoxContainer:
+	var box := vb(6)
+	box.add_child(lbl(title, "Bold", 16, true))
+	var line := hb(8)
+	var amount := SpinBox.new()
+	amount.min_value = minimum
+	amount.max_value = maxi(minimum, mini(available, 1000000000))
+	amount.step = 1
+	amount.value = mini(maxi(minimum, 100), amount.max_value)
+	amount.custom_minimum_size = Vector2(120, 42)
+	amount.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	amount.get_line_edit().tooltip_text = "Enter a whole amount; maximum %s" % GameState.fmt_money(mini(available, 1000000000))
+	line.add_child(amount)
+	var confirm := btn("Confirm", func(): amount.apply(); cb.call(int(amount.value)), "Accent")
+	confirm.disabled = available < minimum
+	line.add_child(confirm)
+	box.add_child(line)
+	return box
+
+
 const STAT_ICONS := {"happiness": "😊", "health": "❤️", "smarts": "🧠", "looks": "✨", "stress": "☁️"}
 const STAT_NAMES := {"happiness": "Happiness", "health": "Health", "smarts": "Smarts", "looks": "Looks", "stress": "Stress"}
 
@@ -171,14 +191,7 @@ static func bar(value: float, color: Color, height: int = 10, width: int = 0) ->
 static func set_bar_color(b: ProgressBar, color: Color) -> void:
 	var s := StyleBoxFlat.new()
 	s.bg_color = color
-	s.set_corner_radius_all(8)
-	s.bg_color = color.darkened(0.12)
-	s.border_color = color.lightened(0.35)
-	s.border_width_top = 2
-	s.set_corner_radius_all(8)
-	s.shadow_color = Color(color.r, color.g, color.b, 0.35)
-	s.shadow_size = 3
-	s.shadow_offset = Vector2(0, 1)
+	s.set_corner_radius_all(3)
 	b.add_theme_stylebox_override("fill", s)
 
 
@@ -191,7 +204,8 @@ static func _ignore_all(n: Node) -> void:
 
 static func row(icon: String, title: String, sub: String, cb: Callable, enabled: bool = true, chevron: bool = true, extra: Control = null) -> Button:
 	var b := Button.new()
-	b.theme_type_variation = "Row"
+	b.theme_type_variation = "NavigationRow" if chevron else "Row"
+	b.set_meta("interaction", "navigation" if chevron else "action")
 	b.focus_mode = UIKit.fm()
 	b.tooltip_text = title if sub == "" else "%s. %s" % [title, sub]
 	b.custom_minimum_size = Vector2(0, 74 if sub != "" or extra != null else 58)
@@ -204,7 +218,13 @@ static func row(icon: String, title: String, sub: String, cb: Callable, enabled:
 	m.add_child(h)
 	# An icon string prefixed with "@" is a drawn vector icon rather than an
 	# emoji, so "@mansion" gets a mansion that looks like one.
-	if icon.begins_with("@") and Icons.has(icon.substr(1)):
+	if icon.begins_with("avatar:") and not GameState.npc(icon.substr(7)).is_empty():
+		var person := GameState.npc(icon.substr(7))
+		var portrait := AvatarView.new()
+		portrait.custom_minimum_size=Vector2(44,44)
+		portrait.setup(Avatar.appearance(person),int(person.get("age",30)),str(person.get("gender","nonbinary")),false,person)
+		var wrap := CenterContainer.new(); wrap.custom_minimum_size=Vector2(44,0); wrap.add_child(portrait); h.add_child(wrap)
+	elif icon.begins_with("@") and Icons.has(icon.substr(1)):
 		var di := Icons.make(icon.substr(1), 38.0)
 		var wrap := CenterContainer.new()
 		wrap.custom_minimum_size = Vector2(44, 0)
@@ -219,22 +239,23 @@ static func row(icon: String, title: String, sub: String, cb: Callable, enabled:
 	var v := vb(2)
 	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	v.alignment = BoxContainer.ALIGNMENT_CENTER
-	var t := lbl(title, "Bold", 19)
-	t.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	var t := lbl(title, "Bold", 19, true)
 	v.add_child(t)
 	if sub != "":
-		var s := lbl(sub, "Dim")
-		s.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		var s := lbl(sub, "Dim", 0, true)
 		v.add_child(s)
 	if extra != null:
 		v.add_child(extra)
 	h.add_child(v)
 	if chevron:
-		var cv := lbl("›", "Dim", 30)
+		var cv := lbl("OPEN  ›", "Dim", 13)
 		cv.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		h.add_child(cv)
 	b.add_child(m)
 	_ignore_all(b)
+	var fit := func(): b.custom_minimum_size.y=maxf(74 if sub!="" or extra!=null else 58,h.get_combined_minimum_size().y+24)
+	v.minimum_size_changed.connect(fit)
+	v.resized.connect(fit)
 	if enabled:
 		b.pressed.connect(func(): UIKit._click(b, "tap"))
 		b.pressed.connect(cb)
@@ -285,6 +306,10 @@ static func npc_face(n: Dictionary) -> String:
 	if not n.get("alive", true):
 		return "😇"
 	return face(n.get("gender", "male"), int(n.get("age", 30)), int(n.get("face", 0)))
+
+static func npc_icon(n: Dictionary) -> String:
+	if n.get("species","human")=="human" and GameState.npcs.has(str(n.get("id",""))): return "avatar:"+str(n["id"])
+	return npc_face(n)
 
 
 static func changes_bbcode(changes: Dictionary) -> String:

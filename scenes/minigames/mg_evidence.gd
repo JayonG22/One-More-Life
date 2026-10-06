@@ -30,7 +30,7 @@ var history: Array = []
 
 func build() -> void:
 	make_status()
-	var title := label("🧩  EVIDENCE BOARD", 30, true)
+	var title := label("🧩  "+str(params.get("title","EVIDENCE BOARD")).to_upper(), 30, true)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	place(title, Vector2(0, 48), Vector2(W, 44))
 	var tip := label("Connect each clue to the strongest defensible inference.  1 / 2 / 3", 17)
@@ -45,7 +45,7 @@ func build() -> void:
 		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		place(b, Vector2(170, 250 + i * 78), Vector2(660, 60))
 		buttons.append(b)
-	deck = CASES.duplicate(true)
+	deck = (params.get("cases",CASES) as Array).duplicate(true)
 	deck.shuffle()
 	deck = deck.slice(0, ROUNDS)
 	_next()
@@ -89,7 +89,7 @@ func _choose(i: int) -> void:
 
 
 func _finish_board() -> void:
-	var accuracy := float(correct) / float(ROUNDS)
+	var accuracy := float(correct) / maxf(1.0,float(deck.size()))
 	var speed_bonus := clampf(time_left / 32.0, 0.0, 1.0) * 0.15
 	var penalty := float(wrong) * 0.025
 	finish(clampf(accuracy * 0.85 + speed_bonus - penalty, 0.0, 1.0), {"correct":correct,"wrong":wrong,"links":history})

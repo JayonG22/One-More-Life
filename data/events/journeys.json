@@ -91,7 +91,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "jn.interview_far",
@@ -449,7 +450,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1995
  },
  {
   "id": "jn.college_open",
@@ -541,7 +543,8 @@
   ],
   "weight": 1.0,
   "cooldown": 12,
-  "once": true
+  "once": true,
+  "available_from": 1995
  },
  {
   "id": "jn.emergency_ride",
@@ -637,7 +640,8 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 12
+  "cooldown": 12,
+  "available_from": 1890
  },
  {
   "id": "jn.rescue_far",
@@ -1081,6 +1085,7 @@
    }
   ],
   "weight": 1.0,
-  "cooldown": 25
+  "cooldown": 25,
+  "available_from": 1890
  }
 ]

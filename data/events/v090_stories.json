@@ -1,0 +1,246 @@
+[
+  {
+    "id": "v090.adult.thirty_calendar",
+    "icon": "🗓️",
+    "title": "One weekend, three plans",
+    "text": "At thirty, three plans land on one weekend. {friend.first} needs a hand, an old group wants to meet, and the quiet afternoon you promised yourself is looking popular.",
+    "conditions": {"age": [30, 30]},
+    "family": "v090.life.age30.social",
+    "themes": ["social", "life"],
+    "choices": [
+      {"label": "Keep my promise to {friend.first}", "outcomes": [{"text": "I helped {friend.first}, and we found time to catch up while the boxes waited.", "weight": 1, "effects": {"happiness": 4, "stress": 2}, "relationship": {"friend": 8}, "schedule": {"event": "v090.adult.thirty_echo", "years": [2, 4]}}]},
+      {"label": "Choose one gathering and say no to the rest", "outcomes": [{"text": "I chose the people I missed most and declined the other plans kindly. The weekend felt like mine again.", "weight": 1, "effects": {"happiness": 3, "stress": -2}, "relationship": {"friend": 4}, "schedule": {"event": "v090.adult.thirty_echo", "years": [2, 4]}}]},
+      {"label": "Try to squeeze everything in", "outcomes": [{"text": "I rushed between plans and enjoyed none of them properly. Next time, the calendar gets a vote.", "weight": 1, "effects": {"happiness": -2, "stress": 6}, "relationship": {"friend": -2}, "schedule": {"event": "v090.adult.thirty_echo", "years": [2, 4]}}]}
+    ],
+    "roles": {"friend": {"new": "friend", "age": "same", "or_new": true}},
+    "remember_relationship": true,
+    "once": true
+  },
+  {
+    "id": "v090.adult.thirty_echo",
+    "icon": "📆",
+    "title": "The weekend you chose",
+    "text": "A note from the year you turned thirty brings back that crowded weekend with {friend.first}. The plans mattered less than the people in them.",
+    "conditions": {},
+    "family": "v090.life.age30.social",
+    "themes": ["social", "life"],
+    "choices": [
+      {"label": "Make another plan, with room to breathe", "outcomes": [{"text": "We found a day that worked for both of us and left the rest of the calendar blank.", "weight": 1, "effects": {"happiness": 3, "stress": -1}, "relationship": {"friend": 3}}]},
+      {"label": "Keep the note and the memory", "outcomes": [{"text": "I kept the note. It reminded me that saying no can protect a yes.", "weight": 1, "effects": {"smarts": 1, "happiness": 2}}]}
+    ],
+    "roles": {"friend": {"bound": true, "allow_dead": true}},
+    "followup_only": true
+  },
+  {
+    "id": "v090.child.first_day",
+    "icon": "🎒",
+    "title": "A place at the little table",
+    "text": "The classroom feels enormous at five. {teacher.first} points out an empty seat, while {classmate.first} is making a tower from blocks and pure confidence.",
+    "conditions": {"age": [5, 5], "in_school": true},
+    "family": "v090.school.first_day",
+    "themes": ["school", "social"],
+    "choices": [
+      {"label": "Ask {classmate.first} to build together", "outcomes": [{"text": "The tower leaned, fell, and was rebuilt. We made room for each other's ideas.", "weight": 1, "effects": {"happiness": 4, "school": 2}, "relationship": {"classmate": 7}, "schedule": {"event": "v090.child.first_day_echo", "years": [2, 4]}}]},
+      {"label": "Watch first, then join in", "outcomes": [{"text": "I learned the room before I joined the game. {teacher.first} said that was fine.", "weight": 1, "effects": {"stress": -2, "happiness": 2}, "relationship": {"teacher": 5, "classmate": 3}, "schedule": {"event": "v090.child.first_day_echo", "years": [2, 4]}}]},
+      {"label": "Tell {teacher.first} I need a minute", "outcomes": [{"text": "{teacher.first} helped me settle in, then let me choose when to join.", "weight": 1, "effects": {"stress": -3, "happiness": 1}, "relationship": {"teacher": 7}, "schedule": {"event": "v090.child.first_day_echo", "years": [2, 4]}}]}
+    ],
+    "roles": {"classmate": {"new": "classmate", "age": "same", "or_new": true}, "teacher": {"new": "teacher", "age": [25, 65], "or_new": true}},
+    "remember_relationship": true,
+    "once": true
+  },
+  {
+    "id": "v090.child.first_day_echo",
+    "icon": "🧱",
+    "title": "The first classroom memory",
+    "text": "A familiar kind of classroom smell brings back that first day. {classmate.first} and {teacher.first} helped the room feel smaller.",
+    "conditions": {},
+    "family": "v090.school.first_day",
+    "themes": ["school", "social"],
+    "choices": [
+      {"label": "Remember who made space for me", "outcomes": [{"text": "I kept the memory of being welcomed. Small kindnesses can change a whole day.", "weight": 1, "effects": {"happiness": 2, "karma": 1}}]},
+      {"label": "Be that person for someone else", "outcomes": [{"text": "I noticed someone hanging back and made room beside me.", "weight": 1, "effects": {"happiness": 3, "karma": 2}}]}
+    ],
+    "roles": {"classmate": {"bound": true, "allow_dead": true}, "teacher": {"bound": true, "allow_dead": true}},
+    "followup_only": true
+  },
+  {
+    "id": "v090.school.shared_project",
+    "icon": "🧩",
+    "title": "The project nobody owns",
+    "text": "The class project is due soon. {classmate.first} has ideas, {teacher.first} wants a plan, and the group's shared document is mostly a picture of a dog.",
+    "conditions": {"age": [8, 15], "in_school": true},
+    "family": "v090.school.shared_project",
+    "themes": ["school", "social"],
+    "choices": [
+      {
+        "label": "Give everyone a clear part",
+        "outcomes": [
+          {"text": "The plan worked. {classmate.first} did the research, I kept the group moving, and {teacher.first} praised the result.", "weight": 2, "effects": {"school": 5, "smarts": 2, "stress": 2}, "relationship": {"classmate": 8, "teacher": 5}, "flags": ["v090_shared_project_led"], "schedule": {"event": "v090.school.project_echo", "years": [2, 4]}},
+          {"text": "The parts fit together at the last minute. It was not elegant, but everyone contributed.", "weight": 1, "effects": {"school": 3, "happiness": 3}, "relationship": {"classmate": 5, "teacher": 2}, "schedule": {"event": "v090.school.project_echo", "years": [2, 4]}}
+        ]
+      },
+      {
+        "label": "Do the difficult part myself",
+        "outcomes": [
+          {"text": "The project looked polished. I was tired, and {classmate.first} felt left out.", "weight": 1, "effects": {"school": 5, "smarts": 2, "stress": 5}, "relationship": {"classmate": -7, "teacher": 2}, "schedule": {"event": "v090.school.project_echo", "years": [2, 4]}}
+        ]
+      },
+      {
+        "label": "Ask {teacher.first} to reset the plan",
+        "outcomes": [
+          {"text": "{teacher.first} helped us split the work. We lost a little time, but nobody had to carry the whole group.", "weight": 1, "effects": {"school": 2, "stress": -2, "happiness": 2}, "relationship": {"classmate": 4, "teacher": 8}, "schedule": {"event": "v090.school.project_echo", "years": [2, 4]}}
+        ]
+      }
+    ],
+    "roles": {
+      "classmate": {"new": "classmate", "age": "same", "or_new": true},
+      "teacher": {"new": "teacher", "age": [25, 65], "or_new": true}
+    },
+    "remember_relationship": true,
+    "once": true
+  },
+  {
+    "id": "v090.school.project_echo",
+    "icon": "📁",
+    "title": "A project from years ago",
+    "text": "An old class folder turns up. {classmate.first} and {teacher.first} are in the notes beside a plan that began with a dog picture.",
+    "conditions": {},
+    "family": "v090.school.shared_project",
+    "themes": ["school", "social"],
+    "choices": [
+      {"label": "Keep the notes as a reminder", "outcomes": [{"text": "I kept the page. Learning to work with people mattered as much as the grade.", "weight": 1, "effects": {"smarts": 1, "happiness": 2}}]},
+      {"label": "Pass the lesson on", "outcomes": [{"text": "I shared what worked with someone facing a group project of their own.", "weight": 1, "effects": {"karma": 2, "happiness": 3}}]}
+    ],
+    "roles": {"classmate": {"bound": true, "allow_dead": true}, "teacher": {"bound": true, "allow_dead": true}},
+    "followup_only": true
+  },
+  {
+    "id": "v090.work.first_week",
+    "icon": "🗂️",
+    "title": "The unwritten work guide",
+    "text": "The routine sheet skips three steps. {coworker.first} offers to show you how the team really does it.",
+    "conditions": {"age": [16, 75], "employed": true},
+    "family": "v090.work.routine",
+    "themes": ["work", "social"],
+    "choices": [
+      {
+        "label": "Learn the routine and write it down",
+        "outcomes": [
+          {"text": "I learned the shortcuts, then made a guide the next new starter could use.", "weight": 2, "effects": {"job_perf": 5, "smarts": 1, "stress": -2}, "relationship": {"coworker": 7}, "schedule": {"event": "v090.work.guide_echo", "years": [2, 4]}},
+          {"text": "The guide helped, though the first draft needed a few corrections from {coworker.first}.", "weight": 1, "effects": {"job_perf": 2, "stress": 1}, "relationship": {"coworker": 4}, "schedule": {"event": "v090.work.guide_echo", "years": [2, 4]}}
+        ]
+      },
+      {
+        "label": "Ask questions as they come up",
+        "outcomes": [
+          {"text": "It took longer, but {coworker.first} appreciated that I checked instead of guessing.", "weight": 1, "effects": {"job_perf": 2, "stress": -1}, "relationship": {"coworker": 6}, "schedule": {"event": "v090.work.guide_echo", "years": [2, 4]}}
+        ]
+      },
+      {
+        "label": "Figure it out alone",
+        "outcomes": [
+          {"text": "I found my own way through it. A few avoidable mistakes made the week longer.", "weight": 1, "effects": {"job_perf": -2, "stress": 4, "smarts": 1}, "relationship": {"coworker": -2}, "schedule": {"event": "v090.work.guide_echo", "years": [2, 4]}}
+        ]
+      }
+    ],
+    "roles": {"coworker": {"new": "coworker", "age": "same", "or_new": true}},
+    "remember_relationship": true,
+    "once": true
+  },
+  {
+    "id": "v090.work.guide_echo",
+    "icon": "📝",
+    "title": "The guide gets used",
+    "text": "A new starter asks about the routine you once had to learn. You remember {coworker.first} showing you the ropes.",
+    "conditions": {},
+    "family": "v090.work.routine",
+    "themes": ["work", "social"],
+    "choices": [
+      {"label": "Walk them through it", "outcomes": [{"text": "I passed on what {coworker.first} taught me. The team had one less mystery to solve.", "weight": 1, "effects": {"job_perf": 2, "happiness": 2, "karma": 1}}]},
+      {"label": "Give them the short version", "outcomes": [{"text": "I sent them the notes. It was enough to get through the day.", "weight": 1, "effects": {"stress": -1, "happiness": 1}}]}
+    ],
+    "roles": {"coworker": {"bound": true, "allow_dead": true}},
+    "followup_only": true
+  },
+  {
+    "id": "v090.work.thirty_handoff",
+    "icon": "🗃️",
+    "title": "The knowledge gap",
+    "text": "A teammate is leaving, and half the team's routine lives in {coworker.first}'s head. The handover has one short week left.",
+    "conditions": {"age": [30, 30], "employed": true},
+    "family": "v090.work.handover",
+    "themes": ["work", "social"],
+    "choices": [
+      {"label": "Build a practical handover together", "outcomes": [{"text": "We wrote down the steps that mattered and left space for questions. The next person had a fair start.", "weight": 2, "effects": {"job_perf": 5, "smarts": 2, "stress": 2}, "relationship": {"coworker": 7}, "schedule": {"event": "v090.work.handoff_echo", "years": [2, 4]}}]},
+      {"label": "Ask for time to shadow them", "outcomes": [{"text": "I learned the most fragile parts of the job. The rest of my work had to wait.", "weight": 1, "effects": {"job_perf": 3, "stress": 5}, "relationship": {"coworker": 5}, "schedule": {"event": "v090.work.handoff_echo", "years": [2, 4]}}]},
+      {"label": "Protect my own deadlines", "outcomes": [{"text": "I met my deadline. The next person inherited a few avoidable mysteries.", "weight": 1, "effects": {"job_perf": 1, "stress": -1}, "relationship": {"coworker": -3}, "schedule": {"event": "v090.work.handoff_echo", "years": [2, 4]}}]}
+    ],
+    "roles": {"coworker": {"new": "coworker", "age": "same", "or_new": true}},
+    "remember_relationship": true,
+    "once": true
+  },
+  {
+    "id": "v090.work.handoff_echo",
+    "icon": "📚",
+    "title": "The handover holds up",
+    "text": "A new colleague asks how the team learned the work after {coworker.first} left. The old notes are still useful, with a few updates.",
+    "conditions": {},
+    "family": "v090.work.handover",
+    "themes": ["work", "social"],
+    "choices": [
+      {"label": "Update the notes with them", "outcomes": [{"text": "We kept the useful parts and fixed what had changed. A handover is a living thing.", "weight": 1, "effects": {"job_perf": 2, "smarts": 1, "happiness": 2}}]},
+      {"label": "Show them where to ask", "outcomes": [{"text": "I introduced them to the right people. Nobody should have to guess alone.", "weight": 1, "effects": {"karma": 2, "happiness": 2}}]}
+    ],
+    "roles": {"coworker": {"bound": true, "allow_dead": true}},
+    "followup_only": true
+  },
+  {
+    "id": "v090.community.shared_noticeboard",
+    "icon": "📌",
+    "title": "The noticeboard plan",
+    "text": "A few neighbors want to fix the neglected noticeboard. {neighbor.first} has paint, someone else has opinions, and nobody has checked whether the ladder is safe.",
+    "conditions": {"age": [18, 85]},
+    "family": "v090.community.noticeboard",
+    "themes": ["social", "daily"],
+    "choices": [
+      {
+        "label": "Organize a safe, small workday",
+        "outcomes": [
+          {"text": "We checked the ladder, shared the jobs, and left the board better than we found it.", "weight": 2, "effects": {"happiness": 4, "stress": -2, "karma": 2}, "relationship": {"neighbor": 7}, "schedule": {"event": "v090.community.notice_echo", "years": [2, 5]}},
+          {"text": "The board is fixed. It took two tries and three opinions about the shade of blue.", "weight": 1, "effects": {"happiness": 2, "stress": 1}, "relationship": {"neighbor": 4}, "schedule": {"event": "v090.community.notice_echo", "years": [2, 5]}}
+        ]
+      },
+      {
+        "label": "Offer supplies · {money:40}",
+        "requires": {"money": 40},
+        "outcomes": [
+          {"text": "I left the paint with {neighbor.first}. The small contribution was still useful.", "weight": 1, "effects": {"money": -40, "karma": 2, "happiness": 1}, "relationship": {"neighbor": 3}, "schedule": {"event": "v090.community.notice_echo", "years": [2, 5]}}
+        ]
+      },
+      {
+        "label": "Leave it for someone else",
+        "outcomes": [
+          {"text": "I had other things to do. The board stayed crooked for another month.", "weight": 1, "effects": {"stress": -1}, "schedule": {"event": "v090.community.notice_echo", "years": [2, 5]}}
+        ]
+      }
+    ],
+    "roles": {"neighbor": {"new": "neighbor", "age": "same", "or_new": true}},
+    "remember_relationship": true,
+    "once": true
+  },
+  {
+    "id": "v090.community.notice_echo",
+    "icon": "🗞️",
+    "title": "Still on the board",
+    "text": "The noticeboard you helped with is still in use. {neighbor.first} points out a faded note from the first workday.",
+    "conditions": {},
+    "family": "v090.community.noticeboard",
+    "themes": ["social", "daily"],
+    "choices": [
+      {"label": "Add a fresh note", "outcomes": [{"text": "I posted a useful update. Small things make a place feel shared.", "weight": 1, "effects": {"happiness": 2, "karma": 1}}]},
+      {"label": "Let someone else take the lead", "outcomes": [{"text": "I left space for the next person with an idea.", "weight": 1, "effects": {"stress": -1, "happiness": 1}}]}
+    ],
+    "roles": {"neighbor": {"bound": true, "allow_dead": true}},
+    "followup_only": true
+  }
+]

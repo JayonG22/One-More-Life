@@ -1,0 +1,1410 @@
+[
+ {
+  "id": "club.chess.review",
+  "club": "chess",
+  "field": "General",
+  "title": "An unfamiliar opening",
+  "text": "Your partner loses quickly to an opening neither of you has studied.",
+  "choices": [
+   "Review the position together",
+   "Practise a simpler defence",
+   "Blame your partner's play"
+  ],
+  "bonus": [
+   6,
+   3,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -4
+  ],
+  "ends": [
+   "You shared the analysis and tested a reply.",
+   "A simpler defence gave the pair a dependable plan.",
+   "Blame made your partner less willing to analyse with you."
+  ]
+ },
+ {
+  "id": "club.chess.clock",
+  "club": "chess",
+  "field": "General",
+  "title": "Clock trouble",
+  "text": "Your practice partner finds good moves but repeatedly runs out of time.",
+  "choices": [
+   "Practise timed positions as a pair",
+   "Choose a slower practice format",
+   "Hide the time losses from the coach"
+  ],
+  "bonus": [
+   6,
+   2,
+   -4
+  ],
+  "stress": [
+   3,
+   0,
+   4
+  ],
+  "trust": [
+   3,
+   2,
+   -4
+  ],
+  "ends": [
+   "Timed practice improved the pair's preparation.",
+   "The slower format made room for learning.",
+   "The hidden losses weakened the coach's picture of your work."
+  ]
+ },
+ {
+  "id": "club.drama.role",
+  "club": "drama",
+  "field": "Arts",
+  "title": "A missing performer",
+  "text": "Your scene partner cannot attend the final rehearsal.",
+  "choices": [
+   "Share blocking notes and rehearse an understudy",
+   "Simplify the scene with the director",
+   "Cut your partner's role without asking"
+  ],
+  "bonus": [
+   6,
+   3,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -5
+  ],
+  "ends": [
+   "The shared notes helped the understudy preserve the scene.",
+   "The agreed staging reduced the rehearsal burden.",
+   "The unilateral cut damaged your cast partnership."
+  ]
+ },
+ {
+  "id": "club.drama.credit",
+  "club": "drama",
+  "field": "Arts",
+  "title": "Whose idea?",
+  "text": "The programme credits you for a scene your partner helped devise.",
+  "choices": [
+   "Correct the shared credit before opening",
+   "Thank them in the cast meeting",
+   "Keep the credit to yourself"
+  ],
+  "bonus": [
+   5,
+   2,
+   -3
+  ],
+  "stress": [
+   2,
+   1,
+   3
+  ],
+  "trust": [
+   4,
+   2,
+   -5
+  ],
+  "ends": [
+   "The programme now credits both contributors.",
+   "Your partner heard their contribution acknowledged.",
+   "Keeping the credit strained future collaboration."
+  ]
+ },
+ {
+  "id": "club.robotics.sensor",
+  "club": "robotics",
+  "field": "Tech",
+  "title": "Unsteady readings",
+  "text": "The robot's sensor gives different readings on the club's practice surface.",
+  "choices": [
+   "Test the surface and sensor together",
+   "Use a simpler reliable routine",
+   "Claim the robot is ready without testing"
+  ],
+  "bonus": [
+   7,
+   3,
+   -6
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -4
+  ],
+  "ends": [
+   "The test notes gave your team a checked configuration.",
+   "The simpler routine traded ambition for reliability.",
+   "The unsupported readiness claim weakened team trust."
+  ]
+ },
+ {
+  "id": "club.robotics.handover",
+  "club": "robotics",
+  "field": "Tech",
+  "title": "The only programmer",
+  "text": "Your partner knows a crucial part of the code and will miss the next meeting.",
+  "choices": [
+   "Prepare and test a shared handover",
+   "Demonstrate only the documented features",
+   "Rewrite their work without consulting them"
+  ],
+  "bonus": [
+   6,
+   3,
+   -4
+  ],
+  "stress": [
+   3,
+   0,
+   4
+  ],
+  "trust": [
+   4,
+   1,
+   -4
+  ],
+  "ends": [
+   "A tested handover made the project less dependent on one person.",
+   "Your demonstration stayed within the documented work.",
+   "The unreviewed rewrite damaged the working partnership."
+  ]
+ },
+ {
+  "id": "club.debate.source",
+  "club": "debate",
+  "field": "Politics",
+  "title": "A shaky statistic",
+  "text": "A strong line in your team's argument relies on a statistic with no clear source.",
+  "choices": [
+   "Check the source with your partner",
+   "Replace the claim with a narrower argument",
+   "Use it because the audience will not check"
+  ],
+  "bonus": [
+   6,
+   3,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -4
+  ],
+  "ends": [
+   "The checked source strengthened your shared argument.",
+   "A narrower claim made the team's case easier to defend.",
+   "An unsupported statistic damaged your debate credibility."
+  ]
+ },
+ {
+  "id": "club.debate.speaking",
+  "club": "debate",
+  "field": "Politics",
+  "title": "Uneven speaking time",
+  "text": "Your partner's strongest evidence keeps being squeezed out of the speaking order.",
+  "choices": [
+   "Rebalance the speeches and rehearse transitions",
+   "Shorten your own introduction",
+   "Keep the spotlight on yourself"
+  ],
+  "bonus": [
+   6,
+   2,
+   -4
+  ],
+  "stress": [
+   3,
+   1,
+   3
+  ],
+  "trust": [
+   4,
+   2,
+   -5
+  ],
+  "ends": [
+   "The revised order gave both speakers room to contribute.",
+   "Your shorter opening made space for the evidence.",
+   "Taking the spotlight weakened the partnership."
+  ]
+ },
+ {
+  "id": "club.art.space",
+  "club": "art",
+  "field": "Arts",
+  "title": "One display wall",
+  "text": "Your pieces and your partner's work will not all fit on the exhibition wall.",
+  "choices": [
+   "Curate a shared selection with clear credits",
+   "Show smaller studies from both artists",
+   "Move their pieces without asking"
+  ],
+  "bonus": [
+   6,
+   3,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   4,
+   2,
+   -5
+  ],
+  "ends": [
+   "The shared selection presented both artists' contributions.",
+   "The smaller studies kept the display manageable.",
+   "Moving the work without agreement damaged collaboration."
+  ]
+ },
+ {
+  "id": "club.art.feedback",
+  "club": "art",
+  "field": "Arts",
+  "title": "A harsh critique",
+  "text": "A reviewer dismisses your partner's piece during a group critique.",
+  "choices": [
+   "Ask for specific useful feedback",
+   "Offer a private supportive review",
+   "Join the ridicule to protect your standing"
+  ],
+  "bonus": [
+   5,
+   2,
+   -4
+  ],
+  "stress": [
+   3,
+   0,
+   4
+  ],
+  "trust": [
+   3,
+   2,
+   -6
+  ],
+  "ends": [
+   "Specific feedback gave the pair something useful to revise.",
+   "The private review supported your partner's next attempt.",
+   "Joining the ridicule damaged your artistic partnership."
+  ]
+ },
+ {
+  "id": "club.band.arrangement",
+  "club": "band",
+  "field": "Arts",
+  "title": "A difficult passage",
+  "text": "Your partner struggles with a passage the band wants to perform at full speed.",
+  "choices": [
+   "Rehearse the passage together at a steady pace",
+   "Agree a simpler arrangement with the band leader",
+   "Demand full speed without extra practice"
+  ],
+  "bonus": [
+   7,
+   3,
+   -6
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -4
+  ],
+  "ends": [
+   "Shared rehearsal improved the passage before performance.",
+   "The agreed arrangement kept the ensemble together.",
+   "Unsupported pressure strained the band partnership."
+  ]
+ },
+ {
+  "id": "club.band.balance",
+  "club": "band",
+  "field": "Arts",
+  "title": "Lost in the mix",
+  "text": "Your partner's part disappears under the louder instruments during rehearsal.",
+  "choices": [
+   "Check ensemble balance with the leader",
+   "Reduce your own volume and listen",
+   "Play louder to secure your solo"
+  ],
+  "bonus": [
+   6,
+   2,
+   -5
+  ],
+  "stress": [
+   2,
+   0,
+   3
+  ],
+  "trust": [
+   3,
+   2,
+   -4
+  ],
+  "ends": [
+   "The balance check helped the ensemble hear each part.",
+   "Your quieter playing made space for your partner.",
+   "Chasing the solo weakened ensemble trust."
+  ]
+ },
+ {
+  "id": "club.council.access",
+  "club": "council",
+  "field": "Politics",
+  "title": "Who gets heard?",
+  "text": "A student cannot attend the council meeting where their access request will be discussed.",
+  "choices": [
+   "Gather their input before the meeting",
+   "Keep the request open for a later review",
+   "Treat their absence as agreement"
+  ],
+  "bonus": [
+   6,
+   2,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   4,
+   1,
+   -5
+  ],
+  "ends": [
+   "Their actual input reached the council discussion.",
+   "The unanswered request remained visible for review.",
+   "Invented agreement damaged trust in your council work."
+  ]
+ },
+ {
+  "id": "club.council.budget",
+  "club": "council",
+  "field": "Politics",
+  "title": "The small print",
+  "text": "Your partner spots an ongoing cost missing from the club's proposed budget.",
+  "choices": [
+   "Review a sustainable budget together",
+   "Reduce the proposal's scope",
+   "Hide the cost to get approval"
+  ],
+  "bonus": [
+   7,
+   3,
+   -6
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   4,
+   1,
+   -5
+  ],
+  "ends": [
+   "The reviewed proposal included its ongoing costs.",
+   "A smaller proposal kept delivery realistic.",
+   "Hiding the cost weakened confidence in your public work."
+  ]
+ },
+ {
+  "id": "club.yearbook.caption",
+  "club": "yearbook",
+  "field": "Arts",
+  "title": "A wrong caption",
+  "text": "Your partner notices that a printed proof names the wrong person in a photograph.",
+  "choices": [
+   "Verify the caption before submitting the proof",
+   "Hold that page for a checked correction",
+   "Leave it because the deadline is close"
+  ],
+  "bonus": [
+   6,
+   2,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -4
+  ],
+  "ends": [
+   "The verified caption reached the final proof.",
+   "The held page stayed clearly marked for correction.",
+   "An unchecked caption weakened the editorial partnership."
+  ]
+ },
+ {
+  "id": "club.yearbook.permission",
+  "club": "yearbook",
+  "field": "Arts",
+  "title": "The candid photo",
+  "text": "A memorable photograph includes a student who has asked not to appear in the yearbook.",
+  "choices": [
+   "Choose a permitted photograph with your partner",
+   "Leave space for a replacement image",
+   "Publish it because it looks better"
+  ],
+  "bonus": [
+   5,
+   2,
+   -5
+  ],
+  "stress": [
+   2,
+   1,
+   4
+  ],
+  "trust": [
+   4,
+   1,
+   -5
+  ],
+  "ends": [
+   "A permitted photograph kept the student's request respected.",
+   "The reserved space left room for a checked replacement.",
+   "Ignoring the request damaged trust in the yearbook team."
+  ]
+ },
+ {
+  "id": "club.science.outlier",
+  "club": "science",
+  "field": "Tech",
+  "title": "A surprising result",
+  "text": "One practice experiment produces a result that does not fit your team's expectation.",
+  "choices": [
+   "Check the method and keep the result",
+   "Report the variation with its limits",
+   "Remove the inconvenient measurement"
+  ],
+  "bonus": [
+   7,
+   3,
+   -6
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -5
+  ],
+  "ends": [
+   "The checked method and retained result improved your evidence.",
+   "The variation remained visible in the team's explanation.",
+   "Removing the result damaged confidence in your science work."
+  ]
+ },
+ {
+  "id": "club.science.equipment",
+  "club": "science",
+  "field": "Tech",
+  "title": "Shared equipment",
+  "text": "Two teams need the same instrument during the final practice session.",
+  "choices": [
+   "Agree a schedule and prepare between turns",
+   "Use a smaller test that fits your slot",
+   "Take the instrument before the other team arrives"
+  ],
+  "bonus": [
+   6,
+   3,
+   -4
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   4,
+   1,
+   -5
+  ],
+  "ends": [
+   "The shared schedule let both teams prepare.",
+   "The smaller test stayed within your agreed time.",
+   "Taking the equipment strained cooperation beyond your team."
+  ]
+ },
+ {
+  "id": "club.volunteer.schedule",
+  "club": "volunteer",
+  "field": "Care",
+  "title": "A missing volunteer",
+  "text": "Your partner cannot cover a reading session that families are expecting.",
+  "choices": [
+   "Arrange a supported replacement with the coordinator",
+   "Offer a shorter session you can manage",
+   "Promise the full session without support"
+  ],
+  "bonus": [
+   6,
+   3,
+   -5
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   3,
+   1,
+   -4
+  ],
+  "ends": [
+   "The coordinator confirmed cover for the promised session.",
+   "A shorter agreed session matched the available help.",
+   "An unsupported promise weakened the community's trust."
+  ]
+ },
+ {
+  "id": "club.volunteer.feedback",
+  "club": "volunteer",
+  "field": "Care",
+  "title": "What people need",
+  "text": "Attendance is low even though the club's publicity has improved.",
+  "choices": [
+   "Ask families what makes attendance difficult",
+   "Trial a smaller accessible session",
+   "Blame families for not making an effort"
+  ],
+  "bonus": [
+   7,
+   3,
+   -6
+  ],
+  "stress": [
+   3,
+   1,
+   4
+  ],
+  "trust": [
+   4,
+   1,
+   -5
+  ],
+  "ends": [
+   "The families' feedback gave your team a practical direction.",
+   "The smaller session tested a more manageable format.",
+   "Blaming families damaged the service partnership."
+  ]
+ },
+ {
+  "id": "club.astronomy.plan",
+  "club": "astronomy",
+  "field": "Tech",
+  "title": "Plan a skywatch",
+  "text": "Clouds threaten the skywatch. Choose a useful plan.",
+  "choices": [
+   "Check the forecast and keep a backup talk",
+   "Ignore the forecast",
+   "Use archived sky images"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The group has a workable skywatch and indoor plan.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.coding.plan",
+  "club": "coding",
+  "field": "Tech",
+  "title": "Debug a game",
+  "text": "A classmate's game freezes after a new input.",
+  "choices": [
+   "Reproduce and trace the error",
+   "Delete their project",
+   "Test a smaller input set"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The failing input is isolated and the fix documented.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.chemistry.plan",
+  "club": "chemistry",
+  "field": "Tech",
+  "title": "Track the samples",
+  "text": "Two demonstration samples have unclear labels.",
+  "choices": [
+   "Verify and relabel before use",
+   "Guess the labels",
+   "Postpone the demonstration"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The samples are identified before the demonstration.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.ecology.plan",
+  "club": "ecology",
+  "field": "Tech",
+  "title": "Survey the pond",
+  "text": "Your pond survey keeps missing one observation spot.",
+  "choices": [
+   "Rotate stations and record the gaps",
+   "Invent the missing results",
+   "Publish a smaller honest survey"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The new route gives the group comparable observations.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.engineering.plan",
+  "club": "engineering",
+  "field": "Tech",
+  "title": "Test the bridge",
+  "text": "A model bridge sags under the test load.",
+  "choices": [
+   "Measure and reinforce the weak joint",
+   "Claim it passed",
+   "Reduce the model's rated load"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The weak joint is redesigned and retested.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.mathematics.plan",
+  "club": "mathematics",
+  "field": "Tech",
+  "title": "Explain a solution",
+  "text": "A correct answer has no explanation your team can follow.",
+  "choices": [
+   "Show each reasoning step",
+   "Copy a solution without checking",
+   "Compare two simpler examples"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The solution becomes something the team can reproduce.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.languages.plan",
+  "club": "languages",
+  "field": "Arts",
+  "title": "Welcome an exchange guest",
+  "text": "The group has practised phrases but struggles to listen.",
+  "choices": [
+   "Slow down and practise a real exchange",
+   "Mock the guest's accent",
+   "Use a short written guide"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The guest joins a patient, two-way conversation.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.photography.plan",
+  "club": "photography",
+  "field": "Arts",
+  "title": "Choose the portraits",
+  "text": "A classmate dislikes their photo in the exhibition draft.",
+  "choices": [
+   "Let them choose an agreed portrait",
+   "Publish it against their wishes",
+   "Use an object study instead"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The portrait is selected with the classmate's permission.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.film.plan",
+  "club": "film",
+  "field": "Arts",
+  "title": "Finish the short film",
+  "text": "The sound in your final scene is too quiet.",
+  "choices": [
+   "Re-record and align the dialogue",
+   "Pretend nobody will notice",
+   "Use subtitles for this cut"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The dialogue is clear in the finished scene.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.creative_writing.plan",
+  "club": "creative_writing",
+  "field": "Arts",
+  "title": "Revise a scene",
+  "text": "A partner's story has a promising character but a confusing ending.",
+  "choices": [
+   "Give specific revision notes",
+   "Ridicule the draft",
+   "Ask which ending they intended"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The character's goal becomes clearer in the revision.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.poetry.plan",
+  "club": "poetry",
+  "field": "Arts",
+  "title": "Host a reading",
+  "text": "A new writer is nervous about reading their poem aloud.",
+  "choices": [
+   "Offer a short supported slot",
+   "Laugh at the hesitation",
+   "Offer to read it with permission"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The writer gets a supported first reading.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.choir.plan",
+  "club": "choir",
+  "field": "Arts",
+  "title": "Balance the harmony",
+  "text": "One section cannot hear the others in rehearsal.",
+  "choices": [
+   "Rehearse the parts then combine them",
+   "Sing over the quiet section",
+   "Use a simpler arrangement"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The sections hear each other and the harmony holds.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.orchestra.plan",
+  "club": "orchestra",
+  "field": "Arts",
+  "title": "Follow the cue",
+  "text": "Your section enters before the conductor's cue.",
+  "choices": [
+   "Practise the cue together",
+   "Blame another section",
+   "Slow the passage first"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The section enters together on the cue.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.dance_club.plan",
+  "club": "dance_club",
+  "field": "Arts",
+  "title": "Adapt a routine",
+  "text": "The floor space is smaller than your planned routine.",
+  "choices": [
+   "Adapt spacing and rehearse safely",
+   "Keep the unsafe spacing",
+   "Perform a shorter routine"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The adapted routine fits the available floor.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.crafts.plan",
+  "club": "crafts",
+  "field": "Arts",
+  "title": "Share the supplies",
+  "text": "Several makers need the last spool of thread.",
+  "choices": [
+   "Agree a fair supply plan",
+   "Hide the spool",
+   "Use a different material"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The makers share the supplies and finish their pieces.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.cooking.plan",
+  "club": "cooking",
+  "field": "Care",
+  "title": "Plan a shared meal",
+  "text": "A guest cannot eat one planned ingredient.",
+  "choices": [
+   "Check needs and adjust the recipe",
+   "Ignore the guest",
+   "Offer a separate labelled dish"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The meal includes the guest with clearly identified ingredients.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.gardening.plan",
+  "club": "gardening",
+  "field": "Care",
+  "title": "Keep seedlings alive",
+  "text": "The seedlings dry out when nobody has watering duty.",
+  "choices": [
+   "Agree a watering rota",
+   "Blame the newest member",
+   "Choose fewer plants to care for"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The rota gives the seedlings regular care.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.animal_care.plan",
+  "club": "animal_care",
+  "field": "Care",
+  "title": "Prepare a care visit",
+  "text": "The group has treats but no agreed handling rules.",
+  "choices": [
+   "Follow the supervisor's care plan",
+   "Chase the animals for pictures",
+   "Observe without handling"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The supervised visit respects the animals' needs.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.first_aid.plan",
+  "club": "first_aid",
+  "field": "Care",
+  "title": "Run a safety drill",
+  "text": "Students disagree about who should summon trained help.",
+  "choices": [
+   "Assign clear roles with the instructor",
+   "Pretend the drill is pointless",
+   "Repeat the instructor's demonstration"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The drill has clear roles for getting trained assistance.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.journalism.plan",
+  "club": "journalism",
+  "field": "Politics",
+  "title": "Verify a rumour",
+  "text": "A dramatic school rumour would make a good headline.",
+  "choices": [
+   "Check sources and invite a response",
+   "Publish it as fact",
+   "Cover a verified story instead"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The report distinguishes confirmed facts from claims.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.model_un.plan",
+  "club": "model_un",
+  "field": "Politics",
+  "title": "Negotiate a resolution",
+  "text": "Two delegations agree on the goal but disagree on funding.",
+  "choices": [
+   "Offer an explicit shared compromise",
+   "Hide the disputed clause",
+   "Submit a narrower resolution"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The resolution has a funding compromise delegates can assess.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.history_club.plan",
+  "club": "history_club",
+  "field": "Politics",
+  "title": "Check the exhibit",
+  "text": "Two accounts describe the same event differently.",
+  "choices": [
+   "Explain both sources and their limits",
+   "Erase one account",
+   "Display the agreed facts only"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The exhibit shows the disagreement and its evidence.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.entrepreneurs.plan",
+  "club": "entrepreneurs",
+  "field": "Business",
+  "title": "Price the fundraiser",
+  "text": "Your proposed price ignores material costs.",
+  "choices": [
+   "Calculate costs before setting a price",
+   "Promise profit without counting costs",
+   "Start with a small trial sale"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The fundraiser has a price based on actual costs.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ },
+ {
+  "id": "club.board_games.plan",
+  "club": "board_games",
+  "field": "General",
+  "title": "Teach the rules",
+  "text": "New players are confused by a rule halfway through.",
+  "choices": [
+   "Pause and explain with an example",
+   "Change rules to make yourself win",
+   "Finish a short learning round"
+  ],
+  "bonus": [
+   10,
+   -12,
+   3
+  ],
+  "stress": [
+   2,
+   3,
+   0
+  ],
+  "trust": [
+   4,
+   -5,
+   2
+  ],
+  "ends": [
+   "The players understand the rule and can play fairly.",
+   "The shortcut leaves the task unresolved and weakens the group's trust.",
+   "The smaller plan respects the limits and keeps participation possible."
+  ]
+ }
+]

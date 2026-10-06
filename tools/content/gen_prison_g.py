@@ -128,7 +128,7 @@ E("p.guard_kindness", "🍬", "A small kindness",
     O("The next week he asked me a favour. A small one. I did it. I'm still not sure who won.", {"stress": 4}, {"conduct": 1, "heat": 3})),
   cooldown=40, once=True)
 
-E("p.parole_prep", "🧰", "The plan for the outside",
+E("p.reentry_plan", "🧰", "The plan for the outside",
   "The case worker has a form headed 'Release planning'. It has a box for 'accommodation', a box for 'employment' and a box for 'support'. All three are empty.",
   ["served>=4", "conduct>=35"],
   C("Fill in all three, properly",

@@ -1,0 +1,3396 @@
+[
+ {
+  "id": "depthlife.small_map.end.0",
+  "family": "depthlife.small_map",
+  "icon": "📖",
+  "title": "The map home · conclusion",
+  "text": "Your revised map included the shortcut and its safe crossing. You learned why a route on paper can differ from a route on foot.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your revised map included the shortcut and its safe crossing. You learned why a route on paper can differ from a route on foot.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.small_map",
+     "title": "The map home",
+     "state": "closed",
+     "choice": "Walk the route with an adult",
+     "ending": "Your revised map included the shortcut and its safe crossing. You learned why a route on paper can differ from a route on foot.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Tech"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.small_map.end.1",
+  "family": "depthlife.small_map",
+  "icon": "📖",
+  "title": "The map home · conclusion",
+  "text": "The class map gained several routes, not just yours. Comparing them helped you explain directions to other children.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The class map gained several routes, not just yours. Comparing them helped you explain directions to other children.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.small_map",
+     "title": "The map home",
+     "state": "closed",
+     "choice": "Ask classmates about their routes",
+     "ending": "The class map gained several routes, not just yours. Comparing them helped you explain directions to other children.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.small_map.end.2",
+  "family": "depthlife.small_map",
+  "icon": "📖",
+  "title": "The map home · conclusion",
+  "text": "Your smaller map was accurate but left the wider neighborhood unexplored. You finished something manageable.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your smaller map was accurate but left the wider neighborhood unexplored. You finished something manageable.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.small_map",
+     "title": "The map home",
+     "state": "closed",
+     "choice": "Draw a smaller familiar area",
+     "ending": "Your smaller map was accurate but left the wider neighborhood unexplored. You finished something manageable.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.small_map",
+  "family": "depthlife.small_map",
+  "icon": "📖",
+  "title": "The map home",
+  "text": "Your class draws the neighborhood. Your favorite shortcut is missing from the shared map.",
+  "conditions": {
+   "age": [
+    5,
+    8
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Walk the route with an adult",
+    "outcomes": [
+     {
+      "text": "I chose to walk the route with an adult.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.small_map",
+       "title": "The map home",
+       "state": "open",
+       "choice": "Walk the route with an adult",
+       "ending": "Your revised map included the shortcut and its safe crossing. You learned why a route on paper can differ from a route on foot.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Tech",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.small_map.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask classmates about their routes",
+    "outcomes": [
+     {
+      "text": "I chose to ask classmates about their routes.",
+      "effects": {
+       "happiness": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.small_map",
+       "title": "The map home",
+       "state": "open",
+       "choice": "Ask classmates about their routes",
+       "ending": "The class map gained several routes, not just yours. Comparing them helped you explain directions to other children.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.small_map.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Draw a smaller familiar area",
+    "outcomes": [
+     {
+      "text": "I chose to draw a smaller familiar area.",
+      "effects": {
+       "stress": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.small_map",
+       "title": "The map home",
+       "state": "open",
+       "choice": "Draw a smaller familiar area",
+       "ending": "Your smaller map was accurate but left the wider neighborhood unexplored. You finished something manageable.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.small_map.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.lost_part.end.0",
+  "family": "depthlife.lost_part",
+  "icon": "📖",
+  "title": "The missing piece · conclusion",
+  "text": "The substitute looked different, but your group explained how it worked. The display became a story about adapting.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The substitute looked different, but your group explained how it worked. The display became a story about adapting.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.lost_part",
+     "title": "The missing piece",
+     "state": "closed",
+     "choice": "Build a substitute together",
+     "ending": "The substitute looked different, but your group explained how it worked. The display became a story about adapting.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Engineering"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.lost_part.end.1",
+  "family": "depthlife.lost_part",
+  "icon": "📖",
+  "title": "The missing piece · conclusion",
+  "text": "Your teacher accepted the honest unfinished display. You learned to explain a limitation without pretending it vanished.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your teacher accepted the honest unfinished display. You learned to explain a limitation without pretending it vanished.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.lost_part",
+     "title": "The missing piece",
+     "state": "closed",
+     "choice": "Ask to display the unfinished model",
+     "ending": "Your teacher accepted the honest unfinished display. You learned to explain a limitation without pretending it vanished.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.lost_part.end.2",
+  "family": "depthlife.lost_part",
+  "icon": "📖",
+  "title": "The missing piece · conclusion",
+  "text": "The smaller model worked. Your group learned that reducing a plan can still produce a real result.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The smaller model worked. Your group learned that reducing a plan can still produce a real result.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.lost_part",
+     "title": "The missing piece",
+     "state": "closed",
+     "choice": "Make a smaller model from what remains",
+     "ending": "The smaller model worked. Your group learned that reducing a plan can still produce a real result.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Design"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.lost_part",
+  "family": "depthlife.lost_part",
+  "icon": "📖",
+  "title": "The missing piece",
+  "text": "A shared classroom model loses an important piece just before display day.",
+  "conditions": {
+   "age": [
+    5,
+    8
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Build a substitute together",
+    "outcomes": [
+     {
+      "text": "I chose to build a substitute together.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.lost_part",
+       "title": "The missing piece",
+       "state": "open",
+       "choice": "Build a substitute together",
+       "ending": "The substitute looked different, but your group explained how it worked. The display became a story about adapting.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Engineering",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.lost_part.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Ask to display the unfinished model",
+    "outcomes": [
+     {
+      "text": "I chose to ask to display the unfinished model.",
+      "effects": {
+       "happiness": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.lost_part",
+       "title": "The missing piece",
+       "state": "open",
+       "choice": "Ask to display the unfinished model",
+       "ending": "Your teacher accepted the honest unfinished display. You learned to explain a limitation without pretending it vanished.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.lost_part.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a smaller model from what remains",
+    "outcomes": [
+     {
+      "text": "I chose to make a smaller model from what remains.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.lost_part",
+       "title": "The missing piece",
+       "state": "open",
+       "choice": "Make a smaller model from what remains",
+       "ending": "The smaller model worked. Your group learned that reducing a plan can still produce a real result.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Design",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.lost_part.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.shared_stage.end.0",
+  "family": "depthlife.shared_stage",
+  "icon": "📖",
+  "title": "A crowded stage · conclusion",
+  "text": "The show had lighting, props and a working stage crew. Your contribution mattered even without a speaking part.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The show had lighting, props and a working stage crew. Your contribution mattered even without a speaking part.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.shared_stage",
+     "title": "A crowded stage",
+     "state": "closed",
+     "choice": "Help create backstage roles",
+     "ending": "The show had lighting, props and a working stage crew. Your contribution mattered even without a speaking part.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Design"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.shared_stage.end.1",
+  "family": "depthlife.shared_stage",
+  "icon": "📖",
+  "title": "A crowded stage · conclusion",
+  "text": "You completed the audition and performed the role you were offered. The experience gave you practice rather than a guaranteed starring part.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You completed the audition and performed the role you were offered. The experience gave you practice rather than a guaranteed starring part.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.shared_stage",
+     "title": "A crowded stage",
+     "state": "closed",
+     "choice": "Audition for a speaking role",
+     "ending": "You completed the audition and performed the role you were offered. The experience gave you practice rather than a guaranteed starring part.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Arts"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.shared_stage.end.2",
+  "family": "depthlife.shared_stage",
+  "icon": "📖",
+  "title": "A crowded stage · conclusion",
+  "text": "The ensemble learned to enter and leave together. You gained confidence through a shared performance.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The ensemble learned to enter and leave together. You gained confidence through a shared performance.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.shared_stage",
+     "title": "A crowded stage",
+     "state": "closed",
+     "choice": "Join the ensemble instead",
+     "ending": "The ensemble learned to enter and leave together. You gained confidence through a shared performance.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Arts"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.shared_stage",
+  "family": "depthlife.shared_stage",
+  "icon": "📖",
+  "title": "A crowded stage",
+  "text": "Your school show has more volunteers than speaking parts.",
+  "conditions": {
+   "age": [
+    9,
+    11
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Help create backstage roles",
+    "outcomes": [
+     {
+      "text": "I chose to help create backstage roles.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.shared_stage",
+       "title": "A crowded stage",
+       "state": "open",
+       "choice": "Help create backstage roles",
+       "ending": "The show had lighting, props and a working stage crew. Your contribution mattered even without a speaking part.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Design",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.shared_stage.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Audition for a speaking role",
+    "outcomes": [
+     {
+      "text": "I chose to audition for a speaking role.",
+      "effects": {
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.shared_stage",
+       "title": "A crowded stage",
+       "state": "open",
+       "choice": "Audition for a speaking role",
+       "ending": "You completed the audition and performed the role you were offered. The experience gave you practice rather than a guaranteed starring part.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Arts",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.shared_stage.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Join the ensemble instead",
+    "outcomes": [
+     {
+      "text": "I chose to join the ensemble instead.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.shared_stage",
+       "title": "A crowded stage",
+       "state": "open",
+       "choice": "Join the ensemble instead",
+       "ending": "The ensemble learned to enter and leave together. You gained confidence through a shared performance.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Arts",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.shared_stage.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reading_corner.end.0",
+  "family": "depthlife.reading_corner",
+  "icon": "📖",
+  "title": "The reading corner · conclusion",
+  "text": "The corner gained a layout tested by the children using it. Your teacher remembered the practical work behind the suggestion.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The corner gained a layout tested by the children using it. Your teacher remembered the practical work behind the suggestion.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.reading_corner",
+     "title": "The reading corner",
+     "state": "closed",
+     "choice": "Gather suggestions and test a layout",
+     "ending": "The corner gained a layout tested by the children using it. Your teacher remembered the practical work behind the suggestion.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Design"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reading_corner.end.1",
+  "family": "depthlife.reading_corner",
+  "icon": "📖",
+  "title": "The reading corner · conclusion",
+  "text": "The exchange made more books available. It did less for the furniture problem, but classmates could borrow something new.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The exchange made more books available. It did less for the furniture problem, but classmates could borrow something new.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.reading_corner",
+     "title": "The reading corner",
+     "state": "closed",
+     "choice": "Organize a book exchange",
+     "ending": "The exchange made more books available. It did less for the furniture problem, but classmates could borrow something new.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reading_corner.end.2",
+  "family": "depthlife.reading_corner",
+  "icon": "📖",
+  "title": "The reading corner · conclusion",
+  "text": "The schedule reduced clashes over the corner. Some pupils still wanted a redesign, but the space was easier to use.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The schedule reduced clashes over the corner. Some pupils still wanted a redesign, but the space was easier to use.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.reading_corner",
+     "title": "The reading corner",
+     "state": "closed",
+     "choice": "Make a simple quiet-use schedule",
+     "ending": "The schedule reduced clashes over the corner. Some pupils still wanted a redesign, but the space was easier to use.",
+     "effects": {
+      "smarts": 1
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reading_corner",
+  "family": "depthlife.reading_corner",
+  "icon": "📖",
+  "title": "The reading corner",
+  "text": "Your class can redesign a quiet corner, but pupils disagree about what it needs.",
+  "conditions": {
+   "age": [
+    9,
+    11
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Gather suggestions and test a layout",
+    "outcomes": [
+     {
+      "text": "I chose to gather suggestions and test a layout.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.reading_corner",
+       "title": "The reading corner",
+       "state": "open",
+       "choice": "Gather suggestions and test a layout",
+       "ending": "The corner gained a layout tested by the children using it. Your teacher remembered the practical work behind the suggestion.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Design",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.reading_corner.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Organize a book exchange",
+    "outcomes": [
+     {
+      "text": "I chose to organize a book exchange.",
+      "effects": {
+       "happiness": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.reading_corner",
+       "title": "The reading corner",
+       "state": "open",
+       "choice": "Organize a book exchange",
+       "ending": "The exchange made more books available. It did less for the furniture problem, but classmates could borrow something new.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.reading_corner.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make a simple quiet-use schedule",
+    "outcomes": [
+     {
+      "text": "I chose to make a simple quiet-use schedule.",
+      "effects": {
+       "stress": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.reading_corner",
+       "title": "The reading corner",
+       "state": "open",
+       "choice": "Make a simple quiet-use schedule",
+       "ending": "The schedule reduced clashes over the corner. Some pupils still wanted a redesign, but the space was easier to use.",
+       "effects": {
+        "smarts": 1
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.reading_corner.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.club_identity.end.0",
+  "family": "depthlife.club_identity",
+  "icon": "📖",
+  "title": "The club split · conclusion",
+  "text": "The team finished a competition entry. The result was less important than the documented practice you could discuss later.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The team finished a competition entry. The result was less important than the documented practice you could discuss later.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.club_identity",
+     "title": "The club split",
+     "state": "closed",
+     "choice": "Lead preparation for the competition",
+     "ending": "The team finished a competition entry. The result was less important than the documented practice you could discuss later.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Sports"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.club_identity.end.1",
+  "family": "depthlife.club_identity",
+  "icon": "📖",
+  "title": "The club split · conclusion",
+  "text": "The club delivered its smaller community project. People outside the club used it, giving your work a purpose beyond a prize.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The club delivered its smaller community project. People outside the club used it, giving your work a purpose beyond a prize.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.club_identity",
+     "title": "The club split",
+     "state": "closed",
+     "choice": "Build the community project",
+     "ending": "The club delivered its smaller community project. People outside the club used it, giving your work a purpose beyond a prize.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.club_identity.end.2",
+  "family": "depthlife.club_identity",
+  "icon": "📖",
+  "title": "The club split · conclusion",
+  "text": "The club kept both interests alive in smaller groups. Coordinating them taught you the cost of compromise.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The club kept both interests alive in smaller groups. Coordinating them taught you the cost of compromise.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.club_identity",
+     "title": "The club split",
+     "state": "closed",
+     "choice": "Propose separate smaller groups",
+     "ending": "The club kept both interests alive in smaller groups. Coordinating them taught you the cost of compromise.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Politics"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.club_identity",
+  "family": "depthlife.club_identity",
+  "icon": "📖",
+  "title": "The club split",
+  "text": "Your club argues over whether to pursue a competition or a relaxed community project.",
+  "conditions": {
+   "age": [
+    12,
+    15
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Lead preparation for the competition",
+    "outcomes": [
+     {
+      "text": "I chose to lead preparation for the competition.",
+      "effects": {
+       "stress": 4
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.club_identity",
+       "title": "The club split",
+       "state": "open",
+       "choice": "Lead preparation for the competition",
+       "ending": "The team finished a competition entry. The result was less important than the documented practice you could discuss later.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Sports",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.club_identity.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Build the community project",
+    "outcomes": [
+     {
+      "text": "I chose to build the community project.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.club_identity",
+       "title": "The club split",
+       "state": "open",
+       "choice": "Build the community project",
+       "ending": "The club delivered its smaller community project. People outside the club used it, giving your work a purpose beyond a prize.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.club_identity.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Propose separate smaller groups",
+    "outcomes": [
+     {
+      "text": "I chose to propose separate smaller groups.",
+      "effects": {
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.club_identity",
+       "title": "The club split",
+       "state": "open",
+       "choice": "Propose separate smaller groups",
+       "ending": "The club kept both interests alive in smaller groups. Coordinating them taught you the cost of compromise.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Politics",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.club_identity.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.team_transport.end.0",
+  "family": "depthlife.team_transport",
+  "icon": "📖",
+  "title": "Getting to the match · conclusion",
+  "text": "Your organized journey got the group to the match. You learned that participation can depend on transport, not only talent.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your organized journey got the group to the match. You learned that participation can depend on transport, not only talent.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.team_transport",
+     "title": "Getting to the match",
+     "state": "closed",
+     "choice": "Coordinate a shared journey",
+     "ending": "Your organized journey got the group to the match. You learned that participation can depend on transport, not only talent.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Logistics"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.team_transport.end.1",
+  "family": "depthlife.team_transport",
+  "icon": "📖",
+  "title": "Getting to the match · conclusion",
+  "text": "The school arranged a smaller traveling group. You accepted a supporting role and remained involved in the season.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The school arranged a smaller traveling group. You accepted a supporting role and remained involved in the season.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.team_transport",
+     "title": "Getting to the match",
+     "state": "closed",
+     "choice": "Request help from the school",
+     "ending": "The school arranged a smaller traveling group. You accepted a supporting role and remained involved in the season.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Sports"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.team_transport.end.2",
+  "family": "depthlife.team_transport",
+  "icon": "📖",
+  "title": "Getting to the match · conclusion",
+  "text": "You could not attend, but your preparation notes helped teammates. Missing one match did not erase your contribution.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You could not attend, but your preparation notes helped teammates. Missing one match did not erase your contribution.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.team_transport",
+     "title": "Getting to the match",
+     "state": "closed",
+     "choice": "Help the team prepare from home",
+     "ending": "You could not attend, but your preparation notes helped teammates. Missing one match did not erase your contribution.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Sports"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.team_transport",
+  "family": "depthlife.team_transport",
+  "icon": "📖",
+  "title": "Getting to the match",
+  "text": "Your team has a match farther away than usual, and travel arrangements are uncertain.",
+  "conditions": {
+   "age": [
+    12,
+    17
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Coordinate a shared journey",
+    "outcomes": [
+     {
+      "text": "I chose to coordinate a shared journey.",
+      "effects": {
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.team_transport",
+       "title": "Getting to the match",
+       "state": "open",
+       "choice": "Coordinate a shared journey",
+       "ending": "Your organized journey got the group to the match. You learned that participation can depend on transport, not only talent.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Logistics",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.team_transport.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Request help from the school",
+    "outcomes": [
+     {
+      "text": "I chose to request help from the school.",
+      "effects": {
+       "happiness": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.team_transport",
+       "title": "Getting to the match",
+       "state": "open",
+       "choice": "Request help from the school",
+       "ending": "The school arranged a smaller traveling group. You accepted a supporting role and remained involved in the season.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Sports",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.team_transport.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help the team prepare from home",
+    "outcomes": [
+     {
+      "text": "I chose to help the team prepare from home.",
+      "effects": {
+       "stress": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.team_transport",
+       "title": "Getting to the match",
+       "state": "open",
+       "choice": "Help the team prepare from home",
+       "ending": "You could not attend, but your preparation notes helped teammates. Missing one match did not erase your contribution.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Sports",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.team_transport.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.placement_choice.end.0",
+  "family": "depthlife.placement_choice",
+  "icon": "📖",
+  "title": "A first placement · conclusion",
+  "text": "You completed real tasks and recorded what you could demonstrate. That experience supported later training without replacing a qualification.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You completed real tasks and recorded what you could demonstrate. That experience supported later training without replacing a qualification.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.placement_choice",
+     "title": "A first placement",
+     "state": "closed",
+     "choice": "Choose the practical placement",
+     "ending": "You completed real tasks and recorded what you could demonstrate. That experience supported later training without replacing a qualification.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Trades"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.placement_choice.end.1",
+  "family": "depthlife.placement_choice",
+  "icon": "📖",
+  "title": "A first placement · conclusion",
+  "text": "Your mentor helped turn uncertain interests into a clearer learning plan. You left with questions to ask future employers.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your mentor helped turn uncertain interests into a clearer learning plan. You left with questions to ask future employers.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.placement_choice",
+     "title": "A first placement",
+     "state": "closed",
+     "choice": "Choose structured mentoring",
+     "ending": "Your mentor helped turn uncertain interests into a clearer learning plan. You left with questions to ask future employers.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Business"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.placement_choice.end.2",
+  "family": "depthlife.placement_choice",
+  "icon": "📖",
+  "title": "A first placement · conclusion",
+  "text": "The visits clarified the difference between those jobs. You kept your current course and made a more informed later choice.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The visits clarified the difference between those jobs. You kept your current course and made a more informed later choice.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.placement_choice",
+     "title": "A first placement",
+     "state": "closed",
+     "choice": "Keep studying and visit both workplaces",
+     "ending": "The visits clarified the difference between those jobs. You kept your current course and made a more informed later choice.",
+     "effects": {
+      "school": 2
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.placement_choice",
+  "family": "depthlife.placement_choice",
+  "icon": "📖",
+  "title": "A first placement",
+  "text": "Two short placements appeal to you: one offers practical responsibility, the other structured mentoring.",
+  "conditions": {
+   "age": [
+    16,
+    20
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Choose the practical placement",
+    "outcomes": [
+     {
+      "text": "I chose to choose the practical placement.",
+      "effects": {
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.placement_choice",
+       "title": "A first placement",
+       "state": "open",
+       "choice": "Choose the practical placement",
+       "ending": "You completed real tasks and recorded what you could demonstrate. That experience supported later training without replacing a qualification.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Trades",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.placement_choice.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Choose structured mentoring",
+    "outcomes": [
+     {
+      "text": "I chose to choose structured mentoring.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.placement_choice",
+       "title": "A first placement",
+       "state": "open",
+       "choice": "Choose structured mentoring",
+       "ending": "Your mentor helped turn uncertain interests into a clearer learning plan. You left with questions to ask future employers.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Business",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.placement_choice.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep studying and visit both workplaces",
+    "outcomes": [
+     {
+      "text": "I chose to keep studying and visit both workplaces.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.placement_choice",
+       "title": "A first placement",
+       "state": "open",
+       "choice": "Keep studying and visit both workplaces",
+       "ending": "The visits clarified the difference between those jobs. You kept your current course and made a more informed later choice.",
+       "effects": {
+        "school": 2
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.placement_choice.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.friend_departure.end.0",
+  "family": "depthlife.friend_departure",
+  "icon": "📖",
+  "title": "Different directions · conclusion",
+  "text": "Some conversations were postponed, but the realistic routine kept contact alive. Distance changed the friendship rather than ending it automatically.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Some conversations were postponed, but the realistic routine kept contact alive. Distance changed the friendship rather than ending it automatically.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.friend_departure",
+     "title": "Different directions",
+     "state": "closed",
+     "choice": "Agree a realistic contact routine",
+     "ending": "Some conversations were postponed, but the realistic routine kept contact alive. Distance changed the friendship rather than ending it automatically.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.friend_departure.end.1",
+  "family": "depthlife.friend_departure",
+  "icon": "📖",
+  "title": "Different directions · conclusion",
+  "text": "The goodbye became a shared memory. Contact grew less frequent, but the departure had an honest ending.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The goodbye became a shared memory. Contact grew less frequent, but the departure had an honest ending.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.friend_departure",
+     "title": "Different directions",
+     "state": "closed",
+     "choice": "Make one memorable goodbye",
+     "ending": "The goodbye became a shared memory. Contact grew less frequent, but the departure had an honest ending.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Arts"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.friend_departure.end.2",
+  "family": "depthlife.friend_departure",
+  "icon": "📖",
+  "title": "Different directions · conclusion",
+  "text": "Messages became occasional. You accepted a quieter connection rather than treating every gap as a betrayal.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Messages became occasional. You accepted a quieter connection rather than treating every gap as a betrayal.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.friend_departure",
+     "title": "Different directions",
+     "state": "closed",
+     "choice": "Let contact find its own pace",
+     "ending": "Messages became occasional. You accepted a quieter connection rather than treating every gap as a betrayal.",
+     "effects": {
+      "happiness": 1
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.friend_departure",
+  "family": "depthlife.friend_departure",
+  "icon": "📖",
+  "title": "Different directions",
+  "text": "A friend prepares to move away while you are still building your life here.",
+  "conditions": {
+   "age": [
+    16,
+    25
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Agree a realistic contact routine",
+    "outcomes": [
+     {
+      "text": "I chose to agree a realistic contact routine.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.friend_departure",
+       "title": "Different directions",
+       "state": "open",
+       "choice": "Agree a realistic contact routine",
+       "ending": "Some conversations were postponed, but the realistic routine kept contact alive. Distance changed the friendship rather than ending it automatically.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.friend_departure.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make one memorable goodbye",
+    "outcomes": [
+     {
+      "text": "I chose to make one memorable goodbye.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.friend_departure",
+       "title": "Different directions",
+       "state": "open",
+       "choice": "Make one memorable goodbye",
+       "ending": "The goodbye became a shared memory. Contact grew less frequent, but the departure had an honest ending.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Arts",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.friend_departure.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Let contact find its own pace",
+    "outcomes": [
+     {
+      "text": "I chose to let contact find its own pace.",
+      "effects": {
+       "stress": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.friend_departure",
+       "title": "Different directions",
+       "state": "open",
+       "choice": "Let contact find its own pace",
+       "ending": "Messages became occasional. You accepted a quieter connection rather than treating every gap as a betrayal.",
+       "effects": {
+        "happiness": 1
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.friend_departure.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.first_budget.end.0",
+  "family": "depthlife.first_budget",
+  "icon": "📖",
+  "title": "The almost-affordable month · conclusion",
+  "text": "You found a recurring expense you could avoid. The review improved your financial skill without inventing a windfall.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You found a recurring expense you could avoid. The review improved your financial skill without inventing a windfall.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.first_budget",
+     "title": "The almost-affordable month",
+     "state": "closed",
+     "choice": "Review recurring costs first",
+     "ending": "You found a recurring expense you could avoid. The review improved your financial skill without inventing a windfall.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Finance"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.first_budget.end.1",
+  "family": "depthlife.first_budget",
+  "icon": "📖",
+  "title": "The almost-affordable month · conclusion",
+  "text": "Your emergency budget identified which costs you could reduce if income stopped. Planning improved your financial skill without adding money to your account.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your emergency budget identified which costs you could reduce if income stopped. Planning improved your financial skill without adding money to your account.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.first_budget",
+     "title": "The almost-affordable month",
+     "state": "closed",
+     "choice": "Prepare a realistic emergency budget",
+     "ending": "Your emergency budget identified which costs you could reduce if income stopped. Planning improved your financial skill without adding money to your account.",
+     "effects": {
+      "smarts": 1,
+      "happiness": 1
+     },
+     "field": "Finance"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.first_budget.end.2",
+  "family": "depthlife.first_budget",
+  "icon": "📖",
+  "title": "The almost-affordable month · conclusion",
+  "text": "The postponed purchase stopped feeling urgent. You finished the month with a better sense of what you actually wanted.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The postponed purchase stopped feeling urgent. You finished the month with a better sense of what you actually wanted.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.first_budget",
+     "title": "The almost-affordable month",
+     "state": "closed",
+     "choice": "Postpone an optional purchase",
+     "ending": "The postponed purchase stopped feeling urgent. You finished the month with a better sense of what you actually wanted.",
+     "effects": {
+      "stress": -2
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.first_budget",
+  "family": "depthlife.first_budget",
+  "icon": "📖",
+  "title": "The almost-affordable month",
+  "text": "Several small expenses arrive together. None looks disastrous alone.",
+  "conditions": {
+   "age": [
+    18,
+    29
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Review recurring costs first",
+    "outcomes": [
+     {
+      "text": "I chose to review recurring costs first.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.first_budget",
+       "title": "The almost-affordable month",
+       "state": "open",
+       "choice": "Review recurring costs first",
+       "ending": "You found a recurring expense you could avoid. The review improved your financial skill without inventing a windfall.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Finance",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.first_budget.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Prepare a realistic emergency budget",
+    "outcomes": [
+     {
+      "text": "I chose to prepare a realistic emergency budget.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.first_budget",
+       "title": "The almost-affordable month",
+       "state": "open",
+       "choice": "Prepare a realistic emergency budget",
+       "ending": "Your emergency budget identified which costs you could reduce if income stopped. Planning improved your financial skill without adding money to your account.",
+       "effects": {
+        "smarts": 1,
+        "happiness": 1
+       },
+       "field": "Finance",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.first_budget.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Postpone an optional purchase",
+    "outcomes": [
+     {
+      "text": "I chose to postpone an optional purchase.",
+      "effects": {
+       "happiness": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.first_budget",
+       "title": "The almost-affordable month",
+       "state": "open",
+       "choice": "Postpone an optional purchase",
+       "ending": "The postponed purchase stopped feeling urgent. You finished the month with a better sense of what you actually wanted.",
+       "effects": {
+        "stress": -2
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.first_budget.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reunion.end.0",
+  "family": "depthlife.reunion",
+  "icon": "📖",
+  "title": "The reunion invitation · conclusion",
+  "text": "The shorter visit let you reconnect without spending the whole weekend away. You returned with a few renewed conversations.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The shorter visit let you reconnect without spending the whole weekend away. You returned with a few renewed conversations.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.reunion",
+     "title": "The reunion invitation",
+     "state": "closed",
+     "choice": "Attend for a shorter visit",
+     "ending": "The shorter visit let you reconnect without spending the whole weekend away. You returned with a few renewed conversations.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Hospitality"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reunion.end.1",
+  "family": "depthlife.reunion",
+  "icon": "📖",
+  "title": "The reunion invitation · conclusion",
+  "text": "The smaller meeting gave you time for an actual conversation. The reunion became one continuing connection.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The smaller meeting gave you time for an actual conversation. The reunion became one continuing connection.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.reunion",
+     "title": "The reunion invitation",
+     "state": "closed",
+     "choice": "Arrange a local meeting with one person",
+     "ending": "The smaller meeting gave you time for an actual conversation. The reunion became one continuing connection.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reunion.end.2",
+  "family": "depthlife.reunion",
+  "icon": "📖",
+  "title": "The reunion invitation · conclusion",
+  "text": "Your message was acknowledged, and you kept the weekend for your current commitments. Declining did not need a dramatic fallout.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your message was acknowledged, and you kept the weekend for your current commitments. Declining did not need a dramatic fallout.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.reunion",
+     "title": "The reunion invitation",
+     "state": "closed",
+     "choice": "Send a personal message instead",
+     "ending": "Your message was acknowledged, and you kept the weekend for your current commitments. Declining did not need a dramatic fallout.",
+     "effects": {
+      "happiness": 1
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.reunion",
+  "family": "depthlife.reunion",
+  "icon": "📖",
+  "title": "The reunion invitation",
+  "text": "A reunion arrives during a demanding period. You are curious, but the travel and social effort are real.",
+  "conditions": {
+   "age": [
+    25,
+    45
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Attend for a shorter visit",
+    "outcomes": [
+     {
+      "text": "I chose to attend for a shorter visit.",
+      "effects": {
+       "money": -60,
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.reunion",
+       "title": "The reunion invitation",
+       "state": "open",
+       "choice": "Attend for a shorter visit",
+       "ending": "The shorter visit let you reconnect without spending the whole weekend away. You returned with a few renewed conversations.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Hospitality",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.reunion.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 60
+    }
+   },
+   {
+    "label": "Arrange a local meeting with one person",
+    "outcomes": [
+     {
+      "text": "I chose to arrange a local meeting with one person.",
+      "effects": {
+       "money": -15,
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.reunion",
+       "title": "The reunion invitation",
+       "state": "open",
+       "choice": "Arrange a local meeting with one person",
+       "ending": "The smaller meeting gave you time for an actual conversation. The reunion became one continuing connection.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.reunion.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 15
+    }
+   },
+   {
+    "label": "Send a personal message instead",
+    "outcomes": [
+     {
+      "text": "I chose to send a personal message instead.",
+      "effects": {
+       "stress": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.reunion",
+       "title": "The reunion invitation",
+       "state": "open",
+       "choice": "Send a personal message instead",
+       "ending": "Your message was acknowledged, and you kept the weekend for your current commitments. Declining did not need a dramatic fallout.",
+       "effects": {
+        "happiness": 1
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.reunion.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.quiet_craft.end.0",
+  "family": "depthlife.quiet_craft",
+  "icon": "📖",
+  "title": "The useful hobby · conclusion",
+  "text": "You completed the small commission and received its agreed payment. The experience taught you to set a scope before accepting more work.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You completed the small commission and received its agreed payment. The experience taught you to set a scope before accepting more work.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.quiet_craft",
+     "title": "The useful hobby",
+     "state": "closed",
+     "choice": "Accept a small paid commission",
+     "ending": "You completed the small commission and received its agreed payment. The experience taught you to set a scope before accepting more work.",
+     "effects": {
+      "money": 70,
+      "happiness": 1
+     },
+     "field": "Business"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.quiet_craft.end.1",
+  "family": "depthlife.quiet_craft",
+  "icon": "📖",
+  "title": "The useful hobby · conclusion",
+  "text": "You shared the work without turning every session into a deadline. The hobby remained a place to recover and connect.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You shared the work without turning every session into a deadline. The hobby remained a place to recover and connect.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.quiet_craft",
+     "title": "The useful hobby",
+     "state": "closed",
+     "choice": "Keep it as a shared hobby",
+     "ending": "You shared the work without turning every session into a deadline. The hobby remained a place to recover and connect.",
+     "effects": {
+      "happiness": 3,
+      "stress": -2
+     },
+     "field": "Arts"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.quiet_craft.end.2",
+  "family": "depthlife.quiet_craft",
+  "icon": "📖",
+  "title": "The useful hobby · conclusion",
+  "text": "The portfolio gave your practice a direction. It became evidence of work, not a claim that you already had a new career.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The portfolio gave your practice a direction. It became evidence of work, not a claim that you already had a new career.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.quiet_craft",
+     "title": "The useful hobby",
+     "state": "closed",
+     "choice": "Build a portfolio before taking requests",
+     "ending": "The portfolio gave your practice a direction. It became evidence of work, not a claim that you already had a new career.",
+     "effects": {
+      "smarts": 2
+     },
+     "field": "Design"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.quiet_craft",
+  "family": "depthlife.quiet_craft",
+  "icon": "📖",
+  "title": "The useful hobby",
+  "text": "A hobby begins attracting requests from people who want your work.",
+  "conditions": {
+   "age": [
+    20,
+    60
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Accept a small paid commission",
+    "outcomes": [
+     {
+      "text": "I chose to accept a small paid commission.",
+      "effects": {
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.quiet_craft",
+       "title": "The useful hobby",
+       "state": "open",
+       "choice": "Accept a small paid commission",
+       "ending": "You completed the small commission and received its agreed payment. The experience taught you to set a scope before accepting more work.",
+       "effects": {
+        "money": 70,
+        "happiness": 1
+       },
+       "field": "Business",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.quiet_craft.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Keep it as a shared hobby",
+    "outcomes": [
+     {
+      "text": "I chose to keep it as a shared hobby.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.quiet_craft",
+       "title": "The useful hobby",
+       "state": "open",
+       "choice": "Keep it as a shared hobby",
+       "ending": "You shared the work without turning every session into a deadline. The hobby remained a place to recover and connect.",
+       "effects": {
+        "happiness": 3,
+        "stress": -2
+       },
+       "field": "Arts",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.quiet_craft.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Build a portfolio before taking requests",
+    "outcomes": [
+     {
+      "text": "I chose to build a portfolio before taking requests.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.quiet_craft",
+       "title": "The useful hobby",
+       "state": "open",
+       "choice": "Build a portfolio before taking requests",
+       "ending": "The portfolio gave your practice a direction. It became evidence of work, not a claim that you already had a new career.",
+       "effects": {
+        "smarts": 2
+       },
+       "field": "Design",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.quiet_craft.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.family_calendar.end.0",
+  "family": "depthlife.family_calendar",
+  "icon": "📖",
+  "title": "The crowded calendar · conclusion",
+  "text": "The smaller gathering happened. Some preferences went unmet, but the family had time together without an impossible schedule.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The smaller gathering happened. Some preferences went unmet, but the family had time together without an impossible schedule.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.family_calendar",
+     "title": "The crowded calendar",
+     "state": "closed",
+     "choice": "Arrange a smaller shared gathering",
+     "ending": "The smaller gathering happened. Some preferences went unmet, but the family had time together without an impossible schedule.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.family_calendar.end.1",
+  "family": "depthlife.family_calendar",
+  "icon": "📖",
+  "title": "The crowded calendar · conclusion",
+  "text": "You kept the important visits and one quiet day. The plan made your limits visible without withdrawing from everyone.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You kept the important visits and one quiet day. The plan made your limits visible without withdrawing from everyone.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.family_calendar",
+     "title": "The crowded calendar",
+     "state": "closed",
+     "choice": "Attend separately and protect a rest day",
+     "ending": "You kept the important visits and one quiet day. The plan made your limits visible without withdrawing from everyone.",
+     "effects": {
+      "health": 1,
+      "happiness": 1
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.family_calendar.end.2",
+  "family": "depthlife.family_calendar",
+  "icon": "📖",
+  "title": "The crowded calendar · conclusion",
+  "text": "The practical contribution was useful even though you missed the gathering. Your absence and support were both acknowledged.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The practical contribution was useful even though you missed the gathering. Your absence and support were both acknowledged.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.family_calendar",
+     "title": "The crowded calendar",
+     "state": "closed",
+     "choice": "Offer practical help instead of attending",
+     "ending": "The practical contribution was useful even though you missed the gathering. Your absence and support were both acknowledged.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Logistics"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.family_calendar",
+  "family": "depthlife.family_calendar",
+  "icon": "📖",
+  "title": "The crowded calendar",
+  "text": "Several family commitments land in the same week. Agreeing to everything would leave little rest.",
+  "conditions": {
+   "age": [
+    30,
+    60
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Arrange a smaller shared gathering",
+    "outcomes": [
+     {
+      "text": "I chose to arrange a smaller shared gathering.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.family_calendar",
+       "title": "The crowded calendar",
+       "state": "open",
+       "choice": "Arrange a smaller shared gathering",
+       "ending": "The smaller gathering happened. Some preferences went unmet, but the family had time together without an impossible schedule.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.family_calendar.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Attend separately and protect a rest day",
+    "outcomes": [
+     {
+      "text": "I chose to attend separately and protect a rest day.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.family_calendar",
+       "title": "The crowded calendar",
+       "state": "open",
+       "choice": "Attend separately and protect a rest day",
+       "ending": "You kept the important visits and one quiet day. The plan made your limits visible without withdrawing from everyone.",
+       "effects": {
+        "health": 1,
+        "happiness": 1
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.family_calendar.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Offer practical help instead of attending",
+    "outcomes": [
+     {
+      "text": "I chose to offer practical help instead of attending.",
+      "effects": {
+       "money": -30
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.family_calendar",
+       "title": "The crowded calendar",
+       "state": "open",
+       "choice": "Offer practical help instead of attending",
+       "ending": "The practical contribution was useful even though you missed the gathering. Your absence and support were both acknowledged.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Logistics",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.family_calendar.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 30
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.later_learning.end.0",
+  "family": "depthlife.later_learning",
+  "icon": "📖",
+  "title": "Learning something new · conclusion",
+  "text": "You completed the introductory course. Learning took effort and money; it widened your interests rather than awarding a fictional degree.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You completed the introductory course. Learning took effort and money; it widened your interests rather than awarding a fictional degree.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.later_learning",
+     "title": "Learning something new",
+     "state": "closed",
+     "choice": "Enroll and rearrange your routine",
+     "ending": "You completed the introductory course. Learning took effort and money; it widened your interests rather than awarding a fictional degree.",
+     "effects": {
+      "smarts": 3
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.later_learning.end.1",
+  "family": "depthlife.later_learning",
+  "icon": "📖",
+  "title": "Learning something new · conclusion",
+  "text": "The community session let you try the subject without a full course commitment. You found a manageable way to keep learning.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The community session let you try the subject without a full course commitment. You found a manageable way to keep learning.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.later_learning",
+     "title": "Learning something new",
+     "state": "closed",
+     "choice": "Try a free community session",
+     "ending": "The community session let you try the subject without a full course commitment. You found a manageable way to keep learning.",
+     "effects": {
+      "smarts": 1,
+      "happiness": 1
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.later_learning.end.2",
+  "family": "depthlife.later_learning",
+  "icon": "📖",
+  "title": "Learning something new · conclusion",
+  "text": "You and your friend kept a modest learning routine. Its slower pace made it easier to sustain.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You and your friend kept a modest learning routine. Its slower pace made it easier to sustain.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.later_learning",
+     "title": "Learning something new",
+     "state": "closed",
+     "choice": "Learn with a friend informally",
+     "ending": "You and your friend kept a modest learning routine. Its slower pace made it easier to sustain.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.later_learning",
+  "family": "depthlife.later_learning",
+  "icon": "📖",
+  "title": "Learning something new",
+  "text": "An evening course interests you, but its timetable would replace a familiar routine.",
+  "conditions": {
+   "age": [
+    45,
+    75
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Enroll and rearrange your routine",
+    "outcomes": [
+     {
+      "text": "I chose to enroll and rearrange your routine.",
+      "effects": {
+       "money": -90,
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.later_learning",
+       "title": "Learning something new",
+       "state": "open",
+       "choice": "Enroll and rearrange your routine",
+       "ending": "You completed the introductory course. Learning took effort and money; it widened your interests rather than awarding a fictional degree.",
+       "effects": {
+        "smarts": 3
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.later_learning.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 90
+    }
+   },
+   {
+    "label": "Try a free community session",
+    "outcomes": [
+     {
+      "text": "I chose to try a free community session.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.later_learning",
+       "title": "Learning something new",
+       "state": "open",
+       "choice": "Try a free community session",
+       "ending": "The community session let you try the subject without a full course commitment. You found a manageable way to keep learning.",
+       "effects": {
+        "smarts": 1,
+        "happiness": 1
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.later_learning.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Learn with a friend informally",
+    "outcomes": [
+     {
+      "text": "I chose to learn with a friend informally.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.later_learning",
+       "title": "Learning something new",
+       "state": "open",
+       "choice": "Learn with a friend informally",
+       "ending": "You and your friend kept a modest learning routine. Its slower pace made it easier to sustain.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.later_learning.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.passing_knowledge.end.0",
+  "family": "depthlife.passing_knowledge",
+  "icon": "📖",
+  "title": "Someone asks how · conclusion",
+  "text": "Your account gave them a starting point without pretending your circumstances were identical. They could adapt it to their own life.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Your account gave them a starting point without pretending your circumstances were identical. They could adapt it to their own life.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.passing_knowledge",
+     "title": "Someone asks how",
+     "state": "closed",
+     "choice": "Share the practical steps and their limits",
+     "ending": "Your account gave them a starting point without pretending your circumstances were identical. They could adapt it to their own life.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Education"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.passing_knowledge.end.1",
+  "family": "depthlife.passing_knowledge",
+  "icon": "📖",
+  "title": "Someone asks how · conclusion",
+  "text": "The introduction connected them with appropriate help. Your role was useful without making you responsible for every outcome.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The introduction connected them with appropriate help. Your role was useful without making you responsible for every outcome.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.passing_knowledge",
+     "title": "Someone asks how",
+     "state": "closed",
+     "choice": "Help them find relevant support",
+     "ending": "The introduction connected them with appropriate help. Your role was useful without making you responsible for every outcome.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.passing_knowledge.end.2",
+  "family": "depthlife.passing_knowledge",
+  "icon": "📖",
+  "title": "Someone asks how · conclusion",
+  "text": "Writing helped you make sense of your own experience. You kept the account for a time when sharing it might fit better.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Writing helped you make sense of your own experience. You kept the account for a time when sharing it might fit better.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.passing_knowledge",
+     "title": "Someone asks how",
+     "state": "closed",
+     "choice": "Write down the experience privately",
+     "ending": "Writing helped you make sense of your own experience. You kept the account for a time when sharing it might fit better.",
+     "effects": {
+      "smarts": 1,
+      "happiness": 1
+     },
+     "field": "Media"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.passing_knowledge",
+  "family": "depthlife.passing_knowledge",
+  "icon": "📖",
+  "title": "Someone asks how",
+  "text": "A younger acquaintance asks how you learned to manage a difficult period in your life.",
+  "conditions": {
+   "age": [
+    55,
+    90
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Share the practical steps and their limits",
+    "outcomes": [
+     {
+      "text": "I chose to share the practical steps and their limits.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.passing_knowledge",
+       "title": "Someone asks how",
+       "state": "open",
+       "choice": "Share the practical steps and their limits",
+       "ending": "Your account gave them a starting point without pretending your circumstances were identical. They could adapt it to their own life.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Education",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.passing_knowledge.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Help them find relevant support",
+    "outcomes": [
+     {
+      "text": "I chose to help them find relevant support.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.passing_knowledge",
+       "title": "Someone asks how",
+       "state": "open",
+       "choice": "Help them find relevant support",
+       "ending": "The introduction connected them with appropriate help. Your role was useful without making you responsible for every outcome.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.passing_knowledge.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Write down the experience privately",
+    "outcomes": [
+     {
+      "text": "I chose to write down the experience privately.",
+      "effects": {
+       "stress": -1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.passing_knowledge",
+       "title": "Someone asks how",
+       "state": "open",
+       "choice": "Write down the experience privately",
+       "ending": "Writing helped you make sense of your own experience. You kept the account for a time when sharing it might fit better.",
+       "effects": {
+        "smarts": 1,
+        "happiness": 1
+       },
+       "field": "Media",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.passing_knowledge.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.old_place.end.0",
+  "family": "depthlife.old_place",
+  "icon": "📖",
+  "title": "The changed familiar place · conclusion",
+  "text": "The visit held both loss and discovery. You found a way to connect the old place with its present life.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The visit held both loss and discovery. You found a way to connect the old place with its present life.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.old_place",
+     "title": "The changed familiar place",
+     "state": "closed",
+     "choice": "Visit and discover what remains",
+     "ending": "The visit held both loss and discovery. You found a way to connect the old place with its present life.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Environment"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.old_place.end.1",
+  "family": "depthlife.old_place",
+  "icon": "📖",
+  "title": "The changed familiar place · conclusion",
+  "text": "Comparing memories revealed details neither of you held alone. The conversation preserved a piece of your shared history.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Comparing memories revealed details neither of you held alone. The conversation preserved a piece of your shared history.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.old_place",
+     "title": "The changed familiar place",
+     "state": "closed",
+     "choice": "Collect memories with someone who knew it",
+     "ending": "Comparing memories revealed details neither of you held alone. The conversation preserved a piece of your shared history.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Media"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.old_place.end.2",
+  "family": "depthlife.old_place",
+  "icon": "📖",
+  "title": "The changed familiar place · conclusion",
+  "text": "The new routine did not replace the old memory. It gave your current life somewhere to belong.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The new routine did not replace the old memory. It gave your current life somewhere to belong.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.old_place",
+     "title": "The changed familiar place",
+     "state": "closed",
+     "choice": "Make space for a new favorite place",
+     "ending": "The new routine did not replace the old memory. It gave your current life somewhere to belong.",
+     "effects": {
+      "happiness": 2,
+      "health": 1
+     },
+     "field": "General"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.old_place",
+  "family": "depthlife.old_place",
+  "icon": "📖",
+  "title": "The changed familiar place",
+  "text": "A place you once visited often has changed. You can revisit it or preserve the memory as it was.",
+  "conditions": {
+   "age": [
+    65,
+    100
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Visit and discover what remains",
+    "outcomes": [
+     {
+      "text": "I chose to visit and discover what remains.",
+      "effects": {
+       "money": -25,
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.old_place",
+       "title": "The changed familiar place",
+       "state": "open",
+       "choice": "Visit and discover what remains",
+       "ending": "The visit held both loss and discovery. You found a way to connect the old place with its present life.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Environment",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.old_place.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 25
+    }
+   },
+   {
+    "label": "Collect memories with someone who knew it",
+    "outcomes": [
+     {
+      "text": "I chose to collect memories with someone who knew it.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.old_place",
+       "title": "The changed familiar place",
+       "state": "open",
+       "choice": "Collect memories with someone who knew it",
+       "ending": "Comparing memories revealed details neither of you held alone. The conversation preserved a piece of your shared history.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Media",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.old_place.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Make space for a new favorite place",
+    "outcomes": [
+     {
+      "text": "I chose to make space for a new favorite place.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.old_place",
+       "title": "The changed familiar place",
+       "state": "open",
+       "choice": "Make space for a new favorite place",
+       "ending": "The new routine did not replace the old memory. It gave your current life somewhere to belong.",
+       "effects": {
+        "happiness": 2,
+        "health": 1
+       },
+       "field": "General",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.old_place.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.owned_car.end.0",
+  "family": "depthlife.owned_car",
+  "icon": "📖",
+  "title": "A worrying new sound · conclusion",
+  "text": "The inspection identified the issue before your next long trip. Maintenance cost money but reduced uncertainty about the car.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The inspection identified the issue before your next long trip. Maintenance cost money but reduced uncertainty about the car.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.owned_car",
+     "title": "A worrying new sound",
+     "state": "closed",
+     "choice": "Book an inspection promptly",
+     "ending": "The inspection identified the issue before your next long trip. Maintenance cost money but reduced uncertainty about the car.",
+     "effects": {
+      "stress": -2
+     },
+     "field": "Trades"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.owned_car.end.1",
+  "family": "depthlife.owned_car",
+  "icon": "📖",
+  "title": "A worrying new sound · conclusion",
+  "text": "You managed the interruption using another route. The car waited until you had enough information for an appropriate repair.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "You managed the interruption using another route. The car waited until you had enough information for an appropriate repair.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.owned_car",
+     "title": "A worrying new sound",
+     "state": "closed",
+     "choice": "Use other transport while seeking advice",
+     "ending": "You managed the interruption using another route. The car waited until you had enough information for an appropriate repair.",
+     "effects": {
+      "smarts": 1
+     },
+     "field": "Logistics"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.owned_car.end.2",
+  "family": "depthlife.owned_car",
+  "icon": "📖",
+  "title": "A worrying new sound · conclusion",
+  "text": "The combined appointment resolved the uncertainty later. Waiting saved a separate visit but prolonged the inconvenience.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The combined appointment resolved the uncertainty later. Waiting saved a separate visit but prolonged the inconvenience.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.owned_car",
+     "title": "A worrying new sound",
+     "state": "closed",
+     "choice": "Combine diagnosis with the next service",
+     "ending": "The combined appointment resolved the uncertainty later. Waiting saved a separate visit but prolonged the inconvenience.",
+     "effects": {
+      "happiness": 1
+     },
+     "field": "Trades"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.owned_car",
+  "family": "depthlife.owned_car",
+  "icon": "📖",
+  "title": "A worrying new sound",
+  "text": "Your car develops a noise between scheduled services. It still drives, but you do not know the cause.",
+  "conditions": {
+   "age": [
+    18,
+    85
+   ],
+   "has_car": true
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Book an inspection promptly",
+    "outcomes": [
+     {
+      "text": "I chose to book an inspection promptly.",
+      "effects": {
+       "money": -120,
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.owned_car",
+       "title": "A worrying new sound",
+       "state": "open",
+       "choice": "Book an inspection promptly",
+       "ending": "The inspection identified the issue before your next long trip. Maintenance cost money but reduced uncertainty about the car.",
+       "effects": {
+        "stress": -2
+       },
+       "field": "Trades",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.owned_car.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 120
+    }
+   },
+   {
+    "label": "Use other transport while seeking advice",
+    "outcomes": [
+     {
+      "text": "I chose to use other transport while seeking advice.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.owned_car",
+       "title": "A worrying new sound",
+       "state": "open",
+       "choice": "Use other transport while seeking advice",
+       "ending": "You managed the interruption using another route. The car waited until you had enough information for an appropriate repair.",
+       "effects": {
+        "smarts": 1
+       },
+       "field": "Logistics",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.owned_car.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Combine diagnosis with the next service",
+    "outcomes": [
+     {
+      "text": "I chose to combine diagnosis with the next service.",
+      "effects": {
+       "stress": 3
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.owned_car",
+       "title": "A worrying new sound",
+       "state": "open",
+       "choice": "Combine diagnosis with the next service",
+       "ending": "The combined appointment resolved the uncertainty later. Waiting saved a separate visit but prolonged the inconvenience.",
+       "effects": {
+        "happiness": 1
+       },
+       "field": "Trades",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.owned_car.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "depthlife.house_room.end.0",
+  "family": "depthlife.house_room",
+  "icon": "📖",
+  "title": "A room with too many purposes · conclusion",
+  "text": "The room became better at its main purpose. You accepted less storage rather than claiming every use could fit equally well.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The room became better at its main purpose. You accepted less storage rather than claiming every use could fit equally well.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.house_room",
+     "title": "A room with too many purposes",
+     "state": "closed",
+     "choice": "Rearrange it around the most important use",
+     "ending": "The room became better at its main purpose. You accepted less storage rather than claiming every use could fit equally well.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Design"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.house_room.end.1",
+  "family": "depthlife.house_room",
+  "icon": "📖",
+  "title": "A room with too many purposes · conclusion",
+  "text": "The adaptable furniture improved the room without adding floor space. Its cost remained part of owning the home.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "The adaptable furniture improved the room without adding floor space. Its cost remained part of owning the home.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.house_room",
+     "title": "A room with too many purposes",
+     "state": "closed",
+     "choice": "Invest in adaptable furniture",
+     "ending": "The adaptable furniture improved the room without adding floor space. Its cost remained part of owning the home.",
+     "effects": {
+      "happiness": 3
+     },
+     "field": "Design"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.house_room.end.2",
+  "family": "depthlife.house_room",
+  "icon": "📖",
+  "title": "A room with too many purposes · conclusion",
+  "text": "Using a shared space relieved the room and added a new local routine. Convenience came with a little extra travel.",
+  "conditions": {
+   "prison_any": true
+  },
+  "followup_only": true,
+  "outcomes": [
+   {
+    "text": "Using a shared space relieved the room and added a new local routine. Convenience came with a little extra travel.",
+    "no_friction": true,
+    "story": {
+     "id": "depthlife.house_room",
+     "title": "A room with too many purposes",
+     "state": "closed",
+     "choice": "Move one activity to a shared local space",
+     "ending": "Using a shared space relieved the room and added a new local routine. Convenience came with a little extra travel.",
+     "effects": {
+      "happiness": 2
+     },
+     "field": "Care"
+    }
+   }
+  ]
+ },
+ {
+  "id": "depthlife.house_room",
+  "family": "depthlife.house_room",
+  "icon": "📖",
+  "title": "A room with too many purposes",
+  "text": "One room in your home has become an office, storage space and a place to relax. It serves none of them well.",
+  "conditions": {
+   "age": [
+    25,
+    85
+   ],
+   "housing": [
+    "house"
+   ]
+  },
+  "once": true,
+  "weight": 2,
+  "themes": [
+   "daily"
+  ],
+  "choices": [
+   {
+    "label": "Rearrange it around the most important use",
+    "outcomes": [
+     {
+      "text": "I chose to rearrange it around the most important use.",
+      "effects": {
+       "stress": 2
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.house_room",
+       "title": "A room with too many purposes",
+       "state": "open",
+       "choice": "Rearrange it around the most important use",
+       "ending": "The room became better at its main purpose. You accepted less storage rather than claiming every use could fit equally well.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Design",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.house_room.end.0",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "label": "Invest in adaptable furniture",
+    "outcomes": [
+     {
+      "text": "I chose to invest in adaptable furniture.",
+      "effects": {
+       "money": -180,
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.house_room",
+       "title": "A room with too many purposes",
+       "state": "open",
+       "choice": "Invest in adaptable furniture",
+       "ending": "The adaptable furniture improved the room without adding floor space. Its cost remained part of owning the home.",
+       "effects": {
+        "happiness": 3
+       },
+       "field": "Design",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.house_room.end.1",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ],
+    "requires": {
+     "money": 180
+    }
+   },
+   {
+    "label": "Move one activity to a shared local space",
+    "outcomes": [
+     {
+      "text": "I chose to move one activity to a shared local space.",
+      "effects": {
+       "stress": 1
+      },
+      "no_friction": true,
+      "story": {
+       "id": "depthlife.house_room",
+       "title": "A room with too many purposes",
+       "state": "open",
+       "choice": "Move one activity to a shared local space",
+       "ending": "Using a shared space relieved the room and added a new local routine. Convenience came with a little extra travel.",
+       "effects": {
+        "happiness": 2
+       },
+       "field": "Care",
+       "due": 1
+      },
+      "schedule": {
+       "event": "depthlife.house_room.end.2",
+       "years": [
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

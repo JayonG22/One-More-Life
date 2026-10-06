@@ -181,7 +181,8 @@
    "cw": {
     "relation": "coworker"
    }
-  }
+  },
+  "available_from": 1995
  },
  {
   "id": "work.weekend",
@@ -1036,6 +1037,7 @@
      }
     ]
    }
-  ]
+  ],
+  "available_from": 1995
  }
 ]

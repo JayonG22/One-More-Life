@@ -75,7 +75,9 @@ func _read_the_life(p: Dictionary) -> void:
 		stone_col = Color("#5c6153")
 	elif life_kind == "witch":
 		stone_col = Color("#4b4258")
-	ink = Color("#2b2e33") if stone_col.get_luminance() > 0.42 else Color("#e7e3da")
+	# Material remains a subtle hue difference, never a bright slab in a dark UI.
+	stone_col = ThemeManager.c("surface2").lerp(stone_col, 0.15)
+	ink = ThemeManager.c("text")
 
 	# --- weathering: how long the world has had to forget you
 	weather = clampf(float(age) / 150.0, 0.0, 0.85)

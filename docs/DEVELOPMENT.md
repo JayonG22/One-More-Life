@@ -35,8 +35,13 @@ Events are JSON under `data/events/`. Inspect an existing event and the loader
 before adding a new category. For generated content, update the generator and
 follow the [documented run order](../tools/content/README.md). Keep event IDs
 unique, provide meaningful choices, and verify eligibility and delayed outcomes.
-Use recurring people and consequences where possible. Avoid new scenes that
-ignore a character's age, place, health, job or past decisions.
+Use recurring people and consequences where possible. Put costs in the choice
+label; `{money:250}` is formatted in the player's currency, and `requires.money`
+keeps an unaffordable choice disabled. Avoid new scenes that ignore a character's
+age, place, health, job or past decisions.
+Set `remember_relationship: true` on a choice event when even a modest bond change
+should become a saved relationship memory and a Life Thread tied to that person.
+Major bond changes already create a Life Thread automatically.
 
 ## Exporting
 

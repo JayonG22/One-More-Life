@@ -218,6 +218,13 @@ func _keeping() -> void:
 	Keeping.st()["invites"] = []
 	var fid := GameState.first_of("friend")
 	ok(fid != "", "no friend to invite the player")
+	# The preceding invitation simulation can saturate or exhaust the bond.
+	# Test the attendance effect with a fresh, internally consistent bond.
+	GameState.npcs[fid]["closeness"] = 60
+	GameState.npcs[fid].erase("bond")
+	GameState.npcs[fid]["grudge"] = 0
+	BondStats.ensure(fid)
+	BondStats._sync(fid)
 	Keeping._add_invite("wedding", fid, true)
 	var m0 := int(GameState.player["money"])
 	var c0 := int(GameState.npcs[fid]["closeness"])

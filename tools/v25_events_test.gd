@@ -1,7 +1,7 @@
 extends Node
 ## The v0.25 event batch: every outcome of every new event applies cleanly and reads clean,
 ## and each job event is eligible for someone doing that job.
-const FILES := ["jobs_a.json", "jobs_b.json", "jobs_c.json", "life_a.json", "life_b.json"]
+const FILES := ["jobs_a.json", "jobs_b.json", "jobs_c.json", "life_a.json", "life_b.json", "contextual.json", "contextual_echoes.json"]
 var checks := 0
 var failures: Array = []
 
@@ -53,6 +53,9 @@ func _ready() -> void:
 				var txt := str(r.get("text", ""))
 				ok(txt != "" and txt.find("{") == -1 and txt.find("}") == -1, "%s has an unfilled token: %s" % [def["id"], txt.substr(0, 80)])
 	for jid in jobs.keys():
+		# Recorded NPC occupations are imported on viewpoint transfer; they are
+		# not advertised careers and use the existing general workplace events.
+		if jobs[jid].get("inherited_only", false): continue
 		ok(int(by_job.get(jid, 0)) >= 2, "job %s has fewer than two events" % jid)
 	print("V25 EVENTS TEST defs=%d outcomes=%d checks=%d failures=%d" % [defs.size(), applied, checks, failures.size()])
 	for f in failures:

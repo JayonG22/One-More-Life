@@ -1,0 +1,1208 @@
+[
+ {
+  "id": "stormpost",
+  "name": "Pip Parcel",
+  "category": "Cartoon",
+  "show": "Stormpost Service",
+  "icon": "📮",
+  "gender": "nonbinary",
+  "age": 16,
+  "theme": "",
+  "original": true,
+  "coverage": "An original campaign with remembered choices and three endings.",
+  "chapters": [
+   {
+    "title": "A letter with feet",
+    "period": "Chapter 1",
+    "text": "The island post office has one working glider and a bag of letters addressed to houses that have drifted away. Pip finds a note from their missing mentor, Sela.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Follow Sela’s unfinished delivery route",
+      "next": 1,
+      "flags": {
+       "routes": 1
+      }
+     },
+     {
+      "label": "Repair the glider with mechanic Bo",
+      "next": 2,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Addresses at sea",
+    "period": "Chapter 2",
+    "text": "A family waits on a pier that now points toward open water. Their letter contains a new address, written in a language Pip barely knows.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Ask the harbour families to translate it",
+      "next": 3,
+      "flags": {
+       "routes": 1
+      }
+     },
+     {
+      "label": "Spend the afternoon following its sketch",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Bo’s bargain",
+    "period": "Chapter 3",
+    "text": "Bo can rebuild the glider or lend Pip a slow sail-cart. The glider needs the post office’s last spare parts.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Take the sail-cart and keep the spare parts",
+      "next": 3,
+      "flags": {
+       "routes": 1
+      }
+     },
+     {
+      "label": "Rebuild the glider for a longer reach",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The drifting map",
+    "period": "Chapter 4",
+    "text": "Sela has been drawing a map of moving islands. A lighthouse keeper offers a permanent job if Pip turns the map into a regular delivery service.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Build a shared route with the island crews",
+      "next": 4,
+      "flags": {
+       "routes": 1
+      }
+     },
+     {
+      "label": "Keep one dependable route of my own",
+      "next": 5,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A fleet of odd boats",
+    "period": "Chapter 5",
+    "text": "The crews bring a bathtub, a fishing skiff and a boat with a very ambitious umbrella. They need meeting points everyone can actually reach.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Use the addresses I checked along the way",
+      "next": 6,
+      "flags": {
+       "routes": 1
+      }
+     },
+     {
+      "label": "Run a smaller pilot route before expanding",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The long way home",
+    "period": "Chapter 6",
+    "text": "Pip’s route reaches one isolated village. Sela is there, recovering from a broken glider and teaching children to draw their own addresses.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Invite Sela to help train new couriers",
+      "next": 6,
+      "flags": {
+       "routes": 1
+      }
+     },
+     {
+      "label": "Make this village the end of my route",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The first storm season",
+    "period": "Chapter 7",
+    "text": "The map changes during the first great storm. The islanders ask whether Pip’s service will grow, stay small or become a travelling school.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Launch the shared fleet",
+      "next": {
+       "flag": "routes",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep a small, dependable postal route",
+      "next": 8,
+      "flags": {}
+     },
+     {
+      "label": "Travel with Sela and teach new couriers",
+      "next": 9,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Every island gets an address",
+    "period": "Chapter 8",
+    "text": "The crews use the checked meeting points to keep mail moving through the storm. Pip runs the harbour office; Sela teaches, and Bo finally labels the spare-parts cupboard.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The route people can count on",
+    "period": "Chapter 9",
+    "text": "Pip serves fewer islands, but the promised boat arrives. The harbour crews keep their independent routes, and Sela’s map remains available to them all.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Postcards from everywhere",
+    "period": "Chapter 10",
+    "text": "Pip and Sela leave the office to the next crew. They travel between islands teaching children how to send a letter home. Bo receives an alarming number of drawings of umbrellas.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "moon_shift",
+  "name": "Della Quirk",
+  "category": "Adult Animation",
+  "show": "Moon Shift",
+  "icon": "🧺",
+  "gender": "female",
+  "age": 29,
+  "theme": "",
+  "original": true,
+  "coverage": "An original campaign with remembered choices and three endings.",
+  "chapters": [
+   {
+    "title": "Spin cycle at midnight",
+    "period": "Chapter 1",
+    "text": "Della manages a lunar laundromat whose washing machines predict tomorrow’s lost socks. Station manager Mott wants the predictions before the night crew sees them.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Share the predictions with the crew",
+      "next": 1,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Use them to negotiate a better repair budget",
+      "next": 2,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A forecast in lint",
+    "period": "Chapter 2",
+    "text": "Technician Rune predicts a station-wide uniform shortage. The night workers want extra machines; the budget covers only one.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Ask the shifts to agree a rotation",
+      "next": 3,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Rent one machine for urgent uniforms",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The repair clause",
+    "period": "Chapter 3",
+    "text": "Mott funds the repairs but wants a private forecast subscription. Rune points out that a forecast is useful only if someone can act on it.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Keep crew warnings in the contract",
+      "next": 3,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Sell a limited forecast and fund repairs",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The sock exchange",
+    "period": "Chapter 4",
+    "text": "The station opens a market in predicted lost socks. Customers suddenly pay more for tomorrow’s sock than today’s. Della can run the market or walk away from it.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Make the exchange a worker cooperative",
+      "next": 4,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Keep the laundromat outside the market",
+      "next": 5,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "One vote, two socks",
+    "period": "Chapter 5",
+    "text": "Workers disagree about buying another shop. Rune wants ownership; courier Vega wants a shorter shift rather than more business.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Keep both proposals on the ballot",
+      "next": 6,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Try a smaller expansion for one season",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A plain old washing machine",
+    "period": "Chapter 6",
+    "text": "Without the market, Della’s shop needs ordinary customers. Vega offers a transport contract that leaves one evening free each week.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Negotiate hours with the night crew",
+      "next": 6,
+      "flags": {
+       "crew": 1
+      }
+     },
+     {
+      "label": "Take a smaller contract and fewer shifts",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Tomorrow arrives",
+    "period": "Chapter 7",
+    "text": "The machines finally predict a day with no lost socks. Mott calls it a crisis. Della has to decide what the shop should be when nobody needs a forecast.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Let the crew own the future",
+      "next": {
+       "flag": "crew",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Run an ordinary shop with fixed hours",
+      "next": 8,
+      "flags": {}
+     },
+     {
+      "label": "Sell my share and take my first holiday",
+      "next": 9,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The night crew owns the keys",
+    "period": "Chapter 8",
+    "text": "The workers elect Rune and Vega to run different shifts. Della keeps a small share and an actual weekend. The machines receive a union-approved lint allowance.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Clean clothes, predictable hours",
+    "period": "Chapter 9",
+    "text": "The laundromat leaves the sock market behind. Its schedule is modest, its repair fund real, and Della no longer answers calls from tomorrow before breakfast.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Closed for moonlight",
+    "period": "Chapter 10",
+    "text": "Della’s share funds a holiday across the station’s quiet side. Rune and Vega continue the shop. Della sends them a postcard wearing deliberately mismatched socks.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "lantern_league",
+  "name": "Kiri Kite",
+  "category": "Anime",
+  "show": "Lantern League",
+  "icon": "🏮",
+  "gender": "female",
+  "age": 18,
+  "theme": "",
+  "original": true,
+  "coverage": "An original campaign with remembered choices and three endings.",
+  "chapters": [
+   {
+    "title": "The unlit lane",
+    "period": "Chapter 1",
+    "text": "Kiri joins a city relay league whose runners carry lanterns through moving night markets. Captain Asa needs an anchor runner; rival Jun offers a place on a faster team.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Practise with Asa’s neighbourhood team",
+      "next": 1,
+      "flags": {
+       "team": 1
+      }
+     },
+     {
+      "label": "Trial for Jun’s faster team",
+      "next": 2,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A handover in the crowd",
+    "period": "Chapter 2",
+    "text": "Asa’s team knows the alleys but loses time handing over the lantern. New runner Emi is afraid of dropping it in public.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Let Emi set the practice pace",
+      "next": 3,
+      "flags": {
+       "team": 1
+      }
+     },
+     {
+      "label": "Take the difficult handover myself",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The fastest split",
+    "period": "Chapter 3",
+    "text": "Jun’s team records the fastest trial. Their anchor is injured, and the coach offers Kiri that place before discussing the extra workload.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Ask the team to share the added training",
+      "next": 3,
+      "flags": {
+       "team": 1
+      }
+     },
+     {
+      "label": "Accept the anchor role for this season",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The route changes",
+    "period": "Chapter 4",
+    "text": "Rain closes the usual bridge before the final. The alternate route crosses Kiri’s home market, where vendors need time to clear a lane.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Plan the route with vendors and runners",
+      "next": 4,
+      "flags": {
+       "team": 1
+      }
+     },
+     {
+      "label": "Train for the official longer route",
+      "next": 5,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Lanterns in the stalls",
+    "period": "Chapter 5",
+    "text": "Emi and Jun help mark the market turns. A stallholder asks for the race to pause briefly during the evening food delivery.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Build the pause into the relay plan",
+      "next": 6,
+      "flags": {
+       "team": 1
+      }
+     },
+     {
+      "label": "Move our changeover outside the market",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The uphill straight",
+    "period": "Chapter 6",
+    "text": "The official route has a steep finish. Kiri can gain speed through hard training, but their team has only enough spare time for one more full practice.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Use the practice to test everyone’s split",
+      "next": 6,
+      "flags": {
+       "team": 1
+      }
+     },
+     {
+      "label": "Focus on my own final section",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "One lantern left",
+    "period": "Chapter 7",
+    "text": "The final reaches its last handover. Kiri sees a clean individual lane and a harder route that keeps the whole team together.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Run the coordinated team finish",
+      "next": {
+       "flag": "team",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Commit to the individual anchor sprint",
+      "next": 8,
+      "flags": {}
+     },
+     {
+      "label": "Finish safely and become a coach next season",
+      "next": 9,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A city carries the light",
+    "period": "Chapter 8",
+    "text": "The handovers hold under pressure. The team wins the neighbourhood cup, and the vendors keep their cleared lane for future races. Kiri and Jun organize the next league together.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The name on the split board",
+    "period": "Chapter 9",
+    "text": "Kiri earns a place among the city’s strongest anchors. The team’s overall finish is modest, but Emi completes her first clean handover and Jun offers another season.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The next first race",
+    "period": "Chapter 10",
+    "text": "Kiri leaves the last lantern at the finish and takes a coaching role. Asa finds new runners; Emi now teaches the handover she once feared. The league continues without needing Kiri to win it.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "last_receipt",
+  "name": "Cass Ledger",
+  "category": "Crime / Action",
+  "show": "The Last Receipt",
+  "icon": "🧾",
+  "gender": "male",
+  "age": 34,
+  "theme": "crime",
+  "original": true,
+  "coverage": "An original campaign with remembered choices and three endings.",
+  "chapters": [
+   {
+    "title": "A charge after closing",
+    "period": "Chapter 1",
+    "text": "Cass balances the accounts of a late-night cafe. A dead customer’s receipt shows a payment from a company that never visited. Investigator Ren asks for the books; owner Jo asks for time.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Give Ren the dated records",
+      "next": 1,
+      "flags": {
+       "evidence": 1
+      }
+     },
+     {
+      "label": "Ask Jo to explain the payment first",
+      "next": 2,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Two versions of the same bill",
+    "period": "Chapter 2",
+    "text": "Ren finds a second receipt with a different total. The cafe’s cashier, Sol, remembers who printed it but fears losing their job.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Record Sol’s account privately with Ren",
+      "next": 3,
+      "flags": {
+       "evidence": 1
+      }
+     },
+     {
+      "label": "Check the printer log without involving Sol yet",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Jo’s missing week",
+    "period": "Chapter 3",
+    "text": "Jo admits borrowing to keep the cafe open. A lender used the business name for another payment. Jo has messages but no full agreement.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Preserve the messages and involve Ren",
+      "next": 3,
+      "flags": {
+       "evidence": 1
+      }
+     },
+     {
+      "label": "Ask the lender for the missing agreement",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The lender’s offer",
+    "period": "Chapter 4",
+    "text": "The lender offers to clear Jo’s debt if Cass signs a corrected ledger. Ren has enough to investigate, but a public case could close the cafe.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Keep the original books for the investigation",
+      "next": 4,
+      "flags": {
+       "evidence": 1
+      }
+     },
+     {
+      "label": "Seek a settlement without changing the books",
+      "next": 5,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The hearing date",
+    "period": "Chapter 5",
+    "text": "Sol agrees to attend the hearing. Jo wants the cafe’s staff protected from claims they took part in the scheme.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Separate each person’s role using the records",
+      "next": 6,
+      "flags": {
+       "evidence": 1
+      }
+     },
+     {
+      "label": "Ask for a smaller hearing focused on the lender",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Terms in the daylight",
+    "period": "Chapter 6",
+    "text": "The lender accepts repayment talks but refuses to identify the other company. Ren can continue independently if Cass shares the records already held.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Give Ren the untouched copies",
+      "next": 6,
+      "flags": {
+       "evidence": 1
+      }
+     },
+     {
+      "label": "Keep the settlement limited to Jo’s debt",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A signature at the bottom",
+    "period": "Chapter 7",
+    "text": "Cass must decide what to put their name to: testimony, a narrow settlement, or an exit from the cafe’s accounts.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Give the complete documented account",
+      "next": {
+       "flag": "evidence",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Sign the limited, recorded settlement",
+      "next": 8,
+      "flags": {}
+     },
+     {
+      "label": "Hand over my records and leave the job",
+      "next": 9,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The books remain open",
+    "period": "Chapter 8",
+    "text": "The hearing establishes the lender’s false entries. Jo keeps a smaller cafe under a monitored repayment plan. Sol’s evidence is recorded accurately; Cass works with a new client who wants clean books.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A cafe with a debt",
+    "period": "Chapter 9",
+    "text": "The settlement keeps the doors open but does not answer every question. Ren’s investigation continues on its own evidence. Cass records the limits rather than declaring the whole case solved.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Another ledger",
+    "period": "Chapter 10",
+    "text": "Cass leaves copies with the investigator and moves to a different employer. Jo and Sol retain their own choices. The last receipt becomes a reminder that a job can end without a person’s whole life ending.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "missing_tuesday",
+  "name": "Nico Moss",
+  "category": "Cartoon",
+  "show": "The Missing Tuesday",
+  "icon": "🗓️",
+  "gender": "nonbinary",
+  "age": 22,
+  "theme": "",
+  "original": true,
+  "coverage": "An original campaign with remembered choices and three endings.",
+  "chapters": [
+   {
+    "title": "Wednesday, twice",
+    "period": "Chapter 1",
+    "text": "The town wakes to Wednesday with no memory of Tuesday. Archivist Nico finds a ticket for a concert nobody recalls. Baker Fen remembers making a cake for someone who never arrived.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Collect the town’s scattered memories",
+      "next": 1,
+      "flags": {
+       "memories": 1
+      }
+     },
+     {
+      "label": "Trace the unused concert ticket",
+      "next": 2,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Cake without a birthday",
+    "period": "Chapter 2",
+    "text": "Fen’s order book names a visitor who appears in no town record. Two neighbours remember different versions of the same doorstep conversation.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Keep both accounts and their differences",
+      "next": 3,
+      "flags": {
+       "memories": 1
+      }
+     },
+     {
+      "label": "Follow the one with a clear address",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The empty stage",
+    "period": "Chapter 3",
+    "text": "Musician Vale finds their instruments arranged for a show that did not happen. The theatre clock contains a folded note in Nico’s handwriting.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Ask Vale to help read the note",
+      "next": 3,
+      "flags": {
+       "memories": 1
+      }
+     },
+     {
+      "label": "Take it back to the archive alone",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A town’s bargain",
+    "period": "Chapter 4",
+    "text": "The note records an old agreement: the town traded one day each year to keep its archive from burning. This Tuesday held more than anyone expected.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Rebuild the lost day from people’s records",
+      "next": 4,
+      "flags": {
+       "memories": 1
+      }
+     },
+     {
+      "label": "Negotiate a different archive bargain",
+      "next": 5,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Pieces of a day",
+    "period": "Chapter 5",
+    "text": "The records contain a wedding, an argument and a visitor’s farewell. Some people want the day restored; others ask for their private moments to stay private.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Let each person choose which record to share",
+      "next": 6,
+      "flags": {
+       "memories": 1
+      }
+     },
+     {
+      "label": "Restore only the public events first",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A smaller archive",
+    "period": "Chapter 6",
+    "text": "Vale proposes saving fewer records so the town no longer owes a whole day. Fen wants recipes preserved; Nico cannot keep every box.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Ask the town to choose what it keeps",
+      "next": 6,
+      "flags": {
+       "memories": 1
+      }
+     },
+     {
+      "label": "Keep a small travelling collection",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The next calendar",
+    "period": "Chapter 7",
+    "text": "The archive clock asks for a final agreement. Nico can restore Tuesday, accept a smaller archive, or take the town’s stories on the road.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Return the day through the shared records",
+      "next": {
+       "flag": "memories",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Keep a smaller archive and all future days",
+      "next": 8,
+      "flags": {}
+     },
+     {
+      "label": "Become the town’s travelling archivist",
+      "next": 9,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Tuesday comes home",
+    "period": "Chapter 8",
+    "text": "The shared records return the missing day without making every private memory public. Fen delivers the cake, Vale plays the concert, and Nico dates the first page correctly.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "No more borrowed days",
+    "period": "Chapter 9",
+    "text": "The town preserves a smaller archive and gives up the yearly bargain. Some details of Tuesday remain uncertain. Nico keeps that uncertainty in the record instead of filling it with a guess.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Stories with a return address",
+    "period": "Chapter 10",
+    "text": "Nico leaves with a small archive cart. Fen and Vale send new records from home, and Nico returns each year for a day the town now keeps for itself.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "detour_season",
+  "name": "Ari Brake",
+  "category": "Original",
+  "show": "Detour Season",
+  "icon": "🚌",
+  "gender": "nonbinary",
+  "age": 46,
+  "theme": "",
+  "original": true,
+  "coverage": "An original campaign with remembered choices and three endings.",
+  "chapters": [
+   {
+    "title": "Last bus to the depot",
+    "period": "Chapter 1",
+    "text": "Mechanic Ari learns the district bus depot will close after summer. Driver Mel wants a worker-owned route; Ari’s daughter Rue offers a workshop space in another town.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Help Mel test a community route",
+      "next": 1,
+      "flags": {
+       "links": 1
+      }
+     },
+     {
+      "label": "Visit Rue and inspect the workshop",
+      "next": 2,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Seats nobody counts",
+    "period": "Chapter 2",
+    "text": "The route looks empty at midday but carries carers and night workers at its edges. Mel cannot cover every shift without help.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Ask riders which journeys they need",
+      "next": 3,
+      "flags": {
+       "links": 1
+      }
+     },
+     {
+      "label": "Run the busiest journeys for a trial month",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A workshop with a spare chair",
+    "period": "Chapter 3",
+    "text": "Rue’s workshop is small but ready. Its rent is manageable if Ari takes repair work immediately; joining Mel’s route would delay the move.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Arrange a gradual handover with both of them",
+      "next": 3,
+      "flags": {
+       "links": 1
+      }
+     },
+     {
+      "label": "Reserve the workshop and finish the summer contract",
+      "next": 3,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The summer detour",
+    "period": "Chapter 4",
+    "text": "Roadworks force the last scheduled bus through three villages. An old passenger, Dev, offers a garage if the route keeps reaching their village.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Build a village partnership around the garage",
+      "next": 4,
+      "flags": {
+       "links": 1
+      }
+     },
+     {
+      "label": "Keep the depot plan small and temporary",
+      "next": 5,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Who holds the keys",
+    "period": "Chapter 5",
+    "text": "The villages can share one bus, one garage and a repair budget. Mel wants regular hours; Rue can help with the books from a distance.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Write shifts and ownership with everyone involved",
+      "next": 6,
+      "flags": {
+       "links": 1
+      }
+     },
+     {
+      "label": "Keep my role limited to repairs",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A clean tool drawer",
+    "period": "Chapter 6",
+    "text": "Ari sorts the depot tools for its final week. Mel has a new driving offer, and Dev still needs someone to maintain the village minibus.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Connect Dev with Mel and a local repair team",
+      "next": 6,
+      "flags": {
+       "links": 1
+      }
+     },
+     {
+      "label": "Finish my handover and move to Rue’s workshop",
+      "next": 6,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The final scheduled stop",
+    "period": "Chapter 7",
+    "text": "At the depot’s last stop, Ari chooses what comes next. A shared route needs people, the workshop needs a mechanic, and a long break is possible too.",
+    "ending": false,
+    "choices": [
+     {
+      "label": "Open the community route together",
+      "next": {
+       "flag": "links",
+       "min": 3,
+       "then": 7,
+       "else": 8
+      },
+      "flags": {}
+     },
+     {
+      "label": "Move to Rue’s workshop",
+      "next": 8,
+      "flags": {}
+     },
+     {
+      "label": "Take a break and mentor the next mechanics",
+      "next": 9,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "A route worth keeping",
+    "period": "Chapter 8",
+    "text": "The village partnership runs a smaller service with real shifts and repair money. Mel drives, Rue keeps the books, and Ari no longer carries every problem alone.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "The next workshop",
+    "period": "Chapter 9",
+    "text": "Ari settles into Rue’s workshop. Mel’s new job and Dev’s minibus continue on their own terms. The closed depot becomes one chapter of Ari’s working life, not its final page.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   },
+   {
+    "title": "Time between journeys",
+    "period": "Chapter 10",
+    "text": "Ari takes a quieter year and returns as a part-time mentor. Younger mechanics learn in the village garage. Rue saves the spare chair for visits rather than emergencies.",
+    "ending": true,
+    "choices": [
+     {
+      "label": "Keep the completed journal",
+      "next": -1,
+      "flags": {}
+     }
+    ]
+   }
+  ]
+ }
+]

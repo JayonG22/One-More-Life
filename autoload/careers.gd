@@ -210,6 +210,7 @@ func start(id: String, mode: String) -> void:
 		"hustler":
 			c["skill"] = 5.0 + (10.0 if past("fighter") else 0.0)
 			line = "I started hustling on the streets."
+	c["skill"]=clampf(float(c.get("skill",0))+Depth.school_bonus(id),0,100)
 	p["career"] = c
 	var bonus := carryover_line(id)
 	GameState.add_log(line)
@@ -392,6 +393,8 @@ func scale_effects(effects: Dictionary) -> Dictionary:
 
 
 func _done(icon: String, title_txt: String, text: String, effects: Dictionary = {}) -> void:
+	effects=effects.duplicate(true)
+	if float(effects.get("money",0))>0: effects["money"]=int(float(effects["money"])*Aptitude.reward(Aptitude.career_context(str(career().get("id","work")))))
 	var changes := GameState.apply_effects(scale_effects(effects))
 	text += rep_note
 	GameState.add_log(text)
@@ -546,7 +549,7 @@ func _musician(aid: String, c: Dictionary, p: Dictionary) -> void:
 			var chance := float(p["fame"]) / 60.0 + float(c["skill"]) / 250.0
 			if _modifier("star_power"):
 				chance = 1.0
-			if randf() < chance:
+			if randf() < Aptitude.chance(chance,Aptitude.career_context(str(career().get("id","work")))):
 				c["label"] = true
 				var adv := int(20000 + float(p["fame"]) * 3000)
 				GameState.add_milestone(p["age"], "signed a record deal")
@@ -568,9 +571,7 @@ static func _fmt_big(n: int) -> String:
 func _athlete(aid: String, c: Dictionary, p: Dictionary) -> void:
 	match aid:
 		"big_game":
-			if _t(): return
-			c["big_game_year"] = GameState.year_now()
-			Minigames.play("clutch", {"skill": float(c["skill"]), "sport": c["sport"], "difficulty": 0.85 + int(c["rank"]) * 0.08}, Callable(self, "resolve_play").bind({"kind": "big_game"}))
+			Depth.sport()
 		"train":
 			if _t(): return
 			if randf() < 0.05:
@@ -585,7 +586,7 @@ func _athlete(aid: String, c: Dictionary, p: Dictionary) -> void:
 		"negotiate":
 			if _t(): return
 			var chance := 0.25 + float(c["skill"]) / 200.0 + float(p["fame"]) / 300.0 + (0.1 if GameState.has_trait("Charmer") else 0.0)
-			if randf() < chance:
+			if randf() < Aptitude.chance(chance,Aptitude.career_context(str(career().get("id","work")))):
 				c["contract"] = int(int(c["contract"]) * 1.35)
 				_done("📝", "Contract", "My agent squeezed out a raise. New contract: %s a year." % GameState.fmt_money(int(c["contract"])), {"happiness": 6})
 			else:
@@ -637,7 +638,7 @@ func _politician(aid: String, c: Dictionary, p: Dictionary) -> void:
 		"speech":
 			if _t(): return
 			var ch := 0.5 + float(c["skill"]) / 200.0
-			if randf() < ch:
+			if randf() < Aptitude.chance(ch,Aptitude.career_context(str(career().get("id","work")))):
 				_done("🎤", "Speech", "My speech got a standing ovation.", {"approval": randi_range(3, 7), "skill": 3})
 			else:
 				_done("🎤", "Speech", "I mispronounced the town's name. Twice.", {"approval": -4, "skill": 1})
@@ -754,7 +755,7 @@ func _hustler(aid: String, c: Dictionary, p: Dictionary) -> void:
 		"corner":
 			if _t(): return
 			var ch := 0.4 + float(c["skill"]) / 150.0 + (0.15 if GameState.has_trait("Hothead") else 0.0)
-			if randf() < ch:
+			if randf() < Aptitude.chance(ch,Aptitude.career_context(str(career().get("id","work")))):
 				_done("🚩", "Territory", "I claimed a new corner. The other hustlers know whose block it is now.", {"cred": 8, "heat": 4})
 			else:
 				_done("🚩", "Territory", "The corner was taken, and the guy holding it made that very clear.", {"health": -8, "cred": -2})
@@ -781,7 +782,7 @@ func yearly() -> void:
 			var cut: float = [1.0, 0.9, 0.9][int(c["agent"])]
 			for r in c["roles"]:
 				if not r.has("reception"):
-					var score := float(c["skill"]) * 0.5 + float(r.get("perf", 0.5)) * 30.0 + randf_range(0, 45)
+					var score := float(c["skill"]) * 0.5 + float(r.get("perf", 0.5)) * 30.0 + randf_range(0, 45)+(Aptitude.score("creative")-50)*0.15
 					var rec := "flop" if score < 35 else ("solid" if score < 60 else ("hit" if score < 80 else "masterpiece"))
 					r["reception"] = rec
 					match rec:
@@ -814,7 +815,7 @@ func yearly() -> void:
 			var gigs := int((300 + float(c["skill"]) * 60 + float(p["fame"]) * 900) * randf_range(0.7, 1.3))
 			if c["label"]:
 				gigs = int(gigs * 1.5)
-			income += gigs
+			income += int(gigs*Aptitude.reward("creative"))
 			if int(c["songs"]) == 0 and randf() < 0.5:
 				c["songs"] = 1
 				c["song_quality"] = maxf(float(c["song_quality"]), float(c["skill"]) * 0.6)
@@ -840,7 +841,7 @@ func yearly() -> void:
 				GameState.player["heat"] = 0.0
 				Law.trial("racketeering", 3, 12)
 		"hustler":
-			income = int(float(c["skill"]) * 120 * randf_range(0.6, 1.3))
+			income = int(float(c["skill"]) * 120 * randf_range(0.6, 1.3)*Aptitude.reward("social"))
 		_:
 			if NEW_CAREERS.has(c["id"]):
 				income = NewCareers.yearly(c, p)
@@ -916,7 +917,7 @@ func _reelection(c: Dictionary, p: Dictionary) -> void:
 		c["rank"] = maxi(0, int(c["rank"]) - 1)
 		return
 	var ch := clampf(float(c["approval"]) / 100.0 + 0.1, 0.05, 0.95)
-	if randf() < ch:
+	if randf() < Aptitude.chance(ch,Aptitude.career_context(str(career().get("id","work")))):
 		c["term_left"] = 4
 		c["terms"] = int(c["terms"]) + 1
 		GameState.add_log("I was re-elected as %s with %d%% approval." % [office, int(c["approval"])])
@@ -999,7 +1000,7 @@ func social_action(aid: String) -> void:
 			_done("📷", "Posted", "I posted %s and gained %s followers." % [shots[randi() % shots.size()], _fmt_big(gain)], {"happiness": 2})
 		"video":
 			var ch := 0.08 + GameState.stat("looks") / 500.0 + (0.12 if GameState.has_trait("Funny") else 0.0)
-			if randf() < ch:
+			if randf() < Aptitude.chance(ch,Aptitude.career_context(str(career().get("id","work")))):
 				var gain2 := randi_range(20000, 400000)
 				p["followers"] = int(p["followers"]) + gain2
 				GameState.counter("viral")
@@ -1026,6 +1027,7 @@ func social_action(aid: String) -> void:
 func resolve_play(score: float, detail: Dictionary, pl: Dictionary) -> void:
 	var p := GameState.player
 	var c := career()
+	if not c.is_empty(): score=clampf(score+(Aptitude.score(Aptitude.career_context(str(c["id"]))) - 50)*0.002,0,1)
 	var grade := Minigames.grade(score)
 	var kind: String = pl.get("kind", "")
 	if NewCareers.handles(kind):
@@ -1050,7 +1052,7 @@ func resolve_play(score: float, detail: Dictionary, pl: Dictionary) -> void:
 			var chance := clampf(float(pl["chance"]) * (0.35 + score * 1.1), 0.02, 0.97)
 			if _modifier("star_power"):
 				chance = 1.0
-			if randf() < chance:
+			if randf() < Aptitude.chance(chance,Aptitude.career_context(str(career().get("id","work")))):
 				var role := random_title()
 				var pay := int(int(pl["pay"]) * (0.8 + 0.4 * score))
 				c["roles"].append({"title": role, "tier": pl["tier"], "pay": pay, "perf": score})
@@ -1101,7 +1103,7 @@ func resolve_play(score: float, detail: Dictionary, pl: Dictionary) -> void:
 			var spend := int(pl["spend"])
 			var office: String = pl["office"]
 			GameState.apply_effects({"money": -spend})
-			if randf() < ch:
+			if randf() < Aptitude.chance(ch,Aptitude.career_context(str(career().get("id","work")))):
 				take_office(int(pl["target"]))
 				_done("🗳️", "Victory!", "Debate: %s. I won the race for %s!" % [grade, office], {"happiness": 15, "fame": 2 + int(pl["target"]) * 2, "approval": 5})
 			else:

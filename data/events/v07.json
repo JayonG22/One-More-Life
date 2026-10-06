@@ -3943,7 +3943,8 @@
     ]
    }
   ],
-  "cooldown": 7
+  "cooldown": 7,
+  "available_from": 1957
  },
  {
   "id": "v07.colony.signal_argument",
@@ -4042,7 +4043,8 @@
     ]
    }
   ],
-  "cooldown": 10
+  "cooldown": 10,
+  "available_from": 1995
  },
  {
   "id": "v07.colony.birthday",
@@ -4498,7 +4500,8 @@
     ]
    }
   ],
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 1890
  },
  {
   "id": "v07.time.1970computer",
@@ -4587,7 +4590,8 @@
     ]
    }
   ],
-  "cooldown": 8
+  "cooldown": 8,
+  "available_from": 1985
  },
  {
   "id": "v07.time.patent",
@@ -5738,7 +5742,8 @@
      }
     ]
    }
-  ]
+  ],
+  "available_from": 1995
  },
  {
   "id": "v07.home.offer_return",

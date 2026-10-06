@@ -39,8 +39,6 @@ func build() -> void:
 	place(auto_l, Vector2(0, 510), Vector2(W, 24))
 	var u := randf()
 	crash_at = maxf(1.0, snappedf(0.92 / maxf(0.0001, 1.0 - u), 0.01))
-	if luck > 1.0 and randf() < (luck - 1.0) * 0.04:
-		crash_at *= 1.6
 	crash_at = minf(crash_at, 500.0)
 
 
@@ -53,10 +51,11 @@ func _go() -> void:
 	msg_l.text = "Climbing…"
 	Fx.play("whoosh")
 	t = 0.0
+	_process(0.0)
 
 
 func _cash() -> void:
-	if not running or cashed or done:
+	if not running or cashed or done or mult >= crash_at:
 		return
 	cashed = true
 	running = false
@@ -81,9 +80,10 @@ func _process(delta: float) -> void:
 	if running:
 		t += delta
 		mult = exp(0.14 * t * (1.0 + t * 0.03))
-		if auto_at > 1.0 and mult >= auto_at:
+		if auto_at > 1.0 and mult >= auto_at and auto_at < crash_at:
+			mult = auto_at
 			_cash()
-		if mult >= crash_at:
+		if running and mult >= crash_at:
 			mult = crash_at
 			running = false
 			exploded = true

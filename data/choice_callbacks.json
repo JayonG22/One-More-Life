@@ -1,0 +1,483 @@
+{
+  "_course_preteen_0": [
+    {
+      "title": "Teamwork comes back",
+      "text": "Breaking a large project into small tasks helped before. A new group is waiting for a workable plan.",
+      "choices": [
+        {
+          "label": "Agree on responsibilities and check in",
+          "outcomes": [
+            {
+              "text": "The group finished with clearer responsibilities.",
+              "effects": {
+                "smarts": 2,
+                "stress": 1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Teamwork comes back",
+      "text": "You previously asked a teacher for guidance. This time a new teammate is struggling to ask for help.",
+      "choices": [
+        {
+          "label": "Help them frame a question for the teacher",
+          "outcomes": [
+            {
+              "text": "We found guidance without hiding the problem.",
+              "effects": {
+                "karma": 2,
+                "stress": -1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_preteen_2": [
+    {
+      "title": "A plan worth remembering",
+      "text": "Saving toward a goal taught you patience. An appealing purchase now competes with that goal.",
+      "choices": [
+        {
+          "label": "Review the goal before spending",
+          "outcomes": [
+            {
+              "text": "I kept the goal in view rather than buying on impulse.",
+              "effects": {
+                "smarts": 2,
+                "happiness": 1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A plan worth remembering",
+      "text": "Your earlier spending plan left room for small pleasures. A new expense means adjusting it.",
+      "choices": [
+        {
+          "label": "Revise the plan with room for necessities",
+          "outcomes": [
+            {
+              "text": "I adapted the plan instead of pretending costs had not changed.",
+              "effects": {
+                "smarts": 1,
+                "stress": -2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_preteen_4": [
+    {
+      "title": "Learning from a strange result",
+      "text": "You explained an unexpected experiment honestly. A new report contains a result nobody expected.",
+      "choices": [
+        {
+          "label": "Report the result and its limits",
+          "outcomes": [
+            {
+              "text": "My report distinguished what I observed from what I guessed.",
+              "effects": {
+                "smarts": 2,
+                "karma": 1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Learning from a strange result",
+      "text": "You once repeated a smaller experiment. Now an ambitious project needs a reliable first step.",
+      "choices": [
+        {
+          "label": "Test a small version before scaling up",
+          "outcomes": [
+            {
+              "text": "A small trial exposed a problem before the large project.",
+              "effects": {
+                "smarts": 1,
+                "stress": -1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_teen_0": [
+    {
+      "title": "Another demanding deadline",
+      "text": "Your earlier revision plan is a useful example. Several deadlines are competing again.",
+      "choices": [
+        {
+          "label": "Prioritise tasks and leave recovery time",
+          "outcomes": [
+            {
+              "text": "I made a realistic plan instead of treating every deadline as equal.",
+              "effects": {
+                "smarts": 1,
+                "stress": -1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Another demanding deadline",
+      "text": "You protected sleep and asked for help during exams. Another deadline tests that habit.",
+      "choices": [
+        {
+          "label": "Ask for support before exhaustion takes over",
+          "outcomes": [
+            {
+              "text": "Support and rest made the workload more manageable.",
+              "effects": {
+                "health": 2,
+                "stress": -3
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_teen_1": [
+    {
+      "title": "How to respond to a rumour",
+      "text": "You challenged a corridor rumour calmly. An unverified story is circulating in a new group.",
+      "choices": [
+        {
+          "label": "Ask what is actually known",
+          "outcomes": [
+            {
+              "text": "The discussion slowed down long enough for uncertainty to be heard.",
+              "effects": {
+                "karma": 2,
+                "smarts": 1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How to respond to a rumour",
+      "text": "You checked privately on someone targeted by a rumour. Someone now seems excluded after a similar story.",
+      "choices": [
+        {
+          "label": "Offer a private conversation without repeating it",
+          "outcomes": [
+            {
+              "text": "I made room for their perspective rather than spreading the story.",
+              "effects": {
+                "karma": 2,
+                "happiness": 2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_teen_4": [
+    {
+      "title": "A setback with a familiar shape",
+      "text": "You suggested one improvement after a team loss. Another difficult result leaves a group discouraged.",
+      "choices": [
+        {
+          "label": "Choose one practical change together",
+          "outcomes": [
+            {
+              "text": "A manageable change gave us something useful to work on.",
+              "effects": {
+                "health": 1,
+                "smarts": 1,
+                "happiness": 2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A setback with a familiar shape",
+      "text": "You gave a disappointed team breathing room. This group is also exhausted after a setback.",
+      "choices": [
+        {
+          "label": "Rest, then arrange a calm review",
+          "outcomes": [
+            {
+              "text": "The pause helped us discuss the result without blaming everyone.",
+              "effects": {
+                "stress": -3,
+                "happiness": 2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_teen_5": [
+    {
+      "title": "Choosing a next step",
+      "text": "You explored several possible futures. Two routes now ask for different preparation.",
+      "choices": [
+        {
+          "label": "Compare their requirements before committing",
+          "outcomes": [
+            {
+              "text": "I understood the preparation each route would need.",
+              "effects": {
+                "smarts": 2,
+                "stress": -1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Choosing a next step",
+      "text": "You sought the perspective of someone doing the work. You can now ask a more specific question.",
+      "choices": [
+        {
+          "label": "Ask about an ordinary difficult day in that field",
+          "outcomes": [
+            {
+              "text": "A practical conversation made the route less vague.",
+              "effects": {
+                "smarts": 2,
+                "happiness": 1
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_course_teen_6": [
+    {
+      "title": "Support without taking over",
+      "text": "You listened to a pressured friend without trying to fix everything. Someone now asks you to hear them out.",
+      "choices": [
+        {
+          "label": "Listen and ask what support they want",
+          "outcomes": [
+            {
+              "text": "I respected their choices while making room to talk.",
+              "effects": {
+                "karma": 2,
+                "happiness": 2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Support without taking over",
+      "text": "You helped a friend find trusted support. A new situation reminds you to recognise your own limits.",
+      "choices": [
+        {
+          "label": "Offer help finding suitable support",
+          "outcomes": [
+            {
+              "text": "I offered a next step without promising to solve everything.",
+              "effects": {
+                "karma": 2,
+                "stress": -2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Choose a different approach this time",
+          "outcomes": [
+            {
+              "text": "I kept the earlier lesson, but chose my own direction this time.",
+              "effects": {
+                "happiness": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

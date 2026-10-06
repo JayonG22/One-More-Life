@@ -1,0 +1,720 @@
+[
+ {
+  "id": "people.moment.0",
+  "family": "people.moment.0",
+  "min_age": 6,
+  "title": "The terrible duet",
+  "text": "A karaoke machine has appeared. {name} knows the words; neither of us knows the tune.",
+  "answers": [
+   "Rehearse one verse",
+   "Sing badly together",
+   "Let them choose the song"
+  ],
+  "endings": [
+   "We found a verse we could manage.",
+   "Our duet became a memorable disaster.",
+   "Their favourite song got a surprisingly brave performance."
+  ],
+  "later": [
+   "They practised that verse again.",
+   "They sent me a reminder of our spectacularly wrong note.",
+   "They suggested another favourite for next time."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.1",
+  "family": "people.moment.1",
+  "min_age": 6,
+  "title": "An awkward invitation",
+  "text": "{name} has invited two people who no longer speak to each other.",
+  "answers": [
+   "Plan separate seats",
+   "Keep the gathering short",
+   "Ask both what would help"
+  ],
+  "endings": [
+   "A seating plan kept the evening workable.",
+   "A short visit avoided a long confrontation.",
+   "Their requests were awkward but useful."
+  ],
+  "later": [
+   "They planned seating before another gathering.",
+   "They tried another brief meeting.",
+   "They checked boundaries before inviting the group again."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.2",
+  "family": "people.moment.2",
+  "min_age": 6,
+  "title": "The impossible recipe",
+  "text": "{name} wants to cook a recipe that claims to be “easy” in nineteen steps.",
+  "answers": [
+   "Divide the steps",
+   "Make the simpler version",
+   "Let them lead the experiment"
+  ],
+  "endings": [
+   "Dividing tasks got dinner on the table late.",
+   "The simpler version tasted better than the photograph looked.",
+   "Their experiment was edible and hard to describe."
+  ],
+  "later": [
+   "They reused our task list for another meal.",
+   "They kept the practical version of the recipe.",
+   "They adjusted the strangest part of the recipe."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.3",
+  "family": "people.moment.3",
+  "min_age": 6,
+  "title": "A competitive afternoon",
+  "text": "A friendly game with {name} is becoming suspiciously serious.",
+  "answers": [
+   "Agree a clear rule check",
+   "Switch to a cooperative round",
+   "Play their preferred rules"
+  ],
+  "endings": [
+   "Clear rules protected the result, though the tension stayed.",
+   "Working together changed the mood.",
+   "Their house rules made the contest unfamiliar."
+  ],
+  "later": [
+   "They brought clearer rules to the next game.",
+   "They suggested another cooperative activity.",
+   "They remembered whose rules we had tried."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.4",
+  "family": "people.moment.4",
+  "min_age": 6,
+  "title": "The unread book",
+  "text": "{name} has recommended a book. I only got through the first chapter.",
+  "answers": [
+   "Discuss that chapter honestly",
+   "Suggest another shared activity",
+   "Ask which part mattered to them"
+  ],
+  "endings": [
+   "A narrow discussion was better than pretending.",
+   "We found something else we both wanted to do.",
+   "Their favourite passage explained the recommendation."
+  ],
+  "later": [
+   "They picked a shorter recommendation next time.",
+   "Our new activity became a regular plan.",
+   "They asked what I thought of that passage later."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.5",
+  "family": "people.moment.5",
+  "min_age": 6,
+  "title": "The group photograph",
+  "text": "{name} wants a photo; somebody dislikes being photographed.",
+  "answers": [
+   "Arrange a consent-friendly photo",
+   "Skip the photograph",
+   "Let them suggest a different keepsake"
+  ],
+  "endings": [
+   "The photo included only willing people.",
+   "We kept the memory without a picture.",
+   "Their alternative keepsake was unexpectedly charming."
+  ],
+  "later": [
+   "They asked before sharing another group photo.",
+   "They remembered the evening through its stories.",
+   "They saved another small keepsake from our next outing."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.6",
+  "family": "people.moment.6",
+  "min_age": 6,
+  "title": "A hobby takeover",
+  "text": "{name} wants our quiet hobby session to become a public competition.",
+  "answers": [
+   "Make a small competition plan",
+   "Keep this session casual",
+   "Try their format once"
+  ],
+  "endings": [
+   "A small plan gave the competition limits.",
+   "The casual session protected the original pleasure.",
+   "Trying their format exposed both fun and friction."
+  ],
+  "later": [
+   "They organised a manageable contest.",
+   "They kept one hobby free from rankings.",
+   "They revised the format after our trial."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.7",
+  "family": "people.moment.7",
+  "min_age": 6,
+  "title": "The scenic shortcut",
+  "text": "{name} knows a “shortcut” that looks longer than the normal walk.",
+  "answers": [
+   "Check the map first",
+   "Take the familiar route",
+   "Try their route with time to spare"
+  ],
+  "endings": [
+   "The map revealed a detour with a good view.",
+   "The familiar route left time for a relaxed stop.",
+   "The shortcut was long, but the view delivered."
+  ],
+  "later": [
+   "They checked a map before another adventure.",
+   "They returned to our favourite stop.",
+   "They remembered the detour as our accidental tradition."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.8",
+  "family": "people.moment.8",
+  "min_age": 6,
+  "title": "A blunt compliment",
+  "text": "{name} has made something they love. I like parts of it, but not all.",
+  "answers": [
+   "Give specific useful feedback",
+   "Celebrate the effort first",
+   "Ask what feedback they want"
+  ],
+  "endings": [
+   "Specific feedback helped, though it stung.",
+   "Celebrating the effort left room for pride.",
+   "Their request made my feedback easier to give."
+  ],
+  "later": [
+   "They showed me a revised version.",
+   "They kept making things despite imperfect results.",
+   "They started asking clearer feedback questions."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.9",
+  "family": "people.moment.9",
+  "min_age": 6,
+  "title": "A last-minute cancellation",
+  "text": "{name} cancels a plan because their own week has become complicated.",
+  "answers": [
+   "Agree a new date now",
+   "Leave space until things settle",
+   "Let them choose the replacement plan"
+  ],
+  "endings": [
+   "A new date kept the plan alive.",
+   "Space relieved pressure but left the calendar uncertain.",
+   "Their replacement was smaller and easier to keep."
+  ],
+  "later": [
+   "They remembered the date we had agreed.",
+   "They got back in touch when the week eased.",
+   "They suggested another manageable plan."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.10",
+  "family": "people.moment.10",
+  "min_age": 6,
+  "title": "The second-hand find",
+  "text": "{name} spots a ridiculous object at a second-hand shop and thinks it belongs in our shared joke.",
+  "answers": [
+   "Take a photo and move on",
+   "Enjoy the joke without buying",
+   "Ask what they would do with it"
+  ],
+  "endings": [
+   "A photograph preserved the joke without clutter.",
+   "We left the object to bewilder another shopper.",
+   "Their elaborate plan was funnier than the object."
+  ],
+  "later": [
+   "They sent another odd-shop photograph.",
+   "They repeated the joke on a later walk.",
+   "They drew a mock design for their imaginary collection."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.11",
+  "family": "people.moment.11",
+  "min_age": 6,
+  "title": "The brave introduction",
+  "text": "{name} is nervous about joining a new local group.",
+  "answers": [
+   "Practise an introduction",
+   "Go along for a short visit",
+   "Let them choose how to arrive"
+  ],
+  "endings": [
+   "Practice gave them a useful opening line.",
+   "A short visit lowered the pressure.",
+   "Their own arrival plan made the first step feel personal."
+  ],
+  "later": [
+   "They introduced themselves at another gathering.",
+   "They returned for a longer visit.",
+   "They changed their plan after the first meeting."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.12",
+  "family": "people.moment.12",
+  "min_age": 18,
+  "title": "A tempting vacancy",
+  "text": "{name} hears about a better role but would need to learn something new.",
+  "answers": [
+   "Compare the requirements",
+   "Protect time to think",
+   "Let them plan a small first step"
+  ],
+  "endings": [
+   "Requirements made the opportunity more concrete.",
+   "A pause separated excitement from pressure.",
+   "A small step tested whether the role really appealed."
+  ],
+  "later": [
+   "They chose something relevant to practise.",
+   "They decided which part of the move mattered.",
+   "They finished the first step and reviewed the next."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.13",
+  "family": "people.moment.13",
+  "min_age": 18,
+  "title": "The crowded calendar",
+  "text": "{name} has said yes to too many plans, including ours.",
+  "answers": [
+   "Choose one firm date",
+   "Release this commitment",
+   "Ask them to suggest a realistic plan"
+  ],
+  "endings": [
+   "A firm date brought clarity and another obligation.",
+   "Releasing the plan gave them breathing room.",
+   "A smaller plan fit the week they actually had."
+  ],
+  "later": [
+   "They kept our agreed date in mind.",
+   "They reached out after clearing some commitments.",
+   "They became more realistic about future invitations."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.14",
+  "family": "people.moment.14",
+  "min_age": 18,
+  "title": "A presentation disaster",
+  "text": "{name}’s presentation slides vanished just before a rehearsal.",
+  "answers": [
+   "Build a short backup outline",
+   "Take a break, then retry",
+   "Let them practise without slides"
+  ],
+  "endings": [
+   "A backup outline rescued the essential points.",
+   "A break lowered panic before the retry.",
+   "Speaking without slides exposed a stronger story."
+  ],
+  "later": [
+   "They kept a backup for their next presentation.",
+   "They included a pause in their next rehearsal.",
+   "They became less dependent on the slides."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.15",
+  "family": "people.moment.15",
+  "min_age": 18,
+  "title": "Two good offers",
+  "text": "{name} has two opportunities: a secure routine or an uncertain project.",
+  "answers": [
+   "Compare practical trade-offs",
+   "Keep the current routine for now",
+   "Let them test the uncertain option"
+  ],
+  "endings": [
+   "Comparing trade-offs exposed what security costs.",
+   "Keeping the routine protected energy but delayed change.",
+   "A small test made the uncertain option less abstract."
+  ],
+  "later": [
+   "They used the comparison in their next decision.",
+   "They reconsidered when their energy improved.",
+   "They decided which parts of the test to keep."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.16",
+  "family": "people.moment.16",
+  "min_age": 18,
+  "title": "The housewarming challenge",
+  "text": "{name} is moving and has vastly underestimated the number of boxes.",
+  "answers": [
+   "Sort a small area methodically",
+   "Help for a fixed short visit",
+   "Let them direct our limited help"
+  ],
+  "endings": [
+   "One area became usable; the mountain of boxes remained.",
+   "A short visit helped without swallowing the whole day.",
+   "Their chosen priority cleared the most urgent obstacle."
+  ],
+  "later": [
+   "They continued with the small-area method.",
+   "They asked for another manageable visit.",
+   "They remembered which help had mattered most."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.17",
+  "family": "people.moment.17",
+  "min_age": 18,
+  "title": "The uncomfortable joke",
+  "text": "{name} makes a joke that lands badly. They are embarrassed rather than defiant.",
+  "answers": [
+   "Discuss it privately",
+   "Change the subject for now",
+   "Ask how they want to repair it"
+  ],
+  "endings": [
+   "A private conversation named what had gone wrong.",
+   "Changing the subject eased the room but left the issue waiting.",
+   "They chose a repair they could sincerely make."
+  ],
+  "later": [
+   "They checked their wording in a similar situation.",
+   "They returned to discuss what had happened.",
+   "They followed up with the person affected."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "happiness": 1,
+    "stress": 1
+   }
+  ]
+ },
+ {
+  "id": "people.moment.18",
+  "family": "people.moment.18",
+  "min_age": 10,
+  "title": "The missing notebook",
+  "text": "{name} cannot find the notes needed for tomorrow. The group chat is already blaming everyone.",
+  "answers": ["Rebuild the notes together", "Pause the chat for tonight", "Ask what would help most"],
+  "endings": ["We rebuilt enough notes to make tomorrow manageable.", "A quiet evening stopped the blame from growing.", "They chose the part of the plan they needed first."],
+  "later": ["They started keeping a shared study list.", "They muted the chat before it became another argument.", "They asked earlier when they needed a hand."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ },
+ {
+  "id": "people.moment.19",
+  "family": "people.moment.19",
+  "min_age": 13,
+  "title": "The chat went quiet",
+  "text": "A short message from {name} reads colder than usual. No one can agree what it meant.",
+  "answers": ["Ask them directly and kindly", "Give them room to reply", "Listen before taking sides"],
+  "endings": ["A private question cleared up part of the misunderstanding.", "Space kept one awkward message from becoming a public argument.", "Listening helped them explain what they meant."],
+  "later": ["They asked before guessing what a message meant.", "They came back when they were ready to talk.", "They checked in before another disagreement spread."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ },
+ {
+  "id": "people.moment.20",
+  "family": "people.moment.20",
+  "min_age": 16,
+  "title": "Two plans, one evening",
+  "text": "{name} has a big tryout tomorrow, but our group has already planned a late celebration.",
+  "answers": ["Work out a practical compromise", "Keep the evening short", "Let them choose what matters tonight"],
+  "endings": ["A clear end time let them prepare and still join us.", "A short visit left room for rest.", "They chose a quiet practice instead of the crowd."],
+  "later": ["They used the same time limit before another tryout.", "They remembered that leaving early was allowed.", "They told the group sooner when plans changed."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ },
+ {
+  "id": "people.moment.21",
+  "family": "people.moment.21",
+  "min_age": 18,
+  "title": "A room with no shelves",
+  "text": "{name} has moved into a tiny first place. The essentials fit; the flat-pack instructions do not help.",
+  "answers": ["Measure and plan the next steps", "Take a break before unpacking more", "Ask which corner they want to finish first"],
+  "endings": ["A simple list made the room usable.", "A break saved the evening from becoming a furniture argument.", "They picked one small corner and made it theirs."],
+  "later": ["They measured before buying the next shelf.", "They stopped treating every box as urgent.", "They chose the next corner themselves."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ },
+ {
+  "id": "people.moment.22",
+  "family": "people.moment.22",
+  "min_age": 25,
+  "title": "A reference with a catch",
+  "text": "{name} asks for a work reference and suggests polishing a claim neither of us can verify.",
+  "answers": ["Check the facts and write honestly", "Ask for time before replying", "Find a truthful strength to highlight"],
+  "endings": ["A factual reference protected both of our names.", "Waiting kept pressure from choosing the wording for us.", "A real strength made a better case than an invented one."],
+  "later": ["They used a dated example in their next application.", "They gave themselves time before asking again.", "They described their work more clearly next time."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":1},{"smarts":1,"happiness":1}]
+ },
+ {
+  "id": "people.moment.23",
+  "family": "people.moment.23",
+  "min_age": 35,
+  "title": "The care calendar",
+  "text": "{name} is helping someone close to them and has filled every evening with errands.",
+  "answers": ["Map the week and share tasks", "Protect one evening for rest", "Ask which task feels heaviest"],
+  "endings": ["A written schedule showed what could be shared.", "One protected evening made the week feel possible.", "They named the errand they had been avoiding."],
+  "later": ["They asked for help before the calendar overflowed.", "They kept one evening free the next week.", "They made a smaller list with the person they cared for."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ },
+ {
+  "id": "people.moment.24",
+  "family": "people.moment.24",
+  "min_age": 50,
+  "title": "The reunion seating plan",
+  "text": "{name} wants to attend a reunion but worries an old disagreement will take over the evening.",
+  "answers": ["Agree on a calm way to leave", "Stay for one short visit", "Let them choose who to approach"],
+  "endings": ["A quiet exit plan made going feel possible.", "One short visit kept the old dispute from owning the night.", "They chose a conversation they actually wanted to have."],
+  "later": ["They made a plan before another difficult gathering.", "They left while the evening was still good.", "They decided for themselves when to reopen the old topic."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ },
+ {
+  "id": "people.moment.25",
+  "family": "people.moment.25",
+  "min_age": 65,
+  "title": "A letter from years ago",
+  "text": "{name} finds an old letter from a friend they lost touch with. They are unsure how much to say.",
+  "answers": ["Draft a simple first message", "Wait until the memories settle", "Ask what they hope to reconnect with"],
+  "endings": ["A short note opened the door without promising too much.", "They kept the letter nearby and chose not to rush.", "They named the part of the friendship they missed."],
+  "later": ["They sent a short update when it felt right.", "They decided what they wanted before reaching out.", "They remembered to begin with the shared good years."],
+  "effects": [{"smarts":1,"stress":1},{"happiness":2},{"happiness":1,"stress":1}]
+ }
+]

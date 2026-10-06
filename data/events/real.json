@@ -555,7 +555,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "real.deposit_dispute",
@@ -1138,7 +1139,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1890
  },
  {
   "id": "real.locked_out",
@@ -1461,7 +1463,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1890
  },
  {
   "id": "real.parking_ticket",
@@ -1545,7 +1548,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1890
  },
  {
   "id": "real.commute_breakdown",
@@ -1970,7 +1974,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1890
  },
  {
   "id": "real.speed_camera",
@@ -2154,7 +2159,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 2004
  },
  {
   "id": "real.group_chat",
@@ -2499,7 +2505,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 2004
  },
  {
   "id": "real.old_photos",
@@ -2662,7 +2669,8 @@
    }
   ],
   "weight": 6,
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1995
  },
  {
   "id": "real.family_table",

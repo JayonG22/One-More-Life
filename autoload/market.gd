@@ -28,6 +28,17 @@ const CULTURES := {
 	"chaotic": {"name": "Chaotic", "desc": "Every week is a reorganisation and every reorganisation is urgent."},
 }
 const PERKS := ["a pension match", "free lunches", "a company car", "a cycle-to-work scheme", "extra holiday", "private health cover", "flexible hours", "a gym on the ground floor", "a generous bonus", "a four-day week trial", "a training budget"]
+const MAJOR_FIELDS := {
+	"computer_science": ["Tech"], "game_dev": ["Tech", "Media"], "engineering": ["Engineering", "Trades", "Energy", "Transport"],
+	"nursing": ["Healthcare", "Care"], "medicine": ["Healthcare"], "dentistry": ["Healthcare"], "pharmacy": ["Healthcare", "Science"],
+	"biology": ["Science", "Environment", "Healthcare"], "veterinary": ["Care", "Science"], "psychology": ["Care", "Healthcare", "Business"],
+	"business": ["Business", "Retail", "Office", "Logistics"], "mba": ["Business", "Finance"], "economics": ["Finance", "Business", "Government"],
+	"accounting": ["Finance", "Office"], "criminal_justice": ["Security", "Government", "Legal"], "law": ["Legal", "Government"],
+	"education": ["Education", "Care"], "english": ["Education", "Media"], "communications": ["Media", "Business"],
+	"graphic_design": ["Design", "Media"], "architecture": ["Engineering", "Design", "Trades"], "culinary": ["Food", "Hospitality"],
+	"music": ["Media", "Education"], "political_science": ["Government", "Legal"], "phd": ["Science", "Education"],
+}
+const REMOTE_FIELDS := ["Tech", "Design", "Media", "Finance", "Office", "Business", "Legal"]
 const REJECTIONS := [
 	"They said I was 'a strong candidate' and then picked somebody else. It was the phrase that stung.",
 	"They wanted more experience than the advert had admitted.",
@@ -63,6 +74,74 @@ func add_experience(field: String, years: int = 1) -> void:
 	s["exp"][field] = int(s["exp"].get(field, 0)) + years
 
 
+func education_fit(jd: Dictionary) -> float:
+	var field := str(jd.get("field", ""))
+	var fit := 0.0
+	for d in _p().get("education", {}).get("degrees", []):
+		var mid := str(d.get("major", ""))
+		if d.get("level","")=="associate":
+			fit=maxf(fit,0.07 if str(d.get("field",""))==field else 0.01)
+			continue
+		if jd.get("majors", []).has(mid) or jd.get("preferred_majors", []).has(mid): fit = maxf(fit, 0.14)
+		elif MAJOR_FIELDS.get(mid, []).has(field): fit = maxf(fit, 0.10)
+		else: fit = maxf(fit, 0.02)
+	return fit
+
+
+func listing_weight(jd: Dictionary) -> float:
+	var field := str(jd.get("field", ""))
+	var demand := 1.0 + Workforce.climate(field) * 3.0
+	var scenes: Array = jd.get("local_scenes", [])
+	if scenes.any(func(v): return Places.region().get("scene", []).has(v)): demand *= 1.8
+	# Education improves discovery without making every board a list of your degree.
+	return maxf(0.15, demand) * (1.0 + education_fit(jd) * 3.0) * Lore.demand(field)
+
+
+func skill(field: String) -> int:
+	return int(_p().get("professional_skills", {}).get(field, 0))
+
+
+func learn(field: String, gain: int = 1) -> void:
+	if not _p().has("professional_skills"): _p()["professional_skills"] = {}
+	_p()["professional_skills"][field] = clampi(skill(field) + gain, 0, 10)
+
+
+func train(field: String) -> void:
+	if int(_p().get("age", 0)) < 16 or Lives.separate() or skill(field) >= 10: return
+	var valid := ContentDB.jobs.any(func(j): return str(j.get("field", "")) == field)
+	if not valid: return
+	var stamp := "%d:%s" % [int(_p()["age"]), field]
+	var s := st()
+	if not s.has("courses"): s["courses"] = {}
+	if s["courses"].has(stamp): return
+	var cost := Actions._cost(200)
+	if int(_p().get("money", 0)) < cost or not GameState.spend_time(1): return
+	s["courses"][stamp] = true
+	learn(field)
+	GameState.apply_effects({"money": -cost, "smarts": 2, "stress": 2, "job_perf": 2 if str(_p().get("job", {}).get("field", "")) == field else 0})
+	GameState.add_log("I completed a practical %s course and kept the work samples. My next application has something specific to show." % field.to_lower())
+	EventEngine.push_info("🧰", "Skills for work", "%s practice: %d/10. Employers in this field count it alongside your education and experience; it does not replace a required degree." % [field, skill(field)])
+
+
+func menu(_key: String) -> Dictionary:
+	var fields: Array = []
+	for jd in ContentDB.jobs:
+		if not fields.has(jd["field"]): fields.append(jd["field"])
+	fields.sort()
+	var rows: Array = []
+	for field in fields:
+		var stamp := "%d:%s" % [int(_p()["age"]), str(field)]
+		var taken: bool = st().get("courses", {}).has(stamp)
+		rows.append({"icon": "🧰", "name": "%s practice · %d/10" % [field, skill(str(field))],
+			"sub": "Completed this year" if taken else "%s · 1 time · work samples for applications" % GameState.fmt_money(Actions._cost(200)),
+			"act": "market:train", "arg": field, "on": not taken and skill(str(field)) < 10 and int(_p()["age"]) >= 16 and int(_p()["money"]) >= Actions._cost(200)})
+	return {"icon": "🧰", "title": "Practical courses", "rows": rows, "info": ["Choose a field. A completed course improves your standing for its jobs and your current work in that field. One course per field each year; regulated roles still require their degrees."]}
+
+
+func act(key: String, arg) -> void:
+	if key == "train": train(str(arg))
+
+
 func _company(field: String = "") -> String:
 	return Names.company(field, str(_p().get("country", "")))
 
@@ -72,8 +151,9 @@ func openings(kind: String) -> Array:
 	var s := st()
 	if s.is_empty():
 		return []
-	var key := "%s_%d" % [kind, int(_p()["age"])]
+	var key := "%s_%d_%s_%s" % [kind, int(_p()["age"]), str(_p()["country"]), str(_p().get("region", ""))]
 	if s["open"].has(key):
+		for l in s["open"][key]: l["locked"] = Actions.job_requirement(ContentDB.job(str(l["job"])))
 		return s["open"][key]
 	var out: Array = []
 	var ids: Array = Actions.listings(kind)
@@ -94,13 +174,12 @@ func openings(kind: String) -> Array:
 		var ck: Array = CULTURES.keys()
 		out.append({
 			"id": "%s_%d" % [key, i], "job": jid, "company": _company(str(jd.get("field", ""))), "salary": sal,
-			"apps": apps, "exp": exp_req, "remote": randf() < (0.25 if Phrases.tech_level() >= 2 else 0.04),
+			"apps": apps, "exp": exp_req, "remote": REMOTE_FIELDS.has(str(jd.get("field", ""))) and Phrases.tech_level() >= 2 and randf() < 0.25,
 			"perk": PERKS[randi() % PERKS.size()] if randf() < 0.55 else "",
 			"boss": bk[randi() % bk.size()], "culture": ck[randi() % ck.size()], "health": randf_range(0.3, 1.0),
 			"locked": Actions.job_requirement(jd),
 		})
 		i += 1
-	s["open"].clear()
 	s["open"][key] = out
 	return out
 
@@ -122,6 +201,12 @@ func standing(l: Dictionary) -> Dictionary:
 	var sm := (GameState.stat("smarts") - 50.0) / 220.0
 	q += sm
 	lines.append(["Smarts", sm])
+	var edu := education_fit(jd)
+	q += edu
+	if edu > 0.0: lines.append(["Education relevant to this field", edu])
+	var practice := float(skill(str(jd.get("field", "")))) * 0.012
+	q += practice
+	if practice > 0.0: lines.append(["Practical skills and work samples", practice])
 	var have := experience(str(jd.get("field", "")))
 	var ex := clampf(float(have - int(l["exp"])) * 0.06, -0.3, 0.15)
 	q += ex
@@ -145,9 +230,22 @@ func standing(l: Dictionary) -> Dictionary:
 	if stars > 0.0:
 		q -= stars
 		lines.append(["Your record", -stars])
+	var practical := Employment.hiring_bonus(str(jd.get("field","")))
+	q += practical
+	if not is_zero_approx(practical): lines.append(["Qualifications and work record",practical])
+	var pathways: float=Journey.modules["school"].career_bonus(str(jd.get("field","")))+Journey.modules["places"].hiring_bonus(str(jd.get("field","")))
+	q += pathways
+	if pathways>0: lines.append(["School projects and local institutions",pathways])
+	var support: float=Journey.modules["pathways"].support(str(jd.get("field","")))
+	q+=support
+	if support>0: lines.append(["A trusted connection",support])
 	var comp := 1.0 / (1.0 + float(l["apps"]) / 45.0)
 	var chance := clampf((0.50 + q) * (0.45 + 0.75 * comp), 0.03, 0.90)
-	return {"chance": chance, "q": q, "lines": lines, "comp": comp}
+	var portfolio := Depth.work_portfolio_bonus()
+	if portfolio>0: lines.append(["School contributions and transferable practice",portfolio])
+	var adjusted := Aptitude.chance(chance+portfolio,"work")
+	lines.append(["Current wellbeing and readiness",adjusted-chance])
+	return {"chance":adjusted,"q":q,"lines":lines,"comp":comp}
 
 
 ## A plain-language reading of where you stand for one opening, and what is holding you back.
@@ -189,6 +287,7 @@ func apply(id: String) -> void:
 	if l.is_empty():
 		return
 	var jd := ContentDB.job(str(l["job"]))
+	l["locked"] = Actions.job_requirement(jd)
 	if str(l["locked"]) != "":
 		EventEngine.push_info("🔒", jd["ranks"][0], "Requirement: %s." % str(l["locked"]))
 		return
@@ -207,8 +306,8 @@ func apply(id: String) -> void:
 	var st_ := standing(l)
 	# screening: the CV is read against the post. A noise term stands for the reader's mood,
 	# but a weak fit is a rejection, and the reason given is the real one.
-	var read := float(st_["chance"]) + randf_range(-0.07, 0.07)
-	if read < 0.27:
+	var read := clampf(0.25 + float(st_["chance"]) * 0.80, 0.12, 0.95)
+	if randf() >= read:
 		_rejected(l, true)
 		return
 	_interview(l, float(st_["chance"]))
@@ -222,14 +321,12 @@ func _interview(l: Dictionary, chance: float) -> void:
 	if GameState.has_trait("Anxious"): base -= 0.06
 	if Shop.has_any(["suit", "designer"]): base += 0.07
 	var choices: Array = []
-	var bar := 0.50 + randf_range(-0.07, 0.07)       # what this interviewer needs to hear
 	for a in q["answers"]:
 		var c := clampf(base + float(a.get("score", 0.0)), 0.05, 0.95)
-		var good := c >= bar
 		var why_not := "I answered “%s”, and I could see it was not what they were hoping for." % str(a["text"]).substr(0, 70)
 		var ch := {"label": a["text"], "outcomes": [
-			{"weight": 0.96 if good else 0.04, "text": "They asked me to come back the next day. I had the feeling it was going well.", "market": {"offer": str(l["id"])}},
-			{"weight": 0.04 if good else 0.96, "text": "The interview ended a few minutes early. " + why_not, "market": {"reject": str(l["id"]), "why": why_not}},
+			{"weight": c, "text": "They asked me to come back the next day. I had the feeling it was going well.", "market": {"offer": str(l["id"])}},
+			{"weight": 1.0 - c, "text": "The interview ended a few minutes early. " + why_not, "market": {"reject": str(l["id"]), "why": why_not}},
 		]}
 		if a.has("trait"):
 			ch["requires"] = {"trait": a["trait"]}
@@ -238,6 +335,8 @@ func _interview(l: Dictionary, chance: float) -> void:
 
 
 func outcome(ops: Dictionary) -> void:
+	if ops.has("training"):
+		learn(str(ops["training"]["field"]), int(ops["training"].get("gain", 1)))
 	if ops.has("offer"):
 		offer(str(ops["offer"]))
 	if ops.has("reject"):

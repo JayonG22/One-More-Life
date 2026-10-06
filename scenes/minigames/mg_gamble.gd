@@ -56,10 +56,11 @@ func bank_text() -> String:
 
 
 func rolled(p: float) -> bool:
-	return randf() < clampf(p * (1.0 + (luck - 1.0) * 0.12), 0.0, 1.0)
+	return randf() < clampf(p, 0.0, 1.0)
 
 
 func confetti(n: int, emojis: Array = ["🪙", "✨", "💰", "🎉"], from: Vector2 = Vector2(W / 2.0, 120)) -> void:
+	if not Fx.effects_on() or Fx.reduced_motion(): return
 	for i in range(n):
 		var l := label(str(emojis[randi() % emojis.size()]), randi_range(22, 40))
 		add_child(l)
@@ -74,6 +75,7 @@ func confetti(n: int, emojis: Array = ["🪙", "✨", "💰", "🎉"], from: Vec
 
 
 func shake(amount: float = 10.0) -> void:
+	if not Fx.shake_on() or Fx.reduced_motion(): return
 	var t := create_tween()
 	for i in range(6):
 		t.tween_property(self, "position:x", position.x + randf_range(-amount, amount), 0.04)
@@ -81,7 +83,7 @@ func shake(amount: float = 10.0) -> void:
 
 
 func settle(won: int, text: String) -> void:
-	if done:
+	if done or round_settled:
 		return
 	var net := won - bet - extra_stake
 	if won > 0 and won >= (bet + extra_stake) * 5:
@@ -129,7 +131,7 @@ func _round_end(text: String) -> void:
 		return
 	set_process_unhandled_input(false)
 	var net := total_won - total_stake
-	var can_play := cash_now() >= bet
+	var can_play := cash_now() >= 10
 	panel = Control.new()
 	panel.z_index = 80
 	add_child(panel)
@@ -153,7 +155,7 @@ func _round_end(text: String) -> void:
 	cl.position = Vector2(0, 248)
 	cl.size = Vector2(W, 30)
 	if streak <= -3 or streak >= 3:
-		var sl := label(("%d losses in a row. It has to turn." if streak < 0 else "%d wins in a row. Don't stop now.") % absi(streak), 16, true, col("warn") if streak < 0 else col("gold"))
+		var sl := label(("%d losses in a row. The next round has the same odds." if streak < 0 else "%d wins in a row. The next round has the same odds.") % absi(streak), 16, true, col("warn") if streak < 0 else col("gold"))
 		sl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		panel.add_child(sl)
 		sl.position = Vector2(0, 282)
@@ -166,7 +168,7 @@ func _round_end(text: String) -> void:
 		var half := maxi(10, int(bet / 2.0))
 		var dbl := bet * 2
 		var bx := 0
-		if half < bet:
+		if half < bet and half <= cash_now():
 			var hb := button("½  %s" % GameState.fmt_money(half), func(): _again(half), "Row")
 			panel.add_child(hb)
 			hb.position = Vector2(W / 2.0 - 250, 384)
@@ -181,7 +183,12 @@ func _round_end(text: String) -> void:
 		panel.add_child(out)
 		out.position = Vector2(W / 2.0 - 250 + 340, 384)
 		out.size = Vector2(160, 46)
+		again.disabled = cash_now() < bet
 		again.grab_focus()
+		var custom := UIKit.amount_row("Choose your next stake", cash_now(), func(amount): _again(amount), 10)
+		panel.add_child(custom)
+		custom.position = Vector2(W / 2.0 - 250, 444)
+		custom.size = Vector2(500, 82)
 	else:
 		var quit := button("Give up  [Enter]", func(): finish(0.0, _session_detail(text)), "Primary")
 		panel.add_child(quit)
@@ -197,7 +204,9 @@ func _round_end(text: String) -> void:
 
 
 func _again(next_bet: int = 0) -> void:
-	if done or get_parent() == null:
+	if done or get_parent() == null or (next_bet != 0 and (next_bet < 10 or next_bet > cash_now() or next_bet > 1000000000)):
+		return
+	if next_bet == 0 and bet > cash_now():
 		return
 	var n: MinigameGamble = get_script().new()
 	var np := params.duplicate()
@@ -228,6 +237,6 @@ func finish(score: float, detail: Dictionary = {}) -> void:
 func _input(event: InputEvent) -> void:
 	if panel == null or not is_instance_valid(panel) or done:
 		return
-	if key_pressed(event, [KEY_ESCAPE]) and cash_now() >= bet:
+	if key_pressed(event, [KEY_ESCAPE]):
 		finish(clampf(float(total_won) / (2.0 * float(maxi(1, bet))), 0.0, 1.0), _session_detail(str(panel.get_meta("text", ""))))
 		get_viewport().set_input_as_handled()

@@ -60,8 +60,6 @@ func _go() -> void:
 	var weights: Array = []
 	for h in horses:
 		weights.append(float(h["prob"]))
-	if randf() < (luck - 1.0) * 0.05:
-		weights[pick] = float(weights[pick]) * 3.0
 	order = []
 	var pool: Array = range(horses.size())
 	while not pool.is_empty():

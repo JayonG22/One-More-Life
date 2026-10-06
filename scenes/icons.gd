@@ -19,7 +19,7 @@ const KINDS := [
 	"tent", "trailer", "flat_small", "flat_block", "terrace", "bungalow",
 	"house", "house_large", "villa", "mansion", "estate", "tower", "island",
 	# vehicles, also a ladder
-	"bike", "hatchback", "sedan", "sports", "limo", "boat", "yacht", "jet",
+	"electric", "wagon", "suv", "pickup", "bike", "hatchback", "sedan", "sports", "limo", "boat", "yacht", "jet",
 	# places and pursuits
 	"gym", "library", "hospital", "court", "prison", "school", "office",
 	"factory", "farm", "church", "casino", "theatre", "stadium", "zoo",
@@ -31,6 +31,10 @@ const KINDS := [
 	"eye", "ear", "handshake", "anchor", "hourglass", "scroll", "dome", "hat",
 	"signpost", "road", "calendar", "pulse",
 ]
+
+const JOB_TOOLS := {"baker":["bread","oven"],"mortician":["flower","clipboard"],"exorcist":["lantern","book"],"marines":["anchor","shield"],"coast_guard":["ring","boat"],"adult_performer":["mask","clipboard"],"pt_cashier": ["coins", "receipt"], "pt_burger": ["plate", "burger"], "pt_lifeguard": ["lifebuoy", "wave"], "pt_babysitter": ["heart", "child"], "pt_dogwalker": ["paw", "lead"], "pt_tutor": ["book", "pencil"], "pt_barista": ["cup", "bean"], "pt_stocker": ["crate", "moon"], "pt_delivery": ["road", "parcel"], "retail": ["coins", "tag"], "fastfood": ["plate", "fries"], "warehouse": ["crate", "stack"], "trucker": ["road", "truck"], "janitor": ["brush", "bucket"], "security": ["shield", "eye"], "receptionist": ["phone", "bell"], "electrician": ["bolt", "plug"], "plumber": ["pipe", "drop"], "mechanic": ["wrench", "gear"], "carpenter": ["hammer", "wood"], "hairstylist": ["scissors", "comb"], "line_cook": ["plate", "pan"], "firefighter": ["shield", "flame"], "mail": ["envelope", "parcel"], "flight_attendant": ["jet", "cup"], "developer": ["code", "gear"], "game_dev": ["code", "pad"], "nurse": ["stethoscope", "cross"], "teacher": ["book", "chalk"], "police": ["shield", "star"], "accountant": ["ledger", "coins"], "marketing": ["megaphone", "tag"], "analyst": ["ledger", "graph"], "engineer": ["gear", "ruler"], "architect": ["ruler", "house"], "designer": ["brush", "palette"], "journalist": ["pen", "news"], "counselor": ["heart", "speech"], "lab_tech": ["microscope", "tube"], "chef": ["plate", "hat"], "music_teacher": ["book", "note"], "paralegal": ["gavel", "scroll"], "probation": ["handshake", "shield"], "civil_servant": ["scroll", "stamp"], "lawyer": ["gavel", "scales"], "doctor": ["stethoscope", "pulse"], "dentist": ["tooth", "mirror"], "pharmacist": ["pill", "cross"], "vet": ["stethoscope", "paw"], "executive": ["briefcase", "graph"], "professor": ["book", "cap"], "scientist": ["microscope", "flask"], "army": ["shield", "stripes"], "navy": ["anchor", "stripes"], "air_force": ["jet", "stripes"], "pilot": ["jet", "compass"], "data_analyst": ["code", "graph"], "cybersecurity": ["code", "shield"], "ux_research": ["eye", "speech"], "technical_writer": ["pen", "gear"], "game_producer": ["pad", "calendar"], "renewable_tech": ["bolt", "sun"], "urban_planner": ["house", "map"], "environment_officer": ["leaf", "drop"], "food_scientist": ["flask", "plate"], "community_worker": ["handshake", "house"], "care_assistant": ["heart", "cross"], "logistics_planner": ["crate", "map"], "event_coordinator": ["calendar", "star"], "archivist": ["scroll", "key"], "sound_engineer": ["headphones", "wave"], "compliance": ["ledger", "shield"], "museum_educator": ["book", "dome"], "tour_guide": ["compass", "flag"], "farm_manager": ["leaf", "tractor"], "biomedical_engineer": ["gear", "pulse"], "public_defender": ["gavel", "handshake"], "insurance_analyst": ["ledger", "umbrella"], "special_education": ["book", "heart"], "community_nurse": ["stethoscope", "house"], "family_role": ["briefcase", "tree"], "appliance_repair": ["wrench", "plug"], "bike_repair": ["wrench", "bike"], "dispatch_support": ["phone", "map"], "repair_support": ["code", "wrench"], "recycling_operator": ["leaf", "recycle"], "grounds_keeper": ["leaf", "brush"], "print_technician": ["brush", "printer"], "venue_service": ["calendar", "bell"]}
+
+const STUDY_TOOLS := {"computer_science": ["code", "book"], "nursing": ["stethoscope", "book"], "business": ["briefcase", "book"], "criminal_justice": ["shield", "book"], "education": ["book", "pencil"], "engineering": ["gear", "book"], "biology": ["flask", "leaf"], "psychology": ["heart", "book"], "graphic_design": ["brush", "book"], "communications": ["megaphone", "book"], "economics": ["graph", "book"], "culinary": ["plate", "book"], "music": ["note", "book"], "political_science": ["dome", "book"], "english": ["pen", "book"], "architecture": ["ruler", "book"], "accounting": ["ledger", "book"], "game_dev": ["pad", "book"], "law": ["scales", "book"], "medicine": ["stethoscope", "cap"], "mba": ["briefcase", "cap"], "dentistry": ["tooth", "book"], "pharmacy": ["pill", "book"], "veterinary": ["paw", "book"], "phd": ["microscope", "cap"]}
 
 var kind := "house"
 var tint := Color("#8d9199")
@@ -55,7 +59,7 @@ static func make(which: String, size_px: float = 40.0, col: Color = Color(0, 0, 
 ## A row-friendly wrapper so icons drop into the existing U.row() calls, which
 ## expect a string. Anything not drawn falls back to its emoji.
 static func has(which: String) -> bool:
-	return KINDS.has(which)
+	return (which.begins_with("car:") and GameState.CARS.has(which.substr(4))) or (which.begins_with("study:") and STUDY_TOOLS.has(which.substr(6))) or KINDS.has(which) or (which.begins_with("job:") and JOB_TOOLS.has(which.substr(4)))
 
 
 func _ready() -> void:
@@ -102,6 +106,15 @@ func _windows(x: float, y: float, cols: int, rows: int, step: float, sz: float, 
 # ---------------------------------------------------------------- drawing
 
 func _draw() -> void:
+	if kind.begins_with("car:"):
+		_draw_model(kind.substr(4))
+		return
+	if kind.begins_with("study:"):
+		_draw_tools(STUDY_TOOLS.get(kind.substr(6),["book","cap"]))
+		return
+	if kind.begins_with("job:"):
+		_draw_job(kind.substr(4))
+		return
 	var body := tint
 	var dark := tint.darkened(0.3)
 	var light := tint.lightened(0.22)
@@ -213,6 +226,19 @@ func _draw() -> void:
 			_poly([[12, 24], [13, 19], [24, 19], [25, 24]], glass)
 			_circle(12, 30, 3.2, dark)
 			_circle(26, 30, 3.2, dark)
+		"electric", "wagon", "suv", "pickup":
+			var top := 14.0 if kind in ["suv","pickup"] else 18.0
+			_poly([[3,27],[8,top],[28,top],[37,25],[37,29],[3,29]],body)
+			_rect(10,top+2,8,6,glass)
+			if kind=="pickup":
+				_rect(22,top,15,8,ThemeManager.c("surface"))
+				_line(22,23,37,23,light,2)
+			else: _rect(21,top+2,7,6,glass)
+			_circle(10,30,3.5,dark)
+			_circle(29,30,3.5,dark)
+			if kind=="electric": _poly([[20,22],[17,27],[21,27],[19,32],[25,25],[21,25]],accent)
+			if kind=="wagon": _line(7,16,29,16,accent,1.5)
+			if kind=="suv": _line(4,28,36,28,accent,2)
 		"sedan":
 			_poly([[4, 27], [9, 17], [29, 17], [35, 27]], body)
 			_rect(4, 25, 31, 4, dark)
@@ -549,6 +575,8 @@ static func for_housing(key: String, house_value: int) -> String:
 		"homeless":
 			return "tent"
 		"house":
+			var model: Dictionary=Actions.HOME_MODELS.get(str(GameState.player.get("house_model","")),{})
+			if not model.is_empty(): return str(model["icon"])
 			if house_value >= 8000000:
 				return "estate"
 			if house_value >= 2500000:
@@ -560,6 +588,7 @@ static func for_housing(key: String, house_value: int) -> String:
 
 
 static func for_car(key: String) -> String:
+	if GameState.CARS.has(key): return "car:"+key
 	match key:
 		"used":
 			return "hatchback"
@@ -568,3 +597,167 @@ static func for_car(key: String) -> String:
 		"sports":
 			return "sports"
 	return "sedan"
+
+
+static func for_job(id: String) -> String:
+	return "job:"+id if JOB_TOOLS.has(id) else "briefcase"
+
+func _draw_model(id: String) -> void:
+	var original := kind
+	kind=str(GameState.CARS[id].get("icon",{"used":"hatchback","new":"sedan","sports":"sports"}.get(id,"sedan")))
+	_draw(); kind=original
+	match id:
+		"city": _line(14,13,23,13,accent,2)
+		"hybrid": _line(8,24,29,24,accent,1.4); _circle(32,18,2,accent)
+		"electric": _line(6,23,30,23,accent,1.4)
+		"wagon": _line(11,8,28,8,accent,2)
+		"suv": _rect(28,12,3,9,accent)
+		"pickup": _line(5,19,16,19,accent,1.4)
+		"roadster": _line(15,13,25,14,ink,3); _line(6,25,30,25,accent,1.4)
+		"luxury": _line(10,23,31,23,accent,1.5)
+		"used": _line(7,24,12,23,ink,1.3); _line(25,24,29,25,ink,1.3)
+		"new": _line(8,24,29,24,ink,1.2)
+		"sports": _line(29,15,35,15,accent,2); _line(32,15,32,22,accent,1.5)
+
+func _draw_job(id: String) -> void:
+	var tools: Array=JOB_TOOLS.get(id,["briefcase","star"])
+	_draw_tools(tools)
+
+func _draw_tools(tools: Array) -> void:
+	_tool(str(tools[0]),tint)
+	# A second occupational tool distinguishes related professions. Its own
+	# silhouette is drawn at half scale, rather than a letter or color-only badge.
+	draw_set_transform(_p(23,23),0,Vector2(0.46,0.46))
+	_tool(str(tools[1]),accent)
+	draw_set_transform(Vector2.ZERO)
+
+func _tool(tool: String, col: Color) -> void:
+	match tool:
+		"bread":
+			_poly([[5,14],[8,7],[17,4],[29,7],[35,15],[33,33],[7,33]],col)
+			_line(12,12,16,19,ink,2); _line(20,10,24,18,ink,2); _line(27,13,30,20,ink,2)
+		"oven":
+			_rect(5,4,30,33,col); _rect(9,14,22,18,ink); _circle(12,9,2,ink); _circle(28,9,2,ink); _line(13,18,27,18,col,2)
+		"flower":
+			_line(20,17,20,36,col,3); _poly([[19,29],[8,23],[9,31],[19,34]],col)
+			for center in [[13,11],[20,6],[27,11],[25,18],[15,18]]: _circle(center[0],center[1],5,col)
+			_circle(20,13,4,ink)
+		"lantern":
+			_rect(10,12,20,22,col); _rect(14,16,12,14,ink); _line(12,8,28,8,col,3); draw_arc(_p(20,9),_s(7),PI,TAU,20,col,_s(2)); _poly([[18,27],[16,23],[20,17],[24,23],[22,27]],col)
+		"clipboard":
+			_rect(7,7,27,30,col); _rect(14,3,12,8,ink); _line(12,17,28,17,ink,2); _line(12,24,26,24,ink,2); _line(12,31,23,31,ink,2)
+		"stethoscope":
+			draw_arc(_p(19,15),_s(9),0,PI,20,col,_s(2.5))
+			_line(10,8,10,15,col,2.5); _line(28,8,28,15,col,2.5)
+			_line(19,24,19,30,col,2); _line(19,30,31,30,col,2); _circle(32,27,4,col)
+		"code":
+			_line(13,9,5,20,col,2.5); _line(5,20,13,31,col,2.5)
+			_line(27,9,35,20,col,2.5); _line(35,20,27,31,col,2.5); _line(23,8,17,32,col,2)
+		"wrench":
+			_poly([[8,4],[6,13],[13,19],[29,35],[35,29],[19,13],[14,6],[13,12],[9,13]],col)
+		"bolt": _poly([[23,3],[9,23],[18,23],[15,37],[32,16],[23,16]],col)
+		"pipe":
+			_line(7,9,22,9,col,6); _line(22,9,22,29,col,6); _line(22,29,34,29,col,6)
+		"hammer":
+			_poly([[7,6],[30,6],[33,13],[22,16],[20,35],[14,35],[15,15],[7,15]],col)
+		"scissors":
+			draw_arc(_p(10,29),_s(5),0,TAU,20,col,_s(2)); draw_arc(_p(23,29),_s(5),0,TAU,20,col,_s(2))
+			_line(12,25,30,5,col,2.5); _line(21,25,8,5,col,2.5)
+		"microscope":
+			_line(16,7,24,16,col,6); _line(24,16,16,23,col,2); _line(13,25,28,25,col,3)
+			draw_arc(_p(19,21),_s(12),-PI/2,PI/2,20,col,_s(3)); _rect(7,34,28,3,col)
+		"ledger", "receipt", "news", "scroll", "calendar":
+			_rect(8,5,23,30,col.darkened(0.25)); _line(11,12,27,12,col,2)
+			for i in range(3): _line(11,18+i*5,23 if tool=="receipt" else 27,18+i*5,col,1.8)
+			if tool=="calendar": _line(12,3,12,8,col,3); _line(26,3,26,8,col,3)
+		"book":
+			_poly([[4,8],[19,11],[19,33],[4,30]],col); _poly([[21,11],[36,8],[36,30],[21,33]],col)
+		"plate", "lifebuoy", "gear", "coins":
+			draw_arc(_p(19,20),_s(13),0,TAU,32,col,_s(3)); draw_arc(_p(19,20),_s(7),0,TAU,24,col,_s(1.5))
+			if tool=="gear":
+				for i in range(8):
+					var a := i*PI/4; _line(19+cos(a)*12,20+sin(a)*12,19+cos(a)*17,20+sin(a)*17,col,3)
+			if tool=="coins": _line(19,10,19,30,col,2)
+		"cup":
+			_poly([[7,13],[27,13],[25,31],[10,31]],col); draw_arc(_p(28,20),_s(5),-PI/2,PI/2,20,col,_s(2)); _line(14,5,14,10,col)
+		"paw":
+			_poly([[9,30],[11,21],[19,16],[27,21],[29,30],[19,34]],col)
+			for x in [8,15,24,31]: _circle(x,10 if x in [15,24] else 15,3.5,col)
+		"shield": _poly([[5,7],[19,3],[33,7],[31,23],[19,36],[7,23]],col)
+		"leaf":
+			_poly([[7,32],[8,16],[19,6],[34,4],[31,20],[18,31]],col); _line(6,35,29,10,ink,1.5)
+		"drop": _poly([[20,3],[7,22],[8,29],[14,35],[25,35],[32,29],[33,22]],col)
+		"headphones":
+			draw_arc(_p(19,20),_s(13),PI,TAU,28,col,_s(3)); _rect(5,20,7,12,col); _rect(27,20,7,12,col)
+		"brush":
+			_poly([[8,5],[31,5],[29,16],[23,20],[23,35],[17,35],[17,20],[10,16]],col)
+			_line(12,8,12,14,ink); _line(19,8,19,15,ink); _line(26,8,26,14,ink)
+		"pen", "pencil", "chalk":
+			_poly([[6,32],[10,23],[28,5],[34,11],[16,29]],col); _line(12,24,27,9,ink,1)
+		"crate", "parcel", "stack":
+			_rect(6,10,28,24,col); _line(6,10,20,4,col,2); _line(20,4,34,10,col,2); _line(20,10,20,34,ink,1)
+		"graph":
+			_rect(5,24,6,11,col); _rect(15,16,6,19,col); _rect(25,7,6,28,col)
+		"ruler":
+			_rect(6,11,28,15,col); _line(11,11,11,18,ink); _line(18,11,18,21,ink); _line(25,11,25,18,ink)
+		"megaphone":
+			_poly([[5,16],[13,16],[32,7],[32,32],[13,24],[5,24]],col); _rect(12,24,5,11,col)
+		"cross": _rect(15,5,9,30,col); _rect(5,15,30,9,col)
+		"note":
+			_circle(12,29,5,col); _line(16,29,16,8,col,2); _line(16,8,29,5,col,3); _line(29,5,29,24,col,2); _circle(25,25,5,col)
+		"wave", "pulse":
+			_line(3,22,11,22,col,2); _line(11,22,16,10,col,2); _line(16,10,22,31,col,2); _line(22,31,28,18,col,2); _line(28,18,36,18,col,2)
+		"pad":
+			_poly([[8,12],[30,12],[36,30],[29,33],[23,25],[15,25],[9,33],[3,30]],col)
+			_line(8,20,17,20,ink,2); _line(12,16,12,24,ink,2); _circle(28,18,2,ink); _circle(30,23,2,ink)
+		"phone": _rect(11,4,18,32,col); _rect(14,8,12,21,ink.darkened(0.5)); _circle(20,32,1.5,ink)
+		"scales": _line(20,5,20,34,col,2); _line(5,12,35,12,col,2); _poly([[4,25],[15,25],[10,14]],col); _poly([[25,25],[36,25],[30,14]],col)
+		"plug": _rect(10,15,19,12,col); _line(14,5,14,15,col,3); _line(25,5,25,15,col,3); _line(20,27,20,36,col,3)
+		"tag": _poly([[5,7],[24,7],[36,20],[24,33],[5,33]],col); _circle(28,20,2,ink)
+		"map": _poly([[4,9],[14,5],[25,9],[36,5],[36,31],[25,35],[14,31],[4,35]],col); _line(14,5,14,31,ink); _line(25,9,25,35,ink)
+		"flame": _poly([[9,30],[6,22],[16,5],[21,17],[27,9],[34,23],[29,34],[15,36]],col)
+		"stripes": _poly([[5,12],[20,21],[35,12],[35,17],[20,26],[5,17]],col); _poly([[5,23],[20,32],[35,23],[35,28],[20,37],[5,28]],col)
+		"tube": _line(16,5,16,27,col,7); _circle(16,28,3.5,col); _line(10,5,23,5,col,2)
+		"bean": _poly([[12,7],[24,4],[31,14],[29,29],[17,35],[7,27],[6,16]],col); _line(15,9,23,29,ink,2)
+		"comb":
+			_rect(4,9,31,5,col)
+			for x in range(5,35,5): _line(x,14,x,30,col,2)
+		"speech": _poly([[4,6],[35,6],[35,27],[17,27],[8,35],[8,27],[4,27]],col)
+		"umbrella": draw_arc(_p(20,21),_s(16),PI,TAU,28,col,_s(4)); _line(20,9,20,33,col,2); _line(20,33,26,33,col,2)
+		"burger":
+			draw_arc(_p(20,18),_s(13),PI,TAU,24,col,_s(6)); _rect(6,20,28,4,col); _rect(7,28,26,5,col)
+		"fries":
+			_poly([[7,20],[33,20],[29,35],[11,35]],col)
+			for x in [11,17,23,29]: _rect(x,5 if x==17 else 9,3,14,col)
+		"pan":
+			draw_arc(_p(14,22),_s(10),0,TAU,28,col,_s(3)); _line(23,18,36,10,col,4)
+		"child":
+			_circle(20,10,6,col); _rect(15,19,10,12,col); _line(15,21,7,27,col,3); _line(25,21,33,27,col,3); _line(17,29,15,37,col,3); _line(23,29,25,37,col,3)
+		"lead":
+			draw_arc(_p(11,10),_s(6),0,TAU,20,col,_s(2)); _line(15,15,30,31,col,2); draw_arc(_p(29,30),_s(5),0,PI,20,col,_s(2))
+		"moon":
+			draw_arc(_p(20,20),_s(13),PI/3,PI*1.7,28,col,_s(5)); _circle(29,8,2,col)
+		"truck":
+			_rect(3,10,22,18,col); _poly([[25,16],[32,16],[37,23],[37,28],[25,28]],col); _circle(10,31,4,col); _circle(30,31,4,col)
+		"bucket": _poly([[7,14],[33,14],[29,35],[11,35]],col); draw_arc(_p(20,14),_s(10),PI,TAU,24,col,_s(2))
+		"wood": _rect(5,10,30,20,col); _line(9,15,31,15,ink); _line(9,23,31,23,ink); draw_arc(_p(22,20),_s(3),0,TAU,20,ink,_s(1))
+		"bell": _poly([[7,27],[11,22],[12,11],[20,5],[28,11],[29,22],[33,27]],col); _circle(20,31,3,col)
+		"palette": _poly([[6,12],[17,4],[31,8],[35,23],[28,34],[13,35],[5,26]],col); _circle(27,24,5,ink); _circle(12,16,2,ink); _circle(20,11,2,ink); _circle(12,26,2,ink)
+		"cap": _poly([[3,13],[20,5],[37,13],[20,21]],col); _rect(12,22,16,6,col); _line(34,15,34,29,col,2)
+		"stamp": _rect(7,28,27,7,col); _rect(16,14,9,15,col); _circle(20,10,7,col)
+		"sun":
+			_circle(20,20,7,col)
+			for i in range(8):
+				var a := i*PI/4; _line(20+cos(a)*11,20+sin(a)*11,20+cos(a)*16,20+sin(a)*16,col,2)
+		"tractor": _circle(12,29,8,col); _circle(31,31,4,col); _rect(12,17,22,10,col); _rect(10,5,14,4,col); _line(21,9,21,17,col,3)
+		"recycle": _poly([[17,5],[26,5],[32,16],[25,16]],col); _poly([[34,24],[29,34],[15,34],[19,27]],col); _poly([[6,29],[2,21],[10,9],[14,15]],col)
+		"printer": _rect(5,15,30,15,col); _rect(11,4,18,13,col); _rect(11,27,18,10,col); _line(15,30,25,30,ink)
+		"mirror": draw_arc(_p(18,13),_s(9),0,TAU,24,col,_s(2)); _line(18,22,18,37,col,4)
+		"tree": _rect(18,23,5,13,col); _circle(20,14,11,col); _circle(11,22,7,col); _circle(29,22,7,col)
+		"flag": _line(10,4,10,36,col,2); _poly([[12,6],[34,6],[29,14],[34,23],[12,23]],col)
+		_:
+			# Existing silhouettes provide the remainder of the occupational tools.
+			var original := kind
+			kind=tool if KINDS.has(tool) else "star"
+			var original_tint := tint; tint=col
+			_draw(); tint=original_tint; kind=original

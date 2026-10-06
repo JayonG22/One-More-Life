@@ -32,8 +32,6 @@ func _spin() -> void:
 	spinning = true
 	spin_btn.visible = false
 	var idx := randi() % SEG.size()
-	if luck > 1.0 and float(SEG[idx]) < 1.0 and randf() < (luck - 1.0) * 0.05:
-		idx = 15
 	var seg := TAU / float(SEG.size())
 	# the flapper is at the top (-PI/2); slice idx must end up there
 	a1 = -PI / 2.0 - (float(idx) + 0.5) * seg - TAU * 6.0

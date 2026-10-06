@@ -1,0 +1,1794 @@
+[
+ {
+  "level": "preschool",
+  "subject": "Counting",
+  "icon": "🔢",
+  "practice": "counting small groups",
+  "questions": [
+   {
+    "id": "class.preschool.Counting.0",
+    "family": "class.preschool.Counting",
+    "q": "Two blocks and one more make how many?",
+    "text": "Two blocks and one more make how many?",
+    "a": [
+     "Three",
+     "One",
+     "Five"
+    ],
+    "why": "Count every block once."
+   },
+   {
+    "id": "class.preschool.Counting.1",
+    "family": "class.preschool.Counting",
+    "q": "Which group has more: one bear or three bears?",
+    "text": "Which group has more: one bear or three bears?",
+    "a": [
+     "Three bears",
+     "One bear",
+     "They are equal"
+    ],
+    "why": "Three is more than one."
+   },
+   {
+    "id": "class.preschool.Counting.v87.0",
+    "family": "class.preschool.Counting",
+    "q": "You put one cup at each of two seats. How many cups?",
+    "text": "You put one cup at each of two seats. How many cups?",
+    "a": [
+     "Two",
+     "Four",
+     "Zero"
+    ],
+    "why": "Match one cup to each seat."
+   },
+   {
+    "id": "class.preschool.Counting.v87.1",
+    "family": "class.preschool.Counting",
+    "q": "There are four apples. One is eaten. How many remain?",
+    "text": "There are four apples. One is eaten. How many remain?",
+    "a": [
+     "Three",
+     "Five",
+     "One"
+    ],
+    "why": "Removing one from four leaves three."
+   }
+  ]
+ },
+ {
+  "level": "preschool",
+  "subject": "Shapes",
+  "icon": "🔺",
+  "practice": "sorting shapes and colours",
+  "questions": [
+   {
+    "id": "class.preschool.Shapes.0",
+    "family": "class.preschool.Shapes",
+    "q": "Which shape has three sides?",
+    "text": "Which shape has three sides?",
+    "a": [
+     "Triangle",
+     "Circle",
+     "Square"
+    ],
+    "why": "A triangle has three sides."
+   },
+   {
+    "id": "class.preschool.Shapes.1",
+    "family": "class.preschool.Shapes",
+    "q": "Which item rolls most easily?",
+    "text": "Which item rolls most easily?",
+    "a": [
+     "Ball",
+     "Cube",
+     "Flat book"
+    ],
+    "why": "A ball has a curved surface."
+   },
+   {
+    "id": "class.preschool.Shapes.v87.0",
+    "family": "class.preschool.Shapes",
+    "q": "Which shape has no corners?",
+    "text": "Which shape has no corners?",
+    "a": [
+     "Circle",
+     "Triangle",
+     "Square"
+    ],
+    "why": "A circle is curved all the way round."
+   },
+   {
+    "id": "class.preschool.Shapes.v87.1",
+    "family": "class.preschool.Shapes",
+    "q": "Which two shapes match?",
+    "text": "Which two shapes match?",
+    "a": [
+     "Two squares",
+     "A circle and a square",
+     "A triangle and a circle"
+    ],
+    "why": "Matching shapes have the same form."
+   }
+  ]
+ },
+ {
+  "level": "preschool",
+  "subject": "Language",
+  "icon": "📖",
+  "practice": "listening and naming objects",
+  "questions": [
+   {
+    "id": "class.preschool.Language.0",
+    "family": "class.preschool.Language",
+    "q": "Which word names something you wear on your feet?",
+    "text": "Which word names something you wear on your feet?",
+    "a": [
+     "Shoes",
+     "Clouds",
+     "Spoons"
+    ],
+    "why": "Shoes go on your feet."
+   },
+   {
+    "id": "class.preschool.Language.1",
+    "family": "class.preschool.Language",
+    "q": "What comes first when listening to a short story?",
+    "text": "What comes first when listening to a short story?",
+    "a": [
+     "Listen to the speaker",
+     "Guess every ending",
+     "Talk over every sentence"
+    ],
+    "why": "Listening helps you follow the story."
+   },
+   {
+    "id": "class.preschool.Language.v87.0",
+    "family": "class.preschool.Language",
+    "q": "Which word names a sound a cat makes?",
+    "text": "Which word names a sound a cat makes?",
+    "a": [
+     "Meow",
+     "Roar",
+     "Quack"
+    ],
+    "why": "A cat can meow."
+   },
+   {
+    "id": "class.preschool.Language.v87.1",
+    "family": "class.preschool.Language",
+    "q": "You do not understand an instruction. What can you say?",
+    "text": "You do not understand an instruction. What can you say?",
+    "a": [
+     "Please show me again",
+     "I know everything",
+     "Never mind"
+    ],
+    "why": "Asking again helps you understand."
+   }
+  ]
+ },
+ {
+  "level": "preschool",
+  "subject": "Play & sharing",
+  "icon": "🧸",
+  "practice": "taking turns with toys",
+  "questions": [
+   {
+    "id": "class.preschool.Play & sharing.0",
+    "family": "class.preschool.Play & sharing",
+    "q": "A friend is using the only red truck. What helps?",
+    "text": "A friend is using the only red truck. What helps?",
+    "a": [
+     "Ask for a turn after them",
+     "Grab it",
+     "Hide their toys"
+    ],
+    "why": "Taking turns gives both children time."
+   },
+   {
+    "id": "class.preschool.Play & sharing.1",
+    "family": "class.preschool.Play & sharing",
+    "q": "A toy spills out of its box. What can the group do?",
+    "text": "A toy spills out of its box. What can the group do?",
+    "a": [
+     "Put it away together",
+     "Blame the newest child",
+     "Step on it"
+    ],
+    "why": "Shared cleanup helps everyone use the space."
+   },
+   {
+    "id": "class.preschool.Play & sharing.v87.0",
+    "family": "class.preschool.Play & sharing",
+    "q": "Another child is using the only blue crayon. What helps?",
+    "text": "Another child is using the only blue crayon. What helps?",
+    "a": [
+     "Ask for a turn",
+     "Grab it",
+     "Break it"
+    ],
+    "why": "Taking turns lets both children draw."
+   },
+   {
+    "id": "class.preschool.Play & sharing.v87.1",
+    "family": "class.preschool.Play & sharing",
+    "q": "Your friend says the game is too loud. What could you try?",
+    "text": "Your friend says the game is too loud. What could you try?",
+    "a": [
+     "A quieter game together",
+     "Shout louder",
+     "Hide their toys"
+    ],
+    "why": "Listening helps people play together."
+   }
+  ]
+ },
+ {
+  "level": "kindergarten",
+  "subject": "Number sense",
+  "icon": "🔢",
+  "practice": "counting and comparing objects",
+  "questions": [
+   {
+    "id": "class.kindergarten.Number sense.0",
+    "family": "class.kindergarten.Number sense",
+    "q": "There are four shells and two shells. Which group is larger?",
+    "text": "There are four shells and two shells. Which group is larger?",
+    "a": [
+     "Four shells",
+     "Two shells",
+     "Both are empty"
+    ],
+    "why": "Four objects are more than two."
+   },
+   {
+    "id": "class.kindergarten.Number sense.1",
+    "family": "class.kindergarten.Number sense",
+    "q": "Count forward after 7: what comes next?",
+    "text": "Count forward after 7: what comes next?",
+    "a": [
+     "8",
+     "6",
+     "10"
+    ],
+    "why": "The next whole number after seven is eight."
+   },
+   {
+    "id": "class.kindergarten.Number sense.v87.0",
+    "family": "class.kindergarten.Number sense",
+    "q": "Which number comes just after seven?",
+    "text": "Which number comes just after seven?",
+    "a": [
+     "Eight",
+     "Six",
+     "Ten"
+    ],
+    "why": "Counting forward from seven gives eight."
+   },
+   {
+    "id": "class.kindergarten.Number sense.v87.1",
+    "family": "class.kindergarten.Number sense",
+    "q": "Five buttons are split into two and how many more?",
+    "text": "Five buttons are split into two and how many more?",
+    "a": [
+     "Three",
+     "Two",
+     "Seven"
+    ],
+    "why": "Two plus three equals five."
+   }
+  ]
+ },
+ {
+  "level": "kindergarten",
+  "subject": "Phonics",
+  "icon": "🔤",
+  "practice": "matching sounds and letters",
+  "questions": [
+   {
+    "id": "class.kindergarten.Phonics.0",
+    "family": "class.kindergarten.Phonics",
+    "q": "Which word starts with the same sound as sun?",
+    "text": "Which word starts with the same sound as sun?",
+    "a": [
+     "Sock",
+     "Moon",
+     "Table"
+    ],
+    "why": "Sun and sock begin with the s sound."
+   },
+   {
+    "id": "class.kindergarten.Phonics.1",
+    "family": "class.kindergarten.Phonics",
+    "q": "Which word rhymes with cat?",
+    "text": "Which word rhymes with cat?",
+    "a": [
+     "Hat",
+     "Cup",
+     "Dog"
+    ],
+    "why": "Cat and hat share their ending sound."
+   },
+   {
+    "id": "class.kindergarten.Phonics.v87.0",
+    "family": "class.kindergarten.Phonics",
+    "q": "Which word starts with the same sound as sun?",
+    "text": "Which word starts with the same sound as sun?",
+    "a": [
+     "Sock",
+     "Dog",
+     "Moon"
+    ],
+    "why": "Sun and sock begin with the s sound."
+   },
+   {
+    "id": "class.kindergarten.Phonics.v87.1",
+    "family": "class.kindergarten.Phonics",
+    "q": "Which word rhymes with hat?",
+    "text": "Which word rhymes with hat?",
+    "a": [
+     "Cat",
+     "Dog",
+     "Sun"
+    ],
+    "why": "Hat and cat share the ending sound."
+   }
+  ]
+ },
+ {
+  "level": "kindergarten",
+  "subject": "Nature",
+  "icon": "🌱",
+  "practice": "observing plants and weather",
+  "questions": [
+   {
+    "id": "class.kindergarten.Nature.0",
+    "family": "class.kindergarten.Nature",
+    "q": "What helps a seed grow?",
+    "text": "What helps a seed grow?",
+    "a": [
+     "Water and suitable light",
+     "Only a dry box",
+     "Paint on its leaves"
+    ],
+    "why": "Plants need appropriate water and light."
+   },
+   {
+    "id": "class.kindergarten.Nature.1",
+    "family": "class.kindergarten.Nature",
+    "q": "Which observation describes rain?",
+    "text": "Which observation describes rain?",
+    "a": [
+     "Water drops falling",
+     "A hotter lunch",
+     "An extra page"
+    ],
+    "why": "An observation describes what you can notice."
+   },
+   {
+    "id": "class.kindergarten.Nature.v87.0",
+    "family": "class.kindergarten.Nature",
+    "q": "What does a plant usually need as well as water?",
+    "text": "What does a plant usually need as well as water?",
+    "a": [
+     "Light",
+     "Candy",
+     "Plastic"
+    ],
+    "why": "Light supports plant growth."
+   },
+   {
+    "id": "class.kindergarten.Nature.v87.1",
+    "family": "class.kindergarten.Nature",
+    "q": "Which animal begins life as a tadpole?",
+    "text": "Which animal begins life as a tadpole?",
+    "a": [
+     "Frog",
+     "Cat",
+     "Bird"
+    ],
+    "why": "Tadpoles develop into frogs."
+   }
+  ]
+ },
+ {
+  "level": "kindergarten",
+  "subject": "Art & movement",
+  "icon": "🖍️",
+  "practice": "drawing and following simple rhythms",
+  "questions": [
+   {
+    "id": "class.kindergarten.Art & movement.0",
+    "family": "class.kindergarten.Art & movement",
+    "q": "A pattern goes red, blue, red, blue. What comes next?",
+    "text": "A pattern goes red, blue, red, blue. What comes next?",
+    "a": [
+     "Red",
+     "Green",
+     "Yellow"
+    ],
+    "why": "The two colours repeat in the same order."
+   },
+   {
+    "id": "class.kindergarten.Art & movement.1",
+    "family": "class.kindergarten.Art & movement",
+    "q": "A movement game says stop. What should you do?",
+    "text": "A movement game says stop. What should you do?",
+    "a": [
+     "Pause safely",
+     "Push ahead",
+     "Close your eyes and run"
+    ],
+    "why": "Listening to the cue keeps the game safe."
+   },
+   {
+    "id": "class.kindergarten.Art & movement.v87.0",
+    "family": "class.kindergarten.Art & movement",
+    "q": "Everyone is moving around the room. What helps keep it safe?",
+    "text": "Everyone is moving around the room. What helps keep it safe?",
+    "a": [
+     "Leave space between people",
+     "Push to the front",
+     "Close your eyes"
+    ],
+    "why": "Space helps prevent collisions."
+   },
+   {
+    "id": "class.kindergarten.Art & movement.v87.1",
+    "family": "class.kindergarten.Art & movement",
+    "q": "How can a pattern go red, blue, red, blue, then what?",
+    "text": "How can a pattern go red, blue, red, blue, then what?",
+    "a": [
+     "Red",
+     "Green",
+     "Blue"
+    ],
+    "why": "The two colours repeat in order."
+   }
+  ]
+ },
+ {
+  "level": "elementary",
+  "subject": "Mathematics",
+  "icon": "➗",
+  "practice": "arithmetic and fractions",
+  "questions": [
+   {
+    "id": "class.elementary.Mathematics.0",
+    "family": "class.elementary.Mathematics",
+    "q": "What is one quarter of 20?",
+    "text": "What is one quarter of 20?",
+    "a": [
+     "5",
+     "4",
+     "10"
+    ],
+    "why": "Divide twenty into four equal groups."
+   },
+   {
+    "id": "class.elementary.Mathematics.1",
+    "family": "class.elementary.Mathematics",
+    "q": "Four bags hold six marbles each. How many marbles?",
+    "text": "Four bags hold six marbles each. How many marbles?",
+    "a": [
+     "24",
+     "10",
+     "18"
+    ],
+    "why": "Four groups of six make twenty-four."
+   },
+   {
+    "id": "class.elementary.Mathematics.v87.0",
+    "family": "class.elementary.Mathematics",
+    "q": "A box holds six pencils. How many in three boxes?",
+    "text": "A box holds six pencils. How many in three boxes?",
+    "a": [
+     "18",
+     "9",
+     "12"
+    ],
+    "why": "Three equal groups of six make eighteen."
+   },
+   {
+    "id": "class.elementary.Mathematics.v87.1",
+    "family": "class.elementary.Mathematics",
+    "q": "A pizza has eight equal slices. Two slices are what fraction?",
+    "text": "A pizza has eight equal slices. Two slices are what fraction?",
+    "a": [
+     "One quarter",
+     "One half",
+     "Three quarters"
+    ],
+    "why": "Two eighths simplifies to one quarter."
+   }
+  ]
+ },
+ {
+  "level": "elementary",
+  "subject": "Reading",
+  "icon": "📚",
+  "practice": "finding meaning in a paragraph",
+  "questions": [
+   {
+    "id": "class.elementary.Reading.0",
+    "family": "class.elementary.Reading",
+    "q": "A character packs an umbrella after seeing dark clouds. Why?",
+    "text": "A character packs an umbrella after seeing dark clouds. Why?",
+    "a": [
+     "They expect rain",
+     "They are going swimming",
+     "They want a louder bag"
+    ],
+    "why": "The clouds suggest rain."
+   },
+   {
+    "id": "class.elementary.Reading.1",
+    "family": "class.elementary.Reading",
+    "q": "Which is a summary?",
+    "text": "Which is a summary?",
+    "a": [
+     "The main ideas in fewer words",
+     "Every sentence copied",
+     "Only the final word"
+    ],
+    "why": "A summary keeps the main meaning."
+   },
+   {
+    "id": "class.elementary.Reading.v87.0",
+    "family": "class.elementary.Reading",
+    "q": "A character packs an umbrella after seeing dark clouds. What is likely?",
+    "text": "A character packs an umbrella after seeing dark clouds. What is likely?",
+    "a": [
+     "They expect rain",
+     "They plan to swim",
+     "They dislike bags"
+    ],
+    "why": "Use the clues rather than guessing without evidence."
+   },
+   {
+    "id": "class.elementary.Reading.v87.1",
+    "family": "class.elementary.Reading",
+    "q": "Which detail best supports that a character is kind?",
+    "text": "Which detail best supports that a character is kind?",
+    "a": [
+     "They help a lost child",
+     "They wear blue shoes",
+     "They live upstairs"
+    ],
+    "why": "An action can support a claim about character."
+   }
+  ]
+ },
+ {
+  "level": "elementary",
+  "subject": "Writing",
+  "icon": "✏️",
+  "practice": "clear sentences and revision",
+  "questions": [
+   {
+    "id": "class.elementary.Writing.0",
+    "family": "class.elementary.Writing",
+    "q": "Which sentence needs an ending mark?",
+    "text": "Which sentence needs an ending mark?",
+    "a": [
+     "Every complete statement",
+     "Only long words",
+     "Only headings"
+    ],
+    "why": "A statement normally ends with punctuation."
+   },
+   {
+    "id": "class.elementary.Writing.1",
+    "family": "class.elementary.Writing",
+    "q": "What makes instructions easier to follow?",
+    "text": "What makes instructions easier to follow?",
+    "a": [
+     "Put steps in order",
+     "Hide the first step",
+     "Use unrelated details"
+    ],
+    "why": "Readers need the sequence of actions."
+   },
+   {
+    "id": "class.elementary.Writing.v87.0",
+    "family": "class.elementary.Writing",
+    "q": "Which ending completes: We visited the park...?",
+    "text": "Which ending completes: We visited the park...?",
+    "a": [
+     "Yesterday.",
+     "Because",
+     "And"
+    ],
+    "why": "The sentence needs a complete ending."
+   },
+   {
+    "id": "class.elementary.Writing.v87.1",
+    "family": "class.elementary.Writing",
+    "q": "Your paragraph changes to a new topic. What usually helps?",
+    "text": "Your paragraph changes to a new topic. What usually helps?",
+    "a": [
+     "Start a new paragraph",
+     "Remove every full stop",
+     "Repeat the first sentence"
+    ],
+    "why": "Paragraphs organize related ideas."
+   }
+  ]
+ },
+ {
+  "level": "elementary",
+  "subject": "Science",
+  "icon": "🔬",
+  "practice": "observing and measuring",
+  "questions": [
+   {
+    "id": "class.elementary.Science.0",
+    "family": "class.elementary.Science",
+    "q": "What makes a plant test fair?",
+    "text": "What makes a plant test fair?",
+    "a": [
+     "Change one condition at a time",
+     "Change every condition",
+     "Choose the result first"
+    ],
+    "why": "Keeping other conditions similar helps comparison."
+   },
+   {
+    "id": "class.elementary.Science.1",
+    "family": "class.elementary.Science",
+    "q": "Which tool measures temperature?",
+    "text": "Which tool measures temperature?",
+    "a": [
+     "Thermometer",
+     "Ruler",
+     "Calendar"
+    ],
+    "why": "A thermometer measures temperature."
+   },
+   {
+    "id": "class.elementary.Science.v87.0",
+    "family": "class.elementary.Science",
+    "q": "You compare how seeds grow. What should stay the same when testing light?",
+    "text": "You compare how seeds grow. What should stay the same when testing light?",
+    "a": [
+     "Water and seed type",
+     "Only the label",
+     "Nothing"
+    ],
+    "why": "Change one factor while keeping others comparable."
+   },
+   {
+    "id": "class.elementary.Science.v87.1",
+    "family": "class.elementary.Science",
+    "q": "An ice cube warms on a plate. What change do you expect?",
+    "text": "An ice cube warms on a plate. What change do you expect?",
+    "a": [
+     "It melts",
+     "It becomes wood",
+     "It gains more ice"
+    ],
+    "why": "Warming can change ice into liquid water."
+   }
+  ]
+ },
+ {
+  "level": "elementary",
+  "subject": "History & geography",
+  "icon": "🗺️",
+  "practice": "timelines and maps",
+  "questions": [
+   {
+    "id": "class.elementary.History & geography.0",
+    "family": "class.elementary.History & geography",
+    "q": "What does a map key explain?",
+    "text": "What does a map key explain?",
+    "a": [
+     "The symbols on the map",
+     "Tomorrow's weather",
+     "Every traveller's name"
+    ],
+    "why": "The key tells you what map symbols mean."
+   },
+   {
+    "id": "class.elementary.History & geography.1",
+    "family": "class.elementary.History & geography",
+    "q": "What belongs on a timeline?",
+    "text": "What belongs on a timeline?",
+    "a": [
+     "Events in date order",
+     "Only place names",
+     "Random colours"
+    ],
+    "why": "A timeline arranges events over time."
+   },
+   {
+    "id": "class.elementary.History & geography.v87.0",
+    "family": "class.elementary.History & geography",
+    "q": "Which source was made by someone at the event?",
+    "text": "Which source was made by someone at the event?",
+    "a": [
+     "Their diary entry",
+     "A film made much later",
+     "An invented story"
+    ],
+    "why": "A contemporary diary can be a primary source."
+   },
+   {
+    "id": "class.elementary.History & geography.v87.1",
+    "family": "class.elementary.History & geography",
+    "q": "Which map feature helps you find north?",
+    "text": "Which map feature helps you find north?",
+    "a": [
+     "Compass rose",
+     "The title alone",
+     "A photograph"
+    ],
+    "why": "A compass rose shows directions."
+   }
+  ]
+ },
+ {
+  "level": "elementary",
+  "subject": "Music & art",
+  "icon": "🎵",
+  "practice": "rhythm and visual composition",
+  "questions": [
+   {
+    "id": "class.elementary.Music & art.0",
+    "family": "class.elementary.Music & art",
+    "q": "What is the beat in a song?",
+    "text": "What is the beat in a song?",
+    "a": [
+     "Its regular pulse",
+     "Its longest title",
+     "Its cover price"
+    ],
+    "why": "The beat is the pulse you can count."
+   },
+   {
+    "id": "class.elementary.Music & art.1",
+    "family": "class.elementary.Music & art",
+    "q": "What creates contrast in a picture?",
+    "text": "What creates contrast in a picture?",
+    "a": [
+     "Noticeably different tones",
+     "Only identical marks",
+     "An empty frame"
+    ],
+    "why": "Differences make parts stand out."
+   },
+   {
+    "id": "class.elementary.Music & art.v87.0",
+    "family": "class.elementary.Music & art",
+    "q": "A beat repeats evenly. What helps you keep time?",
+    "text": "A beat repeats evenly. What helps you keep time?",
+    "a": [
+     "Tap at regular intervals",
+     "Speed up every tap",
+     "Stop randomly"
+    ],
+    "why": "A steady pulse supports rhythm."
+   },
+   {
+    "id": "class.elementary.Music & art.v87.1",
+    "family": "class.elementary.Music & art",
+    "q": "Which colours are usually called warm?",
+    "text": "Which colours are usually called warm?",
+    "a": [
+     "Red, orange and yellow",
+     "Blue, green and violet",
+     "Only grey"
+    ],
+    "why": "Warm colours are commonly associated with heat."
+   }
+  ]
+ },
+ {
+  "level": "middle",
+  "subject": "Ratios & algebra",
+  "icon": "📐",
+  "practice": "ratios, variables and negative numbers",
+  "questions": [
+   {
+    "id": "class.middle.Ratios & algebra.0",
+    "family": "class.middle.Ratios & algebra",
+    "q": "A mix uses 2 cups juice for 3 cups water. How much water for 4 cups juice?",
+    "text": "A mix uses 2 cups juice for 3 cups water. How much water for 4 cups juice?",
+    "a": [
+     "6 cups",
+     "5 cups",
+     "3 cups"
+    ],
+    "why": "Doubling one part doubles the other."
+   },
+   {
+    "id": "class.middle.Ratios & algebra.1",
+    "family": "class.middle.Ratios & algebra",
+    "q": "If x + 7 = 12, what is x?",
+    "text": "If x + 7 = 12, what is x?",
+    "a": [
+     "5",
+     "19",
+     "7"
+    ],
+    "why": "Subtract seven from both sides."
+   },
+   {
+    "id": "class.middle.Ratios & algebra.v87.0",
+    "family": "class.middle.Ratios & algebra",
+    "q": "A recipe uses flour and sugar in a 3:1 ratio. With six cups of flour, sugar is...?",
+    "text": "A recipe uses flour and sugar in a 3:1 ratio. With six cups of flour, sugar is...?",
+    "a": [
+     "Two cups",
+     "Three cups",
+     "Six cups"
+    ],
+    "why": "Doubling both parts preserves the ratio."
+   },
+   {
+    "id": "class.middle.Ratios & algebra.v87.1",
+    "family": "class.middle.Ratios & algebra",
+    "q": "Solve x + 7 = 12.",
+    "text": "Solve x + 7 = 12.",
+    "a": [
+     "x = 5",
+     "x = 19",
+     "x = 7"
+    ],
+    "why": "Subtract seven from both sides."
+   }
+  ]
+ },
+ {
+  "level": "middle",
+  "subject": "Literature",
+  "icon": "📖",
+  "practice": "inference and textual evidence",
+  "questions": [
+   {
+    "id": "class.middle.Literature.0",
+    "family": "class.middle.Literature",
+    "q": "What supports an interpretation of a story?",
+    "text": "What supports an interpretation of a story?",
+    "a": [
+     "Relevant details from the text",
+     "Only the cover colour",
+     "An unrelated rumour"
+    ],
+    "why": "Use evidence from what the author wrote."
+   },
+   {
+    "id": "class.middle.Literature.1",
+    "family": "class.middle.Literature",
+    "q": "A narrator cannot know another person's thoughts. What is their perspective limited by?",
+    "text": "A narrator cannot know another person's thoughts. What is their perspective limited by?",
+    "a": [
+     "What they observe and experience",
+     "Every mind in the story",
+     "Future events"
+    ],
+    "why": "A limited narrator has limited knowledge."
+   },
+   {
+    "id": "class.middle.Literature.v87.0",
+    "family": "class.middle.Literature",
+    "q": "A narrator describes only their own thoughts. What should you remember?",
+    "text": "A narrator describes only their own thoughts. What should you remember?",
+    "a": [
+     "Their view may be limited",
+     "They know everyone’s thoughts",
+     "Every opinion is fact"
+    ],
+    "why": "Narrative perspective limits what is known."
+   },
+   {
+    "id": "class.middle.Literature.v87.1",
+    "family": "class.middle.Literature",
+    "q": "Which evidence best supports an interpretation?",
+    "text": "Which evidence best supports an interpretation?",
+    "a": [
+     "A relevant passage explained in context",
+     "Only the cover colour",
+     "An unsupported claim"
+    ],
+    "why": "Link textual evidence to the interpretation."
+   }
+  ]
+ },
+ {
+  "level": "middle",
+  "subject": "Biology",
+  "icon": "🧬",
+  "practice": "cells and ecosystems",
+  "questions": [
+   {
+    "id": "class.middle.Biology.0",
+    "family": "class.middle.Biology",
+    "q": "What is a producer in a food web?",
+    "text": "What is a producer in a food web?",
+    "a": [
+     "An organism making its own food",
+     "Every predator",
+     "A plastic bottle"
+    ],
+    "why": "Plants can make food using light."
+   },
+   {
+    "id": "class.middle.Biology.1",
+    "family": "class.middle.Biology",
+    "q": "Why compare repeated measurements?",
+    "text": "Why compare repeated measurements?",
+    "a": [
+     "To notice variation",
+     "To hide variation",
+     "To make one result certain"
+    ],
+    "why": "Repeated results show consistency and variation."
+   },
+   {
+    "id": "class.middle.Biology.v87.0",
+    "family": "class.middle.Biology",
+    "q": "Which part of a plant mainly absorbs water from soil?",
+    "text": "Which part of a plant mainly absorbs water from soil?",
+    "a": [
+     "Roots",
+     "Petals",
+     "Seeds"
+    ],
+    "why": "Roots absorb water and minerals."
+   },
+   {
+    "id": "class.middle.Biology.v87.1",
+    "family": "class.middle.Biology",
+    "q": "A food chain shows grass, rabbit, fox. Which is the producer?",
+    "text": "A food chain shows grass, rabbit, fox. Which is the producer?",
+    "a": [
+     "Grass",
+     "Rabbit",
+     "Fox"
+    ],
+    "why": "Plants can produce food using light."
+   }
+  ]
+ },
+ {
+  "level": "middle",
+  "subject": "Geography",
+  "icon": "🌍",
+  "practice": "climate and human settlements",
+  "questions": [
+   {
+    "id": "class.middle.Geography.0",
+    "family": "class.middle.Geography",
+    "q": "Why do many settlements grow near rivers?",
+    "text": "Why do many settlements grow near rivers?",
+    "a": [
+     "Water and transport access",
+     "Rivers prevent every flood",
+     "Rivers have no changing levels"
+    ],
+    "why": "Rivers offer useful resources with risks too."
+   },
+   {
+    "id": "class.middle.Geography.1",
+    "family": "class.middle.Geography",
+    "q": "Which describes climate?",
+    "text": "Which describes climate?",
+    "a": [
+     "Long-term weather patterns",
+     "One rainy afternoon",
+     "Today's temperature only"
+    ],
+    "why": "Climate concerns patterns over many years."
+   },
+   {
+    "id": "class.middle.Geography.v87.0",
+    "family": "class.middle.Geography",
+    "q": "What does a map scale help calculate?",
+    "text": "What does a map scale help calculate?",
+    "a": [
+     "Real-world distance",
+     "The age of a city",
+     "The weather tomorrow"
+    ],
+    "why": "Scale relates map distance to actual distance."
+   },
+   {
+    "id": "class.middle.Geography.v87.1",
+    "family": "class.middle.Geography",
+    "q": "Two towns have similar rainfall but different flood risks. What else matters?",
+    "text": "Two towns have similar rainfall but different flood risks. What else matters?",
+    "a": [
+     "Drainage and land use",
+     "Only their names",
+     "Nothing else"
+    ],
+    "why": "Flood risk depends on more than rainfall."
+   }
+  ]
+ },
+ {
+  "level": "middle",
+  "subject": "Computing",
+  "icon": "💻",
+  "practice": "logic, data and digital safety",
+  "questions": [
+   {
+    "id": "class.middle.Computing.0",
+    "family": "class.middle.Computing",
+    "q": "What does a loop do?",
+    "text": "What does a loop do?",
+    "a": [
+     "Repeats a set of instructions",
+     "Deletes every file",
+     "Makes every answer correct"
+    ],
+    "why": "Loops repeat instructions under defined conditions."
+   },
+   {
+    "id": "class.middle.Computing.1",
+    "family": "class.middle.Computing",
+    "q": "What should you do with an unexpected password request?",
+    "text": "What should you do with an unexpected password request?",
+    "a": [
+     "Check through a trusted route",
+     "Reply with your password",
+     "Send it to every classmate"
+    ],
+    "why": "Verify the source without sharing credentials."
+   },
+   {
+    "id": "class.middle.Computing.v87.0",
+    "family": "class.middle.Computing",
+    "q": "A program repeats the same instruction ten times. Which structure helps?",
+    "text": "A program repeats the same instruction ten times. Which structure helps?",
+    "a": [
+     "A loop",
+     "A file name",
+     "A colour choice"
+    ],
+    "why": "A loop repeats a defined action."
+   },
+   {
+    "id": "class.middle.Computing.v87.1",
+    "family": "class.middle.Computing",
+    "q": "An unexpected message asks for your password. What is sensible?",
+    "text": "An unexpected message asks for your password. What is sensible?",
+    "a": [
+     "Verify through a trusted route",
+     "Reply with the password",
+     "Forward it to everyone"
+    ],
+    "why": "Check authenticity before sharing credentials."
+   }
+  ]
+ },
+ {
+  "level": "middle",
+  "subject": "Physical education",
+  "icon": "🏃",
+  "practice": "teamwork and safe training",
+  "questions": [
+   {
+    "id": "class.middle.Physical education.0",
+    "family": "class.middle.Physical education",
+    "q": "What helps recovery after hard exercise?",
+    "text": "What helps recovery after hard exercise?",
+    "a": [
+     "Rest and appropriate hydration",
+     "Ignoring pain",
+     "Another maximum session immediately"
+    ],
+    "why": "Recovery lets the body adapt."
+   },
+   {
+    "id": "class.middle.Physical education.1",
+    "family": "class.middle.Physical education",
+    "q": "A teammate is better placed. What helps the team?",
+    "text": "A teammate is better placed. What helps the team?",
+    "a": [
+     "Use the available pass",
+     "Force every shot",
+     "Ignore the plan"
+    ],
+    "why": "Position and cooperation affect the whole play."
+   },
+   {
+    "id": "class.middle.Physical education.v87.0",
+    "family": "class.middle.Physical education",
+    "q": "You begin vigorous exercise. What helps prepare your body?",
+    "text": "You begin vigorous exercise. What helps prepare your body?",
+    "a": [
+     "A gradual warm-up",
+     "Skipping all movement",
+     "Holding your breath"
+    ],
+    "why": "A gradual warm-up prepares you for effort."
+   },
+   {
+    "id": "class.middle.Physical education.v87.1",
+    "family": "class.middle.Physical education",
+    "q": "A teammate reports pain after landing awkwardly. What should happen?",
+    "text": "A teammate reports pain after landing awkwardly. What should happen?",
+    "a": [
+     "Stop and seek appropriate help",
+     "Demand another sprint",
+     "Ignore the pain"
+    ],
+    "why": "Pain after an awkward landing should not be ignored."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Algebra & statistics",
+  "icon": "📊",
+  "practice": "equations and interpreting data",
+  "questions": [
+   {
+    "id": "class.high.Algebra & statistics.0",
+    "family": "class.high.Algebra & statistics",
+    "q": "What is the median of 2, 4, 7, 9, 20?",
+    "text": "What is the median of 2, 4, 7, 9, 20?",
+    "a": [
+     "7",
+     "20",
+     "8.4"
+    ],
+    "why": "The median is the middle ordered value."
+   },
+   {
+    "id": "class.high.Algebra & statistics.1",
+    "family": "class.high.Algebra & statistics",
+    "q": "Solve 3x - 6 = 12.",
+    "text": "Solve 3x - 6 = 12.",
+    "a": [
+     "x = 6",
+     "x = 2",
+     "x = 18"
+    ],
+    "why": "Add six, then divide by three."
+   },
+   {
+    "id": "class.high.Algebra & statistics.v87.0",
+    "family": "class.high.Algebra & statistics",
+    "q": "The values are 2, 3, 3, 4, 18. What is the median?",
+    "text": "The values are 2, 3, 3, 4, 18. What is the median?",
+    "a": [
+     "3",
+     "6",
+     "18"
+    ],
+    "why": "The middle value in the ordered list is three."
+   },
+   {
+    "id": "class.high.Algebra & statistics.v87.1",
+    "family": "class.high.Algebra & statistics",
+    "q": "A survey asks only members of one fan club. What is a concern?",
+    "text": "A survey asks only members of one fan club. What is a concern?",
+    "a": [
+     "Selection bias",
+     "Perfect representation",
+     "Too many random groups"
+    ],
+    "why": "One selected group may not represent the wider population."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Geometry",
+  "icon": "📐",
+  "practice": "proof and spatial reasoning",
+  "questions": [
+   {
+    "id": "class.high.Geometry.0",
+    "family": "class.high.Geometry",
+    "q": "Two angles of a triangle are 50° and 60°. What is the third?",
+    "text": "Two angles of a triangle are 50° and 60°. What is the third?",
+    "a": [
+     "70°",
+     "110°",
+     "90°"
+    ],
+    "why": "Triangle angles add to 180 degrees."
+   },
+   {
+    "id": "class.high.Geometry.1",
+    "family": "class.high.Geometry",
+    "q": "What supports a mathematical proof?",
+    "text": "What supports a mathematical proof?",
+    "a": [
+     "A valid chain of reasons",
+     "A large drawing alone",
+     "A confident guess"
+    ],
+    "why": "Each step must follow from established facts."
+   },
+   {
+    "id": "class.high.Geometry.v87.0",
+    "family": "class.high.Geometry",
+    "q": "A right triangle has shorter sides 3 and 4. Its hypotenuse is...?",
+    "text": "A right triangle has shorter sides 3 and 4. Its hypotenuse is...?",
+    "a": [
+     "5",
+     "7",
+     "1"
+    ],
+    "why": "The square root of 3 squared plus 4 squared is five."
+   },
+   {
+    "id": "class.high.Geometry.v87.1",
+    "family": "class.high.Geometry",
+    "q": "A circle has radius 3. Its area is...?",
+    "text": "A circle has radius 3. Its area is...?",
+    "a": [
+     "9π",
+     "6π",
+     "3π"
+    ],
+    "why": "Area equals π times the radius squared."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Physics",
+  "icon": "⚙️",
+  "practice": "motion and energy",
+  "questions": [
+   {
+    "id": "class.high.Physics.0",
+    "family": "class.high.Physics",
+    "q": "A car covers 120 km in 2 hours. Its average speed?",
+    "text": "A car covers 120 km in 2 hours. Its average speed?",
+    "a": [
+     "60 km/h",
+     "240 km/h",
+     "122 km/h"
+    ],
+    "why": "Average speed is distance divided by time."
+   },
+   {
+    "id": "class.high.Physics.1",
+    "family": "class.high.Physics",
+    "q": "What happens to energy in a closed-system model?",
+    "text": "What happens to energy in a closed-system model?",
+    "a": [
+     "It changes form but is conserved",
+     "It always disappears",
+     "It is always created"
+    ],
+    "why": "Conservation accounts for energy transfers and forms."
+   },
+   {
+    "id": "class.high.Physics.v87.0",
+    "family": "class.high.Physics",
+    "q": "A car travels 100 metres in five seconds at constant speed. Its speed is...?",
+    "text": "A car travels 100 metres in five seconds at constant speed. Its speed is...?",
+    "a": [
+     "20 m/s",
+     "5 m/s",
+     "500 m/s"
+    ],
+    "why": "Speed is distance divided by time."
+   },
+   {
+    "id": "class.high.Physics.v87.1",
+    "family": "class.high.Physics",
+    "q": "Equal forces act in opposite directions on an object. The net force is...?",
+    "text": "Equal forces act in opposite directions on an object. The net force is...?",
+    "a": [
+     "Zero",
+     "Twice either force",
+     "Always downward"
+    ],
+    "why": "Equal opposing forces cancel."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Chemistry",
+  "icon": "🧪",
+  "practice": "reactions and laboratory evidence",
+  "questions": [
+   {
+    "id": "class.high.Chemistry.0",
+    "family": "class.high.Chemistry",
+    "q": "Why balance a chemical equation?",
+    "text": "Why balance a chemical equation?",
+    "a": [
+     "To account for atoms on both sides",
+     "To change the elements",
+     "To make all numbers one"
+    ],
+    "why": "Atoms are accounted for through a reaction."
+   },
+   {
+    "id": "class.high.Chemistry.1",
+    "family": "class.high.Chemistry",
+    "q": "Why label a laboratory sample?",
+    "text": "Why label a laboratory sample?",
+    "a": [
+     "To identify what was tested",
+     "To improve its result",
+     "To replace the safety rules"
+    ],
+    "why": "Clear labels protect the integrity of the test."
+   },
+   {
+    "id": "class.high.Chemistry.v87.0",
+    "family": "class.high.Chemistry",
+    "q": "A neutral atom has eight protons. How many electrons?",
+    "text": "A neutral atom has eight protons. How many electrons?",
+    "a": [
+     "Eight",
+     "Four",
+     "Sixteen"
+    ],
+    "why": "A neutral atom has equal numbers of protons and electrons."
+   },
+   {
+    "id": "class.high.Chemistry.v87.1",
+    "family": "class.high.Chemistry",
+    "q": "Which change usually creates a new substance?",
+    "text": "Which change usually creates a new substance?",
+    "a": [
+     "Rusting iron",
+     "Melting ice",
+     "Cutting paper"
+    ],
+    "why": "Rusting is a chemical change."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Literature & composition",
+  "icon": "📝",
+  "practice": "argument and revision",
+  "questions": [
+   {
+    "id": "class.high.Literature & composition.0",
+    "family": "class.high.Literature & composition",
+    "q": "A strong argument includes what?",
+    "text": "A strong argument includes what?",
+    "a": [
+     "Evidence and considered counterarguments",
+     "Only insults",
+     "Only the longest words"
+    ],
+    "why": "Reasoned arguments address alternatives."
+   },
+   {
+    "id": "class.high.Literature & composition.1",
+    "family": "class.high.Literature & composition",
+    "q": "Why revise a draft?",
+    "text": "Why revise a draft?",
+    "a": [
+     "To improve meaning and structure",
+     "To erase every opinion",
+     "To add unrelated length"
+    ],
+    "why": "Revision improves how ideas are communicated."
+   },
+   {
+    "id": "class.high.Literature & composition.v87.0",
+    "family": "class.high.Literature & composition",
+    "q": "Your essay quotes a critic who disagrees. What strengthens your argument?",
+    "text": "Your essay quotes a critic who disagrees. What strengthens your argument?",
+    "a": [
+     "Address the objection with evidence",
+     "Hide their view",
+     "Insult the critic"
+    ],
+    "why": "Engaging with a counterargument can improve reasoning."
+   },
+   {
+    "id": "class.high.Literature & composition.v87.1",
+    "family": "class.high.Literature & composition",
+    "q": "Which revision makes a claim more precise?",
+    "text": "Which revision makes a claim more precise?",
+    "a": [
+     "Define its scope and terms",
+     "Add unsupported certainty",
+     "Remove every example"
+    ],
+    "why": "Precision depends on clear limits and meaning."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Civics",
+  "icon": "🏛️",
+  "practice": "institutions and public choices",
+  "questions": [
+   {
+    "id": "class.high.Civics.0",
+    "family": "class.high.Civics",
+    "q": "A council promise costs more than its budget. What is responsible?",
+    "text": "A council promise costs more than its budget. What is responsible?",
+    "a": [
+     "Publish priorities and trade-offs",
+     "Promise everything anyway",
+     "Hide all costs"
+    ],
+    "why": "Limited resources require accountable choices."
+   },
+   {
+    "id": "class.high.Civics.1",
+    "family": "class.high.Civics",
+    "q": "What helps evaluate a public claim?",
+    "text": "What helps evaluate a public claim?",
+    "a": [
+     "Check evidence and sources",
+     "Count its shares only",
+     "Trust its font"
+    ],
+    "why": "Popularity does not establish accuracy."
+   },
+   {
+    "id": "class.high.Civics.v87.0",
+    "family": "class.high.Civics",
+    "q": "An elected council proposes a new fee. What helps public accountability?",
+    "text": "An elected council proposes a new fee. What helps public accountability?",
+    "a": [
+     "Publish the proposal and its reasons",
+     "Hide the accounts",
+     "Ban questions"
+    ],
+    "why": "Public reasons and records support scrutiny."
+   },
+   {
+    "id": "class.high.Civics.v87.1",
+    "family": "class.high.Civics",
+    "q": "A peaceful disagreement remains after a vote. What matters?",
+    "text": "A peaceful disagreement remains after a vote. What matters?",
+    "a": [
+     "Respect rights and the lawful process",
+     "Punish every dissenting person",
+     "Erase the record"
+    ],
+    "why": "Participation includes the right to disagree."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Economics",
+  "icon": "💹",
+  "practice": "costs, trade-offs and interest",
+  "questions": [
+   {
+    "id": "class.high.Economics.0",
+    "family": "class.high.Economics",
+    "q": "What is opportunity cost?",
+    "text": "What is opportunity cost?",
+    "a": [
+     "The next-best option you give up",
+     "Every option combined",
+     "Only a tax bill"
+    ],
+    "why": "Choosing one option can forgo another."
+   },
+   {
+    "id": "class.high.Economics.1",
+    "family": "class.high.Economics",
+    "q": "A loan of 1,000 has 5% simple yearly interest. One year's interest?",
+    "text": "A loan of 1,000 has 5% simple yearly interest. One year's interest?",
+    "a": [
+     "50",
+     "500",
+     "5"
+    ],
+    "why": "Five percent of one thousand is fifty."
+   },
+   {
+    "id": "class.high.Economics.v87.0",
+    "family": "class.high.Economics",
+    "q": "You choose an evening shift instead of a concert. What is an opportunity cost?",
+    "text": "You choose an evening shift instead of a concert. What is an opportunity cost?",
+    "a": [
+     "The concert you gave up",
+     "Only last week’s pay",
+     "Every future expense"
+    ],
+    "why": "Opportunity cost includes the next-best alternative forgone."
+   },
+   {
+    "id": "class.high.Economics.v87.1",
+    "family": "class.high.Economics",
+    "q": "Prices rise while your pay stays the same. What happens to purchasing power?",
+    "text": "Prices rise while your pay stays the same. What happens to purchasing power?",
+    "a": [
+     "It falls",
+     "It doubles",
+     "It must stay fixed"
+    ],
+    "why": "The same income buys less when prices rise."
+   }
+  ]
+ },
+ {
+  "level": "high",
+  "subject": "Languages",
+  "icon": "🗣️",
+  "practice": "meaning and communication",
+  "questions": [
+   {
+    "id": "class.high.Languages.0",
+    "family": "class.high.Languages",
+    "q": "What helps understand an unfamiliar phrase?",
+    "text": "What helps understand an unfamiliar phrase?",
+    "a": [
+     "Context and a reliable reference",
+     "Literal guessing only",
+     "Ignoring the speaker"
+    ],
+    "why": "Context helps you choose an appropriate meaning."
+   },
+   {
+    "id": "class.high.Languages.1",
+    "family": "class.high.Languages",
+    "q": "Why practise listening as well as vocabulary?",
+    "text": "Why practise listening as well as vocabulary?",
+    "a": [
+     "To recognise language in use",
+     "To avoid learning words",
+     "To replace every lesson"
+    ],
+    "why": "Understanding real speech requires listening practice."
+   },
+   {
+    "id": "class.high.Languages.v87.0",
+    "family": "class.high.Languages",
+    "q": "You hear a phrase you do not recognize. What aids understanding?",
+    "text": "You hear a phrase you do not recognize. What aids understanding?",
+    "a": [
+     "Ask for clarification in context",
+     "Pretend every word is clear",
+     "Ignore the speaker"
+    ],
+    "why": "Clarification supports communication."
+   },
+   {
+    "id": "class.high.Languages.v87.1",
+    "family": "class.high.Languages",
+    "q": "A literal translation sounds rude. What should you consider?",
+    "text": "A literal translation sounds rude. What should you consider?",
+    "a": [
+     "Context and customary politeness",
+     "Only word order",
+     "Nothing beyond the dictionary"
+    ],
+    "why": "Meaning includes context and social usage."
+   }
+  ]
+ },
+ {
+  "level": "college",
+  "subject": "Research methods",
+  "icon": "🔎",
+  "practice": "sources and study design",
+  "questions": [
+   {
+    "id": "class.college.Research methods.0",
+    "family": "class.college.Research methods",
+    "q": "An observational study finds two factors linked. What can it establish alone?",
+    "text": "An observational study finds two factors linked. What can it establish alone?",
+    "a": [
+     "Association, not necessarily causation",
+     "Certain causation",
+     "No information at all"
+    ],
+    "why": "Other explanations need to be tested."
+   },
+   {
+    "id": "class.college.Research methods.1",
+    "family": "class.college.Research methods",
+    "q": "Why document a method?",
+    "text": "Why document a method?",
+    "a": [
+     "So others can assess or repeat it",
+     "To guarantee success",
+     "To hide the sample"
+    ],
+    "why": "Transparent methods make findings assessable."
+   },
+   {
+    "id": "class.college.Research methods.v87.0",
+    "family": "class.college.Research methods",
+    "q": "Two variables move together. What can you conclude from that alone?",
+    "text": "Two variables move together. What can you conclude from that alone?",
+    "a": [
+     "Association, not proven causation",
+     "One definitely causes the other",
+     "The data must be fake"
+    ],
+    "why": "Correlation alone does not establish a causal link."
+   },
+   {
+    "id": "class.college.Research methods.v87.1",
+    "family": "class.college.Research methods",
+    "q": "A study loses many participants before follow-up. What needs discussion?",
+    "text": "A study loses many participants before follow-up. What needs discussion?",
+    "a": [
+     "Attrition and possible bias",
+     "Only the font size",
+     "No limitation"
+    ],
+    "why": "Missing participants can change the interpretation."
+   }
+  ]
+ },
+ {
+  "level": "college",
+  "subject": "Academic writing",
+  "icon": "📝",
+  "practice": "evidence and attribution",
+  "questions": [
+   {
+    "id": "class.college.Academic writing.0",
+    "family": "class.college.Academic writing",
+    "q": "What should accompany a borrowed idea?",
+    "text": "What should accompany a borrowed idea?",
+    "a": [
+     "Appropriate attribution",
+     "A new font only",
+     "No indication of its source"
+    ],
+    "why": "Credit ideas and make sources traceable."
+   },
+   {
+    "id": "class.college.Academic writing.1",
+    "family": "class.college.Academic writing",
+    "q": "What belongs in a limitations section?",
+    "text": "What belongs in a limitations section?",
+    "a": [
+     "What the evidence cannot establish",
+     "Only praise",
+     "Unrelated personal details"
+    ],
+    "why": "Limits help readers assess the result."
+   },
+   {
+    "id": "class.college.Academic writing.v87.0",
+    "family": "class.college.Academic writing",
+    "q": "You paraphrase a researcher’s argument. What is still required?",
+    "text": "You paraphrase a researcher’s argument. What is still required?",
+    "a": [
+     "Attribution to the source",
+     "Quotation marks around your own words only",
+     "No citation ever"
+    ],
+    "why": "Paraphrased ideas still need attribution."
+   },
+   {
+    "id": "class.college.Academic writing.v87.1",
+    "family": "class.college.Academic writing",
+    "q": "A draft combines evidence and your inference. What helps the reader?",
+    "text": "A draft combines evidence and your inference. What helps the reader?",
+    "a": [
+     "Distinguish the two clearly",
+     "Call every inference a fact",
+     "Remove all sources"
+    ],
+    "why": "Readers should see how the evidence supports the inference."
+   }
+  ]
+ },
+ {
+  "level": "college",
+  "subject": "Applied statistics",
+  "icon": "📊",
+  "practice": "uncertainty and sampling",
+  "questions": [
+   {
+    "id": "class.college.Applied statistics.0",
+    "family": "class.college.Applied statistics",
+    "q": "Why can a biased sample mislead?",
+    "text": "Why can a biased sample mislead?",
+    "a": [
+     "It may not represent the population",
+     "Larger numbers erase every bias",
+     "It proves every hypothesis"
+    ],
+    "why": "Sample selection affects what you can infer."
+   },
+   {
+    "id": "class.college.Applied statistics.1",
+    "family": "class.college.Applied statistics",
+    "q": "What is a confidence interval used to convey?",
+    "text": "What is a confidence interval used to convey?",
+    "a": [
+     "Uncertainty around an estimate",
+     "A guaranteed individual result",
+     "Only the sample size"
+    ],
+    "why": "An interval expresses estimation uncertainty."
+   },
+   {
+    "id": "class.college.Applied statistics.v87.0",
+    "family": "class.college.Applied statistics",
+    "q": "A small sample produces a wide confidence interval. What does it indicate?",
+    "text": "A small sample produces a wide confidence interval. What does it indicate?",
+    "a": [
+     "Greater uncertainty in the estimate",
+     "An exact population value",
+     "A guaranteed error"
+    ],
+    "why": "A wider interval reflects less precise estimation."
+   },
+   {
+    "id": "class.college.Applied statistics.v87.1",
+    "family": "class.college.Applied statistics",
+    "q": "One extreme value changes the mean substantially. What should you do?",
+    "text": "One extreme value changes the mean substantially. What should you do?",
+    "a": [
+     "Investigate and report its influence",
+     "Delete it automatically",
+     "Ignore the change"
+    ],
+    "why": "Understand the value before deciding how to handle it."
+   }
+  ]
+ },
+ {
+  "level": "college",
+  "subject": "Professional ethics",
+  "icon": "⚖️",
+  "practice": "conflicts of interest and disclosure",
+  "questions": [
+   {
+    "id": "class.college.Professional ethics.0",
+    "family": "class.college.Professional ethics",
+    "q": "A sponsor funds your project and wants a flattering report. What matters?",
+    "text": "A sponsor funds your project and wants a flattering report. What matters?",
+    "a": [
+     "Disclose funding and report the evidence",
+     "Delete unfavourable results",
+     "Let the sponsor rewrite the data"
+    ],
+    "why": "Funding does not remove the duty to report honestly."
+   },
+   {
+    "id": "class.college.Professional ethics.1",
+    "family": "class.college.Professional ethics",
+    "q": "Why seek consent for a participant study?",
+    "text": "Why seek consent for a participant study?",
+    "a": [
+     "People should understand and choose involvement",
+     "Consent replaces all safeguards",
+     "It guarantees the results"
+    ],
+    "why": "Informed participation is part of responsible work."
+   },
+   {
+    "id": "class.college.Professional ethics.v87.0",
+    "family": "class.college.Professional ethics",
+    "q": "Your private interest could affect a professional decision. What is appropriate?",
+    "text": "Your private interest could affect a professional decision. What is appropriate?",
+    "a": [
+     "Disclose and manage the conflict",
+     "Conceal the interest",
+     "Assume it can never matter"
+    ],
+    "why": "Disclosure lets a conflict be managed."
+   },
+   {
+    "id": "class.college.Professional ethics.v87.1",
+    "family": "class.college.Professional ethics",
+    "q": "A client gives confidential information. What guides its use?",
+    "text": "A client gives confidential information. What guides its use?",
+    "a": [
+     "Consent, obligations and authorized purpose",
+     "Personal curiosity",
+     "Any public audience"
+    ],
+    "why": "Confidential information must be handled within appropriate obligations."
+   }
+  ]
+ }
+]

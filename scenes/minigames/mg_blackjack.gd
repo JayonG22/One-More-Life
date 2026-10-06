@@ -152,13 +152,13 @@ func _finish_now() -> void:
 func _card(pos: Vector2, c: Array, hidden: bool) -> void:
 	var fnt := ThemeManager.font_bold
 	var r := Rect2(pos, Vector2(84, 118))
-	draw_rect(r, col("surface2") if hidden else Color.WHITE)
+	draw_rect(r, col("surface2") if hidden else col("surface"))
 	draw_rect(r, col("border"), false, 2.0)
 	if hidden:
 		draw_string(fnt, pos + Vector2(26, 72), "🂠", HORIZONTAL_ALIGNMENT_LEFT, -1, 36, col("dim"))
 		return
 	var red := int(c[1]) in [1, 2]
-	var cc := Color("c0392b") if red else Color("1b2433")
+	var cc := col("bad") if red else col("text")
 	draw_string(fnt, pos + Vector2(8, 30), RANKS[int(c[0])], HORIZONTAL_ALIGNMENT_LEFT, -1, 26, cc)
 	draw_string(fnt, pos + Vector2(28, 88), SUITS[int(c[1])], HORIZONTAL_ALIGNMENT_LEFT, -1, 40, cc)
 

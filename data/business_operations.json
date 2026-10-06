@@ -1,0 +1,1742 @@
+{
+  "restaurant": {
+    "products": [
+      {
+        "name": "Neighbourhood lunch",
+        "description": "Affordable daily meals; lower margin, broader demand.",
+        "demand": 1.15,
+        "margin": -0.025,
+        "unit": "Meal batches",
+        "shelf_life": 1,
+        "physical": true
+      },
+      {
+        "name": "Tasting menu",
+        "description": "Smaller bookings; higher margin, exacting expectations.",
+        "demand": 0.88,
+        "margin": 0.055,
+        "unit": "Tasting bookings",
+        "shelf_life": 1,
+        "physical": true
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.restaurant.0",
+        "family": "operations.restaurant",
+        "title": "The allergy list",
+        "text": "The lunch crew discovers an unclear allergy label before service.",
+        "choices": [
+          {
+            "label": "Test and relabel",
+            "cost": 800,
+            "morale": 7,
+            "loyalty": 5,
+            "quality": 2,
+            "result": "The crew tested the replacement and updated the labels."
+          },
+          {
+            "label": "Limit today's menu",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "A smaller menu avoided an unsafe promise but disappointed some guests."
+          },
+          {
+            "label": "Delay the whole service",
+            "cost": 0,
+            "morale": -3,
+            "loyalty": -5,
+            "quality": 0,
+            "result": "The team waited for verification; delayed guests requested clearer notice."
+          }
+        ]
+      },
+      {
+        "id": "operations.restaurant.1",
+        "family": "operations.restaurant",
+        "title": "The evening rota",
+        "text": "Staff are repeatedly covering the busiest evening with too few people.",
+        "choices": [
+          {
+            "label": "Fund a relief shift",
+            "cost": 1200,
+            "morale": 8,
+            "loyalty": 3,
+            "quality": 0,
+            "result": "A relief shift made the service manageable."
+          },
+          {
+            "label": "Reduce evening bookings",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": -3,
+            "quality": 1,
+            "result": "Fewer bookings gave the existing crew room to work."
+          },
+          {
+            "label": "Keep the same booking load",
+            "cost": 0,
+            "morale": -8,
+            "loyalty": -4,
+            "quality": -2,
+            "result": "Overloaded staff made mistakes and regulars noticed."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Crate Expectations",
+      "steady": "Pantry Pal",
+      "specialist": "Small Batch Guild"
+    },
+    "facilities": {
+      "storage": "Cold room",
+      "research": "Test kitchen",
+      "production": "Service stations"
+    },
+    "research": {
+      "question": "Which evidence best predicts local meal demand?",
+      "answers": [
+        "Paid trial bookings",
+        "Likes on a photo",
+        "My favourite dish"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "Which evidence best predicts local meal demand?",
+        "answers": [
+          "Paid trial bookings",
+          "Likes on a photo",
+          "My favourite dish"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Lunch sells out, but dinner leftovers pile up. What should change?",
+        "answers": [
+          "Shift the batch plan to lunch",
+          "Double every batch",
+          "Raise all prices equally"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Guests return for one affordable dish. What evidence matters?",
+        "answers": [
+          "Repeat bookings and margin",
+          "Only the food photo likes",
+          "The largest menu"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A pilot menu earns less than expected. What comes next?",
+        "answers": [
+          "Compare portions and ingredient waste",
+          "Call revenue profit",
+          "Hide the food bill"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "tech": {
+    "products": [
+      {
+        "name": "Small-business software",
+        "description": "Broad subscriptions and practical support.",
+        "demand": 1.1,
+        "margin": -0.015,
+        "unit": "Licence bundles",
+        "shelf_life": 3,
+        "physical": false
+      },
+      {
+        "name": "Specialist data tools",
+        "description": "A smaller technical market with higher-value contracts.",
+        "demand": 0.9,
+        "margin": 0.045,
+        "unit": "Support contracts",
+        "shelf_life": 3,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.tech.0",
+        "family": "operations.tech",
+        "title": "The rollout window",
+        "text": "A client wants the update before the support team has tested the migration.",
+        "choices": [
+          {
+            "label": "Test a staged rollout",
+            "cost": 900,
+            "morale": 3,
+            "loyalty": 6,
+            "quality": 4,
+            "result": "A staged rollout caught a migration problem before wider release."
+          },
+          {
+            "label": "Keep the stable release",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "The client kept a stable system but postponed the new work."
+          },
+          {
+            "label": "Ship the unfinished build",
+            "cost": 0,
+            "morale": -5,
+            "loyalty": -7,
+            "quality": -4,
+            "result": "An avoidable support backlog hurt confidence."
+          }
+        ]
+      },
+      {
+        "id": "operations.tech.1",
+        "family": "operations.tech",
+        "title": "Support queue",
+        "text": "Small subscribers are waiting behind one demanding premium client.",
+        "choices": [
+          {
+            "label": "Fund shared support hours",
+            "cost": 1100,
+            "morale": 5,
+            "loyalty": 7,
+            "quality": 1,
+            "result": "A shared queue gave smaller clients a reliable response."
+          },
+          {
+            "label": "Publish honest response times",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": 2,
+            "quality": 0,
+            "result": "Clients could plan around the actual support capacity."
+          },
+          {
+            "label": "Hide the waiting time",
+            "cost": 0,
+            "morale": -3,
+            "loyalty": -6,
+            "quality": 0,
+            "result": "Customers discovered that the promised response time was unrealistic."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Bits on a Budget",
+      "steady": "Steady Stack",
+      "specialist": "Precise Circuit"
+    },
+    "facilities": {
+      "storage": "Secure archive",
+      "research": "Testing lab",
+      "production": "Deployment servers"
+    },
+    "research": {
+      "question": "How should a new software feature be validated?",
+      "answers": [
+        "A small user pilot",
+        "More launch promises",
+        "Copy a competitor"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "How should a new software feature be validated?",
+        "answers": [
+          "A small user pilot",
+          "More launch promises",
+          "Copy a competitor"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Clients buy licences but struggle with setup. What helps?",
+        "answers": [
+          "Test the onboarding flow",
+          "Buy more advertisements",
+          "Remove support"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "The prototype works on one device. What comes next?",
+        "answers": [
+          "Check representative devices",
+          "Promise universal compatibility",
+          "Skip deployment checks"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A popular feature needs expensive support. What should be compared?",
+        "answers": [
+          "Retention against support cost",
+          "Download count alone",
+          "The company name"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "fashion": {
+    "products": [
+      {
+        "name": "Everyday clothing",
+        "description": "Useful staples for repeat customers.",
+        "demand": 1.12,
+        "margin": -0.025,
+        "unit": "Clothing batches",
+        "shelf_life": 3,
+        "physical": true
+      },
+      {
+        "name": "Small-run tailoring",
+        "description": "Fewer pieces and more fitting time.",
+        "demand": 0.88,
+        "margin": 0.055,
+        "unit": "Limited collections",
+        "shelf_life": 3,
+        "physical": true
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.fashion.0",
+        "family": "operations.fashion",
+        "title": "The uneven fabric",
+        "text": "A delivery contains fabric that differs from the sample.",
+        "choices": [
+          {
+            "label": "Verify replacement stock",
+            "cost": 1000,
+            "morale": 2,
+            "loyalty": 5,
+            "quality": 4,
+            "result": "Verified fabric protected the next run's consistency."
+          },
+          {
+            "label": "Label a separate small run",
+            "cost": 0,
+            "morale": 1,
+            "loyalty": 1,
+            "quality": 0,
+            "result": "Customers could choose the variation knowingly."
+          },
+          {
+            "label": "Mix it into standard stock",
+            "cost": 0,
+            "morale": -2,
+            "loyalty": -6,
+            "quality": -3,
+            "result": "Inconsistent pieces created returns and distrust."
+          }
+        ]
+      },
+      {
+        "id": "operations.fashion.1",
+        "family": "operations.fashion",
+        "title": "Fit-room backlog",
+        "text": "The fitting team is juggling too many appointments.",
+        "choices": [
+          {
+            "label": "Pay for fitting help",
+            "cost": 1200,
+            "morale": 7,
+            "loyalty": 3,
+            "quality": 2,
+            "result": "Extra fitting time reduced rework."
+          },
+          {
+            "label": "Space the appointments",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": 0,
+            "quality": 1,
+            "result": "Honest appointment limits improved the work."
+          },
+          {
+            "label": "Double-book the room",
+            "cost": 0,
+            "morale": -7,
+            "loyalty": -5,
+            "quality": -2,
+            "result": "Rushed fittings disappointed customers and staff."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Thread Shed",
+      "steady": "Woven Ways",
+      "specialist": "Selvedge Society"
+    },
+    "facilities": {
+      "storage": "Garment store",
+      "research": "Sample room",
+      "production": "Cutting stations"
+    },
+    "research": {
+      "question": "Which test reduces unsold sizes?",
+      "answers": [
+        "A preorder sample",
+        "One celebrity photo",
+        "Make equal amounts of every size"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "Which test reduces unsold sizes?",
+        "answers": [
+          "A preorder sample",
+          "One celebrity photo",
+          "Make equal amounts of every size"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Large sizes remain unsold after a launch. What should guide the next cut?",
+        "answers": [
+          "Actual size demand",
+          "Equal quantities again",
+          "The designer's size only"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Preorders are high but returns cite poor seams. What comes first?",
+        "answers": [
+          "Test sample durability",
+          "Order more of the same",
+          "Rename the collection"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A limited collection attracts attention but few buyers. What helps?",
+        "answers": [
+          "Test price and fit together",
+          "Treat attention as paid sales",
+          "Buy more stock immediately"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "label": {
+    "products": [
+      {
+        "name": "Local artist releases",
+        "description": "Build a wider catalogue with modest margins.",
+        "demand": 1.12,
+        "margin": -0.02,
+        "unit": "Release campaigns",
+        "shelf_life": 0,
+        "physical": false
+      },
+      {
+        "name": "Curated album editions",
+        "description": "Smaller sales and higher production value.",
+        "demand": 0.9,
+        "margin": 0.04,
+        "unit": "Artist packages",
+        "shelf_life": 0,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.label.0",
+        "family": "operations.label",
+        "title": "The missing credit",
+        "text": "A session musician is missing from a release's credit sheet.",
+        "choices": [
+          {
+            "label": "Correct the edition",
+            "cost": 700,
+            "morale": 4,
+            "loyalty": 7,
+            "quality": 1,
+            "result": "The musician received credit and the label repaired the relationship."
+          },
+          {
+            "label": "Pause until credits agree",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": 1,
+            "quality": 0,
+            "result": "The release waited for an agreed credit sheet."
+          },
+          {
+            "label": "Leave the omission",
+            "cost": 0,
+            "morale": -4,
+            "loyalty": -7,
+            "quality": -1,
+            "result": "Artists became wary of working with the label."
+          }
+        ]
+      },
+      {
+        "id": "operations.label.1",
+        "family": "operations.label",
+        "title": "Listening-room feedback",
+        "text": "Listeners like one track but find the album mix tiring.",
+        "choices": [
+          {
+            "label": "Pay for a revised mix",
+            "cost": 1400,
+            "morale": 2,
+            "loyalty": 5,
+            "quality": 5,
+            "result": "The revised mix made the album easier to listen to."
+          },
+          {
+            "label": "Release a clear preview",
+            "cost": 0,
+            "morale": 1,
+            "loyalty": 1,
+            "quality": 0,
+            "result": "The preview set realistic expectations."
+          },
+          {
+            "label": "Describe it as flawless",
+            "cost": 0,
+            "morale": -2,
+            "loyalty": -5,
+            "quality": -2,
+            "result": "Overselling the sound made the reception harsher."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Cheap Track",
+      "steady": "Sound Supply",
+      "specialist": "The Master Room"
+    },
+    "facilities": {
+      "storage": "Rights archive",
+      "research": "Listening room",
+      "production": "Recording booths"
+    },
+    "research": {
+      "question": "What best tests audience interest?",
+      "answers": [
+        "A listening trial",
+        "Buying plays",
+        "The longest possible album"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "What best tests audience interest?",
+        "answers": [
+          "A listening trial",
+          "Buying plays",
+          "The longest possible album"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A release has many first plays but few repeat listeners. What matters?",
+        "answers": [
+          "Retention by song and audience",
+          "The total plays alone",
+          "The cover's colour"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "An artist wants a large tour with little advance demand. What should be tested?",
+        "answers": [
+          "Small paid dates first",
+          "The biggest venue immediately",
+          "Ignore ticket costs"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A release budget is tight. What should be protected?",
+        "answers": [
+          "Recording quality and rights",
+          "Artificial stream purchases",
+          "The fanciest launch party"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "studio": {
+    "products": [
+      {
+        "name": "Documentary commissions",
+        "description": "A steadier practical commission market.",
+        "demand": 1.08,
+        "margin": -0.01,
+        "unit": "Production slots",
+        "shelf_life": 1,
+        "physical": false
+      },
+      {
+        "name": "Independent drama",
+        "description": "A smaller audience and greater margin per release.",
+        "demand": 0.88,
+        "margin": 0.05,
+        "unit": "Distribution packages",
+        "shelf_life": 1,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.studio.0",
+        "family": "operations.studio",
+        "title": "Location consent",
+        "text": "A documentary location agrees to filming but not identifiable private scenes.",
+        "choices": [
+          {
+            "label": "Reshoot with clear consent",
+            "cost": 1800,
+            "morale": 3,
+            "loyalty": 6,
+            "quality": 3,
+            "result": "The edit kept the story without violating the agreed boundaries."
+          },
+          {
+            "label": "Cut the private scenes",
+            "cost": 0,
+            "morale": 1,
+            "loyalty": 2,
+            "quality": 0,
+            "result": "A shorter edit respected the location's limits."
+          },
+          {
+            "label": "Ignore the agreed cut",
+            "cost": 0,
+            "morale": -4,
+            "loyalty": -8,
+            "quality": -3,
+            "result": "The disputed material damaged future access and crew trust."
+          }
+        ]
+      },
+      {
+        "id": "operations.studio.1",
+        "family": "operations.studio",
+        "title": "The overtime edit",
+        "text": "The editor is working through repeated late nights.",
+        "choices": [
+          {
+            "label": "Fund an assistant edit",
+            "cost": 1600,
+            "morale": 8,
+            "loyalty": 2,
+            "quality": 3,
+            "result": "An assistant made the final review sustainable."
+          },
+          {
+            "label": "Move the release date",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "The later date gave the edit room to improve."
+          },
+          {
+            "label": "Insist on the same hours",
+            "cost": 0,
+            "morale": -8,
+            "loyalty": -4,
+            "quality": -3,
+            "result": "Fatigue introduced errors into the finished work."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Reel Deals",
+      "steady": "Frame Ready",
+      "specialist": "Lens & Craft"
+    },
+    "facilities": {
+      "storage": "Media archive",
+      "research": "Screening room",
+      "production": "Editing suites"
+    },
+    "research": {
+      "question": "How should a film concept be tested?",
+      "answers": [
+        "A small audience screening",
+        "Only the producer's opinion",
+        "An expensive trailer alone"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "How should a film concept be tested?",
+        "answers": [
+          "A small audience screening",
+          "Only the producer's opinion",
+          "An expensive trailer alone"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "The test audience likes the story but loses track of the ending. What next?",
+        "answers": [
+          "Revise and screen the ending",
+          "Ignore all feedback",
+          "Add unrelated effects"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "An expensive set adds little to the scene. What should be compared?",
+        "answers": [
+          "Story value against production cost",
+          "Set size alone",
+          "The producer's pride"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A distributor wants a promise before audience testing. What helps?",
+        "answers": [
+          "Share a limited evidence-based forecast",
+          "Guarantee a hit",
+          "Hide the screening results"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "gym": {
+    "products": [
+      {
+        "name": "Community memberships",
+        "description": "More members at accessible rates.",
+        "demand": 1.15,
+        "margin": -0.03,
+        "unit": "Membership places",
+        "shelf_life": 1,
+        "physical": false
+      },
+      {
+        "name": "Coached small groups",
+        "description": "Fewer clients with more individual support.",
+        "demand": 0.88,
+        "margin": 0.06,
+        "unit": "Coaching blocks",
+        "shelf_life": 1,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.gym.0",
+        "family": "operations.gym",
+        "title": "A new member's limits",
+        "text": "A new member needs a gentler route into the group class.",
+        "choices": [
+          {
+            "label": "Fund adapted coaching",
+            "cost": 600,
+            "morale": 4,
+            "loyalty": 6,
+            "quality": 3,
+            "result": "An adapted session helped the member participate safely."
+          },
+          {
+            "label": "Offer a smaller starter group",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": 2,
+            "quality": 1,
+            "result": "A clear starter route suited the available coaching time."
+          },
+          {
+            "label": "Keep one pace for everyone",
+            "cost": 0,
+            "morale": -3,
+            "loyalty": -5,
+            "quality": -2,
+            "result": "Some members stopped attending the unsuitable class."
+          }
+        ]
+      },
+      {
+        "id": "operations.gym.1",
+        "family": "operations.gym",
+        "title": "The packed timetable",
+        "text": "Popular classes leave staff no reset time.",
+        "choices": [
+          {
+            "label": "Add paid cover",
+            "cost": 1000,
+            "morale": 7,
+            "loyalty": 3,
+            "quality": 1,
+            "result": "Cover restored breaks between sessions."
+          },
+          {
+            "label": "Space the timetable",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": -1,
+            "quality": 1,
+            "result": "The smaller timetable matched actual staff capacity."
+          },
+          {
+            "label": "Add another crowded class",
+            "cost": 0,
+            "morale": -8,
+            "loyalty": -4,
+            "quality": -2,
+            "result": "The rushed classes harmed staff morale and member retention."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Sweat Savings",
+      "steady": "Fit Foundation",
+      "specialist": "Form First"
+    },
+    "facilities": {
+      "storage": "Equipment store",
+      "research": "Assessment room",
+      "production": "Training spaces"
+    },
+    "research": {
+      "question": "What best forecasts coaching demand?",
+      "answers": [
+        "Trial sessions and renewals",
+        "Follower count alone",
+        "The cheapest equipment"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "What best forecasts coaching demand?",
+        "answers": [
+          "Trial sessions and renewals",
+          "Follower count alone",
+          "The cheapest equipment"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Many members join in January then leave. What should be measured?",
+        "answers": [
+          "Attendance and renewal reasons",
+          "Signup totals alone",
+          "The logo size"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Classes are full but coaching slots are empty. What comes next?",
+        "answers": [
+          "Test coaching times and needs",
+          "Build more identical slots",
+          "Charge everyone more"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A training pilot has complaints about soreness. What helps?",
+        "answers": [
+          "Assess suitability and recovery",
+          "Ignore it as weakness",
+          "Make every session harder"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "security": {
+    "products": [
+      {
+        "name": "Local premises cover",
+        "description": "Regular patrol and access-control clients.",
+        "demand": 1.08,
+        "margin": -0.015,
+        "unit": "Guard rotations",
+        "shelf_life": 1,
+        "physical": false
+      },
+      {
+        "name": "Specialist event cover",
+        "description": "Fewer demanding events at higher rates.",
+        "demand": 0.9,
+        "margin": 0.045,
+        "unit": "Protection contracts",
+        "shelf_life": 1,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.security.0",
+        "family": "operations.security",
+        "title": "The access handover",
+        "text": "A client has changed access rules without briefing the shift team.",
+        "choices": [
+          {
+            "label": "Fund a full briefing",
+            "cost": 900,
+            "morale": 4,
+            "loyalty": 5,
+            "quality": 4,
+            "result": "The team used one agreed access procedure."
+          },
+          {
+            "label": "Restrict unverified access",
+            "cost": 0,
+            "morale": 1,
+            "loyalty": 1,
+            "quality": 1,
+            "result": "A narrower service preserved the verified rules."
+          },
+          {
+            "label": "Let each shift improvise",
+            "cost": 0,
+            "morale": -4,
+            "loyalty": -6,
+            "quality": -3,
+            "result": "Conflicting instructions made clients doubt the coverage."
+          }
+        ]
+      },
+      {
+        "id": "operations.security.1",
+        "family": "operations.security",
+        "title": "Back-to-back shifts",
+        "text": "Staff are covering consecutive events without proper recovery.",
+        "choices": [
+          {
+            "label": "Pay for relief staff",
+            "cost": 1700,
+            "morale": 8,
+            "loyalty": 4,
+            "quality": 1,
+            "result": "Relief staff reduced fatigue during the next event."
+          },
+          {
+            "label": "Decline the extra event",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "The team protected its existing coverage."
+          },
+          {
+            "label": "Keep every event",
+            "cost": 0,
+            "morale": -8,
+            "loyalty": -5,
+            "quality": -3,
+            "result": "Tired shifts missed details and strained the team."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Latch Lot",
+      "steady": "Gatekeeper Goods",
+      "specialist": "Watchful Works"
+    },
+    "facilities": {
+      "storage": "Equipment store",
+      "research": "Training room",
+      "production": "Dispatch stations"
+    },
+    "research": {
+      "question": "Which evidence helps size a security contract?",
+      "answers": [
+        "A site risk assessment",
+        "Promise the largest team",
+        "Ignore shift coverage"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "Which evidence helps size a security contract?",
+        "answers": [
+          "A site risk assessment",
+          "Promise the largest team",
+          "Ignore shift coverage"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A client asks for round-the-clock cover with a tiny budget. What comes first?",
+        "answers": [
+          "Price safe shift coverage",
+          "Promise unlimited cover",
+          "Remove rest breaks"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "An alarm pilot creates frequent false calls. What should change?",
+        "answers": [
+          "Test sensitivity and response rules",
+          "Ignore every alarm",
+          "Add more guards without review"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Incident reports vary between shifts. What should be tested?",
+        "answers": [
+          "A consistent handover process",
+          "The uniform colour",
+          "Only the busiest shift"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "aerospace": {
+    "products": [
+      {
+        "name": "Satellite services",
+        "description": "Repeat commercial launches and servicing.",
+        "demand": 1.08,
+        "margin": -0.02,
+        "unit": "Component batches",
+        "shelf_life": 0,
+        "physical": true
+      },
+      {
+        "name": "Research payloads",
+        "description": "Specialist missions with demanding specifications.",
+        "demand": 0.88,
+        "margin": 0.055,
+        "unit": "Launch allocations",
+        "shelf_life": 0,
+        "physical": true
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.aerospace.0",
+        "family": "operations.aerospace",
+        "title": "Payload documentation",
+        "text": "The payload paperwork omits a requirement the integration team needs.",
+        "choices": [
+          {
+            "label": "Fund a verification review",
+            "cost": 9000,
+            "morale": 4,
+            "loyalty": 6,
+            "quality": 5,
+            "result": "The verified requirements reduced integration risk."
+          },
+          {
+            "label": "Move the launch window",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "The client received a realistic revised window."
+          },
+          {
+            "label": "Approve incomplete papers",
+            "cost": 0,
+            "morale": -5,
+            "loyalty": -8,
+            "quality": -5,
+            "result": "Rework damaged confidence in the mission service."
+          }
+        ]
+      },
+      {
+        "id": "operations.aerospace.1",
+        "family": "operations.aerospace",
+        "title": "The exhausted test team",
+        "text": "A test campaign is using the same crew on every late shift.",
+        "choices": [
+          {
+            "label": "Fund rotating coverage",
+            "cost": 14000,
+            "morale": 8,
+            "loyalty": 4,
+            "quality": 3,
+            "result": "Rotating coverage improved the test team's consistency."
+          },
+          {
+            "label": "Reduce the test schedule",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": -1,
+            "quality": 2,
+            "result": "A smaller schedule preserved the required checks."
+          },
+          {
+            "label": "Demand the same pace",
+            "cost": 0,
+            "morale": -9,
+            "loyalty": -5,
+            "quality": -4,
+            "result": "Fatigue damaged the quality of the testing."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Orbit Outlet",
+      "steady": "Payload Partners",
+      "specialist": "Vector Verified"
+    },
+    "facilities": {
+      "storage": "Parts store",
+      "research": "Engineering lab",
+      "production": "Assembly stations"
+    },
+    "research": {
+      "question": "How should a costly component change be assessed?",
+      "answers": [
+        "A tested prototype",
+        "A confident pitch",
+        "Skip reliability checks"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "How should a costly component change be assessed?",
+        "answers": [
+          "A tested prototype",
+          "A confident pitch",
+          "Skip reliability checks"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A supplier part passed one test but failed in cold conditions. What comes next?",
+        "answers": [
+          "Test the operating range",
+          "Accept the warm test alone",
+          "Hide the failure"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A launch pilot is delayed by inspections. What should inform the schedule?",
+        "answers": [
+          "Inspection and recovery time",
+          "The marketing date only",
+          "Skip verification"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A prototype is lighter but costly to maintain. What should be compared?",
+        "answers": [
+          "Lifecycle reliability and cost",
+          "Weight alone",
+          "The prototype name"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "construction": {
+    "products": [
+      {
+        "name": "Home repairs",
+        "description": "A broader neighbourhood repair market.",
+        "demand": 1.14,
+        "margin": -0.025,
+        "unit": "Build phases",
+        "shelf_life": 0,
+        "physical": true
+      },
+      {
+        "name": "Specialist renovation",
+        "description": "Fewer sites and greater value per contract.",
+        "demand": 0.88,
+        "margin": 0.055,
+        "unit": "Refurbishment packages",
+        "shelf_life": 0,
+        "physical": true
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.construction.0",
+        "family": "operations.construction",
+        "title": "The surprise damp",
+        "text": "A renovation reveals damp outside the quoted scope.",
+        "choices": [
+          {
+            "label": "Fund an expert survey",
+            "cost": 1800,
+            "morale": 3,
+            "loyalty": 5,
+            "quality": 4,
+            "result": "The survey gave the client a sound basis for a revised scope."
+          },
+          {
+            "label": "Agree a limited revised quote",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": 2,
+            "quality": 1,
+            "result": "The client knew which work remained outside the agreement."
+          },
+          {
+            "label": "Cover it and carry on",
+            "cost": 0,
+            "morale": -4,
+            "loyalty": -8,
+            "quality": -4,
+            "result": "The concealed problem hurt trust and future work quality."
+          }
+        ]
+      },
+      {
+        "id": "operations.construction.1",
+        "family": "operations.construction",
+        "title": "The rushed site",
+        "text": "The team is trying to keep too many sites on schedule.",
+        "choices": [
+          {
+            "label": "Pay for skilled cover",
+            "cost": 2200,
+            "morale": 7,
+            "loyalty": 3,
+            "quality": 3,
+            "result": "Qualified cover helped keep the sites manageable."
+          },
+          {
+            "label": "Reschedule the smallest site",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "One delayed site gave the others reliable attention."
+          },
+          {
+            "label": "Keep every deadline",
+            "cost": 0,
+            "morale": -8,
+            "loyalty": -4,
+            "quality": -3,
+            "result": "Rushed work led to avoidable corrections."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Brick Bargains",
+      "steady": "Solid Supply",
+      "specialist": "True Plumb"
+    },
+    "facilities": {
+      "storage": "Materials yard",
+      "research": "Survey office",
+      "production": "Work crews"
+    },
+    "research": {
+      "question": "What best prevents an unrealistic build estimate?",
+      "answers": [
+        "A site and material survey",
+        "Use last year's price blindly",
+        "Promise the shortest deadline"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "What best prevents an unrealistic build estimate?",
+        "answers": [
+          "A site and material survey",
+          "Use last year's price blindly",
+          "Promise the shortest deadline"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A site survey reveals weak ground. What comes before a quote?",
+        "answers": [
+          "Revise foundation requirements",
+          "Use the cheapest old estimate",
+          "Ignore the survey"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Materials arrived late on the last project. What should change?",
+        "answers": [
+          "Test schedule buffers and suppliers",
+          "Promise an earlier finish",
+          "Delete delivery records"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A refurbishment pilot finds hidden wiring issues. What next?",
+        "answers": [
+          "Adjust scope and safe access",
+          "Cover them without inspection",
+          "Keep the same guarantee"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "dealership": {
+    "products": [
+      {
+        "name": "Reliable used vehicles",
+        "description": "A broad practical market with slim margins.",
+        "demand": 1.16,
+        "margin": -0.025,
+        "unit": "Vehicle lots",
+        "shelf_life": 3,
+        "physical": true
+      },
+      {
+        "name": "Specialist models",
+        "description": "Fewer buyers and higher margin per vehicle.",
+        "demand": 0.86,
+        "margin": 0.055,
+        "unit": "Service packages",
+        "shelf_life": 3,
+        "physical": true
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.dealership.0",
+        "family": "operations.dealership",
+        "title": "Service-history gap",
+        "text": "A vehicle's service record is incomplete.",
+        "choices": [
+          {
+            "label": "Pay for an independent check",
+            "cost": 900,
+            "morale": 2,
+            "loyalty": 5,
+            "quality": 4,
+            "result": "A documented check gave buyers clearer evidence."
+          },
+          {
+            "label": "List the missing history",
+            "cost": 0,
+            "morale": 1,
+            "loyalty": 2,
+            "quality": 0,
+            "result": "The honest listing let buyers judge the uncertainty."
+          },
+          {
+            "label": "Advertise a complete history",
+            "cost": 0,
+            "morale": -3,
+            "loyalty": -8,
+            "quality": -2,
+            "result": "The misleading claim hurt buyer confidence."
+          }
+        ]
+      },
+      {
+        "id": "operations.dealership.1",
+        "family": "operations.dealership",
+        "title": "The demonstration queue",
+        "text": "Customers are waiting while the same staff handle every test drive.",
+        "choices": [
+          {
+            "label": "Fund appointment cover",
+            "cost": 1300,
+            "morale": 6,
+            "loyalty": 4,
+            "quality": 1,
+            "result": "Cover gave customers a proper demonstration."
+          },
+          {
+            "label": "Use booked slots",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": 1,
+            "quality": 0,
+            "result": "Booked slots reduced confusion and staff pressure."
+          },
+          {
+            "label": "Promise instant drives",
+            "cost": 0,
+            "morale": -7,
+            "loyalty": -5,
+            "quality": -1,
+            "result": "The promise did not match the available team."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Spare Change Parts",
+      "steady": "Road Ready",
+      "specialist": "Torque & Trust"
+    },
+    "facilities": {
+      "storage": "Covered vehicle bays",
+      "research": "Inspection bay",
+      "production": "Workshop lifts"
+    },
+    "research": {
+      "question": "What should guide the next vehicle lot?",
+      "answers": [
+        "Local sales and inspection data",
+        "Only the most expensive models",
+        "My personal favourite brand"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "What should guide the next vehicle lot?",
+        "answers": [
+          "Local sales and inspection data",
+          "Only the most expensive models",
+          "My personal favourite brand"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A cheap lot has high repair returns. What should guide buying?",
+        "answers": [
+          "Inspection cost and return history",
+          "Sticker price alone",
+          "The brightest paint"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Electric models sell slowly in this area. What should be checked?",
+        "answers": [
+          "Local charging and price needs",
+          "National hype alone",
+          "Order twice as many"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Buyers prefer service plans over premium vehicles. What next?",
+        "answers": [
+          "Pilot the service mix",
+          "Ignore local demand",
+          "Buy only luxury stock"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "consulting": {
+    "products": [
+      {
+        "name": "Small-business advice",
+        "description": "A wider mix of practical local clients.",
+        "demand": 1.1,
+        "margin": -0.02,
+        "unit": "Client retainers",
+        "shelf_life": 1,
+        "physical": false
+      },
+      {
+        "name": "Specialist strategy",
+        "description": "Fewer clients and more intensive analysis.",
+        "demand": 0.88,
+        "margin": 0.055,
+        "unit": "Campaign packages",
+        "shelf_life": 1,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.consulting.0",
+        "family": "operations.consulting",
+        "title": "Conflicting interests",
+        "text": "Two clients request advice about the same transaction.",
+        "choices": [
+          {
+            "label": "Fund independent review",
+            "cost": 1200,
+            "morale": 3,
+            "loyalty": 6,
+            "quality": 3,
+            "result": "An independent review established a workable separation."
+          },
+          {
+            "label": "Decline the second brief",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": 1,
+            "quality": 1,
+            "result": "A narrower client list protected the existing agreement."
+          },
+          {
+            "label": "Keep both briefs secret",
+            "cost": 0,
+            "morale": -4,
+            "loyalty": -8,
+            "quality": -3,
+            "result": "The conflict damaged the firm's reputation."
+          }
+        ]
+      },
+      {
+        "id": "operations.consulting.1",
+        "family": "operations.consulting",
+        "title": "The copied estimate",
+        "text": "A client wants a forecast based on an unrelated old project.",
+        "choices": [
+          {
+            "label": "Research the actual market",
+            "cost": 1500,
+            "morale": 2,
+            "loyalty": 5,
+            "quality": 4,
+            "result": "The forecast used evidence relevant to this client."
+          },
+          {
+            "label": "State the estimate's limits",
+            "cost": 0,
+            "morale": 1,
+            "loyalty": 2,
+            "quality": 1,
+            "result": "The client saw exactly what the estimate could support."
+          },
+          {
+            "label": "Call the old figures certain",
+            "cost": 0,
+            "morale": -3,
+            "loyalty": -6,
+            "quality": -3,
+            "result": "False certainty made the eventual result harder to defend."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Paper Penny",
+      "steady": "Brief & Balance",
+      "specialist": "Evidence House"
+    },
+    "facilities": {
+      "storage": "Secure records",
+      "research": "Survey office",
+      "production": "Client teams"
+    },
+    "research": {
+      "question": "What best tests a campaign strategy?",
+      "answers": [
+        "A representative survey",
+        "My allies alone",
+        "One viral comment"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "What best tests a campaign strategy?",
+        "answers": [
+          "A representative survey",
+          "My allies alone",
+          "One viral comment"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A poll strongly favours allies but misses undecided voters. What should change?",
+        "answers": [
+          "Broaden the sample",
+          "Claim a guaranteed win",
+          "Poll the same allies again"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A campaign message gains attention but little trust. What matters?",
+        "answers": [
+          "Credibility and constituent concerns",
+          "Views alone",
+          "The loudest slogan"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A client wants contradictory promises. What helps?",
+        "answers": [
+          "Test a feasible published platform",
+          "Promise both privately",
+          "Hide the conflict"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  "clinic": {
+    "products": [
+      {
+        "name": "Primary care appointments",
+        "description": "Regular care with accessible prices.",
+        "demand": 1.12,
+        "margin": -0.02,
+        "unit": "Care appointments",
+        "shelf_life": 1,
+        "physical": false
+      },
+      {
+        "name": "Specialist follow-up",
+        "description": "Smaller caseloads with longer appointments.",
+        "demand": 0.9,
+        "margin": 0.045,
+        "unit": "Screening programmes",
+        "shelf_life": 1,
+        "physical": false
+      }
+    ],
+    "scenes": [
+      {
+        "id": "operations.clinic.0",
+        "family": "operations.clinic",
+        "title": "The follow-up queue",
+        "text": "Patients are waiting for results while appointments keep arriving.",
+        "choices": [
+          {
+            "label": "Fund follow-up coverage",
+            "cost": 2200,
+            "morale": 5,
+            "loyalty": 7,
+            "quality": 3,
+            "result": "Dedicated coverage improved the continuity of care."
+          },
+          {
+            "label": "Reserve follow-up slots",
+            "cost": 0,
+            "morale": 3,
+            "loyalty": 2,
+            "quality": 1,
+            "result": "A smaller new-appointment list protected current patients."
+          },
+          {
+            "label": "Keep booking without a plan",
+            "cost": 0,
+            "morale": -7,
+            "loyalty": -7,
+            "quality": -3,
+            "result": "The backlog damaged trust and staff morale."
+          }
+        ]
+      },
+      {
+        "id": "operations.clinic.1",
+        "family": "operations.clinic",
+        "title": "Equipment service due",
+        "text": "A device is due for maintenance before the next clinic session.",
+        "choices": [
+          {
+            "label": "Pay for verified service",
+            "cost": 2800,
+            "morale": 3,
+            "loyalty": 5,
+            "quality": 5,
+            "result": "Verified maintenance protected the quality of the next sessions."
+          },
+          {
+            "label": "Suspend that service",
+            "cost": 0,
+            "morale": 2,
+            "loyalty": -2,
+            "quality": 1,
+            "result": "Patients received a clear explanation and alternative route."
+          },
+          {
+            "label": "Postpone the check silently",
+            "cost": 0,
+            "morale": -4,
+            "loyalty": -8,
+            "quality": -4,
+            "result": "The hidden uncertainty damaged the clinic's standards."
+          }
+        ]
+      }
+    ],
+    "suppliers": {
+      "value": "Care Crate",
+      "steady": "Clinic Ready",
+      "specialist": "Precision Care"
+    },
+    "facilities": {
+      "storage": "Medical supply store",
+      "research": "Assessment room",
+      "production": "Treatment rooms"
+    },
+    "research": {
+      "question": "What should guide clinic capacity?",
+      "answers": [
+        "Bookings and safe staffing",
+        "Sell appointments beyond capacity",
+        "Only the cheapest treatment"
+      ],
+      "correct": 0
+    },
+    "research_pool": [
+      {
+        "question": "What should guide clinic capacity?",
+        "answers": [
+          "Bookings and safe staffing",
+          "Sell appointments beyond capacity",
+          "Only the cheapest treatment"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Bookings exceed the staff's safe capacity. What should guide expansion?",
+        "answers": [
+          "Staffing and patient needs",
+          "Appointment sales alone",
+          "Skip consultation time"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "A screening pilot draws low attendance. What should be tested?",
+        "answers": [
+          "Access, timing and patient information",
+          "Blame every patient",
+          "Buy more equipment blindly"
+        ],
+        "correct": 0
+      },
+      {
+        "question": "Patients wait longer after a cheaper supply change. What matters?",
+        "answers": [
+          "Care quality and workflow cost",
+          "Purchase price alone",
+          "The supplier logo"
+        ],
+        "correct": 0
+      }
+    ]
+  }
+}

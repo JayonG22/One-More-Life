@@ -159,21 +159,9 @@ void fragment() {
 }
 
 
-static func build(theme_key: String) -> ColorRect:
-	if not SHADERS.has(theme_key):
-		return null
-	var sh := Shader.new()
-	sh.code = SHADERS[theme_key]
-	var mat := ShaderMaterial.new()
-	mat.shader = sh
-	var r := ColorRect.new()
-	r.material = mat
-	r.color = Color(1, 1, 1, 1)
-	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	r.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	r.z_index = -5
-	return r
+static func build(_theme_key: String) -> ColorRect:
+	# Quiet dark backgrounds across all themes; no bright animated overlays.
+	return null
 
-
-static func animated(theme_key: String) -> bool:
-	return theme_key in ["celebrity", "villain", "royal", "witch", "dark", "superhero"]
+static func animated(_theme_key: String) -> bool:
+	return false

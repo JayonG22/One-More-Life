@@ -6,19 +6,46 @@ extends Node
 ## Heirlooms have powers of their own.
 
 const STORES := {
-	"jeweler": {"name": "Jeweler", "icon": "💎", "sub": "Engagement rings, necklaces, watches"},
+	"jeweler": {"name": "Tiffunny & Co.", "icon": "💎", "sub": "Engagement rings, necklaces, watches"},
 	"shady": {"name": "A guy in an alley", "icon": "🕶️", "sub": "\"Genuine\" diamonds, cheap"},
 	"electronics": {"name": "Electronics store", "icon": "📱", "sub": "Phones, computers, cameras, consoles"},
 	"sports": {"name": "Sporting goods", "icon": "🏀", "sub": "Bikes, gym gear, rods, bows, rifles, scuba"},
 	"music": {"name": "Music shop", "icon": "🎸", "sub": "Instruments and DJ gear"},
 	"fashion": {"name": "Clothing & accessories", "icon": "👔", "sub": "Suits, designer outfits, sunglasses"},
-	"novelty": {"name": "Novelty shop", "icon": "🔮", "sub": "Lucky charms, gadgets, pranks, oddities"},
+	"novelty": {"name": "Oddly Enough", "icon": "🔮", "sub": "Lucky charms, gadgets, pranks, oddities"},
 	"books": {"name": "Bookstore", "icon": "📚", "sub": "Encyclopedias, self-help, cookbooks"},
-	"motors": {"name": "Motorcycle dealer", "icon": "🏍️", "sub": "Scooters and motorcycles"},
-	"boats": {"name": "Boat dealer", "icon": "🚤", "sub": "Kayaks to yachts · boating license"},
-	"aircraft": {"name": "Aircraft broker", "icon": "✈️", "sub": "Ultralights to jets · pilot's license"},
-	"collect": {"name": "Art & collectibles", "icon": "🖼️", "sub": "Investments with a story"},
+	"motors": {"name": "Harley-ish & Sons", "icon": "🏍️", "sub": "Scooters and motorcycles"},
+	"boats": {"name": "Sea of Deals", "icon": "🚤", "sub": "Kayaks to yachts · boating license"},
+	"aircraft": {"name": "Skyhigh Brokerage", "icon": "✈️", "sub": "Ultralights to jets · pilot's license"},
+	"collect": {"name": "Sothebee's", "icon": "🖼️", "sub": "Investments with a story"},
 }
+
+var retailers: Dictionary = {}
+
+func retail_data() -> Dictionary:
+	if retailers.is_empty():
+		var parsed = JSON.parse_string(FileAccess.get_file_as_string("res://data/retailers.json"))
+		if parsed is Dictionary: retailers = parsed
+	return retailers
+
+func retail_stock(sid: String) -> Array:
+	var store: Dictionary = retail_data().get(sid,{})
+	var stock: Array = []
+	if store.is_empty(): return stock
+	for index in store["indices"]:
+		var d: Array = ITEMS[str(store["category"])][int(index)].duplicate(true)
+		var short_names := {"Budget smartphone":"Phone","Flagship smartphone":"Phone Pro","Webcam & microphone":"Streaming kit","Casual wardrobe refresh":"Outfit","Wedding dress or tux":"Wedding outfit","Fishing rod & tackle":"Fishing kit","Coding bootcamp books":"Coding books","Cookbook collection":"Cookbooks"}
+		d[0] = str(store["models"][stock.size()]) + " · " + str(short_names.get(d[0],d[0]))
+		d[2] = int(round(float(d[2])*float(store["multiplier"])))
+		stock.append(d)
+	return stock
+
+func item_data(sid: String, index: int) -> Array:
+	var stock: Array = retail_stock(sid) if retail_data().has(sid) else ITEMS.get(sid,[])
+	return stock[index] if index>=0 and index<stock.size() else []
+
+func store_name(sid: String) -> String:
+	return str(retail_data()[sid]["name"]) if retail_data().has(sid) else str(STORES.get(sid,{"name":"Shop"})["name"])
 
 
 ## ---------------------------------------------------------------- brand houses
@@ -31,6 +58,14 @@ const STORES := {
 ##
 ## [name, blurb, price multiplier, yearly value multiplier, looks bonus]
 const HOUSES := {
+	"byte": ["Best Byte", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"swoon": ["Samswoon", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"guccish": ["Guccish", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"prance": ["Prance", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"lawn": ["Decathlawn", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"sport": ["Sportif-ish", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"strings": ["String Theory", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
+	"novels": ["Barns & Novals", "An independent fictional maker with its own catalogue.", 1.0, 1.0, 0],
 	"value":    ["Marrow & Lint", "A catalogue brand since 1961. Nobody's dream, everybody's first one.", 0.72, 0.90, 0],
 	"solid":    ["Harrowgate", "Family-run, unfashionable, and quietly the one that outlasts the others.", 1.0, 1.0, 0],
 	"design":   ["Voss Aurel", "A design house that became famous for refusing to explain itself.", 1.65, 1.04, 1],
@@ -70,11 +105,11 @@ func _offer_versions(sid: String, idx: int, d: Array) -> void:
 		var base := Actions._cost(int(round(float(d[2]) * float(h[2]))))
 		var keep := "holds its value" if float(h[3]) >= 1.02 else ("loses value fast" if float(h[3]) < 0.95 else "depreciates normally")
 		choices.append({
-			"label": "%s  —  %s  ·  %s" % [str(h[0]), GameState.fmt_money(base), keep],
+			"label": "Buy · " + GameState.fmt_money(base) if retail_data().has(sid) else "%s · %s · %s" % [str(h[0]), GameState.fmt_money(base), keep],
 			"outcomes": [{"text": "", "no_friction": true, "shop_buy": {"store": sid, "idx": idx, "house": hkey, "edition": 0}}],
 		})
 	# A limited run only exists sometimes, which is the entire idea of a limited run.
-	if randf() < 0.33:
+	if not retail_data().has(sid) and randf() < 0.33:
 		var hk: String = houses_for(sid)[-1]
 		var hh: Array = HOUSES[hk]
 		var lp := Actions._cost(int(round(float(d[2]) * float(hh[2]) * 1.55)))
@@ -87,13 +122,14 @@ func _offer_versions(sid: String, idx: int, d: Array) -> void:
 		"id": "_shop_" + sid,
 		"icon": str(d[1]),
 		"title": str(d[0]),
-		"text": "Same object, different name on the back of it. What you pay for is partly the thing and partly whose it is.",
+		"text": "%s\n%s" % [store_name(sid), power_text({"tag": d[3]})],
 		"no_friction": true,
 		"choices": choices,
 	})
 
 
 func houses_for(sid: String) -> Array:
+	if retail_data().has(sid): return [str(retail_data()[sid]["brand"])]
 	return HOUSE_STOCK.get(sid, ["value", "solid"])
 
 
@@ -255,12 +291,12 @@ func power_text(it: Dictionary) -> String:
 	match tag_of(it):
 		"ring": return "Makes a proposal far more likely to land"
 		"fake_ring": return "Might fool someone. Probably not"
-		"phone": return "Needed to post on social media"
-		"laptop": return "Online courses and freelance gigs go better"
+		"phone": return "Post on social media"
+		"laptop": return "Online courses & freelance work"
 		"gaming_pc": return "Stream games, and more fun from video games"
 		"console": return "More fun from video games; stream console games"
 		"webcam": return "Needed to go live"
-		"camera": return "Better photos and videos"
+		"camera": return "Better photos & videos"
 		"rod", "rod_pro": return "Better fishing"
 		"bow", "rifle": return "Needed to hunt"
 		"scuba_gear": return "Cheaper, safer cave dives"
@@ -268,15 +304,15 @@ func power_text(it: Dictionary) -> String:
 		"bike": return "Walks become bike rides: more health"
 		"home_gym": return "Your gym routine does more"
 		"instrument": return "Better music lessons, busking and gigs"
-		"suit": return "Job interviews go better"
-		"designer": return "Looks, dates and red carpets"
+		"suit": return "Helps job interviews"
+		"designer": return "Style · dates · red carpets"
 		"luck": return "Better luck at the lottery and casino"
 		"eightball": return "Ask it anything"
 		"ouija": return "Talk to the other side. Maybe"
 		"detector": return "Search beaches and parks for treasure"
 		"telescope": return "Stargazing: smarts and calm"
 		"karaoke": return "Parties go better"
-		"chemset": return "A great gift for a curious kid"
+		"chemset": return "A gift for a curious child"
 		"crystal": return "Witches draw more mana from it"
 		"prank": return "Pranks land better"
 		"disguise": return "Less likely to be recognized during crimes"
@@ -300,12 +336,37 @@ func menu(key: String) -> Dictionary:
 	if _p().is_empty():
 		return {"icon": "🛍️", "title": "Shopping", "rows": []}
 	if key == "" or key == "root":
-		var rows: Array = []
-		for sid in STORES.keys():
-			var s: Dictionary = STORES[sid]
-			rows.append({"icon": s["icon"], "name": s["name"], "sub": s["sub"], "menu": "shop:" + sid, "on": _store_open(sid) == ""})
-		rows.append({"icon": "🎒", "name": "Your stuff", "sub": "%d items · what they do, sell, use" % owned().size(), "menu": "shop:mine", "on": true})
+		var rows: Array = [
+			{"icon":"🛍️","name":"Everyday stores","sub":"Clothes, tech, books and more","menu":"shop:category:group_goods","on":true},
+			{"icon":"@house","name":"Homes & transport","sub":"Buy or rent a place, car or boat","menu":"shop:category:group_mobility","on":true},
+			{"icon":"🐾","name":"Animals & adoption","sub":"Shelters, shops and breeders","menu":"comp:root","on":true}
+		]
 		return {"icon": "🛍️", "title": "Shopping", "rows": rows}
+	if key.begins_with("category:"):
+		var category := key.substr(9)
+		var rows: Array = []
+		if category.begins_with("group_"):
+			var categories: Array = ["electronics", "fashion", "sports", "music", "books", "jeweler", "novelty", "collect"] if category == "group_goods" else ["transport", "homes"]
+			var names := {"electronics":"Electronics", "fashion":"Fashion & accessories", "sports":"Sport & outdoors", "music":"Music", "books":"Books", "jeweler":"Jewellery", "novelty":"Oddities", "collect":"Art & collectibles", "transport":"Vehicles & transport", "homes":"Homes & housing"}
+			var icons := {"electronics":"💻", "fashion":"👜", "sports":"🚲", "music":"🎸", "books":"📚", "jeweler":"💎", "novelty":"🔮", "collect":"🖼️", "transport":"@sedan", "homes":"@house"}
+			for id in categories:
+				rows.append({"icon":icons[id], "name":names[id], "sub":"Browse local stores", "menu":"shop:category:"+id, "on":true})
+			return {"icon":"🛍️", "title":"Everyday stores" if category == "group_goods" else "Homes & transport", "rows":rows}
+		if category=="homes": return home_market()
+		if category=="transport":
+			rows.append({"icon":"@sedan","name":"Second Lap Autos","sub":"Used cars · mileage, wear and optional inspection","menu":"balance:vehicles","on":true})
+			rows.append({"icon":"@sedan","name":"AutoMirth","sub":"Used and new cars · licence required","menu":"shop:cars","on":true})
+			for sid in ["motors","boats","aircraft"]:
+				rows.append({"icon":STORES[sid]["icon"],"name":store_name(sid),"sub":STORES[sid]["sub"],"menu":"shop:"+sid,"on":_store_open(sid)==""})
+		else:
+			for sid in retail_data():
+				var retailer: Dictionary=retail_data()[sid]
+				if retailer["category"]==category:
+					rows.append({"icon":retailer["icon"],"name":retailer["name"],"sub":retailer["sub"],"menu":"shop:"+sid,"on":_store_open(sid)==""})
+			if rows.is_empty() and STORES.has(category):
+				rows.append({"icon":STORES[category]["icon"],"name":store_name(category),"sub":STORES[category]["sub"],"menu":"shop:"+category,"on":_store_open(category)==""})
+		return {"icon":"🛍️","title":category.capitalize(),"rows":rows,"info":["Each store has different stock. Prices vary by country."]}
+	if key=="cars": return car_market()
 	if key == "mine":
 		return _mine_menu()
 	if key.begins_with("item:"):
@@ -317,13 +378,13 @@ func menu(key: String) -> Dictionary:
 			var price := int(it["price"] * Finance._cost())
 			rows2.append({"icon": it["icon"], "name": it["name"], "sub": "%s · %s" % [GameState.fmt_money(price), it["cat"]], "act": "shop:collect", "arg": i, "on": int(_p()["money"]) >= price})
 		return {"icon": "🖼️", "title": "Art & collectibles", "rows": rows2}
-	if not ITEMS.has(key):
+	if not ITEMS.has(key) and not retail_data().has(key):
 		return {"icon": "🛍️", "title": "Shopping", "rows": []}
 	var why := _store_open(key)
 	var rows3: Array = []
 	if why != "":
 		rows3.append({"icon": "🔒", "name": why, "sub": "", "on": false})
-	var list: Array = ITEMS[key]
+	var list: Array = retail_stock(key) if retail_data().has(key) else ITEMS[key]
 	for i in range(list.size()):
 		var d: Array = list[i]
 		var price := Actions._cost(int(d[2]))
@@ -339,13 +400,14 @@ func menu(key: String) -> Dictionary:
 		if pw != "":
 			sub += " · " + pw
 		rows3.append({"icon": d[1], "name": d[0], "sub": sub, "act": "shop:buy", "arg": [key, i], "on": need == "" and int(_p()["money"]) >= price and why == ""})
-	return {"icon": STORES[key]["icon"], "title": STORES[key]["name"], "rows": rows3}
+	return {"icon": retail_data()[key]["icon"] if retail_data().has(key) else STORES[key]["icon"], "title": store_name(key), "rows": rows3}
 
 
 func _store_open(sid: String) -> String:
 	if _p().is_empty():
 		return "No life in progress"
 	var age := int(_p().get("age", 0))
+	if retail_data().has(sid): sid=str(retail_data()[sid]["category"])
 	match sid:
 		"shady":
 			return "" if age >= 14 else "Too young"
@@ -439,14 +501,17 @@ func act(key: String, arg = null) -> void:
 	match key:
 		"buy":
 			var sid: String = arg[0]
-			var d: Array = ITEMS[sid][int(arg[1])]
+			var d: Array = item_data(sid,int(arg[1]))
+			if d.is_empty() or _store_open(sid)!="": return
 			if _need(d) != "": return
 			_offer_versions(sid, int(arg[1]), d)
 		"buy_version":
 			var sid: String = arg[0]
-			var d: Array = ITEMS[sid][int(arg[1])]
+			var d: Array = item_data(sid,int(arg[1]))
+			if d.is_empty() or _store_open(sid)!="": return
 			if _need(d) != "": return
 			var hkey: String = str(arg[2])
+			if not houses_for(sid).has(hkey): return
 			var ed: int = int(arg[3])
 			var house: Array = HOUSES.get(hkey, HOUSES["solid"])
 			var edition: Array = EDITIONS[clampi(ed, 0, EDITIONS.size() - 1)]
@@ -454,7 +519,7 @@ func act(key: String, arg = null) -> void:
 			if not Actions._can_pay(price, str(d[0])): return
 			p["money"] = int(p["money"]) - price
 			var label := "%s %s" % [str(house[0]), str(d[0]).to_lower()]
-			var it := {"name": label, "icon": d[1], "cat": STORES[sid]["name"], "value": price, "vol": 0.03,
+			var it := {"name": label, "icon": d[1], "cat": store_name(sid), "value": price, "vol": 0.03,
 				"dep": float(d[4]) / maxf(0.4, float(house[3])), "bought": price, "tag": d[3],
 				"house": hkey, "edition": str(edition[0])}
 			var story := str(house[1])
@@ -482,6 +547,9 @@ func act(key: String, arg = null) -> void:
 				Actions._done(d[1], "Bought", "I bought a %s for %s." % [str(d[0]).to_lower(), GameState.fmt_money(price)], {"happiness": 2 if price < 5000 else 6})
 			if sid == "boats" or sid == "aircraft" or sid == "motors":
 				GameState.add_milestone(p["age"], "bought a %s" % str(d[0]).to_lower())
+		"house": Actions.buy_house(str(arg))
+		"car": Actions.buy_car(str(arg))
+		"rent": Actions.move_out()
 		"collect":
 			Finance.buy_item(int(arg))
 		"sell":
@@ -600,3 +668,32 @@ func yearly() -> void:
 	if has_tag("home_gym") and p["routines"].get("gym", false): fx["health"] = int(fx.get("health", 0)) + 1
 	if not fx.is_empty():
 		GameState.apply_effects(fx)
+
+
+func home_market() -> Dictionary:
+	var rows: Array=[]
+	var p := _p()
+	for id in Actions.HOME_MODELS:
+		var model: Dictionary=Actions.HOME_MODELS[id]
+		var price := Actions.house_price(id)
+		var why := Actions.house_purchase_reason(id)
+		var trade_note := " · "+why if why!="" else str(model["sub"])
+		rows.append({"icon":"@"+str(model["icon"]),"name":model["name"],"sub":"%s · 20%% down %s · %s" % [GameState.fmt_money(price),GameState.fmt_money(int(price*0.2)),trade_note],"act":"shop:house","arg":id,"on":why==""})
+	rows.append({"icon":"@flat_block","name":"Rent an apartment","sub":"Rent yearly · living costs extra","act":"shop:rent","on":int(p["age"])>=18 and p["housing"] not in ["house","apartment"]})
+	return {"icon":"🏡","title":"Home Sweet-ish","rows":rows,"info":["One home at a time. A mortgage needs income and good credit. Manage owned homes in Assets."]}
+
+func car_market() -> Dictionary:
+	var rows: Array=[]
+	var p := _p()
+	var why := "Age 16+" if int(p["age"])<16 else "Driver licence required" if not Law.has_license("driver") else ""
+	for id in GameState.CARS:
+		var model: Dictionary=GameState.CARS[id]
+		var price := Actions._cost(int(model["price"]))
+		var trade := Holdings.resale() if str(p.get("car",""))!="" else 0
+		var net_due := price-trade
+		var due := maxi(0,net_due)
+		var detail := GameState.fmt_money(price)+" · trade-in "+GameState.fmt_money(trade)+" · due "+GameState.fmt_money(due) if trade>0 else GameState.fmt_money(price)
+		if net_due<0: detail+=" · cash back "+GameState.fmt_money(-net_due)
+		if why!="": detail+=" · "+why
+		rows.append({"icon":"@"+Icons.for_car(id),"name":model["name"],"sub":detail+" · upkeep "+GameState.fmt_money(Actions._cost(int(model["upkeep"])))+"/year","act":"shop:car","arg":id,"on":why=="" and int(p["money"])>=net_due and p["car"]!=id})
+	return {"icon":"🚗","title":"AutoMirth","rows":rows,"info":["Your current car's resale value is credited toward a replacement."]}

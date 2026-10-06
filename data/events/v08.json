@@ -657,7 +657,8 @@
     ]
    }
   ],
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1890
  },
  {
   "id": "v08.police.colleague_tip",
@@ -977,7 +978,8 @@
     ]
    }
   ],
-  "cooldown": 4
+  "cooldown": 4,
+  "available_from": 1995
  },
  {
   "id": "v08.med.error",
@@ -1963,7 +1965,8 @@
     ]
    }
   ],
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1930
  },
  {
   "id": "v08.sport.hurt",
@@ -2723,7 +2726,8 @@
     ]
    }
   ],
-  "cooldown": 6
+  "cooldown": 6,
+  "available_from": 1890
  },
  {
   "id": "v08.pet.aging",
@@ -4379,7 +4383,8 @@
     ]
    }
   ],
-  "cooldown": 7
+  "cooldown": 7,
+  "available_from": 1985
  },
  {
   "id": "v08.justice.job",

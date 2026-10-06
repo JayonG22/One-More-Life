@@ -308,7 +308,10 @@ func _ui() -> void:
 	var vfx := FileAccess.get_file_as_string("res://scenes/vfx.gd")
 	ok(vfx.find("static func age_press") != -1, "age_press was not written")
 	var kit := FileAccess.get_file_as_string("res://scenes/ui_kit.gd")
-	ok(kit.find("border_width_top") != -1, "bars are still a flat block with no gradient")
+	var bar := UIKit.bar(50.0, Color.SEA_GREEN)
+	var fill := bar.get_theme_stylebox("fill") as StyleBoxFlat
+	ok(fill != null and fill.shadow_size == 0 and fill.border_width_top == 0, "matte bars have a gloss edge or glow")
+	bar.free()
 	ok(kit.find("static func track") != -1, "there is no labelled progress track helper")
 	# the Become group is reachable from the activity menu
 	var found := false

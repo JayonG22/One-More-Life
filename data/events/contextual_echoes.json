@@ -1,0 +1,5654 @@
+[
+ {
+  "id": "ctx.job.data_analyst.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.cybersecurity.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.ux_research.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.technical_writer.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.game_producer.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.renewable_tech.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.urban_planner.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.environment_officer.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.food_scientist.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.community_worker.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.care_assistant.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.logistics_planner.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.event_coordinator.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.archivist.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.sound_engineer.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.compliance.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.museum_educator.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.tour_guide.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.farm_manager.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.biomedical_engineer.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.public_defender.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.insurance_analyst.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.special_education.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.job.community_nurse.echo",
+  "icon": "📬",
+  "title": "The work came back",
+  "text": "The decision you made on the job has reached the next team. They want to know whether you will stand behind it.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ],
+   "employed": true
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.hot_bus.echo",
+  "icon": "📬",
+  "title": "After that season",
+  "text": "Something you set in motion during that season has become part of everyday life. Someone asks whether you will keep it going.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.wet_shop.echo",
+  "icon": "📬",
+  "title": "After that season",
+  "text": "Something you set in motion during that season has become part of everyday life. Someone asks whether you will keep it going.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.cold_parent.echo",
+  "icon": "📬",
+  "title": "After that season",
+  "text": "Something you set in motion during that season has become part of everyday life. Someone asks whether you will keep it going.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.spring_club.echo",
+  "icon": "📬",
+  "title": "After that season",
+  "text": "Something you set in motion during that season has become part of everyday life. Someone asks whether you will keep it going.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.monsoon_door.echo",
+  "icon": "📬",
+  "title": "After that season",
+  "text": "Something you set in motion during that season has become part of everyday life. Someone asks whether you will keep it going.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.desert_water.echo",
+  "icon": "📬",
+  "title": "After that season",
+  "text": "Something you set in motion during that season has become part of everyday life. Someone asks whether you will keep it going.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.computer_science.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.nursing.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.business.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.criminal_justice.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.education.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.engineering.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.biology.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.psychology.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.graphic_design.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.communications.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.economics.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.culinary.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.music.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.political_science.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.english.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.architecture.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.accounting.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.game_dev.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.law.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.medicine.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.mba.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.dentistry.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.pharmacy.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.veterinary.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.study.phd.echo",
+  "icon": "📬",
+  "title": "The work sample",
+  "text": "Someone reviewing your work asks about the problem you studied, and how you would approach it now.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.child_secret.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.teen_online.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.care_schedule.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.middle_pivot.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.retired_time.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.frail_trip.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.stress_email.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.active_injury.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.gambling_limit.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.mentor_window.echo",
+  "icon": "📬",
+  "title": "The conversation continues",
+  "text": "What you decided has changed what someone expects from you. There is another conversation to have.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.twist.retraining.echo",
+  "icon": "📬",
+  "title": "A different direction",
+  "text": "The placement has ended. A new direction is possible, but no employer owes you an offer.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ctx.twist.care.echo",
+  "icon": "📬",
+  "title": "The new ordinary",
+  "text": "Care has become part of the family timetable. It is time to discuss whether the arrangement can last.",
+  "conditions": {
+   "life": [
+    "human",
+    "royal",
+    "vampire",
+    "witch",
+    "super",
+    "revenant"
+   ]
+  },
+  "followup_only": true,
+  "weight": 1,
+  "choices": [
+   {
+    "label": "Follow through",
+    "outcomes": [
+     {
+      "text": "I kept the promise when it had stopped being exciting. Somebody noticed.",
+      "effects": {
+       "happiness": 4,
+       "karma": 2,
+       "stress": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "I tried to follow through, but the circumstances had changed. It still took effort.",
+      "effects": {
+       "stress": 3,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Renegotiate what I can do",
+    "outcomes": [
+     {
+      "text": "I explained what had changed. We found a smaller version that still mattered.",
+      "effects": {
+       "stress": -3,
+       "happiness": 2
+      },
+      "weight": 1
+     },
+     {
+      "text": "They heard an excuse where I meant an explanation.",
+      "effects": {
+       "happiness": -3,
+       "stress": 2
+      },
+      "weight": 1
+     }
+    ]
+   },
+   {
+    "label": "Let it go",
+    "outcomes": [
+     {
+      "text": "I let that chapter close. Relief and regret arrived together.",
+      "effects": {
+       "stress": -3,
+       "happiness": -1
+      },
+      "weight": 1
+     },
+     {
+      "text": "The chance went to somebody else. I was more disappointed than I expected.",
+      "effects": {
+       "happiness": -4,
+       "smarts": 1
+      },
+      "weight": 1
+     }
+    ]
+   }
+  ]
+ }
+]

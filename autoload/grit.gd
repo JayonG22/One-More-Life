@@ -148,13 +148,16 @@ func habit(id: String, amount: float) -> void:
 	h["level"] = clampf(float(h["level"]) + amount * mult, 0.0, 100.0)
 	h["touched"] = int(p["age"])
 	p["habits"][id] = h
-	if not h["active"] and float(h["level"]) >= 60.0:
+	var activated: bool=not h["active"] and float(h["level"])>=60.0
+	Journey.modules["resilience"].exposure(id,amount,activated)
+	if activated:
 		h["active"] = true
 		var relapse: bool = int(h.get("clean", -1)) >= 0
 		h["clean"] = -1
 		GameState.add_milestone(p["age"], ("relapsed into " if relapse else "developed a ") + HABITS[id]["name"].to_lower() + (" habit" if not relapse else ""))
-		GameState.counter("habits_formed")
-		EventEngine.push_info(HABITS[id]["icon"], "Relapse" if relapse else "A habit took hold", ("I slipped back into old %s habits." if relapse else "I have a %s problem. I can't stop.") % HABITS[id]["name"].to_lower() + "\n\n" + HABITS[id]["desc"] + "\nIt will cost me every year until I break it: Therapy or Rehab under Activities → Health.")
+		if not h.get("formed_recorded",false) and not relapse: GameState.counter("habits_formed")
+		h["formed_recorded"]=true
+		EventEngine.push_info(HABITS[id]["icon"], "Setback" if relapse else "A habit took hold", HABITS[id]["name"]+" pressure needs support. Health → Recovery keeps a plan, sessions and progress; a setback does not erase them.")
 
 
 func active_habits() -> Array:
@@ -166,47 +169,18 @@ func active_habits() -> Array:
 
 
 func rehab() -> void:
-	var p := GameState.player
 	var list := active_habits()
-	if list.is_empty():
-		EventEngine.push_info("🏥", "Rehab", "You don't have a habit that needs rehab.")
-		return
-	var price := Actions._cost(8000)
-	if not Actions._can_pay(price, "Rehab"): return
-	if int(p["time_left"]) < 4:
-		EventEngine.push_info("⏳", "Rehab", "Rehab takes 4 time points. Try again next year.")
-		return
-	GameState.spend_time(4)
-	p["money"] = int(p["money"]) - price
-	var id: String = list[0]
-	var h: Dictionary = p["habits"][id]
-	var support := 0.0
-	if p["partner"] != "" and GameState.npcs.has(p["partner"]) and int(GameState.npcs[p["partner"]]["closeness"]) >= 60:
-		support = 0.15
-	if randf() < 0.55 + support:
-		h["level"] = 20.0
-		h["active"] = false
-		h["clean"] = int(p["age"])
-		GameState.counter("habits_beaten")
-		GameState.add_milestone(p["age"], "beat a %s habit" % HABITS[id]["name"].to_lower())
-		Actions._done("🏥", "Clean", "Rehab worked. I haven't felt this clear in years.%s" % (" My partner's support made the difference." if support > 0 else ""), {"happiness": 12, "stress": -15, "health": 6})
-	else:
-		h["level"] = maxf(60.0, float(h["level"]) - 15.0)
-		Actions._done("🏥", "Not yet", "I left rehab early. The pull was too strong.", {"happiness": -8, "stress": 6})
-
-
-func therapy_helps() -> void:
-	for id in active_habits():
-		var h: Dictionary = GameState.player["habits"][id]
-		h["level"] = float(h["level"]) - 12.0
-		if float(h["level"]) < 45.0:
-			h["active"] = false
-			h["clean"] = int(GameState.player["age"])
-			GameState.counter("habits_beaten")
-			GameState.add_log("Therapy helped me get my %s under control." % HABITS[id]["name"].to_lower())
-
+	if list.is_empty(): EventEngine.push_info("🌱","Recovery","No active dependence needs an intake; aftercare remains available."); return
+	Journey.modules["resilience"].begin(str(list[0]),"residential" if int(GameState.player["age"])>=18 else "community")
+func therapy_helps(source: String = "therapy") -> void:
+	for id in GameState.player.get("habits",{}):
+		if HABITS.has(id): Journey.modules["resilience"].support(str(id),source,12)
 
 func _habits_yearly() -> void:
+	var resilience=Journey.modules["resilience"]; var year := GameState.year_now()
+	if int(resilience.st()["pressure_year"])==year or not GameState.is_alive() or Lives.separate(): return
+	resilience.st()["pressure_year"]=year
+	resilience.yearly()
 	var p := GameState.player
 	for id in p["habits"].keys():
 		var h: Dictionary = p["habits"][id]
@@ -222,53 +196,17 @@ func _habits_yearly() -> void:
 				var spend := maxi(Actions._cost(1500), int(maxi(0, int(p["money"])) * randf_range(0.06, 0.15)))
 				_compulsion("🛍️", "Retail therapy", "Boxes keep arriving. I spent %s on things I didn't need." % GameState.fmt_money(spend), {"money": -spend, "happiness": 2}, id)
 			"workaholic":
-				GameState.apply_effects({"stress": 12, "health": -4, "job_perf": 6})
-				for rel in ["partner", "child"]:
-					for nid in GameState.npcs_with(rel):
-						GameState.change_closeness(nid, -6)
-				GameState.add_log("I worked through birthdays and weekends again. My family barely sees me.")
+				_compulsion("💼","Work boundaries","",{"stress":12,"health":-4,"job_perf":6},id)
 			"drinking":
-				var tab := Actions._cost(2200)
-				GameState.apply_effects({"money": -tab, "health": -5, "looks": -2, "happiness": -2})
-				GameState.add_log("Another year with a bottle close by. It cost %s and a little more of my liver." % GameState.fmt_money(tab))
-				if randf() < 0.07 * d("harsh") and Law.has_license("driver"):
-					Law.suspend("driver", 2, "caught driving after drinking")
-					p["record"].append("drink driving")
-					GameState.add_log("I was stopped on the way home. I blew over the limit.")
-				if randf() < 0.10:
-					GameState.apply_effects({"stress": 5})
-					for rel in ["partner", "child"]:
-						for nid in GameState.npcs_with(rel):
-							GameState.change_closeness(nid, -5)
+				_compulsion("🌱","Drinking boundaries","",{"money":-Actions._cost(2200),"health":-5,"looks":-2,"happiness":-2},id)
 			"drugs":
-				var dose := Actions._cost(5000)
-				GameState.apply_effects({"money": -dose, "health": -8, "looks": -3, "smarts": -1, "happiness": -3})
-				GameState.add_log("The habit took %s and a bit more of me this year." % GameState.fmt_money(dose))
-				if randf() < 0.06 * d("harsh"):
-					p["record"].append("drug possession")
-					GameState.add_log("I was caught with something I shouldn't have had.")
-					Law.trial("drug possession", 0, 1)
+				_compulsion("🌱","Recovery boundaries","",{"money":-Actions._cost(5000),"health":-8,"looks":-3,"smarts":-1,"happiness":-3},id)
 			"partying":
-				var cost := Actions._cost(3000)
-				GameState.apply_effects({"money": -cost, "health": -6, "looks": -2})
-				GameState.add_log("Another year of late nights. My body is starting to notice.")
-				if randf() < 0.08 * d("harsh"):
-					p["record"].append("public intoxication")
-					GameState.add_log("I got arrested after a party got out of hand.")
-					if Law.has_license("driver") and randf() < 0.5:
-						Law.suspend("driver", 2, "caught driving home drunk")
-					Law.trial("disorderly conduct", 1, 1)
+				_compulsion("🌙","Rest boundaries","",{"money":-Actions._cost(3000),"health":-6,"looks":-2},id)
 
 
 func _compulsion(icon: String, title_txt: String, text: String, fx: Dictionary, id: String) -> void:
-	var resist := clampf(0.25 + GameState.stat("happiness") / 250.0 - GameState.stat("stress") / 250.0, 0.05, 0.6)
-	EventEngine.push_decision({"id": "_habit_" + id, "icon": icon, "title": title_txt, "text": "The %s pull is back." % HABITS[id]["name"].to_lower(), "choices": [
-		{"label": "Fight it", "outcomes": [
-			{"weight": resist, "text": "I white-knuckled through it. One day at a time.", "effects": {"stress": 6, "happiness": 2}},
-			{"weight": 1.0 - resist, "text": "I couldn't hold on. " + text, "effects": fx}]},
-		{"label": "Give in", "outcomes": [{"text": text, "effects": fx}]},
-	]})
-
+	Journey.modules["resilience"].compulsion(icon,title_txt,text,fx,id)
 
 # ================================================================ credit & debt
 
@@ -572,6 +510,8 @@ func outcome(o: Dictionary, roles: Dictionary) -> String:
 	var extra := ""
 	if o.has("scar"):
 		extra += add_scar(str(o["scar"]))
+	if o.has("recovery_choice"):
+		extra+=Journey.modules["resilience"].outcome(o["recovery_choice"])
 	if o.has("habit"):
 		habit(str(o["habit"][0]), float(o["habit"][1]))
 	if o.has("credit"):

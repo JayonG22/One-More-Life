@@ -1,0 +1,2791 @@
+[
+ {
+  "id": "parenting.0.0",
+  "family": "parenting.0.0",
+  "band": 0,
+  "title": "The bedtime bargain",
+  "text": "{name} wants another story but is tired.",
+  "answers": [
+   "Keep a kind, predictable bedtime",
+   "Agree one short story, then rest",
+   "Let them choose a story for tomorrow"
+  ],
+  "endings": [
+   "A steady bedtime helped rest and trust.",
+   "A small compromise ended calmly.",
+   "Choosing tomorrow’s story made the stop feel like a plan."
+  ],
+  "effects": [
+   {
+    "health": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A steady bedtime helped rest and trust. They reused the routine in a new situation.",
+   "A small compromise ended calmly. They felt comfortable asking for another compromise.",
+   "They started a small bedtime reading list."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.1",
+  "family": "parenting.0.1",
+  "band": 0,
+  "title": "Small helping hands",
+  "text": "{name} wants to help with a household task.",
+  "answers": [
+   "Offer a safe task together",
+   "Let them watch and ask questions",
+   "Let them choose a small task"
+  ],
+  "endings": [
+   "An age-sized task built confidence.",
+   "Watching made the task familiar.",
+   "They chose sorting socks; matching pairs proved surprisingly political."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "An age-sized task built confidence. They reused the routine in a new situation.",
+   "Watching made the task familiar. They felt comfortable asking for another compromise.",
+   "They volunteered for their own little household duty."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.2",
+  "family": "parenting.0.2",
+  "band": 0,
+  "title": "The lost comfort toy",
+  "text": "{name} cannot find a favourite toy.",
+  "answers": [
+   "Search together and make a backup routine",
+   "Comfort them while the search waits",
+   "Let them make a temporary substitute"
+  ],
+  "endings": [
+   "A calm search helped them cope.",
+   "They felt heard despite the missing toy.",
+   "A paper cape turned an ordinary toy into a stand-in hero."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A calm search helped them cope. They reused the routine in a new situation.",
+   "They felt heard despite the missing toy. They felt comfortable asking for another compromise.",
+   "Their homemade toy joined the favourite-toy shelf."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.3",
+  "family": "parenting.0.3",
+  "band": 0,
+  "title": "A noisy gathering",
+  "text": "{name} feels overwhelmed at a gathering.",
+  "answers": [
+   "Offer a quiet break",
+   "Leave early without blame",
+   "Let them choose a quiet companion"
+  ],
+  "endings": [
+   "A quiet break protected comfort.",
+   "Leaving early respected their limits.",
+   "One familiar person made the room feel smaller."
+  ],
+  "effects": [
+   {
+    "health": 1,
+    "happiness": 1,
+    "smarts": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A quiet break protected comfort. They reused the routine in a new situation.",
+   "Leaving early respected their limits. They felt comfortable asking for another compromise.",
+   "They asked for that companion at the next gathering."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.4",
+  "family": "parenting.0.4",
+  "band": 0,
+  "title": "Trying something new",
+  "text": "{name} wants to try a new age-safe activity.",
+  "answers": [
+   "Try a small step with support",
+   "Watch another child try first",
+   "Let them choose which part to try"
+  ],
+  "endings": [
+   "A supported attempt built confidence.",
+   "Observing helped them feel ready.",
+   "Choosing the first step made the unfamiliar activity inviting."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A supported attempt built confidence. They reused the routine in a new situation.",
+   "Observing helped them feel ready. They felt comfortable asking for another compromise.",
+   "They remembered which part they wanted to practise."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.5",
+  "family": "parenting.0.5",
+  "band": 0,
+  "title": "First little friendship",
+  "text": "{name} disagrees with a child over shared play.",
+  "answers": [
+   "Help them name feelings and take turns",
+   "Give both children a calm break",
+   "Let them suggest a turn-taking rule"
+  ],
+  "endings": [
+   "Taking turns made room for both children.",
+   "A calm break ended the immediate conflict.",
+   "Their rule was odd, but both children tried it."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "Taking turns made room for both children. They reused the routine in a new situation.",
+   "A calm break ended the immediate conflict. They felt comfortable asking for another compromise.",
+   "They used their homemade rule in another game."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.0",
+  "family": "parenting.1.0",
+  "band": 1,
+  "title": "Homework roadblock",
+  "text": "{name} is stuck on a school task.",
+  "answers": [
+   "Practise one example together",
+   "Agree a short break before retrying",
+   "Let them pick a different example"
+  ],
+  "endings": [
+   "One example helped independent learning.",
+   "A break made another attempt manageable.",
+   "A new example made the stuck idea click."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "One example helped independent learning. They reused the routine in a new situation.",
+   "A break made another attempt manageable. They felt comfortable asking for another compromise.",
+   "They tried changing examples before giving up."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.1",
+  "family": "parenting.1.1",
+  "band": 1,
+  "title": "The pocket-money plan",
+  "text": "{name} wants to spend saved pocket money.",
+  "answers": [
+   "Compare cost, saving and priorities",
+   "Respect an affordable choice",
+   "Let them make a wish list first"
+  ],
+  "endings": [
+   "The conversation built money awareness.",
+   "An affordable choice stayed their own.",
+   "Waiting exposed which purchase they actually wanted."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "The conversation built money awareness. They reused the routine in a new situation.",
+   "An affordable choice stayed their own. They felt comfortable asking for another compromise.",
+   "Their wish list became shorter and more realistic."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.2",
+  "family": "parenting.1.2",
+  "band": 1,
+  "title": "A friendship wobble",
+  "text": "{name} says a friend has been excluding them.",
+  "answers": [
+   "Listen and discuss safe ways to seek help",
+   "Offer company without forcing a solution",
+   "Let them choose another social group"
+  ],
+  "endings": [
+   "They learned that support was available.",
+   "Company helped without taking over.",
+   "Trying a new group gave them room beyond one friendship."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "They learned that support was available. They reused the routine in a new situation.",
+   "Company helped without taking over. They felt comfortable asking for another compromise.",
+   "A new acquaintance became a regular lunch companion."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.3",
+  "family": "parenting.1.3",
+  "band": 1,
+  "title": "An unfinished hobby",
+  "text": "{name} wants to leave a hobby after a difficult week.",
+  "answers": [
+   "Discuss enjoyment and a fair stopping point",
+   "Agree one final session before deciding",
+   "Let them try a related hobby"
+  ],
+  "endings": [
+   "A fair decision preserved confidence.",
+   "One final session clarified the choice.",
+   "A change of format revived some curiosity."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A fair decision preserved confidence. They reused the routine in a new situation.",
+   "One final session clarified the choice. They felt comfortable asking for another compromise.",
+   "They kept the useful parts of the old hobby."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.4",
+  "family": "parenting.1.4",
+  "band": 1,
+  "title": "The school bag",
+  "text": "{name} keeps forgetting something needed at school.",
+  "answers": [
+   "Build a simple checklist together",
+   "Help pack while they describe the routine",
+   "Let them design their own reminder"
+  ],
+  "endings": [
+   "The checklist supported independence.",
+   "Supported packing made the routine familiar.",
+   "A drawing by the door did the job of three lectures."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "The checklist supported independence. They reused the routine in a new situation.",
+   "Supported packing made the routine familiar. They felt comfortable asking for another compromise.",
+   "They revised the reminder when their timetable changed."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.5",
+  "family": "parenting.1.5",
+  "band": 1,
+  "title": "A project invitation",
+  "text": "{name} has been invited to a school group project.",
+  "answers": [
+   "Discuss fair tasks and asking for help",
+   "Choose an achievable small role",
+   "Let them pitch their own project role"
+  ],
+  "endings": [
+   "Clear tasks supported cooperation.",
+   "A smaller role made participation possible.",
+   "They proposed a smaller task they genuinely wanted."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "Clear tasks supported cooperation. They reused the routine in a new situation.",
+   "A smaller role made participation possible. They felt comfortable asking for another compromise.",
+   "Their team asked them to handle that role again."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.0",
+  "family": "parenting.2.0",
+  "band": 2,
+  "title": "A private conversation",
+  "text": "{name} asks to discuss a difficult personal matter.",
+  "answers": [
+   "Listen, clarify safety and respect privacy",
+   "Offer another trusted adult",
+   "Ask what kind of help they want"
+  ],
+  "endings": [
+   "Asking for help felt safer.",
+   "Another trusted adult remained an option.",
+   "They asked for listening first, advice later."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "Asking for help felt safer. They reused the routine in a new situation.",
+   "Another trusted adult remained an option. They felt comfortable asking for another compromise.",
+   "They returned with a clearer request for support."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.1",
+  "family": "parenting.2.1",
+  "band": 2,
+  "title": "The first work plan",
+  "text": "{name} is considering an age-appropriate job.",
+  "answers": [
+   "Check hours, school needs and terms",
+   "Help compare options",
+   "Let them draft a trial schedule"
+  ],
+  "endings": [
+   "Checking terms supported an informed decision.",
+   "Comparison respected independence.",
+   "They tested how school and work might fit before committing."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "Checking terms supported an informed decision. They reused the routine in a new situation.",
+   "Comparison respected independence. They felt comfortable asking for another compromise.",
+   "They adjusted their hours after discovering the busy days."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.2",
+  "family": "parenting.2.2",
+  "band": 2,
+  "title": "Changing ambitions",
+  "text": "{name} has changed their idea of a future career.",
+  "answers": [
+   "Explore requirements and several routes",
+   "Keep the discussion open during research",
+   "Let them try a short taster project"
+  ],
+  "endings": [
+   "Requirements made the ambition more concrete.",
+   "Research continued without pressure.",
+   "A small experiment replaced an argument about the future."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "Requirements made the ambition more concrete. They reused the routine in a new situation.",
+   "Research continued without pressure. They felt comfortable asking for another compromise.",
+   "The experiment clarified what they liked about the field."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.3",
+  "family": "parenting.2.3",
+  "band": 2,
+  "title": "A missed agreement",
+  "text": "{name} did not follow an agreed household rule.",
+  "answers": [
+   "Discuss what happened and a workable repair",
+   "Pause until both are calm",
+   "Let them propose a repair"
+  ],
+  "endings": [
+   "A workable repair rebuilt responsibility.",
+   "A pause prevented a larger argument.",
+   "Their own proposal gave them responsibility for following through."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A workable repair rebuilt responsibility. They reused the routine in a new situation.",
+   "A pause prevented a larger argument. They felt comfortable asking for another compromise.",
+   "They remembered the rule they had helped rewrite."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.4",
+  "family": "parenting.2.4",
+  "band": 2,
+  "title": "Online pressure",
+  "text": "{name} feels pressure to share more online.",
+  "answers": [
+   "Discuss boundaries and consent",
+   "Offer optional privacy-setting help",
+   "Let them choose a smaller audience"
+  ],
+  "endings": [
+   "Boundaries helped protect privacy and trust.",
+   "Optional help kept the choice theirs.",
+   "A limited audience left room for expression and privacy."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "Boundaries helped protect privacy and trust. They reused the routine in a new situation.",
+   "Optional help kept the choice theirs. They felt comfortable asking for another compromise.",
+   "They became more selective about who saw their posts."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.5",
+  "family": "parenting.2.5",
+  "band": 2,
+  "title": "The exam-season load",
+  "text": "{name} feels stretched by school and other commitments.",
+  "answers": [
+   "Make a realistic schedule with rest",
+   "Drop one optional demand",
+   "Let them choose the week’s priorities"
+  ],
+  "endings": [
+   "A realistic schedule protected health.",
+   "Dropping a demand made the week manageable.",
+   "Choosing priorities made the workload feel more manageable."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later": [
+   "A realistic schedule protected health. They reused the routine in a new situation.",
+   "Dropping a demand made the week manageable. They felt comfortable asking for another compromise.",
+   "They reused the priority list for another busy week."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.6",
+  "family": "parenting.0.6",
+  "band": 0,
+  "title": "Breakfast art",
+  "text": "{name} has built a cereal volcano. It is erupting onto the table.",
+  "answers": [
+   "Keep breakfast and play separate",
+   "Join one tiny eruption",
+   "Let them design a spill tray"
+  ],
+  "endings": [
+   "Breakfast finished; the volcano waited.",
+   "We laughed, then cleaned sticky lava together.",
+   "Their tray caught most of the mess. Most."
+  ],
+  "later": [
+   "They brought the volcano to craft time instead.",
+   "They retold our cereal disaster at breakfast.",
+   "They tested a better tray with water first."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.7",
+  "family": "parenting.0.7",
+  "band": 0,
+  "title": "The cardboard kingdom",
+  "text": "{name} wants to keep a giant box castle in the living room.",
+  "answers": [
+   "Set a castle closing time",
+   "Give it one extra day",
+   "Let them choose a smaller castle"
+  ],
+  "endings": [
+   "The castle became a planned afternoon game.",
+   "Our living room hosted a very small monarch.",
+   "They rebuilt a castle that fit beside the sofa."
+  ],
+  "later": [
+   "They began saving boxes for weekends.",
+   "They remembered the extra day as a treat.",
+   "They kept redesigning their compact kingdom."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.8",
+  "family": "parenting.0.8",
+  "band": 0,
+  "title": "Party costume revolt",
+  "text": "{name} refuses the planned costume and wants to dress as a spoon.",
+  "answers": [
+   "Keep the planned costume",
+   "Adapt it with a spoon badge",
+   "Help them make a spoon outfit"
+  ],
+  "endings": [
+   "The costume fit, though the spoon campaign continued.",
+   "The compromise looked oddly official.",
+   "Their homemade spoon drew delighted questions."
+  ],
+  "later": [
+   "They asked to plan next year’s outfit earlier.",
+   "They kept the spoon badge in a treasure box.",
+   "They started sketching stranger costume ideas."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.9",
+  "family": "parenting.0.9",
+  "band": 0,
+  "title": "The garden guest",
+  "text": "{name} insists a snail needs a birthday party.",
+  "answers": [
+   "Observe it without moving it",
+   "Draw it a birthday card",
+   "Let them plan a garden celebration"
+  ],
+  "endings": [
+   "We watched the snail travel at its own pace.",
+   "The card had more glitter than the guest.",
+   "The snail attended briefly, then left without thanking us."
+  ],
+  "later": [
+   "They recognised the snail’s favourite damp corner.",
+   "They began drawing the creatures they found.",
+   "They checked the garden before planning another party."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.10",
+  "family": "parenting.0.10",
+  "band": 0,
+  "title": "A very public question",
+  "text": "{name} asks a loud, awkward question in a queue.",
+  "answers": [
+   "Answer quietly after the queue",
+   "Give a brief answer now",
+   "Ask what they noticed first"
+  ],
+  "endings": [
+   "They waited, with some impatience, for an explanation.",
+   "The answer satisfied them; the queue recovered.",
+   "Their question turned out to mean something quite different."
+  ],
+  "later": [
+   "They began saving questions for our walks.",
+   "They trusted that awkward questions were allowed.",
+   "They learned to explain what puzzled them."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.11",
+  "family": "parenting.0.11",
+  "band": 0,
+  "title": "Tiny stage fright",
+  "text": "{name} forgets their line in a nursery performance.",
+  "answers": [
+   "Give the familiar cue",
+   "Wave and let them pause",
+   "Let them improvise the ending"
+  ],
+  "endings": [
+   "A familiar cue got the story moving.",
+   "A calm wave made the pause feel less scary.",
+   "The dragon became a dancing potato."
+  ],
+  "later": [
+   "They practised cues before another performance.",
+   "They agreed to try the stage again.",
+   "Their potato ending became a playground joke."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.12",
+  "family": "parenting.0.12",
+  "band": 0,
+  "title": "The mismatched shoes",
+  "text": "{name} wants to wear two different shoes for a short outing.",
+  "answers": [
+   "Choose the matching pair",
+   "Agree mismatches for this outing",
+   "Let them pick a comfortable pair"
+  ],
+  "endings": [
+   "The matching pair made getting ready predictable.",
+   "One outing became a small fashion experiment.",
+   "Comfort won over colour coordination."
+  ],
+  "later": [
+   "They set out matching shoes the night before.",
+   "They looked forward to another silly outfit day.",
+   "They started checking fit before choosing shoes."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.0.13",
+  "family": "parenting.0.13",
+  "band": 0,
+  "title": "Rainy-day explorers",
+  "text": "Rain cancels {name}’s outdoor plan.",
+  "answers": [
+   "Follow our indoor backup plan",
+   "Turn the room into a campsite",
+   "Let them choose a new adventure"
+  ],
+  "endings": [
+   "The backup plan rescued a disappointed afternoon.",
+   "A blanket tent made the weather feel useful.",
+   "They invented a map of the hallway."
+  ],
+  "later": [
+   "They prepared a backup for another cancelled outing.",
+   "They asked to camp indoors with a friend.",
+   "Their hallway map acquired several imaginary countries."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.6",
+  "family": "parenting.1.6",
+  "band": 1,
+  "title": "The lemonade empire",
+  "text": "{name} wants to run a tiny supervised lemonade stall.",
+  "answers": [
+   "Plan supplies and opening hours",
+   "Try one small afternoon",
+   "Let them choose a selling pitch"
+  ],
+  "endings": [
+   "The plan showed how supplies eat into earnings.",
+   "A small trial exposed the slow hours.",
+   "Their pitch was enthusiastic; the sign needed spelling help."
+  ],
+  "later": [
+   "They remembered to count costs in their next project.",
+   "They chose a better time for the next stall.",
+   "They revised the sign after hearing customers’ questions."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.7",
+  "family": "parenting.1.7",
+  "band": 1,
+  "title": "A club with too many rules",
+  "text": "{name} founded a club; nobody agrees on its rules.",
+  "answers": [
+   "Help write a short rule list",
+   "Suggest a rule-free trial session",
+   "Let members vote on three rules"
+  ],
+  "endings": [
+   "Clear rules helped, but some members wanted more freedom.",
+   "The trial was chaotic and surprisingly fun.",
+   "Voting produced a compromise nobody entirely loved."
+  ],
+  "later": [
+   "They removed a rule that nobody used.",
+   "The group added one rule after its messy trial.",
+   "They remembered to ask members before changing plans."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.8",
+  "family": "parenting.1.8",
+  "band": 1,
+  "title": "The embarrassing recording",
+  "text": "{name} finds an old video of themselves singing badly.",
+  "answers": [
+   "Keep it private and explain consent",
+   "Laugh together if they want",
+   "Let them decide whether to keep it"
+  ],
+  "endings": [
+   "The recording stayed private.",
+   "Laughing together made the old mistake feel smaller.",
+   "They chose what belonged in their own archive."
+  ],
+  "later": [
+   "They asked before sharing a friend’s recording.",
+   "They felt less frightened of another imperfect performance.",
+   "They became more thoughtful about keeping memories."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.9",
+  "family": "parenting.1.9",
+  "band": 1,
+  "title": "The borrowed masterpiece",
+  "text": "{name} copied a clever craft idea and wants to enter it in a contest.",
+  "answers": [
+   "Credit the idea and change the entry",
+   "Enter a shared-credit version",
+   "Let them make a new entry"
+  ],
+  "endings": [
+   "Credit made the entry honest, though less striking.",
+   "A shared-credit entry kept the collaboration visible.",
+   "Starting over took effort and produced something personal."
+  ],
+  "later": [
+   "They credited inspiration in their next project.",
+   "They invited someone to collaborate on a later contest.",
+   "They kept experimenting with their own designs."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.10",
+  "family": "parenting.1.10",
+  "band": 1,
+  "title": "Team captain dilemma",
+  "text": "{name} must pick teams without leaving a friend out.",
+  "answers": [
+   "Use a fair rotation",
+   "Try a mixed-skill team",
+   "Let them explain their own selection"
+  ],
+  "endings": [
+   "Rotation spread chances but frustrated a competitive player.",
+   "Mixed teams created a closer, messier game.",
+   "Explaining the choices invited awkward but useful questions."
+  ],
+  "later": [
+   "They reused rotation when places were limited.",
+   "They practised with the less experienced teammates.",
+   "They became more careful about explaining decisions."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.11",
+  "family": "parenting.1.11",
+  "band": 1,
+  "title": "A museum detour",
+  "text": "{name} only wants to see the least educational room in the museum.",
+  "answers": [
+   "Follow a short planned route",
+   "Spend longer in their favourite room",
+   "Let them guide a three-stop tour"
+  ],
+  "endings": [
+   "We covered more rooms but hurried their favourite.",
+   "Their favourite room became a deep investigation.",
+   "Their route included one genuinely surprising discovery."
+  ],
+  "later": [
+   "They recognised several exhibits on a later visit.",
+   "They borrowed a book about the room they loved.",
+   "They planned a route before the next outing."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.12",
+  "family": "parenting.1.12",
+  "band": 1,
+  "title": "The friendship lottery",
+  "text": "{name} has one spare ticket and two friends asking for it.",
+  "answers": [
+   "Use a transparent draw",
+   "Choose this time; invite the other later",
+   "Let them discuss it with both friends"
+  ],
+  "endings": [
+   "The draw was fair, though disappointment remained.",
+   "A future invitation softened a difficult choice.",
+   "The discussion was awkward, but nobody was blindsided."
+  ],
+  "later": [
+   "They used a draw for another limited opportunity.",
+   "They remembered the invitation they had offered.",
+   "They grew more comfortable discussing unfair-feeling limits."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.1.13",
+  "family": "parenting.1.13",
+  "band": 1,
+  "title": "A game nobody finishes",
+  "text": "{name} has invented a board game with a forty-page rulebook.",
+  "answers": [
+   "Cut it to a short first version",
+   "Play a silly trial round",
+   "Let them collect player feedback"
+  ],
+  "endings": [
+   "A shorter version finally reached its ending.",
+   "The trial uncovered funny loopholes.",
+   "Feedback exposed which rules confused everyone."
+  ],
+  "later": [
+   "They made a playable second edition.",
+   "They kept one loophole as an official joke.",
+   "They asked players before adding another rule."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.6",
+  "family": "parenting.2.6",
+  "band": 2,
+  "title": "The band rehearsal",
+  "text": "{name}’s band wants to rehearse during a busy school week.",
+  "answers": [
+   "Agree fixed rehearsal hours",
+   "Swap one optional commitment",
+   "Let them propose a trial timetable"
+  ],
+  "endings": [
+   "Fixed hours protected study but limited the band.",
+   "A swapped commitment freed time at a real cost.",
+   "Their trial timetable revealed a late-night bottleneck."
+  ],
+  "later": [
+   "They negotiated rehearsal hours before a later exam.",
+   "They reconsidered which commitments mattered most.",
+   "They revised the timetable after the trial."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.7",
+  "family": "parenting.2.7",
+  "band": 2,
+  "title": "The dream purchase",
+  "text": "{name} wants to spend months of savings on a fashion trend.",
+  "answers": [
+   "Compare durability and resale",
+   "Suggest a cheaper version",
+   "Let them decide after a waiting week"
+  ],
+  "endings": [
+   "Comparing value cooled some of the excitement.",
+   "A cheaper version left savings for another goal.",
+   "Waiting clarified whether the purchase still mattered."
+  ],
+  "later": [
+   "They checked durability before another expensive purchase.",
+   "They learned which compromises they actually liked.",
+   "They used a waiting week for their next big decision."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.8",
+  "family": "parenting.2.8",
+  "band": 2,
+  "title": "A friend’s secret",
+  "text": "{name} has been asked to keep a friend’s difficult secret.",
+  "answers": [
+   "Discuss when safety overrides secrecy",
+   "Help find a trusted adult",
+   "Ask them to define their own limits"
+  ],
+  "endings": [
+   "They recognised that serious danger needs help.",
+   "Another adult shared the weight of the concern.",
+   "They explained what they could and could not promise."
+  ],
+  "later": [
+   "They recognised a situation where support was needed.",
+   "They stayed in touch with the adult they approached.",
+   "They became more careful about promising secrecy."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.9",
+  "family": "parenting.2.9",
+  "band": 2,
+  "title": "The public debate",
+  "text": "{name} wants to challenge a popular school policy.",
+  "answers": [
+   "Help assemble evidence",
+   "Try a smaller private proposal",
+   "Let them organise an open discussion"
+  ],
+  "endings": [
+   "Evidence strengthened the case but took time.",
+   "A smaller proposal won attention without much drama.",
+   "An open discussion drew supporters and critics."
+  ],
+  "later": [
+   "They used evidence in a later student campaign.",
+   "They learned how to negotiate a practical change.",
+   "They learned to respond to disagreement in public."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.10",
+  "family": "parenting.2.10",
+  "band": 2,
+  "title": "A disappointing audition",
+  "text": "{name} was rejected after practising hard for an audition.",
+  "answers": [
+   "Ask for specific feedback",
+   "Take a break from auditions",
+   "Let them choose a different stage"
+  ],
+  "endings": [
+   "Feedback hurt a little and gave practice a direction.",
+   "A break restored some enjoyment.",
+   "A smaller stage offered room to experiment."
+  ],
+  "later": [
+   "They practised the weak point before trying again.",
+   "They returned when the activity felt worthwhile.",
+   "They built confidence in a different venue."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.11",
+  "family": "parenting.2.11",
+  "band": 2,
+  "title": "The first trip plan",
+  "text": "{name} wants to plan an age-appropriate trip with friends.",
+  "answers": [
+   "Agree check-ins and a detailed plan",
+   "Start with a shorter outing",
+   "Let them draft the safety plan"
+  ],
+  "endings": [
+   "A detailed plan reassured us but felt restrictive.",
+   "A shorter outing tested how the group worked.",
+   "Drafting the plan exposed questions they had missed."
+  ],
+  "later": [
+   "They negotiated fewer check-ins after proving reliable.",
+   "They used the trial outing to plan a longer day.",
+   "They remembered to check transport and contacts first."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.12",
+  "family": "parenting.2.12",
+  "band": 2,
+  "title": "The viral joke",
+  "text": "{name}’s harmless joke suddenly reaches a much larger audience.",
+  "answers": [
+   "Help separate public and private details",
+   "Suggest stepping back for a week",
+   "Let them set their own posting limits"
+  ],
+  "endings": [
+   "Separating details reduced exposure without ending the fun.",
+   "A quiet week showed how quickly attention moves.",
+   "Their limits balanced attention and privacy imperfectly."
+  ],
+  "later": [
+   "They checked identifying details before another post.",
+   "They felt less dependent on the next burst of attention.",
+   "They adjusted their limits after another busy week."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.2.13",
+  "family": "parenting.2.13",
+  "band": 2,
+  "title": "Choosing the unfamiliar path",
+  "text": "{name} is interested in training outside the family’s familiar careers.",
+  "answers": [
+   "Compare the route’s requirements",
+   "Arrange a conversation with someone in it",
+   "Let them plan a low-cost trial"
+  ],
+  "endings": [
+   "Requirements made the unfamiliar route concrete.",
+   "A conversation exposed both rewards and ordinary frustrations.",
+   "A small trial tested interest without a huge commitment."
+  ],
+  "later": [
+   "They used the requirements to choose their next subject.",
+   "They remembered the less glamorous parts of the work.",
+   "They kept evidence from the trial for a later application."
+  ],
+  "tradeoff": true,
+  "effects": [
+   {
+    "smarts": 2,
+    "happiness": -1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   }
+  ],
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "stress": 2
+   }
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.v88.0",
+  "family": "parenting.v88.0",
+  "band": 0,
+  "title": "The short video call",
+  "text": "{name} is distracted during a planned call. You want contact to feel comfortable rather than compulsory.",
+  "answers": [
+   "Keep the call short and familiar",
+   "Read a little story together",
+   "Let them choose something to show"
+  ],
+  "endings": [
+   "A brief greeting kept contact calm without demanding a performance.",
+   "A shared story gave the call a familiar rhythm.",
+   "Showing a favourite object made the call their own."
+  ],
+  "effects": [
+   {
+    "happiness": 1,
+    "stress": -1
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   },
+   {
+    "happiness": 2
+   }
+  ],
+  "tradeoff": true,
+  "requires_home": false,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "later": [
+   "They greeted the next call with less pressure.",
+   "They asked to hear the same story again.",
+   "They prepared a small thing to share next time."
+  ],
+  "later_effects": [
+   {
+    "stress": -1
+   },
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.v88.1",
+  "family": "parenting.v88.0",
+  "band": 0,
+  "title": "Two familiar homes",
+  "text": "{name} asks why routines differ between households. You discuss it during agreed contact.",
+  "answers": [
+   "Explain the two routines simply",
+   "Make a small shared reminder",
+   "Ask what feels hardest to remember"
+  ],
+  "endings": [
+   "Clear language made the different routines less mysterious.",
+   "A little reminder connected the routines without trying to control the other household.",
+   "Listening showed which transition needed support."
+  ],
+  "effects": [
+   {
+    "stress": -2
+   },
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 2
+   }
+  ],
+  "tradeoff": true,
+  "requires_home": false,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "later": [
+   "They used the explanation when another routine changed.",
+   "They used the reminder on a later transition.",
+   "They felt able to ask for help with a difficult change."
+  ],
+  "later_effects": [
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   },
+   {
+    "stress": -1
+   }
+  ]
+ },
+ {
+  "id": "parenting.v88.2",
+  "family": "parenting.v88.1",
+  "band": 1,
+  "title": "The friendship repair",
+  "text": "{name} describes an argument with a friend during your regular catch-up.",
+  "answers": [
+   "Rehearse a clear apology",
+   "Ask what they want to repair",
+   "Help them plan a calm conversation"
+  ],
+  "endings": [
+   "Practising made the apology specific instead of a demand for forgiveness.",
+   "They separated missing the friend from needing to win the argument.",
+   "A conversation plan gave them something manageable to try."
+  ],
+  "effects": [
+   {
+    "smarts": 1,
+    "stress": 1
+   },
+   {
+    "happiness": 2
+   },
+   {
+    "stress": -1
+   }
+  ],
+  "tradeoff": true,
+  "requires_home": false,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "later": [
+   "They tried the apology. The friend needed more time, and they respected that.",
+   "They chose a smaller way to reconnect without restarting the fight.",
+   "The conversation clarified the misunderstanding, even though the friendship changed."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   },
+   {
+    "stress": -1
+   }
+  ]
+ },
+ {
+  "id": "parenting.v88.3",
+  "family": "parenting.v88.1",
+  "band": 1,
+  "title": "A child’s own project",
+  "text": "{name} shares a project idea that is more ambitious than their current free time.",
+  "answers": [
+   "Help define a small first step",
+   "Let them try a rough version",
+   "Agree on a pace with breaks"
+  ],
+  "endings": [
+   "A smaller first step left the idea in their hands.",
+   "Trying a rough version showed what needed practice.",
+   "A workable pace made it easier to keep enjoying the project."
+  ],
+  "effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 2,
+    "stress": 1
+   },
+   {
+    "health": 1,
+    "stress": -1
+   }
+  ],
+  "tradeoff": true,
+  "requires_home": false,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "later": [
+   "They finished a modest first version and knew what to try next.",
+   "They revised the rough version after discovering its weak point.",
+   "They kept the project going without giving up all their rest."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "smarts": 1
+   },
+   {
+    "happiness": 1
+   }
+  ]
+ },
+ {
+  "id": "parenting.v88.4",
+  "family": "parenting.v88.2",
+  "band": 2,
+  "title": "Independence is approaching",
+  "text": "{name} asks about money and responsibilities after leaving school.",
+  "answers": [
+   "Build a realistic sample budget",
+   "Talk through education and work routes",
+   "List support they can ask for"
+  ],
+  "endings": [
+   "The sample budget separated needs from guesses. No money or debt was created.",
+   "Comparing routes showed costs and commitments without deciding their future for them.",
+   "Knowing where to ask for support made independence feel less like being abandoned."
+  ],
+  "effects": [
+   {
+    "smarts": 2,
+    "stress": 1
+   },
+   {
+    "smarts": 1,
+    "happiness": 1
+   },
+   {
+    "happiness": 2,
+    "stress": -1
+   }
+  ],
+  "tradeoff": true,
+  "requires_home": false,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "later": [
+   "They reused the budget method when planning a real expense.",
+   "They revisited the route list with new information instead of treating it as a promise.",
+   "They asked for advice when a practical problem arose."
+  ],
+  "later_effects": [
+   {
+    "smarts": 1
+   },
+   {
+    "smarts": 1
+   },
+   {
+    "stress": -1
+   }
+  ]
+ },
+ {
+  "id": "parenting.v88.5",
+  "family": "parenting.v88.2",
+  "band": 2,
+  "title": "The changed plan",
+  "text": "{name} has changed a goal they previously discussed with you and worries that you will be disappointed.",
+  "answers": [
+   "Ask what has changed for them",
+   "Compare the new plan’s trade-offs",
+   "Agree to revisit it after exploration"
+  ],
+  "endings": [
+   "Listening made room for their reasons instead of only your expectations.",
+   "The discussion recognized both the opportunities and the costs of the new plan.",
+   "An exploration period let them learn more before making a large commitment."
+  ],
+  "effects": [
+   {
+    "happiness": 2,
+    "stress": -1
+   },
+   {
+    "smarts": 2,
+    "stress": 1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "tradeoff": true,
+  "requires_home": false,
+  "parent_effects": [
+   {
+    "stress": 1
+   },
+   {
+    "stress": -1
+   },
+   {
+    "happiness": 1
+   }
+  ],
+  "later": [
+   "They brought you another update without fearing an automatic argument.",
+   "They adjusted the plan after discovering a cost they had missed.",
+   "They returned with a clearer account of what suited them."
+  ],
+  "later_effects": [
+   {
+    "happiness": 1
+   },
+   {
+    "smarts": 1
+   },
+   {
+    "smarts": 1
+   }
+  ]
+ }
+]

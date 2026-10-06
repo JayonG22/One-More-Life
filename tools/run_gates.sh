@@ -4,7 +4,7 @@
 #
 #   tools/run_gates.sh /path/to/Godot_v4.4.1-stable_linux.x86_64
 #
-# Headless gates run directly; the three that need a screen run under xvfb.
+# Headless gates run directly; screen checks run under xvfb. All checks are silent.
 set -u
 GODOT="${1:-godot}"
 cd "$(dirname "$0")/.."
@@ -14,14 +14,15 @@ pass=0; fail=0; failed=()
 
 run() {  # name, scene, pattern-that-must-appear, pattern-that-must-not, [xvfb]
   local name="$1" scene="$2" must="$3" mustnot="$4" screen="${5:-}"
-  local out
+  local out status
   if [ -n "$screen" ]; then
-    out="$(timeout 1500 xvfb-run -a -s '-screen 0 1600x900x24' "$GODOT" --rendering-driver opengl3 "res://tools/$scene.tscn" 2>&1)"
+    out="$(timeout 1500 xvfb-run -a -s '-screen 0 1600x900x24' "$GODOT" --audio-driver Dummy --rendering-driver opengl3 "res://tools/$scene.tscn" 2>&1)"
   else
-    out="$(timeout 1500 "$GODOT" --headless "res://tools/$scene.tscn" 2>&1)"
+    out="$(timeout 1500 "$GODOT" --headless --audio-driver Dummy "res://tools/$scene.tscn" 2>&1)"
   fi
+  status=$?
   local line; line="$(printf '%s\n' "$out" | grep -E "$must" | tail -1)"
-  if [ -n "$line" ] && ! printf '%s\n' "$out" | grep -qE "$mustnot"; then
+  if [ "$status" -eq 0 ] && [ -n "$line" ] && ! printf '%s\n' "$out" | grep -qE "$mustnot|SCRIPT ERROR|Parse Error"; then
     printf '  PASS  %-16s %s\n' "$name" "$line"; pass=$((pass+1))
   else
     printf '  FAIL  %-16s %s\n' "$name" "${line:-no result line}"; fail=$((fail+1)); failed+=("$name")
@@ -53,6 +54,22 @@ run layout layout_audit   'problems=0' 'SCRIPT ERROR'
 run perf  perf_test        'PERF TEST' 'FAIL:'
 run a11y  a11y_test       'failures=0' 'FAIL:' screen
 run v25 v25_events_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run v26 v26_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run v26ui v26_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run v27 v27_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run v27ui v27_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run v28 v28_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run v28ui v28_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run v29 v29_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run v29ui v29_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run v30 v30_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run v30ui v30_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run depth depth_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run depthui depth_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run v31 v31_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run shopping shopping_test 'failures=0' 'FAIL:|SCRIPT ERROR'
+run shoppingui shopping_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
+run v31ui v31_ui_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
 run gamble gamble_test 'failures=0' 'FAIL:|SCRIPT ERROR' screen
 run minigames mg_smart    'MG GATE PASS' 'MG GATE FAIL|SCRIPT ERROR' screen
 run input mg_input_probe  'MG INPUT PROBE PASS' 'FAIL' screen
